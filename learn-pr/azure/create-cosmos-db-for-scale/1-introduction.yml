@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.1-introduction
+metadata:
+  title: 소개
+  description: 크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스를 만드는 방법을 알아봅니다.
+  displayType: one-column
+  ms.openlocfilehash: b2e39959fa354c0e0bca213c843d5b158b51a3a5
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40449338"
+title: 소개
+durationInMinutes: 10
+content: '[!include[](includes/1-introduction.md)]'

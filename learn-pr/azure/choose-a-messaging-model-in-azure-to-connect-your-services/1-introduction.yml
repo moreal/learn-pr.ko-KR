@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.1-introduction
+title: 사용해야 하는 이유
+metadata:
+  title: 사용해야 하는 이유
+  description: 사용해야 하는 이유
+  ms.openlocfilehash: b7dbe07c3f6a6504a27a72c1f5d7bb8cb0b201a4
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448139"
+durationInMinutes: 5
+content: '[!include[](includes/1-introduction.md)]'

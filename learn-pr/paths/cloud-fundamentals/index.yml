@@ -1,0 +1,29 @@
+### YamlMime:LearningPath
+uid: learn.cloud-fundamentals
+title: 클라우드 기본 사항
+summary: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
+cardDescription: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- solutions-architect
+- administrator
+products:
+- Azure
+prerequisites: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
+metadata:
+  title: 클라우드 기본 사항
+  description: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
+  ms.openlocfilehash: cf6ba296731c002c1d09e833e57cbd00f12fe7a9
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40442208"
+modules:
+- learn.automate-azure-tasks-with-powershell
+- learn.control-azure-services-with-cli
+- principles-cloud-computing
+achievement: learn.cloud-fundamentals.trophy

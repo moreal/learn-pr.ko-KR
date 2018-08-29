@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: principles-cloud-computing.2-what-is-cloud-computing
+title: 클라우드 컴퓨팅이란?
+metadata:
+  title: 클라우드 컴퓨팅이란?
+  description: 클라우드 컴퓨팅이란?
+  ms.openlocfilehash: 31208a869eda628697e4ab1086d6c976c0f2fbc9
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447603"
+durationInMinutes: 5
+content: '[!include[](includes/2-what-is-cloud-computing.md)]'
