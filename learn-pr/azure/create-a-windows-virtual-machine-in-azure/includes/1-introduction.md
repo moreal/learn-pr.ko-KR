@@ -1,0 +1,18 @@
+<span data-ttu-id="cdf40-101">교통 카메라에 사용되는 데이터를 처리하는 회사에서 일한다고 가정해 보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-101">Imagine you work at a company that does data processing for traffic cameras.</span></span> <span data-ttu-id="cdf40-102">비디오 스트림을 분석, 분류, 처리하여 특정 시간의 사람 얼굴과 차량 번호판을 식별합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-102">The video streams are analyzed, categorized, and processed to identify faces and license plates at particular times.</span></span> <span data-ttu-id="cdf40-103">그런 다음, 이 정보를 Azure Data Lake에 업로드하면 검색 가능한 인덱스가 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-103">This information is then uploaded to Azure Data Lake and a searchable index is generated.</span></span>
+
+<span data-ttu-id="cdf40-104">이러한 비디오 스트림에서는 다양한 코덱과 해상도를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-104">These video streams use a range of different codecs and resolutions.</span></span> <span data-ttu-id="cdf40-105">여러 Windows 기반 전용 소프트웨어 패키지를 실행하여 초기 처리를 수행하고 공통 비디오 형식으로 인코딩해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-105">You need to run several Windows-based proprietary software packages to carry out the initial processing and encode them into a common video format.</span></span> <span data-ttu-id="cdf40-106">정기적으로 새로운 형식이 릴리스되므로 VM(가상 머신)에서 비디오 처리를 수행하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-106">Since new formats are regularly released, it's beneficial to do the video processing on virtual machines (VMs).</span></span> <span data-ttu-id="cdf40-107">그러면 전체 시스템을 중지하지 않고 전용 패키지를 추가 및 업데이트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-107">The proprietary packages can then be added and updated without stopping the entire system.</span></span>
+
+<span data-ttu-id="cdf40-108">Windows Virtual Machines의 인코딩 소프트웨어를 관리하려면 사용자 인터페이스에 연결해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-108">To administer the encoding software on your Windows virtual machines, you need to connect to the user interface.</span></span>
+
+<span data-ttu-id="cdf40-109">이 모듈에서는 Windows 가상 머신을 만들고 RDP(원격 데스크톱 프로토콜)를 사용하여 연결하는 방법을 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-109">In this module, you learn how to create a Windows virtual machine and connect to it with the Remote Desktop Protocol (RDP).</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="cdf40-110">학습 목표</span><span class="sxs-lookup"><span data-stu-id="cdf40-110">Learning objectives</span></span>
+> [!div class="checklist"]
+> * <span data-ttu-id="cdf40-111">Azure Portal을 사용하여 Windows 가상 머신을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-111">Create a Windows virtual machine using the Azure portal.</span></span>
+> * <span data-ttu-id="cdf40-112">Azure의 가상 머신에 사용할 수 있는 옵션을 이해합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-112">Understand the options that are available for virtual machines in Azure.</span></span>
+> * <span data-ttu-id="cdf40-113">Windows 원격 데스크톱 연결을 사용하여 실행 중인 Windows 가상 머신에 연결합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-113">Connect to a running Windows virtual machine by using Windows Remote Desktop Connection.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="cdf40-114">필수 조건</span><span class="sxs-lookup"><span data-stu-id="cdf40-114">Prerequisites</span></span>
+
+- <span data-ttu-id="cdf40-115">Azure Cloud Services 환경에 대한 지식이 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-115">Knowledge of the Azure Cloud Services environment.</span></span>
+- <span data-ttu-id="cdf40-116">가상 머신에 익숙해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cdf40-116">Familiarity with virtual machines.</span></span>
