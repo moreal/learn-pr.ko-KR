@@ -11,7 +11,7 @@ az vm stop -n SampleVM -g ExerciseResources
 `ssh`를 사용하거나 `vm get-instance-view` 명령을 통해 공용 IP 주소를 ping하여 중지했는지 확인할 수 있습니다. 이 마지막 방법은 `vm show`와 동일한 기본 데이터를 반환하지만 인스턴스 자체에 대한 세부 정보를 포함합니다. Azure Cloud Shell에 다음 명령을 입력하여 VM의 현재 실행 상태를 확인해 보세요.
 
 ```azurecli
-az vm get-instance-view -n SampleVM -g ExerciseResources --query "instanceView.statuses[?starts_with(code, 'PowerState/') == `true`].displayStatus" -o tsv
+az vm get-instance-view -n SampleVM -g ExerciseResources --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv
 ```
 
 이 명령은 `VM stopped`를 결과로 반환해야 합니다.
