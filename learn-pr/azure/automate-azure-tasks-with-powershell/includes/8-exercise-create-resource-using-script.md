@@ -44,7 +44,7 @@
 7. 다음으로 `$vmName` 변수를 사용하여 VM을 만듭니다.
 
    ```powershell
-   New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" 
+   New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" -Image UbuntuLTS
    ```
 
 8. 파일을 저장합니다.

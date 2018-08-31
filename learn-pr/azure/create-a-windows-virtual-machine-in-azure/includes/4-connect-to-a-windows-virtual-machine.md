@@ -20,7 +20,7 @@ Ubuntu 배포에서 Windows PC에 연결할 수 있도록 해주는 Remmina 같�
 
 Windows 10에는 RDP 클라이언트가 포함되어 있습니다.
 
-![Windows RDP 클라이언트](../images/2-rdp-client.PNG)
+![Windows RDP 클라이언트](../media-drafts/4-rdp-client.PNG)
 
 ## <a name="what-functionality-does-an-rdp-connection-support"></a>RDP 연결에서 지원하는 기능은 무엇인가요?
 

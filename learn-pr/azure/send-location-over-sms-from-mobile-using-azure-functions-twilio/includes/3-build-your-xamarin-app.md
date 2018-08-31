@@ -219,7 +219,7 @@ XAML을 사용하여 Xamarin.Forms UI를 빌드할 수 있습니다.
 
 앱을 실행하여 새 UI를 확인합니다. 이 시점에서 바인딩의 유효성을 검사하려는 경우 속성 또는 `SendLocation` 메서드에 중단점을 추가하면 됩니다.
 
-![새로운 앱 UI](../media/3-new-ui.png)
+![새로운 앱 UI](../media-drafts/3-new-ui.png)
 
 ## <a name="summary"></a>요약
 

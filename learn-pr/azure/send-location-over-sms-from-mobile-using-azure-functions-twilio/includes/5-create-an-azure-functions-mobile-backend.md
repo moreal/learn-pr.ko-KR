@@ -8,11 +8,11 @@
 
 3. 프로젝트를 “ImHere.Functions”로 이름 지정하고 **확인**을 클릭합니다.
 
-    ![새 프로젝트 추가 대화 상자](../media/5-add-new-functions-project.png)
+    ![새 프로젝트 추가 대화 상자](../media-drafts/5-add-new-functions-project.png)
 
 4. **새 프로젝트** 구성 대화 상자에서 Functions 버전 설정을 *Azure Functions v1(.NET Framework)* 로 유지합니다. ‘HTTP 트리거’를 선택하고, 저장소 계정 설정을 ‘저장소 에뮬레이터’로 유지하고, 액세스 권한을 ‘익명’으로 설정합니다. 그런 후 **OK**를 클릭합니다.
 
-    ![Azure 함수 프로젝트 구성 대화 상자](../media/5-configure-trigger.png)
+    ![Azure 함수 프로젝트 구성 대화 상자](../media-drafts/5-configure-trigger.png)
 
 새 프로젝트가 만들어지고 `Function1`이라는 기본 함수가 있습니다.
 
@@ -52,7 +52,7 @@ Azure Functions 프로젝트는 단일 HTTP 트리거 함수 `Function1`을 사�
 
 3. 프로젝트를 “ImHere.Data”로 이름 지정하고 **확인**을 클릭합니다.
 
-    ![새 프로젝트 추가 대화 상자](../media/5-add-new-net-standard-project.png)
+    ![새 프로젝트 추가 대화 상자](../media-drafts/5-add-new-net-standard-project.png)
 
 4. 자동 생성된 “Class1.cs” 파일을 삭제합니다.
 
@@ -71,7 +71,7 @@ Azure Functions 프로젝트는 단일 HTTP 트리거 함수 `Function1`을 사�
 
 7. 프로젝트를 마우스 오른쪽 단추로 클릭하고 ‘추가->참조...’를 선택하여 이 프로젝트에 대한 참조를 `ImHere.Functions` 및 `ImHere` 프로젝트에 추가합니다. 왼쪽에 있는 트리에서 ‘프로젝트’를 선택한 후에 *ImHere.Data* 옆에 있는 상자를 선택합니다.
 
-    ![프로젝트 참조 구성](../media/5-configure-project-references.png)
+    ![프로젝트 참조 구성](../media-drafts/5-configure-project-references.png)
 
 ## <a name="read-the-data-sent-to-the-function"></a>함수로 보낸 데이터 보기
 
@@ -127,7 +127,7 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 2. ‘디버그’ 메뉴에서 ‘디버그하지 않고 시작’을 선택합니다. 로컬 Azure Functions 런타임은 콘솔 창 내에서 실행되며 함수를 시작하여 `localhost`의 사용 가능한 포트에서 청취합니다.
 
-    ![로컬에서 실행되는 Azure 함수](../media/5-function-running-locally.png)
+    ![로컬에서 실행되는 Azure 함수](../media-drafts/5-function-running-locally.png)
 
 3. 함수가 청취하는 포트를 기록해 둡니다. 다음 단원에서 모바일 앱을 테스트하는 데 이 포트 정보가 필요합니다. 위의 이미지에서 함수는 **7071** 포트에서 청취합니다.
 

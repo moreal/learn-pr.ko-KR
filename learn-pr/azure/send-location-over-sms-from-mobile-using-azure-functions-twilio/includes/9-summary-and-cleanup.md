@@ -10,17 +10,17 @@ Xamarin 및 Azure 함수와 Twilio 바인딩을 사용하여 플랫폼 간 모�
 
 3. 리소스 그룹을 만드는 데 사용한 구독을 확장합니다. “ImHere” 리소스 그룹을 마우스 오른쪽 단추로 클릭하고 ‘포털에서 열기’를 선택합니다.
 
-    ![클라우드 탐색기 창에서 포털의 리소스 그룹을 엽니다.](../media/9-open-resource-group-in-portal.png)
+    ![클라우드 탐색기 창에서 포털의 리소스 그룹을 엽니다.](../media-drafts/9-open-resource-group-in-portal.png)
 
 4. 필요한 경우 브라우저에서 Azure Portal에 로그인합니다.
 
 5. 포털이 “ImHere” 리소스 그룹에서 열립니다. **리소스 그룹 삭제** 단추를 클릭합니다.
 
-    ![리소스 그룹 삭제](../media/9-delete-resource-group.png)
+    ![리소스 그룹 삭제](../media-drafts/9-delete-resource-group.png)
 
 6. 리소스 그룹의 이름을 입력하여 삭제를 확인하고 **삭제**를 클릭합니다.
 
-    ![리소스 그룹 이름을 입력하여 삭제 확인](../media/9-confirm-delete-resource-group.png)
+    ![리소스 그룹 이름을 입력하여 삭제 확인](../media-drafts/9-confirm-delete-resource-group.png)
 
 ## <a name="summary"></a>요약
 

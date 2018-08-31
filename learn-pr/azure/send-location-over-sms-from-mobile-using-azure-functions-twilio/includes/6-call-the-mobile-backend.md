@@ -96,7 +96,7 @@ async Task SendLocation()
 
 2. UWP 앱을 시작 앱으로 설정하고 실행합니다. **위치 보내기** 단추를 클릭합니다. Functions 런타임 콘솔 창의 출력에 호출되는 함수가 표시되고 로깅에 생성된 URL이 표시됩니다.
 
-    ![호출되는 함수 출력](../media/6-function-called.png)
+    ![호출되는 함수 출력](../media-drafts/6-function-called.png)
 
 3. URL 생성을 테스트하려면 콘솔에서 브라우저로 붙여넣습니다. 현재 위치가 표시되어야 합니다.
 

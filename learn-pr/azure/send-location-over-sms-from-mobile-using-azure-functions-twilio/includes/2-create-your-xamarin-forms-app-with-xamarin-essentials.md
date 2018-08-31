@@ -14,7 +14,7 @@
 
 5. **확인**을 클릭합니다.
 
-    ![새 솔루션 대화 상자](../media/2-new-solution-dialog.png)
+    ![새 솔루션 대화 상자](../media-drafts/2-new-solution-dialog.png)
 
 6. **새 플랫폼 간 앱** 대화 상자에서 ‘빈 앱’ 템플릿을 선택합니다.
 
@@ -26,7 +26,7 @@
 
 9. **확인**을 클릭합니다.
 
-    ![새 솔루션 구성 대화 상자](../media/2-configure-solution-dialog.png)
+    ![새 솔루션 구성 대화 상자](../media-drafts/2-configure-solution-dialog.png)
 
 Visual Studio에서는 두 개의 프로젝트, `ImHere.UWP`라는 UWP 앱과 .NET Standard 라이브러리 `ImHere`를 만듭니다. Xamarin.Forms 앱은 하나 이상의 플랫폼별 앱 프로젝트와 하나 이상의 .NET Standard 라이브러리 두 부분으로 구성되어 있습니다. 플랫폼별 앱 프로젝트에는 관련 플랫폼에서 앱을 실행하는 데 필요한 플랫폼별 코드가 포함되어 있습니다. 그러면 이러한 프로젝트에서 플랫폼 간 .NET Standard 라이브러리에 정의된 Xamarin.Forms 앱을 시작합니다. 앱은 플랫폼 간 코드로 빌드하고 만들어진 모든 사용자 인터페이스는 런타임 시 관련 플랫폼별 UI 구성 요소로 변환됩니다.
 
@@ -44,7 +44,7 @@ UWP, Android 및 iOS 플랫폼은 운영 체제와 하드웨어를 활용하는 
 
 5. **설치** 단추를 클릭하여 NuGet 패키지를 설치합니다. 계속하려면 라이선스에 동의해야 합니다.
 
-    ![솔루션의 모든 프로젝트에 Xamarin.Essentials NuGet 패키지 추가](../media/2-add-essentials-nuget.png)
+    ![솔루션의 모든 프로젝트에 Xamarin.Essentials NuGet 패키지 추가](../media-drafts/2-add-essentials-nuget.png)
 
     > 이 모듈을 로컬로 실행하고 있으며 Android를 대상으로 지정하려면 몇 가지 추가 설정을 수행해야 합니다. 자세한 내용은 [Xamarin.Essentials 시작 문서](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid)를 참조하세요.
 
@@ -54,11 +54,11 @@ UWP, Android 및 iOS 플랫폼은 운영 체제와 하드웨어를 활용하는 
 
 2. 빌드 구성은 **디버그**로, 플랫폼은 **x86**으로 설정하고 장치는 **로컬 머신**에서 실행되도록 설정합니다.
 
-    ![디버그 x86 구성이 로컬 장치에서 실행되도록 설정](../media/2-debug-configuration.png)
+    ![디버그 x86 구성이 로컬 장치에서 실행되도록 설정](../media-drafts/2-debug-configuration.png)
 
 3. 앱 디버그를 시작합니다.
 
-    ![실행 중인 앱](../media/2-debuging-app.png)
+    ![실행 중인 앱](../media-drafts/2-debuging-app.png)
 
 ## <a name="summary"></a>요약
 

@@ -4,12 +4,12 @@ metadata:
   title: 소개
   description: 크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스를 만드는 방법을 알아봅니다.
   displayType: one-column
-  ms.openlocfilehash: b2e39959fa354c0e0bca213c843d5b158b51a3a5
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: ca28c61ef2d53a73ae9fcf609401a9ec22e3e251
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40449338"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179797"
 title: 소개
-durationInMinutes: 10
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'
