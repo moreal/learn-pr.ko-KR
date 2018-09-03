@@ -3,12 +3,12 @@ uid: learn.manage-vms-with-azure-cli
 metadata:
   title: Azure CLI 도구를 사용하여 가상 머신 관리
   description: 플랫폼 간 Azure CLI를 사용하여 Azure의 가상 머신에 관련된 다른 관리 작업을 만들고, 시작하고, 중지하고, 수행하는 방법을 알아봅니다.
-  ms.openlocfilehash: c4c651aca73f36e32f2c849ed968f3eb8bdfb393
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 1564240b36b2fa28dd95f871553db0a7d9c137f9
+  ms.sourcegitcommit: a873d63b19d04cd5b6faa6380e562888dc4a6166
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40445557"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43055406"
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -16,11 +16,15 @@ roles:
 - developer
 - administrator
 products:
-- Azure
+- azure
+- azure cli 2.0
+- azure virtual machines
 title: Azure CLI 도구를 사용하여 가상 머신 관리
 summary: 플랫폼 간 Azure CLI를 사용하여 Azure의 가상 머신에 관련된 다른 관리 작업을 만들고, 시작하고, 중지하고, 수행하는 방법을 알아봅니다.
 cardDescription: 플랫폼 간 Azure CLI를 사용하여 Azure의 가상 머신에 관련된 다른 관리 작업을 만들고, 시작하고, 중지하고, 수행하는 방법을 알아봅니다.
 abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
   * Azure CLI를 사용하여 가상 머신 만들기
 
   * Azure CLI를 사용하여 기본 관리 작업 수행

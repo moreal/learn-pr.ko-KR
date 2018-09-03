@@ -1,14 +1,26 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: <span data-ttu-id="b66b3-101">메시지 또는 이벤트 사용 여부 선택</span><span class="sxs-lookup"><span data-stu-id="b66b3-101">Choose whether to use messages or events</span></span>
+title: <span data-ttu-id="cab2b-101">메시지 또는 이벤트 사용 여부 선택</span><span class="sxs-lookup"><span data-stu-id="cab2b-101">Choose whether to use messages or events</span></span>
 metadata:
-  title: <span data-ttu-id="b66b3-102">메시지 또는 이벤트 사용 여부 선택</span><span class="sxs-lookup"><span data-stu-id="b66b3-102">Choose whether to use messages or events</span></span>
-  description: <span data-ttu-id="b66b3-103">메시지 또는 이벤트 사용 여부 선택</span><span class="sxs-lookup"><span data-stu-id="b66b3-103">Choose whether to use messages or events</span></span>
-  ms.openlocfilehash: 2b9296a8ace31b881fd937a37b832061c1050666
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="cab2b-102">메시지 또는 이벤트 사용 여부 선택</span><span class="sxs-lookup"><span data-stu-id="cab2b-102">Choose whether to use messages or events</span></span>
+  description: <span data-ttu-id="cab2b-103">메시지 또는 이벤트 사용 여부 선택</span><span class="sxs-lookup"><span data-stu-id="cab2b-103">Choose whether to use messages or events</span></span>
+  ms.openlocfilehash: 624a7b75f47e488d60f0e844d44439a79f5372fe
+  ms.sourcegitcommit: 7b28a1a9a27c714147d15a002099f774a59e07f3
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443347"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43113074"
 durationInMinutes: 10
-content: '[!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]'
+content: >
+  [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
+quiz:
+  title: <span data-ttu-id="cab2b-104">메시징 모델</span><span class="sxs-lookup"><span data-stu-id="cab2b-104">Messaging models</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"cab2b-105\">분산 응용 프로그램에 사용자를 인증하는 웹 서비스가 있습니다.</span><span class=\"sxs-lookup\"><span data-stu-id=\"cab2b-105\">In your distributed application you have a web service that authenticates users.</span></span> <span data-ttu-id=\"cab2b-106\">사용자가 로그온하면 이 웹 서비스는 모든 사용자의 컴퓨터에서 실행되는 데스크톱 응용 프로그램과 통신하여 해당 사용자의 상태를 “온라인”으로 표시해야 합니다.</span><span class=\"sxs-lookup\"><span data-stu-id=\"cab2b-106\">When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\".</span></span> <span data-ttu-id=\"cab2b-107\">참 또는 거짓은 분산 응용 프로그램의 메시지 예입니다.</span><span class=\"sxs-lookup\"><span data-stu-id=\"cab2b-107\">True or false: This is an example of a message in a distributed application.</span></span>"
+    choices:
+    - content: <span data-ttu-id="cab2b-108">True</span><span class="sxs-lookup"><span data-stu-id="cab2b-108">True</span></span>
+      incorrectExplanation: <span data-ttu-id="cab2b-109">죄송합니다. 분산 응용 프로그램의 이벤트 예입니다.</span><span class="sxs-lookup"><span data-stu-id="cab2b-109">Sorry, this is an example of an event in a distributed application.</span></span> <span data-ttu-id="cab2b-110">통신은 모든 구독자에게 라우팅되며, 게시자는 통신이 구독자에 의해 처리되는 방법에 대한 지식이나 선호가 없고 구독자 수에 대해서도 알지 못합니다.</span><span class="sxs-lookup"><span data-stu-id="cab2b-110">The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="cab2b-111">False</span><span class="sxs-lookup"><span data-stu-id="cab2b-111">False</span></span>
+      correctExplanation: <span data-ttu-id="cab2b-112">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="cab2b-112">Correct!</span></span> <span data-ttu-id="cab2b-113">작업을 트리거하는 이벤트 알림입니다.</span><span class="sxs-lookup"><span data-stu-id="cab2b-113">This would be an event notification which would trigger an action.</span></span> <span data-ttu-id="cab2b-114">이벤트를 사용하는 완벽한 사례입니다.</span><span class="sxs-lookup"><span data-stu-id="cab2b-114">This is a perfect case of using an event.</span></span>
+      isCorrect: true
