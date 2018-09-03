@@ -1,14 +1,10 @@
-이 연습에서는 Azure에서 Windows 가상 머신을 만듭니다.
-
-## <a name="motivation"></a>사용해야 하는 이유
-
-이 연습을 위한 대체 시나리오를 살펴보겠습니다. 여기서 조직은 Windows Virtual Machines를 사용하여 학생들이 학교 컴퓨터에 영향을 주지 않고 웹앱을 설치하고, 도메인을 구성하고, Windows 서비스 및 기능을 탐색하는 테스트 환경을 실행하는 학교입니다. 교사는 RDP를 사용하여 이러한 VM에 연결하고 학생의 진행 상황을 확인합니다.
+대체 시나리오를 살펴보겠습니다. 아마도 조직은 Windows Virtual Machines를 사용하여 학생들이 학교 컴퓨터에 영향을 주지 않고 웹앱을 설치하고, 도메인을 구성하며, Windows 서비스 및 기능을 탐색하는 테스트 환경을 실행하는 학교입니다. 교사는 RDP를 사용하여 이러한 VM에 연결하고 학생의 진행 상황을 확인할 수 있습니다. Azure를 사용하여 이와 같이 기능을 어떻게 빌드할 수 있는지 살펴보겠습니다.
 
 ## <a name="create-a-windows-vm"></a>Windows VM 만들기
 
 Windows VM을 만들려면 다음 단계를 수행합니다.
 
-1. [Azure Portal](https://portal.azure.com)을 통해 Azure에 로그온합니다.
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)을 통해 Azure에 로그온합니다.
 
 1. Azure Portal의 왼쪽 위에 있는 **리소스 만들기**를 클릭합니다.
 

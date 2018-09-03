@@ -1,15 +1,5 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.sample-path.trophy
-  type: trophy
-  title: 샘플 학습 경로 트로피
-  summary: ‘샘플 학습 경로 트로피’ 학습 경로의 트로피입니다.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.placeholder.trophy
-  type: trophy
-  iconUrl: http://via.placeholder.com/120x120
-  title: 학습 경로 자리 표시자 트로피
-  summary: 샘플 학습 경로 트로피 요약
 - uid: learn.placeholder.badge
   type: badge
   iconUrl: http://via.placeholder.com/120x120
@@ -45,50 +35,55 @@ achievements:
   title: Azure Functions를 사용하여 서버리스 논리 만들기
   summary: Azure Functions를 사용하여 서버리스 논리 만들기
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.host-web-app-with-azure-web-apps.badge
+- uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
   title: Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지
   summary: Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지 요약
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
-  title: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시 배지
-  summary: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시 배지 요약
+  title: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시
+  summary: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
   title: Azure에서 컨테이너 관리 트로피
   summary: ‘Azure에서 컨테이너 관리’ 학습 경로의 트로피
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cloud-fundamentals.trophy
+- uid: learn.create-serverless-applications.trophy
+  type: trophy
+  title: 서버리스 응용 프로그램 만들기 트로피
+  summary: ‘서버리스 응용 프로그램 만들기’ 학습 경로의 트로피
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.administer-infrastructure-resources-in-azure.trophy
+  type: trophy
+  title: Azure에서 인프라 리소스 관리 트로피
+  summary: ‘Azure에서 인프라 리소스 관리’ 학습 경로의 트로피
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.cloud-foundations.trophy
   type: trophy
   title: 클라우드 기본 사항 트로피
   summary: ‘클라우드 기본 사항’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-architecture-foundations.trophy
+- uid: learn.connect-your-services-together.trophy
   type: trophy
-  title: Azure 아키텍처 기본 사항 트로피
-  summary: ‘Azure 아키텍처 기본 사항’ 학습 경로의 트로피입니다.
+  title: 서비스를 함께 연결 트로피
+  summary: ‘서비스를 함께 연결’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.architect-great-solutions-in-azure.trophy
   type: trophy
   title: Azure에서 멋진 솔루션 설계 트로피
   summary: ‘Azure에서 멋진 솔루션 설계’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-backend-services-in-azure.trophy
+- uid: learn.prepare-to-develop-apps-on-azure.trophy
   type: trophy
-  title: Azure에서 백 엔드 서비스 만들기 트로피
-  summary: ‘Azure에서 백 엔드 서비스 만들기’ 학습 경로의 트로피입니다.
+  title: Azure에서 앱 개발 준비 트로피
+  summary: ‘Azure에서 앱 개발 준비’ 학습 경로의 트로피
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-to-use-azure.trophy
+- uid: learn.deploy-a-website-with-azure-app-service.trophy
   type: trophy
-  title: Azure 사용 준비 트로피
-  summary: ‘Azure 사용 준비’ 학습 경로의 트로피
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-managed-hosting.trophy
-  type: trophy
-  title: 관리되는 호스팅을 사용하여 Azure에 웹 사이트 배포 트로피
-  summary: ‘관리되는 호스팅을 사용하여 Azure에 웹 사이트 배포’ 학습 경로의 트로피입니다.
+  title: Azure App Service로 웹 사이트 배포 트로피
+  summary: ‘Azure App Service로 웹 사이트 배포’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
   type: trophy
@@ -100,10 +95,10 @@ achievements:
   title: Azure에서 관계형 데이터 작업 트로피
   summary: ‘Azure에서 관계형 데이터 작업’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-web-data-in-azure.trophy
+- uid: learn.secure-your-cloud-data.trophy
   type: trophy
-  title: Azure에서 웹 데이터 보안 설정 트로피
-  summary: ‘Azure에서 웹 데이터 보안 설정’ 학습 경로의 트로피입니다.
+  title: 클라우드 데이터 보호 트로피
+  summary: ‘클라우드 데이터 보안 설정’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-data-in-azure.trophy
   type: trophy
@@ -129,6 +124,11 @@ achievements:
   type: badge
   title: 메시징 모델 선택 배지
   summary: 메시징 모델 선택 배지 요약
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+  type: badge
+  title: Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행
+  summary: Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.prepare-azure-dev-environment.badge
   type: badge
@@ -160,10 +160,10 @@ achievements:
   title: SQL Server 관계형 데이터를 Azure SQL로 마이그레이션
   summary: SQL Server 관계형 데이터를 Azure SQL로 마이그레이션
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.communicate-between-apps-with-storage-queues.badge
+- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
   type: badge
-  title: Azure Storage 큐를 사용하여 응용 프로그램 간에 통신 배지
-  summary: Azure Storage 큐를 사용하여 응용 프로그램 간에 통신 요약
+  title: Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신
+  summary: Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
@@ -199,7 +199,7 @@ achievements:
   type: badge
   title: Azure Key Vault를 사용하여 웹앱의 비밀 관리
   summary: Azure Key Vault를 사용하여 웹앱의 비밀 관리
-  iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
   title: RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보안 설정
@@ -215,10 +215,10 @@ achievements:
   title: Azure CLI를 사용하여 가상 머신 관리
   summary: Azure CLI를 사용하여 가상 머신 관리
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-vm-hosting.trophy
+- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
   type: trophy
-  title: VM 호스팅을 사용하여 Azure에 웹 사이트 배포 트로피
-  summary: ‘VM 호스팅을 사용하여 Azure에 웹 사이트 배포’ 학습 경로의 트로피입니다.
+  title: Azure Virtual Machines를 통해 웹 사이트 배포 트로피
+  summary: ‘Azure Virtual Machines로 웹 사이트 배포’ 학습 경로의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-app-data-with-azure-blob-storage.badge
   type: badge
@@ -245,10 +245,15 @@ achievements:
   title: Visual Studio Code에서 Azure Cosmos DB 앱 빌드
   summary: ‘Visual Studio Code에서 Azure Cosmos DB 앱 빌드’ 모듈의 트로피입니다.
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.manage-resources-in-azure.trophy
+  type: trophy
+  title: Azure의 리소스 관리 트로피
+  summary: ‘Azure에 리소스 관리’ 학습 경로의 트로피입니다.
+  iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: f7775c5f422578b4f98ef8b6fcf2c8213e5e9bb4
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.openlocfilehash: 4dc465d762264757b61a4000ad999e39ee339d64
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702341"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053933"

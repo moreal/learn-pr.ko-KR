@@ -16,8 +16,7 @@ Azure Cosmos DB 계정은 데이터베이스의 조직 엔터티 역할을 하�
 
 ## <a name="creating-an-azure-cosmos-db-account-in-the-portal"></a>포털에서 Azure Cosmos DB 계정 만들기
 
-<!--TODO: Update portal link with one that routes to free Learning acct-->
-1. [Azure 포털](https://portal.azure.com/)에 로그인합니다.
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 2. **리소스 만들기** > **데이터베이스** > **Azure Cosmos DB**를 클릭합니다.
    
    ![Azure Portal 데이터베이스 창](../media/1-introduction/create-nosql-db-databases-json-tutorial-1.png)

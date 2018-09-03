@@ -7,9 +7,9 @@ Azure는 예상 사용량을 기반으로 선택할 수 있도록 Linux 및 Wind
 | type | 크기 | 설명 |
 |------|-------|-------------|
 | 범용 가상 컴퓨터   | Dsv3, Dv3, DSv2, Dv2, DS, D, Av2, A0-7 | CPU 대 메모리 비율이 적당합니다. 개발/테스트와 소규모에서 중간 정도의 응용 프로그램 및 데이터 솔루션에 적합합니다. |
-| Compute에 최적화 | Fs, F | CPU 대 메모리 비율이 높습니다. 트래픽이 중간 정도인 응용 프로그램, 네트워크 어플라이언스 및 일괄 처리 프로세스에 적합합니다. |
-| 메모리에 최적화  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | 메모리 대 코어 비율이 높습니다. 관계형 데이터베이스, 중대형 캐시 및 메모리 내 분석에 적합합니다. |
-| Storage에 최적화 | Ls | 높은 디스크 처리량 및 IO 빅 데이터, SQL, NoSQL 데이터베이스에 적합합니다. |
+| 계산 최적화 | Fs, F | CPU 대 메모리 비율이 높습니다. 트래픽이 중간 정도인 응용 프로그램, 네트워크 어플라이언스 및 일괄 처리 프로세스에 적합합니다. |
+| 메모리 최적화  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | 메모리 대 코어 비율이 높습니다. 관계형 데이터베이스, 중대형 캐시 및 메모리 내 분석에 적합합니다. |
+| 저장소 최적화 | Ls | 높은 디스크 처리량 및 IO 빅 데이터, SQL, NoSQL 데이터베이스에 적합합니다. |
 | GPU에 최적화 | NV, NC | 대량의 그래픽 렌더링 및 비디오 편집에 적합한 전문 VM입니다. |
 | 고성능 | H, A8-11 | 당사의 가장 강력한 CPU VM으로, 필요한 경우 처리량이 높은 네트워크 인터페이스(RDMA)도 제공합니다. | 
 
@@ -46,13 +46,16 @@ az vm list-sizes --location eastus --output table
                 64       3891200  Standard_M128m                      128           1047552                16384000
 ```
 
-VM을 만들 때 크기를 지정하지 않았으므로, Azure에서는 `Standard_DS1_v2`의 기본 범용 크기를 선택했습니다. 그러나 `--size` 매개 변수를 사용하여 `vm create` 명령의 일부로 크기를 지정할 수 있습니다.
+VM을 만들 때 크기를 지정하지 않았으므로, Azure에서는 `Standard_DS1_v2`의 기본 범용 크기를 선택했습니다. 그러나 `--size` 매개 변수를 사용하여 `vm create` 명령의 일부로 크기를 지정할 수 있습니다. 예를 들어, 다음 명령을 사용하여 16코어 가상 머신을 만들 수 있습니다.
 
 ```azurecli
 az vm create --resource-group ExerciseResources --name SampleVM \
   --image Debian --admin-username aldis --generate-ssh-keys --verbose \
   --size "Standard_DS5_v2"
 ```
+
+> [!WARNING]
+> 구독 계층은 생성할 수 있는 리소스 수와 해당 리소스의 전체 크기에 대한 [제한을 적용](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits)합니다. 예를 들어, 종량제 구독에서는 **20개의 가상 CPU**로, 평가판 계층에는 **4개의 vCPU**만으로 제한합니다. Azure CLI는 이 한도를 초과할 때 **할당량이 초과됨** 오류로 알려줍니다. 아키텍처를 만들 때 이 오류가 발생하면 [평가판 온라인 요청](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quota-errors)을 통해 유료 구독과 관련된 제한(최대 10,000개의 vCPU!)을 올리도록 요청할 수 있습니다. 
 
 ## <a name="resizing-an-existing-vm"></a>기존 VM 크기 조정
 워크로드가 변경되거나 생성 시 크기가 잘못 조정된 경우에도 기존 VM의 크기를 조정할 수 있습니다. 크기를 조정하기 전에 먼저 VM이 포함된 클러스터에서 원하는 크기를 사용할 수 있는지 확인해야 합니다. 이 경우 `vm list-vm-resize-options` 명령을 사용할 수 있습니다.
