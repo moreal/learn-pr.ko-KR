@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+title: <span data-ttu-id="80238-101">클라우드 지출 효율성 최대화</span><span class="sxs-lookup"><span data-stu-id="80238-101">Maximize efficiency of cloud spend</span></span>
+metadata:
+  title: <span data-ttu-id="80238-102">클라우드 지출 효율성 최대화</span><span class="sxs-lookup"><span data-stu-id="80238-102">Maximize efficiency of cloud spend</span></span>
+  description: <span data-ttu-id="80238-103">여기서는 클라우드 지출의 효율성을 최대화하는 방법을 알아보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="80238-103">In this unit, we'll discuss how to maximize the efficiency of your cloud expenditures</span></span>
+  ms.openlocfilehash: 67213924b96e4573f0216a3c7cbbc4c3aeb961bb
+  ms.sourcegitcommit: 7b28a1a9a27c714147d15a002099f774a59e07f3
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43113516"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
+quiz:
+  title: <span data-ttu-id="80238-104">지식 검사 - 클라우드 지출 효율성 최대화</span><span class="sxs-lookup"><span data-stu-id="80238-104">Knowledge check - Maximize efficiency of cloud spend</span></span>
+  questions:
+  - content: <span data-ttu-id="80238-105">다음 중 예약 인스턴스가 가장 적합한 후보는 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="80238-105">Which of the following is the best candidate for a reserved instance?</span></span>
+    choices:
+    - content: <span data-ttu-id="80238-106">Azure App Service에 배포된 웹 응용 프로그램.</span><span class="sxs-lookup"><span data-stu-id="80238-106">A web application deployed on Azure App Service.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80238-107">사용되지 않는 업무 외 시간에는 자동으로 종료되는 비 프로덕션 가상 머신.</span><span class="sxs-lookup"><span data-stu-id="80238-107">A non-production virtual machine that is automatically shut down in off-hours when not in use.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80238-108">Azure SQL Database 인스턴스.</span><span class="sxs-lookup"><span data-stu-id="80238-108">An Azure SQL Database instance.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="80238-109">글로벌 기업의 HR 시스템용 데이터베이스 서버.</span><span class="sxs-lookup"><span data-stu-id="80238-109">A database server for an HR system for a global business.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="80238-110">다음과 같은 경우 VM과 관련된 계산 비용이 발생하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="80238-110">Compute costs associated with a VM stop accruing when:</span></span>
+    choices:
+    - content: <span data-ttu-id="80238-111">OS 내부에서 가상 머신을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="80238-111">You shut the virtual machine down from inside the OS.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80238-112">Azure Portal에서 중지 단추를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="80238-112">You click the Stop button in the Azure portal.</span></span>
+      isCorrect: true

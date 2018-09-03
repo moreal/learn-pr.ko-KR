@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.5-knowledge-check
+title: <span data-ttu-id="74c28-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="74c28-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="74c28-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="74c28-102">Knowledge check</span></span>
+  description: <span data-ttu-id="74c28-103">컨테이너 소개 지식 검사입니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-103">Introduction to containers knowledge check.</span></span>
+  ms.openlocfilehash: b09e40be4406e10ce02d1b1151f7f735eb060cb4
+  ms.sourcegitcommit: 59aa01bac69a5745b4a28e9fdc8c8b97fe7260d7
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43003749"
+content: >
+  #[!include[](includes/5-knowledge-check.md)]
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="74c28-104">컨테이너 소개</span><span class="sxs-lookup"><span data-stu-id="74c28-104">Introduction to containers</span></span>
+  questions:
+  - content: <span data-ttu-id="74c28-105">다음 중 컨테이너 도입 시 얻을 수 있는 이점이 아닌 것은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="74c28-105">Which of the following is not a benefit of container adoption?</span></span>
+    choices:
+    - content: <span data-ttu-id="74c28-106">빠른 시작 시간.</span><span class="sxs-lookup"><span data-stu-id="74c28-106">Fast start times.</span></span>
+      incorrectExplanation: <span data-ttu-id="74c28-107">컨테이너가 가상 또는 실제 시스템보다 훨씬 빠르게 시작할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-107">Containers can start significantly faster than virtual or physical systems.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="74c28-108">호스트 리소스의 효율적인 사용.</span><span class="sxs-lookup"><span data-stu-id="74c28-108">Efficient use of host resource.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74c28-109">공유 이미지 아키텍처 덕분에 여러 컨테이너를 단일 호스트에서 실행하고, 호스트 리소스를 효율적으로 활용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-109">Due to a shared image architecture, many containers can run on a single host, while efficiently utilizing host resources.</span></span>
+    - content: <span data-ttu-id="74c28-110">재해 복구 계획 기본 제공.</span><span class="sxs-lookup"><span data-stu-id="74c28-110">Built-in disaster recovery.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74c28-111">컨테이너는 기본적으로 재해 복구 절차를 변경하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-111">Containers don't inherently change disaster recovery procedures.</span></span>
+    - content: <span data-ttu-id="74c28-112">클라우드 네이티브 응용 프로그램 아키텍처 사용.</span><span class="sxs-lookup"><span data-stu-id="74c28-112">Enables cloud-native application architecture.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74c28-113">컨테이너는 최신 또는 클라우드 네이티브 아키텍처를 사용한 응용 프로그램 개발을 도와줍니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-113">Containers can help to develop applications with a modern or cloud-native architecture.</span></span>
+  - content: <span data-ttu-id="74c28-114">모든 컨테이너 인스턴스(중지된 컨테이너 및 실행 중인 컨테이너)를 보여주는 명령은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="74c28-114">What command will show all container instances (stopped and running)?</span></span>
+    choices:
+    - content: <span data-ttu-id="74c28-115">docker ps</span><span class="sxs-lookup"><span data-stu-id="74c28-115">docker ps</span></span>
+      incorrectExplanation: <span data-ttu-id="74c28-116">이 명령은 실행 중인 컨테이너만 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-116">This command will only show running containers.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="74c28-117">docker ps -a</span><span class="sxs-lookup"><span data-stu-id="74c28-117">docker ps -a</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74c28-118">이 명령은 실행 중인 컨테이너와 중지된 컨테이너를 모두 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-118">This command will list all running and stopped containers.</span></span>
+    - content: <span data-ttu-id="74c28-119">docker ps -x</span><span class="sxs-lookup"><span data-stu-id="74c28-119">docker ps -x</span></span>
+      incorrectExplanation: <span data-ttu-id="74c28-120">유효한 Docker 명령이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-120">This isn't a valid Docker command.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="74c28-121">docker ps</span><span class="sxs-lookup"><span data-stu-id="74c28-121">docker ps</span></span>
+      incorrectExplanation: <span data-ttu-id="74c28-122">이 명령은 컨테이너 이미지를 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-122">This command lists container images.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="74c28-123">프로덕션 환경에서는 Dockerfile을 사용하여 컨테이너 이미지 만들기를 자동화해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-123">In production, container image creation should be automated with a Dockerfile.</span></span>
+    choices:
+    - content: <span data-ttu-id="74c28-124">오답.</span><span class="sxs-lookup"><span data-stu-id="74c28-124">False.</span></span>
+      incorrectExplanation: <span data-ttu-id="74c28-125">컨테이너 만들기 자동화는 여러 가지 이점이 있으며 프로덕션 컨테이너 환경에서 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-125">Container creation automation has many benefits and should be utilized in production container environments.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="74c28-126">정답.</span><span class="sxs-lookup"><span data-stu-id="74c28-126">True.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74c28-127">컨테이너 만들기 자동화는 여러 가지 이점이 있으며 프로덕션 컨테이너 환경에서 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="74c28-127">Container creation automation has many benefits and should be utilized in production container environments.</span></span>
