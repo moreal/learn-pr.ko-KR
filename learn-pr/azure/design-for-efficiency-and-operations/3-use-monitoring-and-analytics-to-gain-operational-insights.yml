@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+title: 모니터링 및 분석 기능을 사용하여 운영 인사이트를 얻습니다.
+metadata:
+  title: 모니터링 및 분석 기능을 사용하여 운영 인사이트를 얻습니다.
+  description: 여기서는 모니터링 및 분석 기능을 사용하여 운영 인사이트를 얻는 방법을 알아보겠습니다.
+  ms.openlocfilehash: ec31d9b05bf0aaa3fbb1b2c3812864e62d65f938
+  ms.sourcegitcommit: 7b28a1a9a27c714147d15a002099f774a59e07f3
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43113465"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-use-monitoring-and-analytics-to-gain-operational-insights.md)]
+quiz:
+  title: 지식 검사 - 모니터링 및 분석 기능을 사용하여 운영 인사이트 획득
+  questions:
+  - content: 응용 프로그램의 런타임 예외를 해결하기 위해 다음 중 무엇을 사용하시겠습니까?
+    choices:
+    - content: Azure Service Health
+      isCorrect: false
+    - content: Azure Network Watcher
+      isCorrect: false
+    - content: Azure 활동 로그
+      isCorrect: false
+    - content: Azure Application Insights
+      isCorrect: true
+  - content: 가상 머신을 삭제한 사람을 알아내기 위해 다음 중 어떤 서비스를 사용하시겠습니까?
+    choices:
+    - content: Service Health
+      isCorrect: false
+    - content: Network Watcher
+      isCorrect: false
+    - content: 활동 로그
+      isCorrect: true
+    - content: Application Insights
+      isCorrect: false
