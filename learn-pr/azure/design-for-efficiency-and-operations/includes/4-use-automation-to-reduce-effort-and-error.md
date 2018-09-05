@@ -6,7 +6,7 @@
 
 ### <a name="imperative-automation"></a>명령적 자동화
 
-명령적 자동화부터 시작하겠습니다. 명령적 자동화에서는 _어떻게_ 할 것인지를 지정합니다. 일반적으로 이 작업은 언어 또는 SDK 스크립팅을 통해 프로그래밍 방식으로 수행됩니다. Azure 리소스의 경우 Azure CLI 또는 Azure PowerShell을 사용 수 있습니다. Azure CLI를 사용하여 저장소 계정을 만드는 예제를 살펴보겠습니다.
+명령적 자동화부터 시작하겠습니다. 명령적 자동화에서는 _어떻게_ 할 것인지를 지정합니다. 일반적으로 이 작업은 언어 또는 SDK 스크립팅을 통해 프로그래밍 방식으로 수행됩니다. Azure 리소스의 경우 Azure CLI 또는 Azure PowerShell을 사용할 수 있습니다. Azure CLI를 사용하여 저장소 계정을 만드는 예제를 살펴보겠습니다.
 
 ```azure-cli
 az group create --name storage-resource-group --location westus
@@ -119,7 +119,7 @@ Lamna Healthcare 작업의 경우 다음이 포함될 수 있습니다.
 - 업무 외 시간에 가상 머신을 검색하고 종료합니다.
 - 고위 임원에게 보고할 일일 보고서를 실행하고 대시보드를 생성합니다.
 
-![VM 전원 상태 자동화](../media-draft/automation-vm-power-state.png)
+![VM 전원 상태 자동화](../media/automation-vm-power-state.png)
 
 ## <a name="automating-development-environments"></a>개발 환경 자동화
 

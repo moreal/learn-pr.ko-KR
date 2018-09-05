@@ -30,7 +30,8 @@ Event Hubs는 다른 Azure 서비스에 대한 이벤트 스트림을 파이프�
 ## <a name="which-service-should-i-choose"></a>어떤 서비스를 선택해야 할까요?
 큐 선택과 마찬가지로, 이러한 두 이벤트 전송 서비스 중에 무엇을 선택해야 할지 처음에는 어렵게 보일 수 있습니다. 두 서비스 모두 *하나 이상*의 의미 체계를 지원합니다.
 
-#### <a name="choose-event-hubs-if"></a>다음과 같은 경우에는 Event Hubs를 선택합니다.
+#### <a name="choose-event-hubs-if"></a>다음과 같은 경우에는 Event Hubs를 선택합니다.  
+
 - 게시자 대규모 인증을 지원해야 합니다.
 - Data Lake 또는 Blob Storage에 이벤트 스트림을 저장해야 합니다.
 - 이벤트 스트림에 대한 집계 또는 분석이 필요합니다.
