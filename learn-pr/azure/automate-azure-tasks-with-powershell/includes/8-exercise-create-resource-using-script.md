@@ -8,25 +8,25 @@
 
 1. **ConferenceDailyReset.ps1**이라는 새 텍스트 파일을 만듭니다.
 
-2. 매개 변수를 변수로 캡처합니다.
+1. 매개 변수를 변수로 캡처합니다.
 
     ```powershell
     param([string]$resourceGroup)
     ```
 
-3. 자격 증명을 사용하여 Azure로 인증합니다.
+1. 자격 증명을 사용하여 Azure로 인증합니다.
 
     ```powershell
     Connect-AzureRmAccount
     ```
 
-4. VM의 관리자 계정에 대한 사용자 이름 및 암호를 묻는 메시지를 표시하고 결과를 변수로 캡처합니다.
+1. VM의 관리자 계정에 대한 사용자 이름 및 암호를 묻는 메시지를 표시하고 결과를 변수로 캡처합니다.
 
     ```powershell
     $adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
     ```
 
-5. 세 번 실행되는 루프를 만듭니다.
+1. 세 번 실행되는 루프를 만듭니다.
 
     ```powershell
     For ($i = 1; $i -le 3; $i++) 
@@ -35,19 +35,19 @@
     }
     ```
 
-6. 루프 본문에서 각 VM의 이름을 만들고 변수에 저장합니다.
+1. 루프 본문에서 각 VM의 이름을 만들고 변수에 저장합니다.
 
     ```powershell
     $vmName = "ConferenceDemo" + $i
     ```
 
-7. 다음으로 `$vmName` 변수를 사용하여 VM을 만듭니다.
+1. 다음으로 `$vmName` 변수를 사용하여 VM을 만듭니다.
 
    ```powershell
    New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" -Image UbuntuLTS
    ```
 
-8. 파일을 저장합니다.
+1. 파일을 저장합니다.
 
 완료된 스크립트는 다음과 같이 표시됩니다.
 
@@ -77,8 +77,10 @@ PowerShell을 시작하고 스크립트 파일을 저장한 디렉터리로 변�
 스크립트를 완료하는 데 몇 분이 걸릴 수 있습니다. 완료되면 성공적으로 실행되었는지 확인합니다.
 
 1. 브라우저에서 Azure Portal에 로그인합니다.
-2. 왼쪽 탐색에서 **리소스 그룹**을 클릭합니다.
-3. 리소스 그룹 목록에서 **TrialsResourceGroup**을 클릭합니다. 리소스 목록에 새로 만든 VM 및 연결된 리소스가 표시됩니다.
+
+1. 왼쪽 탐색에서 **리소스 그룹**을 클릭합니다.
+
+1. 리소스 그룹 목록에서 **TrialsResourceGroup**을 클릭합니다. 리소스 목록에 새로 만든 VM 및 연결된 리소스가 표시됩니다.
 
 ## <a name="summary"></a>요약
 스크립트 매개 변수로 표시된 리소스 그룹에서 세 개의 VM 만들기를 자동화하는 스크립트를 작성했습니다. 스크립트는 짧고 간단하지만 포털을 통해 수동으로 완료하는 데 시간이 오래 걸리는 프로세스를 자동화합니다.

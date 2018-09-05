@@ -6,13 +6,13 @@
 
 1. Azure Portal에서 맨 왼쪽에 있는 **리소스 그룹**을 선택한 후에 만든 리소스 그룹을 선택합니다.  
 
-    왼쪽 메뉴가 접혀 있으면 ![[확장] 단추를](../media/5-create-a-database-and-collection/expand.png) 클릭하여 펼칩니다.
+    왼쪽 메뉴가 접혀 있으면 ![[확장] 단추를](../media-draft/6-expand.png) 클릭하여 펼칩니다.
 
-   ![Azure Portal의 메트릭](../media/5-create-a-database-and-collection/delete-resources-select.png)
+   ![Azure Portal의 메트릭](../media-draft/6-resources-select.png)
 
-2. 새 창에서 리소스 그룹을 선택한 후에 **리소스 그룹 삭제**를 클릭합니다.
+1. 새 창에서 리소스 그룹을 선택한 후에 **리소스 그룹 삭제**를 클릭합니다.
 
-   ![Azure Portal의 메트릭](../media/5-create-a-database-and-collection/delete-resources.png)
+   ![Azure Portal의 메트릭](../media-draft/6-delete-resources.png)
 
-3. 새 창에서 삭제할 리소스 그룹의 이름을 입력한 후에 **삭제**를 클릭합니다.
+1. 새 창에서 삭제할 리소스 그룹의 이름을 입력한 후에 **삭제**를 클릭합니다.
 

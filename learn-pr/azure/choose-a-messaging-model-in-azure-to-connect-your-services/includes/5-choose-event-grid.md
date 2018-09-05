@@ -13,7 +13,7 @@ Event Grid는 Azure Blob Storage 계정 또는 Azure Media Services와 같은 �
 
 Event Grid는 게시자 또는 구독자로서 대부분의 Azure 서비스를 지원하며 타사 서비스에도 사용할 수 있습니다. 게시자가 구독자에게 상태 변화를 알릴 수 있는 동적으로 확장 가능하고 저렴한 메시지 시스템을 제공합니다.
 
-![Event Grid 원본 및 구독자 다이어그램](../images/6-event-grid.png)
+![Event Grid 원본 및 구독자 다이어그램](../media-draft/5-event-grid.png)
 
 > [!NOTE]
 > Event Grid는 구독자에게 변경 사실을 알리는 이벤트를 전송하지만, 변경된 _실제 개체_는 이벤트 전송에 포함되지 않습니다.

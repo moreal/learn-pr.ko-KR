@@ -2,9 +2,9 @@
 
 앱의 UI는 다음으로 구성됩니다.
 
-* 일부 전화 번호를 입력하기 위한 텍스트 입력 컨트롤
-* Azure 함수를 사용하여 해당 번호로 위치를 보내는 단추
-* 위치 전송 중, 위치 전송 성공 등 현재 상태의 사용자에게 메시지를 표시하는 레이블
+- 일부 전화 번호를 입력하기 위한 텍스트 입력 컨트롤
+- Azure 함수를 사용하여 해당 번호로 위치를 보내는 단추
+- 위치 전송 중, 위치 전송 성공 등 현재 상태의 사용자에게 메시지를 표시하는 레이블
 
 Xamarin.Forms는 MVVM(Model-View-ViewModel)이라는 디자인 패턴을 지원합니다. [Xamarin MVVM 문서](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)에서 MVVM에 대해 자세히 알아볼 수 있지만, 핵심은 각 페이지(View)에 속성 및 동작을 노출하는 ViewModel이 있다는 것입니다.
 
@@ -18,15 +18,15 @@ ViewModel은 모두 `INotifyPropertyChanged` 인터페이스를 구현합니다.
 
 1. 프로젝트를 마우스 오른쪽 단추로 클릭하고 *추가->클래스...* 를 선택하여 `ImHere` .NET Standard 프로젝트에 `BaseViewModel`이라는 새 클래스를 만듭니다. 새 클래스의 이름을 “BaseViewModel”로 지정하고 **추가**를 클릭합니다.
 
-2. 클래스를 `public`으로 설정하고 `INotifyPropertyChanged`에서 파생합니다. `System.ComponentModel`에 대해 using 지시문을 추가해야 합니다.
+1. 클래스를 `public`으로 설정하고 `INotifyPropertyChanged`에서 파생합니다. `System.ComponentModel`에 대해 using 지시문을 추가해야 합니다.
 
-3. `PropertyChanged` 이벤트를 추가하여 `INotifyPropertyChanged` 인터페이스를 구현합니다.
+1. `PropertyChanged` 이벤트를 추가하여 `INotifyPropertyChanged` 인터페이스를 구현합니다.
 
     ```cs
     public event PropertyChangedEventHandler PropertyChanged;
     ```
 
-4. ViewModel 속성의 일반적인 패턴은 전용 지원 필드가 있는 공용 속성을 사용하는 것입니다. 속성 setter에서 지원 필드가 새 값과 비교해서 검사됩니다. 새 값이 지원 필드와 다르면 지원 필드가 업데이트되고 `PropertyChanged` 이벤트가 발생합니다. 이 논리는 메서드로 쉽게 추출되므로 `Set` 메서드를 추가합니다. `System.Runtime.CompilerServices` 네임스페이스에 대해 using 지시문을 추가해야 합니다.
+1. ViewModel 속성의 일반적인 패턴은 전용 지원 필드가 있는 공용 속성을 사용하는 것입니다. 속성 setter에서 지원 필드가 새 값과 비교해서 검사됩니다. 새 값이 지원 필드와 다르면 지원 필드가 업데이트되고 `PropertyChanged` 이벤트가 발생합니다. 이 논리는 메서드로 쉽게 추출되므로 `Set` 메서드를 추가합니다. `System.Runtime.CompilerServices` 네임스페이스에 대해 using 지시문을 추가해야 합니다.
 
     ```cs
     protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -67,9 +67,9 @@ namespace ImHere
 
 1. `ImHere` .NET Standard 프로젝트에 `MainViewModel`이라는 클래스를 만듭니다.
 
-2. 이 클래스를 public으로 설정하고 `BaseViewModel`에서 파생합니다.
+1. 이 클래스를 public으로 설정하고 `BaseViewModel`에서 파생합니다.
 
-3. 각각 지원 필드가 있는 두 개의 `string` 속성, `PhoneNumbers` 및 `Message`를 추가합니다. 속성 setter에서 기본 클래스 `Set` 메서드를 사용하여 값을 업데이트하고 `PropertyChanged` 이벤트를 발생시킵니다.
+1. 각각 지원 필드가 있는 두 개의 `string` 속성, `PhoneNumbers` 및 `Message`를 추가합니다. 속성 setter에서 기본 클래스 `Set` 메서드를 사용하여 값을 업데이트하고 `PropertyChanged` 이벤트를 발생시킵니다.
 
    ```cs
     string message = "";
@@ -87,13 +87,13 @@ namespace ImHere
     }
    ```
 
-4. `SendLocationCommand`라는 읽기 전용 명령 속성을 추가합니다. 이 명령은 `System.Windows.Input` 네임스페이스의 `ICommand` 형식이 지정됩니다.
+1. `SendLocationCommand`라는 읽기 전용 명령 속성을 추가합니다. 이 명령은 `System.Windows.Input` 네임스페이스의 `ICommand` 형식이 지정됩니다.
 
     ```cs
     public ICommand SendLocationCommand { get; }
     ```
 
-5. 클래스에 생성자를 추가하고, 이 생성자에서 `SendLocationCommand`를 `Xamarin.Forms` 네임스페이스의 새 `Command`로 초기화합니다. 이 명령의 생성자는 명령이 호출될 때 실행할 `Action`을 사용하므로 `async`이라는 `SendLocation` 메서드를 만들고 이 호출을 `await`하는 람다 함수를 생성자에 전달합니다. `SendLocation` 메서드의 본문은 이 모듈의 이후 단원에서 구현됩니다. `Task`를 반환하려면 `System.Threading.Tasks` 네임스페이스에 대해 using 지시문을 추가해야 합니다.
+1. 클래스에 생성자를 추가하고, 이 생성자에서 `SendLocationCommand`를 `Xamarin.Forms` 네임스페이스의 새 `Command`로 초기화합니다. 이 명령의 생성자는 명령이 호출될 때 실행할 `Action`을 사용하므로 `async`이라는 `SendLocation` 메서드를 만들고 이 호출을 `await`하는 람다 함수를 생성자에 전달합니다. `SendLocation` 메서드의 본문은 이 모듈의 이후 단원에서 구현됩니다. `Task`를 반환하려면 `System.Threading.Tasks` 네임스페이스에 대해 using 지시문을 추가해야 합니다.
 
     ```cs
     public MainViewModel()
@@ -153,7 +153,7 @@ XAML을 사용하여 Xamarin.Forms UI를 빌드할 수 있습니다.
 
     참고 - `ImHere.UWP` 프로젝트에도 `MainPage.xaml` 파일이 포함되어 있습니다. .NET Standard 라이브러리의 파일을 편집해야 합니다.
 
-2. ViewModel의 속성에 컨트롤을 바인딩하려면 먼저 ViewModel 인스턴스를 페이지의 바인딩 컨텍스트로 설정해야 합니다. 최상위 `ContentPage` 안에 다음 XAML을 추가합니다.
+1. ViewModel의 속성에 컨트롤을 바인딩하려면 먼저 ViewModel 인스턴스를 페이지의 바인딩 컨텍스트로 설정해야 합니다. 최상위 `ContentPage` 안에 다음 XAML을 추가합니다.
 
     ```xml
     <ContentPage.BindingContext>
@@ -161,14 +161,14 @@ XAML을 사용하여 Xamarin.Forms UI를 빌드할 수 있습니다.
     </ContentPage.BindingContext>
     ```
 
-3. `StackLayout`의 콘텐츠를 삭제하고 안쪽 여백을 추가하여 UI 모양을 개선합니다.
+1. `StackLayout`의 콘텐츠를 삭제하고 안쪽 여백을 추가하여 UI 모양을 개선합니다.
 
     ```xml
     <StackLayout Padding="20">
     </StackLayout>
     ```
 
-4. 사용자가 전화 번호를 추가하는 데 사용할 수 있는 `Editor` 컨트롤을 `StackLayout`에 추가하고, 입력 컨트롤의 용도를 설명하는 `Label`을 위에 배치합니다. `StackLayout`은 컨트롤이 추가되는 순서대로 자식 컨트롤을 가로 또는 세로로 누적하므로 `Label`을 먼저 추가하면 `Editor` 위에 배치됩니다. `Editor` 컨트롤은 여러 줄 입력 컨트롤이므로 사용자가 행당 하나씩, 여러 개의 전화 번호를 입력할 수 있습니다.
+1. 사용자가 전화 번호를 추가하는 데 사용할 수 있는 `Editor` 컨트롤을 `StackLayout`에 추가하고, 입력 컨트롤의 용도를 설명하는 `Label`을 위에 배치합니다. `StackLayout`은 컨트롤이 추가되는 순서대로 자식 컨트롤을 가로 또는 세로로 누적하므로 `Label`을 먼저 추가하면 `Editor` 위에 배치됩니다. `Editor` 컨트롤은 여러 줄 입력 컨트롤이므로 사용자가 행당 하나씩, 여러 개의 전화 번호를 입력할 수 있습니다.
 
     ```xml
     <StackLayout Padding="20">
@@ -179,7 +179,7 @@ XAML을 사용하여 Xamarin.Forms UI를 빌드할 수 있습니다.
 
     `Editor`의 `Text` 속성은 `MainViewModel`의 `PhoneNumbers` 속성에 바인딩됩니다. 바인딩 구문은 속성 값을 `"{Binding <property name>}"`으로 설정하는 것입니다. 중괄호는 이 값이 특별하며, 단순 `string`과 다르게 처리되어야 함을 XAML 컴파일러에 알립니다.
 
-5. 사용자 위치를 보내는 `Button`을 `Editor` 아래에 추가합니다.
+1. 사용자 위치를 보내는 `Button`을 `Editor` 아래에 추가합니다.
 
     ```xml
     <Button Text="Send Location" BackgroundColor="Blue" TextColor="White"
@@ -188,7 +188,7 @@ XAML을 사용하여 Xamarin.Forms UI를 빌드할 수 있습니다.
 
     `Command` 속성은 ViewModel의 `SendLocationCommand` 명령에 바인딩됩니다. 단추를 탭하면 명령이 실행됩니다.
 
-6. 상태 메시지를 표시하는 `Label`을 `Button` 아래에 추가합니다.
+1. 상태 메시지를 표시하는 `Label`을 `Button` 아래에 추가합니다.
 
     ```xml
     <Label Text="{Binding Message}"

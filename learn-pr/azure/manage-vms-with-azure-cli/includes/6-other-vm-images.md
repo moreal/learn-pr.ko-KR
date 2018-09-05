@@ -11,5 +11,5 @@
 az vm image list --location eastus --output table
 ```
 
-> [!NOTE]
+> [!TIP]
 > 다음은 Azure에서 제공하는 표준 이미지입니다. 고유한 구성, 덜 일반적인 버전 또는 운영 체제의 배포를 기반으로 VM을 만들려면 [고유한 사용자 지정 이미지를 만들고 업로드](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images)할 수도 있습니다.

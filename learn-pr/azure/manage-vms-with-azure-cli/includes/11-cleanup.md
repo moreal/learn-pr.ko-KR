@@ -17,5 +17,5 @@ az group delete --name ExerciseResources --no-wait
 
 ## <a name="further-reading"></a>추가 참고 자료
 
-* [Azure CLI 개요](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-* [Azure CLI 명령 참조](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)
+- [Azure CLI 개요](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- [Azure CLI 명령 참조](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)

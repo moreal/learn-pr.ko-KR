@@ -33,7 +33,7 @@ VirtualMachine    PublicIPAddresses    PrivateIPAddresses
 SampleVM          168.61.54.62         10.0.0.4
 ```
 
-> [!NOTE]
+> [!TIP]
 > `--output` 플래그의 줄임 구문을 `-o`로 사용하고 있습니다. Azure CLI 명령에 대한 대부분의 매개 변수는 하나의 대시 및 문자로 줄일 수 있습니다. 예를 들어 `--name`은 `-n`으로 줄이고 `--resource-group`은 `-g`로 줄일 수 있습니다. 이는 편리하게 입력할 수 있지만 분명하게 하기 위해 스크립트에서는 전체 옵션 이름을 사용하는 것이 좋습니다. 각 명령에 대한 자세한 내용은 설명서를 확인하세요.
 
 ## <a name="getting-vm-details"></a>VM 세부 정보 가져오기

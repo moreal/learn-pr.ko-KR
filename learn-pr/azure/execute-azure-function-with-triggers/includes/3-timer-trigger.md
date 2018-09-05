@@ -51,4 +51,3 @@ Azure에서 6개 필드의 순서는 `{second} {minute} {hour} {day} {month} {da
 ## <a name="summary"></a>요약
 
 타이머 트리거는 지정된 일정으로 Azure 함수를 호출합니다. 타이머 트리거의 일정을 정의하려면 시간 집합을 나타내는 문자열인 ‘CRON 식’을 빌드합니다.
-
