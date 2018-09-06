@@ -6,9 +6,9 @@
     
     **컬렉션 추가** 영역이 맨 오른쪽에 표시됩니다. 이 영역을 보려면 오른쪽으로 스크롤해야 할 수 있습니다.
 
-    ![Azure Portal 데이터 탐색기, 컬렉션 추가 블레이드](../media/5-create-a-database-and-collection/azure-cosmosdb-data-explorer.png)
+    ![Azure Portal 데이터 탐색기, 컬렉션 추가 블레이드](../media-draft/5-azure-cosmosdb-data-explorer.png)
 
-2. **컬렉션 추가** 페이지에서 새 컬렉션에 대한 설정을 입력합니다.
+1. **컬렉션 추가** 페이지에서 새 컬렉션에 대한 설정을 입력합니다.
 
     설정 | 제안 값 | 설명
     --------|-----------------|-------------
@@ -18,11 +18,11 @@
     파티션 키    | UserId        | 수많은 쿼리가 고객 ID를 기준으로 하므로 UserID는 온라인 소매점 시나리오의 좋은 파티션 키입니다.
     처리량       |1000RU        | 처리량을 1000RU/s(초당 요청 단위)로 변경합니다. 1000은 자동 크기 조정을 사용하도록 설정할 수 있는 최소 RU/s 값입니다.
     
-    지금은 **데이터베이스 처리량 프로비전** 옵션을 선택하지 않고 컬렉션에 고유 키를 추가하지 않습니다. 
+    지금은 **데이터베이스 처리량 프로비전** 옵션을 선택하지 않고 컬렉션에 고유 키를 추가하지 않습니다.
     
-3. **확인**을 클릭합니다. 데이터 탐색기는 새 데이터베이스 및 컬렉션을 표시합니다.
+1. **확인**을 클릭합니다. 데이터 탐색기는 새 데이터베이스 및 컬렉션을 표시합니다.
 
-    ![Azure Portal 데이터 탐색기, 새 데이터베이스 및 컬렉션 표시](../media/5-create-a-database-and-collection/azure-cosmos-db-new-collection.png)
+    ![Azure Portal 데이터 탐색기, 새 데이터베이스 및 컬렉션 표시](../media-draft/5-azure-cosmos-db-new-collection.png)
 
 ## <a name="summary"></a>요약
 

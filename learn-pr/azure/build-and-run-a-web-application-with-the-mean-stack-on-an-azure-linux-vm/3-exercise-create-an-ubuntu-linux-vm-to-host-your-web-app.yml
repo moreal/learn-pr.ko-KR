@@ -4,11 +4,11 @@ title: 연습 - 웹 응용 프로그램을 호스트할 Ubuntu Linux VM 만들�
 metadata:
   title: 연습 - 웹 응용 프로그램을 호스트할 Ubuntu Linux VM 만들기
   description: 연습 - 웹 응용 프로그램을 호스트할 Ubuntu Linux VM 만들기
-  ms.openlocfilehash: ae1df846a7688354cde08fc702c2a440bde2aea5
-  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.openlocfilehash: f45c77e12d0a7b209d9cef0c27a52c112d38c089
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/25/2018
-  ms.locfileid: "42927355"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791035"
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app.md)]'

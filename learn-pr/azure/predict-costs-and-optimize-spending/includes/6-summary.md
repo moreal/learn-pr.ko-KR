@@ -13,6 +13,3 @@ Azure 가격 계산기를 살펴보고, Azure 가격 계산기를 사용하여 A
 - [Azure 청구 문서](https://docs.microsoft.com/azure/billing/)
 - [Azure 아키텍처 센터](https://docs.microsoft.com/azure/architecture/)
 - [Azure 예산](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
-
-
-

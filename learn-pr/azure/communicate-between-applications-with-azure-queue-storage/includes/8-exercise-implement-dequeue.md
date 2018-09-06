@@ -8,9 +8,9 @@
 
 1. Cloud Shell에서 `QueueApp` 폴더로 전환하고 `code .`를 입력하여 온라인 편집기를 엽니다.
  
-2. `Program.cs` 소스 파일을 엽니다.
+1. `Program.cs` 소스 파일을 엽니다.
 
-3. 매개 변수를 사용하지 않고 `Task<string>`을 반환하는 `ReceiveArticleAsync`라는 정적 메서드를 `Program` 클래스에 만듭니다. 이 메서드를 사용하여 큐에서 뉴스 기사를 끌어와 반환합니다.
+1. 매개 변수를 사용하지 않고 `Task<string>`을 반환하는 `ReceiveArticleAsync`라는 정적 메서드를 `Program` 클래스에 만듭니다. 이 메서드를 사용하여 큐에서 뉴스 기사를 끌어와 반환합니다.
     - 일부 비동기 `Task` 기반 메서드를 사용하게 되므로 계속 진행하면서 `async` 키워드를 메서드에 추가합니다.
 
     ```csharp
@@ -18,7 +18,7 @@
     {
     }
 
-4. All of the setup code to get a `CloudQueue` will be identical to what we did in the last exercise. Code duplication is a bad habit, even in samples so go ahead and, refactor the code that obtains the `CloudQueue` to a new method named `GetQueue` and change the `SendArticleAsync` to use your new method.
+1. All of the setup code to get a `CloudQueue` will be identical to what we did in the last exercise. Code duplication is a bad habit, even in samples so go ahead and, refactor the code that obtains the `CloudQueue` to a new method named `GetQueue` and change the `SendArticleAsync` to use your new method.
      - Make sure to leave the code that _creates_ the queue in the `SendArticleAsync` method; remember only the **publisher** should create the queue.
 
     ```csharp
@@ -34,14 +34,14 @@
     }
     ```
     
-5. `ReceiveArticleAsync` 메서드에서 새 `GetQueue` 메서드를 호출하여 큐 참조를 가져온 후 변수에 할당합니다.
+1. `ReceiveArticleAsync` 메서드에서 새 `GetQueue` 메서드를 호출하여 큐 참조를 가져온 후 변수에 할당합니다.
 
-6. 그런 다음, `CloudQueue` 개체에 대해 `ExistsAsync` 메서드를 호출합니다. 그러면 큐가 만들어졌는지와 관계없이 반환됩니다. 존재하지 않는 큐에서 메시지를 검색하려고 하면 API가 예외를 throw합니다.
+1. 그런 다음, `CloudQueue` 개체에 대해 `ExistsAsync` 메서드를 호출합니다. 그러면 큐가 만들어졌는지와 관계없이 반환됩니다. 존재하지 않는 큐에서 메시지를 검색하려고 하면 API가 예외를 throw합니다.
     - 이 메서드는 비동기적이므로 `await`를 사용하여 반환 값을 가져옵니다.
     - `ReceiveArticleAsync` 메서드에 `async` 키워드가 이미 있어야 하지만, 없으면 지금 추가합니다.
 
 
-7. `ExistsAsync`의 반환 값을 사용하는 `if` 블록을 추가합니다. 큐에서 블록으로 값을 읽는 코드를 추가하겠습니다. 값을 읽지 못했음을 나타내는 마지막 반환 문자열을 메서드에 추가합니다. 메서드는 다음과 같아야 합니다.
+1. `ExistsAsync`의 반환 값을 사용하는 `if` 블록을 추가합니다. 큐에서 블록으로 값을 읽는 코드를 추가하겠습니다. 값을 읽지 못했음을 나타내는 마지막 반환 문자열을 메서드에 추가합니다. 메서드는 다음과 같아야 합니다.
 
 ```csharp
 static async Task<string> ReceiveArticleAsync()
@@ -56,11 +56,11 @@ static async Task<string> ReceiveArticleAsync()
 }
 ```
 
-8. `CloudQueue` 개체에 대해 `GetMessageAsync`를 호출하여 큐에서 첫 번째 `CloudQueueMessage`를 가져옵니다. 큐가 비어 있으면 반환 값은 `null`입니다.
+1. `CloudQueue` 개체에 대해 `GetMessageAsync`를 호출하여 큐에서 첫 번째 `CloudQueueMessage`를 가져옵니다. 큐가 비어 있으면 반환 값은 `null`입니다.
 
-9. Null이 아니면 `CloudQueueMessage` 개체에 `AsString` 속성을 사용하여 메시지 내용을 가져옵니다.
+1. Null이 아니면 `CloudQueueMessage` 개체에 `AsString` 속성을 사용하여 메시지 내용을 가져옵니다.
 
-10. `CloudQueue` 개체에 대해 `DeleteMessageAsync`를 호출하여 큐에서 메시지를 삭제합니다.
+1. `CloudQueue` 개체에 대해 `DeleteMessageAsync`를 호출하여 큐에서 메시지를 삭제합니다.
 
 최종 메서드 구현은 다음과 유사해야 합니다.
 
@@ -83,12 +83,15 @@ static async Task<string> ReceiveArticleAsync()
     return "<queue empty or not created>";
 }
 ```
+
 ## <a name="call-the-receivearticleasync-method"></a>ReceiveArticleAsync 메서드 호출
 
 마지막으로, 새 메서드를 호출하는 지원을 추가하겠습니다. 프로그램에 매개 변수를 전달하지 않을 때 이 작업을 수행합니다.
 
 1. `Main` 메서드와 매개 변수를 찾기 위해 이전에 추가한 `if` 블록을 찾습니다.
+
 1. `else` 조건을 추가하고 `ReceiveArticleAsync` 메서드를 호출합니다. 
+
 1. 이 메서드는 비동기적이므로 일반적으로는 `await`를 사용하려고 합니다. 그러나 앞서 설명한 것처럼 모든 버전의 C#에서 작동하는 것은 아니므로 `Result` 속성을 사용하여 반환 값을 가져온 후 콘솔 창에 출력합니다.
 
 코드는 다음과 유사해야 합니다.

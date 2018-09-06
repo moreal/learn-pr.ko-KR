@@ -7,13 +7,16 @@ Azure Web Apps를 개발하는 회사에서 근무한다고 가정합니다. 이
 이 모듈에서는 Azure CLI를 사용하여 Azure 리소스를 관리하는 방법을 보여 줍니다. 
 
 ## <a name="learning-objectives"></a>학습 목표
+
 이 모듈에서는 다음을 수행합니다.
 
 - Linux, macOS 및/또는 Windows에 Azure CLI를 설치합니다.
 - Azure CLI를 사용하여 Azure 구독에 연결합니다.
 - Azure CLI를 사용하여 Azure 리소스를 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 조건  
+
 - PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
 - 리소스 그룹과 같은 기본 Azure 개념에 대한 지식
 - Azure Portal을 사용하여 Azure 리소스 관리 경험
+- 

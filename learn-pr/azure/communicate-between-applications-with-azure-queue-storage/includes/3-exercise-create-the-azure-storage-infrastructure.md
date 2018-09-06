@@ -8,14 +8,14 @@
 
 1. 오른쪽의 Cloud Shell에서 Bash 선택 옵션이 제공되면 Bash를 선택합니다.
 
-2. `az group create` Azure CLI 명령을 사용하여 새 리소스 그룹을 만듭니다. 이름을 **ExerciseResources**로 지정하고 가까운 위치에 둡니다. 
+1. `az group create` Azure CLI 명령을 사용하여 새 리소스 그룹을 만듭니다. 이름을 **ExerciseResources**로 지정하고 가까운 위치에 둡니다. 
     - 아래 예제에서는 위치로 “eastus”를 사용합니다.
 
     ```azurecli
     az group create -n ExerciseResources --location eastus
     ```
         
-2. 다음으로 `az storage account create` 명령을 사용하여 실제 저장소 계정을 만듭니다. 다음과 같은 몇 가지 매개 변수를 제공해야 합니다.
+1. 다음으로 `az storage account create` 명령을 사용하여 실제 저장소 계정을 만듭니다. 다음과 같은 몇 가지 매개 변수를 제공해야 합니다.
 
 | 매개 변수 | 값 |
 |-----------|-------|

@@ -1,12 +1,3 @@
----
-zone_pivot_groups: dev-lang-csharp-javascript
-ms.openlocfilehash: 69bc512c02a30bc74ae82a3a43a083af635d89ba
-ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43154578"
----
 빌드 중인 응용 프로그램은 사진 갤러리입니다. API를 호출하는 클라이언트 쪽 JavaScript를 사용하여 이미지를 업로드하고 표시합니다. 이 모듈에서 이미지를 업로드하려면 시간이 제한된 URL을 생성하는 서버를 사용하지 않는 함수를 사용하여 API를 만듭니다. 웹 응용 프로그램은 [Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)를 사용하여 Blob Storage에 이미지를 업로드하기 위해 생성된 URL을 사용합니다.
 
 ## <a name="create-a-blob-storage-container-for-images"></a>이미지에 대한 Blob Storage 컨테이너 만들기

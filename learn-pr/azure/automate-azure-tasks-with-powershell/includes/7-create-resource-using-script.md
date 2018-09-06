@@ -89,6 +89,7 @@ param([int]$size, [string]$location)
 
 ## <a name="how-to-create-a-linux-virtual-machine"></a>Linux 가상 머신을 만드는 방법
 Azure PowerShell은 가상 머신을 만드는 **New-AzureRmVm** cmdlet을 제공합니다. 이 cmdlet에는 많은 VM 구성 설정을 처리할 수 있는 여러 매개 변수가 있습니다. 대부분의 매개 변수에 적절한 기본값이 있으므로 다음 5개 매개 변수만 지정하면 됩니다.
+
 - **ResourceGroupName**: 새 VM이 배치될 리소스 그룹입니다.
 - **Name**: Azure의 VM 이름입니다.
 - **Location**: VM이 프로비전될 지리적 위치입니다.
