@@ -6,7 +6,7 @@ Azure Storage는 클라우드 기반 솔루션으로, 현대의 비즈니스 요
 
 ## <a name="benefits-of-using-azure-to-store-data"></a>데이터 저장에 Azure를 사용하는 혜택
 
-![혜택](../images/Benefits.png)
+![혜택](../media-draft/Benefits.png)
 
 Azure Storage의 혜택을 몇 가지 살펴보면 다음과 같습니다.
 

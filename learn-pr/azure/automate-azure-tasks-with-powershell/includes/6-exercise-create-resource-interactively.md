@@ -31,7 +31,9 @@ Linux 관리 도구 모음을 만드는 회사에서 일한다고 가정해 보�
     ```
 리소스 그룹이 성공적으로 만들어졌는지 확인하는 또 다른 방법은 Azure Portal을 사용하는 것입니다. 이렇게 하려면 포털에 로그인하고 **리소스 그룹** 섹션(아래 참조)으로 이동합니다. 새 리소스 그룹이 목록에 표시되어야 합니다.
 
-![포털을 사용하여 리소스 그룹 나열](../media-drafts/6-listing-resource-groups.png)
+다음 스크린샷은 Azure Portal에서 리소스 그룹 범주의 위치를 보여 줍니다.
+
+![리소스 그룹 범주가 강조 표시된 Azure Portal 즐겨찾기 블레이드의 스크린샷](../media/6-listing-resource-groups.png)
 
 ## <a name="summary"></a>요약
 이 연습에서는 대화형 PowerShell 세션의 일반적인 패턴을 보여 줍니다. 표준 cmdlet을 사용하여 AzureRM 모듈을 가져온 후에 Azure PowerShell cmdlet을 사용하여 특정 작업을 수행했습니다. 이제 구독에 리소스 그룹이 있으며 VM을 만들 준비가 되었습니다.

@@ -17,7 +17,7 @@ az webapp create --name <your-unique-app-name> --plan keyvault-exercise-plan --r
 
 ### <a name="add-configuration-to-the-app"></a>앱에 구성 추가
 
-Azure에 배포하려면 구성 파일 대신 응용 프로그램 설정에 구성을 넣는 App Service 모범 사례를 따릅니다.
+Azure에 배포하려면 구성 파일 대신 응용 프로그램 설정에 VaultName 구성을 넣는 App Service 모범 사례를 따릅니다.
 
 ```azurecli
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
@@ -48,7 +48,7 @@ az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-pri
 > [!NOTE]
 > 아직 이동하지 않은 경우에는 `cd`를 실행하여 다시 KeyVaultDemoApp 디렉터리로 이동해야 합니다.
 
-```console
+```azurecli
 dotnet publish -o pub
 zip -j site.zip pub/*
 az webapp deployment source config-zip --src site.zip --name <your-unique-app-name> --resource-group keyvault-exercise-group

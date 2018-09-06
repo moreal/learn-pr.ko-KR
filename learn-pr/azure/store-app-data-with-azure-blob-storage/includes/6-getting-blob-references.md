@@ -4,9 +4,9 @@ Blob의 이름을 사용하거나 컨테이너의 Blob 목록에서 선택하여
 
 ## <a name="getting-blobs-by-name"></a>이름으로 Blob 가져오기
 
-`CloudBlobContainer`에서 `GetXXXReference` 메서드 중 하나를 호출하여 이름을 기준으로 `ICloudBlob`을 가져옵니다. 검색 중인 Blob의 유형을 알고 있는 경우에는 보다 구체적인 메서드(`GetBlockBlobReference`, `GetAppendBlobReference`, `GetPageBlobReference`) 중 하나를 사용하는 것이 더 좋습니다.
+`CloudBlobContainer`에서 `GetXXXReference` 메서드 중 하나를 호출하여 이름을 기준으로 `ICloudBlob`을 가져옵니다. 검색 중인 Blob 유형을 알고 있는 경우 특정 메서드(`GetBlockBlobReference`, `GetAppendBlobReference` 또는 `GetPageBlobReference`) 중 하나를 사용하여 해당 Blob 유형에 맞게 조정된 메서드 및 속성을 포함하는 개체를 가져옵니다.
 
-이러한 메서드는 네트워크 호출을 수행하지 않고 Blob이 실제로 존재하는지 여부를 확인하지도 않습니다. 별도의 `GetBlobReferenceFromServerAsync` 메서드가 Blob Storage API를 호출하고 Blob이 아직 없는 경우 예외를 throw합니다.
+이러한 메서드는 네트워크 호출을 수행하지 않고 대상 Blob이 실제로 존재하는지 여부를 확인하지도 않습니다. 또한 Blob 참조 개체를 로컬로만 만듭니다. 이러한 개체는 네트워크를 통해 ‘작동’하고 저장소의 Blob과 상호 작용하는 메서드를 호출하는 데 사용될 수 있습니다. 별도의 `GetBlobReferenceFromServerAsync` 메서드가 Blob Storage API를 호출하고 Blob이 아직 없는 경우 예외를 throw합니다.
 
 ## <a name="listing-blobs-in-a-container"></a>컨테이너 Blob 나열
 
@@ -14,7 +14,7 @@ Blob의 이름을 사용하거나 컨테이너의 Blob 목록에서 선택하여
 
 ```csharp
 BlobContinuationToken continuationToken = null;
-BlobResultSegment resultSegment = null; 
+BlobResultSegment resultSegment = null;
 
 do
 {
@@ -28,11 +28,14 @@ do
 
 `continuationToken`이 결과의 끝을 나타내는 `null`일 때까지 `ListBlobsSegmentedAsync`을 반복적으로 호출합니다.
 
+> [!IMPORTANT]
+> `ListBlobsSegmentedAsync` 결과가 단일 페이지로 도착할 것으로 가정하지 마세요. 항상 연속 토큰을 확인하고 해당 토큰이 있으면 사용합니다.
+
 ### <a name="processing-list-results"></a>목록 결과 처리
 
-`ListBlobsSegmentedAsync`에서 가져올 개체에는 `IEnumerable<IListBlobItem>` 유형의 `Results` 속성이 포함되어 있습니다. `IListBlobItem`에는 Blob의 컨테이너 및 URL에 대한 몇 가지 속성이 포함되어 있지만 업로드 또는 다운로드 메서드는 포함되지 않습니다. 이는 일부 결과 개체가 개별 Blob 대신 가상 디렉터리를 나타내는 `CloudBlobDirectory` 개체일 수 있기 때문입니다.
+`ListBlobsSegmentedAsync`에서 가져올 개체에는 `IEnumerable<IListBlobItem>` 유형의 `Results` 속성이 포함되어 있습니다. `IListBlobItem` 인터페이스는 Blob 컨테이너 및 URL에 대한 몇 개의 속성을 포함할 뿐이며 자체적으로 그렇게 유용하지는 않습니다.
 
-개별 Blob에만 관심이 있는 경우에는 `OfType<>` 메서드를 사용하여 결과를 필터링할 수 있습니다. 다음은 몇 가지 예입니다.
+`Results`에서 유용한 Blob 개체를 가져오려면 `OfType<>` 메서드를 사용하여 결과를 필터링하고 좀 더 구체적인 Blob 개체 형식으로 캐스트할 수 있습니다. 다음은 몇 가지 예입니다.
 
 ```csharp
 // Get all blobs
@@ -42,13 +45,14 @@ var allBlobs = resultSegment.Results.OfType<ICloudBlob>();
 var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 ```
 
-`OfType<>`을 사용하려면 `System.Linq` 네임스페이스에 대한 참조(`using System.Linq;`)가 필요합니다.
+> [!NOTE]
+> `OfType<>`을 사용하려면 `System.Linq` 네임스페이스에 대한 참조(`using System.Linq;`)가 필요합니다.
 
 ## <a name="exercise"></a>연습
 
 앱의 기능 중 하나가 작동하려면 API에서 Blob 목록을 가져와야 합니다. 위에 나온 패턴을 사용하여 컨테이너의 모든 Blob을 나열하겠습니다. 목록을 처리할 때 각 Blob의 이름을 가져옵니다.
 
-편집기에서 `BlobStorage.cs`를 열고 `GetNames`에 다음 코드를 입력합니다.
+편집기에서 `BlobStorage.cs`를 열고 `GetNames`를 다음 코드로 바꾼 후 변경 내용을 저장합니다.
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()
@@ -75,5 +79,8 @@ public async Task<IEnumerable<string>> GetNames()
     return names;
 }
 ```
+
+> [!TIP]
+> 이제 메서드 서명은 `async`를 지정해야 합니다.
 
 이 메서드로 반환된 이름은 `FilesController`에 의해 처리되어 URL로 변환됩니다. 이 이름이 클라이언트에 반환되면 페이지에서 하이퍼링크로 렌더링됩니다.

@@ -1,9 +1,9 @@
 ## <a name="creating-key-vaults-for-your-applications"></a>응용 프로그램에 대한 Key Vault 만들기
 
-개발, 테스트, 프로덕션과 같이 사용하는 각 배포 환경을 위한 별도의 자격 증명 모음을 각 응용 프로그램에 제공하는 것이 좋습니다. 앱 간에 비밀을 공유하는 것이 편리할 수 있지만, 공격자가 자격 증명 모음에 대한 읽기 권한을 얻으면 자격 증명 모음의 비밀 수가 증가합니다.
+개발, 테스트, 프로덕션과 같이 각 응용 프로그램의 각 배포 환경을 위한 별도의 자격 증명 모음을 만드는 것이 좋습니다. 자격 증명 모음을 사용하여 여러 앱 간에 비밀을 공유할 수 있지만, 공격자가 자격 증명 모음에 대한 읽기 권한을 얻으면 자격 증명 모음의 비밀 수가 증가합니다.
 
 > [!TIP]
-> 서로 다른 환경에서 비밀에 동일한 이름을 사용하는 경우 앱의 환경 관련 구성에서는 자격 증명 모음 URL만 변경하면 됩니다.
+> 응용 프로그램에 대한 서로 다른 환경에서 비밀에 동일한 이름을 사용하는 경우 앱의 환경 관련 구성에서는 자격 증명 모음 URL만 변경하면 됩니다.
 
 자격 증명 모음을 만드는 데 초기 구성이 필요하지 않습니다. 사용자 ID에 전체 비밀 관리 권한 집합이 자동으로 부여되므로 즉시 비밀 추가를 시작할 수 있습니다. 자격 증명 모음이 있으면 Azure Portal, Azure CLI 및 Azure PowerShell 등 모든 Azure 관리 인터페이스에서 비밀을 추가하고 관리할 수 있습니다. 자격 증명 모음을 사용하도록 응용 프로그램을 설정할 경우 응용 프로그램에 올바른 권한을 할당해야 합니다. 다음 단원에서 확인해 보겠습니다.
 
@@ -51,7 +51,7 @@ az keyvault create --name <your-unique-vault-name> --resource-group keyvault-exe
 이제 비밀을 추가합니다. 비밀의 이름은 **SecretPassword**로 지정되고 값은 **reindeer_flotilla**입니다.
 
 ```azurecli
-az keyvault secret set --name SecretPassword --value open_sesame --vault-name <your-unique-vault-name>
+az keyvault secret set --name SecretPassword --value reindeer_flotilla --vault-name <your-unique-vault-name>
 ```
 
 곧 다시 필요하게 되므로 자격 증명 모음 이름을 기록해 두세요.

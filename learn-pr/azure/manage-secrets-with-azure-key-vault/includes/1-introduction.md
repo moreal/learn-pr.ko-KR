@@ -11,8 +11,9 @@ Steve는 앱의 여러 인스턴스를 서로 다른 서버에서 실행했다�
 데이터베이스 연결 문자열, API 키 또는 서비스 암호의 누수는 치명적일 수 있습니다. 데이터 도난 또는 삭제, 재정적 피해, 응용 프로그램 가동 중지 시간, 비즈니스 자산 및 평판에 미치는 막대한 피해 등이 모두 잠재적인 결과입니다. 그러나 비밀 값은 종종 동시에 여러 위치에 배포하고 부적절한 시간에 변경해야 합니다. 또한 ‘어딘가에’ 저장해야 합니다. 이 모든 사항을 Azure Key Vault로 안전하게 관리할 수 있는 방법을 알아보겠습니다.
 
 ## <a name="learning-objectives"></a>학습 목표
-> [!div class="checklist"]
-> * Azure Key Vault에 저장할 수 있는 정보 종류 이해
-> * Azure Key Vault 저장소 만들기
-> * Azure Key Vault를 사용한 인증
-> * Azure Key Vault의 비밀에 액세스
+이 모듈에서는 다음을 수행합니다.
+
+- Azure Key Vault에 저장할 수 있는 정보 종류를 이해합니다.
+- Azure Key Vault 저장소를 만듭니다.
+- Azure Key Vault를 사용하여 인증합니다.
+- Azure Key Vault의 비밀에 액세스합니다.

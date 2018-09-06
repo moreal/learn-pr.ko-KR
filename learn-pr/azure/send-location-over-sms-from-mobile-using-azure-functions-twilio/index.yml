@@ -1,0 +1,33 @@
+### YamlMime:Module
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio
+title: Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유
+summary: 휴대폰의 위치 추적 기능과 Azure Functions 및 Twilio를 함께 사용하여 친구에게 위치를 문자 메시지로 공유하는 방법 알아봅니다.
+abstract: 이 모듈에서는 Azure Functions를 사용하여 HTTP API를 빌드하고, Xamarin으로 만든 모바일 앱을 사용하여 Functions를 호출하고, Functions를 타사 서비스에 바인딩하는 방법을 보여 줍니다. iOS, Android 및 Windows에서 실행되고 Xamarin.Essentials를 사용하여 사용자 위치를 가져오는 Xamarin.Forms 앱과 일부 전화 번호를 허용하는 기본 UI를 만드는 작업에서 시작합니다. 그런 다음, Azure Functions 백 엔드를 만들어 앱에서 호출할 API를 제공하고 API 요청에 위치 및 전화 번호를 전달합니다. 이 함수는 Twilio 바인딩을 사용하여 API에 전달된 번호로 SMS 메시지를 보냅니다. 받는 사람은 이 메시지에 포함된 지도 링크를 따라 보낸 사람의 위치를 표시할 수 있습니다.
+cardDescription: 휴대폰의 위치 추적 기능과 Azure Functions 및 Twilio를 함께 사용하여 친구에게 위치를 문자 메시지로 공유하는 방법 알아봅니다.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+metadata:
+  title: Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유
+  description: 휴대폰의 위치 추적 기능과 Azure Functions 및 Twilio를 함께 사용하여 친구에게 위치를 문자 메시지로 공유하는 방법 알아봅니다.
+  ms.openlocfilehash: 589efdafab97764f385bbef51b1690367a442390
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43155377"
+units:
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.1.create-twilio-account-launch-vs
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.2-create-your-xamarin-forms-app-with-xamarin-essentials
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.3-build-your-xamarin-app
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.4-detect-the-users-location
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.5-create-an-azure-functions-mobile-backend
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.6-call-the-mobile-backend
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.7-bind-the-azure-function-to-twilio
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.8-publish-to-azure
+- learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.9-summary-and-cleanup
+achievement: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge

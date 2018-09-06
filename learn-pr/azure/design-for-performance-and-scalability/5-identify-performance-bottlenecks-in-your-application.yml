@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+title: 응용 프로그램에서 성능 병목 상태 식별
+metadata:
+  title: 응용 프로그램에서 성능 병목 상태 식별
+  description: 이 단원에서는 응용 프로그램에서 성능 병목 상태를 식별하는 방법을 알아보겠습니다.
+  ms.openlocfilehash: 0b5ab3a983a4b3dfc3a76c914b6a565f3ee7ed2c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180381"
+durationInMinutes: 5
+content: >
+  [!include[](includes/5-identify-performance-bottlenecks-in-your-application.md)]
+quiz:
+  title: 지식 검사 - 응용 프로그램에서 성능 병목 상태 식별
+  questions:
+  - content: 다음 중 Application Insights를 가장 잘 나타낸 설명은 어느 것인가요?
+    choices:
+    - content: Azure의 모니터링 요구를 위한 단일 창
+      isCorrect: false
+    - content: 상태 엔드포인트 모니터링 패턴 구현
+      isCorrect: false
+    - content: 인프라 및 응용 프로그램에서 로그 수집이 가능한 작업 영역
+      isCorrect: false
+    - content: 웹 응용 프로그램의 가용성, 성능 및 사용 현황을 모니터하는 서비스
+      isCorrect: true
+  - content: Log Analytics를 사용하여 사용자 지정 로그 및 메트릭을 추적할 수 있습니다.
+    choices:
+    - content: "True"
+      isCorrect: true
+    - content: "False"
+      isCorrect: false

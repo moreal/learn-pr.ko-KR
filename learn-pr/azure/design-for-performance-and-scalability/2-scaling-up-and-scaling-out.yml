@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+title: 확장 및 스케일 아웃
+metadata:
+  title: 확장 및 스케일 아웃
+  description: 이 단원에서는 아키텍처에서 확장 및 스케일 아웃을 활용하는 방법을 알아보겠습니다.
+  ms.openlocfilehash: 4ed99e6cb8b57d6c60577a34af8595da73b8d41c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180565"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-scaling-up-and-scaling-out.md)]
+quiz:
+  title: 지식 검사 - 확장 및 스케일 아웃
+  questions:
+  - content: 스케일 아웃을 가장 정확하게 설명하는 내용은 어느 것인가요?
+    choices:
+    - content: 인스턴스의 리소스 양 늘리기
+      isCorrect: false
+    - content: 요청을 처리하는 인스턴스 수 늘리기
+      isCorrect: true
+    - content: 가상 머신에 추가 저장소 추가
+      isCorrect: false
+    - content: 응용 프로그램에 대한 최대 확장 수준에 도달
+      isCorrect: false
+  - content: 규모 축소를 가장 정확하게 설명하는 내용은 어느 것인가요?
+    choices:
+    - content: 요청을 처리하는 인스턴스 수 줄이기
+      isCorrect: false
+    - content: 응용 프로그램의 크기 조정 방식에 대한 소유권 보유
+      isCorrect: false
+    - content: 인스턴스의 리소스 양 줄이기
+      isCorrect: true
+    - content: 응용 프로그램에 대한 최대 확장 수준에 아직 도달하지 않음
+      isCorrect: false
+  - content: 다음 중 응용 프로그램에 대한 크기 조정 전략을 작성할 때 고려 사항이 아닌 것은 무엇인가요?
+    choices:
+    - content: 인스턴스의 백업 보존 정책
+      isCorrect: true
+    - content: 응용 프로그램의 상태 관리
+      isCorrect: false
+    - content: 인스턴스의 시작 시간
+      isCorrect: false
+    - content: 일부 메트릭 또는 일정을 기준으로 인스턴스 크기 조정 자동화
+      isCorrect: false

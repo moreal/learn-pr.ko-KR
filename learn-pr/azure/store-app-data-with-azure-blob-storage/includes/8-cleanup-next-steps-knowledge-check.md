@@ -5,16 +5,14 @@
 Azure 구독을 정리하려면 Azure Cloud Shell에서 다음을 실행하여 이 모듈에서 만든 모든 리소스가 포함된 리소스 그룹을 삭제합니다.
 
 ```console
-az group delete --name blob-exercise-group
+az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-Cloud Shell 저장소를 정리하려면 `rm -rf TODO`를 사용하여 `TODO` 디렉터리를 삭제합니다.
+Cloud Shell 저장소를 정리하려면 `FileUploader` 디렉터리를 삭제합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="further-reading"></a>추가 참고 자료
 
-**TODO docset 간 링크?**
-
-* **저장소 계정 키를 안전하게 저장**: 비밀 구성 값을 저장하기 위한 가장 강력한 종단 간 솔루션은 Azure Key Vault입니다. ASP.NET Core 응용 프로그램에서 Key Vault를 사용하는 방법에 대한 자세한 내용은 [여기](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)를 참조하세요. 또는 연결 문자열을 App Service 응용 프로그램 설정에 안전하게 저장하고 [ASP.NET Core 비밀 관리자 도구](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows)를 사용하여 개발자 환경을 지원할 수 있습니다.
+* **연결 문자열처럼 비밀을 안전하게 저장**: 비밀 구성 값을 저장하기 위한 가장 강력한 종단 간 솔루션은 Azure Key Vault입니다. ASP.NET Core 응용 프로그램에서 Key Vault를 사용하는 방법에 대한 자세한 내용은 [여기](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)를 참조하세요. 또는 연결 문자열을 App Service 응용 프로그램 설정에 안전하게 저장하고 [ASP.NET Core 비밀 관리자 도구](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows)를 사용하여 개발자 환경을 지원할 수 있습니다.
 * [ASP.NET Core에서 스트리밍을 통해 대용량 파일 업로드](https://docs.microsoft.com/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.1#uploading-large-files-with-streaming)
 * [Blob concurrency: AccessConditions and blob leases](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)(Blob 동시성: AccessConditions 및 Blob 임대)
 * [공유 액세스 서명을 사용하여 Azure Storage 개체에 제한된 액세스 권한 부여](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)

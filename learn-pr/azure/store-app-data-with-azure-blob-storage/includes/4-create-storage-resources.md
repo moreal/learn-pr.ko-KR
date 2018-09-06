@@ -12,9 +12,9 @@
 
 ## <a name="exercise"></a>연습
 
-Azure Blob Storage를 사용하도록 코드를 추가하여 완료되지 않은 ASP.NET Core 앱을 완료하겠습니다. 이 연습에서는 조직 및 이름 지정 체계를 디자인하기 보다는 Blob Storage API를 살펴보지만, 다음은 앱 및 앱이 데이터를 저장하는 방법에 대한 빠른 개요입니다.
+Azure Blob Storage를 사용하도록 코드를 추가하여 완료되지 않은 ASP.NET Core 앱을 완료하겠습니다. 이 연습에서는 조직 및 이름 지정 체계를 디자인하기보다는 Blob Storage API를 살펴보지만, 다음은 앱 및 앱이 데이터를 저장하는 방법에 대한 빠른 개요입니다.
 
-**앱의 TODO 스크린샷, 종료될 때까지 실행되는지 확인하지 않기 때문**
+![FileUploader 웹앱 스크린샷](../media-drafts/fileuploader-with-files.PNG)
 
 앱은 파일 업로드를 허용하고 파일을 다운로드할 수 있는 공유 폴더와 같이 작동합니다. Blob을 구성하는 데 데이터베이스를 사용하지 않고, 대신에 업로드된 파일의 이름을 삭제하고 직접 Blob 이름으로 사용합니다. 모든 업로드된 파일은 단일 컨테이너에 저장됩니다.
 
@@ -23,6 +23,7 @@ Azure Blob Storage를 사용하도록 코드를 추가하여 완료되지 않은
 앱에 대한 저장소 인프라를 설정하겠습니다.
 
 ### <a name="resource-group-and-storage-account"></a>리소스 그룹 및 저장소 계정
+
 먼저 이 연습의 모든 리소스를 포함하는 리소스 그룹을 만듭니다. 종료 시 리소스 그룹을 삭제하여 만든 모든 항목을 정리합니다. 앱에서 Blob을 저장하는 데 사용할 저장소 계정도 만듭니다.
 
 Azure Cloud Shell 터미널을 통해 다음 Azure CLI 명령을 실행하여 리소스 그룹 및 저장소 계정을 만듭니다. 저장소 계정의 고유한 이름을 제공해야 합니다. 나중에 사용하도록 기록해 두세요. 위치에 대한 `eastus`를 선택하는 것은 선택 사항입니다.
@@ -32,10 +33,9 @@ az group create --name blob-exercise-group --location eastus
 az storage account create --name <your-unique-storage-account-name> --resource-group blob-exercise-group --location eastus --kind StorageV2
 ```
 
-**아래 TODO가 Azure Storage 모듈에 포함되어야 함**
-
 > [!NOTE]
-> `--kind StorageV2`를 사용하는 이유 몇 가지 다른 유형의 저장소 계정이 있습니다. 대부분의 경우 범용 v2 저장소 계정(`StorageV2`로 서명됨)을 사용해야 합니다. 여기서 v2 저장소 계정을 지정해야 하는 유일한 이유는 해당 계정이 아직도 상당히 새롭고 Azure Portal 또는 Azure CLI에서 기본값으로 설정되지 않았기 때문입니다.
+> `--kind StorageV2`를 사용하는 이유 몇 가지 다른 유형의 저장소 계정이 있습니다. 대부분의 경우 범용 v2 계정을 사용해야 합니다. `--kind StorageV2`를 명시적으로 지정해야 하는 유일한 이유는 범용 v2 계정이 아직도 상당히 새롭고 Azure Portal 또는 Azure CLI에서 기본값으로 설정되지 않았기 때문입니다.
 
 ### <a name="container"></a>컨테이너
+
 이 모듈에서 작업하는 앱은 단일 컨테이너를 사용합니다. 앱이 시작 시 컨테이너를 만드는 모범 사례를 따르겠습니다. 그러나 컨테이너 만들기는 Azure CLI에서 수행할 수 있습니다. 설명서를 보려면 Cloud Shell 터미널에서 `az storage container create -h`를 실행합니다.

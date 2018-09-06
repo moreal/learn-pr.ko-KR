@@ -6,9 +6,9 @@
 
 이 혜택을 받으려면 Windows 라이선스에 Software Assurance가 적용되어야 합니다. 다음 지침도 적용됩니다.
 
-- 각 2개 프로세서 라이선스 또는 각 16코어 라이선스 집합이 있으면 최대 8코어 인스턴스 두 개 또는 최대 16코어 인스턴스 한 개를 받을 수 있습니다. 
+- 각 2개 프로세서 라이선스 또는 각 16코어 라이선스 집합이 있으면 최대 8코어 인스턴스 두 개 또는 최대 16코어 인스턴스 한 개를 받을 수 있습니다.
 - Standard Edition 라이선스는 온-프레미스 또는 Azure에서 한 번만 사용할 수 있습니다. 즉, Azure VM 및 로컬 컴퓨터에 동일한 라이선스를 사용할 수 없습니다.
-- Datacenter Edition 혜택은 온-프레미스와 Azure 둘 다에서 동시에 사용할 수 있으므로 라이선스 한 개로 두 대의 Windows 컴퓨터를 실행할 수 있습니다. 
+- Datacenter Edition 혜택은 온-프레미스와 Azure 둘 다에서 동시에 사용할 수 있으므로 라이선스 한 개로 두 대의 Windows 머신을 실행할 수 있습니다.
 
 > [!NOTE]
 > 대부분의 고객은 일반적으로 코어 단위로 라이선스가 부여되므로 해당 모델을 계산에 사용합니다. 보유한 라이선스에 대해 궁금한 점이 있으면 라이선스 리셀러 또는 Microsoft 계정 팀에 문의하세요.
@@ -23,13 +23,15 @@ Azure 리소스가 활성 중인 경우에도 이 혜택을 적용할 수 있지
 
 ### <a name="azure-sql-database-vcore-based-options"></a>Azure SQL Database vCore 기반 옵션
 
-![SQL Server 라이선스 보상](../images/sql-tradein-value.jpg)
-
 Azure SQL Database에 대한 Azure 하이브리드 혜택은 다음과 같습니다.
 
 - 활성 Software Assurance를 포함하는 Standard Edition 코어 단위 라이선스가 있는 경우 온-프레미스에 소유한 라이선스 코어마다 하나의 vCore를 범용 서비스 계층에서 사용할 수 있습니다.
 - 활성 Software Assurance를 포함하는 Enterprise Edition 코어 단위 라이선스가 있는 경우 온-프레미스에 소유한 라이선스 코어마다 1개의 vCore를 중요 비즈니스용 서비스 계층에서 사용할 수 있습니다. 중요 비즈니스용 서비스 계층용 SQL Server에 대한 Azure 하이브리드 혜택은 Enterprise Edition 라이선스가 있는 고객에게만 제공됩니다.
 - 활성 Software Assurance를 포함하는 높은 가상화 수준의 Enterprise Edition 코어 단위 라이선스가 있는 경우 온-프레미스에 소유한 라이선스 코어마다 4개의 vCore를 범용 서비스 계층에서 사용할 수 있습니다. 이는 Azure SQL Database에서만 사용할 수 있는 고유한 가상화 혜택입니다.
+
+다음 그림은 SQL Server 라이선스에 대한 Azure 하이브리드 혜택을 통해 각 서비스 계층에서 사용할 수 있는 vCore 기반 옵션을 보여 줍니다.
+
+![Azure 하이브리드 혜택을 사용하여 기존 SQL Server 라이선스의 가치를 최대화하는 방법에 대한 예제를 보여 주는 그림입니다.](../media-drafts/5-sql-tradein-value.png)
 
 Azure Virtual Machines의 SQL Server에 대한 Azure 하이브리드 혜택은 다음과 같습니다.
 
@@ -47,7 +49,7 @@ Azure Virtual Machines의 SQL Server에 대한 Azure 하이브리드 혜택은 �
 
 기업계약 고객이고 SQL Server 라이선스에 대한 기존 투자가 있으며 Azure로 리소스를 이동하는 과정에서 라이선스가 확보된 경우, Azure Marketplace에서 **BYOL**(사용자 라이선스 필요) 이미지를 프로비전하여 사용하지 않는 이러한 라이선스를 이용하고 Azure VM 비용을 줄일 수 있습니다. 언제든지 Windows VM을 프로비전하고 SQL Server를 수동으로 설치하여 이 작업을 수행할 수 있었지만, 이 경우 Microsoft 인증 이미지를 활용하여 생성 프로세스가 간소화됩니다. Marketplace에서 **BYOL**을 검색하여 해당 이미지를 찾으세요.
 
-![Azure의 SQL Server용 BYOL](../images/byol-sql-server.png)
+![Azure의 SQL Server용 BYOL](../media-drafts/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > 인증된 BYOL 이미지를 사용하려면 기업계약 구독이 필요합니다.

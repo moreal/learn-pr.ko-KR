@@ -6,9 +6,10 @@
 - PaaS(Platform as a Service)
 - SaaS(Software as a Service)
 
-한 가지 주의할 사항은 이러한 범주가 세로로 누적되는 계층이라는 것입니다. 예를 들어 PaaS는 추상화 수준을 제공하여 IaaS 위에 계층을 추가합니다. 추상화를 사용하면 더 빠르게 코딩할 수 있도록 중요하지 않은 세부 정보를 숨기는 혜택이 있습니다. 대신, 기본 하드웨어에 대한 제어가 약화되는 단점도 발생합니다.
+한 가지 주의할 사항은 이러한 범주가 세로로 누적되는 계층이라는 것입니다. 예를 들어 PaaS는 추상화 수준을 제공하여 IaaS 위에 계층을 추가합니다. 추상화를 사용하면 더 빠르게 코딩할 수 있도록 중요하지 않은 세부 정보를 숨기는 혜택이 있습니다. 대신, 기본 하드웨어에 대한 제어가 약화되는 단점도 발생합니다. 다음 그림은 사용자가 관리하는 리소스와 각 클라우드 서비스 범주에서 서비스 공급자가 관리하는 리소스의 목록을 보여 줍니다.
 
-![계층 다이어그램](../media-drafts/5-layer-diagram.jpg) GET THIS IMAGE REDRAWN^^
+![각 클라우드 서비스 범주의 추상화 수준을 보여 주는 그림입니다.](../media/5-layer-diagram.png)
+
 
 ### <a name="infrastructure-as-a-service-iaas"></a>IaaS(Infrastructure as a Service)
 

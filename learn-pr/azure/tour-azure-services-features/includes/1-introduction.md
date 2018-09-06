@@ -2,14 +2,17 @@ Azure는 클라우드에 호스트된 응용 프로그램을 빌드하는 데 �
 
 여기서는 Azure 계정을 만들고, Azure Portal에 로그인하고, Azure Portal 인터페이스를 탐색하는 방법에 대해 설명합니다. 편리하게 가장 중요한 서비스를 찾아 모니터링할 수 있도록 대시보드도 사용자 지정합니다.
 
-## <a name="learning-objectives"></a>학습 목표
+또한 체험 Azure 계정을 만들고, Azure Portal에 로그인하고, Portal 인터페이스를 탐색해봅니다. 편리하게 가장 중요한 서비스를 찾아 모니터링할 수 있도록 대시보드도 사용자 지정합니다.
 
-> [!div class="checklist"]
-> * Azure 계정 만들기
-> * Azure Portal 탐색
-> * 대시보드 사용자 지정
+
+## <a name="learning-objectives"></a>학습 목표
+이 모듈에서는 다음을 수행합니다.
+
+- Azure 계정 만들기
+- Azure Portal 탐색
+- 대시보드 사용자 지정
 
 ## <a name="prerequisites"></a>필수 조건
 
-- 클라우드 컴퓨팅의 기본 개념에 대한 지식
+- 클라우드 컴퓨팅의 기본 용어 및 개념에 대한 지식
 - Azure에 등록하는 데 사용할 유효한 신용 카드

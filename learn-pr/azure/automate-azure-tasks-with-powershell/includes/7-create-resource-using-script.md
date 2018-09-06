@@ -16,7 +16,9 @@ PowerShell 스크립트 파일에는 **.ps1** 파일 확장명이 있습니다. 
 > [!TIP]
 > Windows에서 PowerShell 스크립트를 작성하는 경우 Windows PowerShell ISE(통합 스크립팅 환경)를 사용할 수 있습니다. 이 편집기는 구문 색 지정, 사용 가능한 cmdlet 목록 등의 기능을 제공합니다.
 >
->![Windows PowerShell ISE](../media-drafts/7-windows-powershell-ise-screenshot.png)
+다음 스크린샷은 Azure에 연결하고 Azure에서 가상 머신을 만들기 위한 샘플 스크립트를 포함하는 Windows PowerShell ISE(통합 스크립팅 환경)를 보여 줍니다.
+
+>![가상 머신을 만드는 스크립트가 편집 창에서 열려 있는 Windows PowerShell 통합 스크립팅 환경 스크린샷](../media/7-windows-powershell-ise-screenshot.png)
 
 스크립트를 작성한 후 파일 이름 앞에 점과 백슬래시를 추가해서 전달하여 PowerShell 명령줄에서 스크립트를 실행합니다.
 

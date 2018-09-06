@@ -16,20 +16,20 @@ Azure에 시스템을 빌드하고 앞으로 12개월 동안 이 시스템을 �
 
 ## <a name="estimate-a-solution"></a>솔루션 비용 예상
 
-원래 시나리오에서 이 시스템이 두 개의 Azure VM에서 실행되며 Azure SQL Database 인스턴스에 연결된다고 가정해 보겠습니다. 또한 다음과 같은 향상된 부하 분산 기능을 갖추도록 계층 7 방화벽도 구축하려고 합니다.
+원래 시나리오에서 이 시스템이 두 개의 Azure VM에서 실행되며 Azure SQL Database 인스턴스에 연결된다고 가정해 보겠습니다. 또한 다음과 같은 향상된 부하 분산 기능을 갖추도록 계층 7 방화벽도 구축하려고 합니다. 다음 그림은 단일 Azure SQL Database 인스턴스에 연결된 두 개의 가상 머신에 연결된 응용 프로그램 게이트웨이를 보여 줍니다.
 
-![시스템 아키텍처 다이어그램](../images/estimate-costs-architecture.png)
+![비용 예상을 설명하기 위한 예제로 사용될 샘플 아키텍처 그림입니다.](../media-drafts/2-estimate-costs-architecture.png)
 
-Azure 가격 계산기를 사용하여 솔루션 비용이 얼마인지 파악하고 예상 비용을 내보내 팀과 공유할 수 있습니다.
+Azure 가격 계산기를 사용하여 솔루션 비용이 얼마인지 파악하고 예상 비용을 내보내어 팀과 공유할 수 있습니다.
 
 > [!NOTE]
 > 비용 예상에는 아무 항목도 표시되지 않은 깨끗한 계산기가 있어야 합니다. 비용 예상에 표시된 항목이 있는 경우 각 항목에서 휴지통 아이콘을 클릭하여 비용 예상을 다시 설정하세요.
 
 Azure 가격 계산기의 **제품** 탭에서 다음 서비스를 클릭하여 예상에 추가합니다.
 
-- Virtual Machines
-- Azure SQL Database
-- Application Gateway
+- 계산 범주의 Virtual Machines
+- 데이터베이스 범주의 Azure SQL Database
+- 네트워크 범주의 Application Gateway
 
 **예상** 탭에서 각 서비스의 세부 정보를 구성하여 확실하게 비용을 예상할 수 있습니다. 모든 리소스에 대해 **미국 서부** 지역을 사용합니다.
 

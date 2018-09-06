@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+title: Java 개발자를 위한 Eclipse IDE 설정
+metadata:
+  title: Java 개발자를 위한 Eclipse IDE 설정
+  description: Java 개발자를 위한 Eclipse IDE 설정
+  ms.openlocfilehash: 1ca19b91c7ca86a2fbeee3023cc3bb4da387ce4d
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42938100"
+durationInMinutes: 5
+content: '[!include[](includes/6-set-up-eclipse-ide-for-java-developers.md)]'

@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.3-optimize-network-performance
+title: 네트워크 성능 최적화
+metadata:
+  title: 네트워크 성능 최적화
+  description: 이 단원에서는 아키텍처의 네트워크 성능을 최적화하는 방법을 알아봅니다.
+  ms.openlocfilehash: bfe474d0e07fb39d777d2571a8fc88352a8b7ca2
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180309"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-optimize-network-performance.md)]
+quiz:
+  title: 지식 검사 - 네트워크 성능 최적화
+  questions:
+  - content: 네트워크 대기 시간은 다음을 의미합니다.
+    choices:
+    - content: 네트워크의 노이즈 크기
+      isCorrect: false
+    - content: 원본에서 대상으로 정보를 보내는 데 걸리는 시간
+      isCorrect: true
+    - content: 콘텐츠 배달 네트워크의 자산 TTL
+      isCorrect: false
+    - content: 온-프레미스 네트워크와 Azure 간의 전용 회로
+      isCorrect: true
+  - content: 우리의 웹 응용 프로그램은 미국 동부에 호스트되어 있습니다. 전 세계 사용자를 위해 네트워크 대기 시간을 최적화하는 방법
+    choices:
+    - content: 각 사용자에게 ExpressRoute 배포
+      isCorrect: false
+    - content: 콘텐츠 배달 네트워크를 사용하여 자산 및 콘텐츠를 사용자에게 더 가까이 배치
+      isCorrect: true
+    - content: 성능 라우팅 모드에서 Traffic Manager 사용
+      isCorrect: false
+    - content: 추가 사용자 부하를 처리하기 위해 미국 동부에 더 많은 인스턴스 배포
+      isCorrect: false

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.5-connect-to-knowledge-base
+title: 기술 자료에 봇 연결
+metadata:
+  title: 기술 자료에 봇 연결
+  description: 기술 자료에 봇 연결
+  ms.openlocfilehash: 55bb80d5a5a8d599fb1b3ceb80e95415cf463ebc
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228983"
+durationInMinutes: 10
+content: '[!include[](includes/5-connect-to-knowledge-base.md)'
