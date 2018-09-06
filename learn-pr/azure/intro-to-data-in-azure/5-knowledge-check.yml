@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.5-knowledge-check
 metadata:
-  title: <span data-ttu-id="9961b-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="9961b-101">Knowledge check</span></span>
-  description: <span data-ttu-id="9961b-102">지식 검사.</span><span class="sxs-lookup"><span data-stu-id="9961b-102">Knowledge check.</span></span>
+  title: <span data-ttu-id="71d20-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="71d20-101">Knowledge check</span></span>
+  description: <span data-ttu-id="71d20-102">지식 검사.</span><span class="sxs-lookup"><span data-stu-id="71d20-102">Knowledge check.</span></span>
   displayType: one-column
-  ms.openlocfilehash: 8e63c9e7886d767824571f78eda178b9bdfd65f3
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 17bf564f5105a01d15d0fd205c7d70e21d3a8082
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40445929"
-title: <span data-ttu-id="9961b-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="9961b-103">Knowledge check</span></span>
-durationInMinutes: 11
-content: <span data-ttu-id="9961b-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="9961b-104">Knowledge check</span></span>
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251979"
+title: <span data-ttu-id="71d20-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="71d20-103">Knowledge check</span></span>
+durationInMinutes: 5
+content: <span data-ttu-id="71d20-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="71d20-104">Knowledge check</span></span>
 quiz:
-  title: <span data-ttu-id="9961b-105">지식 검사</span><span class="sxs-lookup"><span data-stu-id="9961b-105">Knowledge check</span></span>
+  title: <span data-ttu-id="71d20-105">지식 검사</span><span class="sxs-lookup"><span data-stu-id="71d20-105">Knowledge check</span></span>
   questions:
-  - content: <span data-ttu-id="9961b-106">온라인 학습 포털은 각 사용자의 실제 주소와 해당 메일 주소의 기록을 유지해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-106">Your online learning portal needs to keep a record of each user's physical address and their email address.</span></span> <span data-ttu-id="9961b-107">이 정보를 잘 관리할 수 있는 Azure 기능은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="9961b-107">Which Azure features will let you manage this information well?</span></span>
+  - content: <span data-ttu-id="71d20-106">온라인 학습 포털은 각 사용자의 실제 주소와 해당 메일 주소의 기록을 유지해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-106">Your online learning portal needs to keep a record of each user's physical address and their email address.</span></span> <span data-ttu-id="71d20-107">이 정보를 잘 관리할 수 있는 Azure 기능은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="71d20-107">Which Azure features will let you manage this information well?</span></span>
     choices:
-    - content: <span data-ttu-id="9961b-108">Azure Archive</span><span class="sxs-lookup"><span data-stu-id="9961b-108">Azure Archive</span></span>
+    - content: <span data-ttu-id="71d20-108">Azure Archive</span><span class="sxs-lookup"><span data-stu-id="71d20-108">Azure Archive</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="9961b-109">Azure Archive는 이전 버전의 데이터를 저장하는 데 적합하므로 감사나 다른 자주 사용하지 않는 활동에 필요할 때 보관 저장소를 검색할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-109">Azure Archive is ideal to store older versions of your data so that you can retrieve it as and when required for auditing or other infrequent activities.</span></span>
-    - content: <span data-ttu-id="9961b-110">Azure SQL</span><span class="sxs-lookup"><span data-stu-id="9961b-110">Azure SQL</span></span>
+      incorrectExplanation: <span data-ttu-id="71d20-109">Azure Archive는 이전 버전의 데이터를 저장하는 데 적합하므로 감사나 다른 자주 사용하지 않는 활동에 필요할 때 Azure Archive를 검색할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-109">Azure Archive is ideal for storing older versions of your data so that you can retrieve it when it's required for auditing or other infrequent activities.</span></span>
+    - content: <span data-ttu-id="71d20-110">Azure SQL Database</span><span class="sxs-lookup"><span data-stu-id="71d20-110">Azure SQL Database</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="9961b-111">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="9961b-111">Correct!</span></span> <span data-ttu-id="9961b-112">Azure SQL은 관계형 데이터를 저장하고 강력한 쿼리를 통해 데이터를 신속하게 검색하는 데 도움이 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-112">Azure SQL helps store relational data and retrieves the data quickly with powerful queries.</span></span>
-    - content: <span data-ttu-id="9961b-113">Azure 파일</span><span class="sxs-lookup"><span data-stu-id="9961b-113">Azure Files</span></span>
+      correctExplanation: <span data-ttu-id="71d20-111">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="71d20-111">Correct!</span></span> <span data-ttu-id="71d20-112">Azure SQL Database는 관계형 데이터를 저장하고 강력한 쿼리를 통해 데이터를 신속하게 검색하는 데 도움이 됩니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-112">Azure SQL Database helps store relational data and retrieves the data quickly with powerful queries.</span></span>
+    - content: <span data-ttu-id="71d20-113">Azure Files</span><span class="sxs-lookup"><span data-stu-id="71d20-113">Azure Files</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="9961b-114">Azure Files는 클라우드의 파일 공유에 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-114">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="9961b-115">Windows, Linux 및 macOS의 클라우드 또는 온-프레미스 배포를 통해 동시에 탑재될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-115">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
-  - content: <span data-ttu-id="9961b-116">판매 학습 포털에서 사용하는 시뮬레이션 파일은 상당히 큰 파일 크기로 커질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-116">The simulation files used by the sales learning portals can grow to significantly large file size.</span></span> <span data-ttu-id="9961b-117">Azure에서 이러한 파일을 지원하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="9961b-117">How will Azure support these files?</span></span>
+      incorrectExplanation: <span data-ttu-id="71d20-114">Azure Files는 클라우드의 파일 공유에 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-114">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="71d20-115">Windows, Linux 및 macOS의 클라우드 또는 온-프레미스 배포를 통해 동시에 탑재될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-115">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
+  - content: <span data-ttu-id="71d20-116">판매 학습 포털에서 사용하는 시뮬레이션 파일은 상당히 큰 크기로 커질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-116">The simulation files used by the sales learning portals can grow to significantly large sizes.</span></span> <span data-ttu-id="71d20-117">Azure에서 이러한 파일을 지원하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="71d20-117">How will Azure support these files?</span></span>
     choices:
-    - content: <span data-ttu-id="9961b-118">Azure Blob Storage는 최대 8TB 크기의 파일을 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-118">Azure Blob storage can support files up to 8TB in size</span></span>
+    - content: <span data-ttu-id="71d20-118">Azure Blob Storage는 최대 8TB 크기의 파일을 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-118">Azure Blob storage can support files up to 8 TB in size</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="9961b-119">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="9961b-119">Correct!</span></span> <span data-ttu-id="9961b-120">Azure Blob Storage는 전 세계 어디에서나 브라우저로 직접 대용량 비디오 또는 오디오 파일을 저장하고 스트리밍하는 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-120">Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.</span></span>
-    - content: <span data-ttu-id="9961b-121">Azure Files는 대용량 파일을 저장하고 스트리밍하는 작업을 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-121">Azure Files can support storing and streaming large files</span></span>
+      correctExplanation: <span data-ttu-id="71d20-119">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="71d20-119">Correct!</span></span> <span data-ttu-id="71d20-120">Azure Blob Storage는 전 세계 어디에서나 브라우저로 직접 대용량 비디오 또는 오디오 파일을 저장하고 스트리밍하는 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-120">Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.</span></span>
+    - content: <span data-ttu-id="71d20-121">Azure Files는 대용량 파일을 저장하고 스트리밍하는 작업을 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-121">Azure Files can support storing and streaming of large files.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="9961b-122">Azure Files는 클라우드의 파일 공유에 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-122">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="9961b-123">Windows, Linux 및 macOS의 클라우드 또는 온-프레미스 배포를 통해 동시에 탑재될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-123">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
-    - content: <span data-ttu-id="9961b-124">Azure는 대용량 파일의 저장 및 스트리밍을 지원하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-124">Azure does not support storing and streaming large files</span></span>
+      incorrectExplanation: <span data-ttu-id="71d20-122">Azure Files는 클라우드의 파일 공유에 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-122">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="71d20-123">Windows, Linux 및 macOS의 클라우드 또는 온-프레미스 배포를 통해 동시에 탑재될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-123">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
+    - content: <span data-ttu-id="71d20-124">Azure는 대용량 파일의 저장 및 스트리밍을 지원하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-124">Azure does not support storing and streaming of large files.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="9961b-125">Azure에는 전 세계 어디에서나 브라우저로 직접 대용량 비디오 및 오디오 파일을 저장하고 스트리밍하는 기능이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-125">Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.</span></span>
-  - content: <span data-ttu-id="9961b-126">Azure에서 데이터의 지속성 및 안정성을 지원하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="9961b-126">How does Azure support durability and reliability of data?</span></span>
+      incorrectExplanation: <span data-ttu-id="71d20-125">Azure에는 전 세계 어디에서나 브라우저로 직접 대용량 비디오 및 오디오 파일을 저장하고 스트리밍하는 기능이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-125">Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.</span></span>
+  - content: <span data-ttu-id="71d20-126">Azure에서 데이터의 지속성 및 안정성을 지원하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="71d20-126">How does Azure support durability and reliability of data?</span></span>
     choices:
-    - content: <span data-ttu-id="9961b-127">Azure 복제 기능을 통해 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-127">Through Azure replication capabilities.</span></span>
+    - content: <span data-ttu-id="71d20-127">Azure 복제 기능을 통해 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-127">Through Azure replication capabilities.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="9961b-128">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="9961b-128">Correct!</span></span> <span data-ttu-id="9961b-129">Azure는 자연재해로부터 데이터를 보호하는 복제 기능을 제공하고 악의적인 공격으로부터 데이터를 보호하기 위한 암호화를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-129">Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.</span></span>
-    - content: <span data-ttu-id="9961b-130">데이터를 암호화 및 암호 해독하는 추가적인 프리미엄 지원이 필요하고 안정성은 타사 백업 기능을 통해 지원함</span><span class="sxs-lookup"><span data-stu-id="9961b-130">You need additional premium support to encrypt and decrypt your data and reliability is supported by third-party backup features</span></span>
+      correctExplanation: <span data-ttu-id="71d20-128">맞습니다!</span><span class="sxs-lookup"><span data-stu-id="71d20-128">Correct!</span></span> <span data-ttu-id="71d20-129">Azure는 자연재해로부터 데이터를 보호하는 복제 기능을 제공하고 악의적인 공격으로부터 데이터를 보호하기 위한 암호화를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-129">Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.</span></span>
+    - content: <span data-ttu-id="71d20-130">데이터를 암호화 및 암호 해독하는 추가적인 프리미엄 지원이 필요하고 안정성은 타사 백업 기능을 통해 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-130">You need additional premium support to encrypt and decrypt your data, and reliability is supported by third-party backup features.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="9961b-131">추가 지원이 필요하지 않으며, Azure에는 예기치 않은 위험과 위협으로부터 데이터를 보호하는 기능이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-131">You don't need any additional support; Azure has the capabilities to protect your data against any unforeseen risks and threats.</span></span>
-    - content: <span data-ttu-id="9961b-132">Azure에는 기본 제공 중복성 및 암호화 기능이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-132">Azure does not have in-built redundancy and encryption features.</span></span>
+      incorrectExplanation: <span data-ttu-id="71d20-131">추가 지원이 필요하지 않으며, Azure에는 예기치 않은 위험과 위협으로부터 데이터를 보호하는 기능이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-131">You don't need any additional support; Azure has the capability to protect your data against unforeseen risks and threats.</span></span>
+    - content: <span data-ttu-id="71d20-132">Azure에는 기본 제공 중복성 및 암호화 기능이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-132">Azure does not have in-built redundancy and encryption features.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="9961b-133">Azure는 위험 및 위협으로부터 데이터를 보호하는 기본 제공 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="9961b-133">Azure comes with in-built capabilities to protect your data against risks and threats.</span></span>
+      incorrectExplanation: <span data-ttu-id="71d20-133">Azure는 위험 및 위협으로부터 데이터를 보호하는 기본 제공 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="71d20-133">Azure comes with in-built capabilities for protecting your data against risks and threats.</span></span>

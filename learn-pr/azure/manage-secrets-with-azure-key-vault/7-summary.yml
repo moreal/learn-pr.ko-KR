@@ -1,15 +1,75 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.7-summary
-title: <span data-ttu-id="4f5c7-101">요약</span><span class="sxs-lookup"><span data-stu-id="4f5c7-101">Summary</span></span>
+title: <span data-ttu-id="ebfd6-101">요약</span><span class="sxs-lookup"><span data-stu-id="ebfd6-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="4f5c7-102">요약</span><span class="sxs-lookup"><span data-stu-id="4f5c7-102">Summary</span></span>
-  description: <span data-ttu-id="4f5c7-103">요약</span><span class="sxs-lookup"><span data-stu-id="4f5c7-103">Summary</span></span>
-  ms.openlocfilehash: 7935dd04917c12ed682d8d8925a7f8ccb310afb1
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="ebfd6-102">요약</span><span class="sxs-lookup"><span data-stu-id="ebfd6-102">Summary</span></span>
+  description: <span data-ttu-id="ebfd6-103">요약</span><span class="sxs-lookup"><span data-stu-id="ebfd6-103">Summary</span></span>
+  ms.openlocfilehash: 3eda85c456c56d92e4e60b1578c2eadc581d9643
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40446059"
-durationInMinutes: 2
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179865"
+durationInMinutes: 3
 interactive: bash
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: '<span data-ttu-id="ebfd6-104">지식 검사: Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="ebfd6-104">Knowledge check: Azure Key Vault</span></span>'
+  questions:
+  - content: <span data-ttu-id="ebfd6-105">다음 중 Azure Key Vault의 주요 이점이 **아닌** 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="ebfd6-105">Which of the following is **not** a primary benefit of Azure Key Vault?</span></span>
+    choices:
+    - content: <span data-ttu-id="ebfd6-106">개인 사용자 정보의 보안 저장소입니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-106">Secure storage of private user information.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ebfd6-107">Key Vault는 사용자 비밀이 아니라 응용 프로그램 비밀을 저장하기 위한 것입니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
+    - content: <span data-ttu-id="ebfd6-108">응용 프로그램의 여러 인스턴스 간에 응용 프로그램 비밀 동기화.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-108">Synchronizing application secrets among multiple instances of an application.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-109">Key Vault를 사용하면 중앙에 비밀이 저장되므로 여러 응용 프로그램 인스턴스에서 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-109">Key Vault does enable multiple instances of applications to access the same secrets by storing them centrally.</span></span>
+    - content: <span data-ttu-id="ebfd6-110">응용 프로그램 개발자가 응용 프로그램 비밀을 직접 처리할 필요성 감소.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-110">Reducing the need for application developers to directly handle application secrets.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-111">직접적인 비밀 처리가 줄어드는 것이 Key Vault의 주요 이점이며 이로 인해 보안도 강화됩니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-111">Reducing hands-on interaction with secrets is a primary benefit of Key Vault and increases security.</span></span>
+    - content: <span data-ttu-id="ebfd6-112">할당 가능한 권한을 사용하여 응용 프로그램 비밀에 대한 액세스 제어.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-112">Controlling access to application secrets with assignable permissions.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-113">Key Vault의 액세스 제어 정책은 비밀에 대한 액세스를 제한하여 비밀 보안을 강화합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-113">Key Vault's access control policies increase secret security by limiting access to secrets.</span></span>
+  - content: <span data-ttu-id="ebfd6-114">다음 중에서 Key Vault의 인증 및 권한 부여 프로세스를 가장 잘 설명한 내용은 어느 것인가요?</span><span class="sxs-lookup"><span data-stu-id="ebfd6-114">Which of these statements best describes Key Vault's authentication and authorization process?</span></span>
+    choices:
+    - content: <span data-ttu-id="ebfd6-115">응용 프로그램은 책임 개발자의 사용자 이름 및 암호를 사용하여 자격 증명 모음에서 인증을 받으며 자격 증명 모음의 모든 비밀에 대해 모든 권한을 갖습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-115">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-116">Key Vault 인증은 사용자 이름과 암호를 사용하지 않으며, 응용 프로그램은 사용자의 ID가 아니라 자체 ID로 인증을 받아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-116">Key Vault authentication does not use usernames and passwords, and applications should authenticate with their own identities, not the identity of a person.</span></span>
+    - content: <span data-ttu-id="ebfd6-117">응용 프로그램과 사용자는 Microsoft 계정을 사용하여 자격 증명 모음에서 인증을 받으며, 특정 비밀에 액세스할 수 있도록 허가됩니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-117">Applications and users authenticate to a vault with a Microsoft Account and are authorized to access specific secrets.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-118">Key Vault 인증은 Microsoft 계정을 사용하지 않으며, 액세스 정책은 자격 증명 모음의 개별 비밀을 제어할 수 있도록 허용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-118">Key Vault authentication does not use Microsoft Accounts, and access policies do not offer control over individual secrets in a vault.</span></span>
+    - content: <span data-ttu-id="ebfd6-119">응용 프로그램과 사용자는 Azure Active Directory ID를 사용하여 자격 증명 모음에서 인증을 받으며, 자격 증명 모음의 모든 비밀에 대해 다양한 작업을 수행하도록 허가됩니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-119">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform different actions on all secrets in the vault.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ebfd6-120">Key Vault에 대한 모든 인증은 Azure Active Directory ID를 사용하며, 액세스 정책은 자격 증명 모음의 모든 비밀에 적용되는 작업에 따라 달라집니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-120">All authentication to Key Vault uses Azure Active Directory identities, and access policies are based on actions that apply to every secret in the vault.</span></span>
+    - content: <span data-ttu-id="ebfd6-121">응용 프로그램은 웹앱에 로그인하는 사용자의 사용자 이름과 암호를 사용하여 자격 증명 모음에서 인증을 받으며, 해당 사용자가 소유한 비밀에 대한 액세스 권한을 부여받습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-121">Applications authenticate to a vault using the usernames and passwords of users who sign in to the web app, and are granted access to secrets owned by those users.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-122">앱의 사용자는 응용 프로그램의 Key Vault에 액세스할 수 없으며, 사용자 비밀을 저장하는 데 자격 증명 모음을 사용하지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-122">Users of an app should not have access to an application's Key Vault, and vaults should not be used to store user secrets.</span></span>
+  - content: <span data-ttu-id="ebfd6-123">Key Vault를 사용하는 웹앱에서 MSI(관리 서비스 ID)를 사용할 때의 주요 이점은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="ebfd6-123">What is the main benefit of using Managed Service Identity (MSI) in a web app that uses Key Vault?</span></span>
+    choices:
+    - content: <span data-ttu-id="ebfd6-124">응용 프로그램에 자격 증명 모음에 대한 권한을 자동으로 부여.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-124">Automatically granting the application permissions to a vault.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-125">자격 증명 모음에 대해 자동으로 부여되는 권한은 해당 자격 증명 모음을 만든 사용자에게만 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-125">The only permissions automatically granted to a vault are for the user that creates it.</span></span>
+    - content: <span data-ttu-id="ebfd6-126">개발자가 응용 프로그램 대신 자격 증명 모음에 액세스하여 비밀을 관리하도록 허용.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-126">Enabling developers to access the vault on behalf of the application to manage secrets.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-127">응용 프로그램과 사용자는 자체 ID를 사용하여 자격 증명 모음에 액세스합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-127">Applications and users use their own identities to access vaults</span></span>
+    - content: <span data-ttu-id="ebfd6-128">인증된 사용자가 자격 증명 모음에서 자동으로 인증을 받아 비밀을 검색하도록 허용.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-128">Enabling authenticated users to automatically authenticate to the vault to retrieve secrets.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-129">Key Vault는 앱 사용자용으로 작성되지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-129">Key Vault is not intended for use by users of an app.</span></span> <span data-ttu-id="ebfd6-130">MSI는 응용 프로그램이 자격 증명 모음에 액세스하는 데 사용하는 ID를 자동으로 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-130">MSI automatically creates an identity for the application to use to access the vault.</span></span>
+    - content: <span data-ttu-id="ebfd6-131">자격 증명 모음 외부에서 비밀을 관리할 필요 없이, Key Vault에 대해 보안 인증을 사용하도록 설정.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-131">Enabling secure authentication to Key Vault without having to manage a secret outside of the vault.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ebfd6-132">MSI를 사용하여 응용 프로그램은 구성에 비밀을 저장할 필요 없이 자체 ID를 사용하여 자격 증명 모음에서 인증을 받을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-132">MSI enables an application to authenticate to a vault using its own identity without having to store a secret in configuration.</span></span>
+  - content: <span data-ttu-id="ebfd6-133">앱에서 비밀을 로드하면 Key Vault에서 어떻게 이러한 비밀을 보호하는 데 도움을 주나요?</span><span class="sxs-lookup"><span data-stu-id="ebfd6-133">How does Key Vault help protect your secrets after they have been loaded by your app?</span></span>
+    choices:
+    - content: <span data-ttu-id="ebfd6-134">Key Vault는 비밀을 절대 다시 사용할 수 없도록 비밀을 로드할 때마다 새 비밀 값을 자동으로 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-134">Key Vault automatically generates new secret values each time you load a secret so they can never be reused.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-135">Key Vault는 새 비밀 값을 자동으로 생성하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-135">Key Vault does not automatically generate new secret values.</span></span>
+    - content: <span data-ttu-id="ebfd6-136">Key Vault 클라이언트 라이브러리는 우발적인 비밀 노출을 방지하기 위해 응용 프로그램이 사용하는 메모리 영역을 보호합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-136">The Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-137">이것은 Key Vault 클라이언트 라이브러리의 기능이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-137">This is not a feature of the Key Vault client library.</span></span>
+    - content: <span data-ttu-id="ebfd6-138">Key Vault는 비밀을 이중으로 암호화하므로 앱에서는 비밀을 사용할 때마다 로컬로 암호를 해독해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-138">Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they are used.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ebfd6-139">자격 증명 모음에서 앱으로 반환되는 비밀 값은 암호화되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-139">Secret values returned to your app from a vault are not encrypted.</span></span>
+    - content: <span data-ttu-id="ebfd6-140">즉, 비밀은 응용 프로그램에서 일단 로드되고 나면 보호되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-140">It doesn't mdash; secrets are unprotected once they are loaded by your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ebfd6-141">일단 비밀이 앱에서 로드되면 보호되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-141">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="ebfd6-142">따라서 응용 프로그램 코드의 클라이언트 응답에서 비밀을 로깅하거나, 저장하거나, 반환하지 않도록 주의하세요.</span><span class="sxs-lookup"><span data-stu-id="ebfd6-142">Take care not to log them, store them or return them in client responses in your application code.</span></span>
