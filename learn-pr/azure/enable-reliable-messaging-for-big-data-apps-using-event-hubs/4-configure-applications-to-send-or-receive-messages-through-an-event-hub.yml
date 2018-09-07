@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.4-configure-applications-to-send-or-receive-messages-through-an-event-hub
+title: 이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성
+metadata:
+  title: 이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성
+  description: 이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성
+  ms.openlocfilehash: e52c36959360c571ac76dc9906aa6c26be2ab487
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835414"
+durationInMinutes: 5
+content: '[!include[](includes/4-configure-applications-to-send-or-receive-messages-through-an-event-hub.md)]'
