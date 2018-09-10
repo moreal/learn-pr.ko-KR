@@ -1,16 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
 metadata:
-  title: <span data-ttu-id="48a27-101">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="48a27-101">Test access to resources</span></span>
-  description: <span data-ttu-id="48a27-102">Azure Portal 및 MyApps 포털에 대한 액세스를 테스트하여 예상되는 경우 다단계 인증을 강제 적용하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="48a27-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 03f3d2497ca1a534f83b18a90026a4c6ea70df8c
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  title: <span data-ttu-id="1490b-101">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="1490b-101">Test access to resources</span></span>
+  description: <span data-ttu-id="1490b-102">Azure Portal 및 MyApps 포털에 대한 액세스를 테스트하여 예상되는 경우 다단계 인증을 강제 적용하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="1490b-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
+  ms.openlocfilehash: 0a400fc0574570ecf04faa25326c014b0f209cd6
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43454806"
-title: <span data-ttu-id="48a27-103">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="48a27-103">Test access to resources</span></span>
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43727362"
+title: <span data-ttu-id="1490b-103">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="1490b-103">Test access to resources</span></span>
 labOnDemandUrl: https://labondemand.com/Launch/0000000
 durationInMinutes: 10
 content: '[!include[](includes/5-test-access.md)]'

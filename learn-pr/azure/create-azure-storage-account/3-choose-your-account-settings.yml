@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.3-choose-your-account-settings
-title: <span data-ttu-id="45512-101">계정 설정 선택</span><span class="sxs-lookup"><span data-stu-id="45512-101">Choose your account settings</span></span>
+title: <span data-ttu-id="eaf7c-101">계정 설정 선택</span><span class="sxs-lookup"><span data-stu-id="eaf7c-101">Choose your account settings</span></span>
 metadata:
-  title: <span data-ttu-id="45512-102">계정 설정 선택</span><span class="sxs-lookup"><span data-stu-id="45512-102">Choose your account settings</span></span>
-  description: <span data-ttu-id="45512-103">계정 설정 선택</span><span class="sxs-lookup"><span data-stu-id="45512-103">Choose your account settings</span></span>
-  ms.openlocfilehash: 2b4b0b6fa5cf2ea927065e28f0e634d4719a5c8b
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  title: <span data-ttu-id="eaf7c-102">계정 설정 선택</span><span class="sxs-lookup"><span data-stu-id="eaf7c-102">Choose your account settings</span></span>
+  description: <span data-ttu-id="eaf7c-103">계정 설정 선택</span><span class="sxs-lookup"><span data-stu-id="eaf7c-103">Choose your account settings</span></span>
+  ms.openlocfilehash: 409b5e1d7a2b2fb300a3061a1b2803f42fe4e9d8
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471796"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824838"
 durationInMinutes: 7
 content: '[!include[](includes/3-choose-your-account-settings.md)]'
