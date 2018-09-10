@@ -4,11 +4,11 @@ title: 타이머 트리거 만들기
 metadata:
   title: 타이머 트리거 만들기
   description: 타이머 트리거 만들기
-  ms.openlocfilehash: a63a07d0525b124f99f06059072a4f9a670db82f
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.openlocfilehash: b346540b583275bc85b016b5a9414437ba36e98c
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43412842"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43792701"
 durationInMinutes: 15
 content: '[!include[](includes/4-create-timer-trigger.md)]'
