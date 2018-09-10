@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: <span data-ttu-id="5f279-101">ID 관리</span><span class="sxs-lookup"><span data-stu-id="5f279-101">Identity management</span></span>
+metadata:
+  title: <span data-ttu-id="5f279-102">ID 관리</span><span class="sxs-lookup"><span data-stu-id="5f279-102">Identity management</span></span>
+  description: <span data-ttu-id="5f279-103">이 섹션에서는 ID를 보호하는 방법을 살펴보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="5f279-103">In this unit we'll discuss how to protect your identities</span></span>
+  ms.openlocfilehash: 1e3cd562e2ce99c59c47a23f789c0ab95a755d6f
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43367083"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: <span data-ttu-id="5f279-104">지식 검사 - ID 관리</span><span class="sxs-lookup"><span data-stu-id="5f279-104">Knowledge Check - Identity management</span></span>
+  questions:
+  - content: <span data-ttu-id="5f279-105">다음 중 다단계 인증의 요소가 아닌 것은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="5f279-105">Which of the following is not a factor in multi-factor authentication?</span></span>
+    choices:
+    - content: <span data-ttu-id="5f279-106">모바일 장치의 지문 스캐너</span><span class="sxs-lookup"><span data-stu-id="5f279-106">A thumbprint scanner on a mobile device</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="5f279-107">Azure Authenticator 응용 프로그램에서 생성된 토큰</span><span class="sxs-lookup"><span data-stu-id="5f279-107">A token generated from the Azure Authenticator application</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="5f279-108">암호</span><span class="sxs-lookup"><span data-stu-id="5f279-108">A password</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="5f279-109">신발 크기</span><span class="sxs-lookup"><span data-stu-id="5f279-109">Your shoe size</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="5f279-110">다음 중 SSO의 이점이 아닌 것은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="5f279-110">Which of the following is not a benefit SSO provides?</span></span>
+    choices:
+    - content: <span data-ttu-id="5f279-111">사용자에게 권한을 할당하는 복잡성 증가</span><span class="sxs-lookup"><span data-stu-id="5f279-111">Increased complexity assigning permissions to users</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="5f279-112">사용자가 기억해야 하는 ID 및 암호 감소</span><span class="sxs-lookup"><span data-stu-id="5f279-112">Fewer IDs and passwords for users to remember</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="5f279-113">사용자가 역할을 변경하거나 조직을 떠날 때 해야 하는 관리 업무 감소</span><span class="sxs-lookup"><span data-stu-id="5f279-113">Lower adminmistration effort when users change roles or leave an organization</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="5f279-114">모든 응용 프로그램에서 일관적인 암호 정책 적용</span><span class="sxs-lookup"><span data-stu-id="5f279-114">Ensures a consistent password policy across applications</span></span>
+      isCorrect: false

@@ -1,0 +1,31 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.2-add-data
+metadata:
+  title: <span data-ttu-id="25417-101">포털을 사용하여 데이터 추가</span><span class="sxs-lookup"><span data-stu-id="25417-101">Add data by using the portal</span></span>
+  description: <span data-ttu-id="25417-102">Azure Portal을 사용하여 Azure Cosmos DB에 데이터를 추가하는 방법 알아보기</span><span class="sxs-lookup"><span data-stu-id="25417-102">Learn how to add data to Azure Cosmos DB by using the Azure portal</span></span>
+  displayType: one-column
+  interactive: azureportal
+  ms.openlocfilehash: a8a64768d77e7955643e844005dbbcbe95cf75e5
+  ms.sourcegitcommit: b85a83cbc1a0ae3e2681c4859e999a8296eb4e61
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43531027"
+title: <span data-ttu-id="25417-103">포털을 사용하여 데이터 추가</span><span class="sxs-lookup"><span data-stu-id="25417-103">Add data by using the portal</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-add-data.md)]
+tasks:
+- action: exists
+  environment: azure
+  hint: <span data-ttu-id="25417-104">Azure Cosmos DB 데이터베이스에 두 개의 문서가 생성되어 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="25417-104">Please make sure that you have created two documents in the Azure Cosmos DB database</span></span>
+  azure:
+    location: eastus
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Storage/storageAccounts
+      name: docsproxyppea427
+      tags:
+        triplecrown: true

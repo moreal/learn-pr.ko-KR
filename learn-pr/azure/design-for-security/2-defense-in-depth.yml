@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: <span data-ttu-id="a86f0-101">심층 방어</span><span class="sxs-lookup"><span data-stu-id="a86f0-101">Defense in depth</span></span>
+metadata:
+  title: <span data-ttu-id="a86f0-102">심층 방어</span><span class="sxs-lookup"><span data-stu-id="a86f0-102">Defense in depth</span></span>
+  description: <span data-ttu-id="a86f0-103">이 섹션에서는 심층 방어를 연습하는 방법을 살펴보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="a86f0-103">In this unit we'll discuss how to practice defense in depth</span></span>
+  ms.openlocfilehash: 5a38b6b3200442e32bf80ae8c45f1209b2ec9000
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366820"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: <span data-ttu-id="a86f0-104">지식 검사 - 심층 방어</span><span class="sxs-lookup"><span data-stu-id="a86f0-104">Knowledge Check - Defense in depth</span></span>
+  questions:
+  - content: <span data-ttu-id="a86f0-105">다음 중 심층 방어 보안 전략에 적용할 수 있는 적절한 전술은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="a86f0-105">Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?</span></span>
+    choices:
+    - content: <span data-ttu-id="a86f0-106">사용하지 않는 가상 머신을 할당 취소하여 비용 절감</span><span class="sxs-lookup"><span data-stu-id="a86f0-106">Deallocating virtual machines when not in use to reduce costs</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a86f0-107">CPU 백분율이 90%를 초과하면 경고를 보내도록 설정</span><span class="sxs-lookup"><span data-stu-id="a86f0-107">Setting up alerts for CPU percentage exceeds 90%</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a86f0-108">연결 문자열을 구성 파일에 저장</span><span class="sxs-lookup"><span data-stu-id="a86f0-108">Storing connection strings in a configuration file</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a86f0-109">웹 응용 프로그램 호스팅에 Azure App Service 사용</span><span class="sxs-lookup"><span data-stu-id="a86f0-109">Using Azure App Service for hosting web applications</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="a86f0-110">클라우드로 이동한 후 아키텍처가 완전히 안전해졌으며 모든 보안 책임을 클라우드 공급자에게 넘길 수 있게 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="a86f0-110">By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.</span></span>
+    choices:
+    - content: <span data-ttu-id="a86f0-111">정답</span><span class="sxs-lookup"><span data-stu-id="a86f0-111">True</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a86f0-112">오답</span><span class="sxs-lookup"><span data-stu-id="a86f0-112">False</span></span>
+      isCorrect: true
