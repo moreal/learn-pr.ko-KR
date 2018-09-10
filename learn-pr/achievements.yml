@@ -243,17 +243,32 @@ achievements:
 - uid: learn.cosmos-db-app-with-vscode.badge
   type: badge
   title: Visual Studio Code에서 Azure Cosmos DB 앱 빌드
-  summary: ‘Visual Studio Code에서 Azure Cosmos DB 앱 빌드’ 모듈의 트로피입니다.
+  summary: ‘Visual Studio Code에서 Azure Cosmos DB 앱 빌드’ 모듈의 배지입니다.
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.create-cosmos-db-for-scale.badge
+  type: badge
+  title: 크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기
+  summary: "'크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기' 모듈의 배지입니다."
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.manage-resources-in-azure.trophy
   type: trophy
-  title: Azure의 리소스 관리 트로피
-  summary: ‘Azure에 리소스 관리’ 학습 경로의 트로피입니다.
+  title: Azure에서 리소스 관리 트로피
+  summary: "'Azure에서 리소스 관리' 학습 경로의 트로피입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.align-requirements-in-azure.badge
+  type: badge
+  title: 요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택 배지
+  summary: "'요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.choose-storage-approach-in-azure.badge
+  type: badge
+  title: Azure에서 저장소 접근 방식 선택
+  summary: "'Azure에서 저장소 접근 방식 선택' 모듈의 배지입니다."
   iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: 4dc465d762264757b61a4000ad999e39ee339d64
-  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
+  ms.openlocfilehash: 693a03cb55f823b85d8daa4246a9cdf16fdab8ce
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "43053933"
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252132"
