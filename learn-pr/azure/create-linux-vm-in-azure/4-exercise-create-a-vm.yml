@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+title: 연습 - Azure Portal을 사용하여 Linux 가상 머신 만들기
+metadata:
+  title: 연습 - Azure Portal을 사용하여 Linux 가상 머신 만들기
+  description: 연습 - Azure Portal을 사용하여 Linux 가상 머신 만들기
+  ms.openlocfilehash: 8f3da9ce257cbd922399b6f63bc2acac70369ab2
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498513"
+durationInMinutes: 20
+content: '[!include[](includes/4-exercise-create-a-vm.md)]'

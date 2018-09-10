@@ -14,7 +14,7 @@ Azure Storage 큐는 Azure 범용 저장소 계정의 일부이므로 먼저 저
 
 4. **저장소 계정** 블레이드의 왼쪽 위에서 **추가**를 클릭합니다.
 
-  ![추가를 강조 표시한 저장소 계정 블레이드 스크린샷](../images/5-create-a-storage-account-1.png)
+  ![추가를 강조 표시한 저장소 계정 블레이드 스크린샷](../media-draft/4-create-a-storage-account-1.png)
 
 5. 결과 대화 상자에서 다음 정보를 입력하면 포털의 각 옵션에 `(i)` 아이콘이 표시되며, 이 아이콘을 사용하여 옵션의 기능에 대해 자세히 알아볼 수 있습니다.
     - **이름** 텍스트 상자에 저장소 계정의 고유한 이름을 입력합니다.
@@ -29,11 +29,11 @@ Azure Storage 큐는 Azure 범용 저장소 계정의 일부이므로 먼저 저
     - **리소스 그룹**에서 **새로 만들기**를 선택합니다. 텍스트 상자에 **MusicSharingResourceGroup**을 입력합니다.
     - **가상 네트워크**에서 **사용 안 함**을 선택합니다. 
 
-    ![저장소 계정 만들기 대화 상자 스크린샷](../images/5-create-a-storage-account-2.png)
+    ![저장소 계정 만들기 대화 상자 스크린샷](../media-draft/4-create-a-storage-account-2.png)
 
 6. **만들기**를 클릭하면 Azure가 새 리소스 그룹 및 새 리소스 그룹과 연결된 새 저장소 계정을 만듭니다.
 
-    ![만들기를 강조 표시한 저장소 계정 만들기 대화 상자의 스크린샷](../images/5-create-a-storage-account-3.png)
+    ![만들기를 강조 표시한 저장소 계정 만들기 대화 상자의 스크린샷](../media-draft/4-create-a-storage-account-3.png)
 
 ## <a name="create-a-queue"></a>큐 만들기
 
@@ -41,7 +41,7 @@ Azure Storage 큐는 Azure 범용 저장소 계정의 일부이므로 먼저 저
 
 1. 포털의 오른쪽 위에서 **Cloud Shell** 링크 `(>)`를 클릭합니다.
 
-    ![Cloud Shell 아이콘을 강조 표시한 Azure Portal 스크린샷](../images/5-create-a-storage-queue-1.png)
+    ![Cloud Shell 아이콘을 강조 표시한 Azure Portal 스크린샷](../media-draft/4-create-a-storage-queue-1.png)
 
 2. **Azure Cloud Shell 시작** 화면에서 **PowerShell(Linux)** 을 클릭합니다.
 

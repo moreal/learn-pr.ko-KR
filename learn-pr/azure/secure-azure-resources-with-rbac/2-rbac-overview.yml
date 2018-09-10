@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.2-rbac-overview
+metadata:
+  title: RBAC란?
+  description: RBAC(역할 기반 액세스 제어)의 정의 및 작동 방식에 대해 알아봅니다.
+  displayType: one-column
+  ms.openlocfilehash: ed8e191ea46a0e2097faaf114d34ebfe4bc10bc8
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43454810"
+title: RBAC란?
+durationInMinutes: 10
+content: '[!include[](includes/2-rbac-overview.md)]'
