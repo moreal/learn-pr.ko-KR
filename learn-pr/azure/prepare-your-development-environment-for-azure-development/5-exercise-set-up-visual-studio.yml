@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+title: <span data-ttu-id="0aa7b-101">연습 - Windows 또는 macOS에서 Visual Studio 설정</span><span class="sxs-lookup"><span data-stu-id="0aa7b-101">Exercise - Set up Visual Studio on Windows or macOS</span></span>
+metadata:
+  title: <span data-ttu-id="0aa7b-102">연습 - Windows 또는 macOS에서 Visual Studio 설정</span><span class="sxs-lookup"><span data-stu-id="0aa7b-102">Exercise - Set up Visual Studio on Windows or macOS</span></span>
+  description: <span data-ttu-id="0aa7b-103">연습 - Windows 또는 macOS에서 Visual Studio 설정</span><span class="sxs-lookup"><span data-stu-id="0aa7b-103">Exercise - Set up Visual Studio on Windows or macOS</span></span>
+  ms.openlocfilehash: 100a43127f060e95c708a6bb9e31a7f5b80088e5
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42938066"
+durationInMinutes: 15
+content: '[!include[](includes/5-exercise-set-up-visual-studio.md)]'

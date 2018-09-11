@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.1-introduction
+metadata:
+  title: <span data-ttu-id="c6811-101">소개</span><span class="sxs-lookup"><span data-stu-id="c6811-101">Introduction</span></span>
+  description: <span data-ttu-id="c6811-102">Visual Studio Code를 사용하여 Azure Cosmos DB에 데이터를 저장하고 쿼리하는 앱을 만드는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="c6811-102">Learn how to create an app to store and query data in Azure Cosmos DB by using Visual Studio Code.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: f3c7bfe2022d045297679ef3cffd59638553dda2
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40442672"
+title: <span data-ttu-id="c6811-103">소개</span><span class="sxs-lookup"><span data-stu-id="c6811-103">Introduction</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/1-introduction.md)]'

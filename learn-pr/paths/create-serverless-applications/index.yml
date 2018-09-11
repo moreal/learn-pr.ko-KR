@@ -1,0 +1,26 @@
+### YamlMime:LearningPath
+uid: learn.create-serverless-applications
+title: 서버리스 응용 프로그램 만들기
+summary: Azure Functions를 사용하면 다양한 외부 이벤트에서 트리거될 수 있는 이벤트 기반 주문형 계산 시스템을 만들 수 있습니다. 함수를 활용하여 서버 쪽 논리를 실행하고 서버리스 아키텍처를 빌드하는 방법을 알아봅니다.
+prerequisites: 없음
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+metadata:
+  title: 서버리스 응용 프로그램 만들기
+  description: Azure Functions를 사용하면 다양한 외부 이벤트에서 트리거될 수 있는 이벤트 기반 주문형 계산 시스템을 만들 수 있습니다. 함수를 활용하여 서버 쪽 논리를 실행하고 서버리스 아키텍처를 빌드하는 방법을 알아봅니다.
+  ms.openlocfilehash: 9b4935221667764aed68d60eca9fb3ce4ead79d9
+  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42911067"
+modules:
+- learn.create-serverless-logic-with-functions
+- execute-azure-function-with-triggers
+- learn.build-a-serverless-web-app
+achievement: learn.create-serverless-applications.trophy

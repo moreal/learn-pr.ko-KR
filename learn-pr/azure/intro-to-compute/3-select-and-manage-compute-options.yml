@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.3-select-and-manage-compute-options
+title: <span data-ttu-id="aeb93-101">계산 옵션 선택 및 관리</span><span class="sxs-lookup"><span data-stu-id="aeb93-101">Select and manage compute options</span></span>
+metadata:
+  title: <span data-ttu-id="aeb93-102">계산 옵션 선택 및 관리</span><span class="sxs-lookup"><span data-stu-id="aeb93-102">Select and manage compute options</span></span>
+  description: <span data-ttu-id="aeb93-103">계산 옵션 선택 및 관리</span><span class="sxs-lookup"><span data-stu-id="aeb93-103">Select and manage compute options</span></span>
+  ms.openlocfilehash: 3b54be616ca10336314f74640a2b505c6538373c
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40443816"
+durationInMinutes: 7
+content: '[!include[](includes/3-select-and-manage-compute-options.md)]'

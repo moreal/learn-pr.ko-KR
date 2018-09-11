@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: <span data-ttu-id="603be-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="603be-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="603be-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="603be-102">Knowledge check</span></span>
+  description: <span data-ttu-id="603be-103">‘Azure 계산 소개’ 모듈에 대한 지식 검사입니다.</span><span class="sxs-lookup"><span data-stu-id="603be-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
+  ms.openlocfilehash: 45f6d679f668ab9a585aca93395796d49fe5a69e
+  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43152182"
+durationInMinutes: 2
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="603be-104">Azure 계산 소개 지식 검사</span><span class="sxs-lookup"><span data-stu-id="603be-104">Introduction to Azure compute knowledge check</span></span>
+  questions:
+  - content: <span data-ttu-id="603be-105">최고 수준의 천문학자와 컴퓨터 프로그래머가 팀 구성원이지만 서버 및 웹 관리에 대한 가장 기본적인 사항만 이해하고 있는 소규모 천문학 팀을 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="603be-105">Imagine that your astronomy team is small and that, while the members of your team are top notch astronomers and computer programmers, they have only a rudimentary understanding of server and web administration.</span></span> <span data-ttu-id="603be-106">다음 중 어떤 옵션을 선택해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="603be-106">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="603be-107">AKS(Azure Kubernetes Service)</span><span class="sxs-lookup"><span data-stu-id="603be-107">Azure Kubernetes Service (AKS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="603be-108">Kubernetes에는 컨테이너 오케스트레이션에 대한 고급 지식이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="603be-108">Kubernetes requires advanced knowledge about container orchestration.</span></span>
+    - content: <span data-ttu-id="603be-109">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="603be-109">Service Fabric</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="603be-110">천문학자의 작업은 널리 또는 세계적으로 분산될 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="603be-110">The work of the astronomers does not need to be widely or globally distributed.</span></span>
+    - content: <span data-ttu-id="603be-111">App Service</span><span class="sxs-lookup"><span data-stu-id="603be-111">App Service</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="603be-112">완전히 관리되며 해당 응용 프로그램의 크기를 조정하기 때문에 팀은 특수 소프트웨어를 작성하는 데 집중할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="603be-112">Because it is fully managed and scales their applications, the team can focus on writing their specialized software.</span></span>
+  - content: <span data-ttu-id="603be-113">천문학 팀이 완료하는 데 몇 시간에서 며칠까지 걸리는 일정한 천문학적 계산을 처리해야 한다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="603be-113">Imagine that your astronomy team has come up against certain astronomical calculations that are taking hours and even days to complete.</span></span> <span data-ttu-id="603be-114">병렬 실행은 많은 도움이 되지 않는 것 같습니다.</span><span class="sxs-lookup"><span data-stu-id="603be-114">Parallel execution does not seem to help much.</span></span> <span data-ttu-id="603be-115">다음 중 어떤 옵션을 선택해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="603be-115">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="603be-116">Cloud Services</span><span class="sxs-lookup"><span data-stu-id="603be-116">Cloud Services</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="603be-117">모든 천문학적 계산을 병렬로 실행할 수 있는 것은 아니므로 추가 VM을 배포하면 미미하지만 성능이 향상될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="603be-117">Not all of the astronomical calculations can be run in parallel so deploying additional VMs can only marginally improve performance.</span></span>
+    - content: <span data-ttu-id="603be-118">Azure Batch</span><span class="sxs-lookup"><span data-stu-id="603be-118">Azure Batch</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="603be-119">특정 천문학적 계산에는 슈퍼 컴퓨터 기능이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="603be-119">Certain astronomical calculations require supercomputer capabilities.</span></span>
+    - content: <span data-ttu-id="603be-120">Container Instances</span><span class="sxs-lookup"><span data-stu-id="603be-120">Container Instances</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="603be-121">모든 천문학적 계산을 병렬로 실행할 수 있는 것은 아니므로 추가 컨테이너를 배포하면 미미하게나마 성능이 향상될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="603be-121">It may be that not all of the astronomical calculations can be run in parallel so deploying additional containers can only marginally improve performance.</span></span>

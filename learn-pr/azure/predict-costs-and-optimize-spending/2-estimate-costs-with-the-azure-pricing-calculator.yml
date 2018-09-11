@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator
+title: <span data-ttu-id="ef020-101">Azure 가격 계산기로 비용 예상</span><span class="sxs-lookup"><span data-stu-id="ef020-101">Estimate costs with the Azure pricing calculator</span></span>
+metadata:
+  title: <span data-ttu-id="ef020-102">Azure 가격 계산기로 비용 예상</span><span class="sxs-lookup"><span data-stu-id="ef020-102">Estimate costs with the Azure pricing calculator</span></span>
+  description: <span data-ttu-id="ef020-103">이 단원에서는 Azure 가격 계산기로 비용을 예상하는 방법을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="ef020-103">In this unit, we'll discuss how to estimate costs with the Azure pricing calculator</span></span>
+  ms.openlocfilehash: 93d01958a958e008fac17214db8496b8f9dded03
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141739"
+durationInMinutes: 20
+content: >
+  [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
+quiz:
+  title: <span data-ttu-id="ef020-104">Azure 가격 계산기로 비용 예상</span><span class="sxs-lookup"><span data-stu-id="ef020-104">Estimate costs with the Azure pricing calculator</span></span>
+  questions:
+  - content: <span data-ttu-id="ef020-105">Azure 가격 계산기의 어떤 탭에서 예상 비용을 산출하나요?</span><span class="sxs-lookup"><span data-stu-id="ef020-105">In which tab of the Azure pricing calculator will you formulate your estimate?</span></span>
+    choices:
+    - content: <span data-ttu-id="ef020-106">견적</span><span class="sxs-lookup"><span data-stu-id="ef020-106">Estimate</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ef020-107">이 탭에는 이전에 저장한 예상 비용이 모두 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ef020-107">This tab has all of your previously saved estimates.</span></span>
+    - content: <span data-ttu-id="ef020-108">제품</span><span class="sxs-lookup"><span data-stu-id="ef020-108">Products</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ef020-109">이 탭에는 모든 Azure 서비스가 나열되어 있으며 여기에서 예상 비용을 산출할 서비스를 추가하거나 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="ef020-109">This tab has all the Azure services listed and is where you'll add or remove services to formulate your estimate.</span></span>
+  - content: <span data-ttu-id="ef020-110">Excel 스프레드시트 또는 URL을 통해 예상 비용을 공유할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ef020-110">You can share your estimate through an Excel spreadsheet or through a URL.</span></span>
+    choices:
+    - content: <span data-ttu-id="ef020-111">True</span><span class="sxs-lookup"><span data-stu-id="ef020-111">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="ef020-112">예상 비용 아래쪽 <b>내보내기</b>를 클릭하면 공유할 수 있는 Excel 스프레드시트를 내보냅니다. 또는 <b>공유</b>를 클릭하여 팀과 공유할 수 있는 URL 링크를 가져올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ef020-112">Clicking <b>Export</b> at the bottom of the estimate will export an Excel spreadsheet that you can share, or you can click <b>Share</b> to get a URL link that you can share with your team.</span></span>
+    - content: <span data-ttu-id="ef020-113">False</span><span class="sxs-lookup"><span data-stu-id="ef020-113">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ef020-114">예상 비용 아래쪽 <b>내보내기</b>를 클릭하면 공유할 수 있는 Excel 스프레드시트를 내보냅니다. 또는 <b>공유</b>를 클릭하여 팀과 공유할 수 있는 URL 링크를 가져올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ef020-114">Clicking <b>Export</b> at the bottom of the estimate will export an Excel spreadsheet that you can share, or you can click <b>Share</b> to get a URL link that you can share with your team.</span></span>
