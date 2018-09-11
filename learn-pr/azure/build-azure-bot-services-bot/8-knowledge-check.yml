@@ -1,0 +1,108 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: <span data-ttu-id="f2e0e-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="f2e0e-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="f2e0e-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="f2e0e-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="f2e0e-103">Azure Bot Service에서 챗봇을 빌드하는 데 필요한 단계를 이해했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-103">Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.</span></span>
+  ms.openlocfilehash: a0a5ba530b5e6b2432bef896ffbb0532027096e1
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826232"
+durationInMinutes: 10
+quiz:
+  title: <span data-ttu-id="f2e0e-104">TensorFlow 및 Azure Data Science Virtual Machine을 사용하여 신경망 빌드</span><span class="sxs-lookup"><span data-stu-id="f2e0e-104">Building neural networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="f2e0e-105">Azure 웹앱 봇을 배포할 때 생성된 항목은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-105">When the Azure web app bot was deployed, what all was created?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-106">Bot Service</span><span class="sxs-lookup"><span data-stu-id="f2e0e-106">A bot service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-107">Bot Service가 생성되었지만 다른 서비스도 생성되었습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-107">A bot service was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="f2e0e-108">웹앱</span><span class="sxs-lookup"><span data-stu-id="f2e0e-108">A web app</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-109">웹앱이 생성되었지만 다른 앱도 생성되었습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-109">A web app was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="f2e0e-110">Bot Service 및 웹앱</span><span class="sxs-lookup"><span data-stu-id="f2e0e-110">A bot service and web app</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f2e0e-111">아직 배포된 서비스가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-111">Nothing got deployed yet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-112">이 단계에서 배포가 발생했습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-112">A deployment happened by this step.</span></span>
+  - content: <span data-ttu-id="f2e0e-113">만드는 데 사용된 QnA Maker란 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-113">What is QnA Maker used to create?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-114">질문 및 대답 집합을 수집하는 서비스입니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-114">A service that takes in a set of questions and answers</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f2e0e-115">질문에 대답하는 서비스</span><span class="sxs-lookup"><span data-stu-id="f2e0e-115">A service to answer questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-116">질문에 대답하는 데 도움이 되지만 모든 QnA Maker가 이렇게 할 수 있는 것은 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-116">It helps answer questions, but that's not all QnA Maker can do.</span></span>
+    - content: <span data-ttu-id="f2e0e-117">질문에 대해 새로운 대답을 생성하는 서비스입니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-117">A service that generates new answers to questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-118">QnA Maker는 새로운 대답을 생성하지 않으며 알고 있는 대답을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-118">QnA Maker doesn't generate new answers, but it does give answers it knows about.</span></span>
+    - content: <span data-ttu-id="f2e0e-119">봇</span><span class="sxs-lookup"><span data-stu-id="f2e0e-119">A bot</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-120">QnA Maker는 봇과 연결될 수 있지만 봇을 만들지는 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-120">QnA Maker can be associated with a bot, but it doesn't create one.</span></span>
+  - content: <span data-ttu-id="f2e0e-121">QnA Maker에서 어떤 방식으로 기술 자료를 채울 수 있나요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-121">What ways can you populate your knowledge base in QnA Maker?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-122">기술 자료를 수동으로만 채울 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-122">Can only manually populate your knowledge base</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-123">기술 자료를 수동으로 채울 수 있지만 다른 방법도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-123">You could manually populate the knowledge base, but there are other ways.</span></span>
+    - content: <span data-ttu-id="f2e0e-124">텍스트 파일 사용</span><span class="sxs-lookup"><span data-stu-id="f2e0e-124">With a text file</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-125">텍스트 파일은 기술 자료를 채우는 유일한 방법이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-125">A text file isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="f2e0e-126">URL 사용</span><span class="sxs-lookup"><span data-stu-id="f2e0e-126">With a URL</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-127">URL은 기술 자료를 채우는 유일한 방법이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-127">A URL isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="f2e0e-128">텍스트 파일 또는 URL 사용</span><span class="sxs-lookup"><span data-stu-id="f2e0e-128">With a text file or URL</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="f2e0e-129">응용 프로그램에서 QnA Maker를 사용하는 데 필요한 단계는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-129">What step(s) are needed to use QnA Maker in your applications?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-130">저장</span><span class="sxs-lookup"><span data-stu-id="f2e0e-130">Save</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-131">저장해야 하지만 다른 단계도 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-131">You do need to save, but other steps are needed.</span></span>
+    - content: <span data-ttu-id="f2e0e-132">저장 후 학습</span><span class="sxs-lookup"><span data-stu-id="f2e0e-132">Save and train</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-133">학습도 중요하지만 서비스를 사용하기 위해 필요한 다른 작업은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-133">Training is important, but what else do you need to consume the service?</span></span>
+    - content: <span data-ttu-id="f2e0e-134">저장, 학습 및 게시</span><span class="sxs-lookup"><span data-stu-id="f2e0e-134">Save, train, and publish</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f2e0e-135">게시</span><span class="sxs-lookup"><span data-stu-id="f2e0e-135">Publish</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-136">아쉽지만 바로 게시할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-136">Unfortunately, you can't just go straight to publishing.</span></span>
+  - content: <span data-ttu-id="f2e0e-137">Bot Framework 패키지 외에, RESTful 서비스를 빌드하고 사용하는 데 필요한 다른 패키지는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-137">Other than the bot framework packages, what other package is needed to build and consume RESTful services?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-138">Restify</span><span class="sxs-lookup"><span data-stu-id="f2e0e-138">restify</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f2e0e-139">Express</span><span class="sxs-lookup"><span data-stu-id="f2e0e-139">express</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-140">Express는 단지 RESTful 서비스를 만들기 위해서만이 아니라 전체 웹 프레임워크로서 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-140">Express is used to as a full web framework, not to just create RESTful services.</span></span>
+    - content: <span data-ttu-id="f2e0e-141">Swagger</span><span class="sxs-lookup"><span data-stu-id="f2e0e-141">swagger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-142">Swagger는 단지 RESTful 서비스를 만들기 위해서만이 아니라 API를 지정, 빌드 및 테스트하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-142">Swagger is used to specify, build, and test your APIs, not just to create RESTful services.</span></span>
+    - content: <span data-ttu-id="f2e0e-143">Babel</span><span class="sxs-lookup"><span data-stu-id="f2e0e-143">babel</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-144">Babel은 새 구문을 지원하지 않을 수 있는 브라우저를 위해 새 버전의 JavaScript를 컴파일하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-144">Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax.</span></span>
+  - content: <span data-ttu-id="f2e0e-145">웹앱 봇에 대한 Azure Portal에서 QnA Maker 설정을 어느 섹션에서 추가해야 하나요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-145">In the Azure portal for the web app bot, what section do you go to add the QnA Maker settings?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-146">모든 App Service 설정</span><span class="sxs-lookup"><span data-stu-id="f2e0e-146">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-147">이 설정을 사용하여 웹앱과 연결된 App Service에 대한 설정을 변경할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-147">This setting allows you to change settings on the app service associated with the web app.</span></span>
+    - content: <span data-ttu-id="f2e0e-148">응용 프로그램 설정</span><span class="sxs-lookup"><span data-stu-id="f2e0e-148">Application settings</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f2e0e-149">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-149">Great!</span></span> <span data-ttu-id="f2e0e-150">실습의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-150">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="f2e0e-151">빌드</span><span class="sxs-lookup"><span data-stu-id="f2e0e-151">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-152">이 섹션에서는 봇에 대한 코드를 보고 가져올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-152">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="f2e0e-153">채널</span><span class="sxs-lookup"><span data-stu-id="f2e0e-153">Channels</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-154">이 섹션에서는 봇과 상호 작용할 수 있도록 봇을 여러 다른 서비스에 연결할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-154">This section allows you to hook the bot up to different services to interact with the bot.</span></span>
+  - content: <span data-ttu-id="f2e0e-155">Microsoft Teams에 봇을 추가하려는 경우 Azure Portal의 어느 섹션으로 이동해야 하나요?</span><span class="sxs-lookup"><span data-stu-id="f2e0e-155">If you wanted to add your bot to Microsoft Teams, what section in the Azure portal do you go to?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e0e-156">모든 App Service 설정</span><span class="sxs-lookup"><span data-stu-id="f2e0e-156">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-157">이 설정을 사용하여 변경할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-157">This setting allows you to change.</span></span>
+    - content: <span data-ttu-id="f2e0e-158">응용 프로그램 설정</span><span class="sxs-lookup"><span data-stu-id="f2e0e-158">Application settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-159">이 설정을 사용하여 웹 응용 프로그램에 대한 특정 설정을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-159">This setting allows you to specify specific settings for the web application.</span></span>
+    - content: <span data-ttu-id="f2e0e-160">빌드</span><span class="sxs-lookup"><span data-stu-id="f2e0e-160">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f2e0e-161">이 섹션에서는 봇에 대한 코드를 보고 가져올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f2e0e-161">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="f2e0e-162">채널</span><span class="sxs-lookup"><span data-stu-id="f2e0e-162">Channels</span></span>
+      isCorrect: true

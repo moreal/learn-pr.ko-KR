@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: <span data-ttu-id="ab5ea-101">요약 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="ab5ea-101">Summary and Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="ab5ea-102">요약 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="ab5ea-102">Summary and Knowledge check</span></span>
+  description: <span data-ttu-id="ab5ea-103">요약 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="ab5ea-103">Summary and Knowledge check</span></span>
+  ms.openlocfilehash: b5b474cbfc1f501965805e36d035caf0c5ffbfeb
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836072"
+durationInMinutes: 10
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="ab5ea-104">Computer Vision 퀴즈</span><span class="sxs-lookup"><span data-stu-id="ab5ea-104">Computer Vision Quiz</span></span>
+  questions:
+  - content: <span data-ttu-id="ab5ea-105">Computer Vision을 사용하여 식별할 수 없는 유명한 이미지 종류는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="ab5ea-105">What kind of famous images won't be identified with Computer vision?</span></span>
+    choices:
+    - content: '<span data-ttu-id="ab5ea-106">이정표</span><span class="sxs-lookup"><span data-stu-id="ab5ea-106">Landmarks</span></span> '
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-107">유명인</span><span class="sxs-lookup"><span data-stu-id="ab5ea-107">Celebrities</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-108">영화</span><span class="sxs-lookup"><span data-stu-id="ab5ea-108">Movies</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="ab5ea-109">이미지 분석 시 수신하도록 선택할 수 있는 시각적 기능은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="ab5ea-109">Which visual features can we elect to receive when analyzing images?</span></span>
+    choices:
+    - content: <span data-ttu-id="ab5ea-110">도형</span><span class="sxs-lookup"><span data-stu-id="ab5ea-110">Shapes</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="ab5ea-111">이미지 분류</span><span class="sxs-lookup"><span data-stu-id="ab5ea-111">Image categorization</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-112">태그</span><span class="sxs-lookup"><span data-stu-id="ab5ea-112">Tags</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-113">텍스트 설명</span><span class="sxs-lookup"><span data-stu-id="ab5ea-113">Textual description</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-114">얼굴</span><span class="sxs-lookup"><span data-stu-id="ab5ea-114">Faces</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-115">색</span><span class="sxs-lookup"><span data-stu-id="ab5ea-115">Colors</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-116">성인 콘텐츠 및 외설적인 콘텐츠</span><span class="sxs-lookup"><span data-stu-id="ab5ea-116">Adult and suggestive content</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="ab5ea-117">스마트 자르기에서는 어떤 작업이 수행되나요?</span><span class="sxs-lookup"><span data-stu-id="ab5ea-117">What does smart cropping does?</span></span>
+    choices:
+    - content: <span data-ttu-id="ab5ea-118">왼쪽 위에서 사진 자르기</span><span class="sxs-lookup"><span data-stu-id="ab5ea-118">Crops pictures from the top left</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="ab5ea-119">얼굴, 초점이 적용된 개체 등 원하는 영역을 기준으로 사진 자르기</span><span class="sxs-lookup"><span data-stu-id="ab5ea-119">Crops pictures based on regions of interest (faces, objects in focus, others)</span></span>
+      isCorrect: true

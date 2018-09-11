@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.optimize-web-app-with-redis.2-decide-if-you-want-use-redis-in-azure
+title: <span data-ttu-id="dcdc6-101">Azure에서 Redis를 사용할지 여부 결정</span><span class="sxs-lookup"><span data-stu-id="dcdc6-101">Decide if you want to use Redis in Azure</span></span>
+metadata:
+  title: <span data-ttu-id="dcdc6-102">Azure에서 Redis를 사용할지 여부 결정</span><span class="sxs-lookup"><span data-stu-id="dcdc6-102">Decide if you want to use Redis in Azure</span></span>
+  description: <span data-ttu-id="dcdc6-103">Azure에서 Redis를 사용할지 여부 결정</span><span class="sxs-lookup"><span data-stu-id="dcdc6-103">Decide if you want to use Redis in Azure</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bd1060941a726399b55be14ba261c409fd77ca54
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231370"
+durationInMinutes: 5
+content: '[!include[](includes/2-decide-if-you-want-use-redis-in-azure.md)]'

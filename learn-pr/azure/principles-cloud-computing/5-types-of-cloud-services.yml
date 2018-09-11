@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.5-types-of-cloud-services
-title: <span data-ttu-id="26ad2-101">클라우드 서비스의 유형</span><span class="sxs-lookup"><span data-stu-id="26ad2-101">Types of cloud services</span></span>
+title: <span data-ttu-id="baf5d-101">클라우드 서비스의 유형</span><span class="sxs-lookup"><span data-stu-id="baf5d-101">Types of cloud services</span></span>
 metadata:
-  title: <span data-ttu-id="26ad2-102">클라우드 서비스의 유형</span><span class="sxs-lookup"><span data-stu-id="26ad2-102">Types of cloud services</span></span>
-  description: <span data-ttu-id="26ad2-103">클라우드 서비스의 유형</span><span class="sxs-lookup"><span data-stu-id="26ad2-103">Types of cloud services</span></span>
-  ms.openlocfilehash: c55bafa11cfe4cded42f7e3e8be4d1974537b352
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="baf5d-102">클라우드 서비스의 유형</span><span class="sxs-lookup"><span data-stu-id="baf5d-102">Types of cloud services</span></span>
+  description: <span data-ttu-id="baf5d-103">클라우드 서비스의 유형</span><span class="sxs-lookup"><span data-stu-id="baf5d-103">Types of cloud services</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 75851fb0e2565e8b9a35e04248a4c7a30c363772
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40449081"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234920"
 durationInMinutes: 10
 content: '[!include[](includes/5-types-of-cloud-services.md)]'

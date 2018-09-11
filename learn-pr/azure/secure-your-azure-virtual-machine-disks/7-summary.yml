@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-virtual-machine-disks.7-summary
+title: <span data-ttu-id="25e73-101">요약</span><span class="sxs-lookup"><span data-stu-id="25e73-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="25e73-102">요약</span><span class="sxs-lookup"><span data-stu-id="25e73-102">Summary</span></span>
+  description: <span data-ttu-id="25e73-103">요약</span><span class="sxs-lookup"><span data-stu-id="25e73-103">Summary</span></span>
+  ms.openlocfilehash: 54807e5fe1a51aa68ffbfc11b111fa63e389751e
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43730285"
+durationInMinutes: 3
+content: '[!include[](includes/7-summary.md)]'

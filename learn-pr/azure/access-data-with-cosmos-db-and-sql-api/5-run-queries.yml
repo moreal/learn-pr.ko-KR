@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.5-run-queries
+metadata:
+  title: <span data-ttu-id="46764-101">Azure Portal에서 쿼리 실행</span><span class="sxs-lookup"><span data-stu-id="46764-101">Run queries in the Azure portal</span></span>
+  description: <span data-ttu-id="46764-102">Azure Portal을 사용하여 Azure Cosmos DB의 데이터에 대해 쿼리를 실행하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="46764-102">Learn how to run queries on the data in Azure Cosmos DB by using the Azure portal.</span></span>
+  ms.openlocfilehash: 4a5b2f69d9c45409c73c10412866c2d6709a1276
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795402"
+title: <span data-ttu-id="46764-103">Azure Portal에서 쿼리 실행</span><span class="sxs-lookup"><span data-stu-id="46764-103">Run queries in the Azure portal</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/5-run-queries.md)]'

@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.6-extract-handwritten-text
+interactive: bash
+title: <span data-ttu-id="5ba04-101">이미지에서 필기 텍스트 추출</span><span class="sxs-lookup"><span data-stu-id="5ba04-101">Extracting handwritten text from images</span></span>
+metadata:
+  title: <span data-ttu-id="5ba04-102">이미지에서 필기 텍스트 추출</span><span class="sxs-lookup"><span data-stu-id="5ba04-102">Extracting handwritten text from images</span></span>
+  description: <span data-ttu-id="5ba04-103">이미지에서 필기 텍스트 추출</span><span class="sxs-lookup"><span data-stu-id="5ba04-103">Extracting handwritten text from images</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6c17c3bcf22068fb3bc75a177a528f3794cb5425
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241266"
+durationInMinutes: 10
+content: '[!include[](includes/6-extract-handwritten-text.md)]'

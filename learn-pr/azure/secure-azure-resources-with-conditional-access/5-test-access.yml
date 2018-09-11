@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+metadata:
+  title: <span data-ttu-id="15b4e-101">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="15b4e-101">Test access to resources</span></span>
+  description: <span data-ttu-id="15b4e-102">Azure Portal 및 MyApps 포털에 대한 액세스를 테스트하여 예상되는 경우 다단계 인증을 강제 적용하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="15b4e-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: be913602b7ce2d479ddbbdd199d2ab9bdb242d4c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232543"
+title: <span data-ttu-id="15b4e-103">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="15b4e-103">Test access to resources</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/5-test-access.md)]'
