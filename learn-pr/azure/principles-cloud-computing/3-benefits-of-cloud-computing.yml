@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.3-benefits-of-cloud-computing
-title: <span data-ttu-id="37d68-101">클라우드 컴퓨팅의 혜택</span><span class="sxs-lookup"><span data-stu-id="37d68-101">Benefits of cloud computing</span></span>
+title: <span data-ttu-id="eab51-101">클라우드 컴퓨팅의 혜택</span><span class="sxs-lookup"><span data-stu-id="eab51-101">Benefits of cloud computing</span></span>
 metadata:
-  title: <span data-ttu-id="37d68-102">클라우드 컴퓨팅의 혜택</span><span class="sxs-lookup"><span data-stu-id="37d68-102">Benefits of cloud computing</span></span>
-  description: <span data-ttu-id="37d68-103">클라우드 컴퓨팅의 혜택</span><span class="sxs-lookup"><span data-stu-id="37d68-103">Benefits of cloud computing</span></span>
-  ms.openlocfilehash: b5d9f2d1a9ae891f0a053d091b05b14fd2d83fdd
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="eab51-102">클라우드 컴퓨팅의 혜택</span><span class="sxs-lookup"><span data-stu-id="eab51-102">Benefits of cloud computing</span></span>
+  description: <span data-ttu-id="eab51-103">클라우드 컴퓨팅의 혜택</span><span class="sxs-lookup"><span data-stu-id="eab51-103">Benefits of cloud computing</span></span>
+  ms.openlocfilehash: 1ba6abecccb653683ef06a3e4b8408a84fa5b073
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40446572"
-durationInMinutes: 5
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43414711"
+durationInMinutes: 8
 content: '[!include[](includes/3-benefits-of-cloud-computing.md)]'

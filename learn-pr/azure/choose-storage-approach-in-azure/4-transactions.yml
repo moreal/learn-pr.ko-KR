@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.4-transactions
+metadata:
+  title: <span data-ttu-id="cd919-101">트랜잭션에서 여러 작업 그룹화</span><span class="sxs-lookup"><span data-stu-id="cd919-101">Group multiple operations in a transaction</span></span>
+  description: <span data-ttu-id="cd919-102">트랜잭션에서 여러 작업 그룹화</span><span class="sxs-lookup"><span data-stu-id="cd919-102">Group multiple operations in a transaction</span></span>
+  displayType: one-column
+  ms.openlocfilehash: deca0e972e897760f2179b8176dfdd079790a423
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252465"
+title: <span data-ttu-id="cd919-103">트랜잭션에서 여러 작업 그룹화</span><span class="sxs-lookup"><span data-stu-id="cd919-103">Group multiple operations in a transaction</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-transactions.md)]
+quiz:
+  title: <span data-ttu-id="cd919-104">트랜잭션</span><span class="sxs-lookup"><span data-stu-id="cd919-104">Transactions</span></span>
+  questions:
+  - content: <span data-ttu-id="cd919-105">제품 데이터에 필요한 시스템의 종류는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="cd919-105">What kind of system does the product data need?</span></span>
+    choices:
+    - content: <span data-ttu-id="cd919-106">OLAP</span><span class="sxs-lookup"><span data-stu-id="cd919-106">OLAP</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cd919-107">아니요, OLAP 시스템은 복잡한 쿼리나 트랜잭션이 필요하며 짧은 대기 시간이 필요하지 않은 데이터에 가장 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-107">No, an OLAP system is best for data that requires complex queries or transactions and doesn't require low-latency.</span></span> <span data-ttu-id="cd919-108">제품 데이터는 빠르게 수정되어야 하며 대기 시간이 짧고 처리량이 높은 시스템을 필요로 합니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-108">The product data needs to be modified quickly, and needs a low-latency, high-throughput system.</span></span>
+    - content: <span data-ttu-id="cd919-109">OLTP</span><span class="sxs-lookup"><span data-stu-id="cd919-109">OLTP</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cd919-110">예, OLTP 시스템은 많은 사용자를 지원하며, 빠르게 응답하고, 대량의 데이터를 처리하며, 가용성이 높고, 대개 규모가 작거나 비교적 단순한 트랜잭션을 처리하므로 제품 데이터 집합에 가장 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-110">Yes, OLTP systems support lots of users, have quick response times, handle large volumes of data, are highly available, and typically handle small or relatively simple transactions, which is perfect for the product data set.</span></span>
+  - content: <span data-ttu-id="cd919-111">재고를 업데이트하고 결제를 처리하는 작업이 동일한 트랜잭션에 있었고 사용자가 전화 및 랩톱을 통해 완전히 동일한 주문을 ACID 준수 데이터베이스에 제출하면 어떻게 되나요?</span><span class="sxs-lookup"><span data-stu-id="cd919-111">If the operations to update inventory and process payments were in the same transaction, and a user submitted the exact same order via phone and by laptop to an ACID compliant database, what would happen?</span></span>
+    choices:
+    - content: <span data-ttu-id="cd919-112">첫 번째 주문은 완료되고, 남아 있는 크레딧 계정은 0으로 변경되고, 두 번째 주문은 사용자에게 남아 있는 판매점 내 크레딧이 없음을 표시하도록 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-112">The first order would complete, the remaining credit account would change to zero, and the second order would be updated to show that the user had no in-store credit remaining.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cd919-113">아니요, 트랜잭션 데이터베이스에서의 격리로 인해 두 트랜잭션이 독립적으로 처리되며 두 번째 트랜잭션이 완료되고 실패할 때까지 첫 번째 트랜잭션이 두 번째 처리 중인 트랜잭션을 수정하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-113">No, due to the Isolation in transactional databases, the two transactions are handled independently, and the first transaction would not modify the second in-process transaction until the second transaction completed and failed.</span></span>
+    - content: <span data-ttu-id="cd919-114">하나의 주문은 처리되고 판매점 내 크레딧을 사용하지만, 다른 하나의 주문은 장바구니에 있는 항목에 대해 남아 있는 재고를 업데이트하되 주문을 완료하지는 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-114">One order would be processed and would use the in-store credit, the other order update the remaining inventory for the items in the basket but would not complete the order</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cd919-115">아니요, 트랜잭션 데이터베이스의 원자성으로 인해 두 번째 주문이 실패한 주문에 대해 남아 있는 재고를 업데이트하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-115">No, due to the Atomicity in transactional databases, the second order would not update the remaining inventory for the failed order.</span></span>
+    - content: <span data-ttu-id="cd919-116">한 주문은 처리되고 판매점 내 크레딧을 사용하지만 다른 하나의 주문은 처리되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-116">One order would be processed and would use the in-store credit, the other order would not be processed</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cd919-117">예, 두 번째 주문이 판매점 내 크레딧이 이미 사용되었음을 확인하면 트랜잭션을 롤백합니다.</span><span class="sxs-lookup"><span data-stu-id="cd919-117">Yes, once the second order determined the in-store credit had already been used, it would roll back the transaction.</span></span>

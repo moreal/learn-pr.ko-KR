@@ -3,12 +3,12 @@ uid: principles-cloud-computing
 metadata:
   title: 클라우드 컴퓨팅의 원칙
   description: 클라우드 컴퓨팅의 핵심 사항 및 클라우드로 이전하는 경우의 이점을 알아봅니다. 기본적인 용어, 다양한 배포 모델 및 모든 클라우드 공급자가 제공하는 일반적인 서비스에 대해 소개합니다.
-  ms.openlocfilehash: 95082414c1ad805682aa6f7edf6a768ba4dd0d6a
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 981fc33be83e9ca81b6f1378adb97fcbba60c430
+  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447078"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42982122"
 title: 클라우드 컴퓨팅의 원칙
 summary: 클라우드 컴퓨팅의 핵심 개념 및 클라우드 컴퓨팅이 비즈니스에 도움이 될 수 있는 이유를 알아봅니다.
 abstract: 클라우드 컴퓨팅의 핵심 사항 및 클라우드로 이전하는 경우의 이점을 알아봅니다. 기본적인 용어, 다양한 배포 모델 및 모든 클라우드 공급자가 제공하는 일반적인 서비스에 대해 소개합니다.

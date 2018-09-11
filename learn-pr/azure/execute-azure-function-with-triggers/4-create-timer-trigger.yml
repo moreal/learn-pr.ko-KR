@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: execute-azure-function-with-triggers.4-create-timer-trigger
-title: <span data-ttu-id="608a4-101">타이머 트리거 만들기</span><span class="sxs-lookup"><span data-stu-id="608a4-101">Create a Timer Trigger</span></span>
+title: <span data-ttu-id="ab6c9-101">타이머 트리거 만들기</span><span class="sxs-lookup"><span data-stu-id="ab6c9-101">Create a timer trigger</span></span>
 metadata:
-  title: <span data-ttu-id="608a4-102">타이머 트리거를 만들고 Azure 함수를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="608a4-102">Create a Timer Trigger and run an Azure Function</span></span>
-  description: <span data-ttu-id="608a4-103">타이머 트리거 만들기</span><span class="sxs-lookup"><span data-stu-id="608a4-103">Create a Timer Trigger</span></span>
-  ms.openlocfilehash: 952b3bd3dde33d460e32c65ea3ca72b6f4f41f4b
-  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
+  title: <span data-ttu-id="ab6c9-102">타이머 트리거 만들기</span><span class="sxs-lookup"><span data-stu-id="ab6c9-102">Create a timer trigger</span></span>
+  description: <span data-ttu-id="ab6c9-103">타이머 트리거 만들기</span><span class="sxs-lookup"><span data-stu-id="ab6c9-103">Create a timer trigger</span></span>
+  ms.openlocfilehash: a63a07d0525b124f99f06059072a4f9a670db82f
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42987104"
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43412842"
 durationInMinutes: 15
 content: '[!include[](includes/4-create-timer-trigger.md)]'

@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.2-what-is-cloud-computing
-title: <span data-ttu-id="736ac-101">클라우드 컴퓨팅이란?</span><span class="sxs-lookup"><span data-stu-id="736ac-101">What is cloud computing?</span></span>
+title: <span data-ttu-id="c680c-101">클라우드 컴퓨팅이란?</span><span class="sxs-lookup"><span data-stu-id="c680c-101">What is cloud computing?</span></span>
 metadata:
-  title: <span data-ttu-id="736ac-102">클라우드 컴퓨팅이란?</span><span class="sxs-lookup"><span data-stu-id="736ac-102">What is cloud computing?</span></span>
-  description: <span data-ttu-id="736ac-103">클라우드 컴퓨팅이란?</span><span class="sxs-lookup"><span data-stu-id="736ac-103">What is cloud computing?</span></span>
-  ms.openlocfilehash: 31208a869eda628697e4ab1086d6c976c0f2fbc9
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="c680c-102">클라우드 컴퓨팅이란?</span><span class="sxs-lookup"><span data-stu-id="c680c-102">What is cloud computing?</span></span>
+  description: <span data-ttu-id="c680c-103">클라우드 컴퓨팅이란?</span><span class="sxs-lookup"><span data-stu-id="c680c-103">What is cloud computing?</span></span>
+  ms.openlocfilehash: 57a72fefb649f8a5b8da83add5db736d57e36ca4
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447603"
-durationInMinutes: 5
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43414741"
+durationInMinutes: 8
 content: '[!include[](includes/2-what-is-cloud-computing.md)]'

@@ -2,37 +2,43 @@
 uid: learn.create-a-windows-vm-in-azure
 metadata:
   title: Azure에서 Windows 가상 머신 만들기
-  description: >
-    Windows VM(Virtual Machines)을 사용하면 Microsoft Azure 내에서 물리적 데스크톱 또는 서버 컴퓨터처럼 사용할 수 있는 전용 계산 리소스를 몇 분 만에 만들 수 있습니다. 그런 다음, RDP(원격 데스크톱 프로토콜)를 사용하여 사용자 인터페이스를 연결할 수 있습니다. 가상 머신이 관리 용도로 연결하는 서버인지, 최종 사용자용 가상 워크스테이션인지에 관계없이, RDP는 로컬 물리적 컴퓨터의 터미널 앞에 앉아 있는 것과 동일한 경험을 제공합니다.
-
-
-    이 과정에서는 Azure Portal을 통해 Windows VM을 만드는 방법을 배웁니다. 그런 다음, RDP(원격 데스크톱 프로토콜)를 통해 해당 VM에 연결하고 Windows 데스크톱을 사용합니다. 또한 포털을 사용하여 VM의 크기 및 네트워킹 기능을 수정합니다.
-  ms.openlocfilehash: 737fb065fc9fe640b6cfc5f11a5b9458a00b8d47
-  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  description: Azure VM(Virtual Machines)을 사용하면 물리적 데스크톱 또는 서버 머신처럼 사용할 수 있는 전용 계산 리소스를 몇 분 안에 만들 수 있습니다. 가상 머신이 관리 용도로 연결하는 서버이든, 최종 사용자용 가상 워크스테이션이든 관계없이, RDP(원격 데스크톱 프로토콜)는 로컬 물리적 컴퓨터의 터미널에 앉아 있는 것과 동일한 경험을 제공합니다.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 94c2c06d61aca0da849615f622432d762123ad89
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "42615649"
-title: Azure에서 Widows 가상 머신 만들기
-summary: 이 모듈에서는 Azure에서 Windows 가상 머신을 만든 후에 원격 데스크톱 연결을 통해 해당 가상 머신에 액세스하는 방법을 배웁니다. 마지막으로, 포털을 사용하여 VM의 가상 하드웨어 구성을 수정하는 방법을 배웁니다.
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43412126"
+title: Azure에서 Windows 가상 머신 만들기
+summary: Azure VM(Virtual Machines)을 사용하면 물리적 데스크톱 또는 서버 머신처럼 사용할 수 있는 전용 계산 리소스를 몇 분 안에 만들 수 있습니다. 가상 머신이 관리 용도로 연결하는 서버이든, 최종 사용자용 가상 워크스테이션이든 관계없이, RDP(원격 데스크톱 프로토콜)는 로컬 물리적 컴퓨터의 터미널에 앉아 있는 것과 동일한 경험을 제공합니다.
 abstract: >
-  Windows VM(Virtual Machines)을 사용하면 Microsoft Azure 내에서 물리적 데스크톱 또는 서버 컴퓨터처럼 사용할 수 있는 전용 계산 리소스를 몇 분 만에 만들 수 있습니다. 그런 다음, RDP(원격 데스크톱 프로토콜)를 사용하여 사용자 인터페이스를 연결할 수 있습니다. 가상 머신이 관리 용도로 연결하는 서버인지, 최종 사용자용 가상 워크스테이션인지에 관계없이, RDP는 로컬 물리적 컴퓨터의 터미널 앞에 앉아 있는 것과 동일한 경험을 제공합니다.
+  이 모듈에서는 다음을 수행합니다.
 
+  - Azure의 가상 머신에 사용할 수 있는 옵션을 이해합니다.
 
-  이 과정에서는 Azure Portal을 통해 Windows VM을 만드는 방법을 배웁니다. 그런 다음, RDP(원격 데스크톱 프로토콜)를 통해 해당 VM에 연결하고 Windows 데스크톱을 사용합니다. 또한 포털을 사용하여 VM의 크기 및 네트워킹 기능을 수정합니다.
-cardDescription: 이 모듈에서는 Azure에서 Windows 가상 머신을 만든 후에 원격 데스크톱 연결을 통해 해당 가상 머신에 액세스하는 방법을 배웁니다. 마지막으로, 포털을 사용하여 VM의 가상 하드웨어 구성을 수정하는 방법을 배웁니다.
+  - Azure Portal을 사용하여 Windows 가상 머신을 만듭니다.
+
+  - 원격 데스크톱을 사용하여 실행 중인 Windows 가상 머신에 연결합니다.
+
+  - 소프트웨어를 설치하고 Azure Portal을 사용하여 VM에서 네트워크 구성을 변경합니다.
+prerequisites: 없음
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
 roles:
 - developer
 products:
-- Azure
+- azure
+- virtualMachines
+- azurePortal
 units:
 - learn.create-a-windows-vm-in-azure.1-introduction
 - learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
 - learn.create-a-windows-vm-in-azure.3-exercise-create-a-vm
 - learn.create-a-windows-vm-in-azure.4-connect-to-a-windows-virtual-machine
 - learn.create-a-windows-vm-in-azure.5-exercise-connect-to-a-windows-vm-using-rdp
-- learn.create-a-windows-vm-in-azure.6-summary
+- learn.create-a-windows-vm-in-azure.6-manage-vm
+- learn.create-a-windows-vm-in-azure.7-exercise-manage-vm
+- learn.create-a-windows-vm-in-azure.8-summary
 achievement: learn.create-a-windows-vm-in-azure.badge
