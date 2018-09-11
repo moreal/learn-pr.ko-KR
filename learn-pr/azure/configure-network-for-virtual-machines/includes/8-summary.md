@@ -1,8 +1,0 @@
-Azure에서는 가상 네트워킹을 설정하는 세 가지 방법을 제공합니다. 
- - Azure Virtual Networks
- - Azure VPN Gateway
- - Azure ExpressRoute 
- 
- Azure Virtual Networks는 동일한 지역 내의 Virtual Machines 및 Virtual Machine Scale Sets와 같은 리소스를 연결하여 통신할 수 있도록 할 수 있습니다. Azure Virtual Networks는 Azure Storage, 데이터베이스 및 웹앱과 같은 지정된 Azure 서비스 엔드포인트에 연결할 수도 있습니다.
-
-Azure VPN Gateway는 공용 인터넷을 통해 온-프레미스 클라이언트 또는 네트워크와의 통신을 사용하거나 다른 Azure 지역의 가상 네트워크에 연결할 수 있습니다. 항상 안전한 전용 경로가 필요한 경우 최고 수준의 안정성 및 보안을 얻을 수 있는 Azure 데이터 센터에 대해 높은 대역폭의 개인 연결을 만드는 Azure ExpressRoute를 사용할 수 있습니다.
