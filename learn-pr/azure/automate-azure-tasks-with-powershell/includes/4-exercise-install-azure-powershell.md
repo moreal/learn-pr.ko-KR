@@ -1,4 +1,4 @@
-이 연습에서는 로컬 머신에 **Azure PowerShell**을 설치합니다. 운영 체제에 적합한 섹션을 선택하세요.
+이 단원에서는 로컬 컴퓨터에 **Azure PowerShell**을 설치합니다. 운영 체제에 적합한 섹션을 선택하세요.
 
 ## <a name="linux-and-mac"></a>Linux 및 Mac
 Linux 및 macOS에서의 첫 번째 단계는 **PowerShell Core**를 설치하는 것입니다.
