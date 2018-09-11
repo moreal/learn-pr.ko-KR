@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.build-azure-bot-services-bot
+metadata:
+  title: Azure Bot Service를 사용하여 챗봇 빌드
+  description: 이 모듈에서는 Azure Bot Service를 사용하여 봇을 만들고 QnA Maker를 사용하여 빌드된 기술 자료에 해당 봇을 연결합니다. 그런 다음, Skype를 사용하여 봇과 상호 작용합니다.
+  ms.openlocfilehash: 9721ff980c3cf55b2ac1b7baf19d63cf2c65057a
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43229876"
+title: Azure Bot Service를 사용하여 챗봇 빌드
+summary: 이 모듈에서는 Azure Bot Service를 사용하여 봇을 만들고 QnA Maker를 사용하여 빌드된 기술 자료에 해당 봇을 연결합니다. 그런 다음, Skype를 사용하여 봇과 상호 작용합니다.
+abstract: 이 모듈에서는 Azure Bot Service를 사용하여 봇을 만들고 QnA Maker를 사용하여 빌드된 기술 자료에 해당 봇을 연결합니다. 그런 다음, Skype를 사용하여 봇과 상호 작용합니다.
+cardDescription: 이 모듈에서는 Azure Bot Service를 사용하여 봇을 만들고 QnA Maker를 사용하여 빌드된 기술 자료에 해당 봇을 연결합니다. 그런 다음, Skype를 사용하여 봇과 상호 작용합니다.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.build-azure-bot-services-bot.1-create-web-app-bot
+- learn.build-azure-bot-services-bot.2-create-qna-maker
+- learn.build-azure-bot-services-bot.3-deploy-bot
+- learn.build-azure-bot-services-bot.4-debug-bot-locally
+- learn.build-azure-bot-services-bot.5-connect-to-knowledge-base
+- learn.build-azure-bot-services-bot.6-test-with-skype
+- learn.build-azure-bot-services-bot.7-knowledge-check
+- learn.build-azure-bot-services-bot.8-delete-env
+achievement: learn.placeholder.badge

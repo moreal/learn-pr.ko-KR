@@ -1,62 +1,59 @@
-In an online retail business, there are different categories of data. Some data is structured, like customer financial information, and other data is unstructured, like product images. When it comes to the organization of data, there are three categories: structured, semi-structured, and unstructured. Each category of data may benefit from a different storage solution.
+온라인 판매점에는 다른 형식의 데이터가 있을 수 있습니다. 어떤 데이터는 고객 연락처 정보와 같이 구조적이고 어떤 데이터는 제품 이미지와 같이 비구조적입니다. 데이터 범주는 구조적, 반구조적 및 비구조적 데이터 세 가지입니다. 데이터 범주마다 서로 다른 저장소 솔루션으로부터 혜택을 받을 수 있습니다.
 
-Here, you'll learn how to classify your data into the appropriate categories so that you can choose the correct storage solution.
+여기서는 올바른 저장소 솔루션을 선택할 수 있도록 데이터를 해당 범주로 분류하는 방법을 배웁니다.
 
-## Structured data
+## <a name="structured-data"></a>구조화된 데이터
 
-Structured data is data that adheres to a schema, so all of the data has the same fields or properties. Structured data can be stored in a database table with rows and columns. Structured data relies on keys to indicate how one row in a table relates to data in another row of another table. Structured data is also referred to as relational data, as the data's schema defines the table of data, and the fields in the table, and the clear relationship between the two.
+구조적 데이터는 스키마를 준수하는 데이터이므로 모든 데이터에 동일한 필드 또는 속성이 있습니다. 구조적 데이터는 행 및 열이 있는 데이터베이스 테이블에 저장될 수 있습니다. 구조적 데이터는 키를 기반으로 테이블의 한 행을 다른 테이블의 또 다른 행에 있는 관련 데이터와 관련시킵니다. 구조적 데이터는 스키마가 데이터의 테이블과 테이블의 필드, 둘 사이의 명확한 관계를 정의하므로 관계형 데이터라고도 합니다.
 
-Structured data is straightforward in that it's easy to enter, query, and analyze. All of the data follows the same format.
+구조적 데이터는 모든 데이터가 동일한 형식을 따르므로 입력하고 쿼리하고 분석하기가 쉽다는 면에서 간단하다고 할 수 있습니다.
 
-Examples of structured data include:
+구조적 데이터의 예는 다음과 같습니다.
+* 센서 데이터
+* 재무 데이터
 
-- Sensor data
-- Financial data
+## <a name="semi-structured-data"></a>반구조적 데이터
 
-## Semi-structured data
+반구조적 데이터는 구조적 데이터보다 덜 조직화되어 있으며 필드가 테이블, 행 및 열에 제대로 맞지 않으므로 관계형 데이터베이스에 저장되지 않습니다. 반구조적 데이터는 표시된 데이터 내에서 데이터 구성 및 계층 구조를 작성하는 태그가 포함되어 있습니다.  
 
-Semi-structured data is less organized than structured data, and does not get stored in relational databases, as the fields do not neatly fit into tables, rows, and columns. Semi-structured data contains tags that make the organization and hierarchy of the data apparent.  
+반구조적 데이터는 비관계형 또는 NoSQL 데이터라고도 합니다.
 
-Semi-structured data is also referred to as non-relational or NoSQL data.
+반구조적 데이터의 예는 다음과 같습니다.
+* JSON 파일
+* XML 파일
 
-Examples of semi-structured data include:
+## <a name="unstructured-data"></a>비구조적 데이터
 
-- JSON files
-- XML files
+비구조적 데이터 구성은 데이터를 보기만 하는 경우 일반적으로 모호합니다. 비구조적 데이터는 사진 또는 비디오와 같은 파일로 제공되는 경우가 많습니다. 이 경우 비디오 파일 자체에 전체 구조가 포함되어 있을 수 있으며 반구조적 메타데이터와 함께 제공되지만 비디오 자체를 구성하는 데이터는 비구조적입니다. 따라서, 사진과 비디오와 그리고 다른 유사한 파일이 비구조적 데이터로 분류됩니다.
 
-## Unstructured data
+비구조적 데이터의 예는 다음과 같습니다.
+* 사진, 비디오, 오디오 파일 같은 미디어 파일
+* Word 문서 같은 Office 파일
+* 텍스트 파일
+* 로그 파일
 
-The organization of unstructured data is generally ambiguous just by looking at the data. Unstructured data often is delivered in files, such as photos or videos. The video file itself may have an overall structure and come with semi-structured metadata, but the data that comprises the video itself is unstructured. Therefore, photos, videos, and other similar files are classified as unstructured data.
+이제 각종 데이터 사이의 차이점을 알았으므로 온라인 판매점 앱에 사용되는 데이터 집합을 알아보고 분류해 보겠습니다.
 
-Examples of unstructured data include:
+### <a name="product-catalog-data"></a>제품 카탈로그 데이터
 
-- Media files, such as photos, videos, and audio files
-- Office files, such as Word documents
-- Text files
-- Log files
+온라인 판매점의 제품 카탈로그 데이터는 상당히 구조적인 특성이 있습니다. 제품마다 제품 SKU, 설명, 수량, 가격, 크기 옵션, 색상 옵션, 사진, 동영상(가능한 경우)이 있기 때문입니다. 따라서 이러한 데이터는 모두 구조가 동일하므로 처음에는 관계형으로 표시됩니다. 그러나 새 제품을 도입하게 되고 시간이 지날수록 제품에 다른 필드를 추가하려 할 수 있습니다. 예를 들어, 취급하는 새 테니스 신발에 Bluetooth가 지원되어 신발의 센서 데이터를 사용자의 휴대폰에 있는 피트니스 앱으로 릴레이하여 속도를 추적할 수 있다고 가정해 보겠습니다. 이러한 기능을 사용하는 추세가 증가하고 있으므로 앞으로 고객이 “Bluetooth 지원” 신발을 필터링할 수 있게 하려고 합니다. 이전으로 돌아가서 Bluetooth 지원 속성으로 모든 기존 신발 데이터를 업데이트하기보다는 간단히 새 신발에 해당 속성을 추가하려고 합니다.
 
-Now that you know the differences between each kind of data, let's look at the data sets used in an online retail business, and classify them.
+[Bluetooth 지원] 필드를 추가하면 스키마에 차이점이 도입되었으므로 더 이상 신발 데이터의 유형이 다르지 않게 됩니다. 일회성 인스턴스였으며 발생할 수 있는 유일한 예외였다면 이전으로 돌아가서 모든 제품에 [Bluetooth 지원] 필드가 포함되도록 기존 데이터를 정규화할 수 있습니다. 하지만 앞으로 지원하려고 구상 중인 여러 전문 필드 중 하나일 뿐이므로 이 데이터의 분류는 반구조적입니다. 데이터는 태그에 따라 구성되지만 카탈로그의 각 제품에는 고유한 필드가 포함될 수 있습니다.
 
-## Product catalog data
+데이터 분류: **반구조적**
 
-Product catalog data for an online retail business is fairly structured in nature, as each product has a product SKU, a description, a quantity, a price, size options, color options, a photo, and possibly a video. So, this data appears relational to start with, as it all has the same structure. However, as you introduce new products or different kinds of products, you may want to add different fields as time goes on. For example, new tennis shoes you're carrying are Bluetooth enabled, to relay sensor data from the shoe to a fitness app on the user’s phone. This appears to be a growing trend, and you want to enable customers to filter on "Bluetooth enabled" shoes in the future. You don't want to go back and update all your existing shoe data with the Bluetooth enabled property, you simply want to add it to new shoes.
+### <a name="photos-and-videos"></a>사진 및 비디오
 
-With the addition of the Bluetooth enabled field, your shoe data is no longer heterogeneous, as you've introduced differences in the schema. If this were a one-off instance and the only exception you ever think you'll encounter, you could go back and normalize the existing data so that all products included a "Bluetooth enabled" field. However, this is just one of many specialty fields you envision supporting in the future; thus, the classification of this data is semi-structured. The data is organized by tags, but each product in the catalog could contain unique fields.
+제품 페이지에 표시되는 사진 및 비디오는 비구조적 데이터입니다. 미디어 파일에 메타데이터가 포함될 수 있지만 미디어 파일의 본문은 비구조적입니다.
 
-Data classification: **Semi-structured**
+데이터 분류: **비구조적**
 
-## Photos and videos
+### <a name="business-data"></a>비즈니스 데이터
 
-The photos and videos displayed on product pages are unstructured data. Although the media file may contain metadata, the body of the media file is unstructured.
+비즈니스 분석가는 비즈니스 인텔리전스를 구현하여 재고 파이프라인 평가 및 판매 데이터 검토를 수행하려고 합니다. 이러한 작업을 수행하려면 여러 달의 데이터를 함께 집계한 후 쿼리해야 합니다. 집계 데이터가 많이 필요하므로 이 데이터는 한 달을 다음 달과 비교할 수 있도록 구조적이어야 합니다.
 
-Data classification: **Unstructured**
+데이터 분류: **구조적**
 
-## Business data
+## <a name="summary"></a>요약
 
-Business analysts want to implement business intelligence to perform inventory pipeline evaluations and sales data reviews. In order to perform these operations, data from multiple months needs to be aggregated together, and then queried. Because of the large need to aggregate similar data, this data must be structured, so one month can be compared against the next.
-
-Data classification: **Structured**
-
-## Summary
-
-There are three categories of data: structured, semi-structured, and unstructured. Understanding the differences and determining the category of your data will help you choose the correct storage solution. Structured data is organized data that neatly fits into rows and columns in tables. Semi-structured data is still organized and has clear properties and values, but there's variety to the data. Unstructured data doesn't fit neatly into tables, nor does it have a schema.
+데이터 범주는 구조적, 반구조적 및 비구조적 데이터 세 가지입니다. 데이터의 차이점을 이해하고 데이터 범주를 결정하면 적합한 저장소 솔루션을 선택하는 데 도움이 됩니다. 구조적 데이터는 테이블의 행과 열에 잘 맞게 구성된 데이터입니다. 반구조적 데이터도 잘 구성되어 있으며 명확한 속성과 값을 가지고 있지만 데이터에 다양성이 있습니다. 비구조적 데이터는 테이블에 잘 맞지 않으며 스키마도 없습니다.

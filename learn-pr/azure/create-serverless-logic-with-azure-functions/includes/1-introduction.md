@@ -1,14 +1,13 @@
-Imagine you work for an escalator company that has invested in IoT technology to monitor its product in the field. You oversee the processing of temperature sensor data from the drive gears of the escalators. You monitor the temperature data and add a data flag to indicate when the gears are too hot. In downstream systems, this data helps determine when maintenance is required.
+현장에서 제품을 모니터링하기 위해 IoT 기술에 투자한 에스컬레이터 회사에 근무한다고 가정합니다. 에스컬레이터의 드라이브 기어에서 온도 센서 데이터의 처리를 감독합니다. 온도 데이터를 모니터링하고 데이터 플래그를 추가하여 기어가 너무 뜨거운 시기를 표시합니다. 다운스트림 시스템에서 이 데이터는 유지 관리가 필요한 시기를 결정하는 데 도움이 됩니다.
 
-Your company receives sensor data from several locations and from different escalator models. The data arrives in different formats, including batch file uploads, scheduled database pulls, messages on a queue, and incoming data from an event hub. You want to develop a reusable service that can process your temperature data from all these sources.
+회사는 여러 위치 및 다른 에스컬레이터 모델에서 센서 데이터를 수신합니다. 데이터는 배치 파일 업로드, 예약된 데이터베이스 끌어오기, 큐의 메시지 및 이벤트 허브에서 들어오는 데이터를 포함하여 다양한 형식으로 도착합니다. 이러한 모든 원본에서 온도 데이터를 처리할 수 있는 재사용 가능 서비스를 개발하려고 합니다.
 
-When designing a service such as this with traditional enterprise architecture strategies, you would need to consider server infrastructure and maintenance up front: scope out necessary hardware, plan to install it, coordinate with IT to manage it, etc. An alternative to all that work is **serverless computing**. With serverless computing, your cloud provider manages the provisioning and maintenance of the infrastructure letting you focus completely on building the app logic. Azure Functions is a key component of the serverless computing offering from Azure and enables you to run pieces of code or *functions*, written in the programming language of your choice, in the cloud.
+기존 엔터프라이즈 아키텍처 전략과 같은 서비스를 설계할 때는 필요한 하드웨어 범위를 지정하고, 하드웨어를 설치할 계획을 세우고, IT 부서와 협력하여 관리하는 등 서버 인프라 및 유지 관리를 미리 고려해야 합니다. 이러한 모든 작업에 대한 대체 방법은 **서버리스 컴퓨팅**입니다. 서버리스 컴퓨팅을 사용하면 사용자가 앱 논리를 빌드하는 데 완전히 집중할 수 있도록 클라우드 공급자가 인프라의 프로비저닝 및 유지 관리를 관리합니다. Azure Functions는 Azure에서 제공하는 서버리스 컴퓨팅의 핵심 구성 요소이며, 이를 사용하여 클라우드에서 선택한 프로그래밍 언어로 작성된 코드 조각 또는 ‘함수’를 실행할 수 있습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
+이 모듈에서는 다음을 수행합니다.
 
-In this module, you will:
-
-- Decide if serverless computing is right for your business need.
-- Create an Azure function app in the Azure portal.
-- Execute a function using triggers.
-- Monitor and test your Azure function from the Azure portal .
+- 비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정합니다.
+- Azure Portal에서 Azure 함수 앱을 만듭니다.
+- 트리거를 사용하여 함수를 실행합니다.
+- Azure Portal에서 Azure 함수를 모니터링 및 테스트합니다.

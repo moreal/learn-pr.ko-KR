@@ -1,45 +1,45 @@
-Suppose you are planning the architecture of a distributed music-sharing application. You want to ensure that the application is as reliable and scalable as possible, and you intend to use Azure technologies to build a robust communication infrastructure.
+배포된 음악 공유 응용 프로그램의 아키텍처를 계획한다고 가정합니다. 응용 프로그램이 가능한 한 안정적으로 확장성이 있는지 확인하고 Azure 기술을 사용하여 강력한 통신 인프라를 구축하려고 합니다.
 
-Before you can choose the right Azure technology, you must understand each individual communication that the components of the application exchange. For each communication you can choose a different Azure technology.
+올바른 Azure 기술을 선택하기 전에 응용 프로그램의 구성 요소가 교환하는 각 통신을 살펴봐야 합니다. 각 통신에 서로 다른 Azure 기술을 선택할 수 있습니다.
 
-The first thing to understand about a communication is whether it sends **messages** or **events**. This is a fundamental choice that will help you choose the appropriate Azure service to use.
+처음 살펴봐야 할 통신 관련 내용은 **메시지**나 **이벤트**를 보낼지 여부입니다. 이것은 사용하기에 적합한 Azure 서비스를 선택하는 데 도움이 되는 기본적인 선택입니다.
 
-## What is a message?
-In the terminology of distributed applications, **messages** have the following characteristics:
+## <a name="what-is-a-message"></a>메시지란?
+배포 응용 프로그램의 용어에서 **메시지**의 특성은 다음과 같습니다.
 
-- A message contains raw data, produced by one component, that will be consumed by another component.
-- A message contains the data itself, not just a reference to that data.
-- The sending component expects the message content to be processed in a certain way by the destination component. The integrity of the overall system may depend on both sender and receiver doing a specific job.
+- 메시지에는 한 구성 요소가 생성하고 또 다른 구성 요소가 사용할 원시 데이터가 포함됩니다.
+- 메시지에는 해당 데이터에 대한 단지 참조가 아닌 데이터 자체가 포함됩니다.
+- 발신 구성 요소는 대상 구성 요소가 메시지 콘텐츠를 특정 방법으로 처리할 것으로 예상합니다. 전체 시스템의 무결성은 특정 작업을 수행하는 발신자와 수신자에 따라 달라질 수 있습니다.
 
-For example, suppose a user uploads a new song by using the mobile music-sharing app. The mobile app must send that song to the web API that runs in Azure. The song media file itself must be sent, not just an alert that indicates that a new song has been added. The mobile app expects that the web API will store the new song in the database and make it available to other users. This is an example of a message.
+예를 들어 사용자가 모바일 음악 공유 앱을 사용하여 새 노래를 업로드한다고 가정합니다. 모바일 앱은 Azure에서 실행되는 웹 API로 해당 노래를 보내야 합니다. 새 노래가 추가되었음을 나타내는 단지 알림이 아닌 노래 미디어 파일 자체를 보내야 합니다. 모바일 앱은 웹 API가 데이터베이스에 새 노래를 저장하고 다른 사용자에게 제공할 것으로 예상합니다. 이는 메시지의 예입니다.
 
-## What is an event?
+## <a name="what-is-an-event"></a>이벤트란?
 
-**Events** are lighter weight than messages, and are most often used for broadcast communications. The components sending the event are known as **publishers**, and receivers are known as **subscribers**.
+**이벤트**는 메시지보다 간단하고 브로드캐스트 통신에 가장 자주 사용됩니다. 이벤트를 보내는 구성 요소는 **게시자**라고 하고 수신자는 **구독자**라고 합니다.
 
-With events, receiving components will generally decide in which communications they are interested, and will "subscribe" to those. The subscription is usually managed by an intermediary, like Azure Event Grid or Azure Event Hubs. When publishers send an event, the intermediary will route that event to interested subscribers. This is known as a "publish-subscribe architecture." It is not the only way to deal with events, but it is the most common.
+일반적으로 수신 구성 요소는 이벤트를 통해 관심이 있는 통신을 결정하고 해당 통신을 “구독”할 것입니다. 일반적으로 구독은 Azure Event Grid 또는 Azure Event Hubs와 같은 중개자에서 관리됩니다. 게시자가 이벤트를 보내면 중개자는 해당 이벤트를 관심 있는 구독자에게 라우팅합니다. 이를 “게시-구독 아키텍처”라고 합니다. 이것은 이벤트를 처리하는 유일한 방법은 아니지만 가장 일반적인 방법입니다.
 
-Events have the following characteristics:
+이벤트의 특성은 다음과 같습니다.
 
-- An event is a lightweight notification that indicates that something happened.
-- The event may be sent to multiple receivers, or to none at all.
-- Events are often intended to "fan out," or have a large number of subscribers for each publisher.
-- The publisher of the event has no expectation about the action a receiving component takes.
-- Some events are discrete units and unrelated to other events. 
-- Some events are part of a related and ordered series.  
+- 이벤트는 어떤 것이 발생했음을 나타내는 간단한 알림입니다.
+- 이벤트가 여러 수신자에게 발신되거나 전혀 발신되지 않을 수 있습니다.
+- 이벤트는 종종 각 게시자에 대한 다수의 구독자를 “팬아웃”하거나 포함해야 합니다.
+- 이벤트 게시자는 수신 구성 요소가 수행하는 작업에 대한 기대가 없습니다.
+- 일부 이벤트는 개별 단위이며 다른 이벤트와 관련이 없습니다. 
+- 일부 이벤트는 관련되고 정렬된 시리즈의 일부입니다.  
 
-For example, suppose the music file upload has been completed, and the new song has been added to the database. In order to inform users of the new file, the web API must inform the web front end and mobile app users of the new file. The users can choose whether to listen to the new song, so the initial notification does not include the music file but only notifies users that the song exists. The sender does not have a specific expectation that the event receivers will do anything particular in responsiveness of receiving this event.
+예를 들어 음악 파일 업로드가 완료되었고 새 노래가 데이터베이스에 추가되었다고 가정합니다. 새 파일 정보를 사용자에게 알리기 위해 웹 API는 웹 프런트 엔드 및 모바일 앱 사용자에게 새 파일 정보를 알려야 합니다. 사용자가 새로운 노래를 들을지 여부를 선택할 수 있으므로, 초기 알림에는 음악 파일을 포함하지 않고 사용자에게 노래가 존재함을 알리면 됩니다. 발신자는 이벤트 수신자가 이 이벤트 수신의 응답으로 특별히 어떤 작업을 수행할 것으로 기대하지 않습니다.
 
-This is an example of a discrete event.
+이는 개별 이벤트의 예입니다.
 
-## How to choose messages or events
+## <a name="how-to-choose-messages-or-events"></a>메시지 또는 이벤트 선택 방법
 
-A single application is likely to use events for some purposes and messages for others. Before you choose, you must analyze your application's architecture and all its use cases, to identify all the different purposes where its components have to communicate with each other.
+단일 응용 프로그램에서 일부 용도에 이벤트를 사용하고 다른 용도에 메시지를 사용할 수 있습니다. 선택하기 전에 응용 프로그램 아키텍처와 모든 사용 사례를 분석하여 구성 요소가 서로 통신해야 하는 다양한 용도를 모두 파악해야 합니다. 
 
-Events are more likely to be used for broadcasts and are often ephemeral, meaning a communication might not be handled by any receiver if none are currently subscribing. Messages are more likely to be used where the distributed application requires a guarantee that the communication will be processed.
+이벤트는 브로드캐스트에 사용할 가능성이 더 크고 종종 삭제되므로 현재 구독자가 없는 경우 통신이 수신자에 의해 처리되지 않을 수 있습니다. 배포 응용 프로그램에 통신이 처리된다는 보장이 필요한 경우에는 메시지가 사용될 가능성이 더 큽니다.
 
-For each communication, consider the following question: **Does the sending component expect the communication to be processed in a particular way by the destination component?**
+각 통신에 대한 다음 질문을 고려하세요. **발신 구성 요소는 대상 구성 요소가 통신을 특정 방법으로 처리할 것으로 예상하나요?**
 
-If the answer is _yes_, choose to use a message. If the answer is _no_, you may be able to use events.
+대답이 _예_이면 메시지를 사용하도록 선택합니다. 대답이 _아니요_면 이벤트를 사용할 수 있습니다.
 
-Understanding how your components need to communicate will help you to choose how your components will communicate. Let's start with messages.
+구성 요소가 어떻게 통신해야 하는지 이해하면 구성 요소가 통신할 방식을 선택하는 데 도움이 됩니다. 메시지를 사용하여 시작해 보겠습니다.

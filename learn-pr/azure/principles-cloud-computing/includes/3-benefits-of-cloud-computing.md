@@ -1,94 +1,38 @@
-Every business must decide how they want to store their data and execute their logic. Depending on your business requirements, cloud computing may or may not be right for you.
+모든 비즈니스에서는 데이터를 저장하고 해당 논리를 실행하는 방법을 결정해야 합니다. 비즈니스 요구 사항에 따라 클라우드 컴퓨팅이 적합할 수도 있고 적합하지 않을 수도 있습니다.
 
-Let's learn some of the top benefits of cloud computing.
+클라우드 컴퓨팅의 주요 혜택 중 일부를 살펴보겠습니다.
 
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-cost-effective.png)
-    :::column-end:::
-    :::column span="3":::
-        **It’s cost effective**
+### <a name="cloud-computing-is-cost-effective"></a>클라우드 컴퓨팅은 비용 효과적임
 
-Cloud computing provides a **pay-as-you-go** pricing model. Rather than paying for a pre-defined amount of computing resources or hardware up-front, you rent hardware and pay for the resources that you use.
+클라우드 컴퓨팅은 **종량제** 가격 모델을 제공합니다. 미리 정의된 양의 컴퓨팅 리소스 또는 하드웨어에 대한 요금을 미리 지급하는 대신 하드웨어를 임대하고 사용하는 리소스에 대한 요금만 지급합니다.
 
-For example, imagine you have a blog, and when you create a new post you want to notify your subscribers via text message. Using the correct cloud computing service, you'll only spend money when you're sending texts to your subscribers. When you're not posting, it won’t cost you anything.
+예를 들어 블로그가 있다고 가정하고, 새 게시물을 만들 때 문자 메시지를 통해 구독자에게 알리려고 합니다. 올바른 클라우드 컴퓨팅 서비스를 사용하면 구독자에게 문자 메시지를 보내는 경우의 비용만 지출합니다. 게시하지 않는 시간 동안은 비용이 부과되지 않습니다.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-scalable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's scalable**
+### <a name="cloud-computing-is-scalable"></a>클라우드 컴퓨팅은 확장성이 있음
 
-Cloud computing supports both _vertical_ and _horizontal_ scaling depending on your needs.
+클라우드 컴퓨팅은 요구 사항에 따라 ‘수직적’ 및 ‘수평적’ 크기 조정을 둘 다 지원합니다.
 
-**Vertical scaling** is the process of adding resources to increase the power of an existing server. Some examples of vertical scaling are: adding a faster CPU, additional CPUs, or adding more memory.
+**수직적 크기 조정**은 기존 서버의 능력을 늘리기 위해 리소스를 추가하는 프로세스입니다. 수직적 크기 조정의 일부 예로는 더 빠른 CPU 추가, 추가 CPU 또는 더 많은 메모리 추가가 있습니다.
 
-**Horizontal scaling** is the process of adding more servers that function together as one unit. For example, instead of having one server processing incoming requests, you have two.
+**수평적 크기 조정**은 하나의 단위로 함께 작동하는 더 많은 서버를 추가하는 프로세스입니다. 예를 들어 들어오는 요청을 처리하는 하나의 서버를 포함하는 대신 두 개를 포함합니다.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-elastic.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's elastic**
+### <a name="cloud-computing-is-elastic"></a>클라우드 컴퓨팅은 탄력적임
 
-As your workload changes due to a spike or drop in demand, a cloud computing system can compensate by automatically adding or removing resources.
+수요 급증 또는 급감으로 인해 워크로드가 변경될 때 클라우드 컴퓨팅 시스템은 보정하기 위해 자동으로 리소스를 추가하거나 제거합니다.
 
-For example, imagine your website is featured in a news article, which leads to a spike in traffic overnight. Since the cloud is elastic, it automatically allocates more computing resources to handle the increased traffic. When the traffic begins to settle, the cloud notices it has too many resources allocated and begins to remove them so you don’t waste any money.
+예를 들어 뉴스 기사에 웹 사이트 특집이 실려 밤새 트래픽이 급증한다고 가정합니다. 클라우드는 탄력적이므로 증가한 트래픽을 처리하기 위해 더 많은 컴퓨팅 리소스를 자동으로 할당할 수 있습니다. 트래픽 요금이 정산되고 시작하고 클라우드가 트래픽에 너무 많은 리소스가 할당되었음을 발견하면 클라우드는 사용자가 돈을 낭비하지 않도록 리소스를 제거하기 시작합니다.
 
-Another example is if you are running an application used by employees, you can have the cloud automatically add resources for the core hours during which most people access the application, and remove the resources at the usual end of the day.
+### <a name="cloud-computing-is-current"></a>클라우드 컴퓨팅은 최신 상태임
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-current.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's current**
+클라우드를 사용하면 응용 프로그램을 빌드하고 배포하는 중요한 작업에 집중할 수 있습니다. 소프트웨어 패치, 하드웨어 설정, 업그레이드 및 기타 IT 관리 작업의 유지 관리 작업을 신경 쓸 필요가 없습니다. 이 작업은 모두 숨겨지고 가장 멋진 최신 도구를 사용하여 비즈니스 운영할 수 있도록 자동으로 수행됩니다.
 
-When you use the cloud, you’re able to focus on what matters: building and deploying applications. You don't have to be caught up in the maintenance work of software patching, hardware setup, upgrades, and other IT management tasks. All of this is automatically done for you to ensure you're using the latest and greatest tools to run your business.
+### <a name="cloud-computing-is-reliable"></a>클라우드 컴퓨팅은 신뢰할 수 있음
 
-Additionally, the computer hardware is maintained and upgraded by the cloud provider. For example, if a disk goes out, the disk will be replaced. If new hardware comes out, you don’t have to go through the process of replacing your hardware. You also don’t have to bear the cost for having up-to-date hardware all the time.
+비즈니스를 운영하는 동안 데이터가 항상 준비되어 있음을 보장하려고 합니다. 클라우드 컴퓨팅 공급자는 데이터 백업, 재해 복구 및 데이터 복제 서비스를 제공하여 데이터를 안전하게 유지합니다.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-reliable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's reliable**
+## <a name="summary"></a>요약
 
-When you're running a business, you want to be confident your data is always going to be there. Cloud computing providers offer data backup, disaster recovery, and data replication services to make sure your data is always safe.
+클라우드 컴퓨팅은 비즈니스를 더 쉽게 운영할 수 있도록 합니다. 클라우드 컴퓨팅은 비용 효과적이고, 확장성이 있고, 탄력적이고, 최신 상태이고, 신뢰할 수 있습니다. 이는 기본 중요한 작업에 더 많은 시간을 사용하고 세부 정보를 관리하는 데 시간을 덜 사용한다는 의미입니다.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-reliable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's secure**
 
-Think about how you secure your data center. You have physical security &ndash; who can access the building, who can touch server racks, and so on. You also have digital security &ndash; who can connect to your systems and data over the network.
 
-The cloud is essentially a network of large data centers distributed throughout the globe. So cloud providers need to deal with many of these same issues, just at a larger scale.
-
-When it comes to physical security &ndash; threats to cloud infrastructure, cloud providers invest heavily in walls, cameras, gates, security personnel, and so on to protect physical assets. They also have strict procedures in place to ensure employees have access only to those resources that they’ve been authorized to manage.
-
-Then there’s digital security. One thing that makes the cloud unique is that you rent compute and storage resources from a shared pool. Plus, data can travel in many different ways &ndash; within a data center, between data centers, and over the internet.
-
-For example, you want only authorized users to be able to log into virtual machines or storage systems running in the cloud. The responsibility for securing these resources is shared between you and the cloud provider. Cloud providers offer tools that help you mitigate security threats but you must use these tools to protect the resources you use.
-
-    :::column-end:::
-:::row-end:::
-
-## Summary
-
-Cloud computing makes running a business easier. It’s cost effective, scalable, elastic, current, reliable, and secure. This means you’re able to spend more time on what matters and less time on managing the underlying details.

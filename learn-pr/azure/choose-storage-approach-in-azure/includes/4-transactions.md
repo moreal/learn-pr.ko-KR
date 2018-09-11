@@ -1,44 +1,44 @@
-There are many times when you need to group a series of data updates together, because a change to one piece of data needs to result in a change to another piece of data. Transactions enable you to group these updates so that if one event in a series of updates fails, the entire series can be rolled back, or undone. For example, as an online retailer you could use a transaction for the placement of an order and payment verification. The grouping of the related events ensures that you don't reduce your inventory levels until an approved form of payment is received.
+데이터의 한 부분을 변경하면 데이터의 다른 부분도 변경해야 하는 결과가 발생하므로 일련의 데이터 업데이트를 함께 그룹화해야 하는 경우가 많습니다. 트랜잭션을 사용하면 이러한 업데이트를 그룹화할 수 있으므로 일련의 업데이트에서 한 이벤트가 실패하면 일련의 업데이트 전체를 롤백하거나 실행 취소할 수 있습니다. 예를 들어 온라인 판매점은 주문 및 결제 확인에 대해 하나의 트랜잭션을 사용할 수 있습니다. 관련 이벤트를 그룹화하면 승인된 결제 양식을 받을 때까지 재고 수준이 줄어들지 않도록 할 수 있습니다.
 
-Here, you'll learn what a transaction is, and whether they're required for your data.
+여기서는 트랜잭션의 개념과 데이터에 트랜잭션이 필요한 경우에 대해 알아봅니다.
 
-## What is a transaction?
+## <a name="what-is-a-transaction"></a>트랜잭션이란?
 
-A transaction is a logical unit that is independently executed for data retrieval or updates.
+트랜잭션은 데이터 검색 또는 업데이트에 대해 독립적으로 실행되는 논리적 단위입니다.
 
-Here's the question to ask yourself regarding whether you need a transactional database: Will a change to one piece of data in your dataset impact another? If the answer is yes, then you'll need transaction support in your database service.
+트랜잭션 데이터베이스가 필요한지 여부에 대해 자신에게 물어볼 질문은 바로 이것입니다. 데이터 집합에 있는 데이터의 한 부분을 변경하면 다른 부분에도 영향을 주나요? 대답이 예인 경우 데이터베이스 서비스에 트랜잭션 지원이 필요합니다.
 
-Transactions are often defined by a set of four requirements, referred to as ACID guarantees. ACID stands for Atomicity, Consistency, Isolation, and Durability:
+트랜잭션은 보통 ACID 보장이라고 하는 네 개의 요구 사항 집합으로 정의됩니다. ACID는 원자성, 일관성, 격리, 영속성을 나타냅니다.
 
-- Atomicity means all the data is updated, or all the data is rolled back to its original state.
-- Consistency ensures that if something happens partway through the transaction, that part of the data is isn't left without the updates. Across the board, the data is consistent in applying the transaction or not.
-- Isolation ensures that one transaction is not impacted by another transaction.
-- Durability means that the changes made due to the transaction are permanently saved in the system. Committed data is saved by the system such that, even in the event of a failure and system restart, the data is available in its correct state.
+* 원자성은 모든 데이터가 업데이트되거나 모든 데이터가 원래 상태로 롤백되는 것을 의미합니다.
+* 일관성은 트랜잭션 중간에 문제가 발생하는 경우 데이터의 해당 부분이 업데이트되지 않도록 합니다. 데이터는 트랜잭션을 적용하거나 적용하지 않는 면에서 일관됩니다.
+* 격리는 하나의 트랜잭션이 다른 트랜잭션의 영향을 받지 않도록 보장합니다.
+* 영속성은 트랜잭션으로 인해 변경된 내용이 시스템에 영구적으로 저장되는 것을 의미합니다. 커밋된 데이터는 시스템에 저장되므로 실패 및 시스템 다시 시작이 발생해도 데이터를 올바른 상태로 사용할 수 있습니다.
 
-When a database has ACID guarantees, it applies these principles to its transactions, and you can be assured that your transactions will be applied in a consistent manner.
+데이터베이스에 ACID 보장이 있는 경우 데이터베이스는 이러한 원칙을 해당 트랜잭션에 적용하며, 사용자는 트랜잭션이 일관된 방식으로 적용되도록 보장할 수 있습니다.
 
-## OLTP vs OLAP
+## <a name="oltp-vs-olap"></a>OLTP 및 OLAP 비교
 
-Transactional databases are often called OLTP (Online Transaction Processing) systems. OLTP systems commonly support lots of users, have quick response times, and handle large volumes of data. They are also highly available (meaning they have very minimal downtime), and typically handle small or relatively simple transactions.
+트랜잭션 데이터베이스는 일반적으로 OLTP(온라인 트랜잭션 처리) 시스템이라고 합니다. OLTP 시스템은 일반적으로 많은 사용자를 지원하며, 빠르게 응답하고, 대량의 데이터를 처리하며, 가용성이 높고(가동 중지 시간이 최소화되어 있음을 의미함), 대개 규모가 작거나 비교적 단순한 트랜잭션을 처리합니다.
 
-On the contrary, OLAP (Online Analytical Processing) systems commonly support fewer users, have longer response times, can be less available, and typically handle large and complex transactions.
+반대로 OLAP(온라인 분석 처리) 시스템은 일반적으로 더 적은 수의 사용자를 지원하며, 응답 시간이 더 길고, 가용성이 낮을 수 있으며, 대개 규모가 크고 복잡한 트랜잭션을 처리합니다.
 
-The terms OLTP and OLAP aren't used as frequently as they used to be, but the comparison does make it easier to categorize the needs of your application, so it's an important concept to be aware of. 
+OLTP 및 OLAP는 이전만큼 자주 사용되지는 않지만 이러한 비교를 통해 보다 쉽게 응용 프로그램 요구 사항을 분류할 수 있으므로 알고 있어야 할 중요한 개념입니다. 
 
-Now that we're familiar with transactions, OLTP, and OLAP, let's walk through each of the data sets in the online retail scenario, and determine the need for transactions.
+이제 트랜잭션, OLTP 및 OLAP에 대해 알아보았으므로 온라인 판매점 시나리오의 각 데이터 집합을 살펴보고 트랜잭션이 필요한지 확인해 보겠습니다.
 
-## Product catalog data
+### <a name="product-catalog-data"></a>제품 카탈로그 데이터
 
-Product catalog data should be stored in a transactional database. When users place an order and the payment is verified, the inventory for the item should be updated. Likewise, if the customer's credit card is declined, the order should be rolled back, and the inventory should not be updated. These relationships all require transactions.
+제품 카탈로그 데이터는 트랜잭션 데이터베이스에 저장되어야 합니다. 사용자가 주문하고 결제가 확인되면 해당 품목의 재고가 업데이트되어야 합니다. 마찬가지로 고객 신용 카드가 거부된 경우에는 주문이 롤백되어야 하며 재고는 업데이트되지 않아야 합니다. 이러한 관계는 모두 트랜잭션을 필요로 합니다.
 
-## Photos and videos
+### <a name="photos-and-videos"></a>사진 및 비디오
 
-Photos and videos in a product catalog don't require transaction support. The only reason a change would be made to a photo or video is if an update was made, or new files were added. Even though there is a relationship between the image and the actual product data, it's not transactional in nature.
+제품 카탈로그의 사진 및 비디오에는 트랜잭션 지원이 필요하지 않습니다. 사진 또는 비디오를 변경하게 되는 유일한 경우는 업데이트가 되었거나 새 파일이 추가되었을 때입니다. 이미지와 실제 제품 데이터 간에 관계가 있더라도 특성상 트랜잭션이 아닙니다.
 
-## Business data
+### <a name="business-data"></a>비즈니스 데이터
 
-For the business data, because all of the data is historical and unchanging, transaction support is not required. The business analysts working with the data also have unique needs in that they often require working with aggregates in their queries, so that they can work with the totals of other smaller data points.
+비즈니스 데이터의 경우 모든 데이터가 기록이며 변경되지 않으므로 트랜잭션 지원이 필요하지 않습니다. 데이터로 작업하는 비즈니스 분석가는 다른 크기가 작은 데이터 요소의 합계를 사용할 수 있도록 쿼리에서 집계를 사용해야 하는 경우가 많아 발생하는 고유한 요구 사항이 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-Ensuring that your data is in the correct state is not always an easy task. Transactions can help by enforcing data integrity requirements on your data. If your data would benefit from the principles of ACID, you should choose a storage solution that supports transactions.
+데이터가 올바른 상태인지 확인하는 작업이 언제나 쉬운 것은 아닙니다. 트랜잭션은 데이터 무결성 요구 사항을 데이터에 적용하므로 도움이 될 수 있습니다. 데이터가 ACID 원칙을 적용하여 혜택을 얻을 수 있는 경우 트랜잭션을 지원하는 저장소 솔루션을 선택해야 합니다.

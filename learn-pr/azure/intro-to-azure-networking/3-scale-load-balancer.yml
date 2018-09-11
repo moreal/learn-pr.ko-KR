@@ -1,29 +1,29 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.3-scale-load-balancer
-title: Scale with Azure Load Balancer
+title: Azure Load Balancer로 확장
 metadata:
-  title: Scale with Azure Load Balancer
-  description: Learn how Azure Load Balancer helps achieve scale and resiliency within a geographic region.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Azure Load Balancer로 확장
+  description: Azure Load Balancer로 특정 지리적 영역 내에서 확장 및 복원력을 구현하는 방법을 알아봅니다.
+  ms.openlocfilehash: 6174280c8013e6c2ca5cec461cc6352734f0f6a5
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477767"
 durationInMinutes: 7
-content: |
+content: >
   [!include[](includes/3-scale-load-balancer.md)]
 quiz:
-  title: 'Knowledge Check: Scale with Azure Load Balancer'
+  title: '지식 검사: Azure Load Balancer로 확장'
   questions:
-  - content: 'Which is true about Azure Load Balancer?'
+  - content: Azure Load Balancer에 대한 설명 중 올바른 것은 무엇입니까?
     choices:
-    - content: 'You must use Azure Load Balancer if you want to distribute traffic among your virtual machines running in Azure.'
+    - content: Azure에서 실행 중인 가상 머신 간에 트래픽을 분산하려는 경우 Azure Load Balancer를 사용해야 합니다.
       isCorrect: false
-      incorrectExplanation: 'You can use Azure Load Balancer, or configure load balancing software yourself on a virtual machine.'
-    - content: 'Azure Load Balancer works with internet-facing traffic only.'
+      incorrectExplanation: Azure Load Balancer를 사용하거나 가상 머신에 직접 부하 분산 소프트웨어를 구성할 수 있습니다.
+    - content: Azure Load Balancer는 인터넷 전용 트래픽하고만 작동합니다.
       isCorrect: false
-      incorrectExplanation: 'You can configure Azure Load Balancer to distribute traffic among systems reachable from the internet, or from a private network only.'
-    - content: 'Azure Load Balancer distributes traffic among similar systems, making your services more highly available.'
+      incorrectExplanation: 인터넷이나 개인 네트워크를 통해 연결할 수 있는 시스템 간에 트래픽을 분산하도록 Azure Load Balancer를 구성할 수 있습니다.
+    - content: Azure Load Balancer는 유사한 시스템 간에 트래픽을 분산하여 서비스의 가용성을 높입니다.
       isCorrect: true
-      correctExplanation: 'If one system is unavailable, Azure Load Balancer stops sending traffic to it. It then directs traffic to one of the responsive servers.'
+      correctExplanation: 한 시스템을 사용할 수 없으면 Azure Load Balancer에서 해당 시스템으로 트래픽을 보내지 않습니다. 그런 다음, 응답성이 뛰어난 서버 중 하나로 트래픽을 보냅니다.

@@ -1,80 +1,81 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.5-knowledge-check
-title: Check your knowledge
+title: 지식 검사
 metadata:
-  title: Check your knowledge
-  description: Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 지식 검사
+  description: Tensorflow 및 Azure Data Science Virtual Machine을 사용하여 신경망을 빌드하는 데 필요한 단계를 이해했는지 확인합니다.
+  ms.openlocfilehash: 50c8562c19b838f0b7414434c8d6ac4296969c00
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251652"
 durationInMinutes: 10
+content: 필수
 quiz:
-  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine
+  title: TensorFlow 및 Azure Data Science Virtual Machine을 사용하여 신경망 빌드
   questions:
-  - content: "Can you create a Data Science VM with an operating system other than Linux?"
+  - content: Linux 이외의 운영 체제로 Data Science VM을 만들 수 있나요?
     choices:
-    - content: "No"
+    - content: 아니요
       isCorrect: false
-      incorrectExplanation: "There are other options for operating systems for the Data Science VM."
-    - content: "Yes"
+      incorrectExplanation: Data Science VM에 사용할 다른 운영 체제 옵션이 있습니다.
+    - content: yes
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "What should be copied in the Azure Portal to use to connect to the Data Science VM with client?"
+      correctExplanation: 잘하셨습니다. 랩의 다음 부분으로 진행합니다.
+  - content: 클라이언트가 있는 Data Science VM에 연결하는 데 사용하기 위해 Azure Portal에서 복사해야 하는 것은 무엇인가요?
     choices:
-    - content: "IP Address"
+    - content: IP 주소
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Subscription name"
+      correctExplanation: 잘하셨습니다. 랩의 다음 부분으로 진행합니다.
+    - content: 구독 이름
       isCorrect: false
-      incorrectExplanation: "The subscription name isn't needed to connect to the VM."
-    - content: "DNS name"
+      incorrectExplanation: VM에 연결하는 데 구독 이름은 필요하지 않습니다.
+    - content: DNS 이름
       isCorrect: false
-      incorrectExplanation: "The DNS name isn't needed to connect to the VM."
-    - content: "Virtual network/subnet"
+      incorrectExplanation: VM에 연결하는 데 DNS 이름은 필요하지 않습니다.
+    - content: 가상 네트워크/서브넷
       isCorrect: false
-      incorrectExplanation: "The Virtual network or subnet isn't needed to connect to the VM."
-  - content: "What do you need to perform transfer learning on the Data Science VM?"
+      incorrectExplanation: VM에 연결하는 데 가상 네트워크 또는 서브넷은 필요하지 않습니다.
+  - content: Data Science VM에서 전이 학습을 수행하려면 무엇이 필요한가요?
     choices:
-    - content: "Access to a large GPU"
+    - content: 대형 GPU에 대한 액세스
       isCorrect: false
-      incorrectExplanation: "While a GPU is great for retraining on images, it doesn't need to be large or required."
-    - content: "Tensorflow installed"
+      incorrectExplanation: GPU는 이미지에 대해 다시 학습하는 데는 좋지만 크기가 크거나 필수일 필요는 없습니다.
+    - content: Tensorflow 설치됨
       isCorrect: false
-      incorrectExplanation: "Tensorflow is already installed in the Data Science VM so there's no need to install it again."
-    - content: "Pre-trained model"
+      incorrectExplanation: Tensorflow가 Data Science VM에 이미 설치되어 있으므로 다시 설치할 필요가 없습니다.
+    - content: 미리 학습된 모델
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "A very large set of data"
+      correctExplanation: 잘하셨습니다. 랩의 다음 부분으로 진행합니다.
+    - content: 매우 큰 데이터 집합
       isCorrect: false
-      incorrectExplanation: "You don't need a large data set to use pre-trained models."
-  - content: "What is the name of the tool to visualize Tensorflow models?"
+      incorrectExplanation: 미리 학습된 모델을 사용하는 데 크기가 큰 데이터 집합은 필요하지 않습니다.
+  - content: Tensorflow 모델을 시각화하는 도구의 이름은 무엇인가요?
     choices:
-    - content: "Tensorview"
+    - content: Tensorview
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "Tensorvision"
+      incorrectExplanation: ''
+    - content: Tensorvision
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "Tensorpanel"
+      incorrectExplanation: ''
+    - content: Tensorpanel
       isCorrect: true
-      incorrectExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Tensorboard"
+      incorrectExplanation: 잘하셨습니다. 랩의 다음 부분으로 진행합니다.
+    - content: Tensorboard
       isCorrect: false
-      correctExplanation: ""
-  - content: "When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?"
+      correctExplanation: ''
+  - content: GUI에 대한 TkInter 코드를 실행하여 모델을 테스트하는 경우 모델에서 결과를 가져오기 위해 호출하는 Python 스크립트의 이름은 무엇인가요?
     choices:
-    - content: "retrain.py"
+    - content: retrain.py
       isCorrect: false
-      incorrectExplanation: "This script was used earlier to retrain the model with our own images."
-    - content: "classify.py"
+      incorrectExplanation: 이 스크립트는 이전에 고유한 이미지를 사용하여 모델을 다시 학습하기 위해 사용되었습니다.
+    - content: classify.py
       isCorrect: false
-      incorrectExplanation: "This script was used to put the TkInter code into and run from."
-    - content: "label_image.py"
+      incorrectExplanation: 이 스크립트는 TkInter 코드를 배치하고 실행하는 데 사용되었습니다.
+    - content: label_image.py
       isCorrect: true
-      correctExplanation: "ThGreat! Proceed to the next part of the lab."
-    - content: "results.py"
+      correctExplanation: 잘하셨습니다. 랩의 다음 부분으로 진행합니다.
+    - content: results.py
       isCorrect: false
-      incorrectExplanation: "This script wouldn't exist and would result in an error."
+      incorrectExplanation: 이 스크립트는 존재하지 않으므로 오류가 발생합니다.

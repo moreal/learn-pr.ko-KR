@@ -1,36 +1,32 @@
-Once you've identified the kind of data you're dealing with (structured, semi-structured, or unstructured), the other important step is to determine how you'll use the data. For example, as an online retailer you know customers need quick access to product data, and business users need to run complex analytical queries. As you start to work through these requirements, and take your data classification into account, you can start to put together your data storage approach.
+처리하는 데이터의 종류(구조적, 반구조적 또는 비구조적)를 식별한 후 중요한 단계는 데이터 사용 방법을 결정하는 것입니다. 예를 들어 온라인 판매점에서 고객이 제품 데이터에 빠르게 액세스하고 비즈니스 사용자가 복잡한 분석 쿼리를 실행할 수 있게 하려고 합니다. 이러한 요구 사항을 해결하기 위해 데이터 분류를 고려하여 데이터 저장소 접근 방식을 종합할 수 있습니다.
 
-Here, you'll go through some of the questions you should ask when determining what you'll do with your data.
+여기서는 데이터로 수행할 작업을 결정할 때 물어야 하는 몇 가지 질문을 살펴봅니다.
 
-## Operations and latency
+## <a name="operations-and-latency"></a>작업 및 대기 시간
 
-What are the main operations you'll be completing on each data type, and what are performance requirements?
+각 데이터 형식에서 수행할 주요 작업은 무엇이며, 성능 요구 사항은 무엇인가요?
 
-Ask yourself these questions:
-* Will you be doing simple lookups by an ID? 
-* Do you need to query the database for one or more fields? 
-* How many create, update, and delete operations do you expect? 
-* Do you need to run complex analytical queries? 
-* How fast do these operations need to complete?
+특히 간단한 ID별 조회를 수행할 계획인가요? 하나 이상의 필드에 대해 데이터베이스를 쿼리해야 하나요? 만들기, 업데이트 및 삭제 작업이 얼마나 될 것으로 예상하나요? 복잡한 분석 쿼리를 실행해야 하나요? 이러한 작업을 얼마나 빨리 완료해야 하나요?
 
-Let’s walk through each of the data sets with these questions in mind and discuss the requirements.
+각 데이터 집합을 살펴보고 요구 사항에 대해 알아보겠습니다.
 
-## Product catalog data
+### <a name="product-catalog-data"></a>제품 카탈로그 데이터
 
-For product catalog data in an online retail scenario, customers will have the highest priority needs. Customers will want to query the product catalog to find, for example, all men's shoes, then men's shoes on sale, and then men's shoes on sale in a particular size. So, you could categorize customer's needs as requiring lots of read operations, with the ability to query on certain fields.
+온라인 판매점 시나리오에서는 사용자가 제품 카탈로그 데이터에 대해 가장 높은 우선 순위 요구 사항을 가지고 있습니다. 사용자는 찾을 제품 카탈로그를 쿼리하려고 합니다. 예를 들어, 모든 남성용 신발, 할인 판매 중인 남성용 신발, 특정 크기의 할인 판매 중인 남성용 신발 순서로 쿼리하려고 합니다. 따라서 특정 필드에 대한 쿼리 기능을 사용하여 고객 요구 사항을 많은 읽기 작업이 필요한 경우로 분류할 수 있습니다.
 
-In addition, when customers place orders, the product data quantities need to be updated by the application. Those update operations need to happen as fast as the read operations so that users don't end up placing items in their shopping baskets when that product has just sold out. So not only do you need lots of read operations, you also require lots of write operations for product catalog data. Be sure to determine the priorities for all the users of the database, not just the primary ones.
+또한 고객이 주문을 할 때 제품 데이터 수량도 응용 프로그램에 의해 업데이트되어야 합니다. 이러한 업데이트 작업은 해당 제품이 막 매진되어 사용자가 제품을 장바구니에 담아 놓고 끝내지 않도록 읽기 작업처럼 빠르게 이루어져야 합니다. 따라서 제품 카탈로그 데이터에 대해 많은 읽기 작업이 필요할 뿐만 아니라 많은 쓰기 작업도 필요합니다. 기본 사용자뿐만 아니라 데이터베이스의 모든 사용자에 대해 우선 순위를 판별해야 합니다.
 
-## Photos and videos
+### <a name="photos-and-videos"></a>사진 및 비디오
 
-The photos and videos that are displayed on product pages have different requirements though. They do need fast retrieval times to display on the site at the same time as the product catalog data, but they don't need to be queried independently. Instead, you can rely on the results of the product query, and just have the video ID or URL as a property on the product data. So, photos and videos don't need to be queried by anything other than their ID.
+제품 페이지에 표시되는 사진 및 비디오에는 다양한 요구 사항이 있습니다. 빠르게 검색하여 사이트에 표시해야 하지만 독립적으로 쿼리할 필요는 없습니다. 대신 제품 쿼리를 기반으로 비디오 ID 또는 URL을 제품 데이터의 속성으로 포함할 수 있습니다. 따라서 사진과 비디오는 해당 ID 이외의 다른 항목으로 쿼리할 필요가 없습니다.
 
-In addition, users will not be making updates to existing photos or videos. They may, however, add new photos for product reviews. So, they might upload an image of themselves showing off their new shoes. As an employee, you also upload and delete product photos from your vendor, but that update doesn't need to happen as fast as your other product data updates. So, in summary, photos and videos just need to be queried by ID to return the whole file, but creates and updates will be less frequent and are less of a priority.  
+또한, 사용자가 기존 사진이나 비디오를 업데이트하지는 않지만 제품 검토를 위해 새 사진을 추가할 수도 있습니다. 따라서 사용자가 새 신발을 보여 주는 자신의 이미지를 업로드할 수도 있습니다. 공급업체의 제품 사진을 업로드하고 삭제하기도 하지만 이러한 업데이트가 다른 제품 데이터 업데이트만큼 빠르게 이루어질 필요는 없습니다. 간단히 말해, 사진 및 비디오는 ID로만 쿼리하여 전체 파일을 반환하면 되고, 만들기 및 업데이트가 다른 제품보다 덜 자주 발생하며 우선 순위도 더 낮습니다.  
 
-## Business data
+### <a name="business-data"></a>비즈니스 데이터
 
-For business data, all the analysis is happening on historical data. None of the original data would be updated based on the analysis. So, the business data is read-only, and users don't expect their complex analytics to run instantly, so having some latency in the results is okay. In addition, business data will be stored in multiple data sets, as users will have different access to write to each data set. However, the business analysts will be able to read from all databases.
+비즈니스 데이터의 경우 모든 분석이 기록 데이터에 대해 이루어집니다. 원본 데이터는 분석에 따라 업데이트되지 않습니다. 따라서 비즈니스 데이터는 읽기 전용이며 사용자도 복잡한 분석이 바로 실행되는 것을 기대하지 않기 때문에 결과를 얻는 데 약간의 대기 시간이 있어도 괜찮습니다. 또한 사용자가 각 데이터 집합에 대해 서로 다른 쓰기 액세스 권한을 가지므로 비즈니스 데이터가 여러 데이터 집합에 저장되지만 비즈니스 분석가는 모든 데이터베이스에서 데이터를 읽을 수 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-When deciding what storage solution to use, you should think about how your data will be used. How often will your data be accessed? Is your data read-only? Does query time matter? The answers to these questions will help you decide on the best storage solution for your data.
+사용할 저장소 솔루션을 결정하는 경우 데이터 사용 방법에 대해 고려해야 합니다. 데이터에 얼마나 자주 액세스하나요? 데이터가 읽기 전용인가요? 쿼리 시간이 중요한가요? 이러한 질문에 대한 대답이 데이터에 가장 적합한 저장소 솔루션을 결정하는 데 도움을 줍니다.
+

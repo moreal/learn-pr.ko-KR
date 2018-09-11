@@ -1,15 +1,15 @@
-Suppose you manage an online sales learning portal for your organization. The majority of your sales team are often in different geographical areas, so the online learning portal is an essential requirement. It's even more important as your organization continues to increase the skills and knowledge enhancement training for the sales staff.
+조직의 온라인 영업 학습 포털을 관리한다고 가정해 보겠습니다. 영업 팀의 대부분은 항상 지리적으로 서로 다른 영역에 떨어져 있으므로 온라인 학습 포털은 반드시 필요합니다. 또한 조직에서 영업 직원의 기술과 지식을 향상하는 교육을 계속 강화하고 있어 더욱 중요하기도 합니다.
 
-Your training data includes high-quality video, detailed sales simulations, and large repositories for maintaining student data and progress. Currently, all the training content is stored in your on-premises storage. You have an aggressive plan to add new courses and would like to avoid the need to continuously increase the local storage capacity.
+교육 데이터는 용량이 큽니다. 고품질 비디오, 자세한 판매 시뮬레이션, 학생 데이터 및 진도를 유지 관리하기 위한 대규모 리포지토리가 포함되어 있습니다. 현재는 모든 학습 콘텐츠가 온-프레미스 저장소에 저장됩니다. 적극적으로 새로운 교육 과정을 추가하려는 플랜이 있으며 지속적으로 로컬 저장소 용량을 추가해야 한다는 요구가 발생하지 않도록 방지하려고 합니다.
 
-You're looking for a storage solution that is secure, durable, scalable, and easily accessible from across the globe.
+보안, 내구성, 확장성이 뛰어나고 전 세계 어디서나 쉽게 액세스할 수 있는 저장소 솔루션이 필요합니다.
 
-Azure Storage provides features that will meet all of your business needs.
+Azure Storage는 이러한 비즈니스 요구 사항을 모두 충족하는 기능을 제공합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Explore the benefits of Azure Storage
-- Explore how Azure Storage meets your business demands
-- Compare Azure storage with on-premises storage
+- Azure Storage의 혜택 살펴보기
+- Azure Storage가 비즈니스 요구 사항을 충족하는 방법 알아보기
+- Azure Storage와 온-프레미스 저장소 비교

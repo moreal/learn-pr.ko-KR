@@ -1,15 +1,15 @@
-You manage IT infrastructure for a growing e-commerce site. Business ia strong and your datacenter is starting to struggle to keep up with demand from your users. Your service fails when too many users connect at the same time. Plus, you face more scheduled and unscheduled maintenance windows than you'd like. 
+귀하는 증가하는 전자상거래 사이트의 IT 인프라를 관리합니다. 비즈니스는 탄탄하며, 데이터 센터는 사용자의 수요에 부응하기 위한 노력을 시작하고 있습니다. 너무 많은 사용자가 동시에 연결하면 서비스가 실패합니다. 또한 원하는 수준 이상의 정기/비정기 유지 관리 기간이 발생합니다. 
 
-Because your site is based in northern California, you also find that network delay is especially bad for users located in other regions, such as Europe and Asia.
+사이트가 북 캘리포니아에 위치하고 있어서 유럽 및 아시아와 같은 다른 지역에 위치한 사용자에게 특히 네트워크 지연이 심각하게 발생하고 있다는 것을 알았습니다.
 
-You decide to move your e-commerce site to the cloud to help save costs. But how can Azure help make your site run better?
+귀하는 비용을 절약하기 위해 전자상거래 사이트를 클라우드로 이동하기로 결심합니다. 그러면 Azure가 사이트 운영을 개선하는 데 어떤 도움이 될 수 있을까요?
 
-Managing networks on Azure isn't entirely different from managing on-premises networks. 
+Azure에서 네트워크를 관리하는 방법은 온-프레미스 네트워크를 관리하는 방법과 완전히 다릅니다. 
 
-## Learning objectives
+## <a name="learing-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 배웁니다.
 
-- Learn how an Azure virtual network provides secure network communication among resources such as virtual machines and other networks
-- Learn what high availability and resiliency mean and how Azure Load Balancer can increase resiliency within a single geographic region
-- Learn what latency is and how Traffic Manager helps reduce network latency and provides resiliency across geographic locations
+- Azure 가상 네트워크가 가상 머신 및 다른 네트워크와 같은 리소스 간에 보안된 네트워크 통신을 제공하는 방법
+- 고가용성 및 복원력의 의미와 Azure Load Balancer로 단일 지리적 영역 내에서 복원력을 높일 수 있는 방법
+- 대기 시간의 의미와 Traffic Manager로 네트워크 대기 시간을 줄이고 지리적 위치에 복원력을 제공하는 방법

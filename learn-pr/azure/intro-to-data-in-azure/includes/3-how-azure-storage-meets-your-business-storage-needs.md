@@ -1,90 +1,84 @@
-Looking at the benefits of Azure Storage, you understand that it offers the best options for storing your learning portal. Now let's explore the benefits and options available in Azure Storage in detail to see how it fits your business needs.
+Azure Storage의 혜택을 살펴보고 Azure Storage가 학습 포털을 저장하는 데 가장 적합한 옵션을 제공한다는 것을 이해합니다. 이제 Azure Storage에서 제공하는 혜택과 옵션을 자세히 살펴보고 비즈니스 요구 사항을 충족하는 방법을 알아보겠습니다.
 
-## How Azure Storage can meet your business storage needs
+## <a name="how-azure-storage-can-meet-your-business-storage-needs"></a>Azure Storage가 비즈니스 저장소 요구 사항을 충족하는 방법
 
-Azure Storage provides several options that accommodate specific types of data storage needs.
+Azure Storage는 특정 유형의 데이터 저장소 요구 사항을 충족하는 여러 옵션을 제공합니다.
 
-### Azure SQL Database
+### <a name="azure-sql-database"></a>Azure SQL Database
 
-**Azure SQL Database** is a robust, fully managed, relational cloud database that stores all your data. You can use this feature to store data that you frequently access and update, such as personal and training-related information for your staff. You can also migrate your existing SQL Server databases without changing your applications. The following illustration shows the types of data from the online learning portal scenario that would be stored in an Azure SQL database.
+**Azure SQL Database**는 완전하게 관리되는 강력한 기능의 관계형 클라우드 데이터베이스로, 모든 데이터를 저장합니다. 이 기능을 사용하여 직원의 개인 및 교육 관련 정보처럼 자주 액세스하고 업데이트하는 데이터를 저장할 수 있습니다. 응용 프로그램을 변경하지 않고 기존 SQL Server 데이터베이스를 마이그레이션할 수도 있습니다.
 
-![An illustration showing Azure SQL used to store student information such as transcripts, certifications, and study materials.](../media/3-Azure_SQL.png)
+![AzureSQL](../media-draft/Azure_SQL.png)
 
-### Azure Cosmos DB
+### <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-Azure Cosmos DB is a globally distributed database service. It supports schema-less data that offers the capability to build highly responsive and *Always On* applications to support constantly changing data. You can use this feature to store data that is updated and maintained based on inputs from users around the world. The following illustration shows a sample Azure Cosmos DB database used to store data that is accessed by multiple people located around the world.
+Azure Cosmos DB는 전역 분산 데이터베이스 서비스입니다. 계속 변경되는 데이터를 지원하도록 응답 속도가 빠른 *Always On* 응용 프로그램 빌드 기능을 제공하는 스키마 없는 데이터를 지원합니다. 이 기능을 사용하여 전 세계 사용자의 입력을 기반으로 업데이트되고 유지 관리되는 데이터를 저장할 수 있습니다.
 
-![An illustration showing usage of Azure Cosmos DB in the online training scenario to store the course catalog. Azure Cosmos DB is a good choice here because the catalog is updated by administrators and accessed by students all over the world.](../media/3-Azure_cosmos_db.png)
+![CosmosDB](../media-draft/Azure_cosmos_db.png)
 
-### Azure Blob storage
+### <a name="azure-blob-storage"></a>Azure Blob 저장소
 
-Azure Blob storage provides the ability to stream large video or audio files directly to the user browser from anywhere in the world. Blob storage is also used to store data for backup and restore, disaster recovery, and archiving. Azure Blob storage can store up to 8 TB of data to store files for virtual machines. The following illustration shows an example usage of Azure blob storage.
+Azure Blob Storage는 전 세계 어디에서나 대용량 비디오 또는 오디오 파일을 사용자 브라우저로 직접 스트리밍하는 기능을 제공합니다. Blob Storage를 사용하여 백업/복원, 재해 복구 및 보관용 데이터를 저장하기도 합니다. Azure Blob Storage는 가상 머신용 파일 저장을 위해 최대 8TB의 데이터를 저장할 수 있습니다.
 
-![An illustration showing Azure blob storage used to store and stream video or audio files.](../media/3-Azure_blob.png)
+![AzureBlob](../media-draft/Azure_blob.png)
 
-### Azure Data Lake Storage Gen2
+### <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
 
-The Data Lake feature of Azure storage allows you to perform analytics on your data usage and prepare reports accordingly. Data Lake is a large repository that stores both structured and unstructured data.
+Azure Storage의 Data Lake 기능을 사용하면 데이터 사용량을 분석하고 분석 결과에 따라 보고서를 준비할 수 있습니다. Data Lake는 구조적 데이터와 비구조적 데이터가 모두 저장되는 대형 리포지토리입니다.
 
-**Azure Data Lake Storage Gen2** combines the scalability and cost benefits of object storage with the reliability and performance of the Big Data file system capabilities. The following illustration shows how Azure Data Lake stores all your business data  and makes it available for analysis.
+**Azure Data Lake Storage Gen2**에는 개체 저장소의 확장성 및 비용 혜택이 빅 데이터 파일 시스템 기능의 안정성 및 성능과 결합되어 있습니다.
 
-![An illustration showing the role of Azure Data Lake in preparing and storing your data for use by analysis tools. Azure Data Lake can handle a variety of input types such as  relational, video, or sensor data.](../media/3-Data_lake_store_concept.png)
+![Data_Lake_Store_concept](../media-draft/Data_lake_store_concept.png)
 
-### Azure Files
+### <a name="azure-files"></a>Azure Files
 
-Azure Files offers fully managed file shares in the cloud. Applications running in Azure can easily share files between VMs. You can use Azure file shares at the same time for cloud or on-premises deployments of Windows, Linux, and macOS. The following illustration shows Azure Files being used to share data between two geographical locations. Azure Files uses the Server Message Block (SMB) protocol which ensures the data is encrypted at rest and in transit.
+Azure Files는 클라우드에서 완벽하게 관리되는 파일 공유를 제공합니다. Azure에서 실행되는 응용 프로그램은 VM 간에 쉽게 파일을 공유할 수 있습니다. Azure 파일 공유를 Windows, Linux 및 macOS의 클라우드 또는 온-프레미스 배포에 동시에 사용할 수 있습니다.
 
-![An illustration showing the file sharing capabilities of Azure Files. ](../media/3-Azure_Files.png)
+![Azure_Files](../media-draft/Azure_Files.png)
 
-### Azure Queue
+### <a name="azure-queue"></a>Azure Queue
 
-Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world. A single queue message is up to 64 KB in size, and a queue can contain millions of messages.
+Azure Queue Storage는 전 세계 어디에서나 액세스할 수 있는 많은 수의 메시지를 저장하기 위한 서비스입니다. 단일 큐 메시지의 크기는 최대 64KB이며 큐에는 수백만 개의 메시지가 포함될 수 있습니다.
 
-Typically, there are one or more sender components and one or more receiver components. Sender components add message to the queue. Receiver components retrieve messages from the front of the queue for processing. The following illustration shows multiple sender applications adding messages to the Azure Queue and one receiver application retrieving the messages.
+Queue Storage는 주로 다음과 같은 용도로 사용됩니다.
 
-![An illustration showing a high-level architecture of Azure Queue storage](../media/3-Azure_Queue.png)
+- 작업의 백로그를 만들고 서로 다른 Azure 웹 서버 간에 메시지를 전달하기 위해 사용됩니다.
+- 서로 다른 웹 서버/인프라 간에 부하를 분산하고 트래픽 버스트를 관리하기 위해 사용됩니다.
+- 여러 사용자가 동시에 데이터에 액세스할 때 구성 요소 오류에 대한 복원력을 빌드하기 위해 사용됩니다.
 
-Queue storage is primarily used for the following:
+![Azure_Queue](../media-draft/Azure_Queue.png)
 
-- To create a backlog of work and to pass messages between different Azure web servers.
-- For load balancing between different web servers/infrastructure and for managing bursts of traffic.
-- To build resilience against component failure when multiple users access your data at the same time.
+### <a name="azure-standard-storage"></a>Azure Standard Storage
 
-### Azure Standard Storage
+Azure의 가상 머신은 디스크를 사용하여 운영 체제, 응용 프로그램 및 데이터를 저장합니다. Azure Standard Storage는 중요 업무용이 아닌 워크로드를 실행하는 VM에 대해 안정적인 저비용 디스크 지원을 제공합니다. Standard Storage를 사용하면 데이터가 HDD(하드 디스크 드라이브)에 저장됩니다.
 
-Virtual machines in Azure use disks to store operating systems, applications, and data. Azure Standard Storage delivers reliable, low-cost disk support for VMs running workloads that are not mission critical. With Standard Storage, the data is stored on hard disk drives (HDDs).
+VM 작업 시 덜 중요한 워크로드에는 표준 SSD 및 HDD 디스크를 사용하고 중요 업무용 프로덕션 응용 프로그램에는 프리미엄 SSD 디스크를 사용할 수 있습니다. Azure 디스크는 업계 최고의 0% 연간 실패율(Annualized Failure Rate)로 엔터프라이즈급 내구성을 일관되게 제공합니다.
 
-When working with VMs, you can use standard SSD and HDD disks for less critical workloads, and premium SSD disks for mission-critical production applications. Azure Disks have consistently delivered enterprise-grade durability, with an industry-leading ZERO% Annualized Failure Rate. The following illustration shows an Azure virtual machine using separate disks to store different data.
+![Azure_disk](../media-draft/Azure_disks.png)
 
-![An illustration showing two disks inside a virtual machine, one that stores the operating system and one that stores data.](../media/3-Azure_disks.png)
+### <a name="storage-tiers"></a>저장소 계층
 
-### Storage tiers
+Azure Storage는 Blob 개체 저장소에 다음 세 가지 저장소 계층을 제공합니다.
 
-Azure Storage offers three storage tiers for blob object storage:
+1. **핫 저장소 계층** - Azure 핫 저장소 계층은 자주 액세스하는 데이터 저장에 최적화되어 있습니다. 
+1. **쿨 저장소 계층** - Azure 쿨 저장소 계층은 드물게 액세스하며 최소 30일 동안 저장되는 데이터 저장에 최적화되어 있습니다.
+1. **보관 저장소 계층** - Azure 보관 저장소 계층은 거의 액세스하지 않고 유연한 대기 시간을 요구하며 최소 180일 동안 저장되는 데이터 저장에 최적화되어 있습니다. Azure의 보관 저장소는 이전 버전의 데이터를 저장하는 데 적합하므로 감사나 다른 자주 사용하지 않는 활동에 필요할 때 보관 저장소를 검색할 수 있습니다.
 
-1. **Hot storage tier** - The Azure hot storage tier is optimized for storing data that is accessed frequently. 
+![Archive_Tier](../media-draft/Archive_Storage_Tier.png)
 
-1. **Cool storage tier** - The Azure cool storage tier is optimized for storing data that is infrequently accessed and stored for at least 30 days.
+### <a name="azure-storage-encryptionreplication"></a>Azure Storage 암호화/복제
 
-1. **Archive storage tier** - The Azure archive storage tier is optimized for storing data that is rarely accessed and stored for at least 180 days with flexible latency requirements. The archive storage in Azure is ideal for storing older versions of your data so that you can retrieve it when required for auditing or other infrequent activities.
+Azure Storage는 암호화 및 복제 기능을 통해 보안 및 고가용성을 데이터에 제공합니다.
 
-The following illustration shows the Azure Blob Storage tiers.
+#### <a name="encryption-for-storage-services"></a>저장소 서비스 암호화
 
-![An illustration showing the three different storage tiers of Azure Blob Storage: hot, cold, and archive.](../media/3-Archive_Storage_Tier.png)
+리소스에 사용할 수 있는 암호화 유형은 다음과 같습니다.
 
-### Azure Storage encryption/replication
+1. 미사용 데이터에 대한 **Azure SSE(저장소 서비스 암호화)** 는 조직의 보안 및 규정 준수를 충족하도록 데이터를 안전하게 보호하는 데 도움이 됩니다. Azure SSE는 데이터를 저장하기 전에 암호화하고 데이터를 검색하기 전에 암호를 해독합니다. 암호화 및 암호 해독은 사용자에게 투명하게 이루어집니다.
+1. **클라이언트 쪽 암호화**에서는 클라이언트 라이브러리에 의해 데이터가 이미 암호화되어 있습니다. Azure는 암호화된 상태로 미사용 데이터를 저장합니다. 그런 다음, 검색 중에 암호를 해독합니다.
 
-Azure Storage provides security and high availability to your data through encryption and replication features.
+    이 암호화 기능을 사용하면 데이터가 글로벌 보호 표준을 충족하도록 할 수 있습니다. 개인 및 재무 데이터 같은 민감한 정보를 저장하는 데 적합합니다.
 
-#### Encryption for storage services
+#### <a name="replication-for-storage-availability"></a>저장소 가용성 복제
 
-The following encryption types are available for your resources:
-
-1. **Azure Storage Service Encryption (SSE)** for data at rest helps you secure your data to meet the organization's security and regulatory compliance. The Azure SSE encrypts the data before storing it and decrypts the data before retrieving it. The encryption and decryption are transparent to the user.
-1. **Client-side encryption** is where the data is already encrypted by the client libraries. Azure stores the data in the encrypted state at rest, which is then decrypted during retrieval.
-
-    This encryption feature ensures your data meets global protection standards. It is appropriate for storing sensitive information like personal and financial data.
-
-#### Replication for storage availability
-
-A replication type is set up when you create a storage account. The replication feature ensures that your data is durable and always available. Azure Storage enables regional and geographic replications to protect your data against natural disasters and other local disasters like fire or flooding.
+복제 유형은 저장소 계정을 만들 때 설정됩니다. 복제 기능을 사용하면 데이터의 지속성과 고가용성을 확보할 수 있습니다. Azure Storage를 사용하면 지역 및 지리적 복제를 통해 화재나 홍수 같은 자연재해 및 기타 지역 재해로부터 데이터를 보호할 수 있습니다.

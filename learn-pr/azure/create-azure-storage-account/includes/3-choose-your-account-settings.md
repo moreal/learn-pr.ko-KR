@@ -1,40 +1,40 @@
-The storage account settings we've already covered apply to the data services in the account. Here, we will discuss the three settings that apply to the account itself, rather than to the data stored in the account:
+이미 다루었던 저장소 계정 설정이 계정의 데이터 서비스에 적용됩니다. 여기에서는 계정에 저장된 데이터가 아닌 계정 자체에 적용되는 세 가지 설정을 설명하겠습니다.
 
-- Name
-- Deployment model
-- Account kind
+- 이름
+- 배포 모델
+- 계정 종류
 
-These settings impact how you manage your account and the cost of the services within it.
+이러한 항목은 계정을 관리하는 방법 및 서비스의 비용에 영향을 줍니다.
 
-## Name
+## <a name="name"></a>이름
 
-Each storage account has a name. The name must be globally unique, use only lowercase letters and digits and be between 3 and 24 characters.
+각 저장소 계정에는 이름이 있습니다. 이름은 전세계에 고유해야 하고 길이가 3자에서 24자 사이여야 하고 소문자 및 숫자만 사용해야 합니다.
 
-## Deployment model
+## <a name="deployment-model"></a>배포 모델
 
-A _deployment model_ is the system Azure uses to organize your resources. It defines the API that you use to create, configure, and manage those resources. Azure provides two deployment models:
+_배포 모델_은 Azure에서 리소스를 구성하는 데 사용하는 시스템입니다. 해당 리소스를 만들고, 구성하고, 관리하는 데 사용하는 API를 정의합니다. Azure에서는 두 가지 배포 모델을 제공합니다.
 
-- **Resource Manager**: the current model that uses the Azure Resource Manager API
-- **Classic**: a legacy offering that uses the Azure Service Management API
+- **Resource Manager**: ARM(Azure Resource Manager) API를 사용하는 현재 모델입니다.
+- **클래식**: ASM(Azure Service Management) API를 사용하는 레거시 제품입니다.
 
-The decision on which one to choose is usually easy, because most Azure resources only work with Resource Manager. However, storage accounts, virtual machines, and virtual networks support both, so you must choose one or the other when you create your storage account.
+선택할 모델을 일반적으로 쉽게 결정할 수 있습니다. 대부분의 Azure 리소스가 Resource Manager에서만 작동하기 때문입니다. 하지만 저장소 계정, 가상 머신 및 가상 네트워크는 모두를 지원합니다. 즉, 저장소 계정을 만들 때 둘 중 하나를 선택해야 합니다.
 
-The key feature difference between the two models is their support for grouping. The Resource Manager model adds the concept of a _resource group_, which is not available in the classic model. A resource group lets you deploy and manage a collection of resources as a single unit.
+두 모델 간의 주요 기능 차이점은 그룹화에 대한 지원입니다. Resource Manager 모델은 클래식 모델에서 사용할 수 없는 _리소스 그룹_이라는 개념을 추가합니다. 리소스 그룹을 통해 단일 단위로 리소스의 컬렉션을 배포하고 관리할 수 있습니다.
 
-Microsoft recommends that you use **Resource Manager** for all new resources.
+모든 새로운 리소스에는 Resource Manager를 사용하는 것이 좋습니다.
 
-## Account kind
+## <a name="account-kind"></a>계정 종류
 
-Storage account _kind_ is a set of policies that determine which data services you can include in the account and the pricing of those services. There are three kinds of storage accounts:
+저장소 계정 _종류_는 해당 서비스의 계정과 가격에 포함할 수 있는 데이터 서비스를 결정하는 정책 집합입니다. 다음과 같은 세 종류의 저장소 계정이 있습니다.
 
-- **StorageV2 (general purpose v2)**: the current offering that supports all storage types and all of the latest features
-- **Storage (general purpose v1)**: a legacy kind that supports all storage types but may not support all features
-- **Blob storage**: a legacy kind that allows only block blobs and append blobs
+- **StorageV2(범용 v2)**: 모든 저장소 형식 및 모든 최신 기능을 지원하는 현재 제품입니다.
+- **저장소(범용 v1)**: 모든 저장소 형식을 지원하는 레거시 종류이지만 모든 기능을 지원하지 않을 수 있습니다
+- **Blob 저장소**: 블록 blob 및 추가 blob만을 허용하는 레거시 종류입니다.
 
-Microsoft recommends that you use the **General-purpose v2** option for new storage accounts.
+새 저장소 계정에 대해 범용 v2를 사용하는 것이 좋습니다.
 
-There are a few special cases that can be exceptions to this rule. For example, pricing for transactions is lower in general purpose v1, which would allow you to slightly reduce costs if that matches your typical workload.
+몇 가지 특별한 경우 이 규칙에 대한 예외가 있을 수 있습니다. 예를 들어 트랜잭션에 대한 가격 책정은 범용 v1에서 더 낮습니다. 따라서 일반적인 워크로드와 일치하는 경우 약간 비용을 절감할 수 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-The core advice here is to choose the **Resource Manager** deployment model and the **StorageV2 (general purpose v2)** account kind for all your storage accounts. The other options still exist primarily to allow existing resources to continue operation. For new resources, there are few reasons to consider the other choices.
+여기서 핵심 지침은 모든 저장소 계정에 대해 **Resource Manager** 배포 모델 및 **StorageV2(범용 v2)** 계정 종류를 선택하는 것입니다. 다른 옵션은 주로 기존 리소스로 작업을 계속할 수 있기 위해 존재합니다. 새 리소스의 경우 다른 옵션을 선택할 이유가 거의 없습니다.

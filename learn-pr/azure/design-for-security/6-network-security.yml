@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.6-network-security
+title: 네트워크 보안
+metadata:
+  title: 네트워크 보안
+  description: 이 섹션에서는 네트워크 인프라를 보호하는 방법에 대해 알아보겠습니다.
+  ms.openlocfilehash: f98e9f24b46119fda8be58fb4a06f8f15d60ed66
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43367084"
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-network-security.md)]
+quiz:
+  title: 지식 검사 - 네트워크 보안
+  questions:
+  - content: Azure App Service에서 웹 응용 프로그램을 실행하면 응용 프로그램이 완벽하게 보호되므로 추가 보안을 제공할 필요가 없습니다.
+    choices:
+    - content: 정답
+      isCorrect: false
+    - content: 오답
+      isCorrect: true
+  - content: 다음 중 인터넷 연결 서비스를 네트워크 공격으로부터 보호하는 방법이 아닌 것은 무엇입니까?
+    choices:
+    - content: Azure DDoS
+      isCorrect: false
+    - content: Azure Application Gateway WAF
+      isCorrect: false
+    - content: Azure Disk Encryption
+      isCorrect: true
+    - content: 네트워크 가상 어플라이언스
+      isCorrect: false

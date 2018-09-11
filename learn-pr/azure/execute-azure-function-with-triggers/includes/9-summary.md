@@ -1,9 +1,8 @@
-An Azure function won't do work until something explicitly tells it to execute. In this module, we explored the timer, HTTP, and blob triggers.
+Azure 함수는 어떤 항목이 실행하도록 명시적으로 알릴 때까지 작업을 수행하지 않습니다. 이 모듈에서는 타이머, HTTP 및 Blob 트리거를 설명했습니다. 
 
-Timer triggers are great when you need to execute a function at a consistent time. HTTP triggers allow you to execute logic when you receive data from an outside source. Blob triggers allow you to respond to data that's stored or updated in the cloud.
+타이머 트리거는 지정된 시간에 함수를 실행해야 하는 경우에 적합합니다. HTTP 트리거를 사용하면 외부 원본에서 데이터를 수신할 때 논리를 실행할 수 있습니다. Blob 트리거를 사용하면 클라우드에 저장되거나 업데이트된 데이터에 응답할 수 있습니다.
 
-## Cleanup
+## <a name="cleanup"></a>정리
+함수를 완전히 삭제하려면 도구 모음에서 리소스 그룹 또는 함수 자체를 삭제할 수 있습니다.
 
-To completely delete the Function, you can delete the Resource Group, or the Function itself from the toolbar.
-
-![Screenshot of the Azure portal showing a Functions App toolbar with the Delete button highlighted.](../media/6-delete-function.png)
+![함수 삭제](../media-drafts/6-delete-function.png)

@@ -1,124 +1,115 @@
-Your transportation company wants to set themselves apart from other companies but without breaking the bank. You must have a good handle on how to set up the database to provide the best service while controlling costs.
+귀하의 운송 회사는 큰 비용을 들이지 않으면서 타사와 차별화를 이루려고 합니다. 비용을 관리하면서 최상의 서비스를 제공하도록 데이터베이스를 설정하는 방법에 대해 잘 알고 있어야 합니다.
 
-Here, you'll learn:
+여기서는 다음 내용을 학습합니다.
 
-- What considerations you need to make when creating an Azure SQL database, including:
-  - How a logical server acts as an administrative container for your databases.
-  - The differences between purchasing models.
-  - How elastic pools enable you to share processing power among databases.
-  - How collation rules affect how data is compared and sorted.
-- How to bring up Azure SQL Database from the portal.
-- How to add firewall rules so that your database is accessible from only trusted sources.
+* 다음을 비롯하여 Azure SQL Database를 만들 때 고려해야 할 사항
+  * 논리 서버가 데이터베이스의 관리 컨테이너 역할을 하는 방식
+  * 구매 모델 간 차이점
+  * 탄력적 풀을 사용하여 데이터베이스 간에 처리 성능을 공유하는 방법
+  * 데이터 정렬 규칙이 데이터의 비교 및 정렬 방법에 영향을 주는 방식
+* 포털에서 Azure SQL Database를 가져오는 방법
+* 신뢰할 수 있는 원본에서만 데이터베이스에 액세스할 수 있도록 방화벽 규칙을 추가하는 방법
 
-Let's take a quick look at some things you need to consider when you create an Azure SQL database.
+Azure SQL Database를 만들 때 고려해야 하는 몇 가지 사항을 살펴보겠습니다.
 
-## One server, many databases
+## <a name="one-server-many-databases"></a>하나의 서버, 여러 데이터베이스
 
-When you create your first Azure SQL database, you also create an _Azure SQL logical server_. Think of a logical server as an administrative container for your databases. You can control logins, firewall rules, and security policies through the logical server. You can also override these policies on each database within the logical server.
+첫 번째 Azure SQL Database를 만들 때 _Azure SQL 논리 서버_도 만듭니다. 논리 서버를 데이터베이스의 관리 컨테이너로 생각해보세요. 논리 서버를 통해 로그인, 방화벽 규칙 및 보안 정책을 제어할 수 있습니다. 또한 논리 서버의 각 데이터베이스에서 이러한 정책을 재정의할 수도 있습니다.
 
-For now, you need just one database. But a logical server enables you to add more later and tune performance among all your databases.
+지금은 데이터베이스가 하나만 있으면 됩니다. 그러나 논리 서버를 사용하여 나중에 데이터베이스를 더 추가하고, 모든 데이터베이스에서 성능을 조정할 수 있습니다.
 
-## Choose performance: DTUs versus vCores
+## <a name="choose-performance-dtus-versus-vcores"></a>성능 선택: DTU 대 vCore
 
-Azure SQL Database has two purchasing models: DTU and vCore.
+Azure SQL Database에는 두 가지 구매 모델 DTU 및 vCore가 있습니다.
 
-### What are DTUs?
+### <a name="what-are-dtus"></a>DTU란 무엇인가요?
 
-DTU stands for Database Transaction Unit and is a combined measure of compute, storage, and IO resources. Think of the DTU model as a simple, preconfigured purchase option.
+DTU는 데이터베이스 트랜잭션 단위를 나타내며 계산, 저장소 및 IO 리소스의 측정값 조합입니다. DTU 모델을 미리 구성된 단순한 구매 옵션으로 생각하세요.
 
-Because your logical server can hold more than one database, there's also the idea of eDTUs, or elastic Database Transaction Units. This option enables you to choose one price, but allow each database in the pool to consume fewer or greater resources depending on current load.
+논리 서버가 둘 이상의 데이터베이스를 보유할 수 있으므로, eDTU 또는 탄력적 데이터베이스 트랜잭션 단위 개념도 발생합니다. 이 옵션을 사용하면 한 가지 가격을 선택할 수 있지만, 풀의 각 데이터베이스가 현재 부하에 따라 더 적거나 더 많은 리소스를 사용하도록 할 수 있습니다.
 
-### What are vCores?
+### <a name="what-are-vcores"></a>vCore란 무엇인가요?
 
-vCore gives you greater control over what compute and storage resources you create and pay for.
+vCore는 만들고 비용을 지불하는 계산 및 저장소 리소스를 보다 강력하게 제어합니다.
 
-While the DTU model provides fixed combinations of compute, storage, and IO resources, the vCore model enables you to configure resources independently. For example, with the vCore model you can increase storage capacity but keep the existing amount of compute and IO throughput.
+DTU 모델은 고정된 계산, 저장소 및 IO 리소스 조합을 제공하지만 vCore 모델을 사용하여 리소스를 독립적으로 구성할 수 있습니다. 예를 들어, vCore 모델을 사용하여 저장소 용량을 늘리면서 계산 및 IO 처리량은 기존 상태로 유지할 수 있습니다. 
 
-Your transportation and logistics prototype only needs one Azure SQL Database instance. You decide on the DTU option because it provides a good balance of compute, storage, and IO performance and is less expensive to get started.
+운송 및 물류 프로토타입에는 하나의 Azure SQL Database 인스턴스만 필요합니다. DTU 옵션은 계산, 저장소 및 IO 성능의 적절한 균형을 제공하고 초기 비용이 덜 들기 때문에 사용하기로 결정되었습니다.
 
-## What are SQL elastic pools?
+## <a name="what-are-sql-elastic-pools"></a>SQL 탄력적 풀이란?
 
-When you create your Azure SQL database, you can create a _SQL elastic pool_.
+Azure SQL Database를 만들 때 _SQL 탄력적 풀_을 만들 수 있습니다.
 
-SQL elastic pools relate to eDTUs. They enable you to buy a set of compute and storage resources that are shared among all the databases in the pool. Each database can use the resources they need, within the limits you set, depending on current load.
+SQL 탄력적 풀은 eDTU와 관련이 있습니다. 이 풀을 사용하면 풀의 모든 데이터베이스에서 공유되는 계산 및 저장소 리소스 집합을 구입할 수 있습니다. 각 데이터베이스는 현재 부하에 따라 설정한 한도 내에서 필요한 리소스를 사용할 수 있습니다.
 
-For your prototype, you won't need a SQL elastic pool because you need only one SQL database.
+프로토타입의 경우 하나의 SQL 데이터베이스만 필요하므로 SQL 탄력적 풀이 필요하지 않습니다.
 
-## What is collation?
+## <a name="what-is-collation"></a>데이터 정렬이란 무엇인가요?
 
-Collation refers to the rules that sort and compare data. Collation helps you define sorting rules when case sensitivity, accent marks, and other language characteristics are important.
+데이터 정렬은 데이터를 정렬하고 비교하는 규칙을 의미합니다. 데이터 정렬은 대/소문자 구분, 악센트 표시 및 기타 언어 특성이 중요한 경우 정렬 규칙을 정의하는 데 도움이 됩니다.
 
-Let's take a moment to consider what the default collation, **SQL_Latin1_General_CP1_CI_AS**, means.
+기본 데이터 정렬인 **SQL_Latin1_General_CP1_CI_AS**가 무엇을 의미하는지 잠시 살펴보겠습니다.
 
-- **Latin1_General** refers to the family of Western European languages.
-- **CP1** refers to code page 1252, a popular character encoding of the Latin alphabet.
-- **CI** means that comparisons are case insensitive. For example, "HELLO" compares equally to "hello".
-- **AS** means that comparisons are accent sensitive. For example, "résumé" doesn't compare equally to "resume".
+* **Latin1_General**은 서부 유럽 언어 제품군을 나타냅니다.
+* **CP1**은 라틴 알파벳의 인기 있는 문자 인코딩인 코드 페이지 1252를 나타냅니다.
+* **CI**는 비교가 대/소문자를 구분하지 않음을 의미합니다. 예를 들어, “HELLO”는 “hello”와 동일한 것으로 비교됩니다.
+* **AS**는 비교가 악센트를 구분함을 의미합니다. 예를 들어 “résumé”는 “resume”와 동일한 것으로 비교되지 않습니다.
 
-Because you don't have specific requirements around how data is sorted and compared, you choose the default collation.
+데이터의 정렬 및 비교 방법에 대한 특정 요구 사항이 없으므로 기본 데이터 정렬을 선택합니다.
 
-## Create your Azure SQL database
+## <a name="create-your-azure-sql-database"></a>Azure SQL Database 만들기
 
-Here you'll set up your database, which includes creating your logical server. You'll choose settings that support your transportation logistics application. In practice, you would choose settings that support the kind of app you're building.
+여기서는 논리 서버 생성을 포함하는 데이터베이스 설정 작업을 수행합니다. 운송 물류 응용 프로그램을 지원하는 설정을 선택합니다. 실제로 빌드하는 앱의 종류를 지원하는 설정을 선택합니다.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure Portal에 로그인합니다](https://portal.azure.com?azure-portal=true).
+1. 포털의 왼쪽 위 모서리에서 **리소스 만들기**를 클릭합니다. **데이터베이스**를 선택한 후 **SQL Database**를 선택합니다.
 
-1. From the portal, click **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
+    ![포털에서 Azure SQL Database 만들기](../media-draft/create-db.png)
+1. **서버**에서 **필수 설정 구성**을 클릭하고 양식을 채운 다음, **선택**을 클릭합니다. 양식을 채우는 방법에 대한 자세한 내용은 다음과 같습니다.
 
-   ![Screenshot of the Azure portal showing the Create a resource blade with the Databases section selected and the Create a resource, Databases, and SQL Database buttons highlighted.](../media-draft/create-db.png)
-
-1. Under **Server**, click **Configure required settings**, fill out the form, then click **Select**. Here's more information on how to fill out the form:
-
-    | Setting      | Value |
+    | 설정      | 값 |
     | ------------ | ----- |
-    | **Server name** | A globally unique [server name](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
-    | **Server admin login** | A [database identifier](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers) that serves as your primary administrator login name. |
-    | **Password** | Any valid password that has at least eight characters and contains characters from three of these categories: uppercase characters, lowercase characters, numbers, and non-alphanumeric characters. |
-    | **Location** | Any valid location. |
+    | **서버 이름** | 전역적으로 고유한 [서버 이름](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions)입니다. |
+    | **서버 관리자 로그인** | 기본 관리자 로그인 이름으로 사용되는 [데이터베이스 식별자](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers)입니다. |
+    | **암호** | 대문자, 소문자, 숫자 및 비영숫자 문자 범주 중 세 가지 범주의 문자를 포함하는 8자 이상의 유효한 암호입니다. |
+    | **위치**: | 모든 유효한 위치 |
     > [!IMPORTANT]
-    > Note your server name, admin login, and password for later.
+    > 나중에 사용할 수 있도록 서버 이름, 관리자 로그인 및 암호를 적어둡니다.
+1. **가격 책정 계층**을 클릭하여 서비스 계층을 지정합니다. **기본** 서비스 계층을 선택한 다음, **적용**을 클릭합니다.
+1. 다음 값을 사용하여 나머지 양식을 채웁니다.
 
-1. Click **Pricing tier** to specify the service tier. Select the **Basic** service tier, then click **Apply**.
-
-1. Use these values to fill out the rest of the form.
-
-    | Setting      | Value |
+    | 설정      | 값 |
     | ------------ | ----- |
-    | **Database name** | **Logistics** |
-    | **Subscription** | Your subscription |
-    | **Resource group** | **logistics-db-rg** |
-    | **Select source** | **Blank database** |
-    | **Want to use SQL elastic pool?** | **Not now** |
-    | **Collation** | **SQL_Latin1_General_CP1_CI_AS** |
+    | **데이터베이스 이름** | **물류** | 
+    | **구독** | 사용자의 구독 |
+    | **리소스 그룹** | **logistics-db-rg** | 
+    | **원본 선택** | **빈 데이터베이스** | 
+    | **SQL 탄력적 풀을 사용하고 싶나요?** | **지금은 아님** |
+    | **데이터 정렬** | **SQL_Latin1_General_CP1_CI_AS** |
+1. **만들기**를 클릭하여 Azure SQL Database를 만듭니다.
+1. 도구 모음에서 **알림**을 클릭하여 배포 프로세스를 모니터링합니다.
+    ![배포 프로세스 모니터링](../media-draft/notifications-progress.png) 프로세스가 완료되면 **대시보드에 고정**을 클릭하여 나중에 필요할 때 빠르게 액세스할 수 있도록 대시보드에 데이터베이스 서버를 고정합니다.
+    ![대시보드에 서버 고정](../media-draft/notifications-complete.png)
 
-1. Click **Create** to create your Azure SQL database.
+## <a name="set-the-server-firewall"></a>서버 방화벽 설정
 
-1. On the toolbar, click **Notifications** to monitor the deployment process.
+이제 Azure SQL Database가 작동 및 실행되고 있습니다. 새 데이터베이스를 추가로 구성, 보안 설정, 모니터링 및 문제 해결을 위한 많은 옵션이 있습니다.
 
-When the process completes, click **Pin to dashboard** to pin your database server to the dashboard so that you have quick access when you need it later.
+예를 들어, 시간이 지나면서 수요를 충족하기 위해 추가 계산 성능이 필요하다는 것을 알 수 있습니다. 또한 성능 옵션을 조정하거나 DTU 및 vCore 성능 모델 간을 전환할 수도 있습니다.
 
-   ![Screenshot of the Azure portal showing the Notifications menu with the Pin to dashboard button from a recent deployment success message highlighted.](../media-draft/notifications-complete.png)
+방화벽을 통해 데이터베이스에 액세스할 수 있는 시스템을 지정할 수도 있습니다. 처음에는 방화벽이 Azure 외부에서 사용자 데이터베이스 서버로 시도되는 모든 액세스를 차단합니다.
 
-## Set the server firewall
+프로토타입의 경우 사용자의 랩톱에서만 데이터베이스에 액세스해야 합니다. 나중에 모바일 앱과 같은 추가 시스템을 허용할 수 있습니다.
 
-Your Azure SQL database is now up and running. You have many options to further configure, secure, monitor, and troubleshoot your new database.
+지금은 개발 컴퓨터를 사용하여 방화벽을 통해 데이터베이스에 액세스하도록 하겠습니다.
 
-For example, say that over time you realize you need additional compute power to keep up with demand. You can adjust performance options or even switch between the DTU and vCore performance models.
+1.  Logistics 데이터베이스의 개요 블레이드로 이동합니다. 이전에 데이터베이스를 고정한 경우 대시보드에서 **Logistics** 타일을 클릭하여 해당 타일로 이동할 수 있습니다.
+    ![Logistics 타일](../media-draft/logistics-tile.png)
+1. **서버 방화벽 설정**을 클릭합니다.
 
-You can also specify which systems can access your database through the firewall. Initially, the firewall prevents all access to your database server from outside of Azure.
+    ![서버 방화벽 설정](../media-draft/set-server-firewall.png)
+1. **클라이언트 IP 추가**를 클릭한 다음, **저장**을 클릭합니다.
 
-For your prototype, you only need to access the database from your laptop. Later, you can whitelist additional systems, such as your mobile app.
+    ![클라이언트 IP 주소 추가](../media-draft/add-client-ip.png)
 
-Let's enable your development computer to access the database through the firewall now.
-
-1. Go to the overview blade of the Logistics database. If you pinned the database earlier, you can click the **Logistics** tile on the dashboard to get there.
-
-1. Click **Set server firewall**.
-
-    ![Screenshot of the Azure portal showing a SQL database overview blade with the Set server firewall button highlighted.](../media-draft/set-server-firewall.png)
-
-1. Click **Add client IP**, and then click **Save**.
-
-    ![Screenshot of the Azure portal showing a SQL database Firewall settings blade with the Add client IP button highlighted.](../media-draft/add-client-ip.png)
-
-In the next part, you'll get some hands-on practice with your new database and with Azure Cloud Shell. You'll connect to the database, create a table, add some sample data, and execute a few SQL statements.
+다음 부분에서는 새 데이터베이스와 Cloud Shell을 사용하여 몇 가지 실습을 진행합니다. 데이터베이스에 연결하고, 테이블을 만들고, 일부 샘플 데이터를 추가하고, 몇 가지 SQL 문을 실행해봅니다.

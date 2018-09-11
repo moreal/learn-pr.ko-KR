@@ -1,58 +1,54 @@
-You are now ready to start implementing the temperature service. In the previous unit, you determined that a serverless solution would best fit your needs. Let's start by creating a function app to hold our Azure Function.
+이제 온도 서비스 구현을 시작할 준비가 되었습니다. 이전 단원에서 요구 사항에 서버리스 솔루션이 가장 적절한지 판단했습니다. 먼저 Azure 함수를 보관할 함수 앱을 만들어 보겠습니다.
 
-## What is a function app?
+## <a name="what-is-a-function-app"></a>함수 앱이란?
+함수는 **함수 앱**이라는 실행 컨텍스트에서 호스트됩니다. 함수 앱을 정의하여 Azure에서 함수 및 계산 리소스를 논리적으로 그룹화하고 구조화합니다. 엘리베이터 예에서, 에스컬레이터 드라이브 기어 온도 서비스를 호스트하는 함수 앱을 만듭니다. 함수 앱을 만들려면 몇 가지 결정해야 할 일이 있습니다. 서비스 계획을 선택하고, 호환되는 저장소 계정을 선택해야 합니다.
 
-Functions are hosted in an execution context called a **function app**. You define function apps to logically group and structure your functions and a compute resource in Azure. In our elevator example, you would create a function app to host the escalator drive gear temperature service. There are a few decisions that need to be made to create the function app; you need to choose a service plan and select a compatible storage account.
+### <a name="choosing-a-service-plan"></a>서비스 계획 선택
+함수 앱은 두 가지 유형의 서비스 계획 중 하나를 사용할 수 있습니다. 첫 번째 서비스 계획은 **소비 서비스 계획**으로, Azure 서버리스 응용 프로그램 플랫폼을 사용할 때 선택하는 플랜입니다. 소비 서비스 계획은 자동 크기 조정을 제공하며 함수를 실행할 때 비용이 청구됩니다. 소비 플랜에서는 함수 실행에 대해 구성 가능한 제한 시간이 제공됩니다. 기본적으로 5분이지만 시간 제한을 최대 10분까지 구성할 수 있습니다. 
 
-### Choosing a service plan
+두 번째 계획은 **Azure App Service 계획**이라고 하며, 이 계획을 통해 정의한 VM에서 함수를 계속 실행하여 시간 제한 기간을 방지할 수 있습니다. App Service 계획을 사용하는 경우 함수가 실행되는 앱 리소스를 관리해야 하므로 이는 기술적으로 서버리스 계획이 아닙니다. 그러나 함수가 지속적으로 사용되는 경우 또는 함수에 소비 계획이 제공할 수 있는 것보다 많은 처리 능력 또는 실행 시간이 필요한 경우에는 더 나은 선택일 수 있습니다. 
 
-Function apps may use one of two types of service plans. The first service plan is the **Consumption service plan**. This is the plan that you choose when using the Azure serverless application platform. The Consumption service plan provides automatic scaling and bills you when your functions are running. The Consumption plan comes with a configurable timeout period for the execution of a function. By default, it is 5 minutes, but may be configured to have a timeout as long as 10 minutes.
+### <a name="storage-account-requirements"></a>저장소 계정 요구 사항
+함수 앱을 만들 때 저장소 계정에 연결되어 있어야 합니다. 기존 계정을 선택하거나 새 계정을 만들 수 있습니다. 함수 앱은 함수 실행 로깅 및 실행 트리거 관리 등과 같은 내부 작업을 위해 이 저장소 계정을 사용합니다. 소비 서비스 계획의 경우 함수 코드 및 구성 파일이 이 계정에 저장됩니다.
 
-The second plan is called the **Azure App Service plan**. This plan allows you to avoid timeout periods by having your function run continuously on a VM that you define. When using an App Service plan, you are responsible for managing the app resources the function runs on, so this is technically not a serverless plan. However, it may be a better choice if your functions are used continuously or if your functions require more processing power or execution time than the Consumption plan can provide.
+## <a name="create-a-function-app"></a>함수 앱 만들기
+Azure Portal에서 함수 앱을 만들어 보겠습니다.
 
-### Storage account requirements
+1. Azure 계정을 사용하여 [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-When you create a function app, it must be linked to a storage account. You can select an existing account or create a new one. The function app uses this storage account for internal operations such as logging function executions and managing execution triggers. On the Consumption service plan, this is also where the function code and configuration file are stored.
+2. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기** 단추를 선택한 후 **시작 > 서버리스 함수 앱**을 선택하여 함수 앱 ‘만들기’ 블레이드를 엽니다. 또는 **계산 > 함수 앱** 옵션을 사용하여 같은 블레이드를 열 수 있습니다.
+  
+  ![차례로 선택된 *리소스 만들기*, 계산, 함수 앱을 강조 표시하는 Azure Portal](../media-draft/3-create-function-app-blade.png)
 
-## Create a function app
+3. 전역으로 고유한 앱 이름을 선택합니다. 서비스의 기준 URL 역할을 합니다. 예를 들어 **escalator-functions-xxxxxxx**로 이름을 지정할 수 있습니다. 여기서 xxxxxxx는 이니셜 및 출생 연도로 바꿀 수 있습니다. 이 값이 전역적으로 고유하지 않은 경우 다른 조합을 사용해 볼 수 있습니다. 유효한 문자는 a-z, 0-9 및 -입니다.
 
-Let's create a function app in the Azure portal.
+4. 함수 앱을 호스트할 Azure 구독을 선택합니다.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+5. **escalator-functions-group**이라는 새 리소스 그룹을 만듭니다. 리소스 그룹을 사용하여 이 모듈에서 사용되는 모든 리소스를 저장하면 나중에 정리에 도움이 됩니다.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, and then select **Get started > Serverless Function App** to open the Function App *Create* blade. Alternatively, you can use the **Compute > Function App** option, which will open the same blade.
+6. OS로 **Windows**를 선택합니다.
 
-  ![Screenshot of the Azure portal showing the Create a resource blade with the Compute section and Function App highlighted.](../media/3-create-function-app-blade.png)
+7. **호스팅 플랜**의 경우 서버리스 호스팅 옵션인 **소비 계획**을 선택합니다.
 
-1. Choose a globally unique app name. This will serve as the base URL of your service. For example, you can name it **escalator-functions-xxxxxxx**, where the x's can be replaced with your initials and your birth year. If this isn't globally unique, you can try any other combination. Valid characters are a-z, 0-9 and -.
+8. 자신 또는 고객과 가장 가까운 위치를 선택합니다.
 
-1. Select the Azure subscription where you would like the function app hosted.
+9. 새 저장소 계정을 만듭니다. Azure는 앱 이름을 기반으로 이름을 지정합니다. 이름은 원하는 경우 변경할 수 있지만 고유해야 합니다.
 
-1. Create a new resource group called **escalator-functions-group**. Using a resource group to hold all resources used in this module will help with clean-up later.
+10. Azure Application Insights가 **켜져** 있는지 확인하고 자신(또는 고객)과 가장 가까운 지역을 선택합니다.
+완료한 후 구성이 다음 스크린샷의 구성과 유사해야 합니다.
 
-1. Select **Windows** for OS.
+  ![이전 지침에 따라 모든 필드가 구성된 함수 앱 *만들기* 구성 화면](../media-draft/3-create-function-app-settings.png)
 
-1. For **Hosting Plan**, select the **Consumption Plan**, which is the serverless hosting option.
+11. **만들기**를 선택합니다. 배포에 몇 분 정도 걸립니다. 완료되면 알림이 표시됩니다.
 
-1. Select the geographical location closest to you (or your customers).
+## <a name="verify-your-azure-function-app"></a>Azure 함수 앱 확인
 
-1. Create a new storage account. Azure will give it a name based on the app name. You can change it if you like, but it must also be unique.
+1. Azure Portal의 왼쪽 메뉴에서 **리소스 그룹**을 선택합니다. 그러면 사용 가능한 그룹 목록에 **escalator-functions-group**이 표시됩니다.
 
-1. Make sure that Azure Application Insights is **On** and select the region closest to you (or your customers).
-  When you're finished, your configuration should look like the config in the following screenshot.
+  ![Azure Portal의 보기에 escalator-functions-group 리소스 그룹이 있는 Azure Portal 리소스 그룹 화면.](../media-draft/3-resource-group.png)
 
-  ![Screenshot of the Azure portal showing the Function App Create blade with all fields configured as per the preceding instructions.](../media/3-create-function-app-settings.png)
+2. **escalator-functions-group**을 선택합니다. 그러면 다음 목록과 같은 리소스 목록이 표시됩니다.
+  
+  ![App Service 계획, 저장소 계정, Application Insights 및 App Service에 대한 항목을 포함하여 escalator-functions-group 그룹에 있는 모든 리소스](../media-draft/3-resource-list.png)
 
-1. Select **Create**; deployment will take a few minutes. You'll receive a notification once it's complete.
-
-## Verify your Azure function app
-
-1. From the Azure portal left-hand menu, select **Resource groups**. You should then see the **escalator-functions-group** in the list of available groups.
-
-  ![Screenshot of the Azure portal showing the Resource groups blade with the Resource groups menu item and escalator-functions-group list item highlighted.](../media/3-resource-group.png)
-
-1. Select the **escalator-functions-group**. You should then see a resource list like the following list.
-
-  ![Screenshot of the Azure portal showing all resources within the escalator-functions-group group, including entries for an App Service plan, a Storage account, Application Insights resource, and an App Service.](../media/3-resource-list.png)
-
-The item with the lightning bolt Function icon, listed as an App Service, is your new function app. You can click on it to open the details about the new function - it has a public URL assigned to it, if you open that in a browser, you should get a default web page that indicates your Function App is running.
+App Service로 나열된 번개 아이콘이 있는 항목은 새로운 함수 앱입니다. 항목을 클릭하면 할당된 공용 URL이 포함된 새 함수에 대한 세부 정보가 열립니다. 브라우저에서 열 경우에는 함수 앱이 실행 중임을 나타내는 기본 웹 페이지가 표시됩니다.

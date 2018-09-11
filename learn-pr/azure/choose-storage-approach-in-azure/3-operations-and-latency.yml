@@ -1,29 +1,30 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
 metadata:
-  title: Determine operational needs
-  description: Determine operational needs
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Determine operational needs
+  title: 작업 및 대기 시간
+  description: 작업 및 대기 시간
+  displayType: one-column
+  ms.openlocfilehash: 3d67e7dd28258dc8accc73c36ae7573e143b7c02
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252256"
+title: 작업 및 대기 시간
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/3-operations-and-latency.md)]
 quiz:
-  title: 'Knowledge check'
+  title: 작업 및 대기 시간
   questions:
-  - content: "How would you classify the operational needs of a database that stored user data for your online retail application. The data set would contain shipping preferences, previous orders, and profile information to display on product reviews."
+  - content: 온라인 판매점 응용 프로그램에 대한 사용자 데이터가 저장된 데이터베이스의 운영 요구 사항을 어떻게 분류하시겠어요? 데이터 집합에는 제품 리뷰에 표시할 배송 기본 설정, 이전 주문 및 프로필 정보가 포함됩니다.
     choices:
-    - content: "The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on every property."
+    - content: 응용 프로그램에는 빠른 검색 시간과 많은 읽기 및 쓰기가 필요하며 모든 속성에 대해 쿼리할 수 있어야 합니다.
       isCorrect: true
-      correctExplanation: "Users will create and update their user data frequently, and the application will update their order information in their user data. Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code. So be sure to remember all the users of your data, not just your end customer, when it comes to listing requirements."
-    - content: "The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on a limited set of properties."
+      correctExplanation: 사용자는 자주 해당 사용자 데이터를 만들고 업데이트하며 응용 프로그램은 해당 사용자 데이터의 주문 정보를 업데이트합니다. 온라인 판매점 사이트 고객이 배송 주소가 특정 우편 번호로 되어 있는지 확인하기 위한 쿼리와 같이 강력한 방식으로 데이터를 쿼리할 수 있다고 기대하지는 않지만, 기업은 특정 우편 번호의 사용자 수를 확인하기 위한 쿼리를 실행할 수 있습니다. 따라서 요구 사항을 나열할 때는 최종 고객뿐만 아니라 데이터의 모든 사용자를 염두에 두어야 합니다.
+    - content: 응용 프로그램에는 빠른 검색 시간과 많은 읽기 및 쓰기가 필요하며 제한된 속성 집합에 대해 쿼리할 수 있어야 합니다.
       isCorrect: false
-      correctExplanation: "Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code, so all properties should be indexed an queryable."
-    - content: "The application can support slow retrieval times and read-only operations."
+      correctExplanation: 온라인 판매점 사이트 고객이 배송 주소가 특정 우편 번호로 되어 있는지 확인하기 위한 쿼리와 같이 강력한 방식으로 데이터를 쿼리할 수 있다고 기대하지는 않지만, 기업은 특정 우편 번호의 사용자 수를 확인하기 위한 쿼리를 실행할 수 있으므로 모든 속성이 쿼리 가능한 상태로 인덱싱되어야 합니다.
+    - content: 응용 프로그램이 느린 검색 시간과 읽기 전용 작업을 지원할 수 있습니다.
       isCorrect: false
-      incorrectExplanation: "Customers will be creating and updating their own profile information, so the user data needs to be read-write."
+      incorrectExplanation: 고객은 자신의 프로필 정보를 만들고 업데이트하므로 사용자 데이터를 읽고 써야 합니다.

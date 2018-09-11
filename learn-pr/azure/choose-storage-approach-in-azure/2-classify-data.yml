@@ -1,37 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.2-classify-data
 metadata:
-  title: Classify your data
-  description: Classify your data
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Classify your data
+  title: 데이터 분류
+  description: 데이터 분류
+  displayType: one-column
+  ms.openlocfilehash: 361eb3c2315493975eea2c6bcab89b3baaa21913
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252663"
+title: 데이터 분류
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/2-classify-data.md)]
 quiz:
-  title: 'Classifying your data'
+  title: 데이터 분류
   questions:
-  - content: "Your online retail application also stores user data, which includes the users' shipping addresses, previous orders, and profile information if they're provided it. The user data may contain other fields for certain users in the future. How would you classify this data set?"
+  - content: 온라인 판매점 응용 프로그램은 사용자의 배송 주소, 이전 주문, 프로필 정보(사용자가 제공한 경우)를 포함한 사용자 데이터도 저장합니다. 나중에는 사용자 데이터에 특정 사용자의 다른 필드가 포함될 수 있습니다. 이러한 데이터 집합은 어떻게 분류하나요?
     choices:
-    - content: "Structured"
+    - content: 구조적
       isCorrect: false
-      incorrectExplanation: "Storing this data in a structured format would not be ideal, as not all of the users have the same information."
-    - content: "Semi-structured"
+      incorrectExplanation: 사용자마다 정보가 다르므로 이러한 데이터를 구조적 형식으로 저장하는 것은 적합하지 않습니다.
+    - content: 반구조적
       isCorrect: true
-      correctExplanation: "Correct, this user data is semi-structured, because not all users have profile informaiton, and you may add additional fields to some users in the future. This indicates the data does not all adhere to the same schema, and each piece of data may have a unique organization, so it is semi-structured."
-    - content: "Unstructured"
+      correctExplanation: 맞습니다. 이러한 사용자 데이터는 반구조적입니다. 일부 사용자는 프로필 정보가 없으며 나중에 일부 사용자에게 필드를 더 추가할 수도 있기 때문입니다. 이는 모든 데이터가 동일한 스키마를 준수하는 것이 아님을 나타내며 데이터마다 구성이 고유하므로 데이터가 반구조적입니다.
+    - content: 비구조적
       isCorrect: false
-      incorrectExplanation: "Storing the user data as unstructured data would not be recommended as it would be difficult to work with the data in an unstructured format."
-  - content: "Can unstructured data have some structured metadata accompanied with it?"
+      incorrectExplanation: 비구조적 형식의 데이터로 작업하는 것은 어려우므로 사용자 데이터를 비구조적 데이터로 저장하는 것은 권장되지 않습니다.
+  - content: 비구조적 데이터에 일부 구조적 메타데이터가 포함되어 있을 수 있나요?
     choices:
-    - content: "Yes"
+    - content: yes
       isCorrect: true
-      correctExplanation: "Correct, unstructured data can have associated metadata, such as a timestamp, a location stamp, or a device ID just to name a few. Having metadata associated with the unstructured data does not change the fact that the internal structure of the main entity is unstructured."
-    - content: "No"
+      correctExplanation: 맞습니다. 비구조적 데이터에 타임스탬프, 위치 스탬프, 장치 ID 등 연관된 메타데이터가 포함되어 있을 수 있습니다. 비구조적 데이터와 연관된 메타데이터가 있어도 기본 엔터티의 내부 구조가 비구조적이라는 사실을 변하지 않습니다.
+    - content: 아니요
       isCorrect: false
-      incorrectExplanation: "Sorry, that's not the correct answer."
+      incorrectExplanation: 죄송합니다. 정답이 아닙니다.

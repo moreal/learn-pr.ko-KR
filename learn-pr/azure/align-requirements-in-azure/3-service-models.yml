@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.3-service-models
-title: Cloud service models
+title: 클라우드 서비스 모델
 metadata:
-  title: Cloud service models
-  description: Cloud service models
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 클라우드 서비스 모델
+  description: 클라우드 서비스 모델
+  ms.openlocfilehash: 4efdb0d5a03f7c0f1054feeffaae19cf579657fc
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675647"
 durationInMinutes: 2
-content: |
-  [!include[](includes/3-service-models.md)]
+content: '[!include[](includes/3-service-models.md)]'

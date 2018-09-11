@@ -1,38 +1,35 @@
-Now that your Azure SQL database is up and running, you can connect it to your favorite SQL Server management tool to populate it with real data.
+Azure SQL Database가 작동 및 실행 중이므로 즐겨 사용하는 SQL Server 관리 도구에 연결하여 실제 데이터로 채울 수 있습니다.
 
-You initially considered whether to run your database on-premises or in the cloud. With Azure SQL Database, you configure a few basic options and you have a fully functional SQL database that you can connect to your apps.
+처음에는 데이터베이스 온-프레미스 또는 클라우드 중 어디에서 실행할지 고려하게 됩니다. Azure SQL Database를 사용하여 몇 가지 기본적인 옵션을 구성하면 앱에 연결할 수 있는 완전한 기능의 SQL 데이터베이스를 사용할 수 있게 됩니다.
 
-There's no infrastructure or software patches to maintain. You're now free to focus more on getting your transportation logistics app prototype up and running and less on database administration. Your prototype won't be a throw-away demo, either. Azure SQL Database provides production-level security and performance features.
+유지 관리할 인프라 또는 소프트웨어 패치는 없습니다. 이제 자유롭게 운송 물류 앱 프로토타입의 작동 및 실행에 좀 더 집중하고 데이터베이스 관리 부하를 줄일 수 있습니다. 프로토타입은 한 번 쓰고 마는 데모가 아닙니다. Azure SQL Database는 프로덕션 수준의 보안 및 성능 기능을 제공합니다.
 
-Remember that each Azure SQL logical server contains one or more databases. Azure SQL Database provides two pricing models, DTU and vCore, to help you balance cost versus performance across all your databases.
+각 Azure SQL 논리 서버에는 하나 이상의 데이터베이스가 포함되어 있습니다. Azure SQL Database에서 제공하는 DTU와 vCore 등 두 가지 가격 책정 모델을 사용하여 모든 데이터베이스에서 합리적인 가격 대비 성능을 유지할 수 있습니다.
 
-Choose DTU if you're just getting started or want a simple, preconfigured buying option. Choose vCore when you want greater control over what compute and storage resources you create and pay for.
+Azure SQL Database를 이제 막 사용하기 시작했거나, 미리 구성된 간단한 구매 옵션을 원하는 경우 DTU를 선택합니다. 만들고 비용을 지불하는 계산 및 저장소 리소스를 보다 강력하게 제어하려는 경우 vCore를 선택합니다.
 
-Azure Cloud Shell makes it easy to start working with your databases. From Cloud Shell, you have access to the Azure CLI, which enables you to get information about your Azure resources. Cloud Shell also provides many other common utilities, such as `sqlcmd`, to help you start working right away with your new database.
+Cloud Shell을 사용하면 데이터베이스 작업을 쉽게 시작할 수 있습니다. Cloud Shell에서 Azure 리소스에 대한 정보를 얻을 수 있는 Azure CLI에 액세스할 수 있습니다. 또한 Cloud Shell은 새 데이터베이스로 즉시 작업하는 데 도움이 되는 `sqlcmd`와 같은 여러 다양한 공통 유틸리티도 제공합니다.
 
-## Clean up
+## <a name="cleanup"></a>정리
 
-<!---TODO: Update for sandbox?--->
+Azure SQL Database 설치로 자유롭게 실험해보세요. 완료되면 데이터베이스를 삭제하는 가장 쉬운 방법은 부모 리소스 그룹을 삭제하는 것입니다.
 
-Feel free to experiment more with your Azure SQL Database installation. When you're done, the easiest way to delete your database is to delete its parent resource group.
+1. 포털에서 **리소스 그룹**을 클릭합니다.
+1. **logistics-db-rg**를 선택합니다.
+1. **리소스 그룹 삭제**를 클릭합니다.
 
-1. From the portal, click **Resource groups**.
+    ![리소스 그룹 삭제](../media-draft/delete-rg.png)
+1. 프롬프트에서 “logistics-db-rg”를 입력하고 **삭제**를 클릭합니다.
 
-1. Select **logistics-db-rg**.
+## <a name="additional-resources"></a>추가 리소스
 
-1. Click **Delete resource group**.
+이 문서에서는 자습서 및 샘플을 포함하는 많은 정보를 제공합니다. 다음은 여기에서 다루는 내용에 대한 몇 가지 링크입니다.
 
-1. At the prompt, type "logistics-db-rg" and click **Delete**.
+* [Azure SQL Database 설명서](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Azure SQL Database 구매 모델 및 리소스](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers)
+* [Azure SQL Database 논리 서버 및 이 서버에 대한 관리](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-logical-servers)
+* [Azure SQL Database 및 SQL Data Warehouse 방화벽 규칙](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure)
 
-## Additional resources
+Cloud Shell에 대해 자세히 알아보려면 [Azure Cloud Shell 개요](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)를 참조하세요.
 
-The documentation provides lots more information, including tutorials and samples. Here are a few links to what we covered here:
-
-- [Azure SQL Database documentation](https://docs.microsoft.com/azure/sql-database/)
-- [Azure SQL Database purchasing models and resources](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)
-- [Azure SQL Database logical servers and their management](https://docs.microsoft.com/azure/sql-database/sql-database-logical-servers)
-- [Azure SQL Database and SQL Data Warehouse firewall rules](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
-
-To learn more about Cloud Shell, see [Overview of Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-
-If you're interested in learning more about the `sqlcmd` utility, see [sqlcmd Utility](https://docs.microsoft.com/sql/tools/sqlcmd-utility?view=sql-server-2017).
+`sqlcmd` 유틸리티에 대한 자세한 내용은 [sqlcmd 유틸리티](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017)를 참조하세요.

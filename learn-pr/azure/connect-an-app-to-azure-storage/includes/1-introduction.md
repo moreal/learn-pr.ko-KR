@@ -1,10 +1,10 @@
-Imagine you're building a photo-sharing application. Every day, thousands of users take pictures and rely on your application to keep them safe and make them accessible across all their devices. Storing these photos is critical to your business, and you would like to ensure that the system used in your application is fast, reliable and secure. Ideally without you having to build all these aspects into the app.
+사진 공유 응용 프로그램을 빌드한다고 가정해 보세요. 매일 수천 명의 사용자가 사진을 찍고 응용 프로그램을 활용하여 사진에 액세스하고 안전하게 보관합니다. 사진은 중요하므로 사용하는 저장소 시스템이 빠르고 안정적이며 강력하기 원할 것입니다. 또한 이러한 측면을 모두 알거나 저장소 시스템에 빌드할 필요 없이, 저장소 시스템이 완전히 백업되고 안전하게 유지되기 바랄 것입니다. 사용자는 해당 시스템이 작동하기만 하면 됩니다.
 
-Azure Storage provides such power, resiliency, and performance in the cloud. This module will provide you with the knowledge to be able to utilize the power of Azure Storage to achieve the reliability and performance in your app that you require. This knowledge can then be applied to any application.
+Azure Storage는 클라우드에서 이러한 강점, 복원력 및 성능을 제공합니다. 이 모듈에서는 Azure Storage의 강점을 활용하여 앱에서 필요한 안정성과 성능을 달성하기 위한 지식을 제공합니다. 나중에 이러한 지식을 모든 응용 프로그램에 적용할 수 있습니다.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>학습 목표
+이 모듈에서는 다음을 수행합니다.
 
-- Explore the data types and services supported by an Azure storage account
-- Create a new Azure storage account using the Azure portal
-- Create a new application and connect the app to an Azure Storage account.
+- Azure Storage가 앱에 적합한지 확인
+- 앱에서 Azure Storage를 사용할 때 디자인 고려 사항 평가
+- 새 응용 프로그램을 만들고 앱을 Azure Storage 계정에 연결

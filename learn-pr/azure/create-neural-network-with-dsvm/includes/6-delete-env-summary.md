@@ -1,15 +1,17 @@
-### Delete the Data Science VM
+### <a name="exercise-6-delete-the-data-science-vm"></a>연습 6: Data Science VM 삭제
 
-In this unit, you will delete the resource group created in Exercise 1 when you created the Data Science VM. Deleting the resource group deletes everything in it and prevents any further charges from being incurred for it. Resource groups that are deleted can't be recovered, so be certain you're finished using it before deleting it. However, it is **important not to leave this resource group deployed any longer than necessary** because a Data Science VM is moderately expensive.
+이 연습에서는 Data Science VM을 만들 때 연습 1에서 만든 리소스 그룹을 삭제합니다. 리소스 그룹을 삭제하면 포함된 모든 항목이 삭제되므로 해당 리소스 그룹에 대해 추가 요금이 발생하는 것을 방지합니다. 삭제된 리소스 그룹은 복구할 수 없으므로 삭제하기 전에 사용이 완료되었는지 확인해야 합니다. 그러나 Data Science VM은 다소 비싼 편이므로 **이 리소스 그룹을 필요한 기간보다 오래 배포한 상태로 두지 않는 것이 중요합니다**.
 
-1. Return to the blade for the resource group you created in Exercise 1. Then, click the **Delete resource group** button at the top of the blade.
+1. 연습 1에서 만든 리소스 그룹에 대한 블레이드로 돌아갑니다. 그런 다음, 블레이드 맨 위에서 **리소스 그룹 삭제** 단추를 클릭합니다.
 
-    ![Deleting the resource group](../media-draft/6-delete-resource-group.png)
+    ![리소스 그룹 삭제](../images/delete-resource-group.png)
 
-1. For safety, you are required to type in the resource group's name. (Once deleted, a resource group cannot be recovered.) Type the name of the resource group. Then, click the **Delete** button to remove all traces of this module from your Azure subscription.
+    _리소스 그룹 삭제_
 
-After a few minutes, the resource group and all of its resources will be deleted. Billing stops when you click **Delete**, so you're not charged for the time required to delete the resources. Similarly, billing doesn't start until the resources are fully and successfully deployed.
+1. 안전을 위해 리소스 그룹의 이름을 입력해야 합니다. 삭제된 후에는 리소스 그룹을 복구할 수 없습니다. 리소스 그룹의 이름을 입력합니다. 그런 다음, **삭제** 단추를 클릭하여 이 랩의 모든 추적을 Azure 구독에서 제거합니다.
 
-### Summary
+잠시 후, 리소스 그룹 및 모든 해당 리소스가 삭제됩니다. **삭제**를 클릭하면 청구가 중지되므로 리소스를 삭제하는 데 필요한 시간에 대한 요금은 청구되지 않습니다. 마찬가지로, 리소스가 완전히 성공적으로 배포될 때까지는 청구가 시작되지 않습니다.
 
-The steps in this module may be generalized to perform other types of image-classification tasks. For example, you could train the same TensorFlow model to recognize cat images or identify defective parts produced on an assembly line. Image classification is one of the most prevalent uses of machine learning today, and its usefulness will only increase over time. Now that you have a basis to work from, try creating some image-classification models of your own. You never know what might come of it!
+### <a name="summary"></a>요약
+
+이 랩의 단계는 다른 유형의 이미지 분류 작업을 수행하기 위해 일반화되었을 수 있습니다. 예를 들어, 동일한 TensorFlow 모델을 학습하여 고양이 이미지를 인식하거나, 조립 라인에서 생산된 결함 있는 부품을 식별할 수 있습니다. 이미지 분류는 현재 널리 사용되고 있는 기계 학습 중 하나로, 시간이 지나면서 그 유용성이 점점 증가할 것입니다. 이제 작업 기반이 구축되었으므로 몇 가지 이미지 분류 모델을 직접 만들어보겠습니다. 놀라운 정도로 유용한 결과를 얻을 수 있을 것입니다.

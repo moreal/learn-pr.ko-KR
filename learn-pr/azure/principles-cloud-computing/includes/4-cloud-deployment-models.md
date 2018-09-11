@@ -1,64 +1,50 @@
-There are three different cloud deployment models. A cloud deployment model defines where your data is stored and how your customers interact with it – how do they get to it, and where do the applications run? It also depends on how much of your own infrastructure you want or need to manage.
+세 개의 클라우드 배포 모델이 있습니다. 클라우드 배포 모델은 데이터가 저장되는 위치와 응용 프로그램을 다운로드할 방법 및 실행할 위치 등 고객이 상호 작용하는 방법을 정의합니다. 또한 고유한 인프라를 관리해야 하는 정도에 따라 달라집니다.
 
-Here, you'll explore the different types of deployment methods for your cloud computing resources
+여기서는 클라우드 컴퓨팅 리소스에 대한 다양한 형식의 배포 방법을 살펴봅니다. 
 
-<!-- TODO: Verify video -->
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yEv7]
+## <a name="public-cloud"></a>공용 클라우드
 
-:::row:::
-    :::column:::
-        ![Public Cloud Icon](../media/4-public-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Public cloud**
+가장 일반적인 배포 모델입니다. 이 경우에 관리하거나 최신 상태로 유지할 로컬 하드웨어가 없습니다. 모든 항목이 클라우드 공급자의 하드웨어에서 실행됩니다. 경우에 따라 다른 클라우드 사용자와 컴퓨팅 리소스를 공유하여 추가 비용을 절약할 수 있습니다. 
 
-This is the most common deployment model. In this case, you have no local hardware to manage or keep up-to-date – everything runs on your cloud provider’s hardware. In some cases, you can save additional costs by sharing computing resources with other cloud users.
+### <a name="advantages"></a>장점
 
-Some advantages of the public cloud are:
+- 높은 확장성 - 크기를 조정하기 위해 새 서버를 구입할 필요가 없습니다.
+- 종량제 가격 책정 - 사용한 만큼만 지불합니다.
+- 사용자가 하드웨어의 유지 관리 또는 업데이트를 책임지지 않습니다.
 
-- High scalability – you don’t have to buy a new server in order to scale
-- Pay-as-you-go pricing – you pay only for what you use
-- You’re not responsible for maintenance or updates of the hardware
-        :::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Private Cloud Icon](../media/4-private-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Private cloud**
+### <a name="disadvantages"></a>단점
 
-In a private cloud, you create a cloud environment in your own data center and provide self-service access to compute resources to users in your organization. This offers a simulation of a public cloud to your users, but you remain completely responsible for the purchase and maintenance of the hardware and software services you provide.
+- 높은 보안 위협
+- 공유 하드웨어
 
-Some reasons teams move away from the private cloud are:
+## <a name="private-cloud"></a>사설 클라우드
 
-- You have to purchase the hardware for startup and maintenance
-- Private clouds require IT skills and expertise that's hard to come by
-:::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Hybrid Cloud Icon](../media/4-hybrid-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Hybrid cloud**
+일반적으로 회사에서 지원하는 로컬 데이터 센터를 의미합니다. 클라우드에서 실행 중인 서비스에 연결되지 않았습니다. 이 예제는 아무 것도 클라우드로 마이그레이션하지 않거나 계획하지 않은 회사의 경우입니다.
 
-A hybrid cloud combines public and private clouds, allowing you to run your applications in the most appropriate location. For example, you could host a web site in the public cloud and link it to a highly secure database hosted in your private cloud (or on-premises data center).
+### <a name="advantages"></a>장점
 
-This is helpful when you have some things that cannot be put in the cloud, maybe for legal reasons. For example, you may have data that cannot be exposed publicly (such as medical data). Another example is one or more applications that run on old hardware that can’t be updated. In this case, you can keep the old system running locally, and connect it to the public cloud for authorization or storage.
+- 모든 항목이 회사 네트워크 내에 있으므로 보안 향상
+- 비공유 하드웨어/리소스
 
-Some advantages of a hybrid cloud versus a private cloud are:
+### <a name="disadvantages"></a>단점
 
-- You can keep any systems running and accessible that use out-of-date hardware or an out-of-date operating system
-- You have flexibility with what you run locally versus in the cloud
+- 시작 및 유지 관리를 위해 하드웨어를 구입해야 함
+- IT 전문 지식 필요
 
-Some concerns you'll need to watch out for are:
+## <a name="hybrid-cloud"></a>하이브리드 클라우드
 
-- It can be more expensive than selecting one deployment model
-- It can be more complicated to set up and manage
-    :::column-end:::
-:::row-end:::
+회사에서 지원하는 로컬 데이터 센터와 공용 클라우드의 조합입니다. 두 개의 클라우드가 연결되어 서로 데이터를 교환할 수 있습니다. 법적인 이유로 클라우드에 포함할 수 없는 몇 가지 항목이 있는 경우에 유용합니다. 예를 들어 공개적으로 노출할 수 없는 데이터가 있을 수 있습니다(예: 의료 데이터). 다른 예제는 업데이트할 수 없는 오래된 하드웨어에서 실행되는 하나 이상의 응용 프로그램입니다. 이 경우에 기존 시스템을 계속 로컬에서 실행하고 권한 부여에 대한 공용 클라우드 또는 저장소에 연결할 수 있습니다.
 
-## Summary
+### <a name="advantages"></a>장점
 
-Cloud computing is flexible and gives you the ability to choose how you want to deploy it. The cloud deployment model you choose depends on your budget, and on your security, scalability, and maintenance needs.
+- 오래된 하드웨어 또는 오래된 운영 체제를 사용하는 시스템을 계속 실행하고 해당 시스템에 액세스할 수 있습니다.
+- 로컬 및 클라우드에서 실행하는 기능의 유연성
+
+### <a name="disadvantages"></a>단점
+
+- 하나의 배포 모델을 선택하는 것보다 비용이 더 높을 수 있음
+- 설정 및 관리하기가 복잡함
+
+## <a name="summary"></a>요약
+
+클라우드 컴퓨팅은 유연하며 배포 방법을 선택하는 기능을 제공합니다. 일반적으로 배포 방법은 예산과 보안, 확장성 및 유지 관리 요구 사항에 따라 결정됩니다.
