@@ -1,26 +1,27 @@
-Our goal is to create a new Azure virtual machine. We'll need to supply several pieces of information to identify the resource location, OS to use, and the hardware configuration needed for the VM. Let's start with the **resource group**.
+목표는 새로운 Azure 가상 머신을 만드는 것입니다. 리소스 위치, 사용할 OS 및 VM에 필요한 하드웨어 구성을 식별하기 위해 몇 가지 정보를 제공해야 합니다. **리소스 그룹**부터 살펴보겠습니다.
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-Azure uses _resource groups_ to group related resources such as virtual machines and databases together. The resource group also identifies a specific location (called a "region") which will decide what data center the resource is placed into.
+Azure는 _리소스 그룹_을 사용하여 가상 머신 및 데이터베이스와 같은 관련 리소스를 그룹화합니다. 또한 리소스 그룹은 리소스가 배치되는 데이터 센터를 결정하는 특정 위치(“지역”이라고 함)를 식별합니다.
 
-> [!NOTE]
-> The Azure sandbox provides a pre-created resource group named <rgn>[Sandbox resource group name]</rgn>. You do not need to execute these steps. However, when you are creating your _own_ resources for real projects, these will be the commands you will need to perform. The Azure sandbox does not allow you to create resource groups directly.
+실험을 진행하고 있으므로 먼저 `ExerciseResources`라는 새 리소스 그룹을 만들고 `eastus` 지역에 배치합니다.
 
-As an example, you could type the following Azure CLI command in Azure Cloud Shell to create a resource group in the **East US** region. You would replace **[resource-group]** with a valid name that is unique within the active subscription.
+<!-- TODO: replace with free ed-tier -->
+
+Azure Cloud Shell에 다음 Azure CLI 명령을 입력하여 구독에서 리소스 그룹을 만듭니다.
 
 ```azurecli
-az group create --name [resource-group] --location eastus
+az group create --name ExerciseResources --location eastus
 ```
 
-This would return a JSON block indicating the resource group has been created.
+이렇게 하면 리소스 그룹이 생성되었음을 나타내는 JSON 블록이 반환됩니다. 다음과 같이 표시됩니다.
 
 ```json
 {
-  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/<resourcegroup>",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources",
   "location": "eastus",
   "managedBy": null,
-  "name": "<resourcegroup>",
+  "name": "ExerciseResources",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -28,6 +29,6 @@ This would return a JSON block indicating the resource group has been created.
 }
 ```
 
-Notice that it returns the subscription unique identifier, location, and name as part of the response. You can use these to verify it got created in the proper subscription and location.
+응답의 일부로 구독 고유 식별자, 위치 및 이름이 반환됩니다. 이들 항목을 사용하여 리소스 그룹이 적절한 구독 및 위치에서 생성되었는지 확인할 수 있습니다.
 
-Now that we know how to create a resource group, let's create a new virtual machine.
+이제 리소스 그룹이 있으므로 새 가상 머신을 만들어 보겠습니다.

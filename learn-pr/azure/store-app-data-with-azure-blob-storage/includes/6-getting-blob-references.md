@@ -45,7 +45,7 @@ var allBlobs = resultSegment.Results.OfType<ICloudBlob>();
 var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 ```
 
-> [!NOTE]
+> [!TIP]
 > `OfType<>`을 사용하려면 `System.Linq` 네임스페이스에 대한 참조(`using System.Linq;`)가 필요합니다.
 
 ## <a name="exercise"></a>연습

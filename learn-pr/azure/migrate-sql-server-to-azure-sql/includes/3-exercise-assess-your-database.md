@@ -1,68 +1,70 @@
-In this unit, you'll assess an existing database using the Data Migration Assistant and review any features used in the local SQL Server instance that aren't currently supported by Azure SQL Database.
+이 단원에서는 Data Migration Assistant를 사용하여 기존 데이터베이스를 평가하고, 로컬 SQL Server 인스턴스에서 사용되었지만 현재 Azure SQL Database에서는 지원되지 않는 기능을 검토합니다.
 
-## Setup
+## <a name="setup"></a>설정
 
-1. [Install the **Data Migration Assistant**](https://www.microsoft.com/download/details.aspx?id=53595) if you haven't done so already.
+1. [**Data Migration Assistant**](https://www.microsoft.com/download/details.aspx?id=53595)를 아직 설치하지 않았으면 설치합니다.
 
-1. You'll need a SQL Server instance running, ensure you have connection details available.
+1. SQL Server 인스턴스가 실행 중이어야 합니다. 연결 세부 정보를 사용할 수 있는지 확인하세요.
 
-<!-- TODO: replace with an LOD VM -->
+<!-- 1. [**** likely replace with an LOD VM *****] TODO: -->
 
-1. Open a browser and navigate to https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017.
+1. 인터넷 브라우저를 시작하여 https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017로 이동합니다.
 
-1. In **OLTP downloads**, click **AdventureWorks2008R2.bak** and save it to your local machine.
+1. **OLTP 다운로드**에서 **AdventureWorks2008R2.bak**를 클릭하여 로컬 컴퓨터에 해당 파일을 저장합니다.
 
-1. In Management Studio, restore *AdventureWorks 2008R2* to your default instance.
+1. Management Studio에서 *AdventureWorks 2008R2*를 기본 인스턴스로 복원합니다.
 
-## Create an assessment
+## <a name="create-an-assessment"></a>평가 만들기
 
-1. Start the **Microsoft Data Migration Assistant**.
+1. **Microsoft Data Migration Assistant**를 시작합니다.
 
-1. In the app's left-hand navigation, click __+__ to create a new Data Migration Assistant project.
+1. 앱의 왼쪽 탐색 영역에서 __+__ 를 클릭하여 새 Data Migration Assistant 프로젝트를 만듭니다.
 
-1. Specify the following options:
+1. 다음 옵션을 지정합니다.
 
-    - **Project type** - Select *Assessment*
-    - **Project name** - Enter a name for your project - for example, "Bicycle DB Assessment"
-    - **Source server type** - Select *SQL Server*
-    - **Target server type** - Select *Azure SQL Database*
+    - **프로젝트 형식** - *평가*를 선택합니다.
+    - **프로젝트 이름** - 프로젝트 이름을 "자전거 DB 평가"와 같이 입력합니다.
+    - **원본 서버 유형** - *SQL Server*를 선택합니다.
+    - **대상 서버 유형** - *Azure SQL Database*를 선택합니다.
 
-1. Click **Create**.
-    ![Screenshot showing the described configuration in the Data Migration Assistant for your AdventureWorks SQL Server data.](../media-draft/3-create-assessment.png)
+1. **만들기**를 클릭합니다.
+    ![AdventureWorks SQL Server 데이터에 대해 설명한 구성이 적용된 Data Migration Assistant를 보여 주는 스크린샷.](../media-draft/3-create-assessment.png)
 
-1. Select the assessment report type - check both:
-    - Check database compatibility
-    - Check feature parity
+1. 평가 보고서 종류를 선택합니다. 다음 두 항목을 모두 선택합니다.
+    - 데이터베이스 호환성 확인
+    - 기능 패리티 확인
 
-1. Click **Next**.
+1. **다음**을 클릭합니다.
 
-## Add databases to assess
+## <a name="add-databases-to-assess"></a>평가할 데이터베이스 추가
 
-1. If **Connect to a Server** is not showing on the right-hand side, click **Add Sources** to open the connection menu.
+1. **원본 추가**를 클릭하여 연결 메뉴를 엽니다.
 
-1. Do the following:
-    - Enter your existing SQL server instance name
-    - Select the **Authentication** type
-    - Specify the connection properties for your server
+1. 다음을 수행합니다.
 
-1. Click **Connect**.
+    - 기존 SQL server 인스턴스 이름 입력
+    - **인증 유형**을 선택합니다.
+    - 서버의 연결 속성 지정
 
-1. In **Add sources**, select the databases to assess. For this exercise, select **AdventureWorks2008R2**.
+1. **연결**을 클릭합니다.
 
-1. Click **Add**.
+1. **원본 추가**에서 평가할 데이터베이스를 선택합니다. 이 연습에서는 **AdventureWorks2008R2**를 선택합니다.
+
+1. **추가**를 클릭합니다.
     > [!NOTE]
-    > To add databases from multiple SQL Server instances, use the **Add Sources** button. To remove multiple databases, hold the SHIFT+CTRL keys to select the databases you want to remove, then click **Remove Sources**.
+    > 여러 SQL Server 인스턴스에서 데이터베이스를 추가하려면 **원본 추가** 단추를 사용합니다. 여러 데이터베이스를 제거하려면 Shift+Ctrl을 누른 상태로 제거할 데이터베이스를 선택한 다음 **원본 제거**를 클릭합니다.
 
-1. Click **Start Assessment**.
+1. **평가 시작**을 클릭합니다.
 
-## View results
+## <a name="view-results"></a>결과 보기
 
-If there are multiple databases, the results for each database appears as soon as it is available. You don't need to wait for all database assessments to complete.
+데이터베이스가 여러 개이면 각 데이터베이스의 결과가 사용 가능해지는 즉시 표시됩니다. 모든 데이터베이스 평가가 완료될 때까지 기다릴 필요는 없습니다.
 
-1. Once the assessment for **AdventureWorks** is complete, click** Compatibility issues** and **SQL Server feature parity** radio buttons to view the results.
-    - The SQL Server feature parity category lists features that might not be fully supported and steps to remedy these issues. Feature parity issues will not stop a migration.
-    - The Compatibility issues category lists features that would block a migration and steps to remedy these issues.
+1. **AdventureWorks**의 평가가 완료되면 **호환성 문제** 및 **기능 권장 사항**을 클릭하여 결과를 확인합니다.
 
-## Summary
+    - SQL Server 기능 패리티 범주에는 완전히 지원되지 않을 수도 있는 기능과 이러한 문제를 해결하기 위한 단계가 나열됩니다. 기능 패리티 문제가 있어도 마이그레이션이 중지되지는 않습니다.
+    - 호환성 문제 범주에는 마이그레이션을 차단하는 기능과 이러한 문제를 해결하기 위한 단계가 나열됩니다.
 
-In this unit, you assessed a locally installed SQL Server database to verify if any features would be unavailable when you migrate the database to Azure SQL Database.
+## <a name="summary"></a>요약
+
+이 단원에서는 로컬에 설치된 SQL Server 데이터베이스를 평가하여 Azure SQL Database로 해당 데이터베이스를 마이그레이션하면 사용할 수 없는 기능이 있는지를 확인했습니다.

@@ -1,6 +1,7 @@
 이 모듈에서는 앱의 비밀 구성을 Azure Key Vault로 보호했습니다. 시작 시 앱 코드가 관리 서비스 ID를 통해 자격 증명 모음에 인증되고 비밀이 자격 증명 모음에서 ASP.NET Core의 구성 시스템으로 자동으로 로드됩니다.
 
-## <a name="cleanup"></a>정리
+## <a name="clean-up"></a>정리
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
 Azure 구독을 정리하려면 Azure Cloud Shell에서 다음을 실행하여 이 모듈에서 만든 모든 리소스가 포함된 리소스 그룹을 삭제합니다.
 

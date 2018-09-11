@@ -1,84 +1,84 @@
-In this unit, you will use the Azure portal to create an Azure web app.
+이 단원에서는 Azure Portal을 사용하여 Azure 웹앱을 만듭니다.
 
-## Sign in to the Azure portal
+## <a name="sign-in-to-the-azure-portal"></a>Azure Portal에 로그인
 
-The first step is to sign in to the Azure portal:
+첫 번째 단계는 Azure Portal에 로그인하는 것입니다.
 
-Open a browser and navigate to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+브라우저를 열고 [Azure Portal](https://portal.azure.com/?azure-portal=true)로 이동합니다.
 
-## Create an Azure web app
+## <a name="create-an-azure-web-app"></a>Azure 웹앱 만들기
 
-Now that we're logged into the Azure portal, let's create an Azure web app using the template.
+이제 Azure Portal에 로그인했으므로 템플릿을 사용하여 Azure 웹앱을 만들어 보겠습니다.
 
-1. Click the **Create a resource** link at the top of the left-hand navigation. Everything you create on Azure is a resource.
+1. 왼쪽 탐색 영역 위쪽에서 **리소스 만들기** 링크를 클릭합니다. Azure에서 만드는 모든 것은 리소스입니다.
 
-1. The portal navigates you to the **Marketplace** blade. From here, you can search for the resource you want to create or select one of the popular resources that people create in the Azure portal.
+1. 포털이 **마켓플레이스** 블레이드로 이동합니다. 여기에서 만들려는 리소스를 검색하거나 Azure Portal에서 다른 사용자가 만드는 인기 있는 리소스 중 하나를 선택할 수 있습니다.
 
-1. Click the **Web** > **Web App** resource. The portal redirects you to the **Create New Web App** blade.
+1. **웹** > **웹앱** 리소스를 클릭합니다. 포털이 **새 웹앱 만들기** 블레이드로 리디렉션됩니다.
 
-1. When you create a new web app, the Azure portal requests some information to create the app for you. In this section, you need to provide the following basic information:
+1. 새 웹앱을 만들 때 Azure Portal은 앱을 만드는 데 필요한 일부 정보를 요청합니다. 이 섹션에서는 다음과 같은 기본 정보를 제공해야 합니다.
 
-    1. **App name**: Your client wants to name the application `BestBike`. Type the name in this field. This value must be globally unique among all other web apps hosted on Azure, and the portal will make sure no one else has used the app name. To ensure your name is unique, add some numbers to your app's name until you find a unique variant.
+    1. **앱 이름**: 클라이언트가 응용 프로그램 이름을 `BestBike`로 지정하려고 합니다. 이 필드에 이름을 입력합니다. 이 값은 Azure에서 호스팅되는 기타 모든 웹앱에서 전역적으로 고유해야 하며, 포털에서는 다른 사용자가 앱 이름을 사용하지 않았는지를 확인합니다. 이름이 고유한지 확인하려면 고유한 변형을 찾을 때까지 앱 이름이 숫자를 추가합니다.
 
-    2. **Subscription**: In this field, you need to select an active Azure subscription from the drop-down list.
+    2. **구독**: 이 필드에서는 드롭다운 목록에서 활성 Azure 구독을 선택해야 합니다.
 
-    3. **OS**: In this field, you need to decide whether to use **Windows** or **Linux** to host your new web app. This setting directly affects the App Service plan that you are going to select or create below. If you remember, an App Service plan resembles a virtual machine that is an operating system with all the resource (CPU, RAM, etc.) needed on that machine to run your application. In this case, your client prefers to host the web app over a Windows machine. Therefore, make the selection **Windows**.
+    3. **OS**: 이 필드에서는 새 웹앱을 호스트하는 데 **Windows** 또는 **Linux**를 사용할지 결정해야 합니다. 이 설정은 아래에서 선택하거나 만들려는 App Service 계획에 직접적인 영향을 줍니다. App Service 계획은 가상 머신에서 응용 프로그램을 실행하는 데 필요한 모든 리소스(CPU, RAM 등)가 포함된 운영 체제인 가상 머신과 비슷합니다. 이 경우 클라이언트는 Windows 머신을 통해 웹앱을 호스트하려고 합니다. 따라서 **Windows**를 선택합니다.
 
-    4. **Application Insights**: Azure Application Insights helps you detect and diagnose quality issues in your web apps and web services, and helps you understand what your users actually do with it. One of the requirements of your client is the ability to view some insight reports about the traffic coming over their website and to study some trends of when the traffic goes high and when it goes low. In this case, select the **On** option to turn on Application Insights for this web app. Once you select the **On** option, you are also required to select the location or region that will store the Application Insights data. Note that Application Insights are available in only a limited number of regions. For this demo, select the **East US** region in the **Application Insights Location** field.
+    4. **Application Insights**: Azure Application Insights는 웹앱 및 웹 서비스의 품질 문제를 검색 및 진단하고 사용자가 실제로 이 기능을 통해 수행하는 작업을 이해하는 데 도움이 됩니다. 클라이언트의 요구 사항 중 하나는 웹 사이트를 통해 들어오는 트래픽에 대한 일부 인사이트 보고서를 보고 트래픽이 높은 경우와 낮아지는 경우의 추세를 학습하는 기능입니다. 이 경우 **켜기** 옵션을 선택하여 이 웹앱에 대한 Application Insights를 켭니다. **켜기** 옵션을 선택한 후에는 Application Insights 데이터를 저장할 위치 또는 지역도 선택해야 합니다. Application Insights는 제한된 수의 지역에서만 사용할 수 있습니다. 이 데모에서는 **Application Insights 위치** 필드에서 **미국 동부** 지역을 선택합니다.
 
-## Create a new resource group
+## <a name="create-a-new-resource-group"></a>새 리소스 그룹 만들기
 
-An Azure web app must be part of a resource group. Let's create one, to group together any related resources.
+Azure 웹앱은 리소스 그룹의 일부여야 합니다. 관련 리소스를 그룹화하기 위해 웹앱을 만들어 보겠습니다.
 
-Select the **Create new** option (selected by default). Azure will generate a unique resource group name for you based on the app name you have chosen. You are free to change the resource group name or keep the one that Azure has generated. In this case, keep the name generated by Azure.
+**새로 만들기** 옵션을 선택합니다(기본적으로 선택됨). 선택한 앱 이름에 따라 Azure에서 고유한 리소스 그룹 이름을 자동으로 생성합니다. 자유롭게 리소스 그룹 이름을 변경하거나 Azure가 생성한 이름을 유지할 수 있습니다. 여기서는 Azure에서 생성된 이름을 유지합니다.
 
-## Create an App Service plan
+## <a name="create-an-app-service-plan"></a>App Service 계획 만들기
 
-In this field, you need to select an App Service plan to run your application. By default, the portal selects the last App Service plan that you previously  created. Click on the **App Service plan/Location** field to navigate to the **App Service plan** blade.
+응용 프로그램을 실행하려면 이 필드에서 App Service 계획을 선택해야 합니다. 기본적으로 포털에서는 사용자가 이전에 만든 마지막 App Service 계획이 선택됩니다. **App Service 계획/위치** 필드를 클릭하여 **App Service 계획** 블레이드로 이동합니다.
 
-Click on the **Create new** link to navigate to the **New App Service Plan** blade. The portal requests some information from you in order to create the new App Service plan.
+**새로 만들기** 링크를 클릭하여 **새 App Service 계획** 블레이드로 이동합니다. 포털에서는 새 App Service 계획을 만들기 위해 사용자의 일부 정보를 요청합니다.
 
-1. **App Service plan**: In this field, you provide a globally unique name for the new App Service plan. For this app, type the same web app name you chose above and append a suffix of `-app-service-plan` to easily distinguish this resource from others.
+1. **App Service 계획**: 이 필드에는 새 App Service 계획에 대해 전역적으로 고유한 이름을 입력합니다. 이 앱의 경우에는 위에서 선택했던 것과 같은 웹앱 이름을 입력하고, 이 리소스를 다른 리소스와 쉽게 구분할 수 있도록 `-app-service-plan` 접미사를 추가합니다.
 
-2. **Location**: In this field, you need to select the region where this App Service plan resides. In other words, select the geographical location where the App Service plan will set up the virtual machine(s) that are required to run your application. In this case, you can select any of the options in the list. Your client prefers the hosting servers somewhere close to the East Coast, where the majority of their clients come from. Therefore, you will select **East US** as a value.
+2. **위치**: 이 필드에서 이 App Service 계획이 있는 지역을 선택해야 합니다. 즉, App Service 계획이 응용 프로그램을 실행하는 데 필요한 가상 머신을 설치하는 지리적 위치를 선택합니다. 이 경우 목록에서 옵션을 선택할 수 있습니다. 클라이언트는 대부분의 클라이언트가 위치한 동부 해안에 가까운 곳에 있는 호스팅 서버를 선호합니다. 따라서 **미국 동부**를 값으로 선택합니다.
 
-3. **Pricing tier**: In this field, you need to select the size of the virtual machine that is going to host your application. Click on the **>** sign to navigate to the **Pricing tier blade**.
+3. **가격 책정 계층**: 이 필드에서 응용 프로그램을 호스트할 가상 머신의 크기를 선택해야 합니다. **>** 기호를 클릭하여 **가격 책정 계층 블레이드**로 이동합니다.
 
-    Here you have many options to choose from. The portal groups those options by the level of workload needed. The three workload categories available are Dev/Test, Production, and Isolated. Depending on the requirements of the application you want to host on Azure, you will select the relevant workload category. As the **BestBike** application is building and shaping up, you will start with the minimal workload category that works for you. Remember, one of the client's requirements was the ability to test live any new changes coming over the application. In the coming units, you will see that to achieve this requirement, you will need to add **deployment slots**. Deployment slots are available starting at a minimum pricing tier of **S1**. Therefore, select the **S1** pricing tier under the **Production Workload** category. Then, click on **Apply** to confirm the pricing tier you have selected above.
-
-    > [!NOTE]
-    > You will notice throughout this module that only **Production** and **Isolated** workload categories allow you to add **deployment slots** to your web app.
-
-    Now, you are back to the **New App Service plan** blade.
-
-    ![Screenshot showing the New App Service Plan blade with example values for this exercise in the settings](../media/3-new-app-service-plan.PNG)
-
-4. Click the **OK** button to use your new App Service Plan.
-
-    The portal navigates you back to the main **Create Web App** blade.
-
-    ![Screenshot showing the new resource blade in Azure with the progression to find the Web App resource highlighted.](../media/3-new-web-app.png)
-
-5. Click the **Create** button to start the process of creating the web app.
+    여기에서 선택할 수 있는 많은 옵션이 있습니다. 포털은 필요한 워크로드 수준에 따라 해당 옵션을 그룹화합니다. 사용 가능한 세 개의 워크로드 범주는 개발/테스트, 프로덕션 및 격리입니다. Azure에서 호스트할 응용 프로그램의 요구 사항에 따라 관련 워크로드 범주를 선택합니다. **BestBike** 응용 프로그램이 빌드 및 구체화되고 있을 때 적합한 최소 워크로드 범주로 시작합니다. 클라이언트의 요구 사항 중 하나는 응용 프로그램을 통해 들어오는 새 변경 내용을 실시간으로 테스트하는 기능입니다. 이후 단원에서는 이 요구 사항을 달성하기 위해 **배포 슬롯**을 추가해야 합니다. 배포 슬롯은 최소 가격 계층 **S1**부터 제공됩니다. 따라서 **프로덕션 워크로드** 범주 아래에서 **S1** 가격 책정 계층을 선택합니다. 그런 다음, **적용**을 클릭하여 위에서 선택한 가격 책정 계층을 확인합니다.
 
     > [!NOTE]
-    > It can take a few seconds to get your web app created and ready for your use.
+    > 이 모듈 전체에서 **프로덕션** 및 **격리** 워크로드 범주만 웹앱에 **배포 슬롯**을 추가할 수 있음을 알게 됩니다.
 
-The portal redirects you to the dashboard page and notifies you once it creates the web app.
+    이제 **새 App Service 계획** 블레이드로 돌아갑니다.
 
-Once the app is ready, navigate to the new app in the Azure portal.
+    ![설정에서 이 연습의 예제 값을 적용한 새 App Service 계획 블레이드가 표시된 스크린샷](../media/3-new-app-service-plan.PNG)
 
-1. Click the **All resources** menu on the left side navigation. The **All resources** blade lists all the resources that you have created in the Azure portal.
+4. 새 App Service 계획을 사용하려면 **확인** 단추를 클릭합니다.
 
-2. Click through the BestBike App Service just created for you.
+    포털은 다시 기본 **웹앱 만들기** 블레이드로 이동합니다.
+
+    ![웹앱 찾기 진행률이 강조 표시된 Azure의 새 리소스 블레이드를 보여 주는 스크린샷.](../media/3-new-web-app.png)
+
+5. **만들기** 단추를 클릭하여 웹앱 만들기 프로세스를 시작합니다.
 
     > [!NOTE]
-    > If you search for your app by the name "BestBike", you may also find the Application Insights and App Service Plan resources created for your new web app. Make sure you are clicking through the resource with the type of **App Service**.
+    > 웹앱이 만들어져 사용할 준비가 되려면 몇 초 정도 걸릴 수 있습니다.
 
-    ![Screenshot showing an example search result within the all resources blade with a newly created BestBike123 App Service highlighted.](../media/3-web-app.PNG)
+포털은 대시보드 페이지로 리디렉션하고 웹앱을 만든 후 이를 사용자에게 알립니다.
 
-The portal opens the web app service home page with the **Overview** section selected.
+앱이 준비되면 Azure Portal에서 새 앱으로 이동합니다.
 
-![Screenshot showing the BestBike App Service blade with the URL link of the overview section highlighted.](../media/3-web-app-home.PNG)
+1. 왼쪽 탐색 영역에서 **모든 리소스** 메뉴를 클릭합니다. **모든 리소스** 블레이드에는 Azure Portal에서 만든 모든 리소스가 나열됩니다.
 
-To preview your new web app's default content, click on the **URL** in the top right of the Azure portal. If you see a placeholder web page, it means you have successfully created the web app.
+2. 방금 생성된 BestBike App Service를 클릭합니다.
+
+    > [!NOTE]
+    > "BestBike"라는 이름으로 앱을 검색하는 경우 새 웹앱용으로 자동 생성된 Application Insights 및 App Service 계획 리소스도 표시될 수 있습니다. 유형이 **App Service**인 리소스를 클릭했는지 확인합니다.
+
+    ![모든 리소스 블레이드 내의 검색 결과 예제(새로 생성된 BestBike123 App Service가 강조 표시됨)를 보여 주는 스크린샷.](../media/3-web-app.PNG)
+
+포털에서 **개요** 섹션이 선택된 웹앱 서비스 홈페이지가 열립니다.
+
+![개요 섹션의 URL 링크가 강조 표시된 BestBike App Service 블레이드를 보여 주는 스크린샷.](../media/3-web-app-home.PNG)
+
+새 웹앱의 기본 콘텐츠를 미리 보려면 Azure Portal 오른쪽 위에서 **URL**을 클릭합니다. 자리 표시자 웹 페이지가 표시되면 웹앱이 정상적으로 생성된 것입니다.

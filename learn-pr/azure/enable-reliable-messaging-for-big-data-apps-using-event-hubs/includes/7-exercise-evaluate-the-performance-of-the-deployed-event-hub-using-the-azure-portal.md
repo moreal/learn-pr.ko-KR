@@ -1,67 +1,69 @@
-In this unit, you'll use the Azure portal to verify your event hub is working and performing according to the desired expectations. You'll also test how event hub messaging works when it's temporarily unavailable and use Event Hubs metrics to check the performance of your event hub.
+이 단원에서는 Azure Portal을 사용하여 이벤트 허브가 예상대로 작동하는지 확인합니다. 또한 일시적으로 사용할 수 없을 때 이벤트 허브 메시징이 어떻게 작동하는지 테스트하고 Event Hubs 메트릭을 사용하여 이벤트 허브의 성능을 확인합니다.
 
-## View event hub activity
+## <a name="view-event-hub-activity"></a>이벤트 허브 활동 보기
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-1. Find your event hub, using the Search bar, and open it.
+1. 검색 창을 사용하여 이벤트 허브를 찾아 엽니다.
 
-1. On the Overview page, view the message counts.
+1. 개요 페이지에서 메시지 개수를 확인합니다.
 
-    ![View Event Hub messages](../media-draft/6-view-messages.png)
+    ![이벤트 허브 메시지 보기](../media-draft/6-view-messages.png)
 
-1. The SimpleSend and EventProcessorSample applications are configured to send/receive 100 messages. You'll see that the event hub has processed 100 messages from the SimpleSend application and has transmitted 100 messages to the EventProcessorSample application.
+1. SimpleSend 및 EventProcessorSample 응용 프로그램은 100개의 메시지를 보내거나 받도록 구성됩니다. 이벤트 허브가 SimpleSend 응용 프로그램에서 100개의 메시지를 처리했고 100개의 메시지를 EventProcessorSample 응용 프로그램으로 전송했음을 알 수 있습니다.
 
-## Test event hub resilience
+## <a name="test-event-hub-resilience"></a>이벤트 허브 복원력 테스트
 
-Use the following steps to see what happens when an application sends messages to an event hub while it's temporarily unavailable.
+다음 단계를 사용하여 일시적으로 사용할 수 없는 동안 응용 프로그램이 이벤트 허브에 메시지를 보내면 어떻게 되는지 확인합니다.
 
-1. Resend messages to the event hub using the SimpleSend application. Use the following command:
+1. SimpleSend 응용 프로그램을 사용하여 이벤트 허브로 메시지를 다시 보냅니다. 다음 명령을 사용합니다.
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
+    ENTER
     ```
 
-1. When you see **Send Complete...**, press ENTER.
+1. **보내기 완료...** 가 표시되면 Enter 키를 누릅니다.
 
-1. In the Azure portal, click **Event Hubs Instance** > **SETTINGS** > **Properties**.
+1. Azure Portal에서 **Event Hubs 인스턴스** > **설정** > **속성**을 클릭합니다.
 
-1. Under Event Hub state, click **Disabled**.
+1. 이벤트 허브 상태에서 **사용 안 함**을 클릭합니다.
 
-    ![Disable Event Hub](../media-draft/7-disable-event-hub.png)
+    ![이벤트 허브 사용 안 함](../media-draft/7-disable-event-hub.png)
 
-Wait for a minimum of five minutes.
+5분 이상 기다립니다.
 
-1. Click **Active** under Event Hub state to re-enable your event hub and save your changes.
+1. 이벤트 허브 상태에서 **활성**을 클릭하여 이벤트 허브를 다시 사용하고 변경 내용을 저장합니다.
 
-1. Rerun the EventProcessorSample application to receive messages. Use the following command.
+1. EventProcessorSample 응용 프로그램을 다시 실행하여 메시지를 수신합니다. 다음 명령을 사용합니다.
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
+    ENTER
     ```
 
-1. When messages stop being displayed to the console, press ENTER.
+1. 메시지가 콘솔에 표시되는 작업이 중지하면 Enter 키를 누릅니다.
 
-1. In the Azure portal, find your event hub **_namespace_** and open it. 
+1. Azure Portal에서 이벤트 허브 **‘네임스페이스’** 를 찾아 엽니다. 
 
-1. Click **Event Hubs Namespace** > **MONITORING** > **Metrics (preview)**.
+1. **Event Hubs 네임스페이스** > **모니터링** > **메트릭(미리 보기)** 을 클릭합니다.
 
-    ![Use Event Hub Metrics](../media-draft/7-event-hub-metrics.png)
+    ![이벤트 허브 메트릭 사용](../media-draft/7-event-hub-metrics.png)
 
-1. From the **Metric** list, select **Incoming Messages** and click **Add Metric**.
+1. **메트릭** 목록에서 **들어오는 메시지**를 선택하고 **메트릭 추가**를 클릭합니다.
 
-1. From the **Metric** list, select **Outgoing Messages** and click **Add Metric**.
+1. **메트릭** 목록에서 **보내는 메시지**를 선택하고 **메트릭 추가**를 클릭합니다.
 
-1. At the top of the chart, click **Last 24 hours (Automatic)** to change the time period to **Last 30 minutes**.
+1. 차트의 맨 위에서 **최근 24시간(자동)** 을 클릭하여 기간을 **지난 30분**으로 변경합니다.
 
-1. Click **Apply**.
+1. **적용**을 클릭합니다.
 
-You'll see that though the messages were sent before the event hub was taken offline for a period, all 100 messages were successfully transmitted.
+일정 기간에 이벤트 허브를 오프라인으로 전환하기 전에 메시지가 전송되었지만 100개의 모든 메시지가 성공적으로 전송되었음을 확인할 수 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-In this unit, you used the Event Hubs metrics to test that your event hub is successfully processing the sending and receiving messages.
+이 단원에서는 Event Hubs 메트릭을 사용하여 이벤트 허브가 보내고 받는 메시지를 성공적으로 처리하고 있는지 테스트했습니다.

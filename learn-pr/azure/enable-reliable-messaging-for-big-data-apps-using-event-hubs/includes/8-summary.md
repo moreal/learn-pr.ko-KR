@@ -1,25 +1,24 @@
-Azure Event Hubs provides big data applications the capability to process large volume of data. It also has the ability to scale out during exceptionally high- demand periods as and when required. Azure Event Hubs decouple the sending and receiving messages to manage the data processing. This helps eliminate the risk of overwhelming consumer application and data loss due to any unplanned interruptions.
+Azure Event Hubs는 대량의 데이터를 처리할 수 있는 기능을 빅 데이터 응용 프로그램에 제공합니다. 특별히 수요가 높은 기간에, 그리고 필요할 때 규모를 확장하는 기능도 있습니다. Azure Event Hubs는 데이터 처리를 관리하기 위해 보내는 메시지와 받는 메시지를 분리합니다. 이렇게 하면 계획되지 않은 중단으로 인한 엄청난 소비자 응용 프로그램 및 데이터 손실의 위험을 방지할 수 있습니다.
 
-In this module, you've seen how to deploy Azure Event Hubs as part of an event processing solution. 
-You learned how to:
+이 모듈에서는 Azure Event Hubs를 이벤트 처리 솔루션의 일부로 배포하는 방법을 살펴보았습니다. 다음 방법에 대해 알아보았습니다.
 
-- Use the Azure CLI commands to create an Event Hubs namespace and an event hub in that namespace. 
-- Configure sender and receiver applications to send and receive messages through the event hub.
-- Use the Azure portal to view your event hub status and performance.
+- Azure CLI 명령을 사용하여 Event Hubs 네임스페이스와 해당 네임스페이스의 이벤트 허브를 만듭니다. 
+- 이벤트 허브를 통해 메시지를 보내고 받도록 발신자 및 수신자 응용 프로그램을 구성합니다.
+- Azure Portal을 사용하여 이벤트 허브 상태 및 성능을 확인합니다.
 
-## Clean up 
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>정리 
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-The resources you've used for your event hub testing will incur costs against your subscription. When you've have finished with the event hub, remember to remove these resources in order to avoid unnecessary charges.
+이벤트 허브 테스트에 사용한 리소스에서 구독에 대한 비용이 발생합니다. 이벤트 허브 사용을 완료했으면 불필요한 요금 청구를 방지하기 위해 이러한 리소스를 제거해야 합니다.
 
-Because you create the hub, namespace, and storage in the same resource group, the easiest way to clean up your Azure subscription is to remove the resource group, which will remove all its contents. 
+동일한 리소스 그룹에 허브, 네임스페이스 및 저장소를 만들기 때문에 Azure 구독을 정리하는 가장 쉬운 방법은 리소스 그룹을 제거하여 해당 내용을 모두 제거하는 것입니다. 
 
-Run the following command to remove the resource group, namespace, storage account, and all related resources. Replace `myResourceGroup` with the name of the resource group you created:
+다음 명령을 실행하여 리소스 그룹, 네임스페이스, 저장소 계정 및 모든 관련된 리소스를 제거합니다. 만든 리소스 그룹의 이름으로 `myResourceGroup`을 바꿉니다.
 
 ```azurecli
 az group delete --resource-group myResourceGroup
 ```
 
-When you are asked to confirm the delete, answer **Yes**.
+삭제를 확인하라는 메시지가 표시되면 **예**를 선택합니다.
 
-The command may take several minutes to complete as resources are deleted.
+리소스가 삭제될 때 명령을 완료하는 데 몇 분이 걸릴 수 있습니다.

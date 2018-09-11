@@ -1,12 +1,12 @@
-You have been hired by a global auto racing company to modernize their entire monitoring and web platform. They have decided to replace existing Linux servers with a variety of cloud-based infrastructure that leverages the latest in architectural trends. Part of the system will run on the Azure serverless platform using Azure Functions to process real-time race data, pushing statistics, race data, and other relevant bits of analyzed information into clusters of databases. They want to keep their existing website, which was just rewritten last year, but have it connect into this modern data stream.
+전체 모니터링 및 웹 플랫폼을 현대화하려는 다국적 레이싱 업체에 채용되었다고 가정해 보겠습니다. 이 업체는 기존 Linux 서버를 최신 아키텍처 기능을 활용하는 다양한 클라우드 기반 인프라로 교체하기로 결정했습니다. 이 시스템의 일부분은 Azure Functions를 사용하는 Azure 무서버 플랫폼에서 실행되어 실시간 레이싱 데이터를 처리하며, 이 과정에서 통계, 레이싱 데이터, 그리고 분석된 정보의 기타 관련 부분을 데이터베이스 클러스터로 푸시합니다. 이 업체는 작년에 다시 작성한 기존 웹 사이트는 그대로 유지하되 이 최신 데이터 스트림에 연결하려고 합니다.
 
-The website is running on Apache with Linux, and since it's already up and running, you decide to move it directly into Azure by leveraging an Azure virtual machine. That will give it access to the data with a minimal amount of work on your part.
+Apache에서 Linux를 사용하여 실행되는 해당 웹 사이트는 이미 작동 및 실행 중인 상태이므로 Azure Virtual Machine을 활용해 Azure로 직접 이동할 것입니다. 그러면 최소한의 작업만으로 데이터에 액세스할 수 있습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Understand the options that are available for virtual machines in Azure.
-- Create a Linux virtual machine using the Azure portal.
-- Connect to a running Linux virtual machine using SSH.
-- Install software and change the network configuration on a VM using the Azure portal.
+- Azure의 가상 머신에 사용할 수 있는 옵션을 이해합니다.
+- Azure Portal을 사용하여 Linux 가상 머신을 만듭니다.
+- SSH를 사용하여 실행 중인 Linux 가상 머신에 연결합니다.
+- 소프트웨어를 설치하고 Azure Portal을 사용하여 VM에서 네트워크 구성을 변경합니다.

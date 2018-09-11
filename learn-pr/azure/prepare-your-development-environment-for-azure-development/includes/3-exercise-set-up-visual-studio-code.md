@@ -7,15 +7,20 @@
 ### <a name="windows"></a>Windows
 
 1. Windows용 Visual Studio Code 설치 관리자를 다운로드합니다.
-2. 설치 관리자를 실행합니다. 시간이 오래 걸리지 않습니다.
-3. 설치 폴더(64비트 머신의 경우 기본 경로는 C:\Program Files\Microsoft VS Code)로 이동하여 VS Code를 엽니다.
+
+1. 설치 관리자를 실행합니다. 시간이 오래 걸리지 않습니다.
+
+1. 설치 폴더(64비트 머신의 경우 기본 경로는 C:\Program Files\Microsoft VS Code)로 이동하여 VS Code를 엽니다.
 
 ### <a name="macos"></a>macOS
 
 1. macOS용 Visual Studio Code를 다운로드합니다.
-2. 다운로드한 압축 파일을 두 번 클릭하여 콘텐츠를 확장합니다.
-3. Visual Studio Code.app을 응용 프로그램 폴더로 끌어 실행 패드에서 사용할 수 있도록 합니다.
-4. 아이콘을 마우스 오른쪽 단추로 클릭하고 [옵션] > [Keep in Dock](도크에 유지)를 선택하여 VS Code를 도크에 추가합니다.
+
+1. 다운로드한 압축 파일을 두 번 클릭하여 콘텐츠를 확장합니다.
+
+1. Visual Studio Code.app을 응용 프로그램 폴더로 끌어 실행 패드에서 사용할 수 있도록 합니다.
+
+1. 아이콘을 마우스 오른쪽 단추로 클릭하고 [옵션] > [Keep in Dock]\(도크에 유지)를 선택하여 VS Code를 도크에 추가합니다.
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux - Debian 및 Ubuntu
 
@@ -66,8 +71,10 @@
 VS Code를 설치했으면 VS Code를 엽니다.
 
 1. 확장 탭으로 이동합니다.
-2. Azure App Service를 검색합니다.
-3. [설치]를 클릭합니다.
+
+1. Azure App Service를 검색합니다.
+
+1. [설치]를 클릭합니다.
 
     다음 스크린샷은 Visual Studio Code 확장 검색 결과에서 Azure App Service 확장이 선택되어 있는 것을 보여 줍니다.
 

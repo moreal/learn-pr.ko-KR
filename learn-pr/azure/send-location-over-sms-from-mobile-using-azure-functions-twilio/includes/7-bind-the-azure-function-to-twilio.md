@@ -1,4 +1,4 @@
-이제 모바일 앱이 완성되어 데이터를 역직렬화할 수 있는 Azure 함수로 사용자의 위치와 전화 번호 목록을 보냅니다. 이 단원에서는 Azure 함수를 Twilio에 바인딩하여 SMS 메시지를 보냅니다.
+이제 모바일 앱이 완성되었으며, 해당 앱은 데이터를 역직렬화할 수 있는 Azure 함수로 사용자의 위치와 전화 번호 목록을 보낼 수 있습니다. 이 단원에서는 Azure 함수를 Twilio에 바인딩하여 SMS 메시지를 보냅니다.
 
 Azure Functions를 다른 서비스 즉, Azure의 서비스나 타사 서비스에 연결할 수 있습니다. 바인딩이라고 하는 이러한 연결은 입력 바인딩과 출력 바인딩이라는 두 가지 형태로 존재합니다. 입력 바인딩은 함수에 데이터를 제공하고 출력 바인딩은 함수에서 데이터를 가져와 다른 서비스로 보냅니다. 바인딩에 대한 내용은 [Azure Functions 바인딩 문서](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)에서 확인할 수 있습니다.
 
@@ -10,9 +10,9 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
 
 1. 이전 단원에서 로컬 Azure Functions 런타임이 계속 실행 중인 경우 해당 런타임을 중지합니다.
 
-2. “Microsoft.Azure.WebJobs.Extensions.Twilio” NuGet 패키지를 `ImHere.Functions` 프로젝트에 추가합니다. 이 NuGet 패키지에는 바인딩 관련 클래스가 들어 있습니다.
+1. “Microsoft.Azure.WebJobs.Extensions.Twilio” NuGet 패키지를 `ImHere.Functions` 프로젝트에 추가합니다. 이 NuGet 패키지에는 바인딩 관련 클래스가 들어 있습니다.
 
-3. `messages`라는 `SendLocation` 정적 클래스의 정적 `Run` 메서드에 새 매개 변수를 추가합니다. 이 매개 변수에는 `ICollector<SMSMessage>` 유형이 포함됩니다. `Twilio` 네임스페이스에 대해 using 지시문을 추가해야 합니다.
+1. `messages`라는 `SendLocation` 정적 클래스의 정적 `Run` 메서드에 새 매개 변수를 추가합니다. 이 매개 변수에는 `ICollector<SMSMessage>` 유형이 포함됩니다. `Twilio` 네임스페이스에 대해 using 지시문을 추가해야 합니다.
 
     ```cs
     [FunctionName("SendLocation")]
@@ -23,7 +23,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
                                                       TraceWriter log)
     ```
 
-4. 새 `messages` 매개 변수를 `TwilioSms` 특성으로 데코레이트합니다. 이 특성에서는 세 가지 매개 변수를 설정해야 합니다.
+1. 새 `messages` 매개 변수를 `TwilioSms` 특성으로 데코레이트합니다. 이 특성에서는 세 가지 매개 변수를 설정해야 합니다.
 
     | 설정      |  값   | 설명                                        |
     | --- | --- | ---|
@@ -41,7 +41,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
                From = "+1xxxxxxxxx")]ICollector<SMSMessage> messages,
     ```
 
-5. 함수 앱 설정은 `local.settings.json` 파일 내에서 로컬로 구성할 수 있습니다. `TwilioSMS` 특성에 전달된 설정 이름을 사용하여 이 JSON 파일에 Twilio 계정 SID 및 인증 토큰을 추가합니다.
+1. 함수 앱 설정은 `local.settings.json` 파일 내에서 로컬로 구성할 수 있습니다. `TwilioSMS` 특성에 전달된 설정 이름을 사용하여 이 JSON 파일에 Twilio 계정 SID 및 인증 토큰을 추가합니다.
 
     ```json
     {
@@ -57,7 +57,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
 
     \<SID\> 및 \<인증 토큰\>을 Twilio 대시보드의 값으로 바꿉니다.
 
-    > 이러한 로컬 설정은 로컬에서 실행하는 경우에만 사용됩니다. 프로덕션 앱에서는 이러한 값이 로컬 개발 또는 테스트 계정 자격 증명입니다. Azure에 Azure 함수가 배포되면 프로덕션 값을 구성할 수 있습니다.
+    > 이러한 로컬 설정은 로컬에서 실행하는 경우에만 사용됩니다. 프로덕션 앱에서 이러한 값은 로컬 개발 또는 테스트 계정 자격 증명입니다. Azure에 Azure 함수가 배포되면 프로덕션 값을 구성할 수 있습니다.
     > 코드를 소스 제어에 체크 인하는 경우 이러한 로컬 응용 프로그램 설정 값도 체크 인되므로 코드가 어떤 형식이든 오픈 소스이거나 공용인 경우 이러한 파일의 실제 값을 체크 인하지 않도록 주의하세요.
 
 ## <a name="create-the-sms-messages"></a>SMS 메시지 만들기
@@ -79,7 +79,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
 
     메시지에는 보낼 전화 번호와 사용자의 위치에서 만들어진 Google Maps URL이 포함된 본문이 있어야 합니다.
 
-2. 각 메시지를 기록한 후에 `messages` 컬렉션에 추가합니다.
+1. 각 메시지를 기록한 후에 `messages` 컬렉션에 추가합니다.
 
     ```cs
     foreach (string toNo in data.ToNumbers)
@@ -124,19 +124,19 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. `ImHere.Functions` 앱을 시작 프로젝트로 설정하고 디버깅 없이 시작합니다.
 
-2. `ImHere.UWP` 앱을 시작 프로젝트로 설정하고 실행합니다.
+1. `ImHere.UWP` 앱을 시작 프로젝트로 설정하고 실행합니다.
 
-3. 고유한 전화 번호를 국가별 형식(+\<국가 코드\>\<전화 번호\>)으로 Xamarin.Forms 앱에 입력합니다. Twilio 평가판 계정은 확인된 전화 번호로만 메시지를 보낼 수 있으므로 현재로서는 유료 계정으로 업그레이드하거나 다른 번호를 확인하지 않는 한 자신에게만 메시지를 보낼 수 있습니다.
+1. 고유한 전화 번호를 국가별 형식(+\<국가 코드\>\<전화 번호\>)으로 Xamarin.Forms 앱에 입력합니다. Twilio 평가판 계정은 확인된 전화 번호로만 메시지를 보낼 수 있으므로 현재로서는 유료 계정으로 업그레이드하거나 다른 번호를 확인하지 않는 한 자신에게만 메시지를 보낼 수 있습니다.
 
-4. **위치 보내기** 단추를 클릭합니다. SMS 메시지를 성공적으로 보낸 경우 Xamarin.Forms 앱에 “위치를 성공적으로 보냄” 메시지가 표시됩니다.
+1. **위치 보내기** 단추를 클릭합니다. SMS 메시지를 성공적으로 보낸 경우 Xamarin.Forms 앱에 "위치를 성공적으로 보냄" 메시지가 표시됩니다.
 
-    ![위치를 보냈음을 보여 주는 Xamarin.Forms 앱](../media-drafts/7-ui-location-sent.png)
+    ![위치를 보냈음을 보여주는 Xamarin.Forms 앱](../media-drafts/7-ui-location-sent.png)
 
-5. Azure 함수 콘솔 로그에는 만들고 보내는 메시지가 표시됩니다. 오류가 발생하면(예: 번호가 잘못된 형식인 경우) 여기에 기록됩니다.
+1. Azure 함수 콘솔 로그에는 만들고 보내는 메시지가 표시됩니다. 오류가 발생하면(예: 번호가 잘못된 형식인 경우) 여기에 기록됩니다.
 
     ![메시지를 보냈음을 보여 주는 Azure 함수 콘솔](../media-drafts/7-function-message-sent.png)
 
-6. 휴대폰에서 메시지를 확인합니다. 메시지의 링크를 따라 위치를 확인합니다.
+1. 휴대폰에서 메시지를 확인합니다. 메시지의 링크를 따라 위치를 확인합니다.
 
     ![휴대폰에 수신된 SMS 메시지](../media-drafts/7-message-received.png)
 

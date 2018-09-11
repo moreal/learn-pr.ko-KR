@@ -1,120 +1,119 @@
-There are many communications platforms that can help improve the reliability of a distributed application, including several within Azure. Each of these tools serves a different purpose; let's review each tool in Azure to help choose the right one.
+Azure 내의 여러 플랫폼을 비롯하여 배포 응용 프로그램의 안정성을 향상시킬 수 있는 여러 통신 플랫폼이 있습니다. 이러한 도구 각각은 다른 용도로 사용됩니다. 적절한 도구를 선택할 수 있도록 Azure의 각 도구를 검토해 보겠습니다.
 
-The architecture of our pizza ordering and tracking application requires several components: a website, data storage, back-end service, etc. We can bind the components of our application together in many different ways, and a single application can take advantage of multiple techniques. 
+피자 주문 및 추적 응용 프로그램의 아키텍처에는 웹 사이트, 데이터 저장소, 백 엔드 서비스 등의 여러 구성 요소가 필요합니다. Azure에서는 다양한 방법으로 자사 응용 프로그램의 구성 요소를 함께 바인딩할 수 있으며, 단일 응용 프로그램은 여러 기술을 활용할 수 있습니다. 
 
-We need to decide which techniques to use in the Contoso Slices application. The first step is to evaluate each place where there is communication between multiple parts. Some components _must_ run in a timely manner for our application to be doing its job at all. Some may be important, but not time-critical. Finally, other components, like our mobile app notifications, are a bit more optional.
+Contoso Slices 응용 프로그램에서 사용할 기술을 결정해야 합니다. 첫 번째 단계로 여러 부분 간에 통신이 이뤄지는 각 위치를 평가합니다. 일부 구성 요소는 응용 프로그램이 언제든 해당 작업을 수행할 수 있도록 시기 적절하게 실행_돼야_ 합니다. 일부 구성 요소는 중요할 수 있지만 시간이 관건은 아닙니다. 마지막으로, 모바일 앱 알림 같은 기타 구성 요소는 좀 더 선택적입니다.
 
-Here, you will learn about the communications platforms available in Azure, so that you can choose the right one for each requirement in your application.
+여기에서 응용 프로그램의 각 요구 사항에 적합한 플랫폼을 선택할 수 있도록 Azure에서 사용할 수 있는 통신 플랫폼에 대해 배웁니다.
 
-## Decide between messages and events
+## <a name="decide-between-messages-and-events"></a>메시지 및 이벤트 중 결정
 
-Messages and events are both **datagrams**: packages of data sent from one component to another. They are different in ways that at first seem subtle, but can make significant differences in how you architect your application. 
+메시지 및 이벤트는 한 구성 요소에서 다른 구성 요소로 전송된 데이터의 패키지인 모든 **datagrams**입니다. 이들은 처음에는 미묘하게 다르지만 응용 프로그램을 설계하는 방법에서 뚜렷한 차이를 보입니다. 
 
-### Messages
+### <a name="messages"></a>메시지
 
-In the terminology of distributed applications, the defining characteristic of a message is that the overall integrity of the application may rely on messages being received. You can think of sending a message as one component passing the baton of a workflow to a different component. The entire workflow may be a vital business process, and the message is the mortar that holds the components together.
+분산된 응용 프로그램의 용어에서 메시지의 특성은 응용 프로그램의 전체 무결성이 수신되는 메시지에 의존할 수 있는 것으로 정의됩니다. 워크플로의 배턴을 다른 구성 요소에 전달하는 하나의 구성 요소로 메시지 전송을 고려할 수 있습니다. 전체 워크플로는 중요한 비즈니스 프로세스일 수 있으며, 메시지는 구성 요소를 함께 포함하는 모르타르입니다.
 
-A message generally contains the data itself, not just a reference (like an ID or URL) to data. Sending the data as part of the datagram is less brittle than sending a reference. The messaging architecture guarantees delivery of the message, and because no additional lookups are required, the message is reliably handled. However, the sending application needs to know exactly what data to include, to avoid sending too much data, which requires the receiving component to do unnecessary work. In this sense, the sender and receiver of a message are often coupled by a strict data contract.
+일반적으로 메시지는 데이터 자체뿐만 아니라 데이터에 대한 참조(예: ID 또는 Url)도 포함합니다. 데이터그램의 일부로 데이터를 전송하면 참조를 전송할 때보다 더 안정적입니다. 메시징 아키텍처는 메시지 배달을 보장하며, 추가 조회가 필요 없으므로 메시지가 안정적으로 처리됩니다. 그러나 수신 구성 요소가 불필요한 작업을 수행해야 하는 너무 많은 데이터를 보내는 것을 막으려면 전송 응용 프로그램은 어떤 데이터를 포함할지 정확히 알아야 합니다. 이러한 관점에서 메시지를 보낸 사람과 받는 사람은 종종 엄격한 데이터 계약을 체결하기도 합니다.
 
-In Contoso Slices new architecture, when a pizza order is entered, they would likely use messages. The web front end or mobile app would send a message to the back-end processing components. In the back end, steps like routing to the store near the customer and charging the credit card would take place.
+Contoso Slice의 새로운 아키텍처에서는 피자 주문이 입력되면 메시지를 사용할 가능성이 높습니다. 웹 프런트 엔드 또는 모바일 앱은 백 엔드 처리 구성 요소에 메시지를 보냅니다. 고객 부근의 저장소로 라우팅하는 것 같은 백 엔드 단계에서 신용 카드 청구가 수행됩니다.
 
-### Events
+### <a name="events"></a>이벤트
 
-An event triggers notification that something has occurred. Events are "lighter" than messages and are most often used for broadcast communications.
+이벤트는 문제가 발생했음을 알립니다. 이벤트는 메시지보다 “간단하며” 브로드캐스트 통신에 가장 많이 사용됩니다.
+이벤트의 특성은 다음과 같습니다.
+* 이벤트가 여러 수신자에게 발신되거나 전혀 발신되지 않을 수 있음
+* 이벤트는 종종 각 게시자에 대한 다수의 구독자를 “팬아웃”하거나 포함해야 함
+* 이벤트 게시자는 수신 구성 요소가 수행하는 작업에 대한 기대가 없음
 
-Events have the following characteristics:
-* The event may be sent to multiple receivers, or to none at all
-* Events are often intended to "fan out," or have a large number of subscribers for each publisher
-* The publisher of the event has no expectation about the action a receiving component takes
+피자 체인은 상태 변경에 대해 사용자에게 알리기 위해 이벤트를 사용할 수 있습니다. 완전한 _서버리스_ 솔루션을 위해 상태 변경 이벤트를 Azure Event Grid에 이어 Azure Function 및 알림 허브에 보낼 수 있습니다.
 
-Our pizza chain would likely use events for notifications to users about status changes. Status change events could be sent to Azure Event Grid, then on to Azure Functions, and to Azure Notification Hubs for a completely _serverless_ solution.
+통신 플랫폼이 일반적으로 둘 중 하나만 처리하도록 설계됐기 때문에 이벤트 및 메시지 간의 이 차이는 당연한 것입니다. Service Bus는 메시지를 처리하도록 설계되었습니다. 이벤트를 전송하려는 경우 Event Grid를 선택할 가능성이 높습니다. 
 
-This difference between events and messages is fundamental because communications platforms are generally designed to handle one or the other. Service Bus is designed to handle messages. If you want to send events, you would likely choose Event Grid. 
+또한 Azure에는 Azure Event Hub가 있지만 분석에 사용된 특정 유형의 통신의 높은 흐름 스트림에 가장 많이 사용됩니다. 예를 들어, 피자 오븐에 네트워크 센서가 있는 경우 Azure Stream Analytics와 연결된 Event Hub를 사용하여 원하지 않는 화재 또는 구성 요소 마모를 나타내는 온도 변화의 패턴을 지켜볼 수 있습니다.
 
-Azure also has Azure Event Hubs, but it is most often used for a specific type of high-flow stream of communications used for analytics. For example, if we had networked sensors on our pizza ovens, we could use Event Hubs coupled with Azure Stream Analytics to watch for patterns in the temperature changes that might indicate an unwanted fire or component wear.
+## <a name="service-bus-topics-queues-and-relays"></a>Service Bus 토픽, 큐 및 릴레이
 
-## Service Bus topics, queues, and relays
+Azure Service Bus는 큐, 토픽 및 릴레이를 통해 세 가지 방법으로 메시지를 교환할 수 있습니다.
 
-Azure Service Bus can exchange messages in three different ways: queues, topics, and relays.
+### <a name="what-is-a-queue"></a>큐란?
 
-### What is a queue?
+**큐**는 메시지용 간단한 임시 저장소 위치입니다. 전송 구성 요소는 큐에 메시지를 추가합니다. 대상 구성 요소는 큐의 앞에서 메시지를 선택합니다. 일반적인 상황에서 각 메시지는 받는 사람 한 명만 수신합니다.
 
-A **queue** is a simple temporary storage location for messages. A sending component adds a message to the queue. A destination component picks up the message at the front of the queue. Under ordinary circumstances, each message is received by only one receiver.
+![Azure Service Bus 큐](../media-draft/2-service-bus-queue.png)
 
-![Azure Service Bus queue](../media-draft/2-service-bus-queue.png)
+큐는 많은 요구에서 대상 구성 요소를 보호하려면 원본 및 대상 구성 요소를 분리합니다. 
 
-Queues decouple the source and destination components to insulate destination components from high demand. 
+피크 타임 동안 메시지는 대상 구성 요소가 메시지를 처리하는 것보다 빠르게 들어올 수 있습니다. 원본 구성 요소가 대상에 직접 연결되지 않으므로 원본은 영향을 받지 않고 큐는 증가합니다. 대상 구성 요소는 메시지를 처리할 수 있으므로 큐에서 메시지를 제거합니다. 요구가 감소하면 대상 구성 요소는 catch할 수 있으며 큐는 단축됩니다. 
 
-During peak times, messages may come in faster than destination components can handle them. Because source components have no direct connection to the destination, the source is unaffected and the queue will grow. Destination components will remove messages from the queue as they are able to handle them. When demand drops, destination components can catch up and the queue shortens. 
+큐는 시스템에 리소스를 추가하지 않고서도 이처럼 많은 요구에 응답할 수 있습니다. 그러나 비교적 신속하게 처리해야 하는 메시지의 경우 대상 구성 요소의 추가 인스턴스를 추가하면 로드를 공유할 수 있습니다. 각 메시지는 하나의 인스턴스에서만 처리됩니다. 이것이 실제로 리소스가 필요한 구성 요소에 리소스를 추가하는 동안만 전체 응용 프로그램을 확장할 수 있는 효과적인 방법입니다.
 
-A queue responds to high demand like this without needing to add resources to the system. However, for messages that need to be handled relatively quickly, adding additional instances of your destination component can allow them to share the load. Each message would be handled by only one instance. This is an effective way to scale your entire application while only adding resources to the components that actually need it.
+### <a name="what-is-a-topic"></a>토픽이란?
 
-### What is a topic?
+**토픽**은 큐와 유사하지만 여러 구독이 있을 수 있습니다. 즉, 각 메시지가 여러 수신자에게 배달되도록 여러 대상 구성 요소가 단일 토픽을 구독할 수 있습니다. 구독은 관련이 있는 메시지만 수신하려면 토픽에서 메시지를 필터링할 수도 있습니다. 구독은 큐와 동일한 분리된 통신을 제공하고 동일한 방식으로 많은 요구에 응답합니다. 하나를 초과하는 대상 구성 요소에 각 메시지를 전달하려는 경우 토픽을 사용하세요.
 
-A **topic** is similar to a queue but can have multiple subscriptions. This means that multiple destination components can subscribe to a single topic, so each message is delivered to multiple receivers. Subscriptions can also filter the messages in the topic to receive only messages that are relevant. Subscriptions provide the same decoupled communications as queues and respond to high demand in the same way. Use a topic if you want each message to be delivered to more than one destination component.
+토픽은 기본 가격 책정 계층에서 지원되지 않습니다.
 
-Topics are not supported in the Basic pricing tier.
+![Azure Service Bus 토픽](../media-draft/2-service-bus-topic.png)
 
-![Azure Service Bus topic](../media-draft/2-service-bus-topic.png)
+### <a name="what-is-a-relay"></a>릴레이란?
 
-### What is a relay?
-
-A **relay** is an object that performs synchronous, two-way communication between applications. It is not a temporary storage location for messages like queues and topics. Instead, it provides bidirectional, unbuffered connections across network boundaries such as firewalls. Use a relay when you want direct communications between components as if they were located on the same network segment but separated by network security devices.
+**릴레이**는 응용 프로그램 간에 양방향 동기 통신을 수행하는 개체입니다. 큐 및 토픽과 같은 메시지의 임시 저장소 위치가 아닙니다. 대신 방화벽과 같이 네트워크 경계에서 버퍼링되지 않은 양방향 연결을 제공합니다. 구성 요소가 동일한 네트워크 세그먼트에 있지만 네트워크 보안 장치로 분리된 경우라도 구성 요소 간 직접 통신을 원하면 릴레이를 사용합니다.
 
 > [!NOTE]
-> Although relays are part of Azure Service Bus, they do not implement loosely coupled messaging workflows and are not considered further in this module.
+> 릴레이가 Azure Service Bus의 일부이기는 하지만 느슨하게 결합된 메시징 워크플로를 구현하지 않으며 이 모듈에서 자세히 고려되지 않습니다.
 
-## Service Bus queues and storage queues
+## <a name="service-bus-queues-and-storage-queues"></a>Service Bus 큐 및 Storage 큐
 
-There are two Azure features that include message queues: Service Bus and Azure Storage accounts. As a general guide, storage queues are simpler to use but are less sophisticated and flexible than Service Bus queues.
+메시지 큐를 포함하는 두 가지 Azure 기능인 Service Bus 및 Storage 계정이 있습니다. 일반적으로 저장소 큐는 Service Bus 큐에 비해 사용이 간단하지만 정교하지 못하며 유연하지도 않습니다.
 
-Key advantages of Service Bus queues include:
+Service Bus 큐의 주요 장점은 다음과 같습니다.
 
-* Supports larger messages size (256 KB per message versus 64 KB)
-* Supports both at-least-once and at-most-once delivery - choose between a very small chance that a message is lost or a very small chance it is handled twice
-* Guarantees **first-in-first-out (FIFO)** order - messages are handled in the same order they are added (although FIFO is the normal operation of a queue, it is not guaranteed for every message)
-* Can group multiple messages into a transaction - if one message in the transaction fails to be delivered, all messages in the transaction will not be delivered
-* Supports role-based security
-* Does not require destination components to continuously poll the queue
+* 더 큰 메시지 크기(메시지당 256KB 대 64KB) 지원
+* 최소 1회 및 최대 1회 배달 모두 지원 - 메시지가 손실되는 아주 드문 기회 또는 두 번 처리되는 아주 드문 기회 중에서 선택
+* **선입 선출(FIFO)** 순서 보장 - 추가 된 순서와 동일한 순서로 메시지 처리(FIFO가 큐의 정상적인 작동 원칙이지만 모든 메시지에 대해 보장되지는 않음)
+* 여러 메시지를 한 트랜잭션으로 그룹화 가능 - 트랜잭션에서 한 메시지를 배달하지 못하는 경우 트랜잭션에서 모든 메시지가 배달되지 않음
+* 역할 기반 보안 지원
+* 큐를 계속 폴링하기 위해 대상 구성 요소가 필요하지 않음
 
-Advantages of storage queues:
+Storage 큐의 이점은 다음과 같습니다.
 
-* Supports unlimited queue size (versus 80-GB limit for Service Bus queues)
-* Maintains a log of all messages
+* 무제한 큐 크기 지원 (대 Service Bus 큐에 대한 80GB 제한)
+* 모든 메시지의 로그 유지 관리
 
-## How to choose a communications technology
+## <a name="how-to-choose-a-communications-technology"></a>통신 기술을 선택하는 방법
 
-We've seen the different concepts and the implementations Azure provides. Let's discuss what our decision process should look like for each of our communications.
+Azure에서 제공하는 다양한 개념 및 구현을 살펴보았습니다. 의사 결정 과정이 각 통신에 대해 어떤 모습이어야 하는지를 살펴보겠습니다.
 
-#### Consider the following questions:
+#### <a name="consider-the-following-questions"></a>다음과 같은 질문을 고려해보세요.
 
-1. Is the communication an event? If so, consider using Event Grid or Event Hubs.
+1. 통신이 이벤트인가요? 그렇다면 Event Hub 또는 Event Grid를 사용하는 것이 좋습니다.
 
-1. Should a single message be delivered to more than one destination? If so, use a Service Bus topic. Otherwise, use a queue.
+1. 단일 메시지가 하나를 초과하는 대상에 배달되어야 하나요? 그렇다면 Service Bus 토픽을 사용합니다. 그렇지 않으면 큐를 사용합니다.
 
-If you decide that you need a queue:
+큐가 필요하다고 결정하는 경우 다음을 수행합니다.
 
-#### Choose Service Bus queues if:
+#### <a name="choose-service-bus-queues-if"></a>다음과 같은 경우 Service Bus 큐를 선택합니다.
 
-- You need an at-most-once delivery guarantee
-- You need a FIFO guarantee
-- You need to group messages into transactions
-- You want to receive messages without polling the queue
-- You need to provide role-based access to the queues
-- You need to handle messages larger than 64 KB but smaller than 256 KB
-- Your queue size will not grow larger than 80 GB
-- You would like to be able to publish and consume batches of messages
+- 최대 1회(At-Most-Once) 전송 보장 필요
+- FIFO 보장 필요
+- 메시지를 트랜잭션으로 그룹화해야 함
+- 큐를 폴링하지 않고 메시지를 수신하려고 함
+- 큐에 역할 기반 액세스를 제공해야 함
+- 64KB보다 크고 256KB보다 작은 메시지를 처리해야 함
+- 큐 크기는 80GB보다 더 커지지 않음
+- 일괄 처리 메시지를 게시하고 사용할 수 있기를 원함
 
-#### Choose queue storage if:
-- You need a simple queue with no particular additional requirements
-- You need an audit trail of all messages that pass through the queue
-- You expect the queue to exceed 80 GB in size
-- You want to track progress for processing a message inside of the queue
+#### <a name="choose-queue-storage-if"></a>다음과 같은 경우 Queue 저장소를 선택합니다.
+- 특정 추가 요구 사항 없는 간단한 큐 필요
+- 큐를 통과하는 모든 메시지의 감사 추적 필요
+- 큐의 크기가 80GB를 초과할 것으로 예상됨
+- 큐 내부의 메시지 처리 진행률을 추적하려고 함
 
-Although the components of a distributed application can communicate directly, you can often increase the reliability of that communication by using an intermediate communication platform such as Azure Service Bus or Azure Event Grid.
+분산된 응용 프로그램의 구성 요소는 직접 통신할 수 있지만 Azure Service Bus 또는 Event Grid 같은 중급 통신 플랫폼을 사용하여 종종 해당 통신의 안정성을 높일 수 있습니다.
 
-Event Grid is designed for events, which notify recipients only of an event and do not contain the raw data associated with that event. Azure Event Hubs is designed for high-flow analytics types of events. Azure Service Bus and storage queues are for messages, which can be used for binding the core pieces of any application workflow.
+Event Grid는 이벤트를 받는 사람에게만 알리고 해당 이벤트와 연결된 원시 데이터를 포함하지 않는 이벤트용으로 설계되었습니다. Event Hub는 높은 흐름 분석 유형 이벤트용으로 설계되었습니다. Azure Service Bus 및 저장소 큐는 응용 프로그램 워크플로의 핵심 부분을 바인딩하는 데 사용할 수 있는 메시지용입니다.
 
-If your requirements are simple, if you want to send each message to only one destination, or if you want to write code as quickly as possible, a storage queue may be the best option. Otherwise, Service Bus queues provide many more options and flexibility.
+요구 사항이 간단한 경우, 하나의 대상에만 각 메시지를 전송하려는 경우 또는 최대한 신속하게 코드를 작성하려는 경우, Storage 큐가 최상의 옵션일 수 있습니다. 그렇지 않은 경우 Service Bus 큐에서 더 많은 옵션과 유연성을 제공합니다.
 
-If you want to send messages to multiple subscribers, use a Service Bus topic.
+여러 구독자에게 메시지를 보내려는 경우 Service Bus 토픽을 사용합니다.

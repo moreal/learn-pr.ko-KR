@@ -5,17 +5,25 @@ Alpine Ski House 웹앱이 가동되어 실행 중이지만 이제 상사에게 
 ### <a name="replace-the-boilerplate-code"></a>상용구 코드 바꾸기
 
 1. **Pages** 폴더에서 **About.cshtml** 파일을 엽니다.
+
 1. 코드 하단에서 `<p> Use this area to provide additional information. </p>`을 찾습니다.
+
 1. 상용구 텍스트를 `Welcome to the Alpine Ski House!`로 바꿉니다.
+
 1. 파일을 저장합니다.
+
 1. **About.cshtml.cs** 파일을 엽니다.
+
 1. `Message` 문자열을 **Alpine Ski House is the premier ski hill in Northeast.** 로 바꿉니다.
+
 1. 파일을 저장합니다.
 
 ### <a name="publish-your-updates"></a>업데이트 게시
 
 1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭합니다.
+
 1. **게시**를 선택합니다. [웹 사이트]-웹 배포를 포함하는 옵션이 있어야 합니다.
+
 1. 사이트를 선택하면 Visual Studio에서 Azure에 변경 내용을 전송합니다.
 
 ### <a name="view-your-changes"></a>변경 내용 보기

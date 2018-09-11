@@ -1,19 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
-title: Store image metadata with Azure Cosmos DB
+title: Azure Cosmos DB를 사용하여 이미지 메타데이터 저장
 metadata:
-  title: Store image metadata with Azure Cosmos DB
-  description: Store image metadata with Azure Cosmos DB
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity. This module uses both Cloud Shell and the portal, which should be able to be accessed together with azure-portal.
-# interactive: azure-portal
-durationInMinutes: 15
+  title: Azure Cosmos DB를 사용하여 이미지 메타데이터 저장
+  description: Azure Cosmos DB를 사용하여 이미지 메타데이터를 저장합니다.
+  ms.openlocfilehash: c69988d3b56f260a65ad89ffa498fa0b64b574f2
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790984"
+durationInMinutes: 11
 interactive: bash-editor
-azureSandbox: true
-content: |
-  [!include[](includes/4-store-image-metadata-with-cosmos.md)] 
+content: '[!include[](includes/4-store-image-metadata-with-cosmos.md)]'

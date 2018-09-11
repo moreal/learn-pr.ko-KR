@@ -1,64 +1,64 @@
-Now that you've got your app up and running on your local machine, it's time to get it published to Azure. 
+이제 로컬 머신에서 앱이 실행되고 있으므로 Azure에 게시해보겠습니다. 
 
-In this unit, you will create, build, and run a new ASP.NET web application on your local machine.
+이 단원에서는 로컬 컴퓨터에서 새 ASP.NET 웹 응용 프로그램을 만들고, 빌드하고, 실행합니다.
 
-## Create a new project
+## <a name="create-a-new-project"></a>새 프로젝트 만들기
 
-### Visual Studio for Windows
+### <a name="visual-studio-for-windows"></a>Windows용 Visual Studio
 
-The first step is to start Visual Studio and create a local ASP.NET Core web application.
+첫 번째 단계는 Visual Studio를 시작하고 로컬 ASP.NET Core 웹 응용 프로그램을 만드는 것입니다.
 
-1. On the Visual Studio start page, select **File**, then click **New**, and then click **Project..**.
+1. Visual Studio 시작 페이지에서 **파일**을 선택하고 **새로 만들기**를 클릭한 후 **프로젝트..** 를 클릭합니다.
 
-1. In the **New Project** dialog box, on the left-hand pane, select **Web**.
+1. **새 프로젝트** 대화 상자의 왼쪽 창에서 **웹**을 선택합니다.
 
-1. In the center pane, click **ASP.NET Core Web Application**.
+1. 가운데 창에서 **ASP.NET Core 웹 응용 프로그램**을 클릭합니다.
 
-1. At the bottom of the dialog box, in the **Name** field, enter **Alpine Ski House**.
+1. 대화 상자의 아래쪽의 **이름** 필드에 **Alpine Ski House**를 입력합니다.
 
-1. Select a **Location** for your new solution.
+1. 새 솔루션의 **위치**를 선택합니다.
 
-1. Click the **OK** button to create your project.
+1. **확인** 단추를 클릭하여 프로젝트를 만듭니다.
 
-1. In the **New ASP.NET Core Web Application** dialog box, you will see a selection of starting templates. For this exercise, select **Web Application**, and then click **OK** to create your project.
+1. **새 ASP.NET Core 웹 응용 프로그램** 대화 상자에 선택할 시작 템플릿이 표시됩니다. 이 연습에서는 **웹 응용 프로그램**을 선택한 후 **확인**을 클릭하여 프로젝트를 만듭니다.
 
-    ![New Project Dialog](../media-draft/3-aspnet-templates.png)
+    ![새 프로젝트 대화 상자](../media-draft/3-aspnet-templates.png)
 
     > [!NOTE]
-    > You can also select different starting templates in this dialog box depending on your web development requirements. At the top of the dialog box, you are also able to select the version of ASP.NET Core. You should select ASP.NET Core 2.0 or later.
+    > 웹 개발 요구 사항에 따라, 이 대화 상자에서 다른 시작 템플릿을 선택할 수도 있습니다. 대화 상자의 맨 위에서 ASP.NET Core의 버전을 선택할 수도 있습니다. ASP.NET Core 2.0 이상을 선택해야 합니다.
 
-1. You should now have your new ASP.NET Core web application solution.
+1. 이제 새로운 ASP.NET Core 웹 응용 프로그램 솔루션이 있습니다.
 
-    ![New Project Dialog](../media-draft/3-new-solution.png)
+    ![새 프로젝트 대화 상자](../media-draft/3-new-solution.png)
 
-### Visual Studio Mac
+### <a name="visual-studio-mac"></a>Visual Studio Mac
 
-1. On the Visual Studio start page, select **File**, then click **New**, and then click **Project..**.
+1. Visual Studio 시작 페이지에서 **파일**을 선택하고 **새로 만들기**를 클릭한 후 **프로젝트..** 를 클릭합니다.
 
-1. Under .**NET Core**, select an **ASP.NET Core Web App**, and then click **Next**.
+1. **.NET Core**에서 **ASP.NET Core 웹앱**을 선택하고 **다음**을 클릭합니다.
 
-1. For the **Project Name**, type **AlpineSkiHouse**. This should also auto-populate the solution name.
+1. **프로젝트 이름**으로 **AlpineSkiHouse**를 입력합니다. 이렇게 하면 솔루션 이름도 자동으로 입력되어야 합니다.
 
-1. Select a **location** on your local machine for the project.
+1. 프로젝트의 로컬 머신에서 **위치**를 선택합니다.
 
-1. Click **Create**.
+1. **만들기**를 클릭합니다.
 
-## Build and test on your local machine
+## <a name="build-and-test-on-your-local-machine"></a>로컬 머신에서 빌드 및 테스트
 
-Now, let's build and test your new project on your local machine to ensure it builds and deploys locally before deploying to Azure.
+이제 로컬 머신에서 새 프로젝트를 빌드하고 테스트하여 Azure에 배포하기 전에 로컬로 빌드하고 배포하도록 합니다.
 
-1. Press **F5** to run the app in debug mode or **Ctrl-F5** to run without attaching the debugger.
+1. **F5**를 눌러 앱을 디버그 모드로 실행하거나 **Ctrl-F5**를 눌러 디버거를 연결하지 않고 앱을 실행합니다.
 
-    ![New Project Dialog](../media-draft/3-webapp-launch.png)
+    ![새 프로젝트 대화 상자](../media-draft/3-webapp-launch.png)
 
-Visual Studio starts IIS Express and runs the app. When Visual Studio creates a web project, a random port is used for the web server. In the preceding image, the port number is 44381. When you run the app, you'll likely see a different port number.
+Visual Studio는 IIS Express를 시작하고 앱을 실행합니다. Visual Studio가 웹 프로젝트를 만들면 임의의 포트가 웹 서버에 사용됩니다. 이전 이미지에서는 포트 번호가 44381입니다. 앱을 실행하면 다른 포트 번호가 표시될 가능성이 큽니다.
 
 > [!TIP]
-> Launching the app with **Ctrl+F5** (non-debug mode) allows you to make code changes, save the file, refresh the browser, and see the code changes. Many developers prefer to use non-debug mode to quickly launch the app and view changes.
+> **Ctrl+F5**(비디버그 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 볼 수 있습니다. 많은 개발자가 비디버그 모드를 사용하여 빠르게 앱을 시작하고 변경 내용을 표시하는 것을 선호합니다.
 
 > [!IMPORTANT]
-> You might notice the section at the top of the web page that provides a place for your privacy and cookie use policy. Select **Accept** to consent to tracking. This app doesn't track personal information. The template-generated code includes assets to help meet General Data Protection Regulation (GDPR).
+> 웹 페이지 맨 위 섹션에서는 개인정보처리방침 및 쿠키 사용 정책을 위한 공간을 제공합니다. 추적에 동의하려면 **동의**를 선택합니다. 이 앱은 개인 정보를 추적하지 않습니다. 템플릿 생성 코드에는 GDPR(일반 데이터 보호 규정)을 충족하는 데 도움이 되는 자산이 포함되어 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-The first step to getting your ASP.NET site up and running is to create it and run it locally. Now that your site is created, you are ready to deploy it to Azure.
+ASP.NET 사이트를 실행하는 첫 번째 단계는 사이트를 만들고 로컬로 실행하는 것입니다. 이제 사이트가 만들어졌으므로 Azure에 배포할 준비가 되었습니다.

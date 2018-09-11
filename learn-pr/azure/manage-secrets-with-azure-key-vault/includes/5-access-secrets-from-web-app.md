@@ -81,14 +81,14 @@ namespace KeyVaultDemoApp
 }
 ```
 
-> [!NOTE]
+> [!TIP]
 > 편집이 완료되면 `Ctrl+S`로 파일을 저장해야 합니다.
 
 시작 코드의 유일한 변경 내용은 `ConfigureAppConfiguration`를 추가하는 것입니다. 이를 통해 구성에서 자격 증명 모음 이름을 로드하고 `AddAzureKeyVault`를 함께 호출합니다.
 
 그런 다음, 컨트롤러: `SecretTestController.cs`라는 `Controllers` 폴더에 새 파일을 만들고 다음 코드를 붙여넣습니다.
 
-> [!NOTE]
+> [!TIP]
 > 새 파일을 만들려면 셸에서 `touch` 명령을 사용합니다. 이 예제의 경우 `touch Controllers/SecretTestController.cs`입니다. 이 파일을 표시하려면 편집기의 [파일] 창에서 [새로 고침] 단추를 클릭해야 합니다.
 
 ```csharp

@@ -16,30 +16,30 @@ Azure Portal에서 함수 앱을 만들어 보겠습니다.
 
 1. Azure 계정을 사용하여 [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-2. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기** 단추를 선택한 후 **시작 > 서버리스 함수 앱**을 선택하여 함수 앱 ‘만들기’ 블레이드를 엽니다. 또는 **계산 > 함수 앱** 옵션을 사용하여 같은 블레이드를 열 수 있습니다.
+1. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기** 단추를 선택한 후 **시작 > 서버리스 함수 앱**을 선택하여 함수 앱 ‘만들기’ 블레이드를 엽니다. 또는 **계산 > 함수 앱** 옵션을 사용하여 같은 블레이드를 열 수 있습니다.
   
   ![차례로 선택된 *리소스 만들기*, 계산, 함수 앱을 강조 표시하는 Azure Portal](../media-draft/3-create-function-app-blade.png)
 
-3. 전역으로 고유한 앱 이름을 선택합니다. 서비스의 기준 URL 역할을 합니다. 예를 들어 **escalator-functions-xxxxxxx**로 이름을 지정할 수 있습니다. 여기서 xxxxxxx는 이니셜 및 출생 연도로 바꿀 수 있습니다. 이 값이 전역적으로 고유하지 않은 경우 다른 조합을 사용해 볼 수 있습니다. 유효한 문자는 a-z, 0-9 및 -입니다.
+1. 전역으로 고유한 앱 이름을 선택합니다. 서비스의 기준 URL 역할을 합니다. 예를 들어 **escalator-functions-xxxxxxx**로 이름을 지정할 수 있습니다. 여기서 xxxxxxx는 이니셜 및 출생 연도로 바꿀 수 있습니다. 이 값이 전역적으로 고유하지 않은 경우 다른 조합을 사용해 볼 수 있습니다. 유효한 문자는 a-z, 0-9 및 -입니다.
 
-4. 함수 앱을 호스트할 Azure 구독을 선택합니다.
+1. 함수 앱을 호스트할 Azure 구독을 선택합니다.
 
-5. **escalator-functions-group**이라는 새 리소스 그룹을 만듭니다. 리소스 그룹을 사용하여 이 모듈에서 사용되는 모든 리소스를 저장하면 나중에 정리에 도움이 됩니다.
+1. **escalator-functions-group**이라는 새 리소스 그룹을 만듭니다. 리소스 그룹을 사용하여 이 모듈에서 사용되는 모든 리소스를 저장하면 나중에 정리에 도움이 됩니다.
 
-6. OS로 **Windows**를 선택합니다.
+1. OS로 **Windows**를 선택합니다.
 
-7. **호스팅 플랜**의 경우 서버리스 호스팅 옵션인 **소비 계획**을 선택합니다.
+1. **호스팅 플랜**의 경우 서버리스 호스팅 옵션인 **소비 계획**을 선택합니다.
 
-8. 자신 또는 고객과 가장 가까운 위치를 선택합니다.
+1. 자신 또는 고객과 가장 가까운 위치를 선택합니다.
 
-9. 새 저장소 계정을 만듭니다. Azure는 앱 이름을 기반으로 이름을 지정합니다. 이름은 원하는 경우 변경할 수 있지만 고유해야 합니다.
+1. 새 저장소 계정을 만듭니다. Azure는 앱 이름을 기반으로 이름을 지정합니다. 이름은 원하는 경우 변경할 수 있지만 고유해야 합니다.
 
-10. Azure Application Insights가 **켜져** 있는지 확인하고 자신(또는 고객)과 가장 가까운 지역을 선택합니다.
+1. Azure Application Insights가 **켜져** 있는지 확인하고 자신(또는 고객)과 가장 가까운 지역을 선택합니다.
 완료한 후 구성이 다음 스크린샷의 구성과 유사해야 합니다.
 
   ![이전 지침에 따라 모든 필드가 구성된 함수 앱 *만들기* 구성 화면](../media-draft/3-create-function-app-settings.png)
 
-11. **만들기**를 선택합니다. 배포에 몇 분 정도 걸립니다. 완료되면 알림이 표시됩니다.
+1. **만들기**를 선택합니다. 배포에 몇 분 정도 걸립니다. 완료되면 알림이 표시됩니다.
 
 ## <a name="verify-your-azure-function-app"></a>Azure 함수 앱 확인
 
@@ -47,7 +47,7 @@ Azure Portal에서 함수 앱을 만들어 보겠습니다.
 
   ![Azure Portal의 보기에 escalator-functions-group 리소스 그룹이 있는 Azure Portal 리소스 그룹 화면.](../media-draft/3-resource-group.png)
 
-2. **escalator-functions-group**을 선택합니다. 그러면 다음 목록과 같은 리소스 목록이 표시됩니다.
+1. **escalator-functions-group**을 선택합니다. 그러면 다음 목록과 같은 리소스 목록이 표시됩니다.
   
   ![App Service 계획, 저장소 계정, Application Insights 및 App Service에 대한 항목을 포함하여 escalator-functions-group 그룹에 있는 모든 리소스](../media-draft/3-resource-list.png)
 

@@ -4,11 +4,16 @@ title: 클라우드 배포 모델
 metadata:
   title: 클라우드 배포 모델
   description: 클라우드 배포 모델
-  ms.openlocfilehash: 351e3768c891f23e2f510b4142b36b2695f8207a
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0ef66c6d399c15706a80fa3ddac86285ed6b3790
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414593"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243185"
 durationInMinutes: 10
 content: '[!include[](includes/4-cloud-deployment-models.md)]'

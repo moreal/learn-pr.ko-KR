@@ -1,177 +1,177 @@
-You've chosen to use a Service Bus queue to exchange messages about individual sales between the mobile app that your sales personnel use and the web service, hosted in Azure, that will store details about each sale in an Azure SQL Database instance.
+Service Bus 큐를 사용하여 영업 사원이 사용하는 모바일 앱과 Azure에서 호스팅되는 웹 서비스(각 판매 관련 세부 정보를 SQL Server Database에 저장함) 간에 개별 판매 관련 메시지를 교환하도록 선택했습니다.
 
-You've already implemented the necessary objects in your Azure subscription. Now, you want to write code that sends messages to that queue and retrieves messages.
+Azure 구독에서 필요한 개체는 이미 구현한 상태입니다. 이제 메시지를 해당 큐로 보내고 메시지를 검색하는 코드를 작성하려고 합니다.
 
-## Clone and open the starter application
+## <a name="clone-and-open-the-starter-application"></a>시작 응용 프로그램 복제 및 열기
 
-In this unit, you'll build two console applications in **Visual Studio Code**. The first application places messages into a Service Bus queue and the second retrieves them. The applications are part of a single .NET Core solution. 
+이 단원에서는 **Visual Studio Code**에서 콘솔 응용 프로그램 두 개를 빌드합니다. 첫 번째 응용 프로그램은 메시지를 Service Bus 큐에 저장하고, 두 번째 응용 프로그램은 메시지를 검색합니다. 이러한 응용 프로그램은 단일 .NET Core 솔루션의 일부분입니다. 
 
-Start by cloning the solution:
+먼저 솔루션을 복제합니다.
 
-1. Start a command prompt and change to the directory where you want to host the source code for the application.
+1. 명령 프롬프트를 시작하여 응용 프로그램의 소스 코드를 호스팅하려는 디렉터리로 변경합니다.
 
-1. Type the following command, and then press **Enter**:
+1. 다음 명령을 입력하고 **Enter** 키를 누릅니다.
 
     ```powershell
     git clone https:\\ <!-- TODO: (add git URL) -->
     ```
 
-1. When the clone operation is complete, change to the starter folder.
+1. 복제 작업이 완료되면 시작 폴더로 변경합니다.
 
-1. Type the following command, and then press **Enter**.
+1. 다음 명령을 입력하고 **Enter** 키를 누릅니다.
 
     ```powershell
     code .
     ```
 
-1. If a message appears asking if you want to restore dependencies, click **Yes**.
+1. 종속성을 복원할지 묻는 메시지가 표시되면 **예**를 클릭합니다.
 
-## Configure a connection string to a Service Bus namespace
+## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Service Bus 네임스페이스에 대한 연결 문자열 구성
 
-In order to access a Service Bus namespace and use a queue, you must configure two pieces of information in your console apps:
+Service Bus 네임스페이스에 액세스하고 큐를 사용하려면 콘솔 앱에서 두 가지 정보를 구성해야 합니다.
 
-* The endpoint for your namespace
-* The shared access key for authentication
+* 네임스페이스용 엔드포인트
+* 인증용 공유 액세스 키
 
-Both of these values can be obtained from the Azure portal in the form of a complete connection string.
+이 두 값은 전체 연결 문자열 형식으로 Azure Portal에서 가져올 수 있습니다.
 
 > [!NOTE]
-> For simplicity, you will hard-code the connection string in the **Program.cs** file of both console applications. In a production application, you might use a configuration file or even Azure Key Vault to store the connection string.
+> 여기서는 작업을 쉽게 수행할 수 있도록 두 콘솔 응용 프로그램의 **Program.cs**에서 연결 문자열을 하드 코드합니다. 프로덕션 응용 프로그램에서는 구성 파일이나 Azure Key Vault를 사용하여 연결 문자열을 저장할 수 있습니다.
 
-1. Switch to the Azure portal.
+1. Azure Portal로 전환합니다.
 
-1. In the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. 홈페이지에서 **모든 리소스**를 클릭한 다음 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
 
-1. Under **SETTINGS**, click **Shared Access Policies**.
+1. **설정** 아래에서 **공유 액세스 정책**을 클릭합니다.
 
-1. In the list of policies, click **RootManageSharedAccessKey**.
+1. 정책 목록에서 **RootManageSharedAccessKey**를 클릭합니다.
 
-1. To the right of the **Primary Connection string** text box, click the **Click to copy** button.
+1. **기본 연결 문자열** 텍스트 상자 오른쪽에서 **복사하려면 클릭** 단추를 클릭합니다.
 
-1. Switch to **Visual Studio Code**.
+1. **Visual Studio Code**로 전환합니다.
 
-1. In the **Explorer** pane, in the **privatemessagesender** folder, click the **Program.cs** file.
+1. **탐색기** 창의 **privatemessagesender** 폴더에서 **Program.cs** 파일을 클릭합니다.
 
-1. Locate the following line of code:
-
-    ```C#
-    const string ServiceBusConnectionString = "";
-    ```
-
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
-
-1. In the **Explorer** pane, in the **privatemessagereceiver** folder, click the **Program.cs** file.
-
-1. Locate the following line of code:
+1. 다음 코드 줄을 찾습니다.
 
     ```C#
     const string ServiceBusConnectionString = "";
     ```
 
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
+1. 따옴표 사이에 커서를 놓고 **Ctrl+V**를 누릅니다.
 
-1. Click **File**, and then click **Save All**.
+1. **탐색기** 창의 **privatemessagereceiver** 폴더에서 **Program.cs** 파일을 클릭합니다.
 
-1. Close all open editor windows.
-
-## Write code that sends a message to the queue
-
-To complete the component that sends messages about sales, follow these steps:
-
-1. In Visual Studio Code, in the **Explorer** pane, in the **privatemessagesender** folder, click the **Program.cs** file.
-
-1. Locate the `SendSalesMessageAsync()` method.
-
-1. Within that method, locate the following line of code:
+1. 다음 코드 줄을 찾습니다.
 
     ```C#
-    // Create a queue client here
+    const string ServiceBusConnectionString = "";
     ```
 
-1. To create a queue client, replace that line of code with the following code:
+1. 따옴표 사이에 커서를 놓고 **Ctrl+V**를 누릅니다.
+
+1. **파일**을 클릭한 다음 **모두 저장**을 클릭합니다.
+
+1. 열려 있는 편집기 창을 모두 닫습니다.
+
+## <a name="write-code-that-sends-a-message-to-the-queue"></a>큐에 메시지를 보내는 코드 작성
+
+판매 관련 메시지를 보내는 구성 요소를 완성하려면 다음 단계를 수행합니다.
+
+1. Visual Studio Code **탐색기** 창의 **privatemessagesender** 폴더에서 **Program.cs** 파일을 클릭합니다.
+
+1. `SendSalesMessageAsync()` 메서드를 찾습니다.
+
+1. 이 메서드 내에서 다음 코드 줄을 찾습니다.
+
+    ```C#
+    // Create a Queue Client here
+    ```
+
+1. 큐 클라이언트를 만들려면 이 코드 줄을 다음 코드로 바꿉니다.
 
     ```C#
     queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
-1. Within the `try...catch` block, locate the following line of code:
+1. `try...catch` 블록 내에서 다음 코드 줄을 찾습니다.
 
     ```C#
     // Create and send a message here
     ```
 
-1. To create and format a message for the queue, replace that line of code with the following code:
+1. 큐용 메시지를 만들고 메시지 서식을 지정하려면 해당 코드 줄을 다음 코드로 바꿉니다.
 
     ```C#
     string messageBody = $"$10,000 order for bicycle parts from retailer Adventure Works.";
     var message = new Message(Encoding.UTF8.GetBytes(messageBody));
     ```
 
-1. To display the message in the console, on the next line, add the following code:
+1. 콘솔에서 메시지를 표시하려면 다음 줄에 아래 코드를 추가합니다.
 
     ```C#
     Console.WriteLine($"Sending message: {messageBody}");
     ```
 
-1. To send the message to the queue, on the next line, add the following code:
+1. 큐에 메시지를 보내려면 다음 줄에 아래 코드를 추가합니다.
 
     ```C#
     await queueClient.SendAsync(message);
     ```
 
-1. Locate the following line of code:
+1. 다음 코드 줄을 찾습니다.
 
     ```C#
     // Close the connection to the queue here
     ```
 
-1. To close the connection the Service Bus, replace that line of code with the following code:
+1. Service Bus 연결을 닫으려면 해당 코드 줄을 다음 코드로 바꿉니다.
 
     ```C#
     await queueClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Visual Studio Code에서 편집기 창을 모두 닫고 변경된 파일을 모두 저장합니다.
 
-## Send a message to the queue
+## <a name="send-a-message-to-the-queue"></a>큐에 메시지 보내기
 
-To run the component that sends a message about a sale, follow these steps:
+판매 관련 메시지를 보내는 구성 요소를 실행하려면 다음 단계를 수행합니다.
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Visual Studio Code의 **보기** 메뉴에서 **디버그**를 클릭합니다.
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Private Message Sender**, and then press **F5**. Visual Studio Code builds and runs the console application in debugging mode.
+1. **디버그** 창의 드롭다운 목록에서 **Private Message Sender 시작**을 선택하고 **F5** 키를 누릅니다. Visual Studio Code가 디버깅 모드에서 콘솔 응용 프로그램을 빌드하고 실행합니다.
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. 프로그램이 실행되면 **디버그 콘솔**에서 메시지를 검사합니다.
 
-1. Switch to the Azure portal.
+1. Azure Portal로 전환합니다.
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Service Bus가 표시되지 않으면 홈페이지에서 **모든 리소스**를 클릭한 다음 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Queues**, and then click the **salesmessages** queue. The **ACTIVE MESSAGE COUNT** should indicate that one message has been added to the queue.
+1. **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **큐**를 클릭한 다음 **salesmessages** 큐를 클릭합니다. **활성 메시지 수**에 메시지 1개가 큐에 추가되었음이 표시되어야 합니다.
 
-## Write code that receives a message from the queue
+## <a name="write-code-that-receives-a-message-from-the-queue"></a>큐에서 메시지를 받는 코드 작성
 
-To complete the component that retrieves messages about sales, follow these steps:
+판매 관련 메시지를 검색하는 구성 요소를 완성하려면 다음 단계를 수행합니다.
 
-1. In Visual Studio Code, in the **Explorer** pane, in the **privatemessagereceiver** folder, click the **Program.cs** file.
+1. Visual Studio Code **탐색기** 창의 **privatemessagereceiver** 폴더에서 **Program.cs** 파일을 클릭합니다.
 
-1. Locate the `ReceiveSalesMessageAsync()` method.
+1. `ReceiveSalesMessageAsync()` 메서드를 찾습니다.
 
-1. Within that method, locate the following line of code:
+1. 이 메서드 내에서 다음 코드 줄을 찾습니다.
 
     ```C#
-    // Create a queue client here
+    // Create a Queue Client here
     ```
 
-1. To create a queue client, replace that line with the following code:
+1. 큐 클라이언트를 만들려면 해당 줄을 다음 코드로 바꿉니다.
 
     ```C#
     queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
-1. Locate the `RegisterMessageHandler()` method.
+1. `RegisterMessageHandler()` 메서드를 찾습니다.
 
-1. To configure message handling options, replace all the code within that method with the following code:
+1. 메시지 처리 옵션을 구성하려면 해당 메서드 내의 모든 코드를 다음 코드로 바꿉니다.
 
     ```C#
     var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
@@ -181,58 +181,58 @@ To complete the component that retrieves messages about sales, follow these step
     };
     ```
 
-1. To register the message handler, on the next line, add the following code:
+1. 메시지 처리기를 등록하려면 다음 줄에 아래 코드를 추가합니다.
 
     ```C#
     queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
     ```
 
-1. Locate the `ProcessMessagesAsync()` method. You have registered this method as the one that handles incoming messages.
+1. `ProcessMessagesAsync()` 메서드를 찾습니다. 이 메서드는 들어오는 메시지를 처리하는 메서드로 등록했습니다.
 
-1. To display incoming messages in the console, replace all the code within that method with the following code:
+1. 들어오는 메시지를 콘솔에 표시하려면 해당 메서드 내의 모든 코드를 다음 코드로 바꿉니다.
 
     ```C#
     Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
     ```
 
-1. To remove the received message from the queue, on the next line, add the following code:
+1. 큐에서 수신된 메시지를 제거하려면 다음 줄에 아래 코드를 추가합니다.
 
     ```C#
     await queueClient.CompleteAsync(message.SystemProperties.LockToken);
     ```
 
-1. Return to the `ReceiveSalesMessageAsync()` method and locate the following line of code:
+1. `ReceiveSalesMessageAsync()` 메서드로 돌아와서 다음 코드 줄을 찾습니다.
 
     ```C#
     // Close the queue here
     ```
 
-1. To close the connection to Service Bus, replace that line with the following code:
+1. Service Bus 연결을 닫으려면 해당 코드를 다음 코드로 바꿉니다.
 
     ```C#
     await queueClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Visual Studio Code에서 편집기 창을 모두 닫고 변경된 파일을 모두 저장합니다.
 
-## Retrieve a message from the queue
+## <a name="retrieve-a-message-from-the-queue"></a>큐에서 메시지 검색
 
-To run the component that retrieves a message about a sale, follow these steps:
+판매 관련 메시지를 검색하는 구성 요소를 실행하려면 다음 단계를 수행합니다.
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Visual Studio Code의 **보기** 메뉴에서 **디버그**를 클릭합니다.
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Private Message Receiver**, and then press **F5**. Visual Studio Code builds and runs the console application in debugging mode.
+1. **디버그** 창의 드롭다운 목록에서 **Private Message Receiver 시작**을 선택하고 **F5** 키를 누릅니다. Visual Studio Code가 디버깅 모드에서 콘솔 응용 프로그램을 빌드하고 실행합니다.
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. 프로그램이 실행되면 **디버그 콘솔**에서 메시지를 검사합니다.
 
-1. When you see that the message has been received and displayed in the console, on the **Debug** menu, click **Stop Debugging**.
+1. 메시지가 수신되어 콘솔에 표시되었으면 **디버그** 메뉴에서 **디버깅 중지**를 클릭합니다.
 
-1. Switch to the Azure portal.
+1. Azure Portal로 전환합니다.
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Service Bus가 표시되지 않으면 홈페이지에서 **모든 리소스**를 클릭한 다음 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Queues**, and then click the **salesmessages** queue. The **ACTIVE MESSAGE COUNT** should indicate that the message has been removed from the queue.
+1. **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **큐**를 클릭한 다음 **salesmessages** 큐를 클릭합니다. **활성 메시지 수**에 메시지가 큐에서 제거되었음이 표시되어야 합니다.
 
-You have written code that sends a message about individual sales to a Service Bus queue. In the sales force distributed application, you should write this code in the mobile app that sales personnel use on devices.
+Service Bus 큐에 개별 판매 관련 메시지를 보내는 코드를 작성했습니다. 영업용 분산 응용 프로그램에서는 영업 사원이 장치에서 사용하는 모바일 앱에서 이 코드를 작성해야 합니다.
 
-You have also written code that receives a message from the Service Bus queue. In the sales force distributed application, you should write this code in the web service that runs in Azure and processes received messages.
+또한 Service Bus 큐에서 메시지를 수신하는 코드도 작성했습니다. 영업용 분산 응용 프로그램에서는 Azure에서 실행되며 받은 메시지를 처리하는 웹 서비스에서 이 코드를 작성해야 합니다.

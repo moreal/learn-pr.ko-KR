@@ -1,93 +1,93 @@
-You're now ready to create a new event hub. After creating the event hub, you'll use the Azure portal to view your new hub.
+이제 새 이벤트 허브를 만들 준비가 되었습니다. 이벤트 허브를 만든 후 Azure Portal을 사용하여 새 허브를 표시합니다.
 
-You'll create an event hub using the Azure CLI. For this exercise, use the Azure CLI 2.0. 
+Azure CLI를 사용하여 이벤트 허브를 만듭니다. 이 연습에서는 Azure CLI 2.0을 사용합니다. 
 
-## Create an Event Hubs namespace
+## <a name="create-an-event-hubs-namespace"></a>Event Hubs 네임스페이스 만들기
 
-Use the following steps to create an Event Hubs namespace using Bash shell supported by Azure Cloud shell:
+다음 단계를 수행하여 Azure Cloud Shell에서 지원하는 Bash 셸을 사용하여 Event Hubs 네임스페이스를 만듭니다.
 
-1. Sign in to the Cloud Shell (Bash).  
+1. Cloud Shell(Bash)에 로그인합니다.  
 
-1. Create an Azure resource group using the following command:
+1. 다음 명령을 사용하여 Azure 리소스 그룹을 만듭니다.
 
     ```azurecli
         az group create --name <resource group name> --location <location>
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--name (required)      |Enter a new resource group name.|
-    |--location (required)     |Enter the location of your nearest Azure datacenter, for example, westus.|
+    |--name(필수)      |새 리소스 그룹 이름을 입력합니다.|
+    |--location(필수)     |가장 가까운 Azure 데이터 센터의 위치를 입력합니다(예: westus).|
 
-1. Create the Event Hubs namespace using the following command:
+1. 다음 명령을 사용하여 Event Hubs 네임스페이스를 만듭니다.
 
     ```azurecli
         az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--name (required)      |Enter a 6-50 characters-long unique name for your Event Hubs namespace. The name should contain only letters, numbers, and hyphens. It should start with a letter and end with a letter or number.|
-    |--resource-group (required)  |Enter the resource group you created in step 1.
-    |--l (optional)     |Enter the location of your nearest Azure datacenter, for example, westus.|
+    |--name(필수)      |Event Hubs 네임스페이스에 대한 6-50자 길이의 고유한 이름을 입력합니다. 이 이름에는 문자, 숫자 및 하이픈만 포함해야 합니다. 문자로 시작해야 하고 문자 또는 숫자로 끝나야 합니다.|
+    |--resource-group(필수)  |1단계에서 만든 리소스 그룹을 입력합니다.
+    |--l(선택 사항)     |가장 가까운 Azure 데이터 센터의 위치를 입력합니다(예: westus).|
 
-1. Fetch the connection string for your Event Hubs namespace using the following command. You'll need this to configure applications to send and receive messages using your event hub.
+1. 다음 명령을 사용하여 Event Hubs 네임스페이스에 대한 연결 문자열을 페치합니다. 이벤트 허브를 사용하여 메시지를 보내고 받도록 응용 프로그램을 구성하려면 필요합니다.
 
     ```azurecli
         az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--resource-group (required)  |Enter the resource group you created in step 1.|
-    |--namespace-name (required)      |Enter the namespace you created in step 2.|
+    |--resource-group(필수)  |1단계에서 만든 리소스 그룹을 입력합니다.|
+    |--namespace-name(필수)      |2단계에서 만든 네임스페이스를 입력합니다.|
 
-    This command returns the connection string for your Event Hubs namespace that you'll use later to configure your publisher and consumer applications. Save the value of the following keys for later use.
+    이 명령은 나중에 게시자 및 소비자 응용 프로그램을 구성하는 데 사용할 Event Hubs 네임스페이스에 대한 연결 문자열을 반환합니다. 나중에 사용할 수 있도록 다음 키의 값을 저장합니다.
 
     - **primaryConnectionString**
     - **primaryKey**
 
-## Create an event hub
+## <a name="create-an-event-hub"></a>이벤트 허브 만들기
 
-Use the following steps to create your new event hub:
+다음 단계에 따라 새 이벤트 허브를 만듭니다.
 
-1. Create a new event hub using the following command:
+1. 다음 명령을 사용하여 새 이벤트 허브를 만듭니다.
 
     ```azurecli
         az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--name (required)  |Enter a name for your event hub.|
-    |--resource-group (required)  |Enter the resource group you created in the previous procedure.|
-    |--namespace-name (required)      |Enter the namespace you created in the previous procedure.|
+    |--name(필수)  |이벤트 허브 이름을 입력합니다.|
+    |--resource-group(필수)  |이전 절차에서 만든 리소스 그룹을 입력합니다.|
+    |--namespace-name(필수)      |이전 절차에서 만든 네임스페이스를 입력합니다.|
 
-1. View the details of your event hub using the following command: 
+1. 다음 명령을 사용하여 이벤트 허브의 세부 정보를 봅니다. 
 
     ```azurecli
         az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--resource-group (required)  |Enter the resource group that you created in the previous procedure.|
-    |--namespace-name (required)      |Enter the namespace you created in the previous procedure.|
-    |--name  (required)|Enter the name of the event hub you created in step 1.|
+    |--resource-group(필수)  |이전 절차에서 만든 리소스 그룹을 입력합니다.|
+    |--namespace-name(필수)      |이전 절차에서 만든 네임스페이스를 입력합니다.|
+    |--name(필수)|1단계에서 만든 이벤트 허브의 이름을 입력합니다.|
 
-## View the event hub in the Azure portal
+## <a name="view-the-event-hub-in-the-azure-portal"></a>Azure Portal에서 이벤트 허브 보기
 
-Use the following steps view your event hub in the Azure portal.
+다음 단계를 수행하여 Azure Portal에서 이벤트 허브를 봅니다.
 
-1. Find your Event Hubs namespace using the Search bar at the top of the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)의 위쪽에 있는 검색 창을 사용하여 Event Hubs 네임스페이스를 찾습니다.
 
-1. Click your namespace to open it.
+1. 네임스페이스를 클릭하여 엽니다.
 
-1. From **Event Hubs Namespace** > **ENTITIES**, click **Event Hubs**.
-    Your event hub displays with a status of **Active**, and default values for **Message Retention** (*7*) and **Partition Count** of (*4*).
+1. **Event Hubs 네임스페이스** > **엔터티**에서 **Event Hubs**를 클릭합니다.
+    이벤트 허브에 대한 **활성** 상태와 기본값 **메시지 보존**(*7*) 및 **파티션 개수**(*4*)가 표시됩니다.
 
-    ![Event Hub displayed in the Azure Portal](../media-draft/3-event-hub.png)
+    ![Azure Portal에 표시된 이벤트 허브](../media-draft/3-event-hub.png)
 
-## Summary
+## <a name="summary"></a>요약
 
-You've now created a new event hub, and you've all the necessary information ready to configure your publisher and consumer applications.
+이제 새 이벤트 허브를 만들었으며 게시자 및 소비자 응용 프로그램을 구성하는 데 필요한 모든 정보가 준비되었습니다.

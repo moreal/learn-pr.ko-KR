@@ -65,11 +65,13 @@ Visual Studio에서 Azure에 앱을 게시하는 짧은 프로세스입니다.
 ### <a name="select-the-project"></a>프로젝트 선택
 
 1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭합니다.
+
 1. **게시 > Azure에 게시**를 선택합니다.
 
 ### <a name="configure-the-app-service-plan-in-windows"></a>Windows에서 App Service 계획 구성
 
 1. App Service 계획 구성
+
     - 호스팅: 이 탭에서 App Service 계획을 구성합니다. 여기서 앱을 호스트하는 웹 서버의 위치, 크기 및 기능을 지정합니다. 기존 호스팅 계획을 선택하거나 새 계획을 만들 수 있습니다. Windows는 전역적으로 고유한 이름을 자동으로 생성하는데, 이 이름은 설정 중에 변경할 수 있습니다.
     - 서비스: 여기서 사이트에 대한 SQL 데이터베이스를 구성할 수 있습니다.
 
@@ -81,7 +83,9 @@ Visual Studio에서 Azure에 앱을 게시하는 짧은 프로세스입니다.
 ### <a name="configure-the-app-service-plan-for-mac"></a>Mac용 App Service 계획 구성
 
 1. Azure에 설정된 기존 App Service 계획을 선택하거나 새 App Service 계획을 만들 수 있습니다.
+
 1. 이 탭에서 App Service 계획을 구성합니다. 여기서 앱을 호스트하는 웹 서버의 위치, 크기 및 기능을 지정합니다. 기존 호스팅 계획을 선택하거나 새 계획을 만들 수 있습니다. 웹 사이트의 이름과 모든 리소스는 전역적으로 고유해야 합니다.
+
 1. **만들기**를 클릭하여 앱을 배포합니다. 이 작업이 완료되면, Visual Studio에서는 사이트가 호스트되는 웹 페이지를 시작합니다.
 
 ## <a name="summary"></a>요약

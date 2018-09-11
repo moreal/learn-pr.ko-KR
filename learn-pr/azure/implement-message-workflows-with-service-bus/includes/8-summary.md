@@ -1,13 +1,12 @@
-In this module, you created a Service Bus namespace, a queue, and a topic in your subscription by using the Azure portal, and you sent and received messages through the queue and the topic.
+이 모듈에서는 Azure Portal을 사용하여 구독에서 Service Bus 네임스페이스, 큐 및 항목을 만들었으며, 큐와 항목을 통해 메시지를 보내고 받았습니다.
 
-Service Bus queues and topics are excellent tools that you can use to increase the resilience of communications within a distributed application. By acting as a temporary storage location, they remove the requirement for direct communication between components and handle peaks in demand smoothly. Consider using them whenever you have a component that can communicate with another component in a loosely coupled configuration.
+Service Bus 큐 및 항목은 분산 응용 프로그램 내의 통신 복원 기능을 개선하는 데 사용할 수 있는 매우 유용한 도구입니다. 큐와 항목은 임시 저장소로 사용되므로 구성 요소가 서로 직접 통신할 필요가 없으며, 증가하는 수요도 원활하게 처리됩니다. 느슨하게 결합된 구성에 서로 통신할 수 있는 구성 요소를 포함할 때마다 큐와 항목을 사용하는 것이 좋습니다.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>정리
 
-Service Bus queues and topics in your Azure subscription incur a cost, although it is likely to be small when there are few, small messages. The easiest way to clean up your Azure subscription is to remove the resource group that you created during our first exercise. Doing so will also delete all the topics, queues, namespaces, and other resources in the group. When you are finished with this module, take the following steps:
+Azure 구독에서 Service Bus 큐와 항목을 사용할 때 메시지 수가 적으면 발생하는 비용도 미미한 수준입니다. Azure 구독을 정리하는 가장 쉬운 방법은 첫 번째 연습에서 만든 리소스 그룹을 제거하는 것입니다. 이렇게 하면 그룹의 모든 항목, 큐, 네임스페이스 및 기타 리소스도 삭제됩니다. 이 모듈을 완료한 후에는 다음 단계를 수행하세요.
 
-1. In the **Azure portal**, in the navigation on the left, click **Resource groups**.
-1. In the list of resource groups, click **SalesTeamRG**.
-1. In the **Resource group** blade, click **Delete resource group**.
-1. In the **TYPE THE RESOURCE GROUP NAME** text box, type **SalesTeamAppRG**, and then click **Delete**. Azure removes the resource group and all its resources.
+1. **Azure Portal**의 왼쪽 탐색 영역에서 **리소스 그룹**을 클릭합니다.
+1. 리소스 그룹 목록에서 **SalesTeamRG**를 클릭합니다.
+1. **리소스 그룹** 블레이드에서 **리소스 그룹 삭제**를 클릭합니다.
+1. **리소스 그룹 이름 입력** 텍스트 상자에 **SalesTeamAppRG**를 입력하고 **삭제**를 클릭합니다. 리소스 그룹 및 모든 해당 리소스가 제거됩니다.

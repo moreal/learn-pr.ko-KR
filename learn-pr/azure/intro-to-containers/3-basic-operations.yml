@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-containers.3-basic-operations
 metadata:
-  title: Basic container operations
-  description: Basic container operations.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Basic container operations
+  title: 기본 컨테이너 작업
+  description: 기본 컨테이너 작업입니다.
+  ms.openlocfilehash: 20d01a1489961512f0207c0dc90cb26fdc80459a
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43729317"
+title: 기본 컨테이너 작업
 durationInMinutes: 15
-content: |
-  [!include[](includes/3-basic-operations.md)]
+content: '[!include[](includes/3-basic-operations.md)]'

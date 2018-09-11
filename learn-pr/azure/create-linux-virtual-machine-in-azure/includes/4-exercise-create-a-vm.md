@@ -1,108 +1,109 @@
-Recall that our goal is to move an existing Linux server running Apache to Azure. We'll start by creating an Ubuntu Linux server.
+이 연습의 목표는 Apache를 실행 중인 기존 Linux 서버를 Azure로 이동하는 것입니다. 이를 위해 먼저 Ubuntu Linux 서버를 만들겠습니다.
 
-## Create a new Linux virtual machine
+## <a name="create-a-new-linux-virtual-machine"></a>새 Linux 가상 머신을 만들기
 
-We can create Linux VMs with the Azure portal, the Azure CLI, or Azure PowerShell. The easiest approach when you are starting with Azure is to use the portal because it walks you through the required information and provides hints and helpful messages during the creation:
+Linux VM은 Azure Portal, Azure CLI 또는 Azure PowerShell을 사용하여 만들 수 있습니다. Azure 사용을 시작하는 가장 쉬운 방법은 Azure Portal을 사용하는 것입니다. Azure Portal에서는 필요한 정보를 단계별로 안내하며 만드는 동안 힌트와 유용한 메시지를 제공하기 때문입니다.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-1. Click **Create a resource** in the upper-left corner of the Azure portal.
+1. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기**를 클릭합니다.
 
-1. In the search box, enter  **Ubuntu Server** to see the different versions available. Select **Ubuntu Server 18.04** from the presented list.
+1. 검색 상자에 **Ubuntu Server**를 입력하면 사용 가능한 여러 버전이 표시됩니다. 표시된 목록에서 **Ubuntu Server 18.04**를 선택합니다.
 
-1. Click the **Create** button to start configuring the VM.
+1. **만들기** 단추를 클릭하여 VM 구성을 시작합니다.
 
-## Configure the VM settings
+## <a name="configure-the-vm-settings"></a>VM 설정 구성
 
-The VM creation experience in the portal is presented in a **wizard** format to walk you through all the configuration areas for the VM. Clicking the **Next** button will take you to the next configurable section. However, you can move between the sections at will with the tabs running across the top that identify each part.
+포털의 VM 만들기 환경은 모든 VM 구성 영역을 단계별로 안내하는 "마법사" 형식으로 제공됩니다. "다음" 단추를 클릭하면 구성 가능한 다음 섹션으로 이동합니다. 그러나 각 부분을 식별하는 위쪽에서 실행되는 탭을 사용하여 원하는 대로 섹션 간에 이동할 수 있습니다.
 
-![Screenshot of the Azure portal showing the initial Create a virtual machine blade for an Ubuntu Server machine.](../media/3-azure-portal-create-vm.png)
+![Azure Portal에서 가상 머신 만들기](../media-drafts/3-azure-portal-create-vm.png)
 
-Once you fill in all the required options (identified with red stars), you can skip the remainder of the wizard experience and start creating the VM through the **Review + Create** button at the bottom.
+필요한 모든 옵션(빨간색 별표로 식별됨)이 채워지면 마법사 환경의 나머지 부분은 건너뛰고 아래쪽의 **검토 + 만들기** 단추를 통해 VM을 만들기 시작할 수 있습니다.
 
-We'll start with the **Basics** section.
+**기본 사항** 섹션부터 시작하겠습니다.
 
-### Configure basic VM settings
+### <a name="configure-basic-vm-settings"></a>기본 VM 설정 구성
 
-1. Select the **Subscription** that should be billed for VM hours.
+1. VM 시간에 대해 요금을 청구해야 하는 **구독**을 선택합니다.
 
-1. For **Resource group**, select **Create new** and give the resource group the name **ExerciseResources**.
+1. **리소스 그룹**에 대해 **새로 만들기**를 선택하고 리소스 그룹 이름으로 **ExerciseResources**를 지정합니다.
 
-> [!NOTE]  
-> As you change settings and tab out of each field, Azure will validate each value automatically and place a green check mark next to it when it's good. You can hover over error indicators to get more information on issues it discovers.
+> [!NOTE]
+> 각 필드에서 설정과 탭을 변경하면 Azure에서 각 값의 유효성을 자동으로 검사하고 해당 값이 적절한 경우 옆에 녹색 확인 표시를 배치합니다. 오류 표시기 위를 마우스로 가리키면 검색된 문제에 대한 자세한 정보를 얻을 수 있습니다.
 
-1. In the **INSTANCE DETAILS** section, enter a name for your web server VM, such as **test-web-eus-vm1**. This indicates the environment (**test**), the role (**web**), location (**East US**), service (**vm**), and instance number (**1**).
-    - It's a best practice to standardize your resource names, so you can quickly identify their purpose. Linux VM names must be between 1 and 64 characters and be comprised of numbers, letters, and dashes.
+1. **인스턴스 세부 정보** 섹션에서 웹 서버 VM의 이름을 "test-web-eus-vm1"과 같이 입력합니다. 이 이름은 환경("test"), 역할("web"), 위치("미국 동부"), 서비스("vm") 및 인스턴스 번호("1")를 나타냅니다.
+    - 용도를 빠르게 식별할 수 있도록 리소스 이름을 표준화하는 것이 가장 좋습니다. Linux VM 이름은 1-64자여야 하며 숫자, 문자 및 대시로 구성되어야 합니다.
 
-1. Select a region close to you; we've chosen **East US**.
+1. 가까운 지역을 선택합니다. 이 예에서는 미국 동부를 선택했습니다.
 
-1. Leave **Availability options** as **None**. This option is used to ensure the VM is highly available by grouping multiple VMs together as a set to deal with planned or unplanned maintenance events or outages.
+1. **가용성 옵션**을 "없음"으로 둡니다. 이 옵션은 계획되거나 계획되지 않은 유지 관리 이벤트 또는 중단을 처리하기 위해 여러 VM을 하나의 집합으로 그룹화하여 VM의 가용성을 높이는 데 사용됩니다.
 
-1. Ensure that the image is set to **Ubuntu Server 18.04 LTS**. You can open the drop-down list to see all the options available.
+1. 이미지가 "Ubuntu Server 18.04 LTS"로 설정되어 있는지 확인합니다. 드롭다운 목록을 열어 사용 가능한 모든 옵션을 볼 수 있습니다.
 
-1. The **Size** field is not directly editable and has a **DS2_v3** default size, which is one of the general-purpose computing selections. This choice is perfect for a public web server, but click the **Change size** link to explore other VM sizes. The resulting dialog allows you to filter based on **# of CPUs**, **Name**, and **Disk Type**. Select the same **DS2_v3** choice, which gives you two vCPUs with 8 GB of RAM.
+1. **크기** 필드는 직접 편집할 수 없으며 기본 크기는 범용 컴퓨팅 선택 항목 중 하나인 **DS2_v3**입니다. 공용 웹 서버의 경우 이 선택 항목을 사용하면 되지만, 다른 VM 크기를 살펴보려면 **크기 변경**을 클릭합니다. 결과 대화 상자에서 CPU 수, 이름 및 디스크 유형에 따라 필터링할 수 있습니다. 같은 **DS2_v3** 항목을 선택하면 vCPU 2개와 8GB RAM이 제공됩니다.
 
     > [!TIP]
-    > You can also slide the view to the left to get back to the VM settings as it opened a new window off to the right and slid the window over to view it.
+    > 보기를 왼쪽으로 슬라이드하여 VM 설정(오른쪽의 새 창에서 열려 원래 창이 왼쪽으로 슬라이드됨)을 다시 표시한 다음 확인할 수도 있습니다.
 
-1. In the **ADMINISTRATOR ACCESS** section, select the SSH public key option for **Authentication type**.
+1. **관리자 권한** 섹션에서 **인증 형식**으로 SSH 공개 키 옵션을 선택합니다.
 
-1. Enter a **username** you'll use to sign in with SSH.
+1. SSH에 로그인하는 데 사용할 **사용자 이름**을 입력합니다.
 
-1. Copy the SSH key from your public key file and paste it into the **SSH public key** field.
+1. 공개 키 파일에서 SSH 키를 복사하여 **SSH 공개 키** 필드에 붙여넣습니다.
 
 > [!IMPORTANT]
-> When you copy the public key into the Azure portal, make sure not to add any additional whitespace or linefeed characters.
+> Azure Portal에 공개 키를 복사할 때 공백이나 줄 바꿈 문자를 더 추가하면 안 됩니다.
 
-1. In the **INBOUND PORT RULES** section, open the list and uncheck **None**. Since this is a Linux VM, we want to be able to access the VM using SSH remotely. Scroll the list if necessary until you find **ssh (22)** and select it. As the note in the UI indicates, we can also adjust the network ports after we create the VM.
+1. **인바운드 포트 규칙** 섹션에서 목록을 열고 "없음"을 _선택 취소_합니다. 이 VM은 Linux VM이므로 SSH를 사용하여 VM에 원격으로 액세스할 수 있어야 합니다. 필요한 경우 ssh(22)를 찾을 때까지 목록을 스크롤합니다. UI의 참고 사항에서 언급한 대로 VM이 만들어지면 네트워크 포트를 조정할 수도 있습니다.
 
-    ![Screenshot of the Azure portal showing the administrator account and inbound port settings as described to open up a Linux VM for SSH access.](../media/3-open-ports.png) 
+    ![Linux VM에서 SSH 액세스를 위한 포트 열기](../media-drafts/3-open-ports.png)
 
-## Configure disks for the VM
+## <a name="configure-disks-for-the-vm"></a>VM에 대한 디스크 구성
 
-1. Click **Next** to move to the **Disks** section.
+1. **다음**을 클릭하여 [디스크] 섹션으로 이동합니다.
 
-    ![Screenshot of the Azure portal showing the Disks section of the Create a virtual machine blade.](../media/3-configure-disks.png) 
+    ![VM에 대한 디스크 구성](../media-drafts/3-configure-disks.png)
 
-1. Choose **Premium SSD** for the **OS disk type**.
+1. **OS 디스크 유형**에 대해 "프리미엄 SSD"를 선택합니다.
 
-1. Use managed disks, so we don't have to work with storage accounts. You can flip the switch in the GUI to see the difference in information that Azure needs if you like.
+1. 저장소 계정을 사용하지 않도록 관리 디스크를 사용합니다. 원하는 경우 Azure에 필요한 정보의 차이를 보기 위해 GUI에서 스위치를 전환할 수 있습니다.
 
-### Create a data disk
+### <a name="create-a-data-disk"></a>데이터 디스크 만들기
 
-Recall that we will get an OS disk (/dev/sda) and a temporary disk (/dev/sdb). Let's add a data disk as well:
+OS 디스크(/dev/sda)와 임시 디스크(/dev/sdb)를 살펴보겠습니다. 데이터 디스크도 추가해 보겠습니다.
 
-1. Click the **Create and attach a new disk** link in the **DATA DISKS** section.
+1. **데이터 디스크** 섹션에서 **새 디스크 만들기 및 연결** 링크를 클릭합니다.
 
-    ![Screenshot of the Azure portal showing the Create a new disk blade.](../media/3-add-data-disk.png) 
+    ![포털에서 VM에 대한 데이터 디스크 만들기](../media-drafts/3-add-data-disk.png)
 
-1. You can take all the defaults: Premium SSD, 1023 GB, and **None** (empty disk), although notice that here is where we could use a snapshot or Azure Blob storage to create a VHD.
+1. 여기서는 스냅숏 또는 Storage Blob을 사용하여 VHD를 만들 수 있지만 모든 기본값, 즉 프리미엄 SSD, 1023GB 및 없음(빈 디스크)을 적용할 수 있습니다.
 
-1. Click **OK** to create the disk and go back to the **DATA DISKS** section.
+1. **확인**을 클릭하여 디스크를 만들고 **데이터 디스크** 섹션으로 돌아갑니다.
 
-1. There should now be a new disk in the first row.
+1. 이제 첫 번째 행에 새 디스크가 있습니다.
 
-    ![Screenshot of the Azure portal showing the newly created data disk line for the VM creation process.](../media/3-new-disk.png) 
+    ![VM의 새 디스크](../media-drafts/3-new-disk.png)
 
-## Configure the network
+## <a name="configure-the-network"></a>네트워크 구성
 
-1. Click **Next** to move to the **Networking** section.
+1. **다음**을 클릭하여 [네트워킹] 섹션으로 이동합니다.
 
-1. In a production system where we already have other components, we'd want to utilize an _existing_ virtual network. That way, our VM can communicate with the other cloud services in our solution. If there isn't one defined in this location yet, we can create it here and configure the:
-    - **Address space**: The overall IPV4 space available to this network.
-    - **Subnet range**: The first subnet to subdivide the address space - it must fit within the defined address space. Once the VNet is created, you can add additional subnets.
+1. 이미 다른 구성 요소가 있는 프로덕션 시스템에서 _기존_ 가상 네트워크를 활용하려고 합니다. 이렇게 하면 VM에서 솔루션의 다른 클라우드 서비스와 통신할 수 있습니다. 이 위치에 정의된 가상 네트워크가 아직 없으면 여기서 만들고 다음 항목을 구성할 수 있습니다.
 
-> [!NOTE]  
-> By default, Azure will create a virtual network, network interface, and public IP for your VM. It's not trivial to change the networking options after the VM has been created, so always double-check the network assignments on services you create in Azure.
+    - **주소 공간**: 이 네트워크에서 사용할 수 있는 전체 IPV4 공간입니다.
+    - **서브넷 범위**: 주소 공간을 세분화할 첫 번째 서브넷이며, 정의된 주소 공간 이내여야 합니다. VNet이 만들어지면 추가 서브넷을 추가할 수 있습니다.
 
-## Finish configuring the VM and create the image
+> [!NOTE]
+> 기본적으로 Azure는 VM에 대한 가상 네트워크, 네트워크 인터페이스 및 공용 IP를 만듭니다. VM을 만든 후에 네트워킹 옵션을 변경하는 것은 쉽지 않으므로 Azure에서 만든 서비스에 대한 네트워크 할당을 항상 다시 확인합니다.
 
-The rest of the options have reasonable defaults, and there's no need to change any of them. You can explore the other tabs if you like. The individual options have an `(i)` icon next to them that will show a help bubble to explain the option. This is a great way to learn about the various options you can use to configure the VM:
+## <a name="finish-configuring-the-vm-and-create-the-image"></a>VM 구성 완료 및 이미지 만들기
 
-1. Click the **Review + create** button at the bottom of the panel.
+나머지 옵션에는 적절한 기본값이 있으므로 변경할 필요가 없습니다. 원하는 경우 다른 탭을 탐색할 수 있습니다. 개별 옵션 옆에는 해당 옵션을 설명하는 풍선형 도움말이 표시되는 `(i)` 아이콘이 있습니다. 이는 VM을 구성하는 데 사용할 수 있는 다양한 옵션에 대해 알아볼 수 있는 좋은 방법입니다.
 
-1. The system will validate your options and give you details about the VM being created.
+1. 패널 아래쪽에서 **검토 + 만들기** 단추를 클릭합니다.
 
-1. Click **Create** to create and deploy the VM. The Azure dashboard will show the VM that's being deployed. This may take several minutes.
+1. 시스템에서 옵션의 유효성을 검사하고 만드는 VM에 대한 세부 정보를 제공합니다.
 
-While that's deploying, let's look at what we can do with this VM.
+1. **만들기**를 클릭하여 VM을 만들고 배포합니다. Azure 대시보드에 배포 중인 VM이 표시됩니다. 이 작업은 몇 분 정도 걸릴 수 있습니다.
+
+VM이 배포되는 동안 이 VM으로 수행할 수 있는 작업을 살펴보겠습니다.

@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: 요약 및 지식 검사
+metadata:
+  title: 요약 및 지식 검사
+  description: 요약 및 지식 검사
+  ms.openlocfilehash: b5b474cbfc1f501965805e36d035caf0c5ffbfeb
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836072"
+durationInMinutes: 10
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Computer Vision 퀴즈
+  questions:
+  - content: Computer Vision을 사용하여 식별할 수 없는 유명한 이미지 종류는 무엇인가요?
+    choices:
+    - content: '이정표 '
+      isCorrect: false
+    - content: 유명인
+      isCorrect: false
+    - content: 영화
+      isCorrect: true
+  - content: 이미지 분석 시 수신하도록 선택할 수 있는 시각적 기능은 무엇인가요?
+    choices:
+    - content: 도형
+      isCorrect: true
+    - content: 이미지 분류
+      isCorrect: false
+    - content: 태그
+      isCorrect: false
+    - content: 텍스트 설명
+      isCorrect: false
+    - content: 얼굴
+      isCorrect: false
+    - content: 색
+      isCorrect: false
+    - content: 성인 콘텐츠 및 외설적인 콘텐츠
+      isCorrect: false
+  - content: 스마트 자르기에서는 어떤 작업이 수행되나요?
+    choices:
+    - content: 왼쪽 위에서 사진 자르기
+      isCorrect: false
+    - content: 얼굴, 초점이 적용된 개체 등 원하는 영역을 기준으로 사진 자르기
+      isCorrect: true

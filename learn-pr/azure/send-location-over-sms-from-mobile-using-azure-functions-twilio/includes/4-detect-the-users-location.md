@@ -6,7 +6,7 @@
 
 1. `ImHere.UWP` 앱 프로젝트에서 `Package.appxmanifest` 파일을 엽니다.
 
-2. **기능** 탭으로 이동하여 *위치* 기능을 선택합니다.
+1. **기능** 탭으로 이동하여 *위치* 기능을 선택합니다.
 
     ![UWP 기능 탭](../media-drafts/4-uwp-location-capability.png)
 
@@ -18,13 +18,13 @@
 
 1. `ImHere` .NET Standard 프로젝트의 `MainViewModel` 클래스를 엽니다.
 
-2. `SendLocation` 메서드에서 `Xamarin.Essentials` 네임스페이스의 `Geolocation` 클래스에 대해 `GetLastKnownLocationAsync` 정적 메서드를 호출합니다.
+1. `SendLocation` 메서드에서 `Xamarin.Essentials` 네임스페이스의 `Geolocation` 클래스에 대해 `GetLastKnownLocationAsync` 정적 메서드를 호출합니다.
 
     ```cs
     Location location = await Geolocation.GetLastKnownLocationAsync();
     ```
 
-3. 사용자 위치가 발견되면 `Message` 속성을 해당 위치로 업데이트합니다.
+1. 사용자 위치가 발견되면 `Message` 속성을 해당 위치로 업데이트합니다.
 
     ```cs
     if (location != null)
@@ -51,7 +51,7 @@ async Task SendLocation()
 
 ![사용자 위치를 표시하는 실행 중인 앱](../media-drafts/4-running-app-showing-location.png)
 
-> 이 앱은 마지막으로 알려진 위치를 사용합니다. 프로덕션 품질 앱에서는 시간 제한을 지정하여 정확한 현재 위치를 가져오고, 시간 이내에 발견되지 않을 경우 마지막으로 알려진 위치로 대체합니다. [Xamarin.Essentials 지리적 위치 문서](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)에서 이 작업을 수행하는 방법을 자세히 알아볼 수 있습니다. 이 앱에는 오류 처리가 없습니다. 프로덕션 품질 앱에서는 가령 위치를 사용할 수 없고 예외가 발생할 경우 발생하는 예외를 처리해야 합니다.
+> 이 앱은 마지막으로 알려진 위치를 사용합니다. 프로덕션 품질 앱에서는 시간 제한을 지정하여 정확한 현재 위치를 가져오고, 시간 이내에 발견되지 않을 경우 마지막으로 알려진 위치로 대체합니다. [Xamarin.Essentials 지리적 위치 문서](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)에서 이 작업을 수행하는 방법을 자세히 알아볼 수 있습니다. 이 앱에는 오류 처리가 없습니다. 프로덕션 품질 앱에서는 발생하는 모든 예외(예: 위치 사용 불가)를 처리해야 합니다.
 
 ## <a name="summary"></a>요약
 

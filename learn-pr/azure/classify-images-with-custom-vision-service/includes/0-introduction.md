@@ -1,18 +1,17 @@
-[Microsoft Cognitive Services](https://azure.microsoft.com/services/cognitive-services/ "Microsoft Cognitive Services") is a suite of services and APIs backed by machine learning that enables developers to incorporate intelligent features such as facial recognition in photos and videos, sentiment analysis in text, and language understanding into their applications. The Microsoft [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) is among the newest members of the Cognitive Services suite. Its purpose is to create image classification models that "learn" from labeled images you provide. Want to know if a photo contains a picture of a flower? Train the Custom Vision Service with a collection of flower images, and it can tell you whether the next image includes a flower — or even what type of flower it is.
+[Microsoft Cognitive Services](https://azure.microsoft.com/services/cognitive-services/ "Microsoft Cognitive Services")는 기계 학습을 통해 지원되는 서비스 및 API 제품군으로, 개발자가 사진 및 비디오에 얼굴 인식 기능, 텍스트에 감정 분석, 응용 프로그램에 Language Understanding과 같은 지능적인 기능을 통합할 수 있도록 합니다. Microsoft [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)는 Cognitive Services 제품군의 최신 멤버 중 하나입니다. 이 서비스는 사용자가 제공한 레이블 이미지에서 “학습”되는 이미지 분류 모델을 만드는 것입니다. 사진에 꽃 그림이 포함되어 있는지 여부를 알고 싶나요? 꽃 이미지 모음으로 Custom Vision Service를 학습시키면 그다음 이미지에 꽃이 포함되어 있는지 또는 어떤 종류의 꽃인지도 알려줄 수 있습니다.
 
-### Learning objectives
+### <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Create a Custom Vision Service project
-- Train a Custom Vision Service model with tagged images
-- Test a Custom Vision Service model
-- Create apps that leverage Custom Vision Service models by calling REST APIs
+- Custom Vision Service 프로젝트 만들기
+- 태그 지정된 이미지로 Custom Vision Service 모델 학습시키기
+- Custom Vision Service 모델 테스트
+- REST API를 호출하여 Custom Vision Service 모델을 활용하는 앱 만들기
 
-### Prerequisites  
+### <a name="prerequisites"></a>필수 구성 요소  
 
-<!---TODO: Need links here and better verbiage; is Microsoft account needed?--->
-
-- A [Microsoft account](https://account.microsoft.com/account).
+<!---TODO: Need links here and better verbiage--->
+- [Microsoft 계정](https://account.microsoft.com/account)
 - Visual Studio Code
-- Node.js.
+- Node.js

@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.6-summary
-title: Summary
+title: 요약
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 요약
+  description: 요약
+  ms.openlocfilehash: e821f83206c9a9b2083d432de0331593e8a5befe
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728484"
 durationInMinutes: 2
-content: |
-  [!include[](includes/6-summary.md)]
+content: '[!include[](includes/6-summary.md)]'

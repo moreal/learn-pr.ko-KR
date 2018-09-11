@@ -1,50 +1,52 @@
-Making adjustments to server configuration is commonly performed with equipment in your on-premises environment. In this sense, you can consider Azure VMs to be an extension of that environment. You can alter configuration, manage networks, open or block traffic, and more through the Azure portal, the Azure CLI, or Azure PowerShell tools.
+서버 구성 조정은 일반적으로 온-프레미스 환경에서 장비를 사용하여 수행됩니다. 이러한 의미에서 Azure VM을 해당 환경의 확장으로 간주할 수 있습니다. Azure Portal, Azure CLI 또는 Azure PowerShell 도구를 통해 구성 변경, 네트워크 관리, 트래픽 열기 또는 차단 등의 작업을 수행할 수 있습니다.
 
-We've got our server running, and Apache is installed and serving up pages. Our security team mandates that we lock down all our servers, and we've not done anything to this VM yet. We didn't do anything, and it let Apache listen on port 80. Let's explore the Azure network configuration to see how to use the built-in security support to harden our server.
+서버를 실행시켰으며, Apache가 설치되고 페이지를 제공하고 있습니다. 보안 팀에서 모든 서버를 잠그도록 지시하여 이 VM에 대해 아직 아무 작업도 수행하지 않았습니다. 아무 작업도 수행하지 않고, Apache가 포트 80에서 수신 대기하게 했습니다. 서버 강화를 위해 기본 제공 보안 지원을 사용하는 방법을 확인하려면 Azure 네트워크 구성을 살펴보겠습니다.
 
-## Opening ports in Azure VMs
+## <a name="opening-ports-in-azure-vms"></a>Azure VM에서 포트 열기
 
-<!-- TODO: The Azure portal is inconsistent here in applying the NSG. By default, new VMs are locked down. 
+<!-- TODO: Azure portal is inconsistent here in applying the NSG.
+By default, new VMs are locked down. 
 
-Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g., other resources on the same local network) and from Azure Load Balancer (probe checks). -->
+Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g., other resources on the same local network), and from Azure's Load Balancer (probe checks). -->
 
-There are two steps to adjusting the configuration to support different protocols on the network. When you create a new VM, you have an opportunity to open a few common ports (RDP, HTTP, HTTPS, and SSH). However, if you require other changes to the firewall, you will need to adjust them manually.
+네트워크에서 다른 프로토콜을 지원하도록 구성을 조정하는 두 가지 단계가 있습니다. 새 VM을 만들 경우 몇 가지 공통 포트(RDP, HTTP, HTTPS 및 SSH)를 열 수 있습니다. 그러나 방화벽에 다른 변경이 필요하면 수동으로 조정해야 합니다.
 
-The process for this involves two steps:
+이 프로세스에는 다음 두 단계가 포함됩니다.
 
-1. Create a network security group.
-2. Create an inbound rule allowing traffic on the ports you need.
+1. 네트워크 보안 그룹 만들기
 
-### What is a network security group?
+1. 필요한 포트에서 트래픽을 허용하는 인바운드 규칙 만들기
 
-Virtual networks (VNets) are the foundation of the Azure networking model and provide isolation and protection. Network security groups (NSGs) are the primary tool you use to enforce and control network traffic rules at the networking level. NSGs are an optional security layer that provides a software firewall by filtering inbound and outbound traffic on the VNet. 
+### <a name="what-is-a-network-security-group"></a>네트워크 보안 그룹이란?
 
-Security groups can be associated to a network interface (for per host rules), a subnet in the virtual network (to apply to multiple resources), or both levels. 
+VNet(가상 네트워크)은 Azure 네트워킹 모델의 기초이며 격리 및 보호 기능을 제공합니다. NSG(네트워크 보안 그룹)는 네트워킹 수준에서 네트워크 트래픽 규칙을 적용하고 제어하는 데 사용하는 기본 도구입니다. NSG는 VNet에서 인바운드 및 아웃바운드 트래픽을 필터링하여 소프트웨어 방화벽을 제공하는 선택적 보안 계층입니다. 
 
-#### Security group rules
+보안 그룹은 네트워크 인터페이스(호스트별 규칙), 가상 네트워크의 서브넷(여러 리소스에 적용) 또는 두 수준 모두에 연결될 수 있습니다. 
 
-NGSs use _rules_ to allow or deny traffic moving through the network. Each rule identifies the source and destination address (or range), protocol, port (or range), direction (inbound or outbound), a numeric priority, and whether to allow or deny the traffic that matches the rule.
+#### <a name="security-group-rules"></a>보안 그룹 규칙
 
-![An illustration showing the architecture of network security groups in two different subnets. In one subnet, there are two virtual machines, each with their own network interface rules.  The subnet itself has a set of rules that applies to both the virtual machines. ](../media/7-nsg-rules.png)
+NGS는 _규칙_을 사용하여 네트워크를 통해 이동하는 트래픽을 허용하거나 거부합니다. 각 규칙은 원본 및 대상 주소(또는 범위), 프로토콜, 포트(또는 범위), 방향(인바운드 또는 아웃바운드), 숫자 우선 순위 및 규칙과 일치하는 트래픽의 허용 또는 거부를 구분합니다. 다음 그림에서는 서브넷 및 네트워크 인터페이스 수준에 적용되는 NSG 규칙을 보여줍니다.
 
-Each security group has a set of default security rules to apply the default network rules described above. These default rules cannot be modified but _can_ be overridden.
+![두 개의 다른 서브넷에서 네트워크 보안 그룹의 아키텍처를 보여주는 그림입니다. 한 서브넷에 각각 고유한 네트워크 인터페이스 규칙을 사용하는 두 개의 가상 머신이 있습니다.  서브넷 자체에는 가상 머신 모두에 적용되는 규칙 집합이 있습니다. ](../media-drafts/7-nsg-rules.png)
 
-#### How Azure uses network rules
+각 보안 그룹에는 위에서 설명한 기본 네트워크 규칙을 적용하는 기본 보안 규칙 집합이 있습니다. 이러한 기본 규칙은 수정할 수 없지만 재정의_할 수_는 있습니다.
 
-For inbound traffic, Azure processes the security group associated to the subnet and then the security group applied to the network interface. Outbound traffic is handled in the opposite order (the network interface first, followed by the subnet).
+#### <a name="how-azure-uses-network-rules"></a>Azure에서 네트워크 규칙을 사용하는 방법
 
-> [!WARNING]  
-> Keep in mind that security groups are optional at both levels. If no security group is applied, then **all traffic is allowed** by Azure. If the VM has a public IP, this could be a serious risk, particularly if the OS doesn't provide a built-in firewall.
+인바운드 트래픽의 경우 Azure에서는 서브넷에 연결된 보안 그룹을 처리한 다음, 네트워크 인터페이스에 적용된 보안 그룹을 처리합니다. 아웃바운드 트래픽은 반대 순서로 처리됩니다(먼저 네트워크 인터페이스, 다음으로 서브넷으로 이어짐).
 
-The rules are evaluated in _priority order_, starting with the **lowest priority** rule. Deny rules always **stop** the evaluation. For example, if a network interface rule blocks an outbound request, any rules applied to the subnet will not be checked. For traffic to be allowed through the security group, it must pass through _all_ applied groups.
+> [!WARNING]
+> 보안 그룹은 두 수준 모두에서 선택 사항임을 명심하세요. 적용된 보안 그룹이 없으면 Azure에서 **모든 트래픽을 허용합니다**. VM에 공용 IP가 있는 경우 OS에서 기본 제공 방화벽을 제공하지 않으면 심각한 위험이 될 수 있습니다.
 
-The last rule is always a **Deny All** rule. This is a default rule added to every security group for both inbound and outbound traffic with a priority of 65500. That means to have traffic pass through the security group, _you must have an allow rule_, or the final default rule will block it.
+규칙은 _우선 순위_로 평가되며 **가장 낮은 우선 순위** 규칙으로 시작됩니다. 거부 규칙은 항상 평가를 **중지**합니다. 예를 들어 네트워크 인터페이스 규칙이 아웃바운드 요청을 차단하면 서브넷에 적용된 모든 규칙을 검사하지 않습니다. 트래픽이 보안 그룹을 통해 허용되려면 적용된 _모든_ 그룹을 통과해야 합니다.
 
-> [!NOTE]  
-> SMTP (port 25) is a special case. Depending on your subscription level and when your account was created, outbound SMTP traffic may be blocked. You can request to remove this restriction with business justification.
+마지막 규칙은 항상 **모두 거부** 규칙입니다. 이는 우선 순위가 65500인 인바운드 및 아웃바운드 트래픽 모두의 모든 보안 그룹에 추가된 기본 규칙입니다. 즉, 트래픽이 보안 그룹을 통과하게 하려면 _허용 규칙이 있어야 합니다_. 그렇지 않으면 마지막 기본 규칙이 트래픽을 차단합니다.
 
-Since we didn't create a security group for this VM, let's do that and apply it.
+> [!NOTE]
+> SMTP(25 포트)는 구독 수준에 따른 특별한 경우입니다. 계정이 만들어질 때 아웃바운드 SMTP 트래픽이 차단될 수 있습니다. 비즈니스 근거를 사용하여 이 제한을 제거하도록 요청할 수 있습니다.
 
-## Creating network security groups
+이 VM에 대한 보안 그룹을 만들지 않았으므로 해당 작업을 수행하고 적용해 보겠습니다.
 
-Security groups are managed resources like most everything in Azure; you can create them in the Azure portal or through command-line scripting tools. The challenge is in defining the rules. Let's look at defining a new rule to allow HTTP access and block everything else.
+## <a name="creating-network-security-groups"></a>네트워크 보안 그룹 만들기
+
+보안 그룹은 Azure의 모든 요소 대부분과 같이 관리되는 리소스이며, Azure Portal이나 명령줄 스크립팅 도구를 통해 만들 수 있습니다. 문제는 규칙을 정의하는 것입니다. HTTP 액세스를 허용하고 다른 모든 항목을 차단하는 새 규칙을 정의하는 방법을 살펴보겠습니다.

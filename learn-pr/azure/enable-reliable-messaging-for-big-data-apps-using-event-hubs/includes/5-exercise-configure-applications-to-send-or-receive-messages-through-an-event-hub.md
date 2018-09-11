@@ -1,99 +1,99 @@
-You're now ready to configure your publisher and consumer applications for your event hub.
+이제 이벤트 허브에 대한 게시자 및 소비자 응용 프로그램을 구성할 준비가 되었습니다.
 
-In this unit, you'll configure these applications to send or receive messages through your event hub. These applications are stored in a GitHub repository.
+이 단원에서는 이벤트 허브를 통해 메시지를 보내거나 받도록 이러한 응용 프로그램을 구성합니다. 이러한 응용 프로그램은 GitHub 리포지토리에 저장됩니다.
 
-You'll configure two separate applications; one acts as the message sender (**SimpleSend**), the other as the message receiver (**EventProcessorSample**). These are Java applications, which enable you to do everything within the browser. However, the same configuration is needed for any platform, such as .NET.
+두 개의 개별 응용 프로그램을 구성합니다. 하나는 메시지 발신자(**SimpleSend**)로 사용되고 다른 하나는 메시지 수신자(**EventProcessorSample**)로 사용됩니다. 이는 브라우저 내에서 모든 작업을 수행할 수 있는 Java 응용 프로그램입니다. 그러나 .NET과 같은 모든 플랫폼에 대한 동일한 구성이 필요합니다.
 
-## Create a general-purpose, standard storage account
+## <a name="create-a-general-purpose-standard-storage-account"></a>범용 표준 저장소 계정 만들기
 
-The Java receiver application, that you'll configure in this unit, stores messages in Azure Blob Storage. Blob Storage requires a storage account.
+이 단원에서 구성하는 Java 수신자 응용 프로그램은 Azure Blob Storage에 메시지를 저장합니다. Blob Storage를 사용하려면 저장소 계정이 필요합니다.
 
-1. Create a storage account (general-purpose V2) in the resource group using the following command:
+1. 다음 명령을 사용하여 리소스 그룹에서 저장소 계정(범용 V2)을 만듭니다.
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name>  --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--name (required)  |Enter a name for your storage account.|
-    |--resource-group (required)  |Enter the resource group you created in the previous unit.|
-    |--location (optional)    |Enter the location you used to create your resource group in the previous unit.|
+    |--name(필수)  |저장소 계정의 이름을 입력합니다.|
+    |--resource-group(필수)  |이전 단원에서 만든 리소스 그룹을 입력합니다.|
+    |--location(선택)    |이전 단원에서 리소스 그룹을 만드는 데 사용한 위치를 입력합니다.|
 
-1. List all the access keys associated with your storage account using the following command:
+1. 다음 명령을 사용하여 저장소 계정과 연결된 모든 액세스 키를 나열합니다.
 
     ```azurecli
     az storage account keys list --account-name <storage account name> --resource-group <resource group name>
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |--account-name (required)  |Enter the name for your storage account.|
-    |--resource-group (required)  |Enter the resource group you created in the previous unit.|
+    |--account-name(필수)  |저장소 계정의 이름을 입력합니다.|
+    |--resource-group(필수)  |이전 단원에서 만든 리소스 그룹을 입력합니다.|
 
-     Access keys associated with your storage account are listed. Copy and save the value of **key** for future use. You'll need this key to access your storage account.
+     저장소 계정과 연결된 액세스 키가 나열됩니다. 나중에 사용할 수 있도록 **key** 값을 복사하고 저장합니다. 저장소 계정에 액세스하려면 이 키가 필요합니다.
 
-1. View the connections string for your storage account using the following command:
+1. 다음 명령을 사용하여 저장소 계정의 연결 문자열을 봅니다.
 
     ```azurecli
     az storage account show-connection-string -n <storage account name> -g <resource group name>
     ```
 
-    |Parameter      |Description|
+    |매개 변수      |설명|
     |---------------|-----------|
-    |-n (required)  |Enter the name for your storage account.|
-    |-g (required)  |Enter the name of your resource group.|
+    |-n(필수)  |저장소 계정의 이름을 입력합니다.|
+    |-g(필수)  |리소스 그룹의 이름을 입력합니다.|
 
-    This command returns the connection details for the storage account. Copy and save the value of **connectionString**.
+    이 명령은 저장소 계정의 연결 세부 정보를 반환합니다. **connectionString** 값을 복사하고 저장합니다.
 
-1. Create a container called **messages** in your storage account using the following command. Use the **connectionString** you copied in the previous step:
+1. 다음 명령을 사용하여 저장소 계정에서 **messages**라는 컨테이너를 만듭니다. 이전 단계에서 복사한 **connectionString**을 사용합니다.
 
     ```azurecli
     az storage container create -n messages --connection-string "<connection string>"
     ```
 
-## Clone the Event Hubs GitHub repository
+## <a name="clone-the-event-hubs-github-repository"></a>Event Hubs GitHub 리포지토리 복제
 
-Use the following steps to clone the Event Hubs GitHub repository.
+다음 단계를 사용하여 Event Hubs GitHub 리포지토리를 복제합니다.
 
-1. Sign in to Azure Cloud Shell (Bash).
+1. Azure Cloud Shell(Bash)에 로그인합니다.
 
-1. The source files for the applications that you'll build In this unit are located in a [GitHub repository](https://github.com/Azure/azure-event-hubs). Use the following commands to make sure that you are in your home directory in Cloud Shell, and then to clone this repository:
+1. 이 단원에서 빌드할 응용 프로그램의 원본 파일은 [GitHub 리포지토리](https://github.com/Azure/azure-event-hubs)에 있습니다. 다음 명령을 사용하여 Cloud Shell의 홈 디렉터리에 있는지 확인한 후 이 리포지토리를 복제합니다.
 
     ```azurecli
     cd ~
     git clone https://github.com/Azure/azure-event-hubs.git
     ```
-    The repository is cloned to `/home/<username>/azure-event-hubs`.
+    리포지토리는 `/home/<username>/azure-event-hubs`에 복제됩니다.
 
-## Use nano to edit SimpleSend.java
+## <a name="use-nano-to-edit-simplesendjava"></a>nano를 사용하여 SimpleSend.java 편집
 
-Use the **nano** editor to edit the SimpleSend application and add your Event Hubs namespace, event hub name, shared access policy name, and primary key. The main commands are displayed at the bottom of the editor window; in this unit, you'll need to write out your edits using CTRL +O, and then ENTER to confirm the output file name, and exit the editor using CTRL +X.
+**nano** 편집기를 사용하여 SimpleSend 응용 프로그램을 편집하고 Event Hubs 네임스페이스, 이벤트 허브 이름, 공유 액세스 정책 이름 및 기본 키를 추가합니다. 기본 명령은 편집기 창의 맨 아래에 표시됩니다. 이 단원에서는 Ctrl+O를 사용하여 편집한 내용을 작성하고 Enter 키를 눌러 출력 파일 이름을 확인한 다음, Ctrl+X를 사용하여 편집기를 종료해야 합니다.
 
-1. Change to the **SimpleSend** folder using the following command:
+1. 다음 명령을 사용하여 **SimpleSend** 폴더로 변경합니다.
 
     ```azurecli
     cd azure-event-hubs/samples/Java/Basic/SimpleSend/src/main/java/com/microsoft/azure/eventhubs/samples/SimpleSend
     ```
 
-1. Open the **SimpleSend.java** file in the **nano** editor using the following command:
+1. 다음 명령을 사용하여 **nano** 편집기에서 **SimpleSend.java** 파일을 엽니다.
 
     ```azurecli
     nano SimpleSend.java
     ```
 
-1. In the nano editor, locate and replace the following strings:
+1. nano 편집기에서 다음 문자열을 찾아서 바꿉니다.
 
-    - `"Your Event Hubs namespace name"` with the name of your event hub namespace.
-    - `"Your event hub"` with the name of your event hub.
-    - `"Your primary SAS key"` with the value of the **primaryKey** key for your event hub namespace that you saved earlier.
-    - `"Your policy name"` with **RootManageSharedAccessKey**.
+    - `"Your Event Hubs namespace name"`을 이벤트 허브 네임스페이스의 이름으로 바꿉니다.
+    - `"Your event hub"`를 이벤트 허브 이름으로 바꿉니다.
+    - `"Your primary SAS key"`를 이전에 저장한 이벤트 허브 네임스페이스에 대한 **primaryKey** 키 값으로 바꿉니다.
+    - `"Your policy name"`을 **RootManageSharedAccessKey**로 바꿉니다.
  
-        When you create an Event Hubs namespace, a 256-bit SAS key called **RootManageSharedAccessKey** is created that has an associated pair of primary and secondary keys that grant send, listen, and manage rights to the namespace. In the previous unit, you displayed the key using an Azure CLI command, and you can also find this key by opening the **Shared access policies** page for your Event Hubs namespace in the Azure portal.
+        Event Hubs 네임스페이스를 만들 때 **RootManageSharedAccessKey**라는 256비트 SAS 키가 만들어지고, 여기에는 네임스페이스에 대해 전송, 수신 대기 및 관리 권한을 부여하는 연결된 기본 및 보조 키 쌍이 포함됩니다. 이전 단원에서 Azure CLI 명령을 사용하여 키를 표시했고, Azure Portal의 Event Hubs 네임스페이스에 대한 **공유 액세스 정책** 페이지를 열어 이 키를 찾을 수도 있습니다.
 
-    ![Configuration details for sender application](../media-draft/5-sender-configure.png)
+    ![발신자 응용 프로그램에 대한 구성 세부 정보](../media-draft/5-sender-configure.png)
 
-1. Save **SimpleSend.java** using the following command, and exit nano:
+1. 다음 명령을 사용하여 **SimpleSend.java**를 저장하고 nano를 종료합니다.
 
     ```azurecli
     CTRL +O
@@ -101,60 +101,60 @@ Use the **nano** editor to edit the SimpleSend application and add your Event Hu
     CTRL +X
     ```
 
-## Use Maven to build SimpleSend.java
+## <a name="use-maven-to-build-simplesendjava"></a>Maven을 사용하여 SimpleSend.java 빌드
 
-You'll now build the Java application using **mvn** commands.
+이제 **mvn** 명령을 사용하여 Java 응용 프로그램을 빌드합니다.
 
-1. Change to the main **SimpleSend** folder using the following command:
+1. 다음 명령을 사용하여 기본 **SimpleSend** 폴더로 변경합니다.
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     ```
 
-1. Build the Java SimpleSend application using the following command. This ensures that your application  uses the connection details for your event hub:
+1. 다음 명령을 사용하여 Java SimpleSend 응용 프로그램을 빌드합니다. 이렇게 하면 응용 프로그램이 이벤트 허브에 대한 연결 세부 정보를 사용합니다.
 
     ```azurecli
     mvn clean package -DskipTests
     ```
 
-    The build process may take several minutes to complete. Ensure that you see the **[INFO] BUILD SUCCESS** message before continuing.
+    빌드 프로세스를 완료하는 데 몇 분이 걸릴 수 있습니다. 계속하기 전에 **[정보] 빌드 성공** 메시지가 표시되는지 확인합니다.
 
-    ![Build results for sender application](../media-draft/5-sender-build.png)
+    ![발신자 응용 프로그램에 대한 빌드 결과](../media-draft/5-sender-build.png)
 
-## Use nano to edit EventProcessorSample.java
+## <a name="use-nano-to-edit-eventprocessorsamplejava"></a>nano를 사용하여 EventProcessorSample.java 편집
 
-You'll now configure a **receiver** (also known as **subscribers** or **consumers**) application to ingest data from your event hub.
+이벤트 허브에서 데이터를 수집하도록 **수신자**(**구독자** 또는 **소비자**라고도 함) 응용 프로그램을 구성합니다.
 
-For the receiver application, two methods are available; **EventHubReceiver** and **EventProcessorHost**. EventProcessorHost is built on top of EventHubReceiver, but provides simpler programmatic interface than EventHubReceiver. EventProcessorHost can automatically distribute message partitions across multiple instances of EventProcessorHost using the same storage account.
+수신자 응용 프로그램의 경우 두 개의 메서드인 **EventHubReceiver** 및 **EventProcessorHost**를 사용할 수 있습니다. EventProcessorHost는 EventHubReceiver의 맨 위에 빌드되지만 EventHubReceiver보다 더 단순한 프로그래밍 인터페이스를 제공합니다. EventProcessorHost는 동일한 저장소 계정을 사용하여 EventProcessorHost의 여러 인스턴스에서 자동으로 메시지 파티션을 배포할 수 있습니다.
 
-In this unit, you’ll use the EventProcessorHost method. You'll again use nano, and edit the EventProcessorSample application to add your Event Hubs namespace, event hub name, shared access policy name and primary key, storage account name, connection string, and container name.
+이 단원에서는 EventProcessorHost 메서드를 사용합니다. 다시 nano를 사용하고 EventProcessorSample 응용 프로그램을 편집하여 Event Hubs 네임스페이스, 이벤트 허브 이름, 공유 액세스 정책 이름 및 기본 키, 저장소 계정 이름, 연결 문자열, 컨테이너 이름을 추가합니다.
 
-1. Change to the **EventProcessorSample** folder using the following command:
+1. 다음 명령을 사용하여 **EventProcessorSample** 폴더로 변경합니다.
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample/src/main/java/com/microsoft/azure/eventhubs/samples/eventprocessorsample
     ```
 
-1. Open the **EventProcessorSample.java** file in the **nano** editor using the following command:
+1. 다음 명령을 사용하여 **nano** 편집기에서 **EventProcessorSample.java** 파일을 엽니다.
 
     ```azurecli
     nano EventProcessorSample.java
     ```
-1. Locate and replace the following strings in the nano editor:
+1. nano 편집기에서 다음 문자열을 찾아서 바꿉니다.
 
-    - `----ServiceBusNamespaceName----` with the name of your Event Hubs namespace.
-    - `----EventHubName----` with the name of your event hub.
-    - `----SharedAccessSignatureKeyName----` with **RootManageSharedAccessKey**.
-    - `----SharedAccessSignatureKey----` with the value of the **primaryKey** key for your Event Hubs namespace that you saved earlier.
-    - `----AzureStorageConnectionString----` with your storage account connection string that you saved earlier.
-    - `----StorageContainerName----` with **messages**.
-    - `----HostNamePrefix----` with the name of your storage account.
+    - `----ServiceBusNamespaceName----`을 Event Hubs 네임스페이스 이름으로 바꿉니다.
+    - `----EventHubName----`를 이벤트 허브 이름으로 바꿉니다.
+    - `----SharedAccessSignatureKeyName----`을 **RootManageSharedAccessKey**로 바꿉니다.
+    - `----SharedAccessSignatureKey----`를 이전에 저장한 Event Hubs 네임스페이스에 대한 **primaryKey** 키 값으로 바꿉니다.
+    - `----AzureStorageConnectionString----`을 이전에 저장한 저장소 계정 연결 문자열로 바꿉니다.
+    - `----StorageContainerName----`을 **messages**로 바꿉니다.
+    - `----HostNamePrefix----`를 저장소 계정 이름으로 바꿉니다.
 
-    ![Configuration details for receiver application](../media-draft/5-receiver-configure.png)
+    ![수신자 응용 프로그램에 대한 구성 세부 정보](../media-draft/5-receiver-configure.png)
 
-1. Save **EventProcessorSample.java** using the following command and exit nano:
+1. 다음 명령을 사용하여 **EventProcessorSample.java**를 저장하고 nano를 종료합니다.
 
     ```azurecli
     CTRL +O
@@ -162,28 +162,28 @@ In this unit, you’ll use the EventProcessorHost method. You'll again use nano,
     CTRL +X
     ```
 
-## Use Maven to build EventProcessorSample.java
+## <a name="use-maven-to-build-eventprocessorsamplejava"></a>Maven을 사용하여 EventProcessorSample.java 빌드
 
-1. Change to the main **EventProcessorSample** folder using the following command:
+1. 다음 명령을 사용하여 기본 **EventProcessorSample** 폴더로 변경합니다.
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     ```
 
-1. Build the Java SimpleSend application using the following command. This ensures that your application uses the connection details for your event hub:
+1. 다음 명령을 사용하여 Java SimpleSend 응용 프로그램을 빌드합니다. 이렇게 하면 응용 프로그램이 이벤트 허브에 대한 연결 세부 정보를 사용합니다.
 
     ```azurecli
     mvn clean package -DskipTests
     ```
 
-    The build process may take several minutes to complete. Ensure that you see a **[INFO] BUILD SUCCESS** message before continuing.
+    빌드 프로세스를 완료하는 데 몇 분이 걸릴 수 있습니다. 계속하기 전에 **[정보] 빌드 성공** 메시지가 표시되는지 확인합니다.
 
-    ![Build results for receiver application](../media-draft/5-receiver-build.png)
+    ![수신자 응용 프로그램에 대한 빌드 결과](../media-draft/5-receiver-build.png)
 
-## Start the sender and receiver apps
+## <a name="start-the-sender-and-receiver-apps"></a>발신자 및 수신자 앱 시작
 
-1. Run Java application from the command line by using the **java** command, and specifying a .jar package. Use the following commands to start the SimpleSend application:
+1. **java** 명령을 사용하고 .jar 패키지를 지정하여 명령줄에서 Java 응용 프로그램을 실행합니다. 다음 명령을 사용하여 SimpleSend 응용 프로그램을 시작합니다.
 
     ```azurecli
     cd ~
@@ -192,11 +192,11 @@ In this unit, you’ll use the EventProcessorHost method. You'll again use nano,
     ENTER
     ```
 
-1. When you see **Send Complete...**, press ENTER.
+1. **보내기 완료...** 가 표시되면 Enter 키를 누릅니다.
 
-    ![Run results for sender application](../media-draft/5-sender-run.png)
+    ![발신자 응용 프로그램에 대한 실행 결과](../media-draft/5-sender-run.png)
 
-1. Start the EventProcessorSample application using the following command.
+1. 다음 명령을 사용하여 EventProcessorSample 응용 프로그램을 시작합니다.
 
     ```azurecli
     cd ~
@@ -205,10 +205,10 @@ In this unit, you’ll use the EventProcessorHost method. You'll again use nano,
     ENTER
     ```
 
-1. When messages stop being displayed to the console, press ENTER.
+1. 메시지가 콘솔에 표시되는 작업이 중지하면 Enter 키를 누릅니다.
 
-    ![Run results for receiver application](../media-draft/5-receiver-run.png)
+    ![수신자 응용 프로그램에 대한 실행 결과](../media-draft/5-receiver-run.png)
 
-## Summary
+## <a name="summary"></a>요약
 
-You've now configured a sender application ready to send messages to your event hub. You've also configured a receiver application ready to receive messages from your event hub.
+이제 이벤트 허브로 메시지를 보낼 수 있도록 발신자 응용 프로그램이 구성되었습니다. 이제 이벤트 허브에서 메시지를 받을 수 있도록 수신자 응용 프로그램이 구성되었습니다.

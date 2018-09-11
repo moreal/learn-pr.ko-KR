@@ -1,76 +1,76 @@
-Suppose you have an application for the sales team in your global company. Each team member has a mobile phone where your app will be installed. A web service hosted in Azure implements the business logic for your application and stores information in Azure SQL Database. There is one instance of the web service for each geographical region. You have identified the following purposes for sending messages between the mobile app and the web service:
+다국적 기업의 영업 팀에서 특정 응용 프로그램을 사용한다고 가정해 보겠습니다. 각 팀 멤버에게는 앱을 설치할 휴대폰이 있습니다. Azure에서 호스팅되는 웹 서비스가 응용 프로그램의 비즈니스 논리를 구현하고 정보를 Azure SQL Database에 저장합니다. 각 지역에는 웹 서비스 인스턴스가 하나씩 있습니다. 모바일 앱과 웹 서비스 간에 메시지를 보내는 용도는 다음과 같이 확인되었습니다.
 
-- Messages that relate to individual sales must be sent only to the web service instance in the user's region.
-- Messages that relate to sales performance must be sent to all instances of the web service.
+- 개별 판매와 관련된 메시지는 사용자 지역의 웹 서비스 인스턴스로만 전송해야 합니다.
+- 영업 성과 관련 메시지는 웹 서비스의 모든 인스턴스로 전송해야 합니다.
 
-You have decided to implement a Service Bus queue for the first use case and the Service Bus topic for the second use case.
+첫 번째 사용 사례에는 Service Bus 큐를, 두 번째 사용 사례에는 Service Bus 항목을 구현하기로 결정했습니다.
 
-In this exercise, you will create a Service Bus namespace, which will contain both a queue and a topic with subscriptions.
+이 연습에서는 구독과 함께 큐와 항목을 모두 포함할 Service Bus 네임스페이스를 만듭니다.
 
-## Create a Service Bus namespace
+## <a name="create-a-service-bus-namespace"></a>Service Bus 네임스페이스 만들기
 
-In Azure Service Bus, a namespace is a container, with a unique fully qualified domain name, for queues, topics, and relays. You must start by creating the namespace.
+Azure Service Bus의 네임스페이스는 고유한 정규화된 도메인 이름이 지정된 큐, 항목 및 릴레이용 컨테이너입니다. 먼저 네임스페이스를 만들어야 합니다.
 
-Each namespace also has primary and secondary shared access signature encryption keys. A sending or receiving component must provide these keys when it connects to gain access to the objects within the namespace.
+각 네임스페이스에는 기본 및 보조 SAS(공유 액세스 서명) 암호화 키도 포함됩니다. 전송 또는 수신 구성 요소는 네임스페이스 내의 개체에 액세스하기 위해 연결할 때 이러한 키를 제공해야 합니다.
 
-To create a Service Bus namespace by using the Azure portal, follow these steps:
+Azure Portal을 사용하여 Service Bus 네임스페이스를 만들려면 다음 단계를 수행하세요.
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/) and log in with your usual Azure account credentials.
+1. 브라우저에서 [Azure Portal](https://portal.azure.com/)로 이동한 다음 평상시에 사용하는 Azure 계정 자격 증명을 사용하여 로그인합니다.
 
-1. In the navigation on the left, click **All services**.
+1. 왼쪽 탐색 영역에서 **모든 서비스**를 클릭합니다.
 
-1. In the **All Services** blade, scroll down to the **INTEGRATION** section, and then click **Service Bus**.
+1. **모든 서비스** 블레이드에서 아래쪽의 **통합** 섹션으로 스크롤한 다음 **Service Bus**를 클릭합니다.
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-1.png)
+    ![Service Bus 네임스페이스 만들기](../media-draft/3-create-namespace-1.png)
 
-1. In the top left of the **Service Bus** blade, click **Add**.
+1. **Service Bus** 블레이드의 왼쪽 위에서 **추가**를 클릭합니다.
 
-1. In the **Name** text box, type a unique name for the namespace. For example "salesteamapp" + *your initials* + *current date*.
+1. **이름** 텍스트 상자에 네임스페이스의 고유한 이름을 입력합니다. 예를 들어 "salesteamapp" + *사용자 이니셜* + *현재 날짜*를 입력합니다.
 
-1. In the **Pricing tier** drop-down list, select **Standard**.
+1. **가격 책정 계층** 드롭다운 목록에서 **Standard**를 선택합니다.
 
-1. In the **Subscription** drop-down list, select your subscription.
+1. **구독** 드롭다운 목록에서 구독을 선택합니다.
 
-1. Under **Resource group**, select **Create new**, and then type **SalesTeamAppRG**.
+1. **리소스 그룹**에서 **새로 만들기**를 선택하고 **SalesTeamAppRG**를 입력합니다.
 
-1. In the **Location** drop-down list, select a location near you, and then click **Create**. Azure creates the new Service Bus namespace.
+1. **위치** 드롭다운 목록에서 사용자 지역과 가까운 위치를 선택하고 **만들기**를 클릭합니다. 새 Service Bus 네임스페이스가 생성됩니다.
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-2.png)
+    ![Service Bus 네임스페이스 만들기](../media-draft/3-create-namespace-2.png)
 
-## Create a Service Bus queue
+## <a name="create-a-service-bus-queue"></a>Service Bus 큐 만들기
 
-Now that you have a namespace, you can create a queue for messages about individual sales. To do this, follow these steps:
+이제 네임스페이스를 만들었으므로 개별 판매 관련 메시지용으로 큐를 만들 수 있습니다. 이렇게 하려면 다음 단계를 수행하세요.
 
-1. In the **Service Bus** blade, click **Refresh**. The namespace you just created is displayed.
+1. **Service Bus** 블레이드에서 **새로 고침**을 클릭합니다. 방금 만든 네임스페이스가 표시됩니다.
 
-1. Click the namespace you just created.
+1. 방금 만든 네임스페이스를 클릭합니다.
 
-1. In the top left of the namespace blade, click **+ Queue**.
+1. 네임스페이스 블레이드의 왼쪽 위에서 **+ 큐**를 클릭합니다.
 
-1. In the **Create queue** blade, in the **Name** text box, type **salesmessages**, and then click **Create**. Azure creates the queue in your namespace.
+1. **큐 만들기** 블레이드의 **이름** 텍스트 상자에 **salesmessages**를 입력하고 **만들기**를 클릭합니다. 네임스페이스에 큐가 생성됩니다.
 
-    ![Creating a queue](../media-draft/3-create-queue.png)
+    ![큐 만들기](../media-draft/3-create-queue.png)
 
-## Create a Service Bus topic and subscriptions
+## <a name="create-a-service-bus-topic-and-subscriptions"></a>Service Bus 항목과 구독 만들기
 
-You also want to create a topic that will be used for messages that relate to sales performance. Multiple instances of the business logic web service will subscribe to this topic from different countries. Each message will be delivered to multiple instances.
+영업 성과 관련 메시지에 사용할 항목도 만들려고 합니다. 그러면 여러 국가에서 사용되는 비즈니스 논리 웹 서비스의 복수 인스턴스가 이 항목을 구독하게 됩니다. 각 메시지는 여러 인스턴스로 배달됩니다.
 
-Follow these steps:
+다음 단계를 수행하세요.
 
-1. In the **Service Bus Namespace** blade, click **+ Topic**.
+1. **Service Bus 네임스페이스** 블레이드에서 **+ 항목**을 클릭합니다.
 
-1. In the **Create topic** blade, in the **Name** text box, type **salesperformancemessages**, and then click **Create**. Azure creates the topic in your namespace.
+1. **항목 만들기** 블레이드의 **이름** 텍스트 상자에 **salesperformancemessages**를 입력하고 **만들기**를 클릭합니다. 네임스페이스에 항목이 생성됩니다.
 
-    ![Creating a topic](../media-draft/3-create-topic.png)
+    ![항목 만들기](../media-draft/3-create-topic.png)
 
-1. When the topic has been created, in the **Service Bus Namespace** blade, under **Entities**, click **Topics**.
+1. 항목이 생성되면 **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **항목**을 클릭합니다.
 
-1. In the list of topics, click **salesperformancemessages**, and then click **+ Subscription**.
+1. 항목 목록에서 **salesperformancemessages**를 클릭한 다음 **+ 구독**을 클릭합니다.
 
-1. In the **Name** text box, type **Americas**, and then click **Create**.
+1. **이름** 텍스트 상자에 **Americas**를 입력한 다음 **만들기**를 클릭합니다.
 
-1. Click **+ Subscription**.
+1. **+ 구독**을 클릭합니다.
 
-1. In the **Name** text box, type **EuropeAndAfrica**, and then click **Create**.
+1. **이름** 텍스트 상자에 **EuropeAndAfrica**를 입력한 다음 **만들기**를 클릭합니다.
 
-You have built the infrastructure required to use Service Bus to increase the resilience of your sales force distributed application. You have created a queue for messages about individual sales and a topic for messages about sales performance. The topic includes multiple subscriptions because messages sent to that topic can be delivered to multiple recipient web services around the world.
+영업용 분산 응용 프로그램의 복원 기능을 개선하기 위해 Service Bus를 사용하는 데 필요한 인프라를 빌드했습니다. 그리고 개별 판매 관련 메시지용 큐와 영업 성과 관련 메시지용 항목을 만들었습니다. 항목으로 전송되는 메시지는 전 세계의 여러 받는 사람 웹 서비스로 배달될 수 있으므로, 항목은 여러 구독을 포함합니다.

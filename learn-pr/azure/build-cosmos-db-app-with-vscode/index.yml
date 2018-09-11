@@ -1,24 +1,27 @@
 ### YamlMime:Module
 uid: learn.cosmos-db-app-with-vscode
 metadata:
-  title: Build a .NET Core app for Azure Cosmos DB in Visual Studio Code
-  description: Learn how to create a .NET Core application to store and query data in Azure Cosmos DB by using Visual Studio Code.
+  title: Visual Studio Code를 사용하여 Azure Cosmos DB용 .NET Core 앱 빌드
+  description: Visual Studio Code를 사용하여 Azure Cosmos DB에 데이터를 저장하고 쿼리하는 .NET Core 응용 프로그램을 만드는 방법을 알아봅니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Build a .NET Core app for Azure Cosmos DB in Visual Studio Code
-summary: Learn how to build a database app to store and query data in Azure Cosmos DB by using Visual Studio Code.
-abstract: | 
-  In this module, you will:
-  - Create an application to store and query data in Azure Cosmos DB
-  - Use the Integrated Terminal in Visual Studio Code to quickly create a console application
-  - Add Azure Cosmos DB functionality with the help of the Azure Cosmos DB extension for Visual Studio Code
-prerequisites: |
-  - Must have [Visual Studio Code](https://code.visualstudio.com/) installed
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 3ab3f36b260d45addb159c1faf0543842a7aca8e
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847608"
+title: Visual Studio Code를 사용하여 Azure Cosmos DB용 .NET Core 앱 빌드
+summary: Visual Studio Code를 사용하여 Azure Cosmos DB에 데이터를 저장하고 쿼리하는 데이터베이스 앱을 빌드하는 방법을 알아봅니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - Azure Cosmos DB에 데이터를 저장하고 쿼리하는 응용 프로그램을 만듭니다.
+
+  - Visual Studio Code의 통합 터미널을 사용하여 콘솔 응용 프로그램을 빠르게 만듭니다.
+
+  - Visual Studio Code용 Azure Cosmos DB 확장을 활용하여 Azure Cosmos DB 기능을 추가합니다.
+prerequisites: >
+  - [Visual Studio Code](https://code.visualstudio.com/)가 설치되어 있어야 합니다.
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -29,7 +32,6 @@ products:
 - azure-cosmos-db
 - vs-code
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.cosmos-db-app-with-vscode.1-introduction
 - learn.cosmos-db-app-with-vscode.2-setup
 - learn.cosmos-db-app-with-vscode.3-crud-operations

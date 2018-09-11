@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.2-create-service
+interactive: bash
+title: Computer Vision 서비스 만들기
+metadata:
+  title: Computer Vision 서비스 만들기
+  description: Computer Vision 서비스 만들기
+  ms.openlocfilehash: dc75dff8f715bc31251e59c7560566b252733a2a
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833097"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-service.md)]'

@@ -1,16 +1,15 @@
-You performed a migration by creating an Azure SQL Database and used the Data Migration Assistant to migrate a local, on-premises, SQL Server database to the new Azure SQL Database.
+Azure SQL Database를 만들어 마이그레이션을 수행했으며, Data Migration Assistant를 사용하여 로컬/온-프레미스/SQL Server 데이터베이스를 새 Azure SQL Database로 마이그레이션했습니다.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="cleanup"></a>정리
 
-Use the following steps to delete resources created in this module:
+이 모듈에서 만든 리소스를 삭제하려면 다음 단계를 수행합니다.
 
-1. Sign in to your Azure portal.
+1. Azure Portal에 로그인합니다.
 
-1. Click **All resources**.
+1. **모든 리소스**를 클릭합니다.
 
-1. Select the database that you created for this module.
+1. 이 모듈용으로 만든 데이터베이스를 클릭합니다.
 
-1. On the database **Overview** page, click **Delete**.
+1. 데이터베이스 **개요** 페이지에서 **삭제**를 클릭합니다.
 
-1. Enter the database name and press **Delete**.
+1. 데이터베이스 이름을 입력한 다음 **Delete** 키를 누릅니다.

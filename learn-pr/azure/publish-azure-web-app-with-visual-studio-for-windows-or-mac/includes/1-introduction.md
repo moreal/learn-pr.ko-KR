@@ -5,6 +5,7 @@ Visual Studio 및 Azure App Service는 Azure에서 웹앱을 만들고 게시하
 ## <a name="learning-objectives"></a>학습 목표
 
 이 모듈에서는 다음을 수행합니다.
+
 - PC 또는 Mac용 Visual Studio 2017에서 ASP.NET 웹앱을 만듭니다.
 - Visual Studio 2017을 사용하여 ASP.NET 웹앱을 Azure에 게시합니다.
 - PC 또는 Mac용 Visual Studio를 사용하여 Azure의 ASP.NET 응용 프로그램을 업데이트합니다.

@@ -60,7 +60,7 @@ SQL Server Developer Edition이 **비프로덕션 용도**로 사용할 수 있�
 
 Azure Marketplace에서 Developer Edition용 SQL Server 이미지를 찾아 개발 또는 테스트 용도로 사용하면 이러한 경우의 SQL Server에 대한 추가 비용이 발생하지 않습니다. 
 
-> [!NOTE]
+> [!TIP]
 > 전체 라이선스 정보를 보려면 [문서화된 가격 책정 지침](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance)을 확인하세요.
 
 ## <a name="use-constrained-instance-sizes-for-database-workloads"></a>데이터베이스 워크로드에 대해 제한된 인스턴스 크기 사용 

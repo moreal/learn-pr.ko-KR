@@ -5,6 +5,7 @@ Azure를 사용하면 즐겨 사용하는 IDE를 사용하고, C#에서 Java, No
 이 모듈에서는 인기 있는 여러 IDE에서 개발 환경을 설정하는 방법을 알아봅니다.
 
 ## <a name="learning-objectives"></a>학습 목표
+
 이 모듈에서는 다음을 수행합니다.
 
 - Visual Studio Code 설정

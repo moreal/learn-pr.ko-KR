@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.sample-module-cloudshell.1-unit-text-only
+metadata:
+  title: 샘플 단원 1 - 텍스트 버전
+  description: “텍스트 버전” 콘텐츠(연습 또는 지식 검사 구성 요소 없음)의 샘플입니다.
+  ms.date: 09/04/2018
+  ms.openlocfilehash: 230e62a832cbf36a042eb88b88d6d8ab6ea14ecd
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824198"
+title: 샘플 단원 1 - 텍스트 버전
+durationInMinutes: 11
+content: '[!include[](includes/1-unit-text-only.md)]'

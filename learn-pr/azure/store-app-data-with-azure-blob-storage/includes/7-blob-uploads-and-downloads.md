@@ -81,7 +81,7 @@ az webapp deployment source config-zip --src ../site.zip --name <your-unique-app
 
 브라우저에서 `https://<your-unique-app-name>.azurewebsites.net`을 열어 실행 중인 앱을 확인합니다. 다음 이미지와 같아야 합니다.
 
-![FileUploader 웹앱 스크린샷](../media-drafts/fileuploader-empty.PNG)
+![FileUploader 웹앱 스크린샷](../media/7-fileuploader-empty.PNG)
 
 일부 파일을 업로드하고 다운로드하여 앱을 테스트해 봅니다. 몇 개의 파일을 업로드한 후 셸에서 다음을 실행하여 컨테이너에 업로드된 Blob을 확인합니다.
 

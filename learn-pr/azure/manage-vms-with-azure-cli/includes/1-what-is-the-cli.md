@@ -18,9 +18,10 @@ Azure CLI는 Azure 리소스를 관리하기 위한 Microsoft의 플랫폼 간 �
 Azure CLI를 사용하면 명령줄이나 스크립트를 통해 가상 머신 및 디스크와 같은 Azure 리소스를 관리할 수 있습니다. 이제 시작하여 무엇을 할 수 있는지 살펴보겠습니다.
 
 ## <a name="learning-objectives"></a>학습 목표
+
 이 모듈에서는 다음을 수행합니다.
 
-- CLI로 Azure Virtual Machine 만들기
-- CLI로 VM 크기 조정
-- 명령줄에서 VM 관리 및 쿼리
-- VM에 소프트웨어 설치
+- Azure CLI를 사용하여 가상 머신 만들기
+- Azure CLI를 사용하여 가상 머신 크기 조정
+- Azure CLI를 사용하여 기본 관리 작업 수행
+- SSH 및 Azure CLI를 사용하여 실행 중인 VM에 연결
