@@ -1,16 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.6-grant-access-powershell
 metadata:
-  title: <span data-ttu-id="d88f3-101">RBAC 및 Azure PowerShell을 사용하여 액세스 권한 부여</span><span class="sxs-lookup"><span data-stu-id="d88f3-101">Grant access using RBAC and Azure PowerShell</span></span>
-  description: <span data-ttu-id="d88f3-102">Azure PowerShell을 사용하여 리소스 그룹에서 가상 머신을 만들고 관리할 수 있는 액세스 권한을 사용자에게 부여하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="d88f3-102">Learn how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell.</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 5675e822091ab1bc73be393997b2963436edafae
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  title: <span data-ttu-id="79bec-101">RBAC 및 Azure PowerShell을 사용하여 액세스 권한 부여</span><span class="sxs-lookup"><span data-stu-id="79bec-101">Grant access using RBAC and Azure PowerShell</span></span>
+  description: <span data-ttu-id="79bec-102">Azure PowerShell을 사용하여 리소스 그룹에서 가상 머신을 만들고 관리할 수 있는 액세스 권한을 사용자에게 부여하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="79bec-102">Learn how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell.</span></span>
+  ms.openlocfilehash: 180bffd607c07a68a3153a2ffab2449601f152f7
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43455353"
-title: <span data-ttu-id="d88f3-103">RBAC 및 Azure PowerShell을 사용하여 액세스 권한 부여</span><span class="sxs-lookup"><span data-stu-id="d88f3-103">Grant access using RBAC and Azure PowerShell</span></span>
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728161"
+title: <span data-ttu-id="79bec-103">RBAC 및 Azure PowerShell을 사용하여 액세스 권한 부여</span><span class="sxs-lookup"><span data-stu-id="79bec-103">Grant access using RBAC and Azure PowerShell</span></span>
 labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 10
 content: '[!include[](includes/6-grant-access-powershell.md)]'

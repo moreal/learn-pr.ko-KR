@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
-title: <span data-ttu-id="7094c-101">저장소 조직 전략 디자인</span><span class="sxs-lookup"><span data-stu-id="7094c-101">Design a storage organization strategy</span></span>
+title: <span data-ttu-id="cea14-101">저장소 조직 전략 디자인</span><span class="sxs-lookup"><span data-stu-id="cea14-101">Design a storage organization strategy</span></span>
 metadata:
-  title: <span data-ttu-id="7094c-102">저장소 조직 전략 디자인</span><span class="sxs-lookup"><span data-stu-id="7094c-102">Design a storage organization strategy</span></span>
-  description: <span data-ttu-id="7094c-103">저장소 조직 전략 디자인</span><span class="sxs-lookup"><span data-stu-id="7094c-103">Design a storage organization strategy</span></span>
-  ms.openlocfilehash: 966865b137aaedc45906682cc58fc8a67e68a30c
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="cea14-102">저장소 조직 전략 디자인</span><span class="sxs-lookup"><span data-stu-id="cea14-102">Design a storage organization strategy</span></span>
+  description: <span data-ttu-id="cea14-103">저장소 조직 전략 디자인</span><span class="sxs-lookup"><span data-stu-id="cea14-103">Design a storage organization strategy</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2f38fea8367aeac95b8bd0593b2132f96989700f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43225713"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234107"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: '<span data-ttu-id="7094c-104">지식 검사: Blob Storage</span><span class="sxs-lookup"><span data-stu-id="7094c-104">Knowledge check: Blob Storage</span></span>'
+  title: '<span data-ttu-id="cea14-104">지식 검사: Blob Storage</span><span class="sxs-lookup"><span data-stu-id="cea14-104">Knowledge check: Blob Storage</span></span>'
   questions:
-  - content: <span data-ttu-id="7094c-105">대부분의 저장소 시나리오에 가장 적합한 Blob 종류는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="7094c-105">Which kind of blob is the best fit for most storage scenarios?</span></span>
+  - content: <span data-ttu-id="cea14-105">대부분의 저장소 시나리오에 가장 적합한 Blob 종류는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="cea14-105">Which kind of blob is the best fit for most storage scenarios?</span></span>
     choices:
-    - content: <span data-ttu-id="7094c-106">바이트 Blob</span><span class="sxs-lookup"><span data-stu-id="7094c-106">Byte blobs</span></span>
+    - content: <span data-ttu-id="cea14-106">바이트 Blob</span><span class="sxs-lookup"><span data-stu-id="cea14-106">Byte blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="7094c-107">“바이트 Blob”은 Blob 유형이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-107">"Byte blobs" are not a type of blob.</span></span>
-    - content: <span data-ttu-id="7094c-108">페이지 Blob</span><span class="sxs-lookup"><span data-stu-id="7094c-108">Page blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="cea14-107">“바이트 Blob”은 Blob 유형이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-107">"Byte blobs" are not a type of blob.</span></span>
+    - content: <span data-ttu-id="cea14-108">페이지 Blob</span><span class="sxs-lookup"><span data-stu-id="cea14-108">Page blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="7094c-109">페이지 Blob은 Azure Virtual Machine에서 가상 하드 디스크를 저장하는 데 사용하는 경우처럼, 고용량의 임의 액세스 읽기 및 쓰기용으로 디자인되었습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-109">Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.</span></span>
-    - content: <span data-ttu-id="7094c-110">블록 Blob</span><span class="sxs-lookup"><span data-stu-id="7094c-110">Block blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="cea14-109">페이지 Blob은 Azure Virtual Machine에서 가상 하드 디스크를 저장하는 데 사용하는 경우처럼, 고용량의 임의 액세스 읽기 및 쓰기용으로 디자인되었습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-109">Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.</span></span>
+    - content: <span data-ttu-id="cea14-110">블록 Blob</span><span class="sxs-lookup"><span data-stu-id="cea14-110">Block blobs</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="7094c-111">블록 Blob은 대개 범용 저장소 요구에 가장 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-111">Block blobs are usually the best choice for general-purpose storage needs.</span></span>
-    - content: <span data-ttu-id="7094c-112">추가 Blob</span><span class="sxs-lookup"><span data-stu-id="7094c-112">Append blobs</span></span>
+      correctExplanation: <span data-ttu-id="cea14-111">블록 Blob은 대개 범용 저장소 요구에 가장 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-111">Block blobs are usually the best choice for general-purpose storage needs.</span></span>
+    - content: <span data-ttu-id="cea14-112">추가 Blob</span><span class="sxs-lookup"><span data-stu-id="cea14-112">Append blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="7094c-113">추가 Blob은 기존 데이터를 업데이트하거나 삭제하지 않고 새 데이터 추가만 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-113">Append blobs only support appending new data, not updating or deleting existing data.</span></span>
-  - content: <span data-ttu-id="7094c-114">Blob은 ‘비구조적’ 데이터 저장소를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="7094c-115">‘비구조적’은 무엇을 의미하나요?</span><span class="sxs-lookup"><span data-stu-id="7094c-115">What does *unstructured* mean?</span></span>
+      incorrectExplanation: <span data-ttu-id="cea14-113">추가 Blob은 기존 데이터를 업데이트하거나 삭제하지 않고 새 데이터 추가만 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-113">Append blobs only support appending new data, not updating or deleting existing data.</span></span>
+  - content: <span data-ttu-id="cea14-114">Blob은 ‘비구조적’ 데이터 저장소를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="cea14-115">‘비구조적’은 무엇을 의미하나요?</span><span class="sxs-lookup"><span data-stu-id="cea14-115">What does *unstructured* mean?</span></span>
     choices:
-    - content: <span data-ttu-id="7094c-116">Blob은 구성하거나 이름을 지정할 수 없으며, 바이트 컬렉션에 불과합니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
+    - content: <span data-ttu-id="cea14-116">Blob은 구성하거나 이름을 지정할 수 없으며, 바이트 컬렉션에 불과합니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="7094c-117">“비구조적”은 저장소 계정 내의 Blob 구성이 아니라 Blob ‘내부’ 데이터의 특성을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-117">"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.</span></span>
-    - content: <span data-ttu-id="7094c-118">Blob에 저장할 수 있는 데이터의 종류에는 제한이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-118">There are no restrictions on the kinds of data you can store in blobs.</span></span>
+      incorrectExplanation: <span data-ttu-id="cea14-117">“비구조적”은 저장소 계정 내의 Blob 구성이 아니라 Blob ‘내부’ 데이터의 특성을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-117">"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.</span></span>
+    - content: <span data-ttu-id="cea14-118">Blob에 저장할 수 있는 데이터의 종류에는 제한이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-118">There are no restrictions on the kinds of data you can store in blobs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="7094c-119">Blob은 데이터에 어떠한 종류의 구조도 적용하지 않습니다. 즉, 앱은 Blob에 어떠한 종류의 데이터도 저장할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-119">Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.</span></span>
-    - content: <span data-ttu-id="7094c-120">Blob은 JSON 또는 XML과 같은 구조화된 데이터를 포함할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-120">Blobs can't contain structured data, like JSON or XML.</span></span>
+      correctExplanation: <span data-ttu-id="cea14-119">Blob은 데이터에 어떠한 종류의 구조도 적용하지 않습니다. 즉, 앱은 Blob에 어떠한 종류의 데이터도 저장할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-119">Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.</span></span>
+    - content: <span data-ttu-id="cea14-120">Blob은 JSON 또는 XML과 같은 구조화된 데이터를 포함할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-120">Blobs can't contain structured data, like JSON or XML.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="7094c-121">Blob은 구조화된 데이터를 포함할 수 ‘있지만’ Blob Storage는 어떤 방식으로도 이러한 데이터와 상호 작용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-121">Blobs *can* contain structured data, but Blob storage does not interact with it in any way.</span></span> <span data-ttu-id="7094c-122">Blob 콘텐츠의 구조를 인식하고 적절하게 처리하는 것은 앱의 책임입니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-122">It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.</span></span>
-    - content: <span data-ttu-id="7094c-123">Blob에서 다운로드한 데이터는 임의로 구성되며 이를 위해 특수한 클라이언트 라이브러리가 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-123">Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.</span></span>
+      incorrectExplanation: <span data-ttu-id="cea14-121">Blob은 구조화된 데이터를 포함할 수 ‘있지만’ Blob Storage는 어떤 방식으로도 이러한 데이터와 상호 작용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-121">Blobs *can* contain structured data, but Blob storage does not interact with it in any way.</span></span> <span data-ttu-id="cea14-122">Blob 콘텐츠의 구조를 인식하고 적절하게 처리하는 것은 앱의 책임입니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-122">It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.</span></span>
+    - content: <span data-ttu-id="cea14-123">Blob에서 다운로드한 데이터는 임의로 구성되며 이를 위해 특수한 클라이언트 라이브러리가 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-123">Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="7094c-124">Blob 콘텐츠 다운로드를 포함하는 모든 Blob 조작은 클라이언트 라이브러리 없이 REST API를 사용하여 직접 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-124">All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library.</span></span> <span data-ttu-id="7094c-125">Blob에서 다운로드한 데이터는 무작위로 구성되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="7094c-125">Data downloaded from blobs is not organized randomly.</span></span>
+      incorrectExplanation: <span data-ttu-id="cea14-124">Blob 콘텐츠 다운로드를 포함하는 모든 Blob 조작은 클라이언트 라이브러리 없이 REST API를 사용하여 직접 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-124">All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library.</span></span> <span data-ttu-id="cea14-125">Blob에서 다운로드한 데이터는 무작위로 구성되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cea14-125">Data downloaded from blobs is not organized randomly.</span></span>
