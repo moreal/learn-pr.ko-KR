@@ -1,26 +1,31 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: Choose whether to use messages or events
+title: 메시지 또는 이벤트 사용 여부 선택
 metadata:
-  title: Choose whether to use messages or events
-  description: Choose whether to use messages or events
+  title: 메시지 또는 이벤트 사용 여부 선택
+  description: 메시지 또는 이벤트 사용 여부 선택
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245973"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: "Messaging models"
+  title: 메시징 모델
   questions:
-  - content: "In your distributed application you have a web service that authenticates users. When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\". True or false: This is an example of a message in a distributed application."
+  - content: 분산 응용 프로그램에 사용자를 인증하는 웹 서비스가 있습니다. 사용자가 로그온하면 이 웹 서비스는 모든 사용자의 컴퓨터에서 실행되는 데스크톱 응용 프로그램과 통신하여 해당 사용자의 상태를 “온라인”으로 표시해야 합니다. 참 또는 거짓은 분산 응용 프로그램의 메시지 예입니다.
     choices:
     - content: "True"
-      incorrectExplanation: "Sorry, this is an example of an event in a distributed application. The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any."
+      incorrectExplanation: 죄송합니다. 분산 응용 프로그램의 이벤트 예입니다. 통신은 모든 구독자에게 라우팅되며, 게시자는 통신이 구독자에 의해 처리되는 방법에 대한 지식이나 선호가 없고 구독자 수에 대해서도 알지 못합니다.
       isCorrect: false
     - content: "False"
-      correctExplanation: "Correct! This would be an event notification which would trigger an action. This is a perfect case of using an event."
+      correctExplanation: 맞습니다! 작업을 트리거하는 이벤트 알림입니다. 이벤트를 사용하는 완벽한 사례입니다.
       isCorrect: true

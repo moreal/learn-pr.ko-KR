@@ -3,12 +3,18 @@ uid: learn.access-data-with-cosmos-db-and-sql-api.5-run-queries
 metadata:
   title: Azure Portal에서 쿼리 실행
   description: Azure Portal을 사용하여 Azure Cosmos DB의 데이터에 대해 쿼리를 실행하는 방법을 알아봅니다.
-  ms.openlocfilehash: 4a5b2f69d9c45409c73c10412866c2d6709a1276
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 59ef9337ff6f8a32b097dc8b19212da7e70999af
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43795402"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310581"
+azureSandbox: true
 title: Azure Portal에서 쿼리 실행
 durationInMinutes: 10
 content: '[!include[](includes/5-run-queries.md)]'

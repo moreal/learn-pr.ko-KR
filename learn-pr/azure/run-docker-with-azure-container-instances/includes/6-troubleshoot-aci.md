@@ -136,7 +136,7 @@ Timestamp            Name              Average
 ![Azure Container Instances CPU 및 메모리 사용량 정보의 Azure Portal 보기](../media-draft/cpu-memory.png)
 
 ## <a name="clean-up"></a>정리
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Azure Container Instances 학습 모듈의 마지막 단원입니다. 이제 리소스 그룹을 삭제하여 만든 리소스를 정리할 수 있습니다. 이렇게 하려면 **az group delete** 명령을 사용합니다.
 

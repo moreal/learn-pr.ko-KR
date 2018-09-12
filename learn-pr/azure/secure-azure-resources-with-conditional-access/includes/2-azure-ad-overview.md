@@ -11,9 +11,10 @@ Azure AD는 네 가지 버전으로 제공됩니다. 이 연습에서는 Azure A
 Azure AD Premium에는 Multi-Factor Authentication 및 조건부 액세스 정책과 같은 기능이 포함되어 있습니다. 응용 프로그램에 대한 액세스를 보호할 때 이러한 기능을 함께 사용하면 가장 세분화된 기능이 제공됩니다.
 
 조건부 액세스 정책을 구성하는 항목은 다음과 같습니다.
-   * 사용자 또는 그룹
-   * 액세스하려는 응용 프로그램
-   * 수행할 제어(예: Multi-Factor Authentication)
+
+- 사용자 또는 그룹
+- 액세스하려는 응용 프로그램
+- 수행할 제어(예: Multi-Factor Authentication)
 
 ## <a name="summary"></a>요약
 

@@ -7,7 +7,7 @@ Azure Event Hubs는 대량의 데이터를 처리할 수 있는 기능을 빅 �
 - Azure Portal을 사용하여 이벤트 허브 상태 및 성능을 확인합니다.
 
 ## <a name="clean-up"></a>정리 
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 이벤트 허브 테스트에 사용한 리소스에서 구독에 대한 비용이 발생합니다. 이벤트 허브 사용을 완료했으면 불필요한 요금 청구를 방지하기 위해 이러한 리소스를 제거해야 합니다.
 

@@ -1,78 +1,71 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
 metadata:
-# Search engine metadata  
-  title: Knowledge check 
-  description: This is a knowledge check of the Azure IoT Central tutorial
+  title: 지식 검사
+  description: Azure IoT Central 자습서 내용에 대한 지식 검사입니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Knowledge check of the Azure IoT Central tutorial
+  ms.openlocfilehash: 5ce0369f1953aa5cde23ae268c69653acff17acf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232815"
+title: Azure IoT Central 자습서 내용에 대한 지식 검사
 durationInMinutes: 11
-content: |
+content: >
   [!include[](includes/6-knowledge-check.md)]
 quiz:
-  title: 'Knowledge check for the Azure IoT Central tutorial'
+  title: Azure IoT Central 자습서 내용에 대한 지식 검사
   questions:
-  - content: Where do you define telemetry in IoT Central?
+  - content: IoT Central에서 원격 분석을 정의하는 위치는 어디인가요?
     choices:
-    - content: Settings
+    - content: 설정
       isCorrect: false
-    - content: Properties
+    - content: 속성
       isCorrect: false
-    - content: Measurements
+    - content: 측정값
       isCorrect: true
-    - content: Dashboard
+    - content: 대시보드
       isCorrect: false
-    - content: Rules
+    - content: 규칙
       isCorrect: false
-
-  - content: What are the actions available when configuring rules?
+  - content: 규칙을 구성할 때 사용할 수 있는 작업은 무엇인가요?
     choices:
-    - content: Email
+    - content: 이메일
       isCorrect: false
     - content: Microsoft Flow
       isCorrect: false
     - content: Webhook
       isCorrect: false
-    - content: All of the above
+    - content: 위의 모든 항목
       isCorrect: true
-    - content: None of the above 
+    - content: 해당 항목 없음
       isCorrect: false
-
-  - content: Where do you add the firmware of your device?
+  - content: 장치의 펌웨어를 추가하는 위치는 어디인가요?
     choices:
-    - content: Measurements
+    - content: 측정값
       isCorrect: false
-    - content: Settings
+    - content: 설정
       isCorrect: false
-    - content: Properties
+    - content: 속성
       isCorrect: true
-    - content: Rules
+    - content: 규칙
       isCorrect: false
-    - content: Dashboard 
+    - content: 대시보드
       isCorrect: false
-
-  - content: How do you obtain the connection string to connect your device to IoT Central?
+  - content: IoT Central에 장치를 연결하기 위한 연결 문자열은 어떤 방법으로 얻을 수 있나요?
     choices:
-    - content: By adding a device in IoT Central
+    - content: IoT Central에 장치 추가
       isCorrect: true
-    - content: By providing the firmware MAC address
+    - content: 펌웨어 MAC 주소 제공
       isCorrect: false
-    - content: Customizing it on your own and registering it with IoT Central
+    - content: 직접 사용자 지정한 후 IoT Central에 등록
       isCorrect: false
-    - content: All of the above
+    - content: 위의 모든 항목
       isCorrect: false
-    - content: None of the above
+    - content: 해당 항목 없음
       isCorrect: false
-
-
-
-
-
-
-
-

@@ -1,34 +1,34 @@
-An Azure function doesn't do work until something tells it to execute. For example, we could create an Azure function to send out a reminder text message to our customers before an appointment. If we don't tell the function when it should run, our customers will never receive a message.
+Azure 함수는 어떤 항목이 실행하도록 알릴 때까지 작업을 수행하지 않습니다. 예를 들어 약속 전에 고객에게 미리 알림 문자 메시지를 보내는 Azure 함수를 만들 수 있습니다. 이 함수가 실행되는 시기를 함수에 알리지 않으면 고객은 메시지를 받지 못합니다.
 
-Here, you'll examine triggers at a high level and explore the most common types of triggers.
+여기서는 트리거를 자세히 검토하고 가장 일반적인 형식의 트리거를 살펴봅니다.
 
-## What is a trigger?
+## <a name="what-is-a-trigger"></a>트리거란?
 
-A trigger is a service that defines how an Azure function is invoked. For example, if you want a function to execute every 10 minutes, you could use a timer trigger.
+트리거는 Azure 함수를 호출하는 방법을 정의하는 서비스입니다. 예를 들어 함수가 10분마다 실행되도록 하려면 타이머 트리거를 사용하면 됩니다.
 
-Every function must have exactly one trigger associated with it. If you want to execute a piece of logic under multiple conditions, you need to create multiple functions.
+모든 함수에는 연결된 트리거가 하나만 있어야 합니다. 여러 조건에서 논리를 실행하려면 여러 함수를 만들어야 합니다.
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>바인딩이란?
 
-A binding is a connection to data within your function. Bindings are optional and come in the form of input and output bindings. An input binding is the data that your function receives. An output binding is the data that your function sends.
+바인딩은 함수 내의 데이터에 대한 연결입니다. 바인딩은 선택 사항이며 입력 및 출력 바인딩 형식으로 제공됩니다. 입력 바인딩은 함수가 받는 데이터입니다. 출력 바인딩은 함수가 보내는 데이터입니다.
 
-Unlike a trigger, a function can have multiple input and output bindings.
+트리거와 달리 함수는 여러 개의 입력 및 출력 바인딩을 포함할 수 있습니다.
 
-## Types of triggers
+## <a name="types-of-triggers"></a>트리거 형식
 
-Azure Functions support a wide range of trigger types. Here are some of the most common types:
+Azure Functions는 광범위한 트리거 형식을 지원합니다. 다음은 가장 일반적인 일부 형식입니다.
 
-| Type | Purpose |
+| type | 목적 |
 | --- | --- |
-| **Timer** | Execute a function at a set interval. |
-| **HTTP** | Execute a function when an HTTP request is received. |
-| **Blob** | Execute a function when a file is uploaded or updated in Azure Blob storage. |
-| **Queue** | Execute a function when a message is added to an Azure Storage queue. |
-| **Cosmos DB** | Execute a function when a document changes in a collection. |
-| **Event Hub** | Execute a function when an event hub receives a new event. |
+| **타이머** | 설정 간격으로 함수를 실행합니다. |
+| **HTTP** | HTTP 요청을 받을 때 함수를 실행합니다. |
+| **Blob** | Azure Blob Storage에서 파일이 업로드되거나 업데이트될 때 함수를 실행합니다. |
+| **큐** | 메시지가 Azure Storage 큐에 추가될 때 함수를 실행합니다. |
+| **Cosmos DB** | 컬렉션에서 문서가 변경될 때 함수를 실행합니다. |
+| **이벤트 허브** | 이벤트 허브가 새 이벤트를 받을 때 함수를 실행합니다. |
 
-In this module, we're going to focus on the **timer**, **HTTP**, and **blob** types.
+이 모듈에서는 **타이머**, **HTTP** 및 **Blob** 형식을 중점적으로 설명합니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-To execute an Azure function, we need to use a trigger. Timer, HTTP, and blob triggers are three of the most common trigger types that you'll use to execute serverless logic.
+Azure 함수를 실행하려면 트리거를 사용해야 합니다. 타이머, HTTP 및 Blob 트리거는 서버리스 논리를 실행하는 데 사용할 가장 일반적인 세 가지 트리거 형식입니다.

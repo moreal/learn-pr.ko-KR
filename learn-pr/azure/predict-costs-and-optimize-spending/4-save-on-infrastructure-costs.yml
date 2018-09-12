@@ -1,43 +1,48 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
-title: Save on infrastructure costs
+title: 인프라 비용 절감
 metadata:
-  title: Save on infrastructure costs
-  description: In this unit, we'll discuss how to save on infrastructure costs 
+  title: 인프라 비용 절감
+  description: 이 단원에서는 인프라 비용을 절감하는 방법에 대해 알아보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 7de7c9ebfe9743b18d01e4e2c298f97efa227efb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244783"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/4-save-on-infrastructure-costs.md)]
 quiz:
-    title: "Save on infrastructure costs"
-    questions:
-    - content: "Which one of these is <b>not</b> a cost-saving solution?"
-      choices:
-      - content: "Deallocate virtual machines in off hours."
-        incorrectExplanation: "Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions."
-        isCorrect: false
-      - content: "Use Azure Reserved Virtual Machine Instances."
-        incorrectExplanation: "Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions."
-        isCorrect: false
-      - content: "Load balance your virtual machines for incoming messages."
-        correctExplanation: "Load balancing is used for performance optimization. Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions."
-        isCorrect: true
-      - content: "Right-size underutilized virtual machines."
-        incorrectExplanation: "Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions."
-        isCorrect: false
-    - content: "The Azure Architecture Center is ________:"
-      choices:
-      - content: "A great place to get ideas for transforming your application, as well as best practices across a wide array of architectures and Azure services."
-        correctExplanation: "The Azure Architecture Center will provide suggestions about ways to improve your app and save money."
-        isCorrect: true
-      - content: "A building on the Microsoft Seattle campus where you can talk about infrastructure."
-        incorrectExplanation: "The Azure Architecture Center is a software product built into Azure that provides suggestions to improve your app."
-        isCorrect: false
-      - content: "A cloud-based museum to Frank Lloyd Wright."
-        incorrectExplanation: "The Azure Architecture Center is a software product built into Azure that provides suggestions to improve your app."
-        isCorrect: false
+  title: 인프라 비용 절감
+  questions:
+  - content: 다음 중 비용 절감 방법이 <b>아닌</b> 것은 무엇인가요?
+    choices:
+    - content: 작업을 하지 않는 시간에는 가상 머신 할당을 취소합니다.
+      incorrectExplanation: Azure Reserved Virtual Machine Instances를 사용하고, 작업을 하지 않는 시간에는 가상 머신 할당을 취소하고, 사용률이 낮은 가상 머신은 적합한 크기로 지정하고, 사용하지 않는 가상 머신은 삭제하고, PaaS 또는 SaaS로 마이그레이션하는 것은 모두 비용을 절감하는 방법의 예입니다.
+      isCorrect: false
+    - content: Azure Reserved Virtual Machine Instances를 사용합니다.
+      incorrectExplanation: Azure Reserved Virtual Machine Instances를 사용하고, 작업을 하지 않는 시간에는 가상 머신 할당을 취소하고, 사용률이 낮은 가상 머신은 적합한 크기로 지정하고, 사용하지 않는 가상 머신은 삭제하고, PaaS 또는 SaaS로 마이그레이션하는 것은 모두 비용을 절감하는 방법의 예입니다.
+      isCorrect: false
+    - content: 수신 메시지에 대해 가상 머신의 부하를 분산합니다.
+      correctExplanation: 부하 분산은 성능 최적화를 위해 사용됩니다. Azure Reserved Virtual Machine Instances를 사용하고, 작업을 하지 않는 시간에는 가상 머신 할당을 취소하고, 사용률이 낮은 가상 머신은 적합한 크기로 지정하고, 사용하지 않는 가상 머신은 삭제하고, PaaS 또는 SaaS로 마이그레이션하는 것은 모두 비용을 절감하는 방법의 예입니다.
+      isCorrect: true
+    - content: 사용률이 낮은 가상 머신을 적합한 크기로 지정합니다.
+      incorrectExplanation: Azure Reserved Virtual Machine Instances를 사용하고, 작업을 하지 않는 시간에는 가상 머신 할당을 취소하고, 사용률이 낮은 가상 머신은 적합한 크기로 지정하고, 사용하지 않는 가상 머신은 삭제하고, PaaS 또는 SaaS로 마이그레이션하는 것은 모두 비용을 절감하는 방법의 예입니다.
+      isCorrect: false
+  - content: Azure 아키텍처 센터는 ________입니다.
+    choices:
+    - content: 응용 프로그램 혁신을 위한 아이디어를 얻을 뿐만 아니라 광범위한 아키텍처 및 Azure 서비스의 모범 사례를 확인하기 좋은 곳입니다.
+      correctExplanation: Azure 아키텍처 센터에서는 앱을 개선하고 비용을 절감하는 방법에 대한 제안 사항을 제공합니다.
+      isCorrect: true
+    - content: 인프라에 대해 이야기할 수 있는 Microsoft 시애틀 캠퍼스의 한 건물입니다.
+      incorrectExplanation: Azure 아키텍처 센터는 Azure에 내장된 소프트웨어 제품으로, 앱 개선을 위한 제안 사항을 제공합니다.
+      isCorrect: false
+    - content: Frank Lloyd Wright의 클라우드 기반 박물관입니다.
+      incorrectExplanation: Azure 아키텍처 센터는 Azure에 내장된 소프트웨어 제품으로, 앱 개선을 위한 제안 사항을 제공합니다.
+      isCorrect: false

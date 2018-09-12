@@ -1,20 +1,20 @@
-The [Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/), combined with [Microsoft QnA Maker](https://www.qnamaker.ai/), provide the tools developers need to build and publish intelligent bots that interact naturally with users using a range of services. In this module, you will create a bot using the Azure Bot Service and connect it to a knowledge base built with QnA Maker. Then, you will interact with the bot using Skype — one of many popular services with which bots built with the Azure Bot Service can integrate.
+[Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/)는 [Microsoft QnA Maker](https://www.qnamaker.ai/)와 함께 개발자가 다양한 서비스를 사용하여 자연스럽게 사용자와 상호 작용하는 지능형 봇을 빌드하고 게시하는 데 필요한 도구를 제공합니다. 이 모듈에서는 Azure Bot Service를 사용하여 봇을 만들고 QnA Maker를 사용하여 빌드된 기술 자료에 해당 봇을 연결합니다. 그런 다음, Azure Bot Service로 빌드된 봇이 통합할 수 있는 많은 인기 서비스 중 하나인 Skype를 사용하여 봇을 조작합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Create an Azure web app bot to host a bot.
-- Create a knowledge base, populate it with data, and connect it to a bot.
-- Implement bots in code and debug the bots that you build.
-- Publish bots and use continuous integration to keep them up-to-date.
-- Debug bots locally using Visual Studio Code and the Microsoft Bot Framework Emulator.
-- Plug a bot into Skype and interact with it there.
+- 봇을 호스트할 Azure Web App 봇 만들기
+- 기술 자료를 만들고 데이터로 채우고 봇에 연결
+- 코드에 봇을 구현하고 빌드하는 봇 디버그
+- 봇을 게시하고 연속 통합을 사용하여 최신 상태로 유지
+- Visual Studio Code 및 Microsoft Bot Framework Emulator를 사용하여 로컬로 봇 디버그
+- 봇을 Skype에 연결하여 Skype에서 봇 조작
 
-## Prerequisites
+## <a name="prerequisites"></a>필수 구성 요소
 
-- Install [Visual Studio Code](http://code.visualstudio.com).
-- Install [Git](https://git-scm.com).
-- Install [Microsoft Bot Framework Emulator](https://emulator.botframework.com/).
-- Install [Node.js](https://nodejs.org).
-- Install [Skype](https://www.skype.com/en/download-skype/skype-for-computer/).
+- [Visual Studio Code](http://code.visualstudio.com)를 설치합니다.
+- [Git](https://git-scm.com)를 설치합니다.
+- [Microsoft Bot Framework Emulator](https://emulator.botframework.com/)를 설치합니다.
+- [Node.js](https://nodejs.org)를 설치합니다.
+- [Skype](https://www.skype.com/en/download-skype/skype-for-computer/)를 설치합니다.

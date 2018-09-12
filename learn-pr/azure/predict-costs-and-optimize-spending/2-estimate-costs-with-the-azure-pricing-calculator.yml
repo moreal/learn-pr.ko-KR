@@ -1,34 +1,39 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator
-title: Estimate costs with the Azure pricing calculator
+title: Azure 가격 계산기로 비용 예상
 metadata:
-  title: Estimate costs with the Azure pricing calculator
-  description: In this unit, we'll discuss how to estimate costs with the Azure pricing calculator 
+  title: Azure 가격 계산기로 비용 예상
+  description: 이 단원에서는 Azure 가격 계산기로 비용을 예상하는 방법을 설명합니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 1d7c1fe08e193a2c03779ffa5ca7bada0e30384d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244613"
 durationInMinutes: 20
-content: |
+content: >
   [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
 quiz:
-  title: Estimate costs with the Azure pricing calculator 
+  title: Azure 가격 계산기로 비용 예상
   questions:
-  - content: "In which tab of the Azure pricing calculator will you formulate your estimate?"
+  - content: Azure 가격 계산기의 어떤 탭에서 예상 비용을 산출하나요?
     choices:
-    - content: "Estimate"
+    - content: 견적
       isCorrect: false
-      incorrectExplanation: "This tab has all of your previously saved estimates."
-    - content: "Products"
+      incorrectExplanation: 이 탭에는 이전에 저장한 예상 비용이 모두 있습니다.
+    - content: 제품
       isCorrect: true
-      correctExplanation: "This tab has all the Azure services listed and is where you'll add or remove services to formulate your estimate."
-  - content: "You can share your estimate through an Excel spreadsheet or through a URL."
+      correctExplanation: 이 탭에는 모든 Azure 서비스가 나열되어 있으며 여기에서 예상 비용을 산출할 서비스를 추가하거나 제거합니다.
+  - content: Excel 스프레드시트 또는 URL을 통해 예상 비용을 공유할 수 있습니다.
     choices:
     - content: "True"
       isCorrect: true
-      correctExplanation: "Clicking <b>Export</b> at the bottom of the estimate will export an Excel spreadsheet that you can share, or you can click <b>Share</b> to get a URL link that you can share with your team."
+      correctExplanation: 예상 비용 아래쪽 <b>내보내기</b>를 클릭하면 공유할 수 있는 Excel 스프레드시트를 내보냅니다. 또는 <b>공유</b>를 클릭하여 팀과 공유할 수 있는 URL 링크를 가져올 수 있습니다.
     - content: "False"
       isCorrect: false
-      incorrectExplanation: "Clicking <b>Export</b> at the bottom of the estimate will export an Excel spreadsheet that you can share, or you can click <b>Share</b> to get a URL link that you can share with your team."
+      incorrectExplanation: 예상 비용 아래쪽 <b>내보내기</b>를 클릭하면 공유할 수 있는 Excel 스프레드시트를 내보냅니다. 또는 <b>공유</b>를 클릭하여 팀과 공유할 수 있는 URL 링크를 가져올 수 있습니다.
