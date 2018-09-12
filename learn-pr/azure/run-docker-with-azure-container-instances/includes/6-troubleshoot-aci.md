@@ -1,4 +1,4 @@
-이 단원에서는 컨테이너 로그, 컨테이너 이벤트 끌어오기 및 컨테이너 인스턴스에 연결과 같은 몇 가지 기본적인 문제 해결 작업을 수행합니다. 이 모듈을 마치면 컨테이너 인스턴스 문제 해결을 위한 기본적인 기능을 이해할 수 있게 됩니다.
+이 단원에서는 컨테이너 로그, 컨테이너 이벤트 끌어오기 및 컨테이너 인스턴스에 연결과 같은 몇 가지 기본적인 문제 해결 작업을 수행합니다. 이 모듈을 마치면 컨테이너 인스턴스 문제 해결을 위한 기본적인 기능을 이해할 수 있습니다.
 
 ## <a name="create-a-container"></a>컨테이너 만들기
 
@@ -16,9 +16,9 @@ az container create --resource-group myResourceGroup --name mycontainer --image 
 az container logs --resource-group myResourceGroup --name mycontainer
 ```
 
-다음은 웹앱에 몇 번 액세스한 후 생성되는 예제 컨테이너의 로그 출력입니다.
+다음은 웹앱에 몇 번 액세스한 후 생성된 예제 컨테이너의 로그 출력입니다.
 
-```bash
+```output
 listening on port 80
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:24 +0000] "GET / HTTP/1.1" 200 1663 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:24 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://23.101.136.193/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
@@ -37,7 +37,7 @@ az container attach --resource-group myResourceGroup --name mycontainer
 예제 출력:
 
 
-```bash
+```output
 Container 'mycontainer' is in state 'Running'...
 (count: 1) (last timestamp: 2018-08-20 21:43:26+00:00) pulling image "microsoft/aci-helloworld"
 (count: 1) (last timestamp: 2018-08-20 21:43:32+00:00) Successfully pulled image "microsoft/aci-helloworld"
@@ -53,15 +53,15 @@ listening on port 80
 
 Azure Container Instances는 실행 중인 컨테이너에서 명령을 실행하도록 지원합니다. 시작한 컨테이너에서 명령을 실행하면 응용 프로그램 개발 및 문제 해결 중에 특히 유용합니다. 이 기능은 일반적으로 실행 중인 컨테이너에서 문제를 디버그할 수 있도록 대화형 셸을 시작하는 데 사용됩니다.
 
-이 예제는 실행 중인 컨테이너가 있는 대화형 터미널 세션을 시작합니다.
+이 예제는 실행 중인 컨테이너를 사용하여 대화형 터미널 세션을 시작합니다.
 
 ```azurecli
 az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
 ```
 
-이 명령이 완료되면 컨테이너 내부에서 작업하게 됩니다. 이 예제에서 `ls` 명령은 작업 디렉터리의 내용을 표시하기 위해 실행되었습니다.
+이 명령이 완료되면 컨테이너 내부에서 효과적으로 작업할 수 있습니다. 이 예제에서 `ls` 명령을 실행하여 작업 디렉터리의 내용을 표시하였습니다.
 
-```bash
+```output
 usr/src/app # ls
 index.html         node_modules       package.json
 index.js           package-lock.json
@@ -85,7 +85,7 @@ az monitor metrics list --resource $CONTAINER_ID --metric CPUUsage --output tabl
 
 예제 출력:
 
-```bash
+```output
 Timestamp            Name              Average
 -------------------  ------------  -----------
 2018-08-20 21:39:00  CPU Usage
@@ -113,7 +113,7 @@ az monitor metrics list --resource $CONTAINER_ID --metric MemoryUsage --output t
 
 예제 출력:
 
-```bash
+```output
 Timestamp            Name              Average
 -------------------  ------------  -----------
 2018-08-20 21:43:00  Memory Usage

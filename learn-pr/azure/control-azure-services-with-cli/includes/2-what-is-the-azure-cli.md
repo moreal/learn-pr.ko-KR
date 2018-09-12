@@ -1,6 +1,6 @@
 Azure CLI는 Azure에 연결하고 Azure 리소스에서 관리 명령을 실행하는 명령줄 프로그램입니다. Linux, macOS 및 Windows에서 실행되며 관리자와 개발자가 이를 사용하여 웹 브라우저 대신 터미널 또는 명령줄 프롬프트(또는 스크립트)를 통해 명령을 실행할 수 있습니다. 예를 들어 VM(가상 머신)을 다시 시작하려면 다음과 같은 명령을 사용합니다.
 
- ```bash
+ ```azurecli
  az vm restart -g MyResourceGroup -n MyVm
  ```
 
@@ -20,7 +20,7 @@ Windows에서는 MSI 파일을 다운로드하고 실행하여 Azure CLI를 설�
 
 스크립트에서 Azure CLI 명령을 사용하려면 스크립트 실행에 사용되는 “셸” 또는 환경에 관련된 문제를 알고 있어야 합니다. 예를 들어 bash 셸에서는 변수를 설정할 때 다음 구문이 사용됩니다.
 
- ```bash
+ ```azurecli
  variable="value"
  variable=integer
  ```

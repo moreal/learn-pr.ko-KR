@@ -27,7 +27,7 @@ az container create \
     --dns-name-label aci-demo
 ```
 
-몇 초 안에 요청에 대한 응답을 얻게 됩니다. 처음에는 컨테이너가 **만드는 중** 상태가 되지만 몇 초 이내 시작됩니다. `az container show` 명령을 사용하여 상태를 확인할 수 있습니다.
+몇 초 안에 요청에 대한 응답이 있어야 합니다. 처음에는 컨테이너가 **만드는 중** 상태가 되지만 몇 초 이내 시작됩니다. `az container show` 명령을 사용하여 상태를 확인할 수 있습니다.
 
 ```azurecli
 az container show \
@@ -39,7 +39,7 @@ az container show \
 
 명령을 실행하면 컨테이너의 FQDN(정규화된 도메인 이름) 및 프로비저닝 상태가 표시됩니다.
 
-```bash
+```output
 FQDN                                    ProvisioningState
 --------------------------------------  -------------------
 aci-demo.eastus.azurecontainer.io       Succeeded
@@ -51,6 +51,6 @@ aci-demo.eastus.azurecontainer.io       Succeeded
 
 ## <a name="summary"></a>요약
 
-이 단원에서는 웹 서버 및 응용 프로그램을 실행하는 Azure Container Instance를 만들었습니다. 또한 컨테이너 인스턴스의 FQDN을 사용하여 이 응용 프로그램에 액세스했습니다.
+이 단원에서는 웹 서버 및 응용 프로그램을 실행하는 Azure 컨테이너 인스턴스를 만들었습니다. 또한 컨테이너 인스턴스의 FQDN을 사용하여 이 응용 프로그램에 액세스했습니다.
 
 다음 단원에서는 컨테이너 인스턴스 다시 시작 정책을 구성합니다.

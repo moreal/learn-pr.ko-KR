@@ -54,7 +54,7 @@ az container show --resource-group myResourceGroup --name aci-demo --query conta
 
 예제 출력:
 
-```bash
+```json
 [
   {
     "name": "COSMOS_DB_ENDPOINT",
@@ -91,7 +91,7 @@ az container show --resource-group myResourceGroup --name aci-demo-secure --quer
 
 예제 출력:
 
-```bash
+```json
 [
   {
     "name": "COSMOS_DB_ENDPOINT",

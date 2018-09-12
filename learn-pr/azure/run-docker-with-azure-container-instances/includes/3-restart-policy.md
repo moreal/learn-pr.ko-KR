@@ -16,7 +16,7 @@ Azure Container Instances에서 컨테이너를 만들 때 세 가지 다시 시
 
 ## <a name="run-to-completion"></a>완료될 때까지 실행
 
-다시 시작 정책의 작동 방식을 보려면 *microsoft/aci-wordcount* 이미지에서 컨테이너 인스턴스를 만들고 *OnFailure* 다시 시작 정책을 지정합니다. 이 예제 컨테이너는 셰익스피어의 Hamlet 텍스트를 분석하고, 가장 많이 쓰이는 10개의 단어를 STDOUT에 쓰고 종료하는 Python 스크립트를 실행합니다.
+다시 시작 정책이 작동하는 것을 보려면 *microsoft/aci-wordcount* 이미지에서 컨테이너 인스턴스를 만들고 *OnFailure* 다시 시작 정책을 지정합니다. 이 예제 컨테이너는 셰익스피어의 Hamlet 텍스트를 분석하고, 가장 많이 쓰이는 10개의 단어를 STDOUT에 쓰고 종료하는 Python 스크립트를 실행합니다.
 
 다음 `az container create` 명령을 사용하여 예제 컨테이너를 실행합니다.
 
@@ -47,7 +47,7 @@ az container logs --resource-group myResourceGroup --name mycontainer-restart-de
 
 출력:
 
-```bash
+```json
 [('the', 990),
  ('and', 702),
  ('of', 628),
