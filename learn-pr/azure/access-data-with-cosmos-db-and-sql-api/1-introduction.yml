@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.1-introduction
 metadata:
-  title: <span data-ttu-id="281ea-101">소개</span><span class="sxs-lookup"><span data-stu-id="281ea-101">Introduction</span></span>
-  description: <span data-ttu-id="281ea-102">Azure Cosmos DB에서 데이터를 생성, 저장 및 쿼리하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="281ea-102">Learn how to create, store, and query data in Azure Cosmos DB.</span></span>
-  ms.openlocfilehash: 4420270b0f35ee22a695dd14fa3fca6f987db798
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  title: <span data-ttu-id="b5dc0-101">소개</span><span class="sxs-lookup"><span data-stu-id="b5dc0-101">Introduction</span></span>
+  description: <span data-ttu-id="b5dc0-102">Azure Cosmos DB에서 데이터를 생성, 저장 및 쿼리하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="b5dc0-102">Learn how to create, store, and query data in Azure Cosmos DB.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c7eaa922bc302690d0ec49ec0099f975cced530b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43728654"
-title: <span data-ttu-id="281ea-103">소개</span><span class="sxs-lookup"><span data-stu-id="281ea-103">Introduction</span></span>
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241111"
+title: <span data-ttu-id="b5dc0-103">소개</span><span class="sxs-lookup"><span data-stu-id="b5dc0-103">Introduction</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/1-introduction.md)]'
