@@ -1,35 +1,42 @@
 ### YamlMime:Module
 uid: learn.connect-app-to-azure-storage
 metadata:
-  title: Azure Storage에 앱 연결
-  description: Azure Storage를 사용하면 데이터 형식과 관계없이 유연하고 간단하게 응용 프로그램 데이터를 저장할 수 있습니다. 이 모듈에서는 .NET Core 콘솔 응용 프로그램을 만든 후 클라이언트 라이브러리를 사용하여 Azure Storage에 연결하는 방법을 보여 줍니다.
-  ms.openlocfilehash: 103e84360f6fa44929577ee27933a5a35c8bd72b
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228199"
-title: Azure Storage에 앱 연결
-summary: .NET Core 콘솔 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 코드를 추가하여 Azure Storage에 연결합니다.
-abstract: Azure Storage를 사용하면 데이터 형식과 관계없이 유연하고 간단하게 응용 프로그램 데이터를 저장할 수 있습니다. 이 모듈에서는 .NET Core 콘솔 응용 프로그램을 만든 후 클라이언트 라이브러리를 사용하여 Azure Storage에 연결하는 방법을 보여 줍니다.
-cardDescription: .NET Core 콘솔 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 코드를 추가하여 Azure Storage에 연결합니다.
+  title: Connect an app to Azure Storage
+  description: Create a simple application and add configuration, client library references, and code to connect it to Azure Storage.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Connect an app to Azure Storage
+summary: Create a simple application and add configuration, client library references, and code to connect it to Azure Storage.
+abstract: | 
+  In this module, you will:
+  - Explore the data types and services supported by an Azure storage account
+  - Create a new Azure storage account using the Azure portal
+  - Create a new application and connect the app to an Azure Storage account
+prerequisites: None
+#TODO: Update icon URL with real image 
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
+- azure-storage
 units:
 - learn.connect-app-to-azure-storage.1-introduction
-- learn.connect-app-to-azure-storage.2-prepare-your-app-and-azure-storage-account
-- learn.connect-app-to-azure-storage.3-exercise-create-your-app-and-azure-storage-account
-- learn.connect-app-to-azure-storage.4-interact-with-azure-storage-apis
-- learn.connect-app-to-azure-storage.5-exercise-add-the-azure-storage-nuget-package
-- learn.connect-app-to-azure-storage.6-connect-to-your-azure-storage-account
-- learn.connect-app-to-azure-storage.7-exercise-add-azure-storage-configuration-to-your-app
-- learn.connect-app-to-azure-storage.8-initialize-the-storage-account-model
-- learn.connect-app-to-azure-storage.9-exercise-connect-with-your-azure-storage-configuration
-- learn.connect-app-to-azure-storage.10-knowledge-check
-- learn.connect-app-to-azure-storage.11-summary
+- learn.connect-app-to-azure-storage.2-explore-azure-storage
+- learn.connect-app-to-azure-storage.3-exercise-create-your-app
+- learn.connect-app-to-azure-storage.4-exercise-create-storage-account
+- learn.connect-app-to-azure-storage.5-interact-with-azure-storage-apis
+- learn.connect-app-to-azure-storage.6-exercise-add-the-azure-storage-lib
+- learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
+- learn.connect-app-to-azure-storage.8-exercise-add-azure-storage-configuration-to-your-app
+- learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
+- learn.connect-app-to-azure-storage.10-exercise-connect-with-your-azure-storage-configuration
+- learn.connect-app-to-azure-storage.11-knowledge-check
+- learn.connect-app-to-azure-storage.12-summary
 achievement: learn.connect-app-to-azure-storage.badge
