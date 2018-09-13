@@ -27,7 +27,7 @@ Azure Blob Storage에 메시지를 저장하는 수신자 응용 프로그램이
 
 ## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>범용 표준 저장소 계정을 만들기 위한 Azure CLI 명령
 
-1. 리소스 그룹 및 리소스 그룹을 만들 때 사용한 것과 동일한 Azure 데이터 센터 위치에 저장소 계정(범용 V2)을 만듭니다.
+1. 리소스 그룹 및 리소스 그룹을 만들 때 사용한 것과 동일한 Azure 데이터 센터 위치에 범용 V2 저장소 계정을 만듭니다.
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name> --location <location> --sku Standard_RAGRS --encryption blob
