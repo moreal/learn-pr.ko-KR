@@ -1,26 +1,28 @@
 ### YamlMime:Module
 uid: learn.classify-images-with-custom-vision-services
 metadata:
-  title: Microsoft Custom Vision Service를 사용하여 이미지 분류 수행
-  description: 이 모듈에서는 Custom Vision Service 모델을 만들고, 화가 이름이 태그로 지정된 유명 그림 이미지로 학습시킨 후, Node.js 앱의 모델을 활용하여 업로드한 그림의 화가를 식별합니다.
-  ms.openlocfilehash: aa4602f549550fec5e88ee34cfec7e08587029ef
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: Microsoft Custom Vision Service를 사용하여 이미지 분류
+  description: 꽃 이미지 컬렉션으로 Microsoft Custom Vision Service를 학습시키면 그 다음 이미지에 꽃이 포함되어 있는지 또는 어떤 종류의 꽃인지도 알려줄 수 있습니다.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: e42f009259c03fbe7feb15471ae5a126eb08f010
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43229451"
-title: Microsoft Custom Vision Service를 사용하여 이미지 분류 수행
-summary: 이 모듈에서는 Custom Vision Service 모델을 만들고, 화가 이름이 태그로 지정된 유명 그림 이미지로 학습시킨 후, Node.js 앱의 모델을 활용하여 업로드한 그림의 화가를 식별합니다.
-abstract: 이 모듈에서는 Custom Vision Service 모델을 만들고, 화가 이름이 태그로 지정된 유명 그림 이미지로 학습시킨 후, Node.js 앱의 모델을 활용하여 업로드한 그림의 화가를 식별합니다.
-cardDescription: 이 모듈에서는 Custom Vision Service 모델을 만들고, 화가 이름이 태그로 지정된 유명 그림 이미지로 학습시킨 후, Node.js 앱의 모델을 활용하여 업로드한 그림의 화가를 식별합니다.
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826045"
+title: Microsoft Custom Vision Service를 사용하여 이미지 분류
+summary: 꽃 이미지 컬렉션으로 Custom Vision Service를 학습시키면 그 다음 이미지에 꽃이 포함되어 있는지 또는 어떤 종류의 꽃인지도 알려줄 수 있습니다.
+abstract: "이 모듈에서는 다음을 수행합니다.\n  - Custom Vision Service 프로젝트 만들기 \n  - 태그 지정된 이미지로 Custom Vision Service 모델 학습시키기  \n  - Custom Vision Service 모델 테스트 \n  - REST API를 호출하여 Custom Vision Service 모델을 활용하는 앱 만들기\n"
+prerequisites: 없음
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
+- learn.classify-images-with-custom-vision-services.0-introduction
 - learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
 - learn.classify-images-with-custom-vision-services.2-upload-tagged-images
 - learn.classify-images-with-custom-vision-services.3-train-model
@@ -28,4 +30,4 @@ units:
 - learn.classify-images-with-custom-vision-services.5-build-app
 - learn.classify-images-with-custom-vision-services.6-classify-images
 - learn.classify-images-with-custom-vision-services.7-knowledge-check
-achievement: learn.placeholder.badge
+achievement: learn.classify-images-with-custom-vision-services.badge

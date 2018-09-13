@@ -1,55 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.6-knowledge-check
 metadata:
-  title: <span data-ttu-id="0d3cf-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="0d3cf-101">Check your knowledge</span></span>
-  description: <span data-ttu-id="0d3cf-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="0d3cf-102">Check your knowledge</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 4e9c2a54209bec5caf81ac2d41ad00b58146244c
-  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  title: <span data-ttu-id="d7a94-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="d7a94-101">Check your knowledge</span></span>
+  description: <span data-ttu-id="d7a94-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="d7a94-102">Check your knowledge</span></span>
+  ms.openlocfilehash: d821c3443ce6a6af180d08f23c6f406529c7a5d3
+  ms.sourcegitcommit: c8d798ed14ad798f83559db0641c7cbc9728a7bf
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43179848"
-title: <span data-ttu-id="0d3cf-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="0d3cf-103">Check your knowledge</span></span>
-durationInMinutes: 2
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43730797"
+title: <span data-ttu-id="d7a94-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="d7a94-103">Check your knowledge</span></span>
+durationInMinutes: 3
 quiz:
-  title: <span data-ttu-id="0d3cf-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="0d3cf-104">Knowledge check</span></span>
+  title: <span data-ttu-id="d7a94-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="d7a94-104">Knowledge check</span></span>
   questions:
-  - content: <span data-ttu-id="0d3cf-105">True 또는 False, Azure와 같은 공용 클라우드 공급자를 사용할 경우 물리적 하드웨어의 전체 비용을 미리 지급해야 하나요?</span><span class="sxs-lookup"><span data-stu-id="0d3cf-105">True or false, when using a public cloud provider like Azure, you're required to pay the entire cost of the physical hardware up front?</span></span>
+  - content: <span data-ttu-id="d7a94-105">클라우드로 이동하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-105">You're moving to the cloud.</span></span> <span data-ttu-id="d7a94-106">특수 메인프레임 하드웨어가 필요한 레거시 응용 프로그램이 있지만 최신 응용 프로그램을 실행할 하드웨어는 소유하고 싶지는 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-106">You have legacy applications that require specialized mainframe hardware, but you don't want to own the hardware that runs your newer applications.</span></span> <span data-ttu-id="d7a94-107">어떤 클라우드 배포 모델을 선택하면 좋을까요?</span><span class="sxs-lookup"><span data-stu-id="d7a94-107">Which cloud deployment model might you choose?</span></span>
     choices:
-    - content: <span data-ttu-id="0d3cf-106">True</span><span class="sxs-lookup"><span data-stu-id="0d3cf-106">True</span></span>
-      incorrectExplanation: <span data-ttu-id="0d3cf-107">Azure는 종량제 가격 모델을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-107">Azure supports a pay-as-you-go pricing model.</span></span> <span data-ttu-id="0d3cf-108">이는 하드웨어를 임대하고 사용하는 리소스에 대한 요금만 지급함을 의미합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-108">This means that you rent the hardware and only pay for the resources that you use.</span></span>
+    - content: <span data-ttu-id="d7a94-108">공용 클라우드</span><span class="sxs-lookup"><span data-stu-id="d7a94-108">Public cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="d7a94-109">공용 클라우드는 일반적으로 최신 상용 하드웨어를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-109">Public clouds typically provide modern, commodity hardware.</span></span> <span data-ttu-id="d7a94-110">최신 하드웨어와 특수 메인프레임 하드웨어를 모두 지원하는 솔루션이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-110">You need a solution that supports both modern hardware and your specialized mainframe hardware.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="0d3cf-109">False</span><span class="sxs-lookup"><span data-stu-id="0d3cf-109">False</span></span>
-      correctExplanation: <span data-ttu-id="0d3cf-110">Azure는 종량제 가격 모델을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-110">Azure supports a pay-as-you-go pricing model.</span></span> <span data-ttu-id="0d3cf-111">이는 하드웨어를 임대하고 사용하는 리소스에 대한 요금만 지급함을 의미합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-111">This means that you rent the hardware and only pay for the resources that you use.</span></span>
+    - content: <span data-ttu-id="d7a94-111">사설 클라우드</span><span class="sxs-lookup"><span data-stu-id="d7a94-111">Private cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="d7a94-112">사설 클라우드를 사용하면 모든 하드웨어를 소유하고 온-프레미스에서 운영할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-112">With a private cloud, you own and operate all your hardware on-premises.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d7a94-113">하이브리드 클라우드</span><span class="sxs-lookup"><span data-stu-id="d7a94-113">Hybrid cloud</span></span>
+      correctExplanation: <span data-ttu-id="d7a94-114">하이브리드 클라우드는 공용 및 사설 클라우드의 결합입니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-114">A hybrid cloud is a public and private cloud combined.</span></span> <span data-ttu-id="d7a94-115">공용 클라우드에서 대여한 하드웨어에 새 응용 프로그램을 구축하고 특수 메인프레임 하드웨어는 온-프레미스에서 유지 관리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-115">You can build your new applications on hardware you rent from the public cloud, while maintaining your specialized mainframe hardware on-premesis.</span></span>
       isCorrect: true
-  - content: <span data-ttu-id="0d3cf-112">웹 사이트에 밤새 트래픽 급증이 있었다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-112">Suppose your website had a spike in traffic overnight.</span></span> <span data-ttu-id="0d3cf-113">Azure와 같은 공용 클라우드 공급자를 사용하면 리소스 규모가 자동으로 조정되므로 웹 사이트에서 작동 중지 시간이 발생하지 않았을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-113">Using a public cloud provider like Azure, it's possible that your website experienced no down time because it automatically scaled its resources.</span></span>
+  - content: <span data-ttu-id="d7a94-116">응용 프로그램을 구축 중이며 사용자에게 가능한 한 빨리 제공하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-116">You're building an application and you want to get it to your users as fast as possible.</span></span> <span data-ttu-id="d7a94-117">기본 하드웨어 또는 소프트웨어 관리에 신경 쓰지 않고 빌드, 테스트 및 배포에만 집중하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-117">You don't want to worry about managing the underlying hardware or software, you just want to focus on building, testing, and deploying.</span></span> <span data-ttu-id="d7a94-118">가장 적합한 클라우드 서비스 유형은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="d7a94-118">Which cloud service type is best for you?</span></span>
     choices:
-    - content: <span data-ttu-id="0d3cf-114">True</span><span class="sxs-lookup"><span data-stu-id="0d3cf-114">True</span></span>
-      correctExplanation: <span data-ttu-id="0d3cf-115">클라우드 컴퓨팅은 탄력적인 것으로 간주합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-115">Cloud computing is considered elastic.</span></span> <span data-ttu-id="0d3cf-116">이는 수요를 기반으로 리소스를 자동으로 할당 또는 할당 취소할 수 있음을 의미합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-116">This means that resources can automatically be allocated or deallocated based on demand.</span></span>
+    - content: <span data-ttu-id="d7a94-119">Infrastructure as a Service</span><span class="sxs-lookup"><span data-stu-id="d7a94-119">Infrastructure as a service</span></span>
+      incorrectExplanation: <span data-ttu-id="d7a94-120">Infrastructure as a Service를 사용하여 하드웨어 및 소프트웨어 관리 업무를 담당합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-120">With infrastructure as a service, you're responsible for managing the hardware and software.</span></span> <span data-ttu-id="d7a94-121">여기에는 가상 머신에서 시스템 업데이트를 수행하는 등의 작업이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-121">This includes tasks like performing system updates on virtual machines.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d7a94-122">Platform as a Service</span><span class="sxs-lookup"><span data-stu-id="d7a94-122">Platform as a service</span></span>
+      correctExplanation: <span data-ttu-id="d7a94-123">Platform as a Service의 목적은 응용 프로그램을 최대한 빨리 개발하도록 돕는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-123">The goal of platform as a service is to help you create an application as fast as possible.</span></span> <span data-ttu-id="d7a94-124">IT 관리 작업이 자동으로 수행되므로 코드 작성에 집중할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-124">The IT management tasks are done for you, so you can focus on writing code.</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="0d3cf-117">False</span><span class="sxs-lookup"><span data-stu-id="0d3cf-117">False</span></span>
-      incorrectExplanation: <span data-ttu-id="0d3cf-118">클라우드 컴퓨팅은 탄력적인 것으로 간주합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-118">Cloud computing is considered elastic.</span></span> <span data-ttu-id="0d3cf-119">이는 수요를 기반으로 리소스를 자동으로 할당 또는 할당 취소할 수 있음을 의미합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-119">This means that resources can automatically be allocated or deallocated based on demand.</span></span>
-      isCorrect: false
-  - content: <span data-ttu-id="0d3cf-120">클라우드로 이동하고 있고 높은 확장성, 임대 하드웨어를 원하고 보안은 중요하지 않다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-120">Suppose you're moving to the cloud and you want high scalability, rented hardware, and security is not a big concern.</span></span> <span data-ttu-id="0d3cf-121">사용할 가장 적합한 클라우드 배포 모델은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="0d3cf-121">Which cloud deployment model is best to use?</span></span>
-    choices:
-    - content: <span data-ttu-id="0d3cf-122">공용 클라우드</span><span class="sxs-lookup"><span data-stu-id="0d3cf-122">Public cloud</span></span>
-      correctExplanation: <span data-ttu-id="0d3cf-123">공용 클라우드는 확장성 및 임대 하드웨어의 혜택을 제공하는 타사 클라우드 공급자가 소유하고 운영합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-123">A public cloud is owned and operated by a third-party cloud provider, which offers the benefits of scalability and rented hardware.</span></span> <span data-ttu-id="0d3cf-124">하드웨어를 소유하지 않으므로 하드웨어에 물리적으로 액세스하는 사용자를 제어할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-124">Since the hardware is not owned by you, you can't control who has physical access to it.</span></span>
-      isCorrect: true
-    - content: <span data-ttu-id="0d3cf-125">사설 클라우드</span><span class="sxs-lookup"><span data-stu-id="0d3cf-125">Private cloud</span></span>
-      incorrectExplanation: <span data-ttu-id="0d3cf-126">사설 클라우드를 선택하는 기본 이유는 보안입니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-126">A primary reason to choose a private cloud is security.</span></span> <span data-ttu-id="0d3cf-127">사설 클라우드를 사용하면 일반적으로 하드웨어를 소유하고 온-프레미스로 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-127">With a private cloud, hardware is typically owned and operated on-premises.</span></span>
-      isCorrect: false
-    - content: <span data-ttu-id="0d3cf-128">하이브리드 클라우드</span><span class="sxs-lookup"><span data-stu-id="0d3cf-128">Hybrid cloud</span></span>
-      incorrectExplanation: <span data-ttu-id="0d3cf-129">하이브리드 클라우드는 공용 및 사설 클라우드의 결합입니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-129">A hybrid cloud is a public and private cloud combined.</span></span> <span data-ttu-id="0d3cf-130">보안이 중요하지 않으므로 사설 클라우드로 아무것도 이동할 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-130">Since security is not a concern of yours, there's no need to move anything to the private cloud.</span></span>
-      isCorrect: false
-  - content: <span data-ttu-id="0d3cf-131">응용 프로그램을 빌드하고 있고 가능한 한 빨리 사용자에게 이를 제공하려고 한다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-131">Suppose you're building an application and you want to get it to your users as fast as possible.</span></span> <span data-ttu-id="0d3cf-132">기본 하드웨어 또는 소프트웨어 관리를 걱정하지 않고 빌드, 테스트 및 배포에만 집중하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-132">You don't want to worry about managing the underlying hardware or software, you just want to focus on building, testing, and deploying.</span></span> <span data-ttu-id="0d3cf-133">가장 적합한 클라우드 서비스 유형은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="0d3cf-133">Which cloud service type is best for you?</span></span>
-    choices:
-    - content: <span data-ttu-id="0d3cf-134">Infrastructure as a Service</span><span class="sxs-lookup"><span data-stu-id="0d3cf-134">Infrastructure as a service</span></span>
-      incorrectExplanation: <span data-ttu-id="0d3cf-135">Infrastructure as a Service를 사용하여 하드웨어 및 소프트웨어 관리 업무를 담당합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-135">With infrastructure as a service, you're responsible for managing the hardware and software.</span></span> <span data-ttu-id="0d3cf-136">여기에는 가상 머신에서 시스템 업데이트를 수행하는 등의 작업이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-136">This includes tasks like performing system updates on virtual machines.</span></span>
-      isCorrect: false
-    - content: <span data-ttu-id="0d3cf-137">Platform as a Service</span><span class="sxs-lookup"><span data-stu-id="0d3cf-137">Platform as a service</span></span>
-      correctExplanation: <span data-ttu-id="0d3cf-138">Platform as a Service의 목적은 응용 프로그램을 최대한 빨리 개발하도록 돕는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-138">The goal of platform as a service is to help you create an application as fast as possible.</span></span> <span data-ttu-id="0d3cf-139">IT 관리 작업이 자동으로 수행되므로 코드 작성에 집중할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-139">The IT management tasks are done for you, so you can focus on writing code.</span></span>
-      isCorrect: true
-    - content: <span data-ttu-id="0d3cf-140">Software as a Service</span><span class="sxs-lookup"><span data-stu-id="0d3cf-140">Software as a service</span></span>
-      incorrectExplanation: <span data-ttu-id="0d3cf-141">Software as a Service를 사용하면 웹 브라우저 또는 소프트웨어 응용 프로그램을 통해 기존 응용 프로그램을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="0d3cf-141">With software as a service, you use an existing application through a web browser or software application.</span></span>
+    - content: <span data-ttu-id="d7a94-125">Software as a Service</span><span class="sxs-lookup"><span data-stu-id="d7a94-125">Software as a service</span></span>
+      incorrectExplanation: <span data-ttu-id="d7a94-126">Software as a Service를 사용하면 웹 브라우저 또는 소프트웨어 응용 프로그램을 통해 기존 응용 프로그램을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="d7a94-126">With software as a service, you use an existing application through a web browser or software application.</span></span>
       isCorrect: false

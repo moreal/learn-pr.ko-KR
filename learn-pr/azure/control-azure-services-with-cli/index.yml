@@ -2,24 +2,35 @@
 uid: learn.control-azure-services-with-cli
 metadata:
   title: CLI를 사용하여 Azure 서비스 제어
-  description: Azure CLI는 Azure 리소스를 관리하기 위한 플랫폼 간 명령줄 도구를 제공합니다. 관리자 머신에 로컬로 설치한 후 대화형 명령 및 스크립트를 실행할 수 있습니다. Azure CLI는 Azure 구독의 컨텍스트에서 실행되는 Azure 데이터 센터로 명령을 전달합니다. 이 모듈에서는 Linux, macOS 또는 Windows용 Azure CLI를 설치한 후 이 모듈을 사용하여 Azure에 연결하고 리소스를 관리하는 방법을 보여 줍니다.
-  ms.openlocfilehash: 072f437631d72099223f2fc67adf68aca08c9be4
-  ms.sourcegitcommit: 526b39347ae023619cc4c4add68eff971510e523
+  description: Azure CLI를 로컬로 설치하고 Azure 리소스를 관리하는 데 사용합니다.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 4c91411059ac9767a0fcc199cd2e336e27e708f1
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42939870"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847914"
 title: CLI를 사용하여 Azure 서비스 제어
 summary: Azure CLI를 로컬로 설치하고 Azure 리소스를 관리하는 데 사용합니다.
-abstract: Azure CLI는 Azure 리소스를 관리하기 위한 플랫폼 간 명령줄 도구를 제공합니다. 관리자 머신에 로컬로 설치한 후 대화형 명령 및 스크립트를 실행할 수 있습니다. Azure CLI는 Azure 구독의 컨텍스트에서 실행되는 Azure 데이터 센터로 명령을 전달합니다. 이 모듈에서는 Linux, macOS 또는 Windows용 Azure CLI를 설치한 후 이 모듈을 사용하여 Azure에 연결하고 리소스를 관리하는 방법을 보여 줍니다.
-cardDescription: Azure CLI를 로컬로 설치하고 Azure 리소스를 관리하는 데 사용합니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+    - Linux, macOS 및/또는 Windows에 Azure CLI 설치
+    - Azure CLI를 사용하여 Azure 구독에 연결
+    - Azure CLI를 사용하여 Azure 리소스 만들기
+prerequisites: >
+  - PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
+
+  - 리소스 그룹과 같은 기본 Azure 개념에 대한 지식
+
+  - Azure Portal을 사용하여 Azure 리소스 관리 경험
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
+- azure-clis
 units:
 - learn.control-azure-services-with-cli.1-introduction
 - learn.control-azure-services-with-cli.2-what-is-the-azure-cli

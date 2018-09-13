@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
+title: <span data-ttu-id="9a841-101">저장소 성능 최적화</span><span class="sxs-lookup"><span data-stu-id="9a841-101">Optimize storage performance</span></span>
+metadata:
+  title: <span data-ttu-id="9a841-102">저장소 성능 최적화</span><span class="sxs-lookup"><span data-stu-id="9a841-102">Optimize storage performance</span></span>
+  description: <span data-ttu-id="9a841-103">이 단원에서는 아키텍처의 저장소 성능을 최적화하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-103">In this unit we'll discuss how to optimize storage performance for your architecture</span></span>
+  ms.openlocfilehash: 32524382aa06c0a14f56c8faf49a0b4123c945e4
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675596"
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-optimize-storage-performance.md)]
+quiz:
+  title: <span data-ttu-id="9a841-104">지식 검사 - 저장소 성능 최적화</span><span class="sxs-lookup"><span data-stu-id="9a841-104">Knowledge Check - Optimize storage performance</span></span>
+  questions:
+  - content: <span data-ttu-id="9a841-105">다중저장소 지속성이란 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="9a841-105">What is polyglot persistence?</span></span>
+    choices:
+    - content: <span data-ttu-id="9a841-106">Azure SQL Database를 사용하여 모든 데이터 저장</span><span class="sxs-lookup"><span data-stu-id="9a841-106">Using Azure SQL Database to store all of your data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9a841-107">단일 기술로 모든 데이터를 저장하는 것은 다중 언어 지속성에 대한 정의가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-107">Storing all data in a single technology is not the definition of polyglot persistence.</span></span>
+    - content: <span data-ttu-id="9a841-108">데이터 전송을 위해 연결 상태를 유지하는 방법</span><span class="sxs-lookup"><span data-stu-id="9a841-108">A way to keep connections alive for data transfers</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9a841-109">Keepalive는 데이터 전송을 위해 연결 상태를 유지하는 방법이며 다중 언어 지속성과는 관련이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-109">Keepalives are methods of keeping connections alive for data transfers and are not related to polyglot persistence.</span></span>
+    - content: <span data-ttu-id="9a841-110">응용 프로그램의 다양한 용도를 위해 다양한 데이터 저장 기술 사용</span><span class="sxs-lookup"><span data-stu-id="9a841-110">The usage of different data storage technologies for different purposes in your application</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="9a841-111">다중저장소 지속성은 다양한 용도를 위해 다양한 데이터 저장 기술을 사용하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-111">Polyglot persistence is the usage of different data storage technologies for different purposes.</span></span>
+    - content: <span data-ttu-id="9a841-112">일시적인 데이터 결함을 처리하는 방법</span><span class="sxs-lookup"><span data-stu-id="9a841-112">An approach to deal with transient data faults</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9a841-113">일시적인 데이터 장애를 처리하는 것은 응용 프로그램 아키텍처에 유익하지만 다중저장소 지속성과는 관련이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-113">While dealing with transient data faults is beneficial in an application architecture, it is not related to polyglot persistence.</span></span>
+  - content: <span data-ttu-id="9a841-114">Redis Cache는 데이터 스냅숏을 메모리에 저장하여 응용 프로그램의 성능을 향상시키는 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-114">Redis Cache can be used to improve the performance of your application by storing a snapshot of data in memory.</span></span>
+    choices:
+    - content: <span data-ttu-id="9a841-115">True</span><span class="sxs-lookup"><span data-stu-id="9a841-115">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="9a841-116">Redis Cache는 응용 프로그램 데이터를 메모리에 저장하기 때문에 검색 시간이 빨라지고 자주 액세스하는 데이터와 관련된 응용 프로그램 성능이 향상됩니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-116">Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.</span></span>
+    - content: <span data-ttu-id="9a841-117">False</span><span class="sxs-lookup"><span data-stu-id="9a841-117">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9a841-118">Redis Cache는 응용 프로그램 데이터를 메모리에 저장하기 때문에 검색 시간이 빨라지고 자주 액세스하는 데이터와 관련된 응용 프로그램 성능이 향상됩니다.</span><span class="sxs-lookup"><span data-stu-id="9a841-118">Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.</span></span>

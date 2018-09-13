@@ -2,24 +2,30 @@
 uid: learn.connect-app-to-azure-storage
 metadata:
   title: Azure Storage에 앱 연결
-  description: Azure Storage를 사용하면 데이터 형식과 관계없이 유연하고 간단하게 응용 프로그램 데이터를 저장할 수 있습니다. 이 모듈에서는 .NET Core 콘솔 응용 프로그램을 만든 후 클라이언트 라이브러리를 사용하여 Azure Storage에 연결하는 방법을 보여 줍니다.
-  ms.openlocfilehash: 103e84360f6fa44929577ee27933a5a35c8bd72b
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  description: .NET Core 콘솔 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 코드를 추가하여 Azure Storage에 연결합니다.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 8c59dd11237c325e8146afa818feee6a8fce49d3
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228199"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43846860"
 title: Azure Storage에 앱 연결
 summary: .NET Core 콘솔 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 코드를 추가하여 Azure Storage에 연결합니다.
-abstract: Azure Storage를 사용하면 데이터 형식과 관계없이 유연하고 간단하게 응용 프로그램 데이터를 저장할 수 있습니다. 이 모듈에서는 .NET Core 콘솔 응용 프로그램을 만든 후 클라이언트 라이브러리를 사용하여 Azure Storage에 연결하는 방법을 보여 줍니다.
-cardDescription: .NET Core 콘솔 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 코드를 추가하여 Azure Storage에 연결합니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+    - Azure Storage가 앱에 적합한지 확인
+    - 앱에서 Azure Storage를 사용할 때 디자인 고려 사항 평가
+    - 새 응용 프로그램을 만들고 앱을 Azure Storage 계정에 연결
+prerequisites: 없음
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
+- azure-storage
 units:
 - learn.connect-app-to-azure-storage.1-introduction
 - learn.connect-app-to-azure-storage.2-prepare-your-app-and-azure-storage-account

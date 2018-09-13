@@ -1,5 +1,15 @@
 ### YamlMime:LearningPath
 uid: learn.cloud-foundations
+metadata:
+  title: 클라우드 기본 사항
+  description: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 42a739267fee3c7b403b72bfc3a07d631f408c17
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826871"
 title: 클라우드 기본 사항
 summary: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
 prerequisites: 없음
@@ -8,21 +18,14 @@ levels:
 - beginner
 roles:
 - developer
-- solutions-architect
+- solution-architect
 - administrator
 products:
-- Azure
-metadata:
-  title: 클라우드 기본 사항
-  description: 클라우드에 관심이 있지만 어떤 도움이 되는지 완전히 확신할 수 없으신가요? 이 학습 경로에서 시작할 수 있습니다. 클라우드 컴퓨팅의 혜택, 시간과 비용을 절약할 수 있는 Azure의 기능, 클라우드로 전환하기 위한 기본 전략 등을 알아보세요.
-  ms.openlocfilehash: e6bb0945c10ef8e5cc798fe86489e05bcc777bb3
-  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42911018"
+- azure
 modules:
 - principles-cloud-computing
+- learn.azure-services-features
 - learn.intro-to-compute
 - learn.intro-to-data-in-azure
+- learn.intro-to-azure-networking
 achievement: learn.cloud-foundations.trophy
