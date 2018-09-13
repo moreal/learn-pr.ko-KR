@@ -1,80 +1,85 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.5-knowledge-check
-title: <span data-ttu-id="757b6-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="757b6-101">Check your knowledge</span></span>
+title: <span data-ttu-id="274dc-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="274dc-101">Check your knowledge</span></span>
 metadata:
-  title: <span data-ttu-id="757b6-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="757b6-102">Check your knowledge</span></span>
-  description: <span data-ttu-id="757b6-103">Tensorflow 및 Azure Data Science Virtual Machine을 사용하여 신경망을 빌드하는 데 필요한 단계를 이해했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-103">Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.</span></span>
-  ms.openlocfilehash: 118d9b5f0fe9aa3299d4504df9027010135648ab
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  title: <span data-ttu-id="274dc-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="274dc-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="274dc-103">Tensorflow 및 Azure Data Science Virtual Machine을 사용하여 신경망을 빌드하는 데 필요한 단계를 이해했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-103">Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0d96ef86afcfb4eead29233311a59c30824df1ad
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414458"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231302"
 durationInMinutes: 10
 quiz:
-  title: <span data-ttu-id="757b6-104">TensorFlow 및 Azure Data Science Virtual Machine을 사용하여 신경망 빌드</span><span class="sxs-lookup"><span data-stu-id="757b6-104">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  title: <span data-ttu-id="274dc-104">TensorFlow 및 Azure Data Science Virtual Machine을 사용하여 신경망 빌드</span><span class="sxs-lookup"><span data-stu-id="274dc-104">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
   questions:
-  - content: <span data-ttu-id="757b6-105">Linux 이외의 운영 체제로 Data Science VM을 만들 수 있나요?</span><span class="sxs-lookup"><span data-stu-id="757b6-105">Can you create a Data Science VM with an operating system other than Linux?</span></span>
+  - content: <span data-ttu-id="274dc-105">Linux 이외의 운영 체제로 Data Science VM을 만들 수 있나요?</span><span class="sxs-lookup"><span data-stu-id="274dc-105">Can you create a Data Science VM with an operating system other than Linux?</span></span>
     choices:
-    - content: <span data-ttu-id="757b6-106">아니요</span><span class="sxs-lookup"><span data-stu-id="757b6-106">No</span></span>
+    - content: <span data-ttu-id="274dc-106">아니요</span><span class="sxs-lookup"><span data-stu-id="274dc-106">No</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-107">Data Science VM에 사용할 다른 운영 체제 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-107">There are other options for operating systems for the Data Science VM.</span></span>
-    - content: <span data-ttu-id="757b6-108">yes</span><span class="sxs-lookup"><span data-stu-id="757b6-108">Yes</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-107">Data Science VM에 사용할 다른 운영 체제 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-107">There are other options for operating systems for the Data Science VM.</span></span>
+    - content: <span data-ttu-id="274dc-108">yes</span><span class="sxs-lookup"><span data-stu-id="274dc-108">Yes</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="757b6-109">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-109">Great!</span></span> <span data-ttu-id="757b6-110">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-110">Proceed to the next part of the lab.</span></span>
-  - content: <span data-ttu-id="757b6-111">클라이언트가 있는 Data Science VM에 연결하는 데 사용하기 위해 Azure Portal에서 복사해야 하는 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="757b6-111">What should be copied in the Azure Portal to use to connect to the Data Science VM with client?</span></span>
+      correctExplanation: <span data-ttu-id="274dc-109">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-109">Great!</span></span> <span data-ttu-id="274dc-110">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-110">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="274dc-111">클라이언트가 있는 Data Science VM에 연결하는 데 사용하기 위해 Azure Portal에서 복사해야 하는 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="274dc-111">What should be copied in the Azure Portal to use to connect to the Data Science VM with client?</span></span>
     choices:
-    - content: <span data-ttu-id="757b6-112">IP 주소</span><span class="sxs-lookup"><span data-stu-id="757b6-112">IP Address</span></span>
+    - content: <span data-ttu-id="274dc-112">IP 주소</span><span class="sxs-lookup"><span data-stu-id="274dc-112">IP Address</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="757b6-113">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-113">Great!</span></span> <span data-ttu-id="757b6-114">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-114">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="757b6-115">구독 이름</span><span class="sxs-lookup"><span data-stu-id="757b6-115">Subscription name</span></span>
+      correctExplanation: <span data-ttu-id="274dc-113">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-113">Great!</span></span> <span data-ttu-id="274dc-114">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-114">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="274dc-115">구독 이름</span><span class="sxs-lookup"><span data-stu-id="274dc-115">Subscription name</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-116">VM에 연결하는 데 구독 이름은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-116">The subscription name isn't needed to connect to the VM.</span></span>
-    - content: <span data-ttu-id="757b6-117">DNS 이름</span><span class="sxs-lookup"><span data-stu-id="757b6-117">DNS name</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-116">VM에 연결하는 데 구독 이름은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-116">The subscription name isn't needed to connect to the VM.</span></span>
+    - content: <span data-ttu-id="274dc-117">DNS 이름</span><span class="sxs-lookup"><span data-stu-id="274dc-117">DNS name</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-118">VM에 연결하는 데 DNS 이름은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-118">The DNS name isn't needed to connect to the VM.</span></span>
-    - content: <span data-ttu-id="757b6-119">가상 네트워크/서브넷</span><span class="sxs-lookup"><span data-stu-id="757b6-119">Virtual network/subnet</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-118">VM에 연결하는 데 DNS 이름은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-118">The DNS name isn't needed to connect to the VM.</span></span>
+    - content: <span data-ttu-id="274dc-119">가상 네트워크/서브넷</span><span class="sxs-lookup"><span data-stu-id="274dc-119">Virtual network/subnet</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-120">VM에 연결하는 데 가상 네트워크 또는 서브넷은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-120">The Virtual network or subnet isn't needed to connect to the VM.</span></span>
-  - content: <span data-ttu-id="757b6-121">Data Science VM에서 전이 학습을 수행하려면 무엇이 필요한가요?</span><span class="sxs-lookup"><span data-stu-id="757b6-121">What do you need to perform transfer learning on the Data Science VM?</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-120">VM에 연결하는 데 가상 네트워크 또는 서브넷은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-120">The Virtual network or subnet isn't needed to connect to the VM.</span></span>
+  - content: <span data-ttu-id="274dc-121">Data Science VM에서 전이 학습을 수행하려면 무엇이 필요한가요?</span><span class="sxs-lookup"><span data-stu-id="274dc-121">What do you need to perform transfer learning on the Data Science VM?</span></span>
     choices:
-    - content: <span data-ttu-id="757b6-122">대형 GPU에 대한 액세스</span><span class="sxs-lookup"><span data-stu-id="757b6-122">Access to a large GPU</span></span>
+    - content: <span data-ttu-id="274dc-122">대형 GPU에 대한 액세스</span><span class="sxs-lookup"><span data-stu-id="274dc-122">Access to a large GPU</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-123">GPU는 이미지에 대해 다시 학습하는 데는 좋지만 크기가 크거나 필수일 필요는 없습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-123">While a GPU is great for retraining on images, it doesn't need to be large or required.</span></span>
-    - content: <span data-ttu-id="757b6-124">Tensorflow 설치됨</span><span class="sxs-lookup"><span data-stu-id="757b6-124">Tensorflow installed</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-123">GPU는 이미지에 대해 다시 학습하는 데는 좋지만 크기가 크거나 필수일 필요는 없습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-123">While a GPU is great for retraining on images, it doesn't need to be large or required.</span></span>
+    - content: <span data-ttu-id="274dc-124">Tensorflow 설치됨</span><span class="sxs-lookup"><span data-stu-id="274dc-124">Tensorflow installed</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-125">Tensorflow가 Data Science VM에 이미 설치되어 있으므로 다시 설치할 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-125">Tensorflow is already installed in the Data Science VM so there's no need to install it again.</span></span>
-    - content: <span data-ttu-id="757b6-126">미리 학습된 모델</span><span class="sxs-lookup"><span data-stu-id="757b6-126">Pre-trained model</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-125">Tensorflow가 Data Science VM에 이미 설치되어 있으므로 다시 설치할 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-125">Tensorflow is already installed in the Data Science VM so there's no need to install it again.</span></span>
+    - content: <span data-ttu-id="274dc-126">미리 학습된 모델</span><span class="sxs-lookup"><span data-stu-id="274dc-126">Pre-trained model</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="757b6-127">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-127">Great!</span></span> <span data-ttu-id="757b6-128">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-128">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="757b6-129">매우 큰 데이터 집합</span><span class="sxs-lookup"><span data-stu-id="757b6-129">A very large set of data</span></span>
+      correctExplanation: <span data-ttu-id="274dc-127">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-127">Great!</span></span> <span data-ttu-id="274dc-128">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-128">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="274dc-129">매우 큰 데이터 집합</span><span class="sxs-lookup"><span data-stu-id="274dc-129">A very large set of data</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-130">미리 학습된 모델을 사용하는 데 크기가 큰 데이터 집합은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-130">You don't need a large data set to use pre-trained models.</span></span>
-  - content: <span data-ttu-id="757b6-131">Tensorflow 모델을 시각화하는 도구의 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="757b6-131">What is the name of the tool to visualize Tensorflow models?</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-130">미리 학습된 모델을 사용하는 데 크기가 큰 데이터 집합은 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-130">You don't need a large data set to use pre-trained models.</span></span>
+  - content: <span data-ttu-id="274dc-131">Tensorflow 모델을 시각화하는 도구의 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="274dc-131">What is the name of the tool to visualize Tensorflow models?</span></span>
     choices:
-    - content: <span data-ttu-id="757b6-132">Tensorview</span><span class="sxs-lookup"><span data-stu-id="757b6-132">Tensorview</span></span>
+    - content: <span data-ttu-id="274dc-132">Tensorview</span><span class="sxs-lookup"><span data-stu-id="274dc-132">Tensorview</span></span>
       isCorrect: false
       incorrectExplanation: ''
-    - content: <span data-ttu-id="757b6-133">Tensorvision</span><span class="sxs-lookup"><span data-stu-id="757b6-133">Tensorvision</span></span>
+    - content: <span data-ttu-id="274dc-133">Tensorvision</span><span class="sxs-lookup"><span data-stu-id="274dc-133">Tensorvision</span></span>
       isCorrect: false
       incorrectExplanation: ''
-    - content: <span data-ttu-id="757b6-134">Tensorpanel</span><span class="sxs-lookup"><span data-stu-id="757b6-134">Tensorpanel</span></span>
+    - content: <span data-ttu-id="274dc-134">Tensorpanel</span><span class="sxs-lookup"><span data-stu-id="274dc-134">Tensorpanel</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="757b6-135">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-135">Great!</span></span> <span data-ttu-id="757b6-136">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-136">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="757b6-137">Tensorboard</span><span class="sxs-lookup"><span data-stu-id="757b6-137">Tensorboard</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-135">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-135">Great!</span></span> <span data-ttu-id="274dc-136">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-136">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="274dc-137">Tensorboard</span><span class="sxs-lookup"><span data-stu-id="274dc-137">Tensorboard</span></span>
       isCorrect: false
       correctExplanation: ''
-  - content: <span data-ttu-id="757b6-138">GUI에 대한 TkInter 코드를 실행하여 모델을 테스트하는 경우 모델에서 결과를 가져오기 위해 호출하는 Python 스크립트의 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="757b6-138">When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?</span></span>
+  - content: <span data-ttu-id="274dc-138">GUI에 대한 TkInter 코드를 실행하여 모델을 테스트하는 경우 모델에서 결과를 가져오기 위해 호출하는 Python 스크립트의 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="274dc-138">When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?</span></span>
     choices:
-    - content: <span data-ttu-id="757b6-139">retrain.py</span><span class="sxs-lookup"><span data-stu-id="757b6-139">retrain.py</span></span>
+    - content: <span data-ttu-id="274dc-139">retrain.py</span><span class="sxs-lookup"><span data-stu-id="274dc-139">retrain.py</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-140">이 스크립트는 이전에 고유한 이미지를 사용하여 모델을 다시 학습하기 위해 사용되었습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-140">This script was used earlier to retrain the model with our own images.</span></span>
-    - content: <span data-ttu-id="757b6-141">classify.py</span><span class="sxs-lookup"><span data-stu-id="757b6-141">classify.py</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-140">이 스크립트는 이전에 고유한 이미지를 사용하여 모델을 다시 학습하기 위해 사용되었습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-140">This script was used earlier to retrain the model with our own images.</span></span>
+    - content: <span data-ttu-id="274dc-141">classify.py</span><span class="sxs-lookup"><span data-stu-id="274dc-141">classify.py</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-142">이 스크립트는 TkInter 코드를 배치하고 실행하는 데 사용되었습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-142">This script was used to put the TkInter code into and run from.</span></span>
-    - content: <span data-ttu-id="757b6-143">label_image.py</span><span class="sxs-lookup"><span data-stu-id="757b6-143">label_image.py</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-142">이 스크립트는 TkInter 코드를 배치하고 실행하는 데 사용되었습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-142">This script was used to put the TkInter code into and run from.</span></span>
+    - content: <span data-ttu-id="274dc-143">label_image.py</span><span class="sxs-lookup"><span data-stu-id="274dc-143">label_image.py</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="757b6-144">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-144">ThGreat!</span></span> <span data-ttu-id="757b6-145">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-145">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="757b6-146">results.py</span><span class="sxs-lookup"><span data-stu-id="757b6-146">results.py</span></span>
+      correctExplanation: <span data-ttu-id="274dc-144">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-144">ThGreat!</span></span> <span data-ttu-id="274dc-145">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-145">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="274dc-146">results.py</span><span class="sxs-lookup"><span data-stu-id="274dc-146">results.py</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="757b6-147">이 스크립트는 존재하지 않으므로 오류가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="757b6-147">This script wouldn't exist and would result in an error.</span></span>
+      incorrectExplanation: <span data-ttu-id="274dc-147">이 스크립트는 존재하지 않으므로 오류가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="274dc-147">This script wouldn't exist and would result in an error.</span></span>

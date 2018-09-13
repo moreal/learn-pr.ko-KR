@@ -1,108 +1,113 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.7-knowledge-check
-title: <span data-ttu-id="f9d52-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="f9d52-101">Check your knowledge</span></span>
+title: <span data-ttu-id="db6d5-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="db6d5-101">Check your knowledge</span></span>
 metadata:
-  title: <span data-ttu-id="f9d52-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="f9d52-102">Check your knowledge</span></span>
-  description: <span data-ttu-id="f9d52-103">Microsoft Custom Vision Service로 이미지를 분류하는 데 필요한 단계를 이해했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-103">Confirm that you understand the steps required to classify images with the Microsoft Custom Vision Service.</span></span>
-  ms.openlocfilehash: b217a3b77827db2dc79334d15f430d7289f7ada5
-  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  title: <span data-ttu-id="db6d5-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="db6d5-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="db6d5-103">Microsoft Custom Vision Service로 이미지를 분류하는 데 필요한 단계를 이해했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-103">Confirm that you understand the steps required to classify images with the Microsoft Custom Vision Service.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c69b14bf20dbd79b03402009a2fb8ece7c4466ab
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43363865"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233139"
 durationInMinutes: 10
 quiz:
-  title: <span data-ttu-id="f9d52-104">Microsoft Custom Vision Service를 사용하여 이미지 분류 수행</span><span class="sxs-lookup"><span data-stu-id="f9d52-104">Using the Microsoft Custom Vision Service to perform image classification</span></span>
+  title: <span data-ttu-id="db6d5-104">Microsoft Custom Vision Service를 사용하여 이미지 분류 수행</span><span class="sxs-lookup"><span data-stu-id="db6d5-104">Using the Microsoft Custom Vision Service to perform image classification</span></span>
   questions:
-  - content: <span data-ttu-id="f9d52-105">새 Custom Vision Service 프로젝트를 만드는 경우 도메인의 용도는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-105">When you're creating a new Custom Vision Service project, what is a domain used for?</span></span>
+  - content: <span data-ttu-id="db6d5-105">새 Custom Vision Service 프로젝트를 만드는 경우 도메인의 용도는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-105">When you're creating a new Custom Vision Service project, what is a domain used for?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-106">프로젝트 이름을 결정하는 데 도움이 됨</span><span class="sxs-lookup"><span data-stu-id="f9d52-106">Helps you decide what to name your project</span></span>
+    - content: <span data-ttu-id="db6d5-106">프로젝트 이름을 결정하는 데 도움이 됨</span><span class="sxs-lookup"><span data-stu-id="db6d5-106">Helps you decide what to name your project</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-107">원하는 대로 프로젝트 이름을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-107">You can name the project anything you want.</span></span> <span data-ttu-id="f9d52-108">해당 작업에 도메인이 개입하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-108">The domain doesn't interfere with that.</span></span>
-    - content: <span data-ttu-id="f9d52-109">프로젝트 구성 방법을 결정하는 데 도움이 됨</span><span class="sxs-lookup"><span data-stu-id="f9d52-109">Helps you decide how to structure your project</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-107">원하는 대로 프로젝트 이름을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-107">You can name the project anything you want.</span></span> <span data-ttu-id="db6d5-108">해당 작업에 도메인이 개입하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-108">The domain doesn't interfere with that.</span></span>
+    - content: <span data-ttu-id="db6d5-109">프로젝트 구성 방법을 결정하는 데 도움이 됨</span><span class="sxs-lookup"><span data-stu-id="db6d5-109">Helps you decide how to structure your project</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-110">프로젝트는 학습 이미지 및 예측 면에서 구조가 동일합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-110">Projects have the same structure in terms of training images and predictions.</span></span> <span data-ttu-id="f9d52-111">도메인이 개입하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-111">The domain doesn't interfere with that.</span></span>
-    - content: <span data-ttu-id="f9d52-112">특정 유형의 이미지에 대한 모델 최적화</span><span class="sxs-lookup"><span data-stu-id="f9d52-112">Optimizes a model for specific types of images</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-110">프로젝트는 학습 이미지 및 예측 면에서 구조가 동일합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-110">Projects have the same structure in terms of training images and predictions.</span></span> <span data-ttu-id="db6d5-111">도메인이 개입하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-111">The domain doesn't interfere with that.</span></span>
+    - content: <span data-ttu-id="db6d5-112">특정 유형의 이미지에 대한 모델 최적화</span><span class="sxs-lookup"><span data-stu-id="db6d5-112">Optimizes a model for specific types of images</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-113">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-113">Great!</span></span> <span data-ttu-id="f9d52-114">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-114">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="f9d52-115">조직의 학습 이미지 최적화</span><span class="sxs-lookup"><span data-stu-id="f9d52-115">Optimizes your training images for organization</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-113">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-113">Great!</span></span> <span data-ttu-id="db6d5-114">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-114">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db6d5-115">조직의 학습 이미지 최적화</span><span class="sxs-lookup"><span data-stu-id="db6d5-115">Optimizes your training images for organization</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-116">학습 이미지는 태그별로 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-116">Training images are organized by tag.</span></span> <span data-ttu-id="f9d52-117">도메인이 개입하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-117">The domain doesn't interfere with that.</span></span>
-  - content: <span data-ttu-id="f9d52-118">이미지를 업로드한 후 태그를 추가해야 하는 이유는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-118">Why should you add a tag after uploading images?</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-116">학습 이미지는 태그별로 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-116">Training images are organized by tag.</span></span> <span data-ttu-id="db6d5-117">도메인이 개입하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-117">The domain doesn't interfere with that.</span></span>
+  - content: <span data-ttu-id="db6d5-118">이미지를 업로드한 후 태그를 추가해야 하는 이유는 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-118">Why should you add a tag after uploading images?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-119">나중에 사용하도록 프로젝트의 이미지를 구성하는 데 도움을 주기 위해</span><span class="sxs-lookup"><span data-stu-id="f9d52-119">To help you organize your images in the project for later use</span></span>
+    - content: <span data-ttu-id="db6d5-119">나중에 사용하도록 프로젝트의 이미지를 구성하는 데 도움을 주기 위해</span><span class="sxs-lookup"><span data-stu-id="db6d5-119">To help you organize your images in the project for later use</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-120">태그가 이미지 구성에 도움을 주기는 하지만 태그의 용도가 이것으로만 제한되는 것은 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-120">While tags do help organize images, that's not the full purpose of tags.</span></span>
-    - content: <span data-ttu-id="f9d52-121">학습용 범주에 이미지를 배치하기 위해</span><span class="sxs-lookup"><span data-stu-id="f9d52-121">To put the images in a category for training</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-120">태그가 이미지 구성에 도움을 주기는 하지만 태그의 용도가 이것으로만 제한되는 것은 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-120">While tags do help organize images, that's not the full purpose of tags.</span></span>
+    - content: <span data-ttu-id="db6d5-121">학습용 범주에 이미지를 배치하기 위해</span><span class="sxs-lookup"><span data-stu-id="db6d5-121">To put the images in a category for training</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-122">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-122">Great!</span></span> <span data-ttu-id="f9d52-123">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-123">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="f9d52-124">학습 후 단어 클라우드를 생성하려면</span><span class="sxs-lookup"><span data-stu-id="f9d52-124">To generate a word cloud after training</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-122">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-122">Great!</span></span> <span data-ttu-id="db6d5-123">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-123">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db6d5-124">학습 후 단어 클라우드를 생성하려면</span><span class="sxs-lookup"><span data-stu-id="db6d5-124">To generate a word cloud after training</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-125">Custom Vision Service는 단어 클라우드로 아무 것도 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-125">The Custom Vision Service doesn't do anything with word clouds.</span></span>
-    - content: <span data-ttu-id="f9d52-126">태그 추가할 필요 없음</span><span class="sxs-lookup"><span data-stu-id="f9d52-126">You don't need to add a tag</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-125">Custom Vision Service는 단어 클라우드로 아무 것도 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-125">The Custom Vision Service doesn't do anything with word clouds.</span></span>
+    - content: <span data-ttu-id="db6d5-126">태그 추가할 필요 없음</span><span class="sxs-lookup"><span data-stu-id="db6d5-126">You don't need to add a tag</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-127">이미지 분류가 작동하도록 하려면 태그를 하나 이상 추가해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-127">In order for the image classification to work, you do need to add at least one tag.</span></span>
-  - content: <span data-ttu-id="f9d52-128">모델의 성능을 측정하는 경우 정밀도와 재현율이 관련이 있나요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-128">Are precision and recall related when you're measuring the model's performance?</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-127">이미지 분류가 작동하도록 하려면 태그를 하나 이상 추가해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-127">In order for the image classification to work, you do need to add at least one tag.</span></span>
+  - content: <span data-ttu-id="db6d5-128">모델의 성능을 측정하는 경우 정밀도와 재현율이 관련이 있나요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-128">Are precision and recall related when you're measuring the model's performance?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-129">아니요</span><span class="sxs-lookup"><span data-stu-id="f9d52-129">No</span></span>
+    - content: <span data-ttu-id="db6d5-129">아니요</span><span class="sxs-lookup"><span data-stu-id="db6d5-129">No</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-130">정밀도와 재현율이 관련이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-130">Precision and recall are related.</span></span> <span data-ttu-id="f9d52-131">정밀도가 높고 재현율이 낮은 경우 모델이 성능이 좋지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-131">You won't have a model that performs well if you have high precision and low recall.</span></span>
-    - content: <span data-ttu-id="f9d52-132">예</span><span class="sxs-lookup"><span data-stu-id="f9d52-132">Yes</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-130">정밀도와 재현율이 관련이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-130">Precision and recall are related.</span></span> <span data-ttu-id="db6d5-131">정밀도가 높고 재현율이 낮은 경우 모델이 성능이 좋지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-131">You won't have a model that performs well if you have high precision and low recall.</span></span>
+    - content: <span data-ttu-id="db6d5-132">예</span><span class="sxs-lookup"><span data-stu-id="db6d5-132">Yes</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-133">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-133">Great!</span></span> <span data-ttu-id="f9d52-134">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-134">Proceed to the next part of the lab.</span></span>
-  - content: <span data-ttu-id="f9d52-135">학습 후 모델에 대한 빠른 테스트를 수행할 수 있는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-135">Which ways can you perform a quick test on your model after training?</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-133">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-133">Great!</span></span> <span data-ttu-id="db6d5-134">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-134">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="db6d5-135">학습 후 모델에 대한 빠른 테스트를 수행할 수 있는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-135">Which ways can you perform a quick test on your model after training?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-136">이미지 파일</span><span class="sxs-lookup"><span data-stu-id="f9d52-136">Image file</span></span>
+    - content: <span data-ttu-id="db6d5-136">이미지 파일</span><span class="sxs-lookup"><span data-stu-id="db6d5-136">Image file</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-137">서비스는 이미지 파일에 대해 빠른 테스트를 수행할 수 있으며 다른 작업도 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-137">While the service can do a quick test on image files, it can do others, too.</span></span>
-    - content: <span data-ttu-id="f9d52-138">이미지 URL</span><span class="sxs-lookup"><span data-stu-id="f9d52-138">Image URL</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-137">서비스는 이미지 파일에 대해 빠른 테스트를 수행할 수 있으며 다른 작업도 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-137">While the service can do a quick test on image files, it can do others, too.</span></span>
+    - content: <span data-ttu-id="db6d5-138">이미지 URL</span><span class="sxs-lookup"><span data-stu-id="db6d5-138">Image URL</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-139">서비스는 이미지 URL에 대해 빠른 테스트를 수행할 수 있으며 다른 작업도 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-139">While the service can do a quick test on image URLs, it can do others, too.</span></span>
-    - content: <span data-ttu-id="f9d52-140">이미지의 웹 페이지</span><span class="sxs-lookup"><span data-stu-id="f9d52-140">Web page of images</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-139">서비스는 이미지 URL에 대해 빠른 테스트를 수행할 수 있으며 다른 작업도 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-139">While the service can do a quick test on image URLs, it can do others, too.</span></span>
+    - content: <span data-ttu-id="db6d5-140">이미지의 웹 페이지</span><span class="sxs-lookup"><span data-stu-id="db6d5-140">Web page of images</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-141">서비스는 이미지가 있는 웹 페이지에 대해서만 빠른 테스트를 수행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-141">The service is unable to perform a quick test on just a web page with images on it.</span></span>
-    - content: <span data-ttu-id="f9d52-142">이미지 파일 및 이미지 URL</span><span class="sxs-lookup"><span data-stu-id="f9d52-142">Image file and image URL</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-141">서비스는 이미지가 있는 웹 페이지에 대해서만 빠른 테스트를 수행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-141">The service is unable to perform a quick test on just a web page with images on it.</span></span>
+    - content: <span data-ttu-id="db6d5-142">이미지 파일 및 이미지 URL</span><span class="sxs-lookup"><span data-stu-id="db6d5-142">Image file and image URL</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-143">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-143">Great!</span></span> <span data-ttu-id="f9d52-144">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-144">Proceed to the next part of the lab.</span></span>
-  - content: <span data-ttu-id="f9d52-145">성능 탭의 ‘기본값으로 설정’ 표시는 어떤 역할을 하나요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-145">What does marking 'Make default' from the Performance tab do?</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-143">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-143">Great!</span></span> <span data-ttu-id="db6d5-144">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-144">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="db6d5-145">성능 탭의 ‘기본값으로 설정’ 표시는 어떤 역할을 하나요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-145">What does marking 'Make default' from the Performance tab do?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-146">모델의 가장 최근 반복을 기본 반복으로 표시</span><span class="sxs-lookup"><span data-stu-id="f9d52-146">Marks the latest iteration of the model as the default iteration</span></span>
+    - content: <span data-ttu-id="db6d5-146">모델의 가장 최근 반복을 기본 반복으로 표시</span><span class="sxs-lookup"><span data-stu-id="db6d5-146">Marks the latest iteration of the model as the default iteration</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-147">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-147">Great!</span></span> <span data-ttu-id="f9d52-148">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-148">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="f9d52-149">이미지 URL 엔드포인트를 기본 엔드포인트로 표시</span><span class="sxs-lookup"><span data-stu-id="f9d52-149">Marks the image URL endpoint as the default endpoint</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-147">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-147">Great!</span></span> <span data-ttu-id="db6d5-148">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-148">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db6d5-149">이미지 URL 엔드포인트를 기본 엔드포인트로 표시</span><span class="sxs-lookup"><span data-stu-id="db6d5-149">Marks the image URL endpoint as the default endpoint</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-150">엔드포인트는 모델의 반복 수와 관계없이 상수입니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-150">The endpoints are constant regardless of the number of iterations on the model.</span></span>
-    - content: <span data-ttu-id="f9d52-151">이미지 파일 엔드포인트를 기본 엔드포인트로 표시</span><span class="sxs-lookup"><span data-stu-id="f9d52-151">Marks the image file endpoint as the default endpoint</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-150">엔드포인트는 모델의 반복 수와 관계없이 상수입니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-150">The endpoints are constant regardless of the number of iterations on the model.</span></span>
+    - content: <span data-ttu-id="db6d5-151">이미지 파일 엔드포인트를 기본 엔드포인트로 표시</span><span class="sxs-lookup"><span data-stu-id="db6d5-151">Marks the image file endpoint as the default endpoint</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-152">엔드포인트는 모델의 반복 수와 관계없이 상수입니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-152">The endpoints are constant regardless of the number of iterations on the model.</span></span>
-    - content: <span data-ttu-id="f9d52-153">현재 프로젝트를 사용할 기본 프로젝트로 표시</span><span class="sxs-lookup"><span data-stu-id="f9d52-153">Marks the current project as the default project to use</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-152">엔드포인트는 모델의 반복 수와 관계없이 상수입니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-152">The endpoints are constant regardless of the number of iterations on the model.</span></span>
+    - content: <span data-ttu-id="db6d5-153">현재 프로젝트를 사용할 기본 프로젝트로 표시</span><span class="sxs-lookup"><span data-stu-id="db6d5-153">Marks the current project as the default project to use</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-154">엔드포인트가 사용할 프로젝트를 알 수 있도록 프로젝트가 지정되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-154">The project must be specified so the endpoint knows which one to use.</span></span> <span data-ttu-id="f9d52-155">프로젝트 ID는 예측 URL 탭의 URL에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-155">The project ID is included in the URL on the Prediction URL tab.</span></span>
-  - content: <span data-ttu-id="f9d52-156">예측 엔드포인트를 사용하여 보낼 예측 키의 헤더 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-156">What is the name of the header for the prediction key to send with the prediction endpoint?</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-154">엔드포인트가 사용할 프로젝트를 알 수 있도록 프로젝트가 지정되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-154">The project must be specified so the endpoint knows which one to use.</span></span> <span data-ttu-id="db6d5-155">프로젝트 ID는 예측 URL 탭의 URL에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-155">The project ID is included in the URL on the Prediction URL tab.</span></span>
+  - content: <span data-ttu-id="db6d5-156">예측 엔드포인트를 사용하여 보낼 예측 키의 헤더 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-156">What is the name of the header for the prediction key to send with the prediction endpoint?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-157">구독 키</span><span class="sxs-lookup"><span data-stu-id="f9d52-157">Subscription Key</span></span>
+    - content: <span data-ttu-id="db6d5-157">구독 키</span><span class="sxs-lookup"><span data-stu-id="db6d5-157">Subscription Key</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-158">Custom Vision Service에 사용된 구독 키가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-158">There is no subscription key used for the Custom Vision Service.</span></span>
-    - content: <span data-ttu-id="f9d52-159">예측 키</span><span class="sxs-lookup"><span data-stu-id="f9d52-159">Prediction Key</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-158">Custom Vision Service에 사용된 구독 키가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-158">There is no subscription key used for the Custom Vision Service.</span></span>
+    - content: <span data-ttu-id="db6d5-159">예측 키</span><span class="sxs-lookup"><span data-stu-id="db6d5-159">Prediction Key</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-160">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-160">Great!</span></span> <span data-ttu-id="f9d52-161">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-161">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="f9d52-162">학습 키</span><span class="sxs-lookup"><span data-stu-id="f9d52-162">Training Key</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-160">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-160">Great!</span></span> <span data-ttu-id="db6d5-161">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-161">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db6d5-162">학습 키</span><span class="sxs-lookup"><span data-stu-id="db6d5-162">Training Key</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-163">학습 키는 모델에서 새 반복을 학습하는 데 사용되지만 예측하는 데는 사용되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-163">The training key is used to train new iterations on your model, but not to make predictions.</span></span>
-    - content: <span data-ttu-id="f9d52-164">API 키</span><span class="sxs-lookup"><span data-stu-id="f9d52-164">API Key</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-163">학습 키는 모델에서 새 반복을 학습하는 데 사용되지만 예측하는 데는 사용되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-163">The training key is used to train new iterations on your model, but not to make predictions.</span></span>
+    - content: <span data-ttu-id="db6d5-164">API 키</span><span class="sxs-lookup"><span data-stu-id="db6d5-164">API Key</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-165">Custom Vision Service에 사용된 API 키가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-165">There is no API key used for the Custom Vision Service.</span></span>
-  - content: <span data-ttu-id="f9d52-166">예측 API를 사용하는 경우 Custom Vision Service 포털에서 다른 어떤 일이 발생하나요?</span><span class="sxs-lookup"><span data-stu-id="f9d52-166">When you're using the prediction API, what else happens back in the Custom Vision Service portal?</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-165">Custom Vision Service에 사용된 API 키가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-165">There is no API key used for the Custom Vision Service.</span></span>
+  - content: <span data-ttu-id="db6d5-166">예측 API를 사용하는 경우 Custom Vision Service 포털에서 다른 어떤 일이 발생하나요?</span><span class="sxs-lookup"><span data-stu-id="db6d5-166">When you're using the prediction API, what else happens back in the Custom Vision Service portal?</span></span>
     choices:
-    - content: <span data-ttu-id="f9d52-167">이미지가 알 수 없음으로 돌아오는 경우 이미지에 태그 지정</span><span class="sxs-lookup"><span data-stu-id="f9d52-167">Images are tagged if they come back as unknown</span></span>
+    - content: <span data-ttu-id="db6d5-167">이미지가 알 수 없음으로 돌아오는 경우 이미지에 태그 지정</span><span class="sxs-lookup"><span data-stu-id="db6d5-167">Images are tagged if they come back as unknown</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-168">이미지는 자동이 아니라 포털에서 수동으로만 태그가 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-168">Images are only manually tagged in the portal, not automatically.</span></span>
-    - content: <span data-ttu-id="f9d52-169">학습 집합에 태그 지정되지 않은 상태로 이미지 로드됨</span><span class="sxs-lookup"><span data-stu-id="f9d52-169">Images are loaded as untagged in the training set</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-168">이미지는 자동이 아니라 포털에서 수동으로만 태그가 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-168">Images are only manually tagged in the portal, not automatically.</span></span>
+    - content: <span data-ttu-id="db6d5-169">학습 집합에 태그 지정되지 않은 상태로 이미지 로드됨</span><span class="sxs-lookup"><span data-stu-id="db6d5-169">Images are loaded as untagged in the training set</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-170">이미지가 학습 집합의 일부가 되려면 명시적으로 업로드되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-170">Images have to be explicitly uploaded to be a part of the training set.</span></span>
-    - content: <span data-ttu-id="f9d52-171">예측 탭에 이미지 표시됨</span><span class="sxs-lookup"><span data-stu-id="f9d52-171">Images are shown in the Predictions tab</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-170">이미지가 학습 집합의 일부가 되려면 명시적으로 업로드되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-170">Images have to be explicitly uploaded to be a part of the training set.</span></span>
+    - content: <span data-ttu-id="db6d5-171">예측 탭에 이미지 표시됨</span><span class="sxs-lookup"><span data-stu-id="db6d5-171">Images are shown in the Predictions tab</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="f9d52-172">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-172">Great!</span></span> <span data-ttu-id="f9d52-173">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-173">Proceed to the next part of the lab.</span></span>
-    - content: <span data-ttu-id="f9d52-174">아무 일도 발생하지 않음</span><span class="sxs-lookup"><span data-stu-id="f9d52-174">Nothing happens</span></span>
+      correctExplanation: <span data-ttu-id="db6d5-172">잘하셨습니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-172">Great!</span></span> <span data-ttu-id="db6d5-173">랩의 다음 부분으로 진행합니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-173">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db6d5-174">아무 일도 발생하지 않음</span><span class="sxs-lookup"><span data-stu-id="db6d5-174">Nothing happens</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="f9d52-175">이미지는 포털의 특정 부분에 배치됩니다.</span><span class="sxs-lookup"><span data-stu-id="f9d52-175">The images are put in a certain part of the portal.</span></span>
+      incorrectExplanation: <span data-ttu-id="db6d5-175">이미지는 포털의 특정 부분에 배치됩니다.</span><span class="sxs-lookup"><span data-stu-id="db6d5-175">The images are put in a certain part of the portal.</span></span>
