@@ -23,6 +23,7 @@ Azure Blob Storage를 사용하도록 코드를 추가하여 완료되지 않은
 앱에 대한 저장소 인프라를 설정하겠습니다.
 
 ### <a name="resource-group-and-storage-account"></a>리소스 그룹 및 저장소 계정
+<!---TODO: Update for sandbox?--->
 
 먼저 이 단원의 모든 리소스를 포함하는 리소스 그룹을 만듭니다. 종료 시 리소스 그룹을 삭제하여 만든 모든 항목을 정리합니다. 앱에서 Blob을 저장하는 데 사용할 저장소 계정도 만듭니다.
 

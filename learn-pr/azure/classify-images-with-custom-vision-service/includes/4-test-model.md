@@ -2,23 +2,23 @@
 
 1. 페이지 맨 위에서 **빠른 테스트**를 클릭합니다.
 
-    ![모델 테스트](../media-draft/4-portal-click-quick-test.png)
+    ![모델 테스트](../media/4-portal-click-quick-test.png)
 
 1. **로컬 파일 찾아보기**를 클릭한 다음, 모듈 리소스의 "Quick Tests" 폴더를 찾습니다. **PicassoTest_01.jpg**를 선택하고 **열기**를 클릭합니다.
 
-    ![Picasso 테스트 이미지 선택](../media-draft/4-portal-select-test-01.png)
+    ![Picasso 테스트 이미지 선택](../media/4-portal-select-test-01.png)
 
 1. "빠른 테스트" 대화 상자에서 테스트 결과를 검사합니다. Picasso 그림일 가능성은 얼마인가요? Rembrandt 또는 Pollock 그림일 가능성은 얼마인가요?
 
 1. “빠른 테스트” 대화 상자를 닫습니다. 그런 다음, 페이지 맨 위에서 **예측**을 클릭합니다.
 
-    ![수행된 테스트 보기](../media-draft/4-portal-select-predictions.png)
+    ![수행된 테스트 보기](../media/4-portal-select-predictions.png)
 
 1. 업로드한 테스트 이미지를 클릭하여 세부 정보를 표시합니다. 그런 다음, 드롭다운 목록에서 **Picasso**를 선택하고 **저장 및 닫기**를 클릭하여 “Picasso”로 이미지 태그를 지정합니다.
 
     > 이 방식으로 테스트 이미지 태그를 지정하면 추가 학습 이미지를 업로드하지 않고 모델을 구체화할 수 있습니다.
- 
-    ![테스트 이미지 태그 지정](../media-draft/4-tag-test-image.png)
+
+    ![테스트 이미지 태그 지정](../media/4-tag-test-image.png)
 
 1. "Quick Test" 폴더에 있는 **FlowersTest.jpg** 파일을 사용하여 또 다른 빠른 테스트를 수행합니다. 이 이미지가 Picasso, Rembrandt 또는 Pollock일 가능성이 작은지 확인합니다.
 

@@ -4,12 +4,16 @@ metadata:
   title: 서비스를 함께 연결
   description: Azure를 통해 다양한 구성 요소(웹 사이트 프런트 엔드, 백 엔드 서비스 및 주문형 계산 서비스를 수행하는 트리거 함수)로 구성된 응용 프로그램을 만들 수 있습니다. 또한 Azure에는 다양한 구성 요소가 서로 데이터를 전달할 수 있는 다양한 통신 전략이 포함되어 있습니다. 이러한 통신 서비스를 활용하여 테스트 가능한 구성 요소에서 확장성 있는 효율적인 솔루션을 만드는 방법을 알아봅니다.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 10fb00fdb0ac4c8563f1290c9dd5340a42c43942
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8f3945a38a2e218eed119125e84dcc00d05de2a9
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43824787"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236657"
 title: 서비스를 함께 연결
 summary: Azure를 통해 다양한 구성 요소(웹 사이트 프런트 엔드, 백 엔드 서비스 및 주문형 계산 서비스를 수행하는 트리거 함수)로 구성된 응용 프로그램을 만들 수 있습니다. 또한 Azure에는 다양한 구성 요소가 서로 데이터를 전달할 수 있는 다양한 통신 전략이 포함되어 있습니다. 이러한 통신 서비스를 활용하여 테스트 가능한 구성 요소에서 확장성 있는 효율적인 솔루션을 만드는 방법을 알아봅니다.
 prerequisites: 없음
@@ -22,6 +26,7 @@ products:
 - azure
 modules:
 - learn.choose-messaging-model
+- learn.implement-message-workflows-with-service-bus
 - learn.communicate-between-applications-with-azure-queue-storage
 - learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs
 achievement: learn.connect-your-services-together.trophy

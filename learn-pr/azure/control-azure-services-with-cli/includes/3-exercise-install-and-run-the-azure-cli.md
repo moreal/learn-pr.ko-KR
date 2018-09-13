@@ -76,7 +76,7 @@ bash 셸(Linux 및 macOS) 또는 명령 프롬프트나 PowerShell(Windows)을 �
 
 1. Azure CLI를 시작하고 버전 검사를 실행하여 설치를 확인합니다.
 
-    ```bash
+    ```azurecli
     az --version
     ```
 

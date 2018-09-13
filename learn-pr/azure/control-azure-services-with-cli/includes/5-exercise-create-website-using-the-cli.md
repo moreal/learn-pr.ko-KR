@@ -6,20 +6,20 @@
 
 1. Azure CLI를 시작하고 로그인 명령을 실행합니다.
 
-    ```bash
+    ```azurecli
     az login
     ```
     웹 브라우저에 Azure 로그인 페이지가 표시되지 않는 경우 명령줄 지침을 따르고 [https://aka.ms/devicelogin](https://aka.ms/devicelogin)에 인증 코드를 입력합니다.
 
 1. 리소스 그룹을 만듭니다.
 
-    ```bash
+    ```azurecli
     az group create --location westeurope --name popupResGroup
     ```
 
 1. 모든 리소스 그룹을 표에 나열하여 리소스 그룹이 성공적으로 생성되었는지 확인합니다.
 
-    ```bash
+    ```azurecli
     az group list --output table
     ```
 
@@ -28,7 +28,7 @@
 
 1. 그룹에 많은 항목이 있는 경우 `--query` 옵션을 추가하여 반환 값을 필터링하고 다음 명령을 시도합니다.
 
-    ```bash
+    ```azurecli
     az group list --query '[?name == popupResGroup]'
     ```
 
@@ -43,13 +43,13 @@ Azure App Service를 사용하여 Web Apps를 실행하는 경우 앱에서 사�
     > [!WARNING]
     > 앱 이름과 계획은 ‘고유’해야 하므로 이름에 접미사를 추가하고 아래 명령에서 `<unique>` 텍스트를 숫자 집합, 이니셜 또는 기타 텍스트 조각으로 바꿔서 모든 Azure에서 고유한지 확인합니다. 
 
-    ```bash
+    ```azurecli
     az appservice plan create --name popupapp-<unique> --resource-group popupResGroup --location westeurope
     ```
 
 1. 모든 계획을 표에 나열하여 서비스 계획이 성공적으로 생성되었는지 확인합니다.
 
-    ```bash
+    ```azurecli
     az appservice plan list --output table
     ```
 
@@ -58,13 +58,13 @@ Azure App Service를 사용하여 Web Apps를 실행하는 경우 앱에서 사�
 이제 서비스 계획에 웹앱을 만들겠습니다. 동시에 코드를 배포할 수 있지만, 예제에서는 별도의 단계로 배포합니다.
 
 1. 웹앱을 만들고 위에서 만든 계획의 이름을 제공합니다. **계획과 마찬가지로 앱 이름은 고유해야 하므로 `<unique>` 표식을 일부 텍스트로 바꿔서 이름을 전역적으로 고유하게 설정합니다.**
-    ```bash
+    ```azurecli
     az webapp create --name popupapp-<unique> --resource-group popupResGroup --plan popupapp-<unique>
     ```
 
 1. 모든 앱을 표에 나열하여 앱이 성공적으로 생성되었는지 확인합니다.
 
-    ```bash
+    ```azurecli
     az webapp list --output table
     ```
 
@@ -74,7 +74,7 @@ Azure App Service를 사용하여 Web Apps를 실행하는 경우 앱에서 사�
 
 1. 최종 단계는 GitHub 리포지토리에서 웹앱으로 코드를 배포하는 것입니다. 실행 시 “HelloWorld!”를 표시하는 Azure 샘플 Github 리포지토리에서 사용 가능한 간단한 PHP 페이지를 사용하겠습니다. 직접 만든 웹앱 이름을 사용해야 합니다.
 
-    ```bash
+    ```azurecli
     az webapp deployment source config --name popupapp-<unique> --resource-group popupResGroup --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 

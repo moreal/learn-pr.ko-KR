@@ -44,6 +44,4 @@ Blob 트리거는 Azure Blob Storage에서 파일이 업로드되거나 업데�
 
 이 개념에서 마지막으로 가장 중요한 정보는 *name*이라는 텍스트입니다. *name*은 추가된 파일의 이름을 수신하는 Azure 함수 내의 매개 변수를 나타냅니다. 예를 들어 *resume.txt*라는 파일을 업로드하는 경우 Azure 함수는 해당 값을 *name*이라는 매개 변수를 통해 문자열로 수신합니다.
 
-## <a name="summary"></a>요약
-
 Blob 트리거는 Azure Storage Blob 계정의 특정 위치에 활동이 확인되면 Azure 함수를 호출합니다. Azure Portal에서 **경로** 값을 수정하여 모니터링할 위치를 설정합니다.

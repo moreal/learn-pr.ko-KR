@@ -2,8 +2,7 @@
 
 ## <a name="explore-the-three-categories-of-cloud-computing"></a>클라우드 컴퓨팅의 세 가지 범주 알아보기
 
-<!-- TODO: replace video link? -->
-
+<!-- TODO: Verify video -->
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
 ### <a name="infrastructure-as-a-service-iaas"></a>IaaS(Infrastructure as a Service)

@@ -27,6 +27,7 @@ Azure Key Vault의 API는 Azure Active Directory를 사용하여 사용자와 �
 시작하려면 자격 증명 모음을 만들고 하나의 비밀을 저장합니다.
 
 ### <a name="create-a-resource-group"></a>리소스 그룹 만들기
+<!---TODO: Update for sandbox?--->
 
 이 단원에 있는 모든 리소스에 대해 `keyvault-exercise-group`라는 리소스 그룹을 만듭니다. 이 모듈의 끝에서 이 리소스 그룹을 삭제하여 모든 항목을 한 번에 정리합니다. `eastus`를 이 단원에 있는 모든 항목의 위치로 사용합니다.
 

@@ -6,8 +6,6 @@ Azure Storage는 클라우드 기반 솔루션으로, 현대의 비즈니스 요
 
 ## <a name="benefits-of-using-azure-to-store-data"></a>데이터를 저장하는 데 Azure를 사용하는 이점
 
-![혜택](../media-draft/Benefits.png)
-
 Azure Storage의 몇 가지 이점은 다음과 같습니다.
 
 - **자동화된 백업 및 복구** - 예상치 못한 오류 또는 중단이 발생하는 경우 데이터 손실 위험을 완화해주는 기능입니다.
