@@ -1,12 +1,12 @@
-You've learned how to use Azure Functions to host business logic services in the cloud. It's a great way to add hosted services to your solution that can scale and grow with your business. You focus on the code using the language of your choice, and Azure manages the infrastructure. Functions can integrate with other services, like Event Grid, GitHub, Twilio, Microsoft Graph, and Logic Apps to create complex and robust serverless workflows quickly and easily.
+Azure Functions를 사용하여 클라우드에서 비즈니스 논리 서비스를 호스트하는 방법을 배웠습니다. 비즈니스와 함께 확장 및 성장할 수 있는 솔루션에 호스트된 서비스를 추가하기 좋은 방법입니다. 원하는 언어를 사용하여 코드에 초점을 맞추면 되고, 인프라 관리는 Azure에서 합니다. Functions는 Event Grid, GitHub, Twilio, Microsoft Graph 및 Logic Apps와 같은 다른 서비스와 통합되어 복잡하고 강력한 서버리스 워크플로를 신속하고 간편하게 만들 수 있습니다.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-your-resources"></a>리소스 정리
+<!---TODO: Do we need to include cleanup for the free education tier?---> Azure 함수는 트리거될 때만 실행되지만, 연습에서 만든 리소스를 제거하려고 합니다.
 
-Although Azure functions run only when they're triggered, you may want to remove the resources we created in the exercise.
+1. Azure 계정을 사용하여 [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+1. 왼쪽 메뉴에서 **모든 리소스**를 선택한 후 **escalator-functions-group**을 선택하여 첫 번째 연습에서 만든 리소스 그룹에 액세스합니다.
 
-1. Access the resource group you created in the first exercise by choosing **All resources** in the left-hand menu, and then selecting **escalator-functions-group**.
+1. 도구 모음에서 **리소스 그룹 삭제** 단추를 누릅니다. 삭제할 리소스 그룹의 이름을 입력하라는 메시지가 표시됩니다. 완료되면 **삭제** 단추를 누릅니다.  
 
-1. In the toolbar, press the **Delete resource group** button. You will be asked to type in the name of the resource group to be deleted. Press the **Delete** button once complete.
+![리소스 그룹 삭제](../media-draft/6-cleanup.png)

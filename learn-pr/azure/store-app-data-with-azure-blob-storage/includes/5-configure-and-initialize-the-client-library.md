@@ -1,7 +1,9 @@
 다음은 Azure Blob Storage를 사용하는 앱의 일반적인 워크플로입니다.
 
 1. **구성 검색**: 시작 시 저장소 계정 구성을 로드합니다. 이는 일반적으로 저장소 계정 연결 문자열입니다.
+
 1. **클라이언트 초기화**: 연결 문자열을 사용하여 Azure Storage 클라이언트 라이브러리를 초기화합니다. 이렇게 하면 앱이 Blob Storage API로 작업하는 데 사용할 개체가 생성됩니다.
+
 1. **사용**: 클라이언트 라이브러리를 사용하여 컨테이너 및 Blob에서 작동하는 API 호출을 만듭니다.
 
 ## <a name="configure-your-connection-string"></a>연결 문자열 구성
@@ -18,8 +20,11 @@
 .NET Core용 Azure Storage SDK에서 Blob Storage를 사용하는 표준 패턴은 다음 단계로 구성됩니다.
 
 1. 연결 문자열로 `CloudStorageAccount.Parse`(또는 `TryParse`)를 호출하여 `CloudStorageAccount`를 가져옵니다.
+
 1. `CloudStorageAccount`에서 `CreateCloudBlobClient`를 호출하여 `CloudBlobClient`를 가져옵니다.
+
 1. `CloudBlobClient`에서 `GetContainerReference`를 호출하여 `CloudBlobContainer`를 가져옵니다.
+
 1. 컨테이너에서 메서드를 사용하여 Blob 목록을 가져오거나 개별 Blob에 대한 참조를 가져와 데이터를 업로드 및 다운로드합니다.
 
 코드에서 1&ndash;3단계는 다음과 같습니다.
@@ -56,9 +61,9 @@ code .
 
 이 컨트롤러는 다음과 같은 세 가지 작업으로 API를 구현합니다.
 
-* **인덱스**(GET /api/Files)는 업로드된 각 파일에 하나씩 URL 목록을 반환합니다. 앱 프런트 엔드는 이 메서드를 호출하여 업로드된 파일에 대한 하이퍼링크 목록을 빌드합니다.
-* **업로드**(POST /api/Files)는 업로드된 파일을 수신하고 저장합니다.
-* **다운로드**(GET /api/Files/{filename})는 해당 이름으로 개별 파일을 다운로드합니다.
+- **인덱스**(GET /api/Files)는 업로드된 각 파일에 하나씩 URL 목록을 반환합니다. 앱 프런트 엔드는 이 메서드를 호출하여 업로드된 파일에 대한 하이퍼링크 목록을 빌드합니다.
+- **업로드**(POST /api/Files)는 업로드된 파일을 수신하고 저장합니다.
+- **다운로드**(GET /api/Files/{filename})는 해당 이름으로 개별 파일을 다운로드합니다.
 
 각 메서드는 `storage`라는 `IStorage` 인스턴스를 사용하여 작업을 수행합니다. 입력하려는 `Models/BlobStorage.cs`에 `IStorage`의 불완전한 구현이 있습니다.
 
@@ -75,7 +80,7 @@ dotnet restore
 
 ### <a name="configure"></a>구성
 
-앱을 실행하는 데 필요한 구성 값은 저장소 계정 연결 문자열이고 컨테이너의 이름은 앱이 파일을 저장하는 데 사용됩니다. 이 연습에서는 Azure App Service에서 앱을 실행하기만 하므로 App Service 모범 사례를 따르고 App Service 응용 프로그램 설정에 값을 저장합니다. App Service 인스턴스를 만들 때 작업을 수행하므로 지금은 작업을 수행할 필요가 없습니다.
+앱을 실행하는 데 필요한 구성 값은 저장소 계정 연결 문자열이고 컨테이너의 이름은 앱이 파일을 저장하는 데 사용됩니다. 이 단원에서는 Azure App Service에서 앱을 실행하기만 하므로 App Service 모범 사례를 따르고 App Service 응용 프로그램 설정에 값을 저장합니다. App Service 인스턴스를 만들 때 작업을 수행하므로 지금은 작업을 수행할 필요가 없습니다.
 
 구성을 ‘사용’할 때 시작 앱에는 이미 필요한 구성 연결이 포함되어 있습니다. `BlobStorage`의 `IOptions<AzureStorageConfig>` 생성자 매개 변수에는 두 개의 속성인 저장소 계정 연결 문자열 및 앱이 Blob을 저장하는 컨테이너의 이름이 있습니다. `Startup.cs`의 `ConfigureServices` 메서드에 앱이 시작될 때 구성에서 값을 로드하는 코드가 있습니다.
 

@@ -1,19 +1,20 @@
-If you want to understand what can go wrong with managing an application's configuration secrets, look no further than the story of Steve the senior developer.
+응용 프로그램의 구성 비밀 관리와 관련하여 잘못될 수 있는 사항을 이해하려면 선임 개발자인 Steve의 사례를 보면 됩니다.
 
-Steve had been in his job at a pet food delivery company for a few weeks. He was exploring the details of the company's web app &mdash; a .NET Core web application that used an Azure SQL database for storing order information and third-party APIs for credit card billing and mapping customer addresses &mdash; when he accidentally pasted the connection string for the orders database into a public forum.
+Steve는 몇 주 동안 애완동물 사료 배달 회사에서 일했습니다. 주문 정보뿐 아니라 신용 카드 청구 및 고객 주소 매핑용 타사 API를 저장하는 데 Azure SQL Database를 사용하는 .NET Core 웹 응용 프로그램을 채용한 회사 웹앱의 세부 정보를 탐색하다가 실수로 주문 데이터베이스의 연결 문자열을 공개 포럼에 붙여넣었습니다.
 
-Days later, accounting noticed that the company was delivering a lot of pet food that nobody had paid for. Someone had used the connection string to access the database, reverse-engineered the schema, and placed orders without going through the website.
+며칠 후 회계 팀은 누구도 지불하지 않은 다량의 애완동물 사료를 회사가 배달하고 있음을 알게 되었습니다. 누군가가 연결 문자열을 사용해 데이터베이스에 액세스했고 스키마를 리버스 엔지니어링하여 웹 사이트를 통하지 않고 주문이 이루어졌던 것입니다.
 
-After realizing his mistake, Steve hurriedly changed the database password to lock out the attacker, breaking the website. He logged directly into the application server and changed the app configuration instead of redeploying, but the server was still showing failed requests.
+실수를 깨달은 Steve는 서둘러 데이터베이스 암호를 변경하여 공격자의 접근을 잠그고 웹 사이트를 중단했습니다. 그는 응용 프로그램 서버에 직접 로그인한 후 재배포 대신 앱 구성을 변경했지만, 서버에는 여전히 실패한 요청이 표시되고 있었습니다.
 
-Steve had forgotten that multiple instances of the app ran on different servers, and he had only changed the configuration for one. A full redeployment was needed, causing another 30 minutes of downtime.
+Steve는 앱의 여러 인스턴스를 서로 다른 서버에서 실행했다는 것을 잊고 한 인스턴스에 대해서만 구성을 변경했습니다. 전체 재배포가 필요했으며, 그러려면 추가로 30분의 가동 중지 시간이 발생합니다.
 
-Leaking a database connection string, API key, or service password can be catastrophic. Stolen or deleted data, financial harm, application downtime, and irreparable damage to business assets and reputation are all potential results. Unfortunately, secret values often need to be deployed in multiple places simultaneously and changed at inopportune times. And you have to store them *somewhere*! Let's see how we can make all of this secure with Azure KeyVault.
+데이터베이스 연결 문자열, API 키 또는 서비스 암호의 누수는 치명적일 수 있습니다. 데이터 도난 또는 삭제, 재정적 피해, 응용 프로그램 가동 중지 시간, 비즈니스 자산 및 평판에 미치는 막대한 피해 등이 모두 잠재적인 결과입니다. 그러나 비밀 값은 종종 동시에 여러 위치에 배포하고 부적절한 시간에 변경해야 합니다. 또한 ‘어딘가에’ 저장해야 합니다. 이 모든 사항을 Azure Key Vault를 사용하여 보호할 수 있는 방법을 알아보겠습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-  In this module, you will:
-    - Explore what types of information can be stored in Azure Key Vault.
-    - Create an Azure Key Vault and use it to store secret configuration values
-    - Enable secure access to the vault from an Azure App Service web app with managed identities for Azure resources
-    - Implement a web application that retrieves secrets from the vault
+이 모듈에서는 다음을 수행합니다.
+
+- Azure Key Vault에 저장할 수 있는 정보 종류를 이해합니다.
+- Azure Key Vault 저장소를 만듭니다.
+- Azure Key Vault를 사용하여 인증합니다.
+- Azure Key Vault의 비밀에 액세스합니다.

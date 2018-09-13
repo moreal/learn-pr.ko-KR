@@ -28,7 +28,7 @@ Azure Key Vault의 API는 Azure Active Directory를 사용하여 사용자와 �
 
 ### <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-이 연습에 있는 모든 리소스에 대한 `keyvault-exercise-group`라는 리소스 그룹을 만듭니다. 이 모듈이 끝날 때 이 리소스 그룹을 삭제하여 모든 항목을 한 번에 정리합니다. `eastus`를 이 연습에 있는 모든 항목의 위치로 사용합니다.
+이 단원에 있는 모든 리소스에 대해 `keyvault-exercise-group`라는 리소스 그룹을 만듭니다. 이 모듈의 끝에서 이 리소스 그룹을 삭제하여 모든 항목을 한 번에 정리합니다. `eastus`를 이 단원에 있는 모든 항목의 위치로 사용합니다.
 
 오른쪽에 있는 Azure Cloud Shell 터미널을 사용하여 다음 Azure CLI 명령을 실행합니다. 이렇게 하면 구독에 리소스 그룹이 생성됩니다.
 

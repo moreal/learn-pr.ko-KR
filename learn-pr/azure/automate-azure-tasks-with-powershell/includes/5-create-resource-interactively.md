@@ -24,12 +24,18 @@ Get-Help <cmdlet-name> -detailed
 이제 Azure PowerShell의 로컬 설치를 사용하여 리소스 그룹을 만들겠습니다. 
 
 이 프로세스는 다음 4단계로 구성됩니다. 
+
 1. Azure cmdlet을 가져옵니다.
+
 1. Azure 구독에 연결합니다.
+
 1. 리소스 그룹을 만듭니다.
+
 1. 생성이 성공했는지 확인합니다(아래 참조).
 
-![Azure PowerShell을 사용하여 Azure에서 리소스를 만드는 단계](../media/5-create-resource-overview.png)
+다음 그림은 이러한 단계의 개요를 보여줍니다.
+
+![리소스 그룹을 만드는 단계를 보여주는 그림입니다.](../media/5-create-resource-overview.png)
 
 각 단계는 다른 cmdlet에 해당합니다.
 

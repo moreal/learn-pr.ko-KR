@@ -1,6 +1,6 @@
-### <a name="exercise-4-create-a-nothotdog-app"></a>연습 4: NotHotDog 앱 만들기
+### <a name="create-a-nothotdog-app"></a>NotHotDog 앱 만들기
 
-이 연습에서는 Data Science VM에 미리 설치되는 Microsoft의 플랫폼 간 무료 소스 코드 편집기인 [Visual Studio Code](https://code.visualstudio.com/)를 사용하여 Python에서 NotHotDog 앱을 작성합니다. 이 앱은 Python용 인기 GUI 프레임워크인 [Tkinter](https://wiki.python.org/moin/TkInter)를 사용하여 해당 사용자 인터페이스를 구현하고 로컬 파일 시스템에서 이미지를 선택할 수 있도록 합니다. 그런 다음, 이전 연습에서 학습한 모델에 해당 이미지를 전달하고 핫도그가 포함되어 있는지 여부를 알려줍니다.
+이 단원에서는 Data Science VM에 미리 설치되는 Microsoft의 플랫폼 간 무료 소스 코드 편집기인 [Visual Studio Code](https://code.visualstudio.com/)를 사용하여 Python에서 NotHotDog 앱을 작성합니다. 이 앱은 Python용 인기 GUI 프레임워크인 [Tkinter](https://wiki.python.org/moin/TkInter)를 사용하여 해당 사용자 인터페이스를 구현하고 로컬 파일 시스템에서 이미지를 선택할 수 있도록 합니다. 그런 다음, 이전 연습에서 학습한 모델에 해당 이미지를 전달하고 핫도그가 포함되어 있는지 여부를 알려줍니다.
 
 1. 바탕 화면의 왼쪽 위에 있는 **응용 프로그램**을 클릭하고 **보조 프로그램 > Visual Studio Code**를 선택하여 Visual Studio Code를 시작합니다. Visual Studio Code의 **파일 > 폴더 열기...** 명령을 사용하여 모델을 학습할 때 만든 **retrained_graph_hotdog.pb** 파일이 들어 있는 “notebooks/tensorflow-for-poets-2/tf_files” 폴더를 엽니다.
 
@@ -75,9 +75,9 @@
         run()
     ```
 
-    여기서 핵심 사항은 ```subprocess.check_output``` 호출입니다. 이 호출은 “scripts” 폴더에 있는 **label_image.py**라는 Python 스크립트를 실행하고, 사용자가 선택한 이미지를 전달하여 학습된 모델을 불러옵니다. 이 스크립트는 이전 연습에서 복제한 리포지토리에서 가져온 것입니다.
+    여기서 핵심 코드는 ```subprocess.check_output``` 호출입니다. 이 호출은 "scripts" 폴더에 있는 **label_image.py**라는 Python 스크립트를 실행하고, 사용자가 선택한 이미지를 전달하여 학습된 모델을 불러옵니다. 이 스크립트는 이전 연습에서 복제한 리포지토리에서 가져온 것입니다.
 
-1. 즐겨 찾는 검색 엔진을 사용하여 핫도그가 포함된 이미지와 포함되지 않은 이미지를 포함하는 몇 가지 음식 이미지를 찾습니다. 이러한 이미지를 다운로드한 후 VM 파일 시스템의 원하는 위치에 저장합니다.
+1. 즐겨 찾는 검색 엔진을 사용하여 핫도그가 포함된 이미지와 포함되지 않은 이미지를 포함하는 몇 가지 음식 이미지를 찾습니다. 이러한 이미지를 다운로드하고 VM 파일 시스템에서 선택한 위치에 저장합니다.
 
 1. Visual Studio Code의 **보기 > 통합 터미널** 명령을 사용하여 통합 터미널을 엽니다. 그런 다음, 통합 터미널에서 다음 명령을 실행하여 앱을 실행합니다.
 
@@ -89,9 +89,7 @@
 
     > 이미지를 처리할 때 터미널 창에서 누락된 커널 드라이버와 관련된 오류 메시지가 표시되면 무시해도 됩니다. 이 오류는 Data Science VM에 가상 GPU가 포함되어 있지 않기 때문에 표시됩니다.
 
-    ![이미지 선택](../images/select-image.png)
-
-    _이미지 선택_
+    ![이미지 선택](../media-draft/4-select-image.png)
 
 1. 핫도그가 없는 이미지를 사용하여 이전 단계를 반복합니다. 해당 모델이 이번에는 적합한가요?
 
