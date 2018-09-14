@@ -1,0 +1,19 @@
+<span data-ttu-id="084ac-101">[Microsoft QnA Maker](https://www.qnamaker.ai/)와 결합된 [Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/)는 개발자가 다양한 서비스를 사용하여 자연스럽게 사용자와 상호 작용하는 지능형 봇을 빌드하고 게시하는 데 필요한 도구를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="084ac-101">The [Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/), combined with [Microsoft QnA Maker](https://www.qnamaker.ai/), provide the tools developers need to build and publish intelligent bots that interact naturally with users using a range of services.</span></span> <span data-ttu-id="084ac-102">이 모듈에서는 Azure Bot Service를 사용하여 봇을 만들고 QnA Maker를 사용하여 빌드된 기술 자료에 해당 봇을 연결합니다.</span><span class="sxs-lookup"><span data-stu-id="084ac-102">In this module, you will create a bot using the Azure Bot Service and connect it to a knowledge base built with QnA Maker.</span></span> <span data-ttu-id="084ac-103">그런 다음, Azure Bot Service로 빌드된 봇이 통합할 수 있는 많은 인기 서비스 중 하나인 Skype를 사용하여 봇과 상호 작용합니다.</span><span class="sxs-lookup"><span data-stu-id="084ac-103">Then, you will interact with the bot using Skype — one of many popular services with which bots built with the Azure Bot Service can integrate.</span></span>
+
+### <a name="learning-objectives"></a><span data-ttu-id="084ac-104">학습 목표</span><span class="sxs-lookup"><span data-stu-id="084ac-104">Learning objectives</span></span>
+
+<span data-ttu-id="084ac-105">이 랩에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="084ac-105">In this lab, you will:</span></span>
+
+- <span data-ttu-id="084ac-106">봇을 호스트할 Azure 웹앱 봇 만들기</span><span class="sxs-lookup"><span data-stu-id="084ac-106">Create an Azure web app bot to host a bot</span></span>
+- <span data-ttu-id="084ac-107">기술 자료를 만들어 데이터로 채우고 bot에 연결</span><span class="sxs-lookup"><span data-stu-id="084ac-107">Create a knowledge base, populate it with data, and connect it to a bot</span></span>
+- <span data-ttu-id="084ac-108">코드에 봇 구현 및 빌드하는 봇 디버그</span><span class="sxs-lookup"><span data-stu-id="084ac-108">Implement bots in code and debug the bots that you build</span></span>
+- <span data-ttu-id="084ac-109">봇을 게시하고 지속적인 통합을 사용하여 최신 상태로 유지</span><span class="sxs-lookup"><span data-stu-id="084ac-109">Publish bots and use continuous integration to keep them up-to-date</span></span>
+- <span data-ttu-id="084ac-110">Visual Studio Code 및 Microsoft Bot Framework Emulator를 사용하여 로컬로 봇 디버그</span><span class="sxs-lookup"><span data-stu-id="084ac-110">Debug bots locally using Visual Studio Code and the Microsoft Bot Framework Emulator</span></span>
+- <span data-ttu-id="084ac-111">봇을 Skype에 연결하여 Skype에서 봇과 상호 작용</span><span class="sxs-lookup"><span data-stu-id="084ac-111">Plug a bot into Skype and interact with it there</span></span>
+
+### <a name="prerequisites"></a><span data-ttu-id="084ac-112">필수 조건</span><span class="sxs-lookup"><span data-stu-id="084ac-112">Prerequisites</span></span>
+- [<span data-ttu-id="084ac-113">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="084ac-113">Visual Studio Code</span></span>](http://code.visualstudio.com)
+- [<span data-ttu-id="084ac-114">Git</span><span class="sxs-lookup"><span data-stu-id="084ac-114">Git</span></span>](https://git-scm.com)
+- [<span data-ttu-id="084ac-115">Microsoft Bot Framework Emulator</span><span class="sxs-lookup"><span data-stu-id="084ac-115">Microsoft Bot Framework Emulator</span></span>](https://emulator.botframework.com/)
+- [<span data-ttu-id="084ac-116">Node.JS</span><span class="sxs-lookup"><span data-stu-id="084ac-116">Node.js</span></span>](https://nodejs.org)
+- <span data-ttu-id="084ac-117">[Skype](https://www.skype.com/en/download-skype/skype-for-computer/).</span><span class="sxs-lookup"><span data-stu-id="084ac-117">[Skype](https://www.skype.com/en/download-skype/skype-for-computer/).</span></span>
