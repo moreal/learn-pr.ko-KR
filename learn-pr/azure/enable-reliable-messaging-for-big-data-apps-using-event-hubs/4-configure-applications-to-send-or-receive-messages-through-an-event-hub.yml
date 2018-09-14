@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.4-configure-applications-to-send-or-receive-messages-through-an-event-hub
-title: <span data-ttu-id="6e6e2-101">이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성</span><span class="sxs-lookup"><span data-stu-id="6e6e2-101">Configure applications to send or receive messages through an Event Hub</span></span>
+title: <span data-ttu-id="20781-101">Event Hub를 통해 메시지를 보내거나 받도록 응용 프로그램 구성</span><span class="sxs-lookup"><span data-stu-id="20781-101">Configure applications to send or receive messages through an Event Hub</span></span>
 metadata:
-  title: <span data-ttu-id="6e6e2-102">이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성</span><span class="sxs-lookup"><span data-stu-id="6e6e2-102">Configure applications to send or receive messages through an Event Hub</span></span>
-  description: <span data-ttu-id="6e6e2-103">이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성</span><span class="sxs-lookup"><span data-stu-id="6e6e2-103">Configure applications to send or receive messages through an Event Hub</span></span>
+  title: <span data-ttu-id="20781-102">Event Hub를 통해 메시지를 보내거나 받도록 응용 프로그램 구성</span><span class="sxs-lookup"><span data-stu-id="20781-102">Configure applications to send or receive messages through an Event Hub</span></span>
+  description: <span data-ttu-id="20781-103">Event Hub를 통해 메시지를 보내거나 받도록 응용 프로그램 구성</span><span class="sxs-lookup"><span data-stu-id="20781-103">Configure applications to send or receive messages through an Event Hub</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
