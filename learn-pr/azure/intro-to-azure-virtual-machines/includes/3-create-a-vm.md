@@ -1,84 +1,88 @@
-You've planned out the network infrastructure and identified a few VMs to migrate to the cloud. You have several choices for creating your VMs. The choice you make depends on the environment you are comfortable with. Azure supports a web-based portal for creating and administering resources. You can also choose to use command-line tools that run on MacOS, Windows, and Linux.
+네트워크 인프라를 계획하고 몇 가지 VM을 식별하여 클라우드로 마이그레이션합니다. VM을 만들 수 있는 몇 가지 옵션이 있습니다. 이러한 옵션은 익숙한 환경에 따라 달라집니다. Azure는 리소스를 만들고 관리하기 위한 웹 기반 포털을 지원합니다. 또한 MacOS, Windows 및 Linux에서 실행되는 명령줄 도구를 사용할 수도 있습니다.
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yJKx]
+
+먼저 Azure Portal을 살펴보겠습니다. 이는 Azure를 시작하는 가장 쉬운 방법입니다.
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+## <a name="azure-portal"></a>Azure Portal
+
+합니다 **Azure portal** 만들고 모든 Azure 리소스를 관리할 수 있는 사용 하기 쉬운 브라우저 기반 사용자 인터페이스를 제공 합니다. 예를 들어 새 데이터베이스를 설정하고, 가상 머신의 계산 성능을 높이고, 월별 비용을 모니터링할 수 있습니다. 사용 가능한 모든 리소스를 조사 하는 필요한 키를 만들려면 단계별된 마법사를 사용 하므로 유용한 학습 도구의 이기도 합니다.
+
+로그인하면 두 가지 주요 영역이 제공됩니다. 첫 번째는 리소스를 만들 리소스를 모니터링 하 고 결제를 관리할 수 있도록 옵션을 사용 하 여 메뉴입니다. 두 번째 영역은 Azure에 배포한 모든 필수 서비스의 스냅숏 보기를 제공하는 사용자 지정 가능한 대시보드입니다. Azure 사용을 시작할 때 가장 편안한 옵션을 사용하여 포털을 찾을 수 있습니다.
 
 > [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> 포털에서 선택할 때 표시되는 보기를 종종 _블레이드_라고 합니다. 블레이드는 메뉴 구조 또는 구성 패널의 역할을 모두 수행할 수 있습니다. Azure 포털에서 탐색할 때 UI 왼쪽에서 오른쪽으로 누적 됩니다 및 웹 뷰포트 현재 블레이드를 표시 하려면 위에 슬라이드 됩니다. 아래쪽의 슬라이더를 사용하여 부모 보기로 빠르게 다시 이동할 수 있습니다.
 
-Let's explore the Azure portal first - it's the easiest way to start with Azure.
+### <a name="create-an-azure-vm-with-the-azure-portal"></a>Azure Portal을 사용하여 Azure VM 만들기
 
-## Azure portal
+WordPress 웹 사이트를 실행하는 VM을 만들려고 한다고 가정해 보겠습니다. 사이트를 설정하는 것은 어렵지 않지만 몇 가지 사항을 명심해야 합니다. 운영 체제를 설치 및 구성하고, 웹 사이트를 구성하고, 데이터베이스를 설치하고, 방화벽과 같은 것에 대해 걱정해야 합니다. 다음 몇 가지 모듈에서 VM을 만드는 방법을 다루겠지만, 여기서는 VM을 만들어 이 작업이 얼마나 쉬운지 알아보겠습니다. 모든 옵션을 살펴보지 않는 대신, **VM 만들기** 모듈 중 하나를 확인하여 각 옵션에 대한 전체 자세한 정보를 파악합니다.
 
-The **Azure portal** provides an easy-to-use browser-based user interface that allows you to create and manage all your Azure resources. For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs. It's also a great learning tool, since you can survey all available resources and use guided wizards to create the ones you need.
+#### <a name="select-a-location"></a>위치 선택
 
-Once logged in, you're presented with two main areas. The first is a menu with the options to help you create resources, monitor resources, and manage billing. The second is a customizable dashboard that provides you with a snapshot view of all the essential services you've deployed to Azure. You'll most likely find the portal the most comfortable option to use when you start using Azure.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-> [!NOTE]
-> The views that are presented as you make selections in the portal are often called _blades_. A blade may act as both a menu structure or a configuration panel. As you navigate throughout the Azure portal, UI will be stacked from left to right, and the web viewport will slide over to show the current blade. You can use the slider at the bottom to quickly move back to parent views.
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다. Azure 리소스 만들기 및 관리 메뉴 화면의 나머지 부분을 채우는 대시보드의 왼쪽에 표시 됩니다.
 
-### Create an Azure VM with the Azure portal
+    ![기본 Azure Portal 대시보드](../media-draft/3-dashboard-page.png)
 
-Let's assume you want to create a VM running a WordPress website. Setting up a site isn't difficult, but there are a couple of things to keep in mind. You need to install and configure an operating system, configure a website, install a database, and worry about things like firewalls. We're going to cover creating VMs in the next few modules, but let's create one here to see how easy it is. We won't go through all the options - check out one of the **Create a VM** modules to get complete details on each option.
+1. 포털 페이지의 왼쪽 위 모서리에서 **리소스 만들기** 옵션을 클릭합니다. 그러면 Azure Marketplace 블레이드가 열립니다. 왼쪽 사이드바가 접히면 녹색 '더하기' 기호가 됩니다. 위의 이미지와 같이 전체 텍스트를 보려면 확장 캐럿을 클릭하여 사이드바를 확장할 수 있습니다.
 
-1. Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). You'll see the Azure resource creation and management menu on your left and the dashboard filling the rest of the screen.
+    ![Azure Marketplace](../media-draft/3-create-new-resource.png)
 
-    ![Main Azure portal dashboard](../media-draft/3-dashboard-page.png)
+    알 수 있듯이, 선택 가능한 옵션이 많이 있습니다. WordPress 웹 사이트를 실행 하는 VM을 만들 것 기억 하십시오. VM은 Azure 계산 리소스이므로 사용 가능한 목록에서 **계산** 옵션을 선택한 다음, WordPress VM 이미지를 검색합니다. 클릭할 수 **모두 보기** 전체 목록을 가져올 수 있습니다.
 
-1. Click on the **Create a resource** option in the top left corner of the portal page. This will open the Azure Marketplace blade. If the left-hand sidebar is collapsed, it will be a green "plus". You can expand the sidebar by clicking the expand caret to see the full text as shown in the image above.
+1. 사용 합니다 **Marketplace 검색** 검색 표시줄 및 "WordPress"를 찾습니다. 이제 옵션 목록이 표시됩니다. **WordPress Certified by Bitnami**(Bitnami 인증 WordPress)라는 옵션을 선택합니다.
 
-    ![The Azure Marketplace](../media-draft/3-create-new-resource.png)
+    ![Azure Marketplace 검색](../media-draft/3-search-vm-image.png)
 
-    As you can see, there are many selectable options. Remember, we want to create a VM running a WordPress website. VMs are Azure compute resources, so select the **Compute** option on the available list and then search for WordPress VM images.
+    다음에 열리는 블레이드에서 사용하려는 이미지에 대한 라이선스 정보를 제공합니다. **만들기**를 클릭합니다.
 
-1. Use the **Search the Marketplace** search bar, and look for "WordPress". You should now see a list of options. Select the option that reads **WordPress Certified by Bitnami**.
+    ![선택 하 고 WordPress 사이트 만들기](../media-draft/3-create-vm-image.png)
 
-    ![Search the Azure Marketplace](../media-draft/3-search-vm-image.png)
+1. 표시 합니다 **가상 머신 만들기** 블레이드입니다. VM을 구성하는 데 사용할 수 있는 마법사 기반 방법에 유의하세요.
 
-    The blade that opens next will present licensing information for the image we're about to use. Click on **Create**.
+    ![구성 단계 1](../media-draft/3-create-vm-1.png)
 
-    ![Select and Create the WordPress site](../media-draft/3-create-vm-image.png)
+    WordPress 가상 머신의 기본 매개 변수를 구성해야 합니다. 일부 옵션이 시점에서 아닌 사용자에 게 익숙한 경우 확인 합니다. 이후의 모듈에서 이러한 옵션 모두에 대해 설명한다는 것을 기억하세요. 여기서 사용된 값을 복사하는 것이 좋습니다.
 
-1. You're presented with the **Create virtual machine** blade. Notice the wizard-based approach we can use to configure the VM.
+1. **기본 사항** 탭에서 다음 값을 사용합니다.
+    - 무료 구독을 선택 하며 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 리소스 그룹입니다.
+    - VM에 대한 **이름**을 입력합니다. 여기서는 `test-wp1-eus-vm`을 사용했습니다.
+    - 가까운 **지역**을 선택합니다. 드롭다운 목록에서 위에 지정 된 사용 가능한 목록에서 위치를 선택 해야 합니다.
+    - 가용성 옵션에 대해 **없음**을 선택합니다. 고가용성, 다른 모듈에서 다루는 것입니다.
+    - **이미지** 해야 합니다 **Bitnami에서 WordPress** Marketplace에서 선택한 옵션입니다.
+    - 유지 된 **크기** 기본값으로-를 통해 단일 코어 및 3.5GB 하는 간단한 웹 사이트에 대 한 충분 한 메모리입니다.
+    - 전환할 **암호** 인증에 대 한 입력 한 사용자 이름 및 암호를 입력 합니다.
+    - 선택 **선택한 포트를 허용**, 드롭 다운 목록에서 선택한 **http**합니다.
 
-    ![Config Step 1](../media-draft/3-create-vm-1.png)
+    ![HTTP 포트 열기](../media-draft/3-open-http-port.png)
 
-    We need to configure the basic parameters of our WordPress virtual machine. If some of the options at this point are unfamiliar to you, that is OK. Remember, we're going to discuss all of these options in a future module. You're welcome to copy the values used here.
+1. VM을 만드는 중에 영향을 줄 수 있는 설정을 확인하기 위해 탐색할 수 있는 몇 가지 다른 탭이 있습니다. 탐색이 완료되면 **검토 + 만들기**를 클릭하여 설정을 검토하고 확인합니다.
 
-<!-- TODO: fix subscription + resource group -->
-1. Use the following values on the **Basics** tab.
-    - Select the free subscription and a Resource Group.
-    - Enter a **Name** for the VM: here we've used `test-wp1-eus-vm`.
-    - Select a **Region** close to you. You can use the drop-down list to select the location.
-    - Choose **None** for the availability options. This is for high availability, which we cover in another module.
-    - The **Image** should be the **WordPress by Bitnami** option we selected from the Marketplace.
-    - Leave the **Size** as the default - it will give you a single core and 3.5 GB of memory, which should be sufficient for a simple website.
-    - Switch to **Password** for the authentication type, and enter a username and password.
-    - Open the **Select public inbound ports** drop-down list, and select **http** as shown below.
+    ![구성 단계 2](../media-draft/3-review-create-vm.png)
 
-    ![Open the HTTP port](../media-draft/3-open-http-port.png)
+1. Azure는 검토 화면에서 설정을 확인합니다. 모든 설정을 선택한 다음 방식으로 설정 되었는지 확인 하십시오 **만들기** VM을 만들고 배포 합니다.
 
-1. There are several other tabs you can explore to see the settings you can influence during the VM creation. Once you are finished exploring, click **Review + create** to review and validate the settings.
+1. 배포는 **알림** 패널을 통해 모니터링할 수 있습니다. 위쪽 도구 모음에서 아이콘을 클릭하여 패널을 표시합니다.
 
-    ![Config Step 2](../media-draft/3-review-create-vm.png)
+    ![배포 진행률 모니터링](../media-draft/3-deploying.png)
 
-1. On the review screen, Azure will validate your settings. Verify all the settings are set the way you want, and then click **Create** to deploy and create the VM.
+1. VM 배포 프로세스를 완료하는 데 몇 분이 걸립니다. 배포가 성공했다고 알려주는 알림을 받게 됩니다. 메시지를 클릭하여 VM에 대해 만들어진 모든 요소가 포함된 리소스 그룹으로 이동합니다.
 
-1. You can monitor the deployment through the **Notifications** panel. Click the icon in the top toolbar to display the panel.
+    ![배포된 VM](../media-draft/3-deployment-succeeded.png)
 
-    ![Monitor the deployment progress](../media-draft/3-deploying.png)
+1. VM 항목을 선택 하 고 첫 번째 여야 합니다-사용자가 지정한 이름 해야 합니다.
 
-1. The VM deployment process takes a few minutes to complete. You'll receive a notification informing you that the deployment succeeded. Click on the message to go to the resource group with all the elements that were created for your VM.
+    ![리소스 그룹에서 VM 선택](../media-draft/3-open-vm-properties.png)
 
-    ![VM deployed](../media-draft/3-deployment-succeeded.png)
+1. 그러면 만든 가상 머신의 **개요**로 이동합니다. 여기서는 새로 만들어진 WordPress VM에 대한 모든 정보와 구성 옵션을 볼 수 있습니다. 정보 요소 중 하나는 **공용 IP 주소**입니다.
 
-1. Select the VM entry - it should be the first one, and it will have the name you specified.
+    ![VM에 공용 IP 주소 가져오기](../media-draft/3-public-ip-address.png)
 
-    ![Select the VM in the Resource Group](../media-draft/3-open-vm-properties.png)
+11. IP 주소를 복사하고, 브라우저에서 새 탭을 연 다음, 이 IP 주소를 붙여넣습니다. 새 WordPress 사이트로 검색 해야 것입니다.
 
-1. That will navigate to the **Overview** of the virtual machine you have created. Here you can see all the information and configuration options for your newly created WordPress VM. One of the pieces of information is the **Public IP Address**.
+    ![새 WordPress 사이트 활성 상태임](../media-draft/3-my-new-blog.png)
 
-    ![Get your public IP address to the VM](../media-draft/3-public-ip-address.png)
-
-11. Copy the IP address, open a new tab in your browser, and paste it in. It should browse to a brand-new WordPress site.
-
-    ![New WordPress site is alive](../media-draft/3-my-new-blog.png)
-
-Congratulations! With a few steps, you deployed a VM that runs Linux, has a database installed, and has a functional website. Let's explore some other ways we could have created a VM.
+축하합니다. 몇 가지 단계를 사용 하 여 Linux를 실행 하 고 데이터베이스가 설치 된 기능 웹 사이트를 보유 하는 VM을 배포 했습니다. VM을 만들 수 있는 몇 가지 다른 방법을 살펴보겠습니다.

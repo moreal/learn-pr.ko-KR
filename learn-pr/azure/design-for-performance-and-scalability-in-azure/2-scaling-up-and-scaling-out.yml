@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
-title: Scaling up and scaling out
+title: 확장 및 스케일 아웃
 metadata:
-  title: Scaling up and scaling out
-  description: In this unit we'll discuss how to leverage scaling up and scaling out in your architecture
+  title: 확장 및 스케일 아웃
+  description: 이 단원에서는 아키텍처에서 강화 및 확장을 활용하는 방법을 알아봅니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,47 +13,47 @@ durationInMinutes: 5
 content: |
   [!include[](includes/2-scaling-up-and-scaling-out.md)]
 quiz:
-  title: 'Knowledge check - Scaling up and scaling out'
+  title: 지식 검사 - 강화 및 확장
   questions:
-  - content: 'Which is the most accurate description of scaling out?'
-    choices:
-    - content: 'Increasing the amount of resources of an instance'
-      isCorrect: false
-      incorrectExplanation: 'Increasing the amount of resources of a single instance is a description for scaling up'
-    - content: 'Increasing the number of instances serving requests'
-      isCorrect: true
-      correctExplanation: 'This is correct. Scaling out increases the number of instances service requests.'
-    - content: 'Adding additional storage to a virtual machine'
-      isCorrect: false
-      incorrectExplanation: 'Adding additional storage is not an example of scaling out.'
-    - content: 'Reaching the maximum level of scale for your application'
-      isCorrect: false
-      incorrectExplanation: 'Reaching the maximum level of scale for your application can be addressed by scaling out, but is not an accurate description of scaling out.'
-  - content: 'Which is the most accurate description of scaling down?'
-    choices:
-    - content: 'Decreasing the number of instances serving requests'
-      isCorrect: false
-      incorrectExplanation: 'Decreasing the number of instances serving requets is scaling in'
-    - content: 'Taking ownership of how your application scales'
-      isCorrect: false
-      incorrectExplanation: 'Taking ownership of how your application scales is not scaling down.'
-    - content: 'Decreasing the amount of resources of an instance'
-      isCorrect: true
-      correctExplanation: 'Scaling down is the reduction of resources that a single instance has available.'
-    - content: 'Not yet reaching the maximum level of scale for your application'
-      isCorrect: false
-      incorrectExplanation: 'This is not a description of scaling down.'
-  - content: 'Which of the following is NOT a consideration when building a scaling strategy into your application?'
-    choices:
-    - content: 'The backup retention policies for your instances'
-      isCorrect: true
-      correctExplanation: 'While it is importatnt to define the backup retention policies, it is unrelated to the ability of your application to scale.'
-    - content: 'State management of your application'
-      isCorrect: false
-      incorrectExplanation: 'State management is important to consider when building a scaling strategy. The ability to scale well will depend on the ability to store user state outside of the individual instances to ensure user experience is not broken as additional instances are added and removed.'
-    - content: 'Startup time of your instances'
-      isCorrect: false
-      incorrectExplanation: 'Startup time is an important consideration in a scaling strategy. As the time to start an instance increases, the more time you need to allow for your application to scale.'
-    - content: 'Automating the scaling of your instances based on some metric or schedule'
-      isCorrect: false
-      incorrectExplanation: 'Scaling automation is an important piece of a scaling strategy. As you automate your scaling capabilities you willll have greater ability to handle fluctuations in user load without manual intervention or poor user experience.'
+    - content: 확장에 대한 가장 정확한 설명은 무엇인가요?
+      choices:
+        - content: 인스턴스의 리소스 양 늘리기
+          isCorrect: false
+          incorrectExplanation: 단일 인스턴스의 리소스 양을 늘리는 것이 강화에 대한 설명입니다.
+        - content: 요청을 처리하는 인스턴스 수 늘리기
+          isCorrect: true
+          correctExplanation: 이 내용이 맞습니다. 확장은 서비스가 요청하는 인스턴스 수를 증가시킵니다.
+        - content: 가상 머신에 저장소 더 추가하기
+          isCorrect: false
+          incorrectExplanation: 저장소를 더 추가하는 것은 확장의 예가 아닙니다.
+        - content: 최대 수준의 응용 프로그램 규모 도달
+          isCorrect: false
+          incorrectExplanation: 최대 수준의 응용 프로그램 규모에 도달하는 것을 확장이라고 할 수 있지만 이것이 확장에 대한 정확한 설명은 아닙니다.
+    - content: 규모 축소에 대한 가장 정확한 설명은 무엇인가요?
+      choices:
+        - content: 요청을 처리하는 인스턴스 수 줄이기
+          isCorrect: false
+          incorrectExplanation: 요청을 처리하는 인스턴스 수 줄이기는 규모 감축입니다.
+        - content: 응용 프로그램 크기 조정 방식에 대한 소유권 갖기
+          isCorrect: false
+          incorrectExplanation: 응용 프로그램 크기 조정 방식에 대한 소유권 갖기는 규모 축소가 아닙니다.
+        - content: 인스턴스의 리소스 양 줄이기
+          isCorrect: true
+          correctExplanation: 규모 축소는 단일 인스턴스에서 사용할 수 있는 리소스를 줄이는 것입니다.
+        - content: 최대 수준의 응용 프로그램 규모에 아직 도달하지 않음
+          isCorrect: false
+          incorrectExplanation: 이것은 규모 축소에 대한 설명이 아닙니다.
+    - content: 다음 중 응용 프로그램에 크기 조정 전략을 수립할 때 고려할 사항이 아닌 것은 무엇인가요?
+      choices:
+        - content: 인스턴스에 대한 백업 보존 정책
+          isCorrect: true
+          correctExplanation: 백업 보존 정책을 정의하는 것이 중요하지만 응용 프로그램의 크기 조정 기능과는 관련이 없습니다.
+        - content: 응용 프로그램의 상태 관리
+          isCorrect: false
+          incorrectExplanation: 크기 조정 전략을 수립할 때 상태 관리를 고려하는 것이 중요합니다. 우수한 확장성은 인스턴스를 더 추가하고 제거할 때 사용자 환경이 손상되지 않도록 개별 인스턴스 외부에 사용자 상태를 저장할 수 있는 기능에 달려 있습니다.
+        - content: 인스턴스의 시작 시간
+          isCorrect: false
+          incorrectExplanation: 시작 시간은 크기 조정 전략의 중요한 고려 사항입니다. 인스턴스를 시작하는 시간이 길수록 응용 프로그램 크기를 조정하는 데 더 많은 시간이 필요합니다.
+        - content: 메트릭 또는 일정에 따라 인스턴스 크기 조정 자동화
+          isCorrect: false
+          incorrectExplanation: 크기 조정 자동화는 크기 조정 전략의 중요한 부분입니다. 크기 조정 전략을 자동화하면 수동으로 개입하지 않고 사용자 환경을 손상시키지 않으면서 사용자 부하의 변동을 훨씬 더 효율적으로 처리할 수 있습니다.

@@ -7,15 +7,15 @@ Azure VM(Virtual Machines)을 사용하여 CRM(고객 관계 관리) 소프트�
 여기서 Azure PowerShell을 사용하여 Azure 리소스를 관리하는 방법을 살펴봅니다. 일회성 작업에 Azure PowerShell을 대화형으로 사용하고 반복 작업을 자동화하는 스크립트를 작성합니다. 
 
 ## <a name="learning-objectives"></a>학습 목표
-이 모듈에서는 다음을 수행합니다.
+이 모듈에서 수행하는 작업:
 
-- Azure PowerShell이 Azure 관리 작업에 적합한 도구인지 결정합니다.
-- Linux, macOS 및 Windows에 Azure PowerShell을 설치합니다.
-- Azure PowerShell을 사용하여 Azure 구독에 연결합니다.
-- Azure PowerShell을 사용하여 Azure 리소스를 만듭니다.
+- Azure PowerShell이 Azure 관리 작업에 적합한 도구인지 결정
+- Linux, macOS 및/또는 Windows Azure PowerShell 설치
+- Azure PowerShell을 사용하여 Azure 구독에 연결
+- Azure PowerShell을 사용하여 Azure 리소스 만들기
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
-- PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
+- PowerShell 또는 Bash 같은 명령줄 인터페이스 경험
 - 리소스 그룹 및 가상 머신과 같은 기본 Azure 개념에 대한 지식
 - Azure Portal을 사용하여 Azure 리소스 관리 경험

@@ -1,17 +1,7 @@
-In this module, you looked at the decisions you need to make before creating a virtual machine. These decisions include aspects such as the VM size, types of disks used, operating system image selected, and the types of resources created.
+이 모듈에서는 가상 머신을 만들기 전에 결정해야 하는 사항에 대해 살펴보았습니다. 이러한 결정에는 VM 크기, 사용한 디스크 유형, 선택한 운영 체제 이미지 및 만든 리소스 종류와 같은 측면이 포함됩니다.
 
-You also looked at the options to create and manage virtual machines in Azure. You saw how easy it is to create and manage VMs using the portal and when to use Resource Manager templates, PowerShell, the Azure CLI, and the Azure Client SDK.
+또한 Azure에서 가상 머신을 만들고 관리하는 옵션을 살펴보았습니다. 포털을 사용하여 VM을 만들고 관리하는 것이 얼마나 쉬운지와 Resource Manager 템플릿, PowerShell, Azure CLI 및 Azure 클라이언트 SDK를 사용하는 경우를 살펴보았습니다.
 
-Finally, you looked at the extensions and services available to more easily administer your VMs.
+마지막으로 VM을 더 쉽게 관리하는 데 사용할 수 있는 확장과 서비스를 살펴보았습니다.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-
-Remember that virtual machines continue to generate a monthly charge as long as you have hardware reserved (even if the OS is shut down!) and space used for disks. You can stop the VM in the portal to stop billing for compute services, but the storage will continue to generate a bill. If you create resources for testing purposes, an easy way to get rid of them all is to delete the **resource group** they are part of.
-
-> [!TIP]
-> Make sure to place all your test resources into the same resource group for easy management.
-
-To delete a resource group, locate it through the **Resource Groups** panel (click on **Resource Groups** in the sidebar). Then click the `...` ellipse menu next to the resource group, and select **Delete resource group** from the pop-up menu as shown here.
-
-![Delete a resource group](../media-draft/7-delete-rgs.png)
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

@@ -8,15 +8,15 @@ Azure Container Instances는 다음과 같은 이점을 제공합니다.
 - **초당 청구**: 컨테이너가 실행되는 동안에만 비용이 청구됩니다.
 - **하이퍼바이저 수준 보안**: Azure Container Instances는 응용 프로그램이 VM에서 격리되는 것처럼 컨테이너에서도 격리되도록 보장합니다.
 - **사용자 지정 크기**: Azure Container Instances는 CPU 코어 및 메모리의 정확한 사양을 허용하여 최적의 활용도를 제공합니다.
-- **영구적 저장소**: Azure Container Instances를 통해 상태를 검색하고 유지할 수 있도록 Azure Files 공유의 직접 탑재 기능을 제공합니다.
+- **영구적 저장소**: Azure Container Instances를 통해 상태를 검색하고 유지할 수 있도록 직접 Azure Files 공유를 탑재시킵니다.
 - **Linux 및 Windows**: Azure Container Instances는 동일한 API로 Windows 및 Linux 컨테이너를 모두 예약할 수 있습니다.
 
 ## <a name="learning-objectives"></a>학습 목표  
 
 이 모듈에서는 다음을 수행합니다.
 
-- Azure Container Instances에서 컨테이너 실행
-- 컨테이너 다시 시작 동작 제어
-- 컨테이너에서 환경 변수 사용
-- Azure Container Instance에 데이터 볼륨 연결
-- Azure Container Instances 문제 해결에 대해 알아보기
+- Azure Container Instances에서 컨테이너를 실행합니다.
+- 컨테이너 다시 시작 동작을 제어합니다.
+- 컨테이너에서 환경 변수를 사용합니다.
+- Azure Container Instance에 데이터 볼륨을 연결합니다.
+- Azure Container Instances 문제 해결에 대해 알아봅니다.

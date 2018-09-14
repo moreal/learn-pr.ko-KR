@@ -1,54 +1,53 @@
-You’ve now worked with both the Azure IoT Central application and connected the coffee machine to Azure IoT Central. You are well on your way to begin to monitor and manage your remote coffee machine. In this unit, you take a moment to validate your setup and connection by using the Connected Coffee Maker template that you defined earlier. You update the optimal temperature in settings, run commands to check for the state of your machine, and view your connected coffee machine in the dashboard. 
+이제 Azure IoT Central 응용 프로그램 작업을 완료했으며 커피 머신을 Azure IoT Central에 연결했습니다. 따라서 원격 커피 머신 모니터링 및 관리를 시작할 수 있습니다. 이 장치에서 이전에 정의한 커피 메이커 연결 된 템플릿을 사용 하 여 사용자 설정 및 연결 유효성 검사를 수행할 수 있습니다. 컴퓨터의 상태를 확인 하는 명령을 실행 하며 연결 된 커피 컴퓨터 대시보드에서 보기 설정에서 최적의 온도 업데이트 합니다. 
 
-## Update settings to sync your application with the coffee machine
+## <a name="update-settings-to-sync-your-application-with-the-coffee-machine"></a>커피 머신을 사용 하 여 응용 프로그램을 동기화 할 업데이트 설정
 
-On the Settings page, you send configuration data to the coffee machine from your application. 
+설정 페이지에서 응용 프로그램에서 coffee 컴퓨터에 구성 데이터를 보냅니다. 
 
-In this scenario, change the optimal temperature and choose **Update**. 
- When the setting is changed, the setting is marked as pending in the UI until the coffee machine acknowledges that it has responded to the setting change. 
+이 시나리오에서는 최적 온도를 변경하고 **업데이트**를 선택합니다. 변경된 설정은 커피 머신이 설정 변경에 응답했음을 승인할 때까지 UI에서 보류 중으로 표시됩니다. 
 
 > [!NOTE]
-> Successful updates in the setting indicate data flow and validate your  connection. The telemetry measurements will respond to the update in Optimal  Temperature. You can observe the change on the Measurements page. 
+> 설정에 대 한 업데이트가 성공적으로 데이터 흐름을 나타내며 연결의 유효성을 검사 합니다. 원격 분석 측정 최적의 온도 업데이트에 응답 합니다. 측정값 페이지에서 변경 내용을 관찰할 수 있습니다. 
 
-## Run commands on the coffee machine 
-Navigate to the **Commands** page for the following exercise. To validate the commands setup, you remotely run commands on the coffee machine from IoT Central. If successful, confirmation messages are sent from the coffee machine.
+## <a name="run-commands-on-the-coffee-machine"></a>커피 컴퓨터에서 명령 실행된 
+로 이동 합니다 **명령** 다음 연습에 대 한 페이지입니다. 명령을 설치의 유효성을 검사 하면 원격으로 명령을 실행 커피 컴퓨터에서 IoT Central에서 합니다. 성공 하면 확인 메시지가 커피 머신을에서 전송 됩니다.
 
-1. Start Brewing remotely by choosing **Run**. 
+1. 선택 하 여 Brewing를 원격으로 시작 **실행**합니다. 
     
-    The coffee machine will start if these three conditions are satisfied:
-    - Cup detected
-    - Not in maintenance
-    - Not brewing already  
+    다음의 세 가지 조건이 충족되면 커피 머신이 시작됩니다.
+    - 컵이 검색됨
+    - 유지 관리 중이 아님
+    - 이미 커피를 끓이고 있는 상태가 아님  
 
     > [!NOTE]
-    > When you've successfully started brewing, the state of the machine changes to yellow as indicated in Measurements > State. 
+    > 커피 끓이기가 정상적으로 시작되면 측정값 > 상태에 표시된 대로 머신 상태가 노란색으로 변경됩니다. 
     
-    Look for confirmation messages in the console log on the coffee machine. 
+    커피 컴퓨터의 콘솔 로그에서 확인 메시지를 확인 합니다. 
 
-    ![Run commands](../images/4-commands-brewing.png)
+    ![명령 실행된](../images/4-commands-brewing.png)
 
-1. Set Maintenance Mode by choosing **Run**. The coffee machine will set to maintenance if it's *not* already in maintenance.
+1. 유지 관리 모드를 선택 하 여 설정할 **실행**합니다. 커피 머신을 경우 유지 관리로 설정 됩니다 *되지* 유지 관리에 이미 있습니다.
     
-    Look for confirmation messages in the console log on the coffee machine. 
+    커피 컴퓨터의 콘솔 로그에서 확인 메시지를 확인 합니다. 
 
     > [!NOTE]
-    > As in real life when the technician takes the machine offline to perform necessary repairs before switching it back online, the coffee machine continues to stay in the maintenance mode until you reboot the client code.
+    > 현실 에서처럼 기술자 다시 온라인으로 전환 하기 전에 필요한 복구를 수행 하는 컴퓨터를 오프 라인으로 수행 될 때 커피 머신을 계속 클라이언트 코드를 다시 부팅 될 때까지 유지 관리 모드로 유지 합니다.
 
-    ![Run commands](../images/4-commands-maintenance.png)
+    ![명령 실행된](../images/4-commands-maintenance.png)
 
-1. It's recommended that you run the Node.js application no more than 60 minutes or so to prevent the application from sending you unwanted notifications/emails. Stopping the application when you're not working on the tutorial also prevents you from exhausting the daily message quota.
+1. 실행 하는 Node.js 응용 프로그램에서 원치 않는 알림/전자 메일 전송 응용 프로그램을 방지 하기 위해 60 분 정도 이내로 것이 좋습니다. 이 자습서에서 작업할 때 응용 프로그램을 중지 하면 일일 메시지 할당량을 소진에서 또한 방지 합니다.
 
-## View the coffee machine in the dashboard
-Navigate to the **Dashboard** page where you can collectively see the relevant information about your coffee machine. For the following exercise, turn on **Design Mode** to configure your dashboard. Whenever you are finished, choose **Save**.
+## <a name="view-the-coffee-machine-in-the-dashboard"></a>대시보드에서 커피 머신 확인
+로 이동 합니다 **대시보드** 커피 컴퓨터에 대 한 관련 정보를 전체적으로 볼 수 있는 페이지. 다음 연습에서는 설정 **디자인 모드** 에 대시보드를 구성 합니다. 선택 작업이 완료 될 때마다 **저장할**합니다.
 
-1. Choose **Line Chart** and enter the title as Telemetry to see the telemetry measurements. Choose **Past 30 minutes** for **Time Range**.
+1. 선택할 **꺾은선형 차트** 된 원격 분석 값을 보려면 원격 분석으로 제목을 입력 합니다. **시간 범위**로 **지난 30분**을 선택합니다.
 
-    ![Viewing the dashboard](../images/4-dashboard-a.png)
+    ![대시보드 보기](../images/4-dashboard-a.png)
 
-1. Choose **Settings and Properties** and enter the title as Device Properties. In **Add/Remove**, choose Coffee Makers Max Temperature, Coffee Makers Min Temperature, Device Warranty Expired. 
+1. **설정 및 속성**을 선택하고 제목으로 장치 속성을 입력합니다. **추가/제거**에서 커피 메이커 최대 온도, 커피 메이커 최소 온도, 장치 보증 만료를 선택합니다. 
 
-1. Choose **Settings and Properties** and enter the title as Optimal Temperature. In **Add/Remove**, choose Optimal  Temperature. 
+1. **설정 및 속성**을 선택하고 제목으로 최적 온도를 입력합니다. **추가/제거**에서 최적 온도를 선택합니다. 
 
-## Summary
+## <a name="summary"></a>요약
 
-In this unit, you spent some time to validate the connection between the coffee machine and Azure IoT Central. You achieved validation by updating the optimal temperature, running the commands. Finally you set up the dashboard to monitor your machine in one place by defining the information you'd like to see about your coffee machine. These validation steps are necessary before moving on to other tasks in the next unit. 
+이 단위에 커피 머신 및 Azure IoT Central 간 연결의 유효성을 검사 하는 데 시간이 소요 됩니다. 명령을 실행 하는 최적의 온도 업데이트 하 여 유효성 검사를 수행 합니다. 마지막으로 커피 머신과 관련하여 확인하려는 정보를 정의해 커피 머신을 한 곳에서 모니터링할 수 있도록 대시보드를 설정했습니다. 유효성 검사 단계는 다음 단위의 다른 작업으로 이동 하기 전에 필요 합니다. 

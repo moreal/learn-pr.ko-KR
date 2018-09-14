@@ -8,7 +8,7 @@
 
 1. **기능** 탭으로 이동하여 *위치* 기능을 선택합니다.
 
-    ![UWP 기능 탭](../media-drafts/4-uwp-location-capability.png)
+    ![UWP 기능 탭](../media/4-uwp-location-capability.png)
 
 > Android 또는 iOS를 지원하려는 경우 권한을 다르게 구성해야 합니다. [Xamarin.Essentials 지리적 위치 문서](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started)에 자세히 설명되어 있습니다.
 
@@ -49,9 +49,9 @@ async Task SendLocation()
 
 앱을 실행하고 **위치 보내기** 단추를 클릭하여 UI에서 위치를 확인합니다.
 
-![사용자 위치를 표시하는 실행 중인 앱](../media-drafts/4-running-app-showing-location.png)
+![사용자 위치를 표시하는 실행 중인 앱](../media/4-running-app-showing-location.png)
 
-> 이 앱은 마지막으로 알려진 위치를 사용합니다. 프로덕션 품질 앱에서는 시간 제한을 지정하여 정확한 현재 위치를 가져오고, 시간 이내에 발견되지 않을 경우 마지막으로 알려진 위치로 대체합니다. [Xamarin.Essentials 지리적 위치 문서](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)에서 이 작업을 수행하는 방법을 자세히 알아볼 수 있습니다. 이 앱에는 오류 처리 기능이 없습니다. 프로덕션 품질 앱에서는 발생하는 예외(예: 위치 사용 불가)를 처리해야 합니다.
+> 이 앱은 마지막으로 알려진 위치를 사용합니다. 프로덕션 품질 앱에서는 시간 제한을 지정하여 정확한 현재 위치를 가져오고, 시간 이내에 발견되지 않을 경우 마지막으로 알려진 위치로 대체합니다. [Xamarin.Essentials 지리적 위치 문서](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)에서 이 작업을 수행하는 방법을 자세히 알아볼 수 있습니다. 이 앱에는 오류 처리가 없습니다. 프로덕션 품질 앱에서는 발생하는 모든 예외(예: 위치 사용 불가)를 처리해야 합니다.
 
 ## <a name="summary"></a>요약
 

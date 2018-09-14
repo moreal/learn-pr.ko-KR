@@ -1,12 +1,12 @@
-Suppose you run a social networking site for professionals. You're allowing your users to upload their headshot images to be posted on their profile. To reduce workload on the web server, you want to create a serverless backend using Azure Functions to process this data. You want to create an image thumbnail and then save it off to permanent storage. 
+전문가 위한 소셜 네트워킹 사이트를 실행 한다고 가정 합니다. 사용자가 자신의 프로필에 게시 되어야 해당 헤드샷 이미지 업로드를 허용 하는. 웹 서버에서 워크 로드를 줄이려면 하려면 Azure Functions를 사용 하 여이 데이터를 처리 하는 서버 리스 백 엔드를 만드세요. 이미지 축소판 그림을 만들고 다음 해제 영구 저장소에 저장 하려고 합니다. 
 
-The power of Azure Functions comes largely from the integrations if offers with a range of data sources and services. These integrations are defined with bindings. Using bindings, developers interact with other data sources and services without worrying about how the data flows to and from their function.
+하는 경우 Azure Functions의 강력한 통합에서 주로 제공 데이터 원본 및 서비스의 범위를 제공 합니다. 이러한 통합은 바인딩을 사용 하 여 정의 됩니다. 바인딩을 사용 하 여, 개발자가 상호 작용 다른 데이터 원본 및 서비스 데이터 흐름에서 해당 기능에 대 한 걱정 없이 합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서 수행하는 작업:
 
-- Explore what types of data sources can be accessed through bindings
-- Read data from Azure Cosmos DB using Azure Functions
-- Store data in Azure Cosmos DB using Azure Functions
-- Send messages to Azure Queue Storage using Azure Functions
+- 어떤 유형의 데이터 원본 바인딩을 통해 액세스할 수 있습니다를 탐색 합니다.
+- Azure Functions를 사용 하 여 Azure Cosmos DB에서 데이터 읽기
+- Azure Functions를 사용 하 여 Azure Cosmos DB에서 데이터를 저장 합니다.
+- Azure Functions를 사용 하 여 Azure Queue Storage에 메시지 보내기

@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: 요약
+  description: 요약
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 요약
+durationInMinutes: 7
+content: |
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: 지식 검사-IT 관리자로 서 IoT 장치 관리
+  questions:
+    - content: IoT Hub는 저장 또는 처리를 위해 IoT 장치에서 클라우드로 다량의 원격 분석 데이터를 수집할 수 있게 해주는 Azure 서비스입니다.
+      choices:
+        - content: 'True'
+          isCorrect: true
+          correctExplanation: 맞는.
+        - content: 'False'
+          isCorrect: false
+          incorrectExplanation: 잘못 되었습니다.
+    - content: IT 작업에 대 한 가장 큰 IoT 기회는 다음 영역 중 입니까?
+      choices:
+        - content: 항공
+          isCorrect: false
+          incorrectExplanation: 잘못 되었습니다.
+        - content: 데이터 보안
+          isCorrect: true
+          correctExplanation: 맞는.
+        - content: Bioengineering
+          isCorrect: false
+          incorrectExplanation: 잘못 되었습니다.
+        - content: 자동차
+          isCorrect: false
+          incorrectExplanation: 잘못 되었습니다.
+    - content: 공유 액세스 정책 중 하나는 기본적으로 만들어지지 않습니다?
+      choices:
+        - content: iothubowner
+          isCorrect: false
+          incorrectExplanation: 이 정책은 기본적으로 만들어집니다.
+        - content: service
+          isCorrect: false
+          incorrectExplanation: 이 정책은 기본적으로 만들어집니다.
+        - content: device
+          isCorrect: false
+          incorrectExplanation: 이 정책은 기본적으로 만들어집니다.
+        - content: registryWrite
+          isCorrect: true
+          correctExplanation: RegistryWrite로 이러한 정책이 없는 경우

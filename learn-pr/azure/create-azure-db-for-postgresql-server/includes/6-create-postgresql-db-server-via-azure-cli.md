@@ -1,62 +1,30 @@
-You decide to create an Azure Database for PostgreSQL to store routes captured from runners' fitness devices. Based on historic captured data volumes, you know your server storage requirements should be set at 20 GB. To support your processing requirements, you need compute Gen 5 support with 1 vCore. You also know that you require a retention period of 15 days for data backups.
+실행 기의 적합성에 대 한 장치에서 캡처된 경로 저장 하는 Azure Database for PostgreSQL 서버 만들기로 결정 합니다. 기록 캡처된 데이터 볼륨에 따라 알고 20GB에 서버 저장소 요구 사항을 설정 해야 합니다. 처리 요구를 지원 하려면 1 vCore 사용 하 여 Gen 5 지원을 계산 해야 합니다. 또한 데이터 백업의 보존 기간을 15 일로 필요한를 파악 합니다.
 
-> [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+시작 해 보겠습니다.
 
-Let's begin.
+에 20GB에 서버 저장소 크기를 설정, Gen 5 지원 vCore 1 개 및 데이터 백업에 대 한 일의 보존 기간을 사용 하 여 계산를 하려고 합니다.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true).
+지정 하는 여러 매개 변수를 가지 있습니다.
 
-Recall that you'll need to start an Azure Cloud Shell session. Select the Cloud Shell icon at the top of the screen to start the session.
+- `--resource-group <resource_group_name>`
+- `--name <new_server_name>`
+- `--location <location>`
+- `--admin-user <admin_user_name>`
+- `--admin-password <server_admin_password>`
+- `--sku-name <sku>`
+- `--storage-size <size>`
+- `--backup-retention <days>`
+- `--version <version_number>`
 
-If you don't already have a storage account to use with Cloud Shell, you'll need to create one with first access. The portal interface will step you through the process of creating a storage account.
+명령을 작성 하 고 아래 솔루션 확인 하지 않고 매개 변수를 완료할 수 하는 경우를 참조 하세요. 값을 바꾸는 `<>` 를 고유한 값입니다.
 
-This lab uses `bash` as the command-line environment.
+> [!NOTE]
+> 이 명령을 사용 하 여 모든 위치 목록을 검색할 수 있습니다 `az account list-locations`합니다. 선택 합니다 `displayName` 또는 `name` 에 대 한 사용을 `<location>` 매개 변수입니다.
 
-1. Select the subscription you'll use to create the server.
+```bash
+az postgres server create --resource-group <rgn>[Sandbox resource group name]</rgn> --name <unique_server_name>  --location "UK West" --admin-user <server_admin_login_id> --admin-password <server_admin_password> --sku-name B_Gen5_1 --storage-size 20480 --backup-retention 15 --version 10
+```
 
-    If you have several subscriptions, make sure you activate the appropriate subscription with the following command, replacing the zeros with your subscription identifier.
+시스템 정보를 실행 하는 경우를 처리 하는 데 몇 분 정도 볼 수 있습니다. 서버를 만든 경우 서버를 설명 하는 개체 JSON (JavaScript Notation) 문자열로 반환 됩니다. 서버 생성 되지 않습니다 하는 경우 오류 메시지가 표시 됩니다. 이 오류 정보를 사용 하 여 검토 하 고 명령 매개 변수를 수정 하겠습니다.
 
-    ``` bash
-    az account set --subscription "00000000-0000-0000-0000-000000000000"
-    ```
-
-    Recall, you can list all your subscriptions using the `az account list --output table` command. Pick the subscription identifier from this list that you'd like to use.
-
-1. If you haven't already done so in a previous unit, create a resource group. You'll run the following command.
-
-    ```bash
-    az group create --name <resource_group_name> --location <location>
-    ```
-
-    > [!Note]
-    > You can retrieve a list of all locations using this command `az account list-locations`. Select the `displayName` or `name` value and use it for the `<location>` parameter.
-
-1. You're now ready to run the `az postgres server create` command.
-
-    Keep in mind you want to set your server storage size at 20 GB, compute Gen 5 support with 1 vCore and a retention period of 15 days for data backups.
-
-    There are several parameters that you'll specify:
-
-    - `--resource-group <resource_group_name>`
-    - `--name <new_server_name>`
-    - `--location <location>`
-    - `--admin-user <admin_user_name>`
-    - `--admin-password <server_admin_password>`
-    - `--sku-name <sku>`
-    - `--storage-size <size>`
-    - `--backup-retention <days>`
-    - `--version <version_number>`
-
-    See if you can write the command and complete the parameters without looking at the solution below. Replace the values in `<>` with your own values.
-
-    > [!NOTE]
-    > You can retrieve a list of all locations using this command `az account list-locations`. Select the `displayName` or `name` value and use it for the `<location>` parameter.
-
-    ```bash
-    az postgres server create --resource-group <resource_group_name> --name <unique_server_name>  --location "UK West" --admin-user <server_admin_login_id> --admin-password <server_admin_password> --sku-name B_Gen5_1 --storage-size 20480 --backup-retention 15 --version 10
-    ```
-
-You'll see the system take a few moments to process the information when executed. A Java Script Object Notation (JSON) string that describes the server is returned if the server was created. An error message is displayed if the server isn't created. You'll use this error information to review and fix your command parameters.
-
-You've successfully created a PostgreSQL server using the Azure CLI. In the next unit, you'll see how to configure your server's security settings.
+Azure CLI를 사용 하 여 PostgreSQL 서버를 성공적으로 만들었습니다. 다음 단위에 있는 서버의 보안 설정을 구성 하는 방법을 배웁니다.

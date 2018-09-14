@@ -1,38 +1,36 @@
 ### YamlMime:Module
 uid: learn.classify-images-with-custom-vision-services
 metadata:
-  title: Classify images with the Microsoft Custom Vision Service
-  description: Train the Microsoft Custom Vision Service with a collection of flower images, and it can tell you whether the next image includes a flower — or even what type of flower it is.
+  title: Microsoft Custom Vision Service를 사용하여 이미지 분류
+  description: 꽃 이미지 컬렉션으로 Microsoft Custom Vision Service를 학습시키면 그 다음 이미지에 꽃이 포함되어 있는지 또는 어떤 종류의 꽃인지도 알려줄 수 있습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Classify images with the Microsoft Custom Vision Service
-summary: Train the Custom Vision Service with a collection of flower images, so it can tell you whether the next image includes a flower — or even what type of flower it is.
-abstract:  | 
-  In this module, you will:
-  - Create a Custom Vision Service project 
-  - Train a Custom Vision Service model with tagged images  
-  - Test a Custom Vision Service model 
-  - Create apps that leverage Custom Vision Service models by calling REST APIs
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Microsoft Custom Vision Service를 사용하여 이미지 분류
+summary: 이 알려 줄 수 있습니다 다음 이미지는 꽃을 포함 하는 여부 있도록 Custom Vision Service 꽃 이미지의 컬렉션을 사용 하 여 학습-또는 심지어 어떤 유형의 꽃 것입니다.
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - Custom Vision Service 프로젝트 만들기 
+  - 태그 지정된 이미지로 Custom Vision Service 모델 학습시키기  
+  - Custom Vision Service 모델 테스트 
+  - REST API를 호출하여 Custom Vision Service 모델을 활용하는 앱 만들기
+prerequisites: 없음
+iconUrl: /learn/achievements/classify-images-with-custom-vision-service.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.classify-images-with-custom-vision-services.0-introduction
-- learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
-- learn.classify-images-with-custom-vision-services.2-upload-tagged-images
-- learn.classify-images-with-custom-vision-services.3-train-model
-- learn.classify-images-with-custom-vision-services.4-test-model
-- learn.classify-images-with-custom-vision-services.5-build-app
-- learn.classify-images-with-custom-vision-services.6-classify-images
-- learn.classify-images-with-custom-vision-services.7-knowledge-check
-achievement: learn.classify-images-with-custom-vision-services.badge 
+  - learn.classify-images-with-custom-vision-services.0-introduction
+  - learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
+  - learn.classify-images-with-custom-vision-services.2-upload-tagged-images
+  - learn.classify-images-with-custom-vision-services.3-train-model
+  - learn.classify-images-with-custom-vision-services.4-test-model
+  - learn.classify-images-with-custom-vision-services.5-build-app
+  - learn.classify-images-with-custom-vision-services.6-classify-images
+  - learn.classify-images-with-custom-vision-services.7-knowledge-check
+achievement: learn.classify-images-with-custom-vision-services.badge

@@ -1,49 +1,49 @@
-The Azure portal is the easiest way to create resources such as VMs when you are getting started. However, it's not necessarily the most efficient or quickest way to work with Azure, particularly if you need to create several resources together. In our case, we will eventually be creating dozens of VMs to handle different tasks. Creating them manually in the Azure portal wouldn't be a fun task!
+Azure Portal은 시작할 때 VM과 같은 리소스를 만드는 가장 쉬운 방법입니다. 그러나 Azure를 사용하는 가장 효율적이거나 가장 빠른 방법은 아닙니다. 특히 여러 리소스를 함께 만들어야 하는 경우에는 더욱 그렇습니다. 따라서 여기서는 서로 다른 작업을 처리하는 수십 개의 VM을 만들 것입니다. Azure Portal에서 수동으로 만드는 것은 재미 있는 작업이 아닙니다!
 
-Let's look at some other ways to create and administer resources in Azure:
+Azure에서 리소스를 만들고 관리하는 몇 가지 다른 방법을 살펴보겠습니다.
 
 - [Azure Resource Manager](#Azure_RM)
 - [Azure PowerShell](#Azure_PowerShell)
 - [Azure CLI](#Azure_CLI)
 - [Azure REST API](#Azure_REST_API)
-- [Azure Client SDK](#Azure_Client_SDK)
-- [Azure VM Extensions](#Azure_VMExtensions)
+- [Azure 클라이언트 SDK](#Azure_Client_SDK)
+- [Azure VM 확장](#Azure_VMExtensions)
 - [Azure Automation Services](#Azure_Automation)
 
 <a name="Azure_RM" />
 
-## Azure Resource Manager
+## <a name="azure-resource-manager"></a>Azure Resource Manager
 
-Let's assume you want to create a copy of a VM with the same settings. You could create a VM image, upload it to Azure, and reference it as the basis for your new VM. This process is inefficient and time-consuming. Azure provides you with the option to create a template from which to create an exact copy of a VM.
+동일한 설정을 사용하여 VM 복사본을 만들려고 한다고 가정해 보겠습니다. VM 이미지 만들기를 Azure에 업로드 하 고 새 VM에 대 한 기준으로 참조 수 없습니다. 이 프로세스는 비효율적이며 시간 소모적입니다. Azure는 정확한 VM 복사본을 만드는 데 사용할 템플릿을 만드는 옵션을 제공합니다.
 
-Typically, your Azure infrastructure will contain many resources, many of them related to one another in some way. For example, the VM we created has the virtual machine itself, storage, network interface, web server, and a database - all created together to run the WordPress site. **Azure Resource Manager** makes working with these related resources more efficient. It organizes resources into named **resource groups** that let you deploy, update, or delete all of the resources together. When we created the WordPress site, we identified the resource group as part of the VM creation, and Resource Manager placed the associated resources into the same group.
+일반적으로 Azure 인프라에는 많은 리소스가 포함되며, 그 중 대부분은 몇 가지 방식으로 서로 관련되어 있습니다. 예를 들어 여기서 만든 VM에는 WordPress 사이트를 실행하기 위해 함께 만든 가상 머신 자체, 저장소, 네트워크 인터페이스, 웹 서버 및 데이터베이스가 모두 포함됩니다. **Azure Resource Manager**는 이러한 관련 리소스를 더 효율적으로 사용합니다. 리소스 구성에 이름이 **리소스 그룹** 수 있는 배포, 업데이트 또는 모든 리소스가 함께 삭제 합니다. WordPress 사이트를 만들 때 VM 만들기의 일환으로 리소스 그룹 식별 및 Resource Manager 동일한 그룹에 연결 된 리소스를 배치 합니다.
 
-Resource Manager also allows you to create _templates_, which can be used to create and deploy specific configurations.
+리소스 관리자도 만들 수 있습니다 _템플릿_, 특정 구성을 만들고 배포할를 사용할 수 있는 합니다.
 
-### What are Resource Manager templates?
+### <a name="what-are-resource-manager-templates"></a>Resource Manager 템플릿이란?
 
-**Resource Manager templates** are JSON files that define the resources you need to deploy for your solution.
+**Resource Manager 템플릿**은 솔루션에 배포해야 하는 리소스를 정의하는 JSON 파일입니다.
 
-You can create resource templates from the **Settings** section for a specific VM by selecting the Automation script option.
+Automation 스크립트 옵션을 선택하여 특정 VM에 대한 **설정** 섹션에서 리소스 템플릿을 만들 수 있습니다.
 
-![Automation script for our VM](../media-draft/4-automation-script.png)
+![VM에 대한 Automation 스크립트](../media-draft/4-automation-script.png)
 
-You have the option to save the resource template for later use or immediately deploy a new VM based on this template. For example, you might create a VM from a template in a test environment and find it doesn’t quite work to replace your on-premises machine. You can delete the resource group, which deletes all of the resources, tweak the template, and try again. If you only want to make changes to the existing deployed resources, you can change the template used to create it and deploy it again. Resource Manager will change the resources to match the new template.
+나중에 사용할 리소스 템플릿을 저장하거나 이 템플릿을 기반으로 하여 새 VM을 즉시 배포하는 옵션이 있습니다. 예를 들어 테스트 환경에서 템플릿에서 VM을 만들 수도 있으며 온-프레미스 컴퓨터의 이름을 바꾸려면 제대로 작동 하지을 찾을 수 있습니다. 모든 리소스를 삭제 하는 리소스 그룹을 삭제 하 고, 템플릿을 조정 하 고, 다시 시도 수 있습니다. 기존의 배포된 리소스만 변경하려는 경우 해당 리소스를 만드는 데 사용된 템플릿을 변경하여 다시 배포할 수 있습니다. Resource Manager는 새 템플릿과 일치하도록 리소스를 변경합니다.
 
-Once you have it working the way you want it, you can take that template and easily re-create multiple versions of your infrastructure, such as staging and production. You can parameterize fields such as the VM name, network name, storage account name, etc., and load the template repeatedly, using different parameters to customize each environment.
+원하는 방식으로 작업한 후에는 해당 템플릿을 가져와서 준비 및 프로덕션과 같은 여러 버전의 인프라를 쉽게 다시 만들 수 있습니다. VM 이름, 네트워크 이름, 저장소 계정 이름 등과 같은 필드를 매개 변수화하고, 다른 매개 변수를 사용하여 각 환경을 사용자 지정하는 템플릿을 반복적으로 로드할 수 있습니다.
 
-You can use automation scripting tools such as the Azure CLI, Azure PowerShell, or even the Azure REST APIs with your favorite programming language to process resource templates, making this a powerful tool for quickly spinning up your infrastructure.
+즐겨 찾는 프로그래밍 프로세스 리소스 템플릿의 언어를이 인프라를 신속 하 게 구동 하는 것에 대 한 강력한 도구를 사용 하 여 Azure CLI, Azure PowerShell 또는 Azure REST Api도 같은 도구를 스크립팅 하는 자동화를 사용할 수 있습니다.
 
 <a name="Azure_PowerShell" />
 
-## Azure PowerShell
+## <a name="azure-powershell"></a>Azure PowerShell
 
-Creating administration scripts is a powerful way to optimize your workflow. You can automate everyday, repetitive tasks, and once a script has been verified, it will run consistently, likely reducing errors. **Azure PowerShell** is ideal for one-off interactive tasks and/or the automation of repeated tasks.
+관리 스크립트를 만들고 워크플로 최적화 하는 강력한 방법 이며 일상적인 반복 작업을 자동화할 수 있습니다 있으며 스크립트가 확인 되 면 실행 됩니다 일관 되 게 가능성이 감소 오류입니다. **Azure PowerShell** 일회성 대화형 작업 및/또는 반복 되는 작업의 자동화에 적합 합니다.
 
 > [!NOTE]
-> PowerShell is a cross-platform shell that provides services like the shell window and command parsing. Azure PowerShell is an optional add-on package that adds the Azure-specific commands (referred to as **cmdlets**). You can learn more about installing and using Azure PowerShell in a separate training module.
+> PowerShell은 셸 창과 명령 구문 분석과 같은 서비스를 제공하는 플랫폼 간 셸입니다. Azure PowerShell은 Azure 관련 명령을 추가 하는 선택적 추가 기능 패키지 (이라고 **cmdlet**). 별도의 학습 모듈에서 Azure PowerShell을 설치하고 사용하는 방법에 대해 자세히 알아볼 수 있습니다.
 
-For example, you can use the `New-AzureRmVM` cmdlet to create a new Azure virtual machine.
+예를 들어 사용할 수 있습니다는 `New-AzureRmVM` cmdlet을 Azure 가상 머신을 만듭니다.
 
 ```powershell
 New-AzureRmVm `
@@ -57,18 +57,18 @@ New-AzureRmVm `
     -OpenPorts 80,3389
 ```
 
-As shown here, you supply various parameters to handle the large number of VM configuration settings available. Most of the parameters have reasonable values; you only need to specify the required parameters. Learn more about creating and managing VMs with Azure PowerShell in the **Automate Azure tasks using scripts with PowerShell** module.
+다음과 같이 다양한 매개 변수를 제공하여 사용 가능한 많은 VM 구성 설정을 처리합니다. 대부분의 매개 변수에는 적절한 값이 있으므로 필요한 매개 변수만 지정하면 됩니다. **PowerShell을 통해 스크립트를 사용하여 Azure 작업 자동화** 모듈에서 Azure PowerShell을 사용하여 VM을 만들고 관리하는 방법에 대해 자세히 알아보세요.
 <a name="Azure_CLI" />
 
-## Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
-Another option for scripting and command-line Azure interaction is the **Azure CLI**.
+스크립팅 및 명령줄 Azure 상호 작용을 위한 또 다른 옵션은 **Azure CLI**입니다.
 
-The Azure CLI is Microsoft's cross-platform command-line tool for managing Azure resources such as virtual machines and disks from the command line. It's available for macOS, Linux, and Windows, or in the browser using the Cloud Shell. Like Azure PowerShell, the Azure CLI is a powerful way to streamline your administrative workflow. Unlike Azure PowerShell, the Azure CLI does not need PowerShell to function.
+Azure CLI는 명령줄에서 가상 머신 및 디스크와 같은 Azure 리소스를 관리하기 위한 Microsoft의 플랫폼 간 명령줄 도구입니다. Cloud Shell을 통해 macOS, Linux 및 Windows 또는 브라우저에서 사용할 수 있습니다. Azure PowerShell과 마찬가지로 Azure CLI는 관리 워크플로를 간소화할 수 있는 강력한 방법입니다. Azure PowerShell과 달리 Azure CLI는 PowerShell 없이 작동할 수 있습니다.
 
-For example, you can create an Azure VM with the `az vm create` command.
+예를 들어 `az vm create` 명령을 사용하여 Azure VM을 만들 수 있습니다.
 
-```bash
+```azurecli
 az vm create \
     --resource-group TestResourceGroup \
     --name test-wp1-eus-vm \
@@ -77,41 +77,41 @@ az vm create \
     --admin-password aReallyGoodPasswordHere
 ```
 
-The Azure CLI can be used with other scripting languages, for example, Ruby and Python. Both languages are commonly used on non-Windows-based machines where the developer might not be familiar with PowerShell.
+Azure CLI는 다른 스크립팅 언어(예: Ruby 및 Python)와 함께 사용할 수 있습니다. 비 Windows 기반 컴퓨터에서 두 언어 모두 일반적으로 사용 됩니다이 있는 개발자 PowerShell에 익숙한 수 있습니다.
 
-Learn more about creating and managing VMs in the **Manage virtual machines with the Azure CLI tool** module.
+**Azure CLI 도구를 사용하여 가상 머신 관리** 모듈에서 VM을 만들고 관리하는 방법에 대해 자세히 알아보세요.
 
-## Programmatic (APIs)
+## <a name="programmatic-apis"></a>프로그래밍 방식(API)
 
-Generally speaking, both Azure PowerShell and Azure CLI are good options if you have simple scripts to run and want to stick to command-line tools. When it comes to more complex scenarios, where the creation and management of VMs form part of a larger application with complex logic, another approach is needed.
+일반적으로 실행할 간단한 스크립트가 있고 명령줄 도구를 사용하려는 경우 Azure PowerShell과 Azure CLI는 모두 적절한 옵션입니다. 여기서 작성 및 관리 Vm의 복잡 한 논리를 사용 하 여 대규모 응용 프로그램의 일부를 형성, 복잡 한 시나리오에 있어서 또 다른 방법은 필요 합니다.
 
-You can interact with every type of resource in Azure programmatically.
+Azure에서는 모든 종류의 리소스와 프로그래밍 방식으로 상호 작용할 수 있습니다.
 
 <a name="Azure_REST_API" />
 
-### Azure REST API
+### <a name="azure-rest-api"></a>Azure REST API
 
-The Azure REST API provides developers with operations categorized by resource as well as the ability to create and manage VMs. Operations are exposed as URIs with corresponding HTTP methods (`GET`, `PUT`, `POST`, `DELETE`, and `PATCH`) and a corresponding response.
+Azure REST API는 Vm 만들기 및 관리 하는 기능 뿐 아니라 리소스에 의해 분류 작업을 사용 하 여 개발자를 제공 합니다. 작업은 해당 HTTP 메서드(`GET`, `PUT`, `POST`, `DELETE` 및 `PATCH`) 및 해당 응답과 함께 URI로 노출됩니다.
 
-The Azure Compute APIs give you programmatic access to virtual machines and their supporting resources. With this API, you have operations to:
+Azure Compute API는 가상 머신 및 지원 리소스에 프로그래밍 방식으로 액세스할 수 있도록 합니다. 이 API를 사용하여 수행할 수 있는 작업은 다음과 같습니다.
 
-- Create and manage availability sets
-- Add and manage virtual machine extensions
-- Create and manage managed disks, snapshots, and images
-- Access the platform images available in Azure
-- Retrieve usage information of your resources
-- Create and manage virtual machines
-- Create and manage virtual machine scale sets
+- 가용성 집합 만들기 및 관리
+- 가상 머신 확장 추가 및 관리
+- 관리 디스크, 스냅숏, 이미지 만들기 및 관리
+- Azure에서 사용할 수 있는 플랫폼 이미지에 액세스
+- 리소스 사용량 정보 검색
+- 가상 머신 만들기 및 관리
+- 가상 머신 확장 집합 만들기 및 관리
 
 <a name="Azure_Client_SDK" />
 
-### Azure Client SDK
+### <a name="azure-client-sdk"></a>Azure 클라이언트 SDK
 
-Even though the REST API is platform and language agnostic, most often developers will look toward a higher level of abstraction. The Azure Client SDK encapsulates the Azure REST API, making it much easier for developers to interact with Azure.
+REST API는 종종 된 플랫폼, 언어 중립적 대부분 경우에 개발자가 더 높은 수준의 추상화 방향으로 표시 됩니다. Azure 클라이언트 SDK는 훨씬 쉽게 Azure와 상호작용 하는 개발자를 위한 Azure REST API를 캡슐화 합니다.
 
-The Azure Client SDKs are available for a variety of languages and frameworks, including .NET-based languages such as C#, Java, Node.js, PHP, Python, Ruby, and Go.
+Azure 클라이언트 Sdk는 다양 한 언어 및 프레임 워크를 포함 하 여 사용할 수 있습니다. C#, Java, Node.js, PHP, Python, Ruby 및 Go 같은 NET 기반 언어입니다.
 
-Here's an example snippet of C# code to create an Azure VM using the `Microsoft.Azure.Management.Fluent` NuGet package:
+`Microsoft.Azure.Management.Fluent` NuGet 패키지를 사용하여 Azure VM을 만드는 C# 코드 조각의 예제는 다음과 같습니다.
 
 ```csharp
 var azure = Azure
@@ -134,7 +134,7 @@ azure.VirtualMachines.Define(vmName)
     .Create();
 ```
 
-Here's the same snippet in Java using the **Azure Java SDK**:
+**Azure Java SDK**를 사용하는 Java의 동일한 코드 조각은 다음과 같습니다.
 
 ```java
 String vmName = "test-wp1-eus-vm";
@@ -154,26 +154,26 @@ VirtualMachine virtualMachine = azure.virtualMachines()
 
 <a name="Azure_VMExtensions" />
 
-## Azure VM Extensions
+## <a name="azure-vm-extensions"></a>Azure VM 확장
 
-Let's assume you want to configure and install additional software on your virtual machine after the initial deployment. You want this task to use a specific configuration, monitored and executed automatically.
+초기 배포 후에 가상 머신에 추가 소프트웨어를 구성하고 설치한다고 가정해 보겠습니다. 이 작업에서는 자동으로 모니터링되고 실행되는 특정 구성을 사용하려고 합니다.
 
-**Azure VM extensions** are small applications that allow you to configure and automate tasks on Azure VMs after initial deployment. **Azure VM extensions** can be run with the Azure CLI, PowerShell, Azure Resource Manager templates, and the Azure portal.
+**Azure VM 확장**은 초기 배포 후에 Azure VM에서 작업을 구성하고 자동화할 수 있는 작은 응용 프로그램입니다. **Azure VM 확장**은 Azure CLI, PowerShell, Azure Resource Manager 템플릿 및 Azure Portal을 사용하여 실행할 수 있습니다.
 
-You bundle extensions with a new VM deployment or run them against an existing system.
+새 VM 배포와 함께 확장을 번들로 제공하거나 기존 시스템에 대해 확장을 실행합니다.
 
 <a name="Azure_Automation" />
 
-## Azure Automation Services
+## <a name="azure-automation-services"></a>Azure Automation Services
 
-Saving time, reducing errors, and increasing efficiency are some of the most significant operational management challenges faced when managing remote infrastructure. If you have a lot of infrastructure services, you might want to consider using higher-level services in Azure to help you operate from a higher level.
+원격 인프라를 관리할 때 마주치는 가장 중요한 운영 관리 과제 중 일부는 시간을 절약하고, 오류를 줄이고, 효율성을 높이는 것입니다. 인프라 서비스가 많은 경우 더 높은 수준에서 운영할 수 있도록 Azure에서 고급 서비스를 사용하는 것이 좋습니다.
 
-**Azure Automation** allows you to integrate services that allow you to automate frequent, time-consuming, and error-prone management tasks with ease. These services include **process automation**, **configuration management**, and **update management**.
+**Azure Automation** 자주, 시간이 오래 걸리며 자동화할 수 있도록 하는 서비스를 통합할 수 있으며 오류가 발생 하기 쉬운 관리 용이성을 사용 하 여 작업 합니다. 이러한 서비스에 포함 **프로세스 자동화**를 **구성 관리**, 및 **업데이트 관리**합니다.
 
-- **Process Management**. Let's assume you have a VM that is monitored for a specific error event. You want to take action and fix the problem as soon as it's reported. Process automation allows you to set up watcher tasks that can respond to events that may occur in your datacenter.
+- **프로세스 관리**. 특정 오류 이벤트에 대해 모니터링되는 VM이 있다고 가정해 보겠습니다. 작업을 수행하고 보고되는 즉시 문제를 해결하려고 합니다. 프로세스 자동화를 통해 데이터 센터에서 발생할 수 있는 이벤트에 응답할 수 있는 감시자 작업을 설정할 수 있습니다.
 
-- **Configuration Management**.  Perhaps you want to track software updates that become available for the operating system that runs on your VM. There are specific updates you may want to include or exclude. Configuration management allows you to track these updates and take action as required. You use **System Center Configuration Manager** to manage your company's PC, servers, and mobile devices. You can extend this support to your Azure VMs with Configuration Manager.
+- **구성 관리**.  VM에서 실행되는 운영 체제에서 사용할 수 있는 소프트웨어 업데이트를 추적하려고 합니다. 포함하거나 제외할 수 있는 특정 업데이트가 있습니다. 구성 관리를 통해 이러한 업데이트를 추적하고 필요에 따라 작업을 수행할 수 있습니다. **System Center Configuration Manager**를 사용하여 회사의 PC, 서버 및 모바일 장치를 관리합니다. Configuration Manager를 사용하여 이 지원을 Azure VM으로 확장할 수 있습니다.
 
-- **Update Management**. This is used to manage updates and patches for your VMs. With this service, you're able to assess the status of available updates, schedule installation, and review deployment results to verify updates applied successfully. Update management incorporates services that provide process and configuration management. You enable update management for a VM directly from your **Azure Automation** account. You can also allow update management for a single virtual machine from the virtual machine blade in the portal.
+- **업데이트 관리**. VM에 대한 업데이트 및 패치를 관리하는 데 사용됩니다. 이 서비스를 통해 사용 가능한 업데이트의 상태를 평가하고, 설치를 예약하고, 배포 결과를 검토하여 업데이트가 성공적으로 적용되었는지 확인할 수 있습니다. 업데이트 관리는 프로세스 및 구성 관리를 제공하는 서비스를 통합합니다. **Azure Automation** 계정에서 직접 VM에 대한 업데이트 관리를 사용하도록 설정할 수 있습니다. 또한 포털의 가상 머신 블레이드에서 단일 가상 머신에 대한 업데이트 관리를 허용할 수도 있습니다.
 
-As you can see, Azure provides a variety of tools to create and administer resources so that you can integrate management operations into a process _that works for you_. Let's examine some of the other Azure services to make sure your infrastructure resources are running smoothly.
+Azure는 다양 한 만들기 및 관리 작업 프로세스를 통합할 수 있도록 리소스를 관리 하는 도구를 제공 알 수 있듯이 _작동 하는_합니다. 인프라 리소스에 원활 하 게 실행 되 고 있는지를 다른 Azure 서비스 중 일부를 살펴보겠습니다.

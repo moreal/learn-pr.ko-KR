@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.2-defense-in-depth
-title: Defense in depth
+title: 심층 방어
 metadata:
-  title: Defense in depth
-  description: In this unit we'll discuss how to practice defense in depth
+  title: 심층 방어
+  description: 이 섹션에서는 심층 방어를 연습하는 방법을 살펴보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/2-defense-in-depth.md)]
 quiz:
-  title: 'Knowledge Check - Defense in depth'
+  title: 지식 검사 - 심층 방어
   questions:
-  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
-    choices:
-    - content: 'Deallocating virtual machines when not in use'
-      isCorrect: false
-      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
-    - content: 'Setting up alerts for CPU percentage exceeds 90%'
-      isCorrect: false
-      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
-    - content: 'Storing connection strings in a configuration file'
-      isCorrect: false
-      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
-    - content: 'Enforcing MFA for all administrative level accounts'
-      isCorrect: true
-      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
-  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+    - content: 다음 중 심층 방어 보안 전략에 적용할 수 있는 적절한 전술은 무엇입니까?
+      choices:
+        - content: 사용 중이 아니면 가상 컴퓨터를 할당 취소
+          isCorrect: false
+          incorrectExplanation: 이 보안 전략에 대 한 한 방법은 없습니다 하지만 비용을 줄이기 위해 이러한 구성이 보다 효과적일 수 있습니다.
+        - content: CPU 백분율이 90%를 초과하면 경고를 보내도록 설정
+          isCorrect: false
+          incorrectExplanation: 이 응용 프로그램에서 성능 문제를 식별 하는 중요 한 모니터링 메트릭을 수 있지만 보안 전략의 방법은 아닙니다.
+        - content: 연결 문자열을 구성 파일에 저장
+          isCorrect: false
+          incorrectExplanation: 구성 파일에서 연결 문자열 저장은 보안상 위험 및 보안 전략의 방법은 아닙니다.
+        - content: 모든 관리자 수준 계정에 MFA 적용
+          isCorrect: true
+          correctExplanation: 모든 관리자 수준 계정에 대해 MFA를 적용 항상 privliged 계정에 대 한 보호 추가 계층을 추가 하 고는 구성이 보다 효과적일는 심층 방어 보안 전략의 일부로.
+    - content: 클라우드로 이동한 후 아키텍처가 완전히 안전해졌으며 모든 보안 책임을 클라우드 공급자에게 넘길 수 있게 되었습니다.
+      choices:
+        - content: 'True'
+          isCorrect: false
+          incorrectExplanation: 클라우드 공급자에 게 몇 가지 책임 오프 로드는 클라우드로 이동 하지만 공유 책임 모델을 계속 적용 됩니다.
+        - content: 'False'
+          isCorrect: true
+          correctExplanation: 클라우드 공급자에 게 몇 가지 책임 오프 로드는 클라우드로 이동 하지만 공유 책임 모델을 계속 적용 됩니다.

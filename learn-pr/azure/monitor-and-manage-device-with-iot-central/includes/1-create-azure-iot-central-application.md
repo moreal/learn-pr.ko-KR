@@ -1,33 +1,32 @@
-﻿ In this tutorial, you follow the scenario in which a remote coffee machine is connected to Azure IoT Central for monitoring and management of issues. You can monitor telemetry such as water temperature and humidity, observe the state of your machine, set optimal temperature, receive warranty status, and send commands. When the water temperature of the coffee machine exceeds certain threshold values while your machine is under warranty, Microsoft Flow sends a mobile notification to a remote technician's mobile device. Likewise, if the warranty is expired when the water temperature is outside the expected range, an email from IoT Central is sent to the client’s maintenance department for further action.
+ 이 자습서에서는 모니터링 및 관리 문제에 대 한 원격 커피 머신을 Azure IoT Central에 연결 되어 시나리오를 따를 수 있습니다. 최고 수 위 온도 및 습도 같은 원격 분석을 모니터링, 컴퓨터의 상태를 관찰, 최적의 온도 설정, 보증 상태만 받을 보낼 수 있습니다 명령입니다. 보증 기간이 남아 있는 커피 머신의 물 온도가 특정 임계값을 초과하는 경우 Microsoft Flow에서 원격 기사의 모바일 장치로 모바일 알림을 전송합니다. 마찬가지로, 보증 기간이 만료된 커피 머신의 물 온도가 적정 범위를 벗어나면 추가 작업을 수행할 수 있도록 IoT Central의 이메일이 고객의 유지 관리 부서로 전송됩니다.
 
-To implement the scenario, you begin by creating a device template in Azure IoT Central to define measurements (telemetry and state), settings, properties, and commands. You then connect your coffee machine to Azure IoT Central, followed by configuring rules for maintenance notifications when water temperature is outside the optimal range.
+시나리오를 구현에서 Azure IoT Central 측정 (원격 분석 및 상태), 설정, 속성 및 명령을 정의 하는 장치 템플릿을 만들어 시작 합니다. 그런 다음 Azure IoT Central에 커피 머신을 연결하고, 물 온도가 최적 범위를 벗어날 때 유지 관리 알림을 보내도록 규칙을 구성합니다.
 
-In this module, you will to:
-- Create an Azure IoT Central custom application 
-- Create and define your device template
-- Connect your coffee machine to the application
-- Validate your connection and data flow
-- Configure rules for maintenance notifications
+이 모듈에서는 다음을 수행 합니다 하
+- Azure IoT Central 사용자 지정 응용 프로그램 만들기 
+- 장치 템플릿 만들기 및 정의
+- 커피 컴퓨터 응용 프로그램에 연결
+- 연결 및 데이터 흐름의 유효성 검사
+- 유지 관리 알림을 전송하도록 규칙 구성
  
-## Sign in to Azure IoT Central
-In this unit, you sign in to IoT Central to create a new custom application. A 7-days trial is sufficient to complete units 1–4. If you wish to complete the optional exercise on using Microsoft Flow to send a mobile notification in unit 5, you need to extend the IoT Central trial to 30 days. The extension is enabled if you have an Azure subscription.  
+## <a name="sign-in-to-azure-iot-central"></a>Azure IoT Central 로그인
+이 단위에 로그인 할 IoT Central에 새 사용자 지정 응용 프로그램을 만들려면. 7 일 평가판은 단위 1 – 4 완료 하기에 충분 합니다. Microsoft Flow 사용 하 여 단위 5에서 모바일 알림 전송을 연습 (옵션)를 완료 하려는 경우에 30 일에 IoT Central 평가판을 연장 해야 합니다. 확장에는 Azure 구독이 있는 경우 활성화 됩니다.  
 
-1. Navigate to the Azure IoT Central [Application Manager](https://aka.ms/iotcentral) page. 
+1. Azure IoT Central [응용 프로그램 관리자](https://aka.ms/iotcentral) 페이지로 이동합니다. 
 
-1. On the sign in page, enter the email address and password that you use to access your Microsoft account.
+1. 로그인 페이지에서 Microsoft 계정에 액세스 하는 데 사용할 암호를 확인 하 고 전자 메일 주소를 입력 합니다.
 
-## Create a new custom application
+## <a name="create-a-new-custom-application"></a>새 사용자 지정 응용 프로그램 만들기
 
-1. To create a new Azure IoT Central application, choose **New Application**. 
+1. 새 Azure IoT Central 응용 프로그램을 만들려면 **새 응용 프로그램**합니다. 
 
-1. On the Create Application page: 
-    * Choose **Free** for the payment plan
-    * Select **Custom Application** as the application template
-    * Choose a friendly application name, such as **Coffee Maker 01**
-    * Azure IoT Central generates a unique URL prefix for you
-    Choose **Create**
+1. 응용 프로그램 만들기 페이지에서 
+    * 선택할 **무료** 는 요금제에 대 한
+    * 선택 **사용자 지정 응용 프로그램** 에서 응용 프로그램 템플릿
+    * 와 같은 친숙 한 응용 프로그램 이름을 선택 **커피 메이커 01**
+    * 사용자 선택에 대 한 고유한 URL 접두사를 생성 하는 azure IoT Central **만들기**
     
    > [!NOTE]
-   > Extending your trial to 30 days is optional, but it is a prerequisite if you wish to complete the exercise on using Microsoft Flow to send a mobile notification in unit 5. The 30-day extension is enabled if you have an Azure subscription. For instruction on enabling the extension, see unit 5 on configuring rules and actions to monitor your coffee machine.
+   > 30 일 평가판을 확장 하는 것은 선택 사항 이지만 필수 구성 요소 단위 5에서 모바일 알림을 보내려면 Microsoft Flow 사용 하 여 연습을 완료 하려는 경우. Azure 구독이 있는 경우에 30 일 더 연장 사용 됩니다. 확장을 사용 하도록 설정 하는 명령에 대 한 규칙 및 coffee 컴퓨터를 모니터링 하는 작업 구성에 단위 5를 참조 하세요.
 
-In this unit, you created an Azure IoT custom application. You may also have chosen to sign up for an Azure subscription. In the next unit, you will continue to build on the application framework that you created. 
+이 단위는 Azure IoT 사용자 지정 응용 프로그램을 만들었습니다. Azure 구독 등록도 선택했을 수 있습니다. 다음 단위에 있는 사용자가 만든 응용 프로그램 프레임 워크에서 빌드할 수 있도록 계속 됩니다. 

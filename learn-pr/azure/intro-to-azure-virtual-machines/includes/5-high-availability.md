@@ -1,57 +1,57 @@
-Often, the success of a services company is directly related to the service level agreements (SLA) the company has with its customers. Your customers expect the services you provide always to be available and their data kept safe. This is something that Microsoft takes very seriously. Azure provides tools you can use to manage availability, data security, and monitoring, so you know your services are always available for your customers.
+서비스 회사의 성공은 종종 회사와 고객이 체결한 SLA(서비스 수준 계약)와 직접 관련이 있습니다. 고객은 제공되는 서비스를 항상 사용할 수 있고 데이터를 안전하게 유지할 수 있기를 기대합니다. 이것은 Microsoft에서 매우 진지하게 생각하는 것입니다. Azure는 가용성, 데이터 보안 및 모니터링을 관리하는 데 사용할 수 있는 도구를 제공하므로 고객은 언제든지 서비스를 사용할 수 있습니다.
 
-Administration of an Azure VM isn't limited to managing the operating system or software that runs on the VM. It helps to know which services Azure provides that ensure service availability and support automation. These services help you to plan your organization's business continuity and disaster recovery strategy.
+Azure VM의 관리 운영 체제 또는 VM에서 실행 되는 소프트웨어를 관리 하도록 제한 되지 않습니다. Azure에서 제공 하는 서비스 가용성 및 지원 자동화를 확인 하는 서비스를 알면 도움이 됩니다. 이러한 서비스에는 조직의 비즈니스 연속성 및 재해 복구 전략을 계획할 수 있습니다.
 
-Here, we'll cover an Azure service that helps you improve VM availability, streamlines VM management tasks, and keeps your VM data backed up and safe. Let's start by defining availability.
+여기에서 VM 가용성을 개선 하는 데 도움이 됩니다. VM 관리 작업을 간소화 하 고 안전한 고 백업 된 VM 데이터를 유지 하는 Azure 서비스를 설명 합니다. 가용성을 정의하면서 시작해 보겠습니다.
 
-## What is availability?
+## <a name="what-is-availability"></a>가용성이란?
 
-Availability is the percentage of time a service is available for use.
+가용성은 서비스를 사용할 수 있는 시간의 백분율입니다.
 
-Let's assume you have a website and you want your customers to be able to access information at all times. Your expectation is 100% availability concerning website access.
+웹 사이트가 있고 고객이 항상 정보에 액세스할 수 있기를 원한다고 가정해 보겠습니다. 웹 사이트 액세스와 관련하여 100% 가용성을 기대할 것입니다.
 
-### Why do I need to think about availability when using Azure?
+### <a name="why-do-i-need-to-think-about-availability-when-using-azure"></a>Azure를 사용하는 경우 가용성을 고려해야 하나요?
 
-Azure VMs run on physical servers hosted within Microsoft's data centers. As with most physical devices, there's a chance that there could be a failure. If the physical server fails, the virtual machines hosted on that server will also fail. If this happens, Azure will move the VM to a healthy host server automatically. However, this self-healing migration could take several minutes, during which, the application(s) hosted on that VM will not be available.
+Azure VM은 Microsoft의 데이터 센터 내에서 호스팅되는 물리적 서버에서 실행됩니다. 대부분의 물리적 장치에서와 마찬가지로 가능성이 있습니다 오류가 있을 수 있습니다. 물리적 서버가 실패하면 해당 서버에서 호스팅되는 가상 머신도 실패합니다. 이 경우 Azure는 VM을 정상 호스트 서버로 자동으로 이동시킵니다. 그러나 이 자동 복구 마이그레이션에는 몇 분이 걸릴 수 있으며, 그 동안 해당 VM에서 호스팅되는 응용 프로그램을 사용할 수 없습니다.
 
-The VMs could also be affected by periodic updates initiated by Azure itself. These maintenance events range from software updates to hardware upgrades and are required to improve platform reliability and performance. These events usually are performed without impacting any guest VMs, but sometimes the virtual machines will be rebooted to complete an update or upgrade.
+또한 VM은 Azure 자체에서 시작된 정기적인 업데이트로 인해 영향을 받을 수도 있습니다. 이러한 유지 관리 이벤트는 소프트웨어 업데이트에서 하드웨어 업그레이드에 이르기까지 다양하며, 플랫폼 안정성 및 성능을 향상시키는 데 필요합니다. 이러한 이벤트는 일반적으로 게스트 VM에 영향을 주지 않고 수행되지만, 업데이트 또는 업그레이드를 완료하기 위해 가상 머신이 다시 부팅되는 경우도 있습니다.
 
 > [!NOTE]
-> Microsoft does not automatically update your VM's OS or software. You have complete control and responsibility for that. However, the underlying software host and hardware are periodically patched to ensure reliability and high performance at all times.
+> Microsoft는 VM의 OS 또는 소프트웨어 자동으로 업데이트 되지 않습니다. 이러한 작업은 전적으로 사용자의 제어와 책임하에 수행됩니다. 그러나 기본 소프트웨어 호스트 및 하드웨어는 항상 안정성과 고성능을 보장하기 위해 정기적으로 패치됩니다.
 
-To ensure your services aren't interrupted and avoid a single point of failure, it's recommended to deploy at least two instances of each VM. This feature is called an _availability set_.
+서비스 중단 되지 않습니다 및 단일 실패 지점을 방지 하도록는 것이 좋습니다 각 VM의 두 개 이상의 인스턴스를 배포 하도록 합니다. 이 기능은 호출 되는 _가용성 집합_합니다.
 
-### What is an availability set?
+### <a name="what-is-an-availability-set"></a>가용성 집합이란?
 
-An **availability set** is a logical feature used to ensure that a group of related VMs are deployed so that they aren't all subject to a single point of failure and not all upgraded at the same time during a host operating system upgrade in the data center. VMs placed in an availability set should perform an identical set of functionalities and have the same software installed.
+**가용성 집합** 논리 기능은 그룹 관련된 Vm에 배포 되어 있는지, 되지 오류의 단일 지점 및 일부만 적용 모두 업그레이드할에서 호스트 운영 체제 업그레이드를 사용 하는 동안 한 번에 확인 하는 데는 데이터 센터입니다. 가용성 집합에 배치된 VM은 일단의 동일한 기능을 수행하고 동일한 소프트웨어를 설치해야 합니다.
 
 > [!TIP]
-> Microsoft offers a 99.95% external connectivity service level agreement (SLA) for multiple-instance VMs deployed in an availability set. That means that for the SLA to apply, there must be at least two instances of the VM deployed within an availability set. 
+> Microsoft는 가용성 집합에 배포된 다중 인스턴스 VM에 대해 99.95% 외부 연결 SLA(서비스 수준 계약)를 제공합니다. 즉 SLA를 적용하려면 가용성 집합 내에 VM의 인스턴스가 둘 이상 배포되어야 합니다. 
 
-You can create availability sets through the Azure portal in the disaster recovery section. Also, you can build them using Resource Manager templates, or any of the scripting or API tools. When you place VMs into an availability set, Azure guarantees to spread them across **Fault Domains** and **Update Domains**.
+재해 복구 섹션에서 Azure Portal을 통해 가용성 집합을 만들 수 있습니다. 또한 Resource Manager를 사용 하 여 빌드할 수 있습니다 템플릿 또는 스크립트 또는 API 도구 중 하나입니다. VM을 가용성 집합에 배치하는 경우 Azure는 **장애 도메인** 및 **업데이트 도메인**에 분산되도록 보장합니다.
 
-#### What is a fault domain?
+#### <a name="what-is-a-fault-domain"></a>장애 도메인이란?
 
-A fault domain is a logical group of hardware in Azure that shares a common power source and network switch. You can think of it as a rack within an on-premises datacenter. The first two VMs in an availability set will be provisioned into two different racks so that if the network or the power failed in a rack, only one VM would be affected. Fault domains are also defined for managed disks attached to VMs.
+장애 도메인은 공통 전원 및 네트워크 스위치를 공유 하는 Azure 하드웨어의 논리적 그룹입니다. 온-프레미스 데이터 센터 내의 랙으로 간주할 수 있습니다. 가용성 집합의 처음 두 VM은 서로 다른 두 개의 랙에 프로비전되므로 랙에서 네트워크 또는 전원 오류가 발생하면 하나의 VM만 영향을 받습니다. 또한 장애 도메인은 VM에 연결된 관리 디스크에 대해서도 정의됩니다.
 
-![Fault domains](../media/5-fault-domains.png)
+![장애 도메인](../media/5-fault-domains.png)
 
-#### What is an update domain?
+#### <a name="what-is-an-update-domain"></a>업데이트 도메인이란?
 
-An update domain is a logical group of hardware that can undergo maintenance or be rebooted at the same time. Azure will automatically place availability sets into update domains to minimize the impact when the Azure platform introduces host operating system changes. Azure then processes each update domain one at a time.
+업데이트 도메인은 유지 관리를 수행하거나 동시에 다시 부팅할 수 있는 하드웨어의 논리 그룹입니다. Azure는 Azure 플랫폼에서 호스트 운영 체제 변경을 도입할 때 미치는 영향을 최소화하기 위해 가용성 집합을 업데이트 도메인에 자동으로 배치합니다. 그런 다음, Azure에서 각 업데이트 도메인을 한 번에 하나씩 처리합니다.
 
-Availability sets are a powerful feature to ensure the services running in your VMs are always available to your customers. However, they aren't foolproof. What if something happens to the data or the software running on the VM itself? For that, we'll need to look at other disaster recovery and backup techniques.
+가용성 집합은 고객이 VM에서 실행되는 서비스를 항상 사용할 수 있도록 하는 강력한 기능입니다. 그러나 누구나 사용할 수 있는 것은 아닙니다. VM 자체에서 실행되는 데이터 또는 소프트웨어에 문제가 발생하면 어떻게 해야 하나요? 이 위해 다른 재해 복구 및 백업 기술 확인 해야 합니다.
 
-## Failover across locations
+## <a name="failover-across-locations"></a>위치 간 장애 조치
 
-You can also replicate your infrastructure across sites to handle regional failover. **Azure Site Recovery**  replicates workloads from a primary site to a secondary location. If an outage happens at your primary site, you can fail over to a secondary location. This failover allows users to continue to access your applications without interruption. You can then fail back to the primary location once it's up and running again. Azure Site Recovery is about replication of virtual or physical machines; it keeps your workloads available in an outage.
+사이트 간에 인프라를 복제하여 지역별 장애 조치를 처리할 수도 있습니다. **Azure Site Recovery** 독립 기본 사이트에서 워크 로드를 보조 위치로 복제 합니다. 주 사이트에서 중단이 발생하면 보조 위치로 장애 조치할 수 있습니다. 이 장애 조치를 통해 사용자는 중단 없이 응용 프로그램에 계속 액세스할 수 있습니다. 그런 다음, 응용 프로그램이 다시 실행되면 기본 위치로 장애 복구될 수 있습니다. Azure Site Recovery는 가상 머신 또는 물리적 머신의 복제에 관한 것으로, 가동 중단 중에도 워크로드를 사용할 수 있도록 합니다.
 
-While there are many attractive technical features to Site Recovery, there are at least two significant business advantages:
+Site Recovery에 많은 유용한 기술 기능이 있기는는 적어도 두 가지 중요 한 비즈니스 이점:
 
-1. Site Recovery enables the use of Azure as a destination for recovery, thus eliminating the cost and complexity of maintaining a secondary physical datacenter.
+1. Site Recovery 시키므로 다음 비용 및 복잡성 보조 물리적 데이터 센터를 유지 관리 복구를 위한 대상으로 Azure의 사용할 수 있습니다.
 
-2. Site Recovery makes it incredibly simple to test failovers for recovery drills without impacting production environments. This makes it easy to test your planned or unplanned failovers. After all, you don’t have a good disaster recovery plan if you’ve never tried to failover.
+2. Site Recovery를 사용 하면 매우 간단 하 게 프로덕션 환경에 영향을 주지 않고 복구 드릴을 위한 장애 조치를 테스트 합니다. 이렇게 하면 계획되었거나 계획되지 않은 장애 조치를 쉽게 테스트할 수 있습니다. 요컨대 장애 조치를 시도한 적이 없으면 적절한 재해 복구 계획이 없는 것입니다.
 
-The recovery plans you create with Site Recovery can be as simple or as complex as your scenario requires. They can include custom PowerShell scripts, Azure Automation runbooks, or manual intervention steps. You can leverage the recovery plans to replicate workloads to Azure, easily enabling new opportunities for migration, temporary bursts during surge periods, or development and testing of new applications.
+Site Recovery를 사용 하 여 만든 복구 계획에는 간단 하거나 복잡 한 시나리오의 요구에 따라 수 있습니다. 여기에는 사용자 지정 PowerShell 스크립트, Azure Automation Runbook 또는 수동 개입 단계가 포함될 수 있습니다. 복구 계획을 활용하여 워크로드를 Azure로 복제하여 마이그레이션, 서지 기간 동안의 임시 버스트 또는 새 응용 프로그램 개발 및 테스트에 대한 새로운 기회를 손쉽게 수행할 수 있습니다.
 
-Azure Site Recovery works with Azure resources, or Hyper-V, VMware, and physical servers in your on-premises infrastructure and can be a key part of your organization’s business continuity and disaster recovery (BCDR) strategy by orchestrating the replication, failover, and recovery of workloads and applications if the primary location fails.
+Azure Site Recovery는 Azure 리소스 또는 Hyper-v, VMware 및 물리적 서버 온-프레미스 인프라를 사용 하 여 작동 하 고 복제를 오케스트레이션 하 여 조직의 비즈니스 연속성 및 재해 복구 (BCDR) 전략의 핵심 부분을 수 있습니다. 장애 조치 및 복구 작업 및 응용 프로그램 기본 위치에 실패 하는 경우.

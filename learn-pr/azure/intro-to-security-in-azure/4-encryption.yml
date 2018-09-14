@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.4-encryption
-title: Encryption
+title: 암호화
 metadata:
-  title: Encryption
-  description: In this unit, we'll discuss how to use encryption to secure your data.
+  title: 암호화
+  description: 이 단위 데이터 보안에 암호화를 사용 하는 방법을 살펴보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

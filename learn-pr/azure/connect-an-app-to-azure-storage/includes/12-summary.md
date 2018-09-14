@@ -1,17 +1,14 @@
-You have learned the basics of creating and connecting to an Azure storage account. You wrote a simple application to connect to a storage account and create a blob container. Other modules in this Learning Path will build on that knowledge to show you how to use Blob Storage and Queues to store data and connect apps together.
+만들기 및 Azure storage 계정에 연결의 기본 사항을 알아보았습니다. 저장소 계정에 연결 하 고 blob 컨테이너를 만드는 간단한 응용 프로그램을 작성 합니다. 이 학습 경로에서 다른 모듈에서 기술 자료를 Blob Storage 및 큐 데이터를 저장 하 고 앱을 함께 연결을 사용 하는 방법을 보여 줍니다 빌드됩니다.
 
-We only used examples of JavaScript and C#, but Azure supports a variety of other languages. Check the official [SDK Tools documentation page](https://docs.microsoft.com/azure/#pivot=sdkstools) to find the official list of links to the client libraries for all the currently supported languages.
+JavaScript 및 C#의 예제만 사용 했지만 Azure는 다양 한 다른 언어를 지원 합니다. 확인 공식 [SDK Tools 설명서 페이지](https://docs.microsoft.com/azure/#pivot=sdkstools) 현재 지원 되는 모든 언어에 대 한 클라이언트 라이브러리에 대 한 링크의 공식 목록을 찾으려고 합니다.
 
-## Additional resources
+## <a name="additional-resources"></a>추가 리소스
 
-- [Azure Storage Services REST API Reference](https://docs.microsoft.com/rest/api/storageservices/)
-- [Using shared access signatures to provide limited access to a storage account](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
-- [Manage secrets with Azure Key Vault](https://docs.microsoft.com/learn/modules/manage-secrets-with-azure-key-vault/)
-- [Using Azure Key Vault Storage Account Keys with server apps](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys)
-- [Source code for the .NET Azure SDKs](https://github.com/Azure/azure-sdk-for-net)
+- [Azure Storage 서비스 REST API 참조](https://docs.microsoft.com/rest/api/storageservices/)
+- [저장소 계정에 대 한 제한 된 액세스를 제공 하려면 공유 액세스 서명 사용](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
+- [Azure Key Vault로 비밀 관리](https://docs.microsoft.com/learn/modules/manage-secrets-with-azure-key-vault/)
+- [서버 앱을 사용 하 여 Azure Key Vault Storage 계정 키를 사용 하 여](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys)
+- [.NET Azure Sdk에 대 한 소스 코드](https://github.com/Azure/azure-sdk-for-net)
 - [Azure Storage Client Library for JavaScript](https://github.com/Azure/azure-storage-node#azure-storage-javascript-client-library-for-browsers)
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-
-It's a good idea to cleanup your resources in Azure when you are finished with them. If you are using the free sandbox, you don't have to do this step - but in your own subscriptions you'll want to delete unused resources to avoid unnecessary charges. The easiest way to do this is to delete the Resource Group you placed all the resources into. This can be done through the Azure portal, or on the command line.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

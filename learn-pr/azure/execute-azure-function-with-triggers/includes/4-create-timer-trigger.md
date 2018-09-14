@@ -1,8 +1,12 @@
-이 연습에서는 타이머 트리거를 사용하여 20초마다 호출되는 Azure 함수를 만듭니다.
+이 단위에서 타이머 트리거를 사용 하 여 20 초 마다 호출 되는 Azure 함수 앱을 만듭니다.
 
-## <a name="create-an-azure-function"></a>Azure 함수 만들기
+## <a name="create-an-azure-function-app"></a>Azure 함수 앱 만들기
 
-먼저 포털에서 Azure Function을 만들어 보겠습니다.
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+포털에서 Azure 함수 앱을 만들어 시작 해 보겠습니다.
 
 1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
@@ -12,13 +16,13 @@
 
 1. **함수 앱**을 찾아 선택합니다. 필요한 경우 검색 창을 사용하여 템플릿을 찾을 수도 있습니다.
 
-    ![함수 앱 선택](../media-drafts/4-click-function-app.png)
+    ![강조 표시 된 함수 앱 만들기를 리소스 블레이드를 보여 주는 Azure portal의 스크린샷.](../media/4-click-function-app.png)
 
-1. 고유한 **앱 이름**을 입력합니다.
+1. 입력을 전역적으로 고유 **앱 이름**합니다.
 
 1. **구독**을 선택합니다.
 
-1. 새 **리소스 그룹**을 만듭니다.
+1. 기존 **리소스 그룹** <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.
 
 1. **OS**로 **Windows**를 선택합니다.
 
@@ -34,15 +38,15 @@
 
 ## <a name="create-a-timer-trigger"></a>타이머 트리거 만들기
 
-이제 Azure 함수 내에 타이머 트리거를 만들겠습니다.
+이제는 함수 내에서 타이머 트리거를 만들려면 하겠습니다.
 
-1. Azure 함수를 만든 후 왼쪽 탐색에서 **모든 리소스**를 선택합니다.
+1. 함수를 만든 후 선택 **모든 리소스** 왼쪽된 탐색 영역에서 합니다.
 
-1. Azure 함수를 찾아 선택합니다.
+1. 찾아 함수를 선택 합니다.
 
 1. 새 블레이드에서 **함수**를 가리키고 더하기(+) 아이콘을 선택합니다.
 
-    ![함수를 가리키고 더하기 선택](../media-drafts/4-hover-function.png)
+    ![강조 표시 된 함수 하위 메뉴의 더하기 (+) 단추를 사용 하 여 함수 앱 블레이드를 보여 주는 Azure portal의 스크린샷.](../media/4-hover-function.png)
 
 1. **타이머**를 선택합니다.
 
@@ -52,13 +56,13 @@
 
 ## <a name="configure-the-timer-trigger"></a>타이머 트리거 구성
 
-로그 창에 메시지를 인쇄하는 논리가 포함된 Azure 함수가 있습니다. 20초마다 실행하도록 타이머 일정을 설정하겠습니다.
+로그 창에 메시지를 인쇄 하는 논리를 사용 하 여 Azure 함수 앱을 했습니다. 20초마다 실행하도록 타이머 일정을 설정하겠습니다.
 
 1. **통합**을 선택합니다.
 
 1. **일정** 상자에 다음 값을 입력합니다.
 
-    ```
+    ```log
     */20 * * * * *
     ```
 
@@ -68,12 +72,12 @@
 
 이제 타이머를 구성했으므로 시작할 준비가 되었습니다.
 
-1. **TimerTriggerCSharp1**을 선택합니다. 
+1. **TimerTriggerCSharp1**을 선택합니다.
 
     > [!NOTE]
     > **TimerTriggerCSharp1**은 기본 이름입니다. 트리거를 만들 때 자동으로 선택됩니다.
 
-1. **실행**을 선택합니다. 
+1. **실행**을 선택합니다.
 
 이때 로그 창에 20초마다 메시지가 표시됩니다.
 
@@ -81,4 +85,4 @@
 
 이 함수에 대해 요금이 청구되지 않도록 하려면 로그 창 위에 있는 **일시 중지**를 선택하여 타이머를 중지합니다.
 
-![일시 중지](../media-drafts/4-pause-timer.png)
+![일시 중지 단추가 강조 표시 된 함수 앱의 로그 출력 패널을 보여 주는 Azure portal의 스크린샷.](../media/4-pause-timer.png)

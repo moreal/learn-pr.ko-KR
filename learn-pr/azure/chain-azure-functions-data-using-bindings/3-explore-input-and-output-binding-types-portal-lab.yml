@@ -1,16 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.3-explore-input-and-output-binding-types-portal-lab
 metadata:
-  title: Exercise - Explore input and output binding types
-  description: In this unit, we'll use the Azure Portal to explore understand bindings and the array of supported bindings that are available to us. 
+  title: 연습-탐색 입력 및 출력 바인딩 형식
+  description: 이 단위에서는를 사용 하 여 Azure Portal 탐색 바인딩과 우리에 게 사용할 수 있는 지원 되는 바인딩 배열을 이해 합니다.
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Exercise - Explore input and output binding types
+title: 연습-탐색 입력 및 출력 바인딩 형식
 durationInMinutes: 10
-#interactive: azure-portal
 azureSandbox: true
 content: |
   [!include[](includes/3-explore-input-and-output-binding-types-portal-lab.md)]

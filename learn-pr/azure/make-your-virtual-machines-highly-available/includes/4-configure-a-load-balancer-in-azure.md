@@ -1,28 +1,28 @@
-Before the load balancer will function correctly, you must configure settings that control the load balancer's behavior. Here, you will look at configuring the network, health probe, security rules, load-balancing rules, and server pool.
+부하 분산 장치에 대 한 연결이 올바르게 작동, 부하 분산 장치의 동작을 제어 하는 설정을 구성 해야 합니다. 네트워크 구성 살펴봅니다 여기에서 상태 프로브, 보안 규칙, 부하 분산 규칙 및 서버 풀 합니다.
 
-## Steps for configuring a basic public load balancer
+## <a name="steps-for-configuring-a-basic-public-load-balancer"></a>기본 공용 load balancer를 구성 하는 단계
 
-The following is an overview of the main configuration steps for a basic public load balancer. The steps for a standard load balancer and for an internal load balancer will be similar.
+다음은 기본 공용 load balancer에 대 한 기본 구성 단계 개요입니다. 표준 단계 부하 분산 장치 및 내부 부하 분산 장치 유사한 됩니다.
 
-### Backend servers
+### <a name="back-end-servers"></a>백 엔드 서버
 
-First, you need to configure your backend VM pool. The VMs should be in the same availability set and have their own public IP address (although this will not actually be used by your public endpoints).
+먼저 백 엔드 VM 풀을 구성 해야 합니다. Vm을 동일한 가용성 집합에 있고 (이 실제로 수는 사용 되지 않지만 공용 끝점에서) 공용 IP 주소를 가질 합니다.
 
-You must create a new virtual network and define a subnet for the VM pool to use.
+새 가상 네트워크를 만들고 사용 하 여 VM 풀에 대 한 서브넷을 정의 해야 합니다.
 
- When you have multiple VMs providing the same services, you should use a **network security group (NSG)** to ensure that the same firewall rules are in place across the VM pool (although this is not part of the actual load-balancing process). For example, for VMs hosting web applications, you will need to create inbound security rules on port 80 for HTTP or port 8080 for HTTPS.
+ 동일한 서비스를 제공 하는 여러 Vm에 있는 경우 사용 해야는 **네트워크 보안 그룹 (NSG)** 되도록 동일한 방화벽 규칙 진행에서 VM 풀에서 (아니지만 실제 부하 분산 프로세스의 일부분) . 예를 들어, 웹 응용 프로그램을 호스트 하는 Vm에 대 한 HTTPS에 대 한 HTTP에 포트 8080 포트 80에서 인바운드 보안 규칙을 만들고 해야 합니다.
 
-### Public IP address
+### <a name="public-ip-address"></a>공용 IP 주소
 
-When you create a public basic load balancer using the portal, the **public IP address** is automatically configured as the load balancer's front end.
+포털을 사용 하 여 공용 기본 부하 분산 장치를 만들 때 합니다 **공용 IP 주소** 자동으로 부하 분산 장치의 프런트 엔드로 구성 됩니다.
 
-Part of the configuration of the load balancer is the **back-end address pool**, containing the IP addresses of each VM's virtual NICs that are connected to the load balancer and used to distribute traffic to the VMs. 
+부하 분산 장치 구성의 일부분은는 **백 엔드 주소 풀**, 부하 분산 장치에 연결 되 고 Vm에 트래픽을 분산 하는 데 사용 되는 각 VM의 가상 Nic의 IP 주소를 포함 하 합니다. 
 
-### Health probe
+### <a name="health-probe"></a>상태 프로브
 
-The health probe dynamically adds or removes VMs from the load balancer rotation based on their response to health checks.
-By default, there are 15 seconds between probe attempts. After two consecutive probe failures, a VM is considered unhealthy.
+상태 프로브는 상태 검사에 따라 부하 분산 장치 순환에서 VM을 동적으로 추가하거나 제거합니다.
+기본적으로 15 초 사이 있는 프로브 시도 합니다. 두 개의 연속 프로브 오류 후 VM은 비정상으로 간주 됩니다.
 
-### Rules
+### <a name="rules"></a>규칙
 
-The load balancer rule specifies the port that the front end is listening on, and the port used to send traffic to the backend.
+부하 분산 장치 규칙을 수신 하는 프런트 엔드 포트와 백 엔드에 트래픽을 보내는 데 사용 되는 포트를 지정 합니다.

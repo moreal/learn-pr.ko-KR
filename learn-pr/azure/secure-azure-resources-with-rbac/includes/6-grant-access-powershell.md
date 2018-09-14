@@ -6,17 +6,17 @@
 
 1. 포털 상단에서 **Cloud Shell**을 클릭하여 Cloud Shell 창을 엽니다.
 
-    ![Cloud Shell 단추](../media-draft/6-cloud-shell-button.png)
+    ![Cloud Shell 단추](../media/6-cloud-shell-button.png)
 
 1. Cloud Shell 창 왼쪽 상단에서 **PowerShell**로 설정되어 있는지 확인합니다. **Bash**로 설정된 경우 **PowerShell**로 변경합니다.
 
     로드하는 데 잠시 시간이 걸릴 수 있습니다. 완료되면 다음과 비슷한 모습이 될 것입니다.
 
-    ![Cloud Shell PowerShell](../media-draft/6-cloud-shell-powershell.png)
+    ![Cloud Shell PowerShell](../media/6-cloud-shell-powershell.png)
 
 ## <a name="grant-access"></a>액세스 권한 부여
 
-Azure PowerShell을 사용하여 사용자에게 액세스 권한을 부여하려면 [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) 명령을 사용합니다. 보안 주체, 역할 정의 및 범위를 지정해야 합니다.
+Azure PowerShell을 사용 하 여 사용자 액세스를 부여할 New-azurermroleassignment 명령을 사용할 수 있습니다. 보안 주체, 역할 정의 및 범위를 지정해야 합니다.
 
 리소스 그룹 범위에서 **LabUser-_XXXXXXX_** 사용자에게 Virtual Machine 기여자 역할을 할당하려면 다음 단계를 따르세요.
 
@@ -44,7 +44,7 @@ Azure PowerShell을 사용하여 사용자에게 액세스 권한을 부여하�
 
 ## <a name="list-access"></a>액세스 권한 나열
 
-리소스 그룹에 대한 액세스 권한을 확인하려면 [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) 명령을 사용하여 역할 할당을 나열합니다.
+리소스 그룹에 대 한 액세스를 확인 하려면 역할 할당을 나열 하려면 Get-azurermroleassignment 명령을 사용 합니다.
 
 리소스 그룹 범위에서 **LabUser-XXXXXXX** 사용자에게 할당된 모든 역할을 나열하려면 다음 단계를 따르세요.
 
@@ -59,7 +59,7 @@ Azure PowerShell을 사용하여 사용자에게 액세스 권한을 부여하�
     RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX/providers/Microsoft.Authorization/roleAssignments/33333333-3333-3333-3333-333333333333
     Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX
     DisplayName        : LabUser-XXXXXXX
-    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com 
+    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com
     RoleDefinitionName : Virtual Machine Contributor
     RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
     ObjectId           : 11111111-1111-1111-1111-111111111111
@@ -71,11 +71,11 @@ Azure PowerShell을 사용하여 사용자에게 액세스 권한을 부여하�
 
     Azure Portal에서 리소스 그룹의 **IAM(액세스 제어)** 블레이드를 새로 고치면 다음과 같이 역할이 할당됩니다.
 
-    ![리소스 그룹에서 사용자의 역할 할당](../media-draft/6-cloud-shell-access-control.png)
+    ![리소스 그룹에서 사용자의 역할 할당](../media/6-cloud-shell-access-control.png)
 
 ## <a name="remove-access"></a>액세스 권한 제거
 
-사용자, 그룹 및 응용 프로그램의 액세스 권한을 제거하려면 [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) 명령을 사용하여 역할 할당을 제거합니다.
+사용자, 그룹 및 응용 프로그램에 대 한 액세스 권한을 제거 Remove-azurermroleassignment 역할 할당을 제거 하려면 사용 합니다.
 
 리소스 그룹 범위에서 **LabUser-_XXXXXX_** 사용자에게 할당된 Virtual Machine 기여자 역할을 제거하려면 다음 단계를 따르세요.
 
@@ -91,8 +91,7 @@ Azure PowerShell을 사용하여 사용자에게 액세스 권한을 부여하�
 
 1. PowerShell 창에서 닫기(**X**) 단추를 클릭하여 창을 닫습니다.
 
-    ![Cloud Shell 닫기 단추](../media-draft/6-cloud-shell-close.png)
-
+    ![Cloud Shell 닫기 단추](../media/6-cloud-shell-close.png)
 
 ## <a name="summary"></a>요약
 

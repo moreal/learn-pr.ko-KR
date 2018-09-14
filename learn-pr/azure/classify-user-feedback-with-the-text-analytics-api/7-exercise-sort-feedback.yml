@@ -1,9 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.7-exercise-sort-feedback
-title: Exercise - Sort messages into different queues based on sentiment score.
+title: 연습-감정 점수를 기준으로 하는 다른 큐에 메시지를 정렬
 metadata:
-  title: Exercise - Sort messages into different queues based on sentiment score.
-  description: In the final part of our lab, we'll add code and bindings to our function to sort our messages by sentiment and forward them to output queues for further processing.
+  title: 연습-감정 점수를 기준으로 하는 다른 큐에 메시지를 정렬
+  description: 이 랩의 마지막 부분에서는 코드 및 바인딩 메시지가 감정 별로 정렬 하 여 추가 처리를 위해 큐를 출력 하도록 전달할 함수를 추가 합니다.
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+azureSandbox: true
 durationInMinutes: 8
 content: |
   [!include[](includes/7-exercise-sort-feedback.md)]

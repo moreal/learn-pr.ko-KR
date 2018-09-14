@@ -1,60 +1,59 @@
-In our last exercise, we implemented a scenario to look up bookmarks in an Azure Cosmos DB database. We configured an input binding to read data from our bookmarks collection. But just reading data is boring, so let's do more. Let's expand the scenario to include writing. Consider the following flowchart.
+마지막으로 연습에서는 Azure Cosmos DB 데이터베이스의 책갈피 조회 하는 시나리오를 구현 했습니다. 책갈피 컬렉션에서 데이터를 읽이 입력된 바인딩을 구성 했습니다. 하지만 데이터를 읽기만 하는 것은 지루한 작업을 더 수행 하겠습니다. 쓰기를 포함 하는 시나리오를 확장 해 보겠습니다. 다음 순서도를 것이 좋습니다.
 
-![Flow diagram showing process of adding a bookmark in our Cosmos DB back-end](../media-draft/add-bookmark-flow-small.png)
+![백 엔드는 Cosmos DB에서 책갈피를 추가 하는 프로세스를 보여 주는 흐름 다이어그램](../media-draft/add-bookmark-flow-small.png)
 
-In this scenario, we'll receive requests to add bookmarks to our list. The requests pass in the desired key, or ID, along with the bookmark URL. As you can see in the flow chart, we'll respond with an error if the key already exists in our back-end.
+이 시나리오에서는 책갈피 목록에 추가 요청을 받게 됩니다. 원하는 키 또는 ID, 책갈피 URL과 함께 요청을 전달합니다. 순서도에서 보듯이 응답을 드립니다 오류가 발생 하 여이 백 엔드에 키가 이미 있는 경우.
 
-If the key that was passed to us is *not* found, we'll add the new bookmark to our database. We could stop there, but let's do a little more.
+우리에 게 전달 된 키가 있으면 *되지* , 새 책갈피에 추가 데이터베이스입니다. 거기에서 중지할 수 있지만 보겠습니다 좀 더 수행 했습니다.
 
-Notice another step in the flowchart? So far we haven't done much with the data that we receive in terms of processing. We move what we receive into a database. However, in a real solution, it is possible that we'd probably process the data in some fashion. We can decide to do all processing in the same function, but in this lab we'll show a pattern that offloads further processing to another component or piece of business logic.
+순서도의 다른 단계를 확인할 수 있습니다. 지금 처리 측면에서 수신 하는 데이터를 사용 하 여 거의 수행 하지 않은 것입니다. 데이터베이스에 접수 이동 합니다. 그러나 실제 솔루션에서는 가능성이 아마도 특정 방식으로 데이터 처리는 것입니다. 동일한 기능을 하지만이 랩에서 다른 구성 요소 또는 비즈니스 논리의 부분에 추가 처리를 오프 로드 하는 패턴을 살펴보겠습니다 모든 처리를 수행 하도록 결정할 수 있습니다.
 
-What might be a good example of this offloading of work in our bookmarks scenario? Well what if we send the new bookmark to a QR code generation service? That service would, in turn, generate a QR code for the URL, store the image in blob storage, and add the address of the qr image back into the entry in our bookmarks collection. Calling a service to generate a qr image is time consuming so, rather than wait for the result, we hand it off to a function and let it take care of this asynchronously.
+책갈피 시나리오의 작업 오프 로딩이 좋은 예가 될 수 있습니다 무엇입니까? 잘 경우 새 책갈피에 보내는 QR 코드 생성은? 해당 서비스는 차례로 URL에 대 한 QR 코드를 생성, blob storage에 이미지를 저장 하며 책갈피 컬렉션에 있는 항목에 다시 qr 이미지의 주소를 추가 합니다. Qr 이미지를 생성 하는 서비스를 호출 하는 것은 시간이 많이 걸립니다 따라서 대신 결과 기다릴 것 보다는 함수에 전달 하 고이 비동기적으로 처리 하도록 합니다.
 
-Just as Azure Functions supports input bindings for different integration sources, it also has a set of output bindings templates to make it easy for you to write data to data sources. Output bindings are also configured in the *function.json* file.  As we'll see in this exercise, we can configure our function to work with multiple data sources and services.
-
+Azure Functions에서는 서로 다른 통합 원본 입력된 바인딩은으로 쉽게 데이터를 데이터 원본에 쓸 수에 대 한 출력 바인딩 템플릿 집합을 수도 있습니다. 출력 바인딩은에 구성 된 합니다 *function.json* 파일입니다.  이 연습에서 살펴보겠지만 여러 데이터 원본 및 서비스를 사용 하 여 함수를 구성할 수 있습니다.
 
 > [!IMPORTANT]
-> This exercise builds on the exercise in the last unit, namely, it uses the same Azure Cosmos DB database and input binding. If you haven't worked through that unit, we recommend doing so before proceeding  with this lab.
+> 이 연습은 마지막 단위의 연습, 즉, 동일한 Azure Cosmos DB 데이터베이스 및 입력된 바인딩을 사용 합니다. 에 해당 장치를 통해 작업 하지 않은 경우이 실험을 진행 하기 전에 이렇게 하는 것이 좋습니다.
 
-## Create an HTTP_triggered Function
+## <a name="create-an-httptriggered-function"></a>HTTP_triggered 함수 만들기
 
-1. Make sure you are signed in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with the same Azure account you've used throughout this module.
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-2. In the Azure portal, navigate to the function app you created in this module.
+2. Azure portal에서이 모듈에서 만든 함수 앱으로 이동 합니다.
 
-3. Expand your function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+3. 함수 앱을 확장 하 고 함수 컬렉션을 마우스로 추가 선택 (**+**) 옆에 단추 **함수**합니다. 이 작업에는 함수 만들기 프로세스를 시작합니다. 다음 애니메이션은이 작업을 보여 줍니다.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![사용자가 함수 메뉴 항목을 마우스로 가리킬 때 표시 되는 더하기의 애니메이션.](../media-draft/func-app-plus-hover-small.gif)
 
-4. The page shows us the current set of supported triggers. Select **HTTP trigger**, which is the first entry in the following screenshot.
+4. 페이지는 현재 지원 되는 트리거 집합을 보여줍니다. 선택 **HTTP 트리거**에 다음 스크린샷에 첫 번째 항목입니다.
 
-![Screenshot of part of the trigger template selection UI, with the TTP trigger displayed first, in the top left of the image.](../media-draft/trigger-templates-small.PNG)
+![맨 먼저 표시 TTP 트리거를 사용 하 여 트리거 템플릿 선택 UI의 부분 스크린 샷 왼쪽 이미지입니다.](../media-draft/trigger-templates-small.PNG)
 
-5. Fill out the **New Function** dialog that appears to the right  using the following values.
+5. 입력 합니다 **새 함수** 다음 값을 사용 하 여 오른쪽에 나타나는 대화 상자.
 
-|Field  |Value  |
+|필드  |값  |
 |---------|---------|
-|Language     | **JavaScript**        |
-|Name     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
-| Authorization level | **Function** |
+|언어     | **JavaScript**        |
+|이름     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
+| 권한 부여 수준 | **Function** |
 
-5. Select **Create** to create our function, which opens the index.js file in the code editor and displays a default implementation of the HTTP-triggered function.
+5. 선택 **Create** index.js 파일을 코드 편집기에서 열리고 기본 구현 된 HTTP 트리거 함수는이 함수를 만듭니다.
 
-In this exercise, we'll speed up things by using the *code* and *configuration* from the previous unit as a starting point.
+이 연습에서는 수 작업 속도 사용 하 여 합니다 *코드* 하 고 *구성* 시작 지점으로 이전 장치에서.
 
-6. Replace all code in index.js with the code from the following snippet and click **Save** to save this change. 
+6. Index.js에서 모든 코드를 다음 코드 조각 및 클릭에서 코드로 바꿉니다 **저장할** 이 변경 내용을 저장 합니다. 
 
 [!code-javascript[](../code/find-bookmark-single.js)]
 
-If this code looks familiar, that's because it's the implementation of our [!INCLUDE [func-name-find](./func-name-find.md)] function. As you would expect, the function won't work until we define the same bindings.  
+이 코드에서는 친숙 한을 하는 경우 구현 이기 때문에 우리 [!INCLUDE [func-name-find](./func-name-find.md)] 함수입니다. 예상한 것 처럼 함수는 동일한 바인딩을 정의 될 때까지 작동 하지 않습니다.  
 
-7. Open the *function.json* file from the [!INCLUDE [func-name-find](./func-name-find.md)] function. You'll find it by opening the **View files** menu to the right of the code editor.
+7. 엽니다는 *function.json* 에서 파일을 [!INCLUDE [func-name-find](./func-name-find.md)] 함수. 열어 찾을 수 있습니다 합니다 **파일을 볼** 코드 편집기의 오른쪽에 메뉴.
 
-8. Copy the entire contents of this file.
+8. 이 파일의 전체 내용을 복사 합니다.
 
-9. Open the *function.json* file from the [!INCLUDE [func-name-add](./func-name-add.md)] function.
+9. 엽니다는 *function.json* 에서 파일을 [!INCLUDE [func-name-add](./func-name-add.md)] 함수.
 
-10. Replace the contents of this file with the content you copied from the *function.json* file associated with the [!INCLUDE [func-name-find](./func-name-find.md)] function. When you're done, your function.json should contain the following JSON.
+10. 복사한 내용을이 파일의 내용을 바꿉니다 합니다 *function.json* 와 연결 된 파일을 [!INCLUDE [func-name-find](./func-name-find.md)] 함수입니다. 완료 되 면 function.json 다음 JSON을 포함 해야 합니다.
 
 ```json
 {
@@ -84,119 +83,119 @@ If this code looks familiar, that's because it's the implementation of our [!INC
 }
 ```
 
-11. Make sure to **Save** all changes.
+11. 해야 **저장할** 모든 변경 내용이 있습니다.
 
-In the preceding steps, we configured bindings for our new function by copying binding definitions from another. We could, of course, created a new binding through the UI, but it is good to understand that this alternative is available to you.
+이전 단계에서 구성한 바인딩 우리의 새 함수에 대 한 다른 바인딩 정의 복사 하 여 합니다. 수, 물론, UI 통해 새 바인딩을 생성 하지만이 대신 사용할 수 있는지를 이해 하는 것이 좋습니다.
 
-## Try it out
+## <a name="try-it-out"></a>체험
 
-1. As usual, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy** to copy the function's URL.
+1. 일반적으로 클릭 **<> / 함수 URL 가져오기** 오른쪽 위에 있는 선택 **기본값 (함수 키)** 를 클릭 하 고 **복사** URL의 함수를 복사 하 여 합니다.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&id=docs` to the end of this URL and press the `Enter` key on your keyboard to execute the request. All going well, you should see a response that includes a URL to that resource.
+2. 브라우저의 주소 표시줄에 복사해 둔 함수 URL을 붙여넣습니다. `&id=docs` 쿼리 문자열을 이 URL의 마지막에 추가하고 키보드에서 `Enter` 키를 눌러 요청을 실행합니다. 모든 원활 하 게, 해당 리소스에 대 한 URL을 포함 하는 응답을 표시 합니다.
 
-So, where are we at? Well, so far we've really just replicated what we did in the previous lab. But that's ok. We're copying what we did in the last lab to serve as a starting point for this one. We'll work on the new stuff next, namely, writing to our database. For that, we'll need an *output binding*.
+따라서 여기가 어디에? 물론 지금에서는 실제로 복제 한 이전 랩에서 했습니다. 하지만 괜찮습니다. 마지막 랩에이 대이 한 시작 점으로 사용할 했던를 복사 하는 것입니다. 에서는 작업 하 게 새로운 기능 다음으로, 즉, 데이터베이스에 작성 합니다. 이 위해 필요는 *출력 바인딩을*합니다.
 
-## Define Azure Cosmos DB output binding
+## <a name="define-azure-cosmos-db-output-binding"></a>정의 Azure Cosmos DB 출력 바인딩
 
-Rather than define a new output binding by going through the user interface, we'll create this binding by updating the configuration file, *function.json*, by hand. 
+대신 사용자 인터페이스를 통해 이동 하 여 새 출력 바인딩을 정의 만들어이 바인딩 구성 파일을 업데이트 하 여 *function.json*, 직접. 
 
-1. Open the **function.json** file for this function in the editor by selecting it in the **View files** list.
+1. 열기는 **function.json** 에서 선택 하 여 편집기에서이 함수에 대 한 파일을 **파일을 볼** 목록입니다.
 
-2. Copy the binding with the name `bookmark` in that file.
+2. 이름 사용 하 여 바인딩을 복사 `bookmark` 해당 파일에 있습니다.
 
-3. Place your cursor directly after the closing curly bracket, right before the closing square bracket. Add a comma `,` and then paste the copy of the binding here. Your *function.json* config should now look like the following.
+3. 닫는 중괄호를 닫는 대괄호 앞 바로 뒤에 커서를 놓습니다. 쉼표를 추가 `,` 바인딩의 복사본을 붙여 여기 있습니다. 프로그램 *function.json* 구성 다음과 같아집니다.
 
 [!code-json[](../code/config-new-entry.json?highlight=22-31)]
 
-4. Edit the binding we pasted, with the following changes.
+4. 다음 변경 내용으로 붙여 넣어도 바인딩을 편집 합니다.
 
 
-|Property   |Old value  |New value  |
+|자산   |이전 값  |새 값  |
 |---------|---------|---------|
-|name     |   bookmark      |  **newbookmark**       |
+|이름     |   책갈피      |  **newbookmark**       |
 |direction     |   in      |   **out**      |
-|id     |      {id}   |   **delete this property. It does not exist for the output binding.**      |
+|id     |      {id}   |   **이 속성을 삭제 합니다. 출력 바인딩에 대 한 존재 하지 않습니다.**      |
 
-When you make these changes, you end up with a file that looks like the following JSON.
+이러한 변경 하면 결국 다음 JSON 처럼 보이는 파일입니다.
 
 [!code-json[](../code/config-q-complete.json?highlight=22-30)]
 
-That was just a demo of how you can also create bindings directly in the configuration file. In this example, it makes sense because we are reusing the properties from another binding, namely, the `databaseName`, `collectionName` and `connection` that we already configured for our Cosmos DB input binding.
+단순히 구성 파일에서 직접 바인딩을 만들 수 있는 방법의 데모 했습니다. 이 예제에서는 편이에서는 다시 사용 하는 다른 바인딩 속성 즉, 때문에 합니다 `databaseName`, `collectionName` 및 `connection` 는 이미 구성 했습니다는 Cosmos db 입력 바인딩.
 
 > [!NOTE]
-> The actual value of `connection` in the preceding JSON file will be whatever name your connection was given when it was created.
+> 실제 값 `connection` 위의 JSON 파일 연결이 만들어질 때 지정 된 이름이 됩니다.
 
-Before we update our code, let's add one more binding that will enable us to post messages to a queue.
+코드를 업데이트 하기 전에 큐에 메시지를 게시할 수 있게 해 주는 자세한 바인딩이 두 개를 추가 해 보겠습니다.
 
-## Define Azure Queue Storage output binding
+## <a name="define-azure-queue-storage-output-binding"></a>정의 Azure Queue Storage 출력 바인딩
 
-Azure Queue storage is a service for storing messages that can be accessed from anywhere in the world. A single message can be up to 64 KB and a queue can contain millions of messages up to the total capacity limit of the storage account in which it is defined. The following diagram shows at a high level how a queue will be used in our scenario.
+Azure Queue storage는 액세스할 수 있는에서 아무 곳 이나 전 세계에서 메시지를 저장 하기 위한 서비스입니다. 단일 메시지에는 최대 64KB 일 수 있습니다 하 고 큐에 메시지 정의 되어 있는 저장소 계정의 총 용량 제한까지 수백만 포함 될 수 있습니다. 다음 다이어그램은 시나리오에는 큐를 사용 하는 방법을 개략적으로 보여줍니다.
 
-![Diagram showing concept of a storage queue and two functions pushing and popping messages onto the queue.](../media-draft/q-logical-small.png)
+![저장소 큐의 개념과 함수와 푸시 및 팝 큐에 메시지를 보여 주는 다이어그램입니다.](../media-draft/q-logical-small.png)
 
-Here we can see that our new function, [!INCLUDE [func-name-add](./func-name-add.md)], adds messages to a queue. Another function, for example a fictitious function called *gen-qr-code*, will pop messages from the same queue and process the request.  Since we write, or *push*, messages to the queue from [!INCLUDE [func-name-add](./func-name-add.md)], we'll add a new  output binding to our solution. Let's create the binding through the UI this time.
+여기서 볼 수 있는 하는 새 함수를 [!INCLUDE [func-name-add](./func-name-add.md)], 큐에 메시지를 추가 합니다. 예를 들어 가상의 함수를 다른 함수를 호출 *gen-qr 코드*는 동일한 큐에서 메시지를 표시 하 고 요청을 처리 합니다.  에서는 쓰므로 또는 *푸시*에서 큐에 메시지를 [!INCLUDE [func-name-add](./func-name-add.md)]를 솔루션에 새 출력 바인딩을 추가 합니다. UI 통해 바인딩을이 시간을 만들어 보겠습니다.
 
-1. Select **Integrate** in the function menu on the left to open the integration tab.
+1. 선택 **통합** 통합 탭을 열려면 왼쪽 메뉴의 함수입니다.
 
-2. Select **+ New Output** under the **Outputs** column. A list of all possible output binding types is displayed.
+2. 선택 **+ 새 출력** 아래의 합니다 **출력** 열입니다. 모든 가능한 출력 바인딩 형식 목록이 표시 됩니다.
 
-3. Click on **Azure Queue Storage** from the list and then the **Select** button. This action opens the Azure Queue Storage output configuration page.
+3. 클릭할 **Azure Queue Storage** 목록에서 다음을 **선택** 단추입니다. 이 작업에는 Azure Queue Storage 출력 구성 페이지가 열립니다.
 
-Next, we'll set up a storage account connection. This is where our queue will be hosted.
+다음으로, 저장소 계정 연결을 설정 했습니다. 큐 호스팅될입니다.
 
-4. In the field named **Storage account connection** on this page, click on *new* to the right of the empty field. This action opens the **Storage Account** selection dialog. 
+4. 명명 된 필드에 **Storage 계정 연결** 이 페이지에서 클릭 *새* 빈 필드의 오른쪽에 있습니다. 열립니다는 **저장소 계정** 선택 대화 상자. 
 
-5. When we started this module and created our function app, a storage account was also created at that time. It will be listed in this dialog, so go ahead and select it. The **Storage account connection** field is populated with the name of a connection. If you want to see the connection string value, click on **show value**.
+5. 이 모듈을 시작 하 고 함수 앱을 생성, 해당 시간에 저장소 계정은 만들었습니다. 이 대화 상자에 나열 됩니다, 따라서 계속 해 서 고 선택 합니다. 합니다 **Storage 계정 연결** 필드는 연결의 이름으로 채워집니다. 연결 문자열 값을 확인 하려는 경우 클릭할 **값이 표시**합니다.
 
-6. Although we could leave all other fields on this page with their default values, let's change the following to lend more meaning to the properties.
+6. 해당 기본값을 사용 하 여이 페이지에서 다른 모든 필드 상태로 두면 없습니다, 하지만 다음 속성에 더 많은 의미를 대여할을 변경해 보겠습니다.
 
 
-|Property  |Old value  |New value  | Description |
+|자산  |이전 값  |새 값  | 설명 |
 |---------|---------|---------|---------|
-|Queue name     |    outqueue     |  **bookmarks-post-process**      | This is the name of the queue we are using to place bookmarks into so that they can be processed further by another function. |
-| Message parameter name    |  outputQueueItem       |   **newmessage**      | This is the binding property we'll use in code. |
+|큐 이름     |    outqueue     |  **bookmarks-post-process**      | 이 이름은 배치 하는 큐의 책갈피에 처리할 수 있도록 추가로 다른 함수에 의해 합니다. |
+| 메시지 매개 변수 이름    |  outputQueueItem       |   **newmessage**      | 코드에서 사용 해야 하는 바인딩 속성입니다. |
 
 
-7. Remember to click **Save** to save your changes.
+7. 클릭 해야 **저장할** 변경 내용을 저장 합니다.
 
-## Update function implementation
+## <a name="update-function-implementation"></a>업데이트 함수 구현
 
-We now have all our bindings set up for the [!INCLUDE [func-name-add](./func-name-add.md)] function. It's time to use them in our function.
+이제이 바인딩 설정 모두를 [!INCLUDE [func-name-add](./func-name-add.md)] 함수입니다. 이 함수에서 사용 하는 차례입니다.
 
-1.  Click on our function, [!INCLUDE [func-name-add](./func-name-add.md)], to open up *index.js* in the code editor.
+1.  이 함수를 클릭 [!INCLUDE [func-name-add](./func-name-add.md)]를 열어 *index.js* 코드 편집기에서.
 
-2. Replace all code in index.js with the code from the following snippet.
+2. Index.js에서 모든 코드를 다음 코드 조각에서 코드를 바꿉니다.
 
 [!code-javascript[](../code/add-bookmark.js)]
 
-Let's breakdown what this code does.
+보겠습니다 분석이이 코드의 용도입니다.
 
-* Since this function changes our data, we expect the HTTP request to be a POST and the bookmark data to be part of the request body.
-* Our Cosmos DB input binding attempts to retrieve a document, or bookmark, using the `id` that we receive. If it finds an entry, the `bookmark` object will be set. The `if(bookmark)` condition checks whether an entry was found.
-* Adding to the database is a simple as setting the `context.bindings.newbookmark` binding parameter to the new bookmark entry, which we have created as a JSON string.
-* Posting a message to our queue is as simple as setting the  `context.bindings.newmessage parameter`.
+* 이 함수는 데이터를 변경 하므로 HTTP 요청을 POST이 고 책갈피 요청 본문의 일부가 되려면 예정입니다.
+* 이 Cosmos DB 입력된 바인딩 문서 또는 책갈피를 검색 하려고 시도 사용 하는 `id` 수신 하는 합니다. 항목을 찾으면를 `bookmark` 개체 설정이 적용 됩니다. `if(bookmark)` 조건 항목을 찾을 수 있는지 여부를 확인 합니다.
+* 설정 작업은 데이터베이스에 추가 된 `context.bindings.newbookmark` JSON 문자열로 만든 새 책갈피 항목에 대 한 바인딩 매개 변수입니다.
+* 로 설정 하기만 하면 되는 큐에 메시지 게시를 `context.bindings.newmessage parameter`입니다.
 
 > [!NOTE]
-> The only task we performed was to create a queue binding. We never created the queue explicitly. You are witnessing the power of bindings! As the following callout says, the queue is automatically created for you if it doesn't exist!
+> 수행한 유일한 태스크 큐 바인딩을 만드는 경우 에서는 만들어지지 큐 명시적으로 합니다. 바인딩의 기능을 살펴보기 됩니다! 다음 설명선 라는 큐 존재 하지 않는 경우를 자동으로 생성 됩니다.
 
-![Screenshot calling out that the queue will be auto-created.](../media-draft/q-auto-create-small.png)
+![호출 하는 스크린 샷 큐 자동-만들어질 수 있습니다.](../media-draft/q-auto-create-small.png)
 
-So, that's it - let's see our work in action in the next section.
+따라서 이것이-다음 섹션에서 실행 중인 작업을 확인해 보겠습니다.
 
-## Try it out
+## <a name="try-it-out"></a>체험
 
-Now that we have multiple output bindings, our testing becomes a little trickier. Whereas in previous labs we were content to test by sending an HTTP request and a query string, we'll want to perform an HTTP Post this time. We also need to check whether messages are making it into a queue.
+복수의 출력 바인딩이 만들었으므로 테스트 됩니다 조금 더 까다롭습니다. 반면 이전 labs에서 콘텐츠를 HTTP 요청 및 쿼리 문자열을 전송 하 여 테스트 된,이 이번 HTTP Post를 수행 하고자 합니다. 또한 여부 메시지 작업을 큐에 확인 해야 합니다.
 
-1.  With our function, [!INCLUDE [func-name-add](./func-name-add.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+1.  이 함수를 사용 하 여 [!INCLUDE [func-name-add](./func-name-add.md)], 함수 앱 포털에서 선택한 테스트 메뉴 항목 맨 왼쪽에 있는 확장을 클릭 합니다.
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+2. 선택 된 **테스트** 메뉴 항목을 열고 테스트 패널에 있는지 확인 합니다. 다음 스크린샷은 처럼 보여야 합니다. 
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+![테스트 창 함수를 보여 주는 스크린 샷 확장 합니다.](../media-draft/test-panel-open-small.png)
 
 > [!IMPORTANT]
-> Make sure **POST** is selected in the HTTP method dropdown.
+> 했는지 **POST** HTTP 방법 드롭다운에서 선택 합니다.
 
-3. Replace the content of the request body with the following JSON payload.
+3. 다음 JSON 페이로드를 사용 하 여 요청 본문의 콘텐츠를 대체 합니다.
 
 ```json
   {
@@ -205,13 +204,13 @@ Now that we have multiple output bindings, our testing becomes a little trickier
   }
   ```
 
-4. Click **Run** at the bottom of the test panel. 
+4. 클릭 **실행** 테스트 패널의 맨 아래에 있습니다. 
 
-5. Verify that the *Output* window displays the "Bookmark already exists." message as shown in the following diagram. 
+5. 있는지 확인 합니다 *출력* 창에 표시 된 "책갈피 이미 있습니다." 다음 다이어그램에 나와 있는 것 처럼 메시지입니다. 
 
-![Screenshot showing Test Panel and result of a failed test.](../media-draft/test-exists-small.png)
+![테스트 패널 및 실패 한 테스트의 결과 보여주는 스크린샷.](../media-draft/test-exists-small.png)
 
-6. Now replace the Request body with the following payload. 
+6. 이제 다음 페이로드를 사용 하 여 요청 본문을 대체 합니다. 
 
 ```json
   {
@@ -219,34 +218,34 @@ Now that we have multiple output bindings, our testing becomes a little trickier
       "URL": "https://www.github.com"
   }
   ```
-7. Click **Run** at the bottom of the test panel.
+7. 클릭 **실행** 테스트 패널의 맨 아래에 있습니다.
 
-8. Verify the that *Output* box displays the "bookmark added" message as shown in the following diagram.
+8. 이 확인 *출력* 상자는 다음 다이어그램에 나와 있는 것 처럼 "책갈피 추가" 메시지를 표시 합니다.
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/test-success-small.png)
+![패널 테스트 및 성공적인 테스트의 결과 보여주는 스크린샷.](../media-draft/test-success-small.png)
 
-Congratulations! The [!INCLUDE [func-name-add](./func-name-add.md)] works as designed, but what about that queue operation we had in the code? Well, let's go see if something was written to a queue.
+축하합니다. [!INCLUDE [func-name-add](./func-name-add.md)] 를 정상적으로 작동 하지만 했습니다. 코드에서 해당 큐 작업에 대 한 새로운? 물론 살펴보겠습니다 무언가 큐에 작성 한 경우.
 
-### Verify that a message is written to our queue
+### <a name="verify-that-a-message-is-written-to-our-queue"></a>메시지 큐에 기록 됩니다 있는지 확인
 
-Azure Queue Storage queues are hosted in a storage account. You selected the storage account in this exercise  already when creating the output binding. 
+Azure Queue Storage 큐는 저장소 계정에서 호스트 됩니다. 출력 바인딩을 만들 때 이미이 연습에서 저장소 계정을 선택 합니다. 
 
-1. In the main search box in the Azure portal, type *storage accounts* and in the search results select **Storage accounts** under the *Services* category. This is illustrated in the following screenshot. 
+1. Azure portal에서 기본 검색 상자에 입력 *저장소 계정* 검색 결과에서 선택 하 고 **저장소 계정** 아래 합니다 *Services* 범주입니다. 이 다음 스크린샷에 설명 되어 있습니다. 
 
-![Screenshot showing search results for Storage Account in the main search box.](../media-draft/search-for-sa-small.png)
+![기본 검색 상자에 저장소 계정에 대 한 검색 결과 보여 주는 스크린샷.](../media-draft/search-for-sa-small.png)
 
-2. In the list of storage accounts that are returned, select the storage account you used to create the **newmessage** output binding. The storage account settings are displayed in the main window the portal.
+2. 반환 되는 저장소 계정 목록을 만드는 데 사용한 저장소 계정을 선택 합니다 **newmessage** 출력 바인딩. 주 창에 표시 하는 저장소 계정 설정 포털입니다.
 
-3. Select the **Queues** item from the Services list. This displays a list of queues hosted by this storage account. Verify that the **bookmarks-post-process** queue exists, as shown in the following screenshot.
+3. 선택 된 **큐** 서비스 목록에서 항목입니다. 이이 저장소 계정에서 호스트 하는 큐의 목록을 표시 합니다. 있는지 확인 합니다 **책갈피-post-프로세스** 다음 스크린샷에 표시 된 대로 큐가 있는 합니다.
 
-![Screenshot showing our queue in the list of queues hosted by this storage account](../media-draft/q-in-list-small.png)
+![이 저장소 계정에서 호스트 하는 큐의 목록에서 큐를 보여 주는 스크린샷](../media-draft/q-in-list-small.png)
 
-4. Click on **bookmarks-post-process** to open the queue. The messages that are in the queue are displayed in a list. If all went according to plan, the message we posted when we added a bookmark to our database should be in the queue and will look like the following entry. 
+4. 클릭할 **책갈피-post-프로세스** 큐를 열 수 있습니다. 큐에 있는 메시지 목록에 표시 됩니다. 계획에 따라 한다면 데이터베이스에 책갈피를 추가 했을 때에서는 게시 된 메시지 큐에 있어야 하 고 다음 항목은 같습니다. 
 
-![Screenshot showing our message in the queue](../media-draft/message-in-q-small.png)
+![큐에서 메시지를 보여 주는 스크린샷](../media-draft/message-in-q-small.png)
 
-In this example, you can see that the message was given a unique ID and the **MESSAGE TEXT** field displays our bookmark in JSON string format.
+이 예에서 볼 수 있습니다 메시지는 고유한 ID가 올바른지와 **메시지 텍스트** 필드에이 책갈피를 JSON 문자열 형식으로 표시 됩니다.
 
-5. You can test the function further by changing the request body in the Test panel with new id/url sets and running the function. Watch this queue to see more messages arrive. You can also look at the database to verify new entries have been added. 
+5. 새 id/url 집합을 사용 하 여 테스트 패널에 있는 요청 본문을 변경 하 고 함수를 실행 하 여 추가 함수를 테스트할 수 있습니다. 이 큐에 도착 한 메시지를 더 보려면 시청 하세요. 또한 확인 하려면 데이터베이스에서 새 항목이 추가 되었습니다. 
 
-In this lab, we expanded our knowledge of bindings to output bindings, writing data to our Azure Cosmos DB. We went further and added another output binding to post messages to an Azure queue. This demonstrates the true power of bindings to help you shape and move data from incoming sources to a variety of destinations. We haven't written any database code or had to manage connection strings ourselves. Instead, we configured bindings declaratively and let the platform take care of securing connections, scaling our function and scaling our connections.
+이 랩에서으로 확장 했습니다 바인딩에 대 한 지식을 출력 바인딩을 Azure Cosmos DB에 데이터를 작성 합니다. 발전 하 고 Azure 큐에 메시지를 게시 하려면 다른 출력 바인딩을 추가 합니다. 이 모양 지정 및 다양 한 대상에 들어오는 소스에서 데이터를 이동 하는 데 바인딩의 진정한 능력을 보여 줍니다. 데이터베이스 코드를 작성 또는 직접 연결 문자열을 관리 해야 하지 않은 것입니다. 바인딩을 구성한 대신 선언적으로 하 고 연결 보안,이 함수를 크기 조정 및 연결을 크기 조정 관리 플랫폼입니다.

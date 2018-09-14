@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.5-save-on-licensing-costs
-title: Save on licensing costs
+title: 라이선스 비용 절감
 metadata:
-  title: Save on licensing costs 
-  description: Save on licensing costs.
+  title: 라이선스 비용 절감
+  description: 라이선스 비용을 절약 합니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,21 +13,21 @@ durationInMinutes: 10
 content: |
   [!include[](includes/5-save-on-licensing-costs.md)]
 quiz:
-    title: "Save on licensing costs"
-    questions:
-    - content: "If you already have Windows Server licenses, you have to pay for them again on Azure."
+  title: 라이선스 비용 절감
+  questions:
+    - content: Windows Server 라이선스가 이미 있는 경우 Azure에서 해당 라이선스에 대한 요금을 다시 지불해야 합니다.
       choices:
-      - content: "True"
-        incorrectExplanation: "Under certain circumstances, you can utilize the hybrid benefit for Windows Sever and pay only the Linux rate."
-        isCorrect: false
-      - content: "False"
-        correctExplanation: "Under certain circumstances, you can utilize the hybrid benefit for Windows Sever and pay only the Linux rate."
-        isCorrect: true
-    - content: "Azure has money-saving options for test and development servers."
+        - content: 'True'
+          incorrectExplanation: 특정 상황에서는 Windows Server에 대한 하이브리드 혜택을 활용하여 Linux 요금만 지불할 수 있습니다.
+          isCorrect: false
+        - content: 'False'
+          correctExplanation: 특정 상황에서는 Windows Server에 대한 하이브리드 혜택을 활용하여 Linux 요금만 지불할 수 있습니다.
+          isCorrect: true
+    - content: Azure에 테스트 및 개발 서버에 대한 비용 절감 옵션이 있습니다.
       choices:
-      - content: "True"
-        correctExplanation: "Yes, the Azure Enterprise Dev/Test and Azure Pay-As-You-Go Dev/Test benefits give you several discounts, most notably for Windows workloads, eliminating license charges and billing you only at the Linux rate for virtual machines. This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription."
-        isCorrect: true
-      - content: "False"
-        incorrectExplanation: "The Enterprise Dev/Test and Pay-As-You-Go Dev/Test benefits give you several discounts, most notably for Windows workloads, eliminating license charges and billing you only at the Linux rate for virtual machines. This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription."
-        isCorrect: false
+        - content: 'True'
+          correctExplanation: '예, Azure Enterprise 개발/테스트 및 Azure 종량제 개발/테스트 혜택은 특히 Windows 워크로드와 관련해서 여러 가지 할인을 제공하여, 라이선스 비용 없이 가상 머신에 대한 Linux 요금만 청구합니다. 이 혜택은 SQL Server 및 Visual Studio 구독이 적용되는 기타 모든 Microsoft 소프트웨어에도 적용됩니다.'
+          isCorrect: true
+        - content: 'False'
+          incorrectExplanation: 'Enterprise 개발/테스트 및 종량제 개발/테스트 혜택은 특히 Windows 워크로드와 관련해서 여러 가지 할인을 제공하여, 라이선스 비용 없이 가상 머신에 대한 Linux 요금만 청구합니다. 이 혜택은 SQL Server 및 Visual Studio 구독이 적용되는 기타 모든 Microsoft 소프트웨어에도 적용됩니다.'
+          isCorrect: false

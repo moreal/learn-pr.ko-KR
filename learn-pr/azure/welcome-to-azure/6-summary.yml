@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.6-summary
+title: 요약
+metadata:
+  title: 요약
+  description: 배운 및 작업 검색 클라우드 여정을 계속 하는 방법을 검토 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 1
+content: |
+  [!include[](includes/6-summary.md)]

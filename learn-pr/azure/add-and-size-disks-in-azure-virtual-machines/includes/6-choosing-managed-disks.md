@@ -1,44 +1,49 @@
-Applications and services often need to scale with demand. For virtual machines, this means scaling out, or creating additional instances. Creating disks for new instances manually can place a burden on Azure administrators. Instead, we can use **managed disks** to reduce the administration required to create new disks.
+응용 프로그램 및 서비스 요청을 사용 하 여 크기를 조정 해야 경우가 많습니다. Virtual machines 추가 인스턴스를 만들거나 확장을 의미 합니다. 수동으로 새 인스턴스에 대 한 디스크를 만드는 Azure 관리자에 부담이 배치할 수 있습니다. 대신 사용할 수 있습니다 **관리 디스크** 새 디스크를 만드는 데 필요한 관리를 줄일 수 있습니다.
 
-Managed disks handle storage for you "behind the scenes". You specify the disk type and the size of disk you need, and Azure creates and manages the disk for you. 
+"내부적인" 사용자를 위해 디스크 핸들 저장소를 관리 합니다. 디스크를 지정한 형식 및 디스크의 크기를 해야 Azure 만들고 디스크를 관리 합니다. 
 
-When you're using managed disks, another disk type is available for you to use called **standard SSD**.
+관리 디스크를 사용 하는 경우 다른 디스크 유형을 사용할 수 있는 호출 **표준 SSD**합니다.
 
-## Standard SSDs
+## <a name="standard-ssds"></a>표준 SSD
 
-If you recall, with unmanaged disks, you can choose from two types of disk: standard hard disk drives (HDDs) and premium solid-state drives (SSDs).
+기억 하듯이, 관리 되지 않는 디스크를 사용 하는 경우 두 가지 유형의 디스크에서 선택할 수 있습니다: 표준 하드 디스크 드라이브 (Hdd) 및 프리미엄 반도체 드라이브 (Ssd).
 
-When you use managed disks, you can choose a third type of disk: standard SSDs. This disk type sits between standard HDDs and premium SSDs from a performance and cost perspective.
+관리 디스크를 사용 하는 경우에 세 번째 디스크 유형을 선택할 수 있습니다: 표준 SSDs 합니다. 이 디스크 유형을 Hdd 표준 및 프리미엄 Ssd, 성능 및 비용 측면에서 사이 위치 합니다.
 
-You can use standard SSDs with any VM size, including VM sizes that don't support premium storage. In fact, using standard SSDs is the only way to use SSDs with those VMs.
+표준 Ssd는 premium storage를 지원 하지 않는 VM 크기를 비롯 하 여 모든 VM 크기를 사용 하 여 사용할 수 있습니다. 실제로 표준 Ssd를 사용 하 여 이러한 Vm과 Ssd를 사용 하는 유일한 방법입니다.
 
-## Managed disks in availability sets
+## <a name="managed-disks-in-availability-sets"></a>가용성 집합의 managed disks
 
-Sometimes you use several VMs to host your application to handle increased load.
+여러 Vm를 사용 하 여 증가 된 부하를 처리 하도록 응용 프로그램을 호스트 하는 경우가 있습니다.
 
-You can put your VMs into an **availability set** to reduce the chances of customers experiencing an outage. Using an availability set, your VMs are spread across fault domains. A fault domain is a logical group of underlying hardware that shares a common power source and network switch, similar to a rack within an on-premises data center. As you create VMs within an availability set, the Azure platform automatically distributes your VMs across these fault domains. This separation in the Azure data center guarantees that there's no single point of failure for all the VMs in the availability set.
+Vm에 넣을 수 있습니다는 **가용성 집합** 고객에 게 가동 중단 발생 가능성을 줄입니다. 가용성 집합, Vm에 장애 도메인 분산 되어 있습니다. 장애 도메인은 공통 된 전원 전원과 네트워크 스위치에는 온-프레미스 데이터 센터 내의 랙과 비슷하게를 공유 하는 기본 하드웨어의 논리적 그룹입니다. 가용성 집합 내에서 VM을 만들 때 Azure 플랫폼에서는 이러한 오류 도메인에 걸쳐 VM을 자동으로 분산합니다. Azure 데이터 센터에서이 분리는 가용성 집합의 모든 Vm에 대 한 오류의 단일 지점이 없는 보장 합니다.
 
-When you use managed disks, Azure automatically makes sure that each VHD is placed into the same fault domain as its VM. This guarantee removes the possibility that the storage account configuration may include a single point of failure. There's no way to guarantee this separation when you use unmanaged disks.
+관리 디스크를 사용 하는 경우 Azure는 자동으로 각 VHD 해당 VM으로 동일한 장애 도메인에 배치 되는 있는지를 만듭니다. 이 보장 저장소 계정 구성은 단일 실패 지점이 포함 될 수 있습니다는 가능성을 제거 합니다. 관리 되지 않는 디스크를 사용 하는 경우에이 분리를 보장 하기 위해 방법이 없습니다.
 
-## Choosing managed disks
+## <a name="choosing-managed-disks"></a>관리 디스크를 선택합니다.
 
-**Do you want to control storage accounts in your subscription?**
+관리 되지 않는 디스크 대신 관리 디스크 Vm 디스크를 생성 하는 결정에 영향을 줄 수 있는 몇 가지 측면이 있습니다.
 
-Managed disks are easy to administer, but you may feel that you can optimize storage or manage costs better by keeping control of storage accounts.
+**구독에서 저장소 계정을 제어 하 시겠습니까?**
 
-**Do you need to use standard SSDs?** 
+Managed disks는 쉽게 관리할 수 있지만 저장소를 최적화 하거나 저장소 계정에 대 한 제어를 유지 하 여 더 나은 비용을 관리할 수 있는 생각 될 수도 있습니다.
 
-If you want to use SSDs with a VM size that does not support premium storage, you have to choose managed disks.
+**표준 Ssd를 사용 하 시겠습니까?** 
 
-**Are the VMs in an availability set?** 
+Premium storage를 지원 하지 않는 VM 크기를 사용 하 여 Ssd를 사용 하려는 경우 관리 디스크를 선택 해야 합니다.
 
-It is highly recommended to use managed disks to optimize resilience if your VMs are members of an availability set.
+**가용성 집합의 Vm?** 
 
-## Migrating to managed disks
+Vm 가용성 집합의 멤버인 경우 복원 력을 최적화 하기 위해 managed disks를 사용 하는 것이 좋습니다.
 
-You can convert your unmanaged disks to managed disks at any time using one of these two methods:
+## <a name="migrating-to-managed-disks"></a>Managed disks로 마이그레이션
 
-- Using the Azure portal. On the Disks page of your virtual machine's settings, you'll find the **Migrate to managed disks** tool. This process will stop the VM, migrate the disks, and then restart the VM for you. You'll experience an interruption in service from the VM while the conversion takes place.
-- Using Azure PowerShell. You can use the `ConvertTo-AzureRmVMManagedDisk` cmdlet to perform the migration. If you choose this method, you must stop and start the VM yourself.
+언제 든 지 이러한 두 가지 방법 중 하나를 사용 하 여 managed disks로 관리 되지 않는 디스크를 변환할 수 있습니다.
 
-Managed disks reduce the administrative workload and have some features, such as standard SSDs, that aren't available for unmanaged disks.
+- Azure Portal 사용 가상 머신 설정의 디스크 페이지에서 찾을 수 있습니다 합니다 **managed disks로 마이그레이션** 도구입니다. 이 프로세스는 VM을 중지 하 고 디스크를 마이그레이션할 수에 대 한 VM 다시 됩니다. 변환이 이루어지는 동안 VM에서 서비스에 중단이 될 수 있습니다.
+- Azure PowerShell을 사용 합니다. 사용할 수는 `ConvertTo-AzureRmVMManagedDisk` 마이그레이션을 수행 하는 cmdlet입니다. 이 메서드를 선택 하면 중지 하 고 직접 VM을 시작 해야 합니다.
+  
+> [!Note]
+> 관리 되지 않는 디스크에서 managed disks로 마이그레이션 되돌릴 수 없는 것을 염두에 두십시오. 또한 VM에서 사용 된 원래 저장소 계정은 자동으로 삭제 되지 않습니다. 불필요 한 요금을 방지 하려면 원래 VHD blob을 삭제 해야 합니다. 
+
+Managed disks 관리 워크 로드를 줄일와 관리 되지 않는 디스크에 사용할 수 없는 표준 Ssd와 같은 몇 가지 기능이 있습니다.

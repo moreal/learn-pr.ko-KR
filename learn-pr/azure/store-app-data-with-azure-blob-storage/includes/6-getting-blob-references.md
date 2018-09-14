@@ -1,4 +1,4 @@
-.NET Core용 Azure Storage SDK에서 개별 Blob을 사용하여 작업하려면 ‘Blob 참조’, 즉 `ICloudBlob` 개체의 인스턴스가 필요합니다.
+.NET Core용 Azure Storage SDK에서 개별 Blob을 사용하여 작업하려면 ‘Blob 참조’, 즉 `ICloudBlob` 개체의 인스턴스가 필요합니다.**
 
 Blob의 이름을 사용하거나 컨테이너의 Blob 목록에서 선택하여 `ICloudBlob`을 가져올 수 있습니다. 두 방법 모두 `CloudBlobContainer`가 필요하며, 이에 대해서는 마지막 단원에서 가져오는 방법을 살펴보았습니다.
 
@@ -6,7 +6,7 @@ Blob의 이름을 사용하거나 컨테이너의 Blob 목록에서 선택하여
 
 `CloudBlobContainer`에서 `GetXXXReference` 메서드 중 하나를 호출하여 이름을 기준으로 `ICloudBlob`을 가져옵니다. 검색 중인 Blob 유형을 알고 있는 경우 특정 메서드(`GetBlockBlobReference`, `GetAppendBlobReference` 또는 `GetPageBlobReference`) 중 하나를 사용하여 해당 Blob 유형에 맞게 조정된 메서드 및 속성을 포함하는 개체를 가져옵니다.
 
-이러한 메서드는 네트워크 호출을 수행하지 않고 대상 Blob이 실제로 존재하는지 여부를 확인하지도 않습니다. 또한 Blob 참조 개체를 로컬로만 만듭니다. 이러한 개체는 네트워크를 통해 ‘작동’하고 저장소의 Blob과 상호 작용하는 메서드를 호출하는 데 사용될 수 있습니다. 별도의 `GetBlobReferenceFromServerAsync` 메서드가 Blob Storage API를 호출하고 Blob이 아직 없는 경우 예외를 throw합니다.
+이러한 메서드는 네트워크 호출을 수행하지 않고 대상 Blob이 실제로 존재하는지 여부를 확인하지도 않습니다. 또한 Blob 참조 개체를 로컬로만 만듭니다. 이러한 개체는 네트워크를 통해 ‘작동’하고 저장소의 Blob과 상호 작용하는 메서드를 호출하는 데 사용될 수 있습니다.** 별도의 `GetBlobReferenceFromServerAsync` 메서드가 Blob Storage API를 호출하고 Blob이 아직 없는 경우 예외를 throw합니다.
 
 ## <a name="listing-blobs-in-a-container"></a>컨테이너 Blob 나열
 
@@ -52,7 +52,7 @@ var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 
 앱의 기능 중 하나가 작동하려면 API에서 Blob 목록을 가져와야 합니다. 위에 나온 패턴을 사용하여 컨테이너의 모든 Blob을 나열하겠습니다. 목록을 처리할 때 각 Blob의 이름을 가져옵니다.
 
-편집기에서 `BlobStorage.cs`를 열고 `GetNames`를 다음 코드로 바꾼 후 변경 내용을 저장합니다.
+편집기를 사용 하 여 바꿉니다 `GetNames` 에서 `BlobStorage.cs` 다음 코드와 변경 내용을 저장 합니다.
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.1-create-twilio-account-launch-vs
+title: Twilio 계정 만들기 및 Visual Studio 시작
+metadata:
+  title: Twilio 계정 만들기 및 Visual Studio 시작
+  description: Twilio 계정 만들기 및 Visual Studio 시작
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45999
+durationInMinutes: 5
+content: |
+  [!include[](includes/1-create-twilio-account-launch-vs.md)]

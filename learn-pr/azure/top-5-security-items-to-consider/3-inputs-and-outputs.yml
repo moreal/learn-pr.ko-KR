@@ -1,0 +1,59 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
+title: 입력 및 출력
+metadata:
+  title: 입력 및 출력
+  description: 입력 및 출력
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-inputs-and-outputs.md)]
+quiz:
+  title: 지식 검사-Azure Security center
+  questions:
+    - content: 유효성을 검사 해야 하는 다음 데이터 원본의?
+      choices:
+        - content: 타사의 데이터를 타사 API.
+          isCorrect: false
+          incorrectExplanation: 이것이 유효성을 검사 해야 하는 여러 소스 중 하나일 뿐입니다.
+        - content: URL 매개 변수에서 데이터를 제공 합니다.
+          isCorrect: false
+          incorrectExplanation: 유효성을 검사 해야 하는 여러 소스 중 하나일 뿐입니다.
+        - content: 데이터 입력된 필드를 통해 사용자 로부터 수집 합니다.
+          isCorrect: false
+          incorrectExplanation: 이것이 유효성을 검사 해야 하는 여러 소스 중 하나일 뿐입니다.
+        - content: 위의 모든 합니다.
+          isCorrect: true
+          correctExplanation: 맞는. 모든 이러한 원본 데이터의 유효성을 검사 해야 합니다.  수정 했을 수 있는 모든 데이터를 신뢰 하지 마십시오.
+    - content: 인코딩된 출력 해야 하는 다음의 데이터는?
+      choices:
+        - content: 데이터베이스에 저장 된 데이터
+          isCorrect: false
+          incorrectExplanation: '데이터베이스에 저장 된 데이터는 데이터가 올바른지 확인 하려면 유효성을 검사 해야, 하지만 출력에 대 한 인코딩 필요가 없습니다.'
+        - content: 화면에 출력 데이터
+          isCorrect: true
+          correctExplanation: 올바른 인 데이터가 항상 화면에 출력 될 해야 출력 인코딩는 절대 코드로 해석 되도록 합니다.
+        - content: 타사 API로 전송 된 데이터
+          isCorrect: false
+          incorrectExplanation: '타사 API로 전송 된 데이터는 데이터가 올바른지 확인 하려면 유효성을 검사 해야, 하지만 출력에 대 한 인코딩 필요가 없습니다.'
+        - content: URL 매개 변수 데이터
+          isCorrect: false
+          incorrectExplanation: URL 매개 변수에서 데이터를 응용 프로그램에서 사용 되기 전에 유효성을 검사 해야 하지만 출력에 대 한 인코딩 필요가 없습니다.
+    - content: 매개 변수가 있는 쿼리 (SQL의 저장된 프로시저)는 항상 더 안전한 적합 하기 때문에 데이터베이스와 통신 합니다.
+      choices:
+        - content: 인라인 데이터베이스 명령 보다 더 조직화 된 사용자가 없으므로 혼동 합니다.
+          isCorrect: false
+          incorrectExplanation: 코드의 구성 매개 변수가 있는 쿼리는 인라인 SQL 보다 더 안전한 이유 아닙니다.
+        - content: 더 잘 표시 되도록 저장된 프로시저에서 스크립트의 일반 개요가 있습니다.
+          isCorrect: false
+          incorrectExplanation: 일반 개요 스크립트 매개 변수가 있는 쿼리는 인라인 SQL 보다 더 안전한 이유 아닙니다.
+        - content: 해커는 SQL 프로그래밍 하는 방법을 이해할 수 없습니다.
+          isCorrect: false
+          incorrectExplanation: '많은 해커 SQL 이해, 이것은 올바른 응답 합니다.'
+        - content: 매개 변수가 있는 쿼리 변수 대신 제출 해야 하는 코드에 대 한 영업 기회를 방지 하는 것을 의미 하는 쿼리를 실행 하기 전에 변수를 대체 합니다.
+          isCorrect: true
+          correctExplanation: '매개 변수가 있는 쿼리에서 사용 되는 매개 변수 필드는 코드가 아니라 데이터를 주입 취약점 으로부터 보호로 취급 됩니다. 매개 변수가 있는 쿼리를 구현 하는 방법에 대 한 자세한 내용은 참조 하십시오 합니다 [OWASP 쿼리 매개 변수화 치트 시트]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet)합니다.'

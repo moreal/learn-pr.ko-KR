@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.5-exercise-configure-a-load-balancer-in-azure
+title: 연습-Azure에서 부하 분산 장치 구성
+metadata:
+  title: 연습-Azure에서 부하 분산 장치 구성
+  description: 연습-Azure에서 부하 분산 장치 구성
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 20
+content: |
+  [!include[](includes/5-exercise-configure-a-load-balancer-in-azure.md)]

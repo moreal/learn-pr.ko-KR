@@ -1,156 +1,156 @@
-Performing a migration of on-premises servers to Azure requires planning and care. You can move them all at once, or more likely, in small batches or even individually. Before you create a single VM, you should sit down and sketch out your current infrastructure model and see how it might map to the cloud.
+온-프레미스 서버를 Azure로 마이그레이션하려면 계획 및 관리가 필요합니다. 한 번에 모든 서버를 이동하거나, 소규모 일괄 처리 또는 개별적으로 이동할 수도 있습니다. 단일 VM을 만들기 전에 앉아서 현재 인프라 모델을 배치하고 스케치하여 클라우드에 매핑하는 방법을 확인해야 합니다.
 
-Let's walk through a checklist of things to think about.
+고려 사항에 대한 검사 목록을 단계별로 살펴보겠습니다.
 
-- [Start with the network](#Network)
-- [Name the VM](#Name_VM)
-- [Decide the location for the VM](#VM_Location)
-- [Determine the size of the VM](#VM_Size)
-- [Understanding the pricing model](#VM_Cost)
-- [Storage for the VM](#VM_Storage)
-- [Select an operating system](#VM_OS)
+- [네트워크로 시작](#Network)
+- [VM 이름 지정](#Name_VM)
+- [VM 위치 결정](#VM_Location)
+- [VM 크기 결정](#VM_Size)
+- [가격 책정 모델 이해](#VM_Cost)
+- [VM에 대한 저장소](#VM_Storage)
+- [운영 체제 선택](#VM_OS)
 
 <a name="Network" />
 
-## Start with the network
+## <a name="start-with-the-network"></a>네트워크로 시작
 
-The first thing you should think about isn't the virtual machine at all - it's the network.
+가장 먼저 고려해야 하는 것은 가상 머신이 아니라 네트워크입니다.
 
-Virtual networks (VNets) are used in Azure to provide private connectivity between Azure Virtual Machines and other Azure services. VMs and services that are part of the same virtual network can access one another. By default, services outside the virtual network cannot connect to services within the virtual network. You can, however, configure the network to allow access to the external service, including your on-premises servers.
+VNet(가상 네트워크)은 Azure에서 Azure Virtual Machines와 다른 Azure 서비스 간의 사설 연결을 제공하기 위해 사용됩니다. 동일한 가상 네트워크에 속한 VM과 서비스는 서로 액세스할 수 있습니다. 기본적으로 가상 네트워크 외부의 서비스는 가상 네트워크 내의 서비스에 연결할 수 없습니다. 그러나 온-프레미스 서버를 포함하여 외부 서비스에 대한 액세스를 허용하도록 네트워크를 구성할 수 있습니다.
 
-This latter point is why you should spend some time thinking about your network configuration. Network addresses and subnets are not trivial to change once you have them set up, and if you plan to connect your private company network to the Azure services, you will want to make sure you consider the topology before putting any VMs into place.
+후자의 요점이 네트워크 구성을 고려하기 위해 시간을 할애해야 하는 이유입니다. 일단 네트워크 주소와 서브넷을 설정하면 변경하기가 쉽지 않으며, 사설 회사 네트워크를 Azure 서비스에 연결하려는 경우 VM을 배치하기 전에 토폴로지를 고려해야 합니다.
 
-When you set up a virtual network, you specify the available address spaces, subnets, and security. If the VNet will be connected to other VNets, you must select address ranges that are not overlapping. This is the range of private addresses that the VMs and services in your network can use. You can use unrouteable IP addresses such as 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16, or define your own range. Azure will treat any address range as part of the private VNet IP address space if it is only reachable within the VNet, within interconnected VNets, and from your on-premises location. If someone else is responsible for the internal networks, you should work with that person before selecting your address space to make sure there is no overlap and to let them know what space you want to use, so they don’t try to use the same range of IP addresses.
+가상 네트워크를 설정할 때 사용 가능한 주소 공간, 서브넷 및 보안을 지정합니다. VNet이 다른 VNet에 연결되는 경우 겹치지 않는 주소 범위를 선택해야 합니다. 이는 네트워크의 VM과 서비스에서 사용할 수 있는 사설 주소의 범위입니다. 10.0.0.0/8, 172.16.0.0/12 또는 192.168.0.0/16과 같은 라우팅할 수 없는 IP 주소를 사용하거나 고유한 범위를 정의할 수 있습니다. Azure는 VNet 내, 상호 연결된 VNet 내 및 온-프레미스 위치에서만 연결할 수 있는 경우 모든 주소 범위를 사설 VNet IP 주소 공간의 일부로 처리합니다. 다른 사용자가 내부 네트워크를 담당하는 경우 주소 공간을 선택하기 전에 해당 사용자와 협력하여 주소 공간이 겹치지 않는지 확인하고 사용하려는 공간을 알려서 동일한 IP 주소 범위를 사용하지 않도록 해야 합니다.
 
-### Segregate your network
+### <a name="segregate-your-network"></a>네트워크 분리
 
-After deciding the virtual network address space(s), you can create one or more subnets for your virtual network. You do this to break up your network into more manageable sections. For example, you might assign 10.1.0.0 to VMs, 10.2.0.0 to back-end services, and 10.3.0.0 to SQL Server VMs.
+가상 네트워크 주소 공간이 결정되면 가상 네트워크에 대한 서브넷을 하나 이상 만들 수 있습니다. 이렇게 하면 네트워크를 더 쉽게 관리할 수 있는 섹션으로 분리할 수 있습니다. 예를 들어 VM에 10.1.0.0, 백 엔드 서비스에 10.2.0.0, SQL Server VM에 10.3.0.0을 할당할 수 있습니다.
 
 > [!NOTE]
-> Azure reserves the first four addresses and the last address in each subnet for its use.
+> Azure는 각 서브넷에서 처음 네 개의 주소와 마지막 주소를 사용하도록 예약합니다.
 
-### Secure the network
+### <a name="secure-the-network"></a>네트워크 보안
 
-By default, there is no security boundary between subnets, so services in each of these subnets can talk to one another. However, you can set up Network Security Groups (NSGs), which allow you to control the traffic flow to and from subnets and to and from VMs. NSGs act as software firewalls, applying custom rules to each inbound or outbound request at the network interface and subnet level. This allows you to fully control every network request coming in or out of the VM.
+기본적으로 서브넷 간에는 보안 경계가 없으므로 이러한 각 서브넷의 서비스 간에 서로 통신할 수 있습니다. 그러나 서브넷 간 및 VM 간의 트래픽 흐름을 제어할 수 있는 NSG(네트워크 보안 그룹)를 설정할 수 있습니다. NSG는 소프트웨어 방화벽 역할을 하며, 네트워크 인터페이스 및 서브넷 수준에서 각각의 인바운드 또는 아웃바운드 요청에 사용자 지정 규칙을 적용합니다. 이렇게 하면 VM에서 들어오고 나가는 모든 네트워크 요청을 완벽하게 제어할 수 있습니다.
 
-## Plan each VM deployment
+## <a name="plan-each-vm-deployment"></a>개별 VM 배포 계획
 
-Once you have mapped out your communication and network requirements, you can start thinking about the VMs you want to create. A good plan is to select a server and take an inventory:
+통신 및 네트워크 요구 사항을 매핑한 후에는 만들려는 VM에 대해 고려해 볼 수 있습니다. 다음과 같이 서버를 선택하고 인벤토리를 만드는 것이 좋습니다.
 
-- What does the server communicate with?
-- What ports are open?
-- What OS is used?
-- How much disk space is in use?
-- What kind of data does this use? Are there restrictions (legal or otherwise) with not having it on-premises?
-- What sort of CPU, memory, and disk I/O load does the server have? Is there burst traffic to account for?
+- 서버와 통신하는 것은 무엇인가요?
+- 어떤 포트가 열려 있나요?
+- 어떤 OS가 사용되나요?
+- 사용 중인 디스크 공간은 얼마인가요?
+- 여기서 사용되는 데이터의 종류는 무엇인가요? 가지고 있지 않은 경우 해당 온-프레미스 (법적 또는 기타) 제한 사항이 있습니까?
+- 서버에 있는 CPU, 메모리 및 디스크 I/O 로드의 종류는 무엇인가요? 설명할 버스트 트래픽이 있나요?
 
-We can then start to answer some of the questions Azure will have for a new virtual machine.
+그러면 Azure에서 새 가상 머신에 대해 제기할 몇 가지 질문에 대한 답변을 시작할 수 있습니다.
 
 <a name="Name_VM" />
 
-### Name the VM
+### <a name="name-the-vm"></a>VM 이름 지정
 
-One piece of information people often don't put much thought into is the **name** of the VM. The VM name is used as the computer name, which is configured as part of the operating system. You can specify a name of up to 15 characters on a Windows VM and 64 characters on a Linux VM.
+사용자가 종종 고려하지 않는 정보 중 하나는 VM의 **이름**입니다. VM 이름은 운영 체제의 일부로 구성 된 컴퓨터 이름으로 사용 됩니다. Windows VM 및 Linux VM에서 64 자에서 최대 15 자 이름을 지정할 수 있습니다.
 
-This name also defines a manageable **Azure resource**, and it's not trivial to change later. That means you should choose names that are meaningful and consistent, so you can easily identify what the VM does. A good convention is to include the following information in the name:
+또한 이 이름은 관리 가능한 **Azure 리소스**를 정의하며 나중에 변경하기가 쉽지 않습니다. 즉, VM의 용도 쉽게 식별할 수 있도록 의미 하 고 일관 된 수 있는 이름을 선택 해야 합니다. 이름에 다음 정보가 포함되는 것이 좋습니다.
 
-| Element | Example | Notes |
+| 요소 | 예 | 참고 |
 | --- | --- | --- |
-| Environment |dev, prod, QA |Identifies the environment for the resource |
-| Location |uw (US West), ue (US East) |Identifies the region into which the resource is deployed |
-| Instance |01, 02 |For resources that have more than one named instance (web servers, etc.) |
-| Product or Service |service |Identifies the product, application, or service that the resource supports |
-| Role |sql, web, messaging |Identifies the role of the associated resource | 
+| 환경 |dev, prod, QA |리소스에 대한 환경을 식별합니다. |
+| 위치 |uw(미국 서부), ue(미국 동부) |리소스가 배포되는 지역을 식별합니다. |
+| 인스턴스 |01, 02 |둘 이상의 명명 된 인스턴스 (웹 서버 등)이 있는 리소스에 대 한 |
+| 제품 또는 서비스 |service |리소스에서 지원하는 제품, 응용 프로그램 또는 서비스를 식별합니다. |
+| 역할 |sql, web, messaging |연결된 리소스의 역할을 식별합니다. | 
 
-For example, `devusc-webvm01` might represent the first development web server hosted in the US South Central location. 
+예를 들어 `devusc-webvm01`은 미국 중남부 지역에서 호스팅되는 첫 번째 개발 웹 서버를 나타낼 수 있습니다. 
 
-#### What is an Azure resource?
+#### <a name="what-is-an-azure-resource"></a>Azure 리소스란?
 
-An **Azure resource** is a manageable item in Azure. Just like a physical computer in your datacenter, VMs have several elements that are needed to do their job:
+**Azure 리소스** 는 Azure에서 관리할 수 있는 항목입니다. 데이터 센터의 물리적 컴퓨터와 마찬가지로 VM에도 작업을 수행하는 데 필요한 몇 가지 요소가 있습니다.
 
-- The VM itself
-- Storage account for the disks
-- Virtual network (shared with other VMs and services)
-- Network interface to communicate on the network
-- Network Security Group(s) to secure the network traffic
-- Public Internet address (optional)
+- VM 자체
+- 디스크에 대한 저장소 계정
+- 가상 네트워크(다른 VM 및 서비스와 공유)
+- 네트워크에서 통신할 네트워크 인터페이스
+- 네트워크 트래픽을 보호하기 위한 네트워크 보안 그룹
+- 공용 인터넷 주소(선택 사항)
 
-Azure will create all of these resources if necessary, or you can supply existing ones as part of the deployment process. Each resource needs a name that will be used to identify it. If Azure creates the resource, it will use the VM name to generate a resource name - another reason to be very consistent with your VM names!
+필요한 경우 Azure에서 이러한 모든 리소스를 만들거나, 배포 프로세스의 일부로 기존 리소스를 제공할 수 있습니다. 각 리소스에는 식별 하기 위해 사용할 이름이 필요 합니다. Azure에서 리소스를 만들면 VM 이름을 사용하여 리소스 이름을 생성합니다. 이는 VM 이름과 매우 일치해야 하는 또 다른 이유입니다!
 
 <a name="VM_Location" />
 
-### Decide the location for the VM
+### <a name="decide-the-location-for-the-vm"></a>VM 위치 결정
 
-Azure has datacenters all over the world filled with servers and disks. These datacenters are grouped into geographic _regions_ ('West US', 'North Europe', 'Southeast Asia', etc.) to provide redundancy and availability.
+Azure는 전 세계에 서버와 디스크로 채워진 데이터 센터를 갖추고 있습니다. 이러한 데이터 센터는 지리적으로 그룹화 _지역_ (' 미국 서 부 ', ' 북유럽 ', ' 동남 아시아 ', 등)이 중복성 및 가용성을 제공 합니다.
 
-When you create and deploy a virtual machine, you must select a region where you want the resources (CPU, storage, etc.) to be allocated. This lets you place your VMs as close as possible to your users to improve performance and to meet any legal, compliance, or tax requirements.
+가상 머신을 만들고 배포하는 경우 리소스(CPU, 저장소 등)를 할당하려는 지역을 선택해야 합니다. 이렇게 하면 성능을 향상시키고 법률, 규정 준수 또는 세금 요구 사항을 충족할 수 있도록 사용자에게 최대한 가깝게 VM을 배치할 수 있습니다.
 
 <a name="VM_Size" />
 
-### Determine the size of the VM
+### <a name="determine-the-size-of-the-vm"></a>VM 크기 결정
 
-Once you have the name and location set, you need to decide on the size of your VM. Rather than specify processing power, memory, and storage capacity independently, Azure provides different _VM sizes_ that offer variations of these elements in different sizes. Azure provides a wide range of VM size options allowing you to select the appropriate mix of compute, memory, and storage for what you want to do.
+이름과 위치가 설정되면 VM의 크기를 결정해야 합니다. Azure는 처리 능력, 메모리 및 저장소 용량을 독립적으로 지정하는 대신, 다양한 크기의 이러한 요소에 대한 변형을 제공하는 다양한 _VM 크기_를 제공합니다. Azure는 광범위 한 VM 계산, 메모리 및 수행 하려는 항목에 대 한 저장소의 적절 한 혼합을 선택할 수 있도록 크기 옵션을 제공 합니다.
 
-The best way to determine the appropriate VM size is to consider the type of workload your VM needs to run. Based on the workload, you're able to choose from a subset of available VM sizes. Workload options are classified as follows on Azure:
+적절한 VM 크기를 결정하는 가장 좋은 방법은 VM에서 실행해야 하는 워크로드의 유형을 고려하는 것입니다. 워크로드에 따라 사용 가능한 VM 크기의 하위 집합에서 선택할 수 있습니다. 워크로드 옵션은 Azure에서 다음과 같이 분류됩니다.
 
-| Option              | Description |
+| 옵션              | 설명 |
 |---------------------|-------------|
-| **General purpose** | General-purpose VMs are designed to have a balanced CPU-to-memory ratio. Ideal for testing and development, small to medium databases, and low to medium traffic web servers. |
-| **Compute optimized** | Compute optimized VMs are designed to have a high CPU-to-memory ratio. Suitable for medium traffic web servers, network appliances, batch processes, and application servers. |
-| **Memory optimized** | Memory optimized VMs are designed to have a high memory-to-CPU ratio. Great for relational database servers, medium to large caches, and in-memory analytics. |
-| **Storage optimized** | Storage optimized VMs are designed to have high disk throughput and IO. Ideal for VMs running databases. |
-| **GPU** | GPU VMs are specialized virtual machines targeted for heavy graphics rendering and video editing. These VMs are ideal options for model training and inferencing with deep learning. |
-| **High performance computes** | High performance compute is the fastest and most powerful CPU virtual machines with optional high-throughput network interfaces. |
+| **범용** | 범용 VM은 균형 잡힌 CPU-메모리 비율을 제공하도록 설계되었습니다. 테스트 및 개발, 중소형 데이터베이스 및 중소 규모의 트래픽이 있는 웹 서버에 적합합니다. |
+| **계산 최적화** | 계산 최적화 VM은 높은 CPU-메모리 비율을 제공하도록 설계되었습니다. 중간 규모의 트래픽이 있는 웹 서버, 네트워크 어플라이언스, 일괄 처리 프로세스 및 응용 프로그램 서버에 적합합니다. |
+| **메모리 최적화** | 메모리 최적화 VM은 높은 메모리-CPU 비율을 제공하도록 설계되었습니다. 관계형 데이터베이스 서버, 중대형 캐시 및 메모리 내 분석에 적합합니다. |
+| **저장소 최적화** | 저장소 최적화 VM은 높은 디스크 처리량과 IO를 제공하도록 설계되었습니다. 데이터베이스를 실행하는 VM에 적합합니다. |
+| **GPU** | GPU VM은 고급 그래픽 렌더링 및 비디오 편집을 목표로 하는 전문화된 가상 머신입니다. 이러한 VM은 딥 러닝을 통한 모델 학습 및 추론에 적합한 옵션입니다. |
+| **고성능 계산** | 고성능 계산은 선택적인 높은 처리량 네트워크 인터페이스를 갖춘 가장 빠르고 강력한 CPU 가상 머신입니다. |
 
-You're able to filter on the workload type when you configure the VM size in the Azure. The size you choose directly affects the cost of your service. The more CPU, memory, and GPU you need, the higher the price point.
+Azure에서 VM 크기를 구성할 때 워크로드 유형을 필터링할 수 있습니다. 선택하는 크기는 서비스 비용에 직접적인 영향을 줍니다. 더 CPU, 메모리 및 GPU 해야, 높을수록 가격 지점입니다.
 
 <a name="VM_Cost" />
 
-### Understanding the pricing model
+### <a name="understanding-the-pricing-model"></a>가격 책정 모델 이해
 
-There are two separate costs the subscription will be charged for every VM: compute and storage.
+구독에는 각 VM에 대해 별도로 부과되는 두 가지 비용, 즉 계산 및 저장소 비용이 있습니다.
 
-**Compute costs** - Compute expenses are priced on a per-hour basis but billed on a per-minute basis. For example, you are only charged for 55 minutes of usage if the VM is deployed for 55 minutes. You are not charged for compute capacity if you stop and deallocate the VM since this releases the hardware. The hourly price varies based on the VM size and OS you select. The cost for a VM includes the charge for the Windows operating system. Linux-based instances are cheaper because there is no operating system license charge.
+**계산 비용** - 시간당 가격으로 책정되지만 분당 요금으로 청구됩니다. 예를 들어 VM이 55분 동안 배포된 경우 55분에 대한 요금만 부과됩니다. VM을 중지하고 할당을 해제하면 하드웨어가 해제되므로 계산 용량에 대해 청구되지 않습니다. 시간당 가격은 선택한 VM 크기와 OS에 따라 다릅니다. VM 비용에는 Windows 운영 체제에 대한 요금이 포함됩니다. Linux 기반 인스턴스는 운영 체제 라이선스 비용이 들지 않으므로 더 저렴합니다.
 
 > [!TIP]
-> You might be able to save money by reusing existing licenses for Windows with the **Azure Hybrid benefit**.
+> **Azure 하이브리드 혜택**을 사용하여 Windows에 대한 기존 라이선스를 다시 사용하여 비용을 절약할 수 있습니다.
 
-**Storage costs** - You are charged separately for the storage the VM uses. The status of the VM has no relation to the storage charges that will be incurred; even if the VM is stopped/deallocated and you aren’t billed for the running VM, you will be charged for the storage used by the disks.
+**저장소 비용** - VM에서 사용하는 저장소에 대한 요금은 별도로 부과됩니다. VM 상태는 발생할 저장소 비용과 아무 관련이 없습니다. VM이 중지/할당 해제되고 실행 중인 VM에 대해 요금이 청구되지 않더라도 디스크에서 사용하는 저장소에 대한 요금은 부과됩니다.
 
-You're able to choose from two payment options for compute costs.
+계산 비용은 다음 두 가지 지불 옵션 중에서 선택할 수 있습니다.
 
-| Option | Description |
+| 옵션 | 설명 |
 |--------|-------------|
-| **Pay as you go** | With the **pay-as-you-go** option, you pay for compute capacity by the second, with no long-term commitment or upfront payments. You're able to increase or decrease compute capacity on demand as well as start or stop at any time. Prefer this option if you run applications with short-term or unpredictable workloads that cannot be interrupted. For example, if you are doing a quick test, or developing an app in a VM, this would be the appropriate option. |
-| **Reserved Virtual Machine Instances** | The Reserved Virtual Machine Instances (RI) option is an advance purchase of a virtual machine for one or three years in a specified region. The commitment is made up front, and in return, you get up to 72% price savings compared to pay-as-you-go pricing. **RIs** are flexible and can easily be exchanged or returned for an early termination fee. Prefer this option if the VM has to run continuously, or you need budget predictability, **and** you can commit to using the VM for at least a year. |
+| **종량제** | 사용 하 여 합니다 **종 량 제** 옵션 지불 계산 용량에 대 한 장기 약정 금액 또는 선불 결제 없이 초 단위로 합니다. 언제든지 시작하거나 중지할 수 있을 뿐만 아니라 필요할 때마다 계산 용량을 늘리거나 줄일 수도 있습니다. 중단 될 수 없는 단기 또는 예측할 수 없는 워크 로드를 사용 하 여 응용 프로그램을 실행 하는 경우이 옵션을 선호 합니다. 예를 들어 빠른 테스트를 수행하거나 VM에서 응용 프로그램을 개발하는 경우에 적절한 옵션입니다. |
+| **Reserved Virtual Machine Instances** | RI(Reserved Virtual Machine Instances) 옵션은 지정한 지역에서 1년 또는 3년 동안 가상 머신을 사전 구매하는 옵션입니다. 약정은 선불 조건으로 체결되며, 대신 종량제 가격 책정에 비해 최대 72%의 가격 절감 효과를 얻을 수 있습니다. **RI**는 유연하며 조기 해지 수수료로 쉽게 교환하거나 반환할 수 있습니다. VM을 지속적으로 실행해야 하거나 예산 예측이 필요한 경우 이 옵션을 선택하는 것이 좋습니다. **그리고** VM을 1년 이상 사용하도록 약정할 수 있습니다. |
 
 <a name="VM_Storage" />
 
-### Storage for the VM
+### <a name="storage-for-the-vm"></a>VM에 대한 저장소
 
-All Azure virtual machines will have at least two virtual hard disks (VHDs). The first disk stores the operating system, and the second is used as temporary storage. You can add additional disks to store application data; the maximum number is determined by the VM size selection (typically two per CPU). It's common to create one or more data disks, particularly since the OS disk tends to be quite small. Also, separating out the data to different VHDs allows you to manage the security, reliability, and performance of the disk independently.
+모든 Azure 가상 머신에는 둘 이상의 VHD(가상 하드 디스크)가 있습니다. 첫 번째 디스크의 운영 체제를 저장 하 고 두 번째 임시 저장소로 사용 됩니다. 추가 디스크를 추가하여 응용 프로그램 데이터를 저장할 수 있습니다. 최대 수는 VM 크기 선택에 따라 결정됩니다(일반적으로 CPU당 2개). 특히 OS 디스크가 매우 작으므로 하나 이상의 데이터 디스크를 만드는 것이 일반적입니다. 또한 데이터 다른 Vhd 분리 하는 보안, 안정성 및 디스크의 성능을 독립적으로 관리할 수 있습니다.
 
-The data for each VHD is held in **Azure Storage** as page blobs, which allows Azure to allocate space only for the storage you use. It's also how your storage cost is measured; you pay for the storage you are consuming.
+각 VHD에 대 한 데이터에 보관 됩니다 **Azure Storage** blob, 페이지와 Azure를 사용 하는 저장소에 대해서만 공간을 할당할 수 있습니다. 사용하는 저장소에 대한 요금을 지불하므로 저장소 비용을 측정하는 방법이기도 합니다.
 
-#### What is Azure Storage?
+#### <a name="what-is-azure-storage"></a>Azure Storage란?
 
-Azure Storage is Microsoft's cloud-based data storage solution. It supports almost any type of data and provides security, redundancy, and scalable access to the stored data. A storage account provides access to objects in Azure Storage for a specific subscription. VMs always have one or more storage accounts to hold each attached virtual disk.
+Azure Storage는 Microsoft의 클라우드 기반 데이터 저장소 솔루션입니다. 거의 모든 형식의 데이터를 지원하며, 저장된 데이터에 대한 보안, 중복성 및 확장 가능한 액세스를 제공합니다. 저장소 계정은 특정 구독의 Azure Storage에 있는 개체에 대한 액세스를 제공합니다. VM에는 항상 각각의 연결된 가상 디스크를 보관할 저장소 계정이 하나 이상 있습니다.
 
-Virtual disks can be backed by either **Standard** or **Premium** Storage accounts. Azure Premium Storage leverages solid-state drives (SSDs) to enable high performance and low latency for VMs running I/O-intensive workloads. Use Azure Premium Storage for production workloads, especially those that are sensitive to performance variations or are I/O intensive. For development or testing, Standard storage is fine.
+가상 디스크는 **Standard** 또는 **Premium** Storage 계정을 통해 백업할 수 있습니다. Azure Premium Storage는 SSD(반도체 드라이브)를 활용하여 I/O 집약적인 워크로드를 실행하는 VM에 고성능 및 짧은 대기 시간을 지원합니다. 프로덕션 워크로드, 특히 성능 변화에 민감하거나 I/O 집약적인 워크로드에는 Azure Premium Storage를 사용합니다. 개발 또는 테스트에는 Standard Storage가 적합합니다.
 
-When you create disks, you will have two options for managing the relationship between the storage account and each VHD. You can choose either **unmanaged disks** or **managed disks**.
+디스크를 만들 때 저장소 계정과 각 VHD 간의 관계를 관리하는 다음 두 가지 옵션이 제공됩니다. **관리되지 않는 디스크** 또는 **관리 디스크** 중 하나를 선택할 수 있습니다.
 
-| Option | Description |
+| 옵션 | 설명 |
 |--------|-------------|
-| **Unmanaged disks** | With unmanaged disks, you are responsible for the storage accounts that are used to hold the VHDs that correspond to your VM disks. You pay the storage account rates for the amount of space you use. A single storage account has a fixed-rate limit of 20,000 I/O operations/sec. This means that a storage account is capable of supporting 40 standard virtual hard disks at full utilization. If you need to scale out with more disks, then you'll need more storage accounts, which can get complicated. |
-| **Managed disks** | Managed disks are the **newer and recommended disk storage model**. They elegantly solve this complexity by putting the burden of managing the storage accounts onto Azure. You specify the size of the disk, up to 4 TB, and Azure creates and manages both the disk _and_ the storage. You don't have to worry about storage account limits, which makes managed disks easier to scale out. |
+| **관리되지 않는 디스크** | 관리되지 않는 디스크의 경우 VM 디스크에 해당하는 VHD를 유지하는 데 사용되는 저장소 계정을 관리해야 합니다. 사용하는 공간에 대한 저장소 계정 요금을 사용자가 지불해야 합니다. 단일 저장소 계정에 고정 비율 최대 20,000 I/O 작업/초 이 저장소 계정은 표준 전체 사용률로 가상 40 하드 디스크를 지원할 수 임을 의미 합니다. 더 많은 디스크로 확장해야 하는 경우 둘 이상의 저장소 계정이 더 많이 필요하며, 이에 따라 복잡해질 수 있습니다. |
+| **관리 디스크** | 관리 디스크는 **권장되는 최신 디스크 저장소 모델**입니다. 이러한 복잡성은 Azure에서 저장소 계정을 관리하도록 하여 원활하게 해결합니다. 최대 4TB의 디스크 크기를 지정하고, Azure에서 디스크와 저장소를 _모두_ 만들고 관리합니다. 저장소 계정 제한에 대해 걱정할 필요가 없으므로 관리 디스크를 더 쉽게 확장할 수 있습니다. |
 
 <a name="VM_OS" />
 
-### Select an operating system
+### <a name="select-an-operating-system"></a>운영 체제 선택
 
-Azure provides a variety of OS images that you can install into the VM, including several versions of Windows and flavors of Linux. As mentioned earlier, the choice of OS will influence your hourly compute pricing as Azure bundles the cost of the OS license into the price.
+Azure는 다양 한 여러 버전의 Windows 및 Linux의 버전을 포함 하 여 VM에 설치할 수 있는 OS 이미지를 제공 합니다. 앞에서 설명한 대로 Azure에서 OS 라이선스 비용을 가격에 번들로 묶어 제공하므로 OS를 선택하면 시간당 계산 가격 책정에 영향을 줍니다.
 
-If you are looking for more than just base OS images, you can search the Azure Marketplace for more sophisticated install images that include the OS and popular software tools installed for specific scenarios. For example, if you needed a new WordPress site, the standard technology stack would consist of a Linux server, Apache web server, a MySQL database, and PHP. Instead of setting up and configuring each component, you can leverage a Marketplace image and install the entire stack all at once.
+기본 OS 이미지가 아닌 다른 이미지를 찾으려면 Azure Marketplace에서 특정 시나리오에 맞게 설치된 OS 및 인기 있는 소프트웨어 도구가 포함된 더 정교한 설치 이미지를 검색할 수 있습니다. 예를 들어, 새 WordPress 사이트를 필요한 경우 표준 기술 스택은 Linux 서버, Apache 웹 서버, MySQL 데이터베이스를 및 PHP 구성. 각 구성 요소를 설치하고 구성하는 대신 Marketplace 이미지를 활용하고 전체 스택을 한 번에 설치할 수 있습니다.
 
-Finally, if you can't find a suitable OS image, you can create your disk image with what you need, upload it to Azure storage, and use it to create an Azure VM. Keep in mind that Azure only supports 64-bit operating systems.
+마지막으로 적합 한 OS 이미지를 찾을 수 없으면, 새로운 필요, Azure storage에 업로드 하는 Azure VM을 만드는 데 사용할를 사용 하 여 디스크 이미지를 만들 수 있습니다. Azure는 64비트 운영 체제만 지원합니다.

@@ -1,39 +1,36 @@
 ### YamlMime:Module
 uid: learn.create-serverless-logic-with-functions
 metadata:
-  title: Create serverless logic with Azure Functions
-  description: Azure Functions allow you to host business logic that can be executed without managing or provisioning server infrastructure
+  title: Azure Functions를 사용하여 서버리스 논리 만들기
+  description: 'Azure Functions를 사용하여, 서버 인프라를 관리하거나 프로비전하지 않고도 실행할 수 있는 비즈니스 논리를 호스트할 수 있습니다.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Create serverless logic with Azure functions
-summary: Azure Functions allows developers to host business logic that can be executed without managing or provisioning infrastructure. 
-abstract:  | 
-  In this module, you will:
-  - Decide if serverless computing is right for your business need
-  - Create an Azure function app in the Azure portal
-  - Execute a function using triggers
-  - Monitor and test your Azure function from the Azure portal
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Azure Functions를 사용하여 서버리스 논리 만들기
+summary: '개발자는 Azure Functions를 사용하여, 인프라를 관리하거나 프로비전하지 않고도 실행할 수 있는 비즈니스 논리를 호스트할 수 있습니다.'
+abstract: |
+  이 모듈에서는 다음을 수행합니다.
+  - 비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정
+  - Azure portal에서 Azure 함수 앱 만들기
+  - 트리거를 사용하여 함수 실행
+  - 모니터링 하 고 Azure portal에서 Azure 함수 테스트
+prerequisites: 없음
+iconUrl: /learn/achievements/create-serverless-logic-with-azure-functions.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-functions
-- azure-portal
+  - azure
+  - azure-functions
+  - azure-portal
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
-- learn.create-serverless-logic-with-functions.1-introduction
-- learn.create-serverless-logic-with-functions.2-decide-if-serverless-computing-is-right-for-your-business-need
-- learn.create-serverless-logic-with-functions.3-create-an-azure-functions-app-in-the-azure-portal
-- learn.create-serverless-logic-with-functions.4-creating-and-executing-an-azure-function
-- learn.create-serverless-logic-with-functions.5-add-logic-to-the-function-app
-- learn.create-serverless-logic-with-functions.6-summary
+  - learn.create-serverless-logic-with-functions.1-introduction
+  - learn.create-serverless-logic-with-functions.2-decide-if-serverless-computing-is-right-for-your-business-need
+  - learn.create-serverless-logic-with-functions.3-create-an-azure-functions-app-in-the-azure-portal
+  - learn.create-serverless-logic-with-functions.4-creating-and-executing-an-azure-function
+  - learn.create-serverless-logic-with-functions.5-add-logic-to-the-function-app
+  - learn.create-serverless-logic-with-functions.6-summary
 achievement: learn.create-serverless-logic-with-functions.badge

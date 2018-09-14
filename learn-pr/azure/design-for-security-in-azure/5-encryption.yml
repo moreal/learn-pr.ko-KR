@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.5-encryption
-title: Encryption
+title: 암호화
 metadata:
-  title: Encryption
-  description: In this unit we'll discuss how to use encryption to secure your architecture
+  title: 암호화
+  description: 이 섹션에서는 암호화를 사용하여 아키텍처를 보호하는 방법을 알아보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/5-encryption.md)]
 quiz:
-  title: 'Knowledge Check - Encryption'
+  title: 지식 검사 - 암호화
   questions:
-  - content: 'Only Windows virtual machines can use Azure Disk Encryption'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Azure Disk Encryption is available for both Windows and Linux virtual machines.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Azure Disk Encryption is available for both Windows and Linux virtual machines.'
-  - content: 'When classifying data, which of the following is a factor when determining its classification?'
-    choices:
-    - content: 'Level of risk posed to customers if exposed'
-      isCorrect: true
-      correctExplanation: 'The level of risk posed to customers if data is exposed is a key factor in its classification.'
-    - content: 'Method of data transport'
-      isCorrect: false
-      incorrectExplanation: 'The method of data transport is important once data has been classified, but is not a factor in determining its classification.'
-    - content: 'Whether the data is stored on virtual machines or in a database'
-      isCorrect: false   
-      incorrectExplanation: 'The location of storage may be dependant on the classification of data, but is not a factor when determining the classification.' 
-    - content: 'The amount of data stored'
-      isCorrect: false
-      incorrectExplanation: 'The amount of data being stored is irrelevant in its classification.'
+    - content: Windows 가상 머신만이 Azure Disk Encryption을 사용할 수 있음
+      choices:
+        - content: 'True'
+          isCorrect: false
+          incorrectExplanation: Azure Disk Encryption은 Windows 및 Linux 가상 머신을 사용할 수 있습니다.
+        - content: 'False'
+          isCorrect: true
+          correctExplanation: Azure Disk Encryption은 Windows 및 Linux 가상 머신을 사용할 수 있습니다.
+    - content: 데이터 분류를 결정할 때에 요소는 다음 분류 하는 경우?
+      choices:
+        - content: 노출 시 고객이 부담해야 하는 위험 수준
+          isCorrect: true
+          correctExplanation: 데이터에 노출 되는 경우 고객에 게 제기 되는 위험 수준 분류에서 중요 한 요소입니다.
+        - content: 데이터 전송 방법
+          isCorrect: false
+          incorrectExplanation: 데이터 분류 된 있지만 해당 분류를 결정 하는 데 영향을 주지 않습니다 데이터 전송 방법은 중요 합니다.
+        - content: 데이터가 가상 머신에 저장되는지 아니면 데이터베이스에 저장되는지 여부
+          isCorrect: false
+          incorrectExplanation: 저장소의 위치 데이터의 분류에 종속 될 수 있습니다 하지만 영향을 주지 않습니다 분류를 결정 하는 경우.
+        - content: 저장된 데이터의 양
+          isCorrect: false
+          incorrectExplanation: 분류에서 저장 되는 데이터 양을 관련이 없습니다.

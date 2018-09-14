@@ -1,0 +1,38 @@
+### YamlMime:Module
+uid: learn.scale-and-size-virtual-machines
+metadata:
+  title: 가상 머신 확장 및 크기
+  description: 요청 및 제어 비용을 처리 하는 데 필요한 가상 머신의 CPU 및 메모리 리소스를 변경할 수 있습니다. 수요 예측 가능한 이며 자주 변경 되지 않는 경우 수동 조정 작업할 수 있습니다. 자동화 된 솔루션은 워크 로드의 예기치 못한 방식 또는 자주 변경 되 면 합니다. 여기에서 개별 서버 크기를 수정 하거나 사용 가능한 컴퓨터의 수를 변경 하 여 가상 컴퓨터의 기능을 제어 하는 방법을 표시 됩니다. 이 모두 및 사용 하 여 수동으로 확장 집합 및 자동 크기 조정을 수행 하는 방법을 설명 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 가상 머신 확장 및 크기
+summary: 수동으로 또는 자동 크기 조정을 사용 하 여 가상 컴퓨터 계산 및 저장소 power를 조정 합니다.
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - 크기를 조정 하 여 가상 머신을 수직으로 확장
+  - 확장 집합을 사용 하 여 가상 머신 수평 확장
+  - 자동 크기 조정 구성
+prerequisites: |
+  - PowerShell 또는 Bash 같은 명령줄 인터페이스 경험
+  - 리소스 그룹 및 가상 머신과 같은 Azure 기본 개념에 대 한 지식이
+  - Azure portal을 사용 하 여 Azure 리소스를 관리 해 본 경험
+iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
+levels:
+  - intermediate
+roles:
+  - developer
+products:
+  - azure
+  - azure-virtual-machines
+units:
+  - learn.scale-and-size-virtual-machines.1-introduction
+  - learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
+  - learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
+  - learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+  - learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
+  - learn.scale-and-size-virtual-machines.6-knowledge-check
+  - learn.scale-and-size-virtual-machines.7-summary
+achievement: learn.scale-and-size-virtual-machines.badge

@@ -1,0 +1,37 @@
+### YamlMime:Module
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache
+metadata:
+  title: Azure Redis Cache에서 데이터를 변경할 수 및 부분 작업
+  description: '트랜잭션을 만들, 메모리, 관리, Azure Redis Cache를 사용 하 여 캐시 배제 패턴을 사용 하는 방법을 알아봅니다'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Azure Redis Cache에서 데이터를 변경할 수 및 부분 작업
+summary: Azure Redis Cache를 사용 하 여 데이터를 저장할 자주 액세스 합니다. 트랜잭션을 만들 메모리를 관리 하 고 캐시 배제 패턴을 사용 하는 방법에 알아봅니다.
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - 여러 작업을 트랜잭션으로 그룹화
+  - 데이터에는 만료 시간 설정
+  - 메모리 부족 조건을 관리합니다
+  - 캐시 배제 패턴 사용
+prerequisites: 없음
+iconUrl: /learn/achievements/work-with-mutuable-and-partial-data-in-a-redis-cache.svg
+levels:
+  - intermediate
+roles:
+  - developer
+products:
+  - azure
+units:
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.1-introduction
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.3-create-a-transaction
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.6-eviction-policies
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-set-eviction-policy
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-cache-aside-pattern
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.9-summary
+achievement: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge

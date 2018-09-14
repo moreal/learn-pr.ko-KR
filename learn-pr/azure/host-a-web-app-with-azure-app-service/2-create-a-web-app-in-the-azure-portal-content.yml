@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-app-service.2-create-a-web-app-in-the-azure-portal
+title: Azure portal에서 웹 앱 만들기
+metadata:
+  title: Azure portal에서 웹 앱 만들기
+  description: Azure portal에서 웹 응용 프로그램 만들기
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-create-a-web-app-in-the-azure-portal.md)]

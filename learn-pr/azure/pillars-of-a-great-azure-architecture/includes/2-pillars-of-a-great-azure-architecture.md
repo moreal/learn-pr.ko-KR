@@ -1,50 +1,52 @@
-The cloud has changed the way organizations solve their business challenges, and how applications and systems are designed. The role of a solution architect is not only to deliver business value through the functional requirements of the application, but to ensure the solution is designed in ways that are scalable, resilient, efficient and secure. Solution architecture is concerned with the planning, design, implementation, and ongoing improvement of a technology system. The architecture of a system must balance and align the business requirements with the technical capabilities needed to execute those requirements. It includes an evaluation of risk, cost, and capability throughout the system and its components.
+클라우드 해결 조직 들이 비즈니스 문제, 응용 프로그램 및 시스템 디자인 방식으로 변경 되었습니다. 솔루션 설계자의 역할에는 응용 프로그램의 기능 요구 사항을 통해 비즈니스 가치를 제공할 뿐 아니라 확장성, 탄력성, 효율성 및 보안 방식으로 솔루션을 디자인할 수 있도록입니다. 솔루션 아키텍처 계획, 디자인, 구현 및 기술 시스템의 지속적인 향상 관련이 있습니다. 시스템의 아키텍처는 이러한 요구 사항을 실행하는 데 필요한 기술적 역량에 맞추어 비즈니스 요구 사항을 정렬하고 둘 사이의 균형을 유지해야 합니다. 아키텍처는 위험, 비용 및 시스템과 그 구성 요소의 역량에 대한 평가를 포함합니다.
 
-While there is no one-size-fits-all approach to designing an architecture, there are some universal concepts that will apply regardless of the architecture, technology, or cloud provider. While these are not all-inclusive, focusing on these concepts will help you build a reliable, secure, and flexible foundation for your application.
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEv2]
 
-A great architecture starts with a solid foundation built on four pillars:
+없는 보편적으로 적용할 아키텍처를 디자인할 때 가지 아키텍처, 기술 또는 클라우드 공급자에 관계 없이 적용 되는 일부 유니버설 개념이 있습니다. 이러한는 전체가 포함 되어야 하는 동안 이러한 개념에 집중 하면 안정성, 보안 및 유연한 응용 프로그램을 위한 기반 구축 수 있습니다.
 
-* Security
-* Performance and scalability
-* Availability and recoverability
-* Efficiency and operations
+좋은 아키텍처는 다음의 네 가지 핵심 요소 위에 빌드된 견고한 기반으로 시작됩니다.
 
-![Pillars of a great architecture](../media-draft/pillars.png)
+* 보안
+* 성능 및 확장성
+* 가용성 및 복구 기능
+* 효율성 및 작업
 
-## Security
+![훌륭한 아키텍처의 핵심 요소](../media-draft/pillars.png)
 
-Data in various forms is the most valuable piece of your organization's technical footprint. In this pillar, you'll be focused on securing access to your architecture through authentication and protecting your application and data from network vulnerabilities. The integrity of your data should be protected as well, using tools like encryption.
+## <a name="security"></a>보안
 
-You must think about security throughout the entire lifecycle of your application, from design and implementation to deployment and operations. The cloud provides protections against a variety of threats, such as network intrusion and DDoS attacks, but you still need to build security into your application, processes, and organizational culture.
+다양 한 형식의 데이터가 조직의 기술 사용 공간이 가장 중요 한 부분입니다. 이 핵심 요소에서는 인증을 통해 아키텍처에 대한 액세스를 보호하고 네트워크 취약성으로부터 응용 프로그램 및 데이터를 보호하는 데 집중하겠습니다. 암호화 같은 도구를 사용하여 데이터의 무결성도 보호해야 합니다.
 
-![Types of attacks](../media-draft/security.png)
+디자인 및 배포 및 작업 구현에서 응용 프로그램의 전체 수명 주기 전체에서 보안을 고려해 야 합니다. 클라우드는 다양 한 네트워크 침입 및 DDoS 공격을 같은 위협에 대 한 보호를 제공 하지만 여전히 응용 프로그램, 프로세스 및 조직 문화에 보안을 구축 해야 합니다.
 
-## Performance and scalability
+![공격 유형](../media-draft/security.png)
 
-For an architecture to perform well and be scalable, it should properly match resource capacity to demand. Traditionally, cloud architectures do so by scaling applications dynamically based off activity in the application. Demand for services change, so it's important for your architecture to have the ability to adjust to demand as well. By designing your architecture with performance and scalability in mind, you'll provide a great experience for your customers while being cost-effective.
+## <a name="performance-and-scalability"></a>성능 및 확장성
 
-![Graphic depicting large influx of data or requests](../media-draft/performance-demand.png))
+아키텍처가 잘 작동하고 확장 가능하려면 요구와 리소스 역량을 적절히 일치시켜야 합니다. 일반적으로 클라우드 아키텍처는 응용 프로그램의 작업을 기반으로 응용 프로그램을 동적으로 크기 조정하여 일치시킵니다. 서비스 변경에 대한 요구가 있으므로 아키텍처에 요구에 맞게 조정할 수 있는 역량이 있어야 합니다. 성능 및 확장성을 염두에 두고 아키텍처를 설계함으로써 고객에게 비용 효율적이면서 뛰어난 환경을 제공할 수 있습니다.
 
-## Availability and recoverability
+![데이터나 요청의 대규모 유입을 보여주는 그래픽](../media-draft/performance-demand.png))
 
-Every architect’s worst fear is having your architecture go down with no way to recover it. A successful cloud environment is designed in a way that anticipates failure at all levels. Part of anticipating these failures is designing a system that can recover from the failure, within the time required by your stakeholders and customers.
+## <a name="availability-and-recoverability"></a>가용성 및 복구 기능
 
-![System failure](../media-draft/system-failure.png)
+모든 설계자가 가장 두려워하는 것은 아키텍처가 어떤 복구 방법도 없이 중단되는 것입니다. 성공적인 클라우드 환경은 모든 수준의 오류를 예측할 수 있는 방식으로 설계됩니다. 이러한 오류 예측의 일부는 관련자와 고객이 요구하는 시간 내에 오류를 복구할 수 있는 시스템을 설계하는 것입니다.
 
-## Efficiency and operations
+![시스템 오류](../media-draft/system-failure.png)
 
-You will want to design your cloud environment so that it's cost-effective to operate and develop against. Inefficiency and waste in cloud spending should be identified to ensure you're spending money where we can make the greatest use of it. You need to have a good monitoring architecture in place so that you can detect failures and problems before they happen or, at a minimum, before your customers notice. You also need to have some visibility in to how your application is using its available resources, through a robust monitoring framework.
+## <a name="efficiency-and-operations"></a>효율성 및 작업
 
-![Efficiency](../media-draft/efficiency.png)
+비용 효율적 작동 하 고 개발할 수 있도록 클라우드 환경 설계 해야 합니다. 비효율성 및 낭비 클라우드에서 지출 한도 식별 해야의 가장 큰 사용할 수 있도록 하는 비용을 투자 하도록 합니다. 고객이 전에 발생 하기 전에 오류 및 문제를 감지할 수 있도록, 최소한 올바른 모니터링 아키텍처를 적절 하 게 해야 합니다. 응용 프로그램 강력한 모니터링 프레임 워크를 통해 사용할 수는 리소스를 사용 하는 방법 몇 가지 가시성을 갖도록 해야 합니다.
 
-## Shared responsibility
+![효율성](../media-draft/efficiency.png)
 
-Moving to the cloud introduces a model of shared responsibility. In this model, your cloud provider will manage certain aspects of your application, leaving you with the remaining responsibility. In an on-premises environment you are responsible for everything. As you move to infrastructure as a service (IaaS), then to platform as a service (PaaS) and software as a service (SaaS), your cloud provider will take on more of this responsibility. This shared responsibility will play a role in your architectural decisions, as they can have implications on cost, operational capabilities, security, and the technical capabilities of your application. By shifting these responsibilities to your provider you can focus on brining value to your business and move away from activities that aren't a core business function.
+## <a name="shared-responsibility"></a>공동 책임
 
-![Cloud service models](../media-draft/cloud-responsibility-model.png)
+클라우드로 이동 하는 공유 책임 모델을 도입 되었습니다. 이 모델에서는 클라우드 공급자는 관리 응용 프로그램의 특정 측면 나머지 책임으로 남게 합니다. 온-프레미스 환경에서 모든 항목에 대해 담당합니다. 인프라 (IaaS) 서비스로 이동 하면 platform-as-a-service (PaaS) 및 소프트웨어 서비스 (SaaS)로이 책임으로 클라우드 공급자 수행 됩니다. 비용, 운영 기능, 보안 및 응용 프로그램의 기술적 역량에 미치는 영향 수 있는 이러한 공유 책임 역할 아키텍처 관련 결정 사항을 재생 됩니다. 공급자에 이러한 책임을 이동 하 여 brining 여 비즈니스에 가치에 집중할 수 있으며 핵심 업무 기능과 없는 활동 변화를 추구할 수 있습니다.
 
-## Design choices
+![클라우드 서비스 모델](../media-draft/cloud-responsibility-model.png)
 
-In an ideal architecture, we would build the most secure, high performance, highly available, and efficient environment possible. However, as with everything, there are trade-offs. To build an environment with the highest level of all these pillars, there is a cost. That cost may be in actual money, time to deliver, or operational agility. Every organization will have different priorities that will impact the design choices made in each pillar. As you design your architecture, you will need to determine what trade-offs are acceptable and which are not.
+## <a name="design-choices"></a>설계 선택
 
-When building an Azure architecture, there are many considerations to keep in mind. You want your architecture to be secure, scalable, available, and recoverable. To make that possible, you'll have to make decisions based on cost, organizational priorities, and risk.
+이상적인 아키텍처에서 가능한 한 가장 안정적이고 높은 성능 및 항상 사용 가능하고 효율적인 환경을 빌드하게 됩니다. 그러나 모든 경우가 그런 것처럼 단점이 있습니다. 이러한 모든 핵심 요소 중 가장 높은 수준으로 환경을 빌드하려면 비용이 발생합니다. 해당 비용은 실제 금액, 배달 시간 또는 운영의 민첩성일 수 있습니다. 모든 조직마다 각 핵심 요소에 따른 설계 선택에 영향을 주는 다른 우선 순위가 있습니다. 아키텍처를 설계할 때 어떤 장단점은 허용 되지 않는 확인 해야 합니다.
+
+Azure 아키텍처를 빌드할 때는 많은 고려 사항을 염두에 두어야 합니다. 아키텍처가 안전하고, 확장 가능하며, 사용 가능하고, 복구 가능하게 되기를 원합니다. 가능 하 게, 비용, 조직의 우선 순위 및 위험에 따라 결정 해야 합니다.

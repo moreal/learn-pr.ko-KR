@@ -1,16 +1,16 @@
-Your business relies on access to the systems and data that make it run. If something happened to cause a loss of availability, even for a short period of time, it could be disastrous for the bottom line. Every minute that your customers or your internal workers don’t have access to what they need results in a loss of revenue. It is our job to make sure that doesn’t happen.
+비즈니스는 시스템 및 프로그램을 실행 하는 데이터에 대 한 액세스에 의존 합니다. 짧은 기간에 대해서도 가용성의 손실에 무슨 일 결론을 초래할 수 있습니다. 고객 또는 내부 작업 자가 없는 무엇에 액세스 하는 1 분 마다 수익 손실 발생 해야 합니다. 이 되도록 작업 발생 하지 않습니다.
 
-As we learn about architecting our cloud solutions to be highly available and to have the capability to recover from localized and widespread issues, we'll see how one fictional Azure customer puts these principles to work:
+방법을 가상의 Azure 클라우드 솔루션 가용성이 높아야 하 고 지역화 및 광범위 한 문제에서 복구 하는 기능을 설계 하는 방법에 대 한 알아보면 살펴보겠습니다 고객 작동 하도록 이러한 원칙을 배치 합니다.
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare는 국립 의료 서비스 공급자입니다. Lamna Healthcare의 IT 조직은 최근에 대부분의 IT 시스템을 Azure로 이동했습니다. 사용자 지정 응용 프로그램, 오픈 소스 앱 및 다양 한 아키텍처 및 기술 플랫폼을 사용 하 여 상업용 응용 프로그램의 혼합을 갖습니다. 시스템을 유지 하면서 클라우드로 마이그레이션할 하기 위해 필요한 알아보겠습니다 및 데이터 보호.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It's highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> 이 모듈에 설명 된 개념 모든 제품을 포함 하지 않지만 클라우드 솔루션을 빌드할 때 중요 한 고려 사항 중 일부를 나타냅니다. Microsoft는 광범위 한 패턴, 지침 및 Azure에서 응용 프로그램 디자인에 대 한 예제를 게시 합니다. 콘텐츠를 확인 하는 것이 좋습니다 합니다 [Azure 아키텍처 센터](https://docs.microsoft.com/azure/architecture/) 계획 및 아키텍처 설계를 시작 합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서 수행하는 작업:
 
-- Leverage Azure services to design a highly available application
-- Incorporate Azure disaster recovery capabilities into your architecture
-- Back up and restore on Azure to protect your application from data loss or corruption
+- Azure 서비스를 활용하여 고가용성 응용 프로그램 설계
+- Azure 재해 복구 기능 아키텍처에 통합
+- 백업 및 데이터 손실이 나 손상 으로부터 응용 프로그램을 보호 하기 위해 Azure에서 복원

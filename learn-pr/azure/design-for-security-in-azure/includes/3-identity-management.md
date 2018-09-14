@@ -1,111 +1,111 @@
-Lamna Healthcare hosts a legacy internal application and web portal for its clinicians to manage patient health data. The organization has received many requests for this application to be available to caregivers who are often on-site with patients and therefore outside of the network. 
+Lamna Healthcare는 의사들이 환자 건강 데이터를 관리할 수 있는 레거시 내부 응용 프로그램 및 웹 포털을 호스팅합니다. 종종 온-프레미스에서 환자를 돌보는, 따라서 네트워크 외부에 있는 간병인도 이 응용 프로그램을 사용할 수 있게 해달라는 요청이 많이 들어왔습니다. 
 
-A recent data leak by malicious agents has forced the company to tighten its password policies. They are now requiring users to change their passwords more frequently and use longer, more complex passwords. This has led to the unwanted side-effect of users recording complex passwords insecurely as they struggle to remember multiple sets of credentials created for different administrative roles. 
+최근에 악성 에이전트에 의해 데이터가 유출되는 사건이 발생하면서 병원의 암호 정책이 강화되었습니다. 이제 사용자는 암호를 더 자주 변경해야 하고, 더 길고 복잡한 암호를 사용해야 합니다. 이로 인해 여러 관리 역할에 대해 생성된 여러 자격 증명 집합을 기억하는 데 어려움을 느낀 사용자들이 복잡한 암호를 안전하지 않게 기록해 두는 의도치 않은 부작용이 발생했습니다. 
 
-Here, we'll discuss identity as a security layer for internal and external applications, the benefits of single sign-on (SSO) and multi-factor authentication (MFA) to provide identity security, and why to consider replicating on-premises identities to Azure Active Directory.
+여기에 내부 및 외부 응용 프로그램에서 single sign-on (SSO) 및 multi-factor authentication (MFA)의 이점을 id 보안을 제공 하는 보안 계층으로 identity 하겠습니다 및 복제할 것을 고려 하는 이유 온-프레미스 Azure id Active Directory입니다.
 
-## Identity as a layer of security
+## <a name="identity-as-a-layer-of-security"></a>보안 레이어로써의 ID
 
-Digital identities are an integral part of today's business and social interactions on-premises and online. In the past, identity and access services were restricted to operating within a company's internal network, using protocols such as Kerberos and LDAP that were designed for this purpose. More recently, mobile devices have become the primary way people interact with digital services. Customers and employees alike expect to be able to access services from anywhere at any time, which has driven the development of identity protocols that can work at internet scale across many disparate devices and operating systems.
+디지털 ID는 오늘날 비즈니스 및 소셜 상호 작용 온-프레미스와 온라인에서 없어서는 안되는 요소입니다. 과거에는 ID 및 액세스 서비스는 이 용도로 설계된 Kerberos 및 LDAP 같은 프로토콜을 사용하여 회사 내부 네트워크에서만 작동하도록 제한되었습니다. 최근에는 사람들이 주로 모바일 장치를 사용하여 디지털 서비스와 상호 작용합니다. 고객과 직원 모두 언제, 어디서나 서비스에 액세스할 수 있기를 원하며, 이로 인해 여러 별도의 장치 및 운영 체제에서 인터넷 규모로 작동할 수 있는 ID 프로토콜이 개발되었습니다.
 
-As they evaluate the capabilities their architecture has around identity, Lamna Healthcare is looking at ways they can bring the following capabilities into their application:
+Lamna Healthcare는 아키텍처의 ID 관련 기능을 평가할 때 다음 기능을 응용 프로그램으로 가져오는 방법을 알아보았습니다.
 
-- Provide single-sign on to application users
-- Enhance the legacy application to use modern authentication with minimal effort
-- Enforce multi-factor authentication for all logins outside the company's network
-- Develop an application to allow patients to enroll and securely manage their account data
+- 응용 프로그램 사용자에게 Single Sign-On 제공
+- 최소한의 노력으로 최신 인증을 사용하도록 레거시 응용 프로그램 개선
+- 회사 네트워크 외부에서 이루어지는 모든 로그인에 Multi-Factor Authentication 적용
+- 환자가 안전하게 등록하고 계정 데이터를 관리할 수 있는 응용 프로그램 개발
 
-## Single sign-on
+## <a name="single-sign-on"></a>Single Sign-On
 
-The more identities a user has to manage, the greater the risk of a credential-related security incident. More identities mean more passwords to remember and change. Password policies can vary between applications, and as complexity requirements increase, it makes it more difficult for users to remember them.
+사용자가 관리할 ID가 많을수록 자격 증명 관련 보안 사건이 발생할 위험이 높습니다. 더 많은 ID는 더 많은 암호를 기억하고 변경해야 한다는 뜻입니다. 암호 정책은 응용 프로그램에 따라 다를 수 있으며, 복잡한 요구 사항이 늘어나면 사용자가 암호를 기억하기가 더 어려워집니다.
 
-On the other side is the management required for all those identities. Additional strain is placed on help desks as they deal with account lockouts and password reset requests. If a user leaves an organization, tracking down all those identities and ensuring they are disabled can be challenging. If an identity is overlooked, this could allow access when it should have been eliminated.
+반대편에는 모든 ID에 요구되는 관리 업무가 있습니다. 계정 잠금 및 암호 재설정 요청을 처리하는 기술 지원팀의 부담이 가중됩니다. 사용자가 조직을 떠날 때 해당 사용자의 모든 ID를 추적하여 비활성화는 것이 어려울 수 있습니다. ID를 간과하면 제거되었어야 하는 ID를 통해 액세스할 수 있는 문제가 발생할 수 있습니다.
 
-With single sign-on, users only need to remember one ID and one password. Access across applications is granted to a single identity tied to a user, simplifying the security model. As users change roles or leave an organization, access modifications are tied to the single identity, greatly reducing the effort needed to change or disable accounts. Using single sign-on for accounts will make it easier for users to manage their identities, and will increase the security capabilities in your environment.
+Single Sign-On을 사용하면 사용자는 ID 하나와 암호 하나만 기억하면 됩니다. 응용 프로그램에 대한 액세스 권한이 사용자와 연결된 ID에 부여되므로 보안 모델이 간소화됩니다. 액세스 수정이 단일 ID에 연결되어 있으므로 사용자 역할이 변경되거나 사용자가 조직을 떠날 때 계정을 변경하거나 비활성화하는 과정이 대폭 축소됩니다. 계정에 Single Sign-On을 사용하면 사용자가 ID를 간편하게 관리할 수 있으며, 환경의 보안 기능이 향상됩니다.
 
-### SSO with Azure Active Directory
+### <a name="sso-with-azure-active-directory"></a>Azure Active Directory를 사용한 SSO
 
-Azure Active Directory (AD) is a cloud-based identity service. It has built in support for synchronizing with your existing on-premises Active Directory or can be used stand-alone.
+Azure AD(Active Directory)는 클라우드 기반 ID 서비스입니다. 기본적으로 제공되는 지원이며, 기존 온-프레미스 Active Directory와 동기화할 수도 있고 독립 실행형으로 사용할 수도 있습니다.
 
-This means that all your applications, whether on-premises, in the cloud (including Office 365), or even mobile can share the same credentials. 
+즉, 온-프레미스든, 클라우드든(Office 365 포함), 모바일이든 관계없이, 모든 응용 프로그램이 동일한 자격 증명을 공유할 수 있습니다. 
 
-Administrators and developers can control access to data and applications using centralized rules and policies configured in Azure AD.
+관리자와 개발자는 중앙 집중식 규칙과 Azure AD에서 구성한 정책을 사용하여 데이터 및 응용 프로그램에 대한 액세스를 제어할 수 있습니다.
 
-In addition, Microsoft is uniquely positioned to combine multiple data sources into an intelligent security graph that can provide threat analysis and real-time identity protection to all accounts in Azure Active Directory (even accounts that are synchronized from your on-premises AD).
+뿐만 아니라 Microsoft는 Azure Active Directory(온-프레미스 AD에서 동기화되는 계정 포함)의 모든 계정에 대한 위협 분석 및 실시간 ID 보호를 제공할 수 있는 지능형 보안 그래프 하나에 여러 데이터 원본을 결합하는 독특한 포지셔닝을 취하고 있습니다.
 
-### Synchronize directories with AD Connect
+### <a name="synchronize-directories-with-ad-connect"></a>AD Connect를 사용하여 디렉터리 동기화
 
-Azure AD Connect will integrate your on-premises directories with Azure Active Directory. Azure AD Connect provides the newest capabilities and replaces older versions of identity integration tools such as DirSync and Azure AD Sync.
+Azure AD Connect는 온-프레미스 디렉터리와 Azure Active Directory를 통합합니다. Azure AD Connect는 최신 기능을 제공하며 DirSync 및 Azure AD Sync 같은 이전 버전의 ID 통합 도구를 대체합니다.
 
-It's a single tool to provide an easy deployment experience for synchronization and sign in.
+동기화에 대 한 간편한 배포 환경을 제공 하 여 로그인 하는 단일 도구입니다.
 
 ![AAD Connect](../media-draft/AADCONNECTxprs_960.jpg)
 
-Lamna Healthcare requires that authentication occurs primarily against on-premises DCs, but also requires cloud authentication in a disaster recovery scenario. They don't have any requirements not already supported by Azure AD.
+Lamna Healthcare는 인증이 주로 온-프레미스 DC에 대해 발생하기를 요구하지만, 재해 복구 시나리오에서는 클라우드 인증을 요구합니다. 아직 Azure AD에서 지원하지 않는 요구 사항은 없습니다.
 
-Lamna Healthcare has made the decision to move forward with the following configuration:
+Lamna Healthcare는 다음과 같은 구성을 사용하여 시스템을 개선하기로 결정했습니다.
 
-- Use Azure AD Connect to synchronize groups, user accounts, and password hashes stored in their on-premises Active Directory to Azure AD
-  - This can be used as a back-up if pass-through authentication is unavailable
-- Configure pass-through authentication using an on-premises authentication agent installed on an on-premises Windows Server
-- Use the seamless single sign-on feature of Azure AD to automatically sign in users from on-premises domain-joined PCs
-  - Reduces user friction by suppressing multiple authentication requests
+- Azure AD Connect를 사용 하 여 그룹, 사용자 계정 및 Azure ad가 온-프레미스 Active Directory에 저장 된 암호 해시 동기화
+  - 통과 인증을 사용할 수 없는 경우 백업으로 사용 가능
+- 온-프레미스 Windows Server에 설치된 온-프레미스 인증 에이전트를 사용하여 통과 인증 구성
+- Azure AD의 원활한 Single Sign-On 기능을 사용하여 온-프레미스 도메인에 조인된 PC의 사용자를 자동으로 로그인
+  - 여러 인증 요청을 억제하여 사용자 마찰 감소
 
-## Authentication & access
+## <a name="authentication--access"></a>인증 및 액세스
 
-Lamna Healthcare's security policy requires that all logins occurring outside the company's perimeter network are authenticated with an additional factor of authentication. This requirement combines two aspects of the Azure AD service: multi-factor authentication and conditional access policies.
+Lamna Healthcare의 보안 정책에 따라 병원의 경계 네트워크 외부에서 발생하는 모든 로그인은 추가 인증 단계를 사용하여 인증해야 합니다. 이 요구 사항은 Azure AD 서비스의 두 가지 측면을 결합 합니다: multi-factor authentication 및 조건부 액세스 정책입니다.
 
-### Multi-factor authentication
+### <a name="multi-factor-authentication"></a>Multi-Factor Authentication
 
-Multi-factor authentication (MFA) provides additional security for your identities by requiring two or more elements for full authentication. These elements fall into three categories:
+MFA(Multi-Factor Authentication)는 전체 인증에 2-3개 요소를 요구하여 ID에 대한 추가 보안을 제공합니다. 이러한 요소는 세 가지 범주로 분류됩니다.
 
-- *something you know*
-- *something you possess*
-- *something you are*
+- *사용자가 알고 있는 것*
+- *사용자가 소유하고 있는 것*
+- *사용자의 신원 정보*
 
-**Something you know** would be a password, or the answer to a security question. **Something you possess** could be a mobile app that receives a notification or a token generating device. **Something you are** is typically some sort of biometric property such as a fingerprint or face scan used on many mobile devices.
+**사용자가 알고 있는 것**은 암호이거나 보안 질문에 대한 대답입니다. **사용자가 소유하고 있는 것**은 알림을 받는 모바일 앱 또는 토큰 생성 장치일 수 있습니다. **사용자의 신원 정보**는 여러 모바일 장치에서 사용되는 지문 또는 얼굴 검사처럼 일반적으로 생체 인식 속성의 일종입니다.
 
-Using multi-factor authentication increases security of your identity by limiting the impact of credential exposure. An attacker who has a user's password would also need to have possession of their phone or their face in order to fully authenticate. Authentication with only a single factor verified is insufficient and the attacker would be unable to use those credentials to authenticate. The benefits this brings to security are huge, and it can't be repeated enough to enable MFA wherever possible.
+Multi-factor Authentication을 사용하면 자격 증명 노출의 영향이 제한되므로 ID 보안이 향상됩니다. 사용자의 암호를 알고 있는 공격자가 완벽하게 인증하려면 사용자의 전화기를 소유하고 있거나 사용자의 얼굴이 필요합니다. 단일 요소의 확인을 거친 인증만으로는 부족하며 공격자는 이러한 자격 증명을 사용하여 인증할 수 없습니다. 이렇게 하면 엄청난 보안 이점이 있으며, 가능한 모든 곳에 MFA를 사용할 수 있습니다.
 
-Azure AD has MFA capabilities built in, and will integrate with other third-party MFA providers. It's provided free of charge to any user who has the Global Administrators role in Azure AD, as these are highly sensitive accounts. All other accounts can have MFA enabled by purchasing licenses with this capability and assigning a license to the account.
+Azure AD는 MFA 기능이 기본 제공되며, 다른 타사 MFA 공급자와 통합됩니다. 글로벌 관리자는 매우 중요한 계정이므로 Azure AD에서 글로벌 관리자 역할이 할당된 모든 사용자에게 무료로 제공됩니다. 그 외의 계정은 이 기능이 포함된 라이선스를 구입하고 계정에 라이선스를 할당하여 MFA를 사용할 수 있습니다.
 
-### Conditional access policies
+### <a name="conditional-access-policies"></a>조건부 액세스 정책
 
-Along with MFA, ensuring that additional requirements are met before granting access can add another layer of protection. Blocking logins from a suspicious IP address, or denying access from devices without malware protection could limit access from risky sign ins.
+MFA와 함께, 액세스 권한을 부여하기 전에 추가 요구 사항을 충족하게 하면 보호 계층을 추가할 수 있습니다. 의심 스러운 IP 주소에서 로그인을 차단 하거나 맬웨어 보호 되지 않는 장치의 액세스를 거부 수 위험한에서 액세스 제한 로그인 합니다.
 
-Azure Active Directory provides a conditional access policies (CAP) feature that includes support for access policies based on group, location, or device state. The location feature allows Lamna to differentiate IP addresses that don't belong to their network, and satisfies their security policy to require multi-factor authentication from all such locations.
+Azure Active Directory는 그룹, 위치 또는 장치 상태 기반의 액세스 정책을 지원하는 CAP(조건부 액세스 정책) 기능을 제공합니다. 위치 기능을 자신의 네트워크에 속하지 않는 IP 주소를 구분 하기 위해 Lamna 있으며 이러한 모든 위치에서 다단계 인증을 요구 하는 보안 정책을 충족 합니다.
 
-Lamna Healthcare has created a [conditional access policy](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) that requires users accessing the application from an IP address outside of the company network to be challenged with MFA.
+Lamna Healthcare는 병원 네트워크 외부의 IP 주소에서 응용 프로그램에 액세스하는 사용자는 MFA를 사용하기 어려운 [조건부 액세스 정책](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)을 만들었습니다.
 
-![conditional access](../media-draft/conditional-access.png)
+![조건부 액세스](../media-draft/conditional-access.png)
 
-## Securing legacy applications
+## <a name="securing-legacy-applications"></a>레거시 응용 프로그램 보호
 
-Lamna Healthcare employees require secure remote access to their administrative application hosted on-premises. Users currently authenticate to the application using Windows Integrated Authentication (WIA) from their domain-joined machines, behind the corporate firewall. Although a project to incorporate modern authentication mechanisms into the application has been planned, there's considerable business pressure to enable remote access capabilities as soon as possible. Azure Application Proxy can quickly, easily, and securely allow the application to be accessed remotely without any code changes.
+Lamna Healthcare 직원은 온-프레미스에 호스트되는 관리 응용 프로그램에 대한 보안 원격 액세스를 요구합니다. 사용자들은 현재 병원 방화벽으로 보호되는 도메인 조인 머신에서 WIA(Windows 통합 인증)를 사용하여 응용 프로그램에 인증합니다. 응용 프로그램에 최신 인증 메커니즘을 통합 하는 프로젝트를 계획 한 있지만 부족 상당한 비즈니스 원격 액세스 기능을 최대한 빨리 사용 하도록 설정 합니다. Azure 응용 프로그램 프록시 수 신속 하 게 쉽고 안전 하 게 선택 하면 응용 프로그램 코드 변경 없이 원격으로 액세스할 수 있습니다.
 
-Azure AD Application Proxy is:
+다음은 Azure AD 응용 프로그램 프록시의 특징입니다.
 
-- Simple
-  - You don't need to change or update your applications to work with Application Proxy.
-  - Your users get a consistent authentication experience. They can use the MyApps portal to get single sign-on to both SaaS apps in the cloud and your apps on-premises.
-- Secure
-  - When you publish your apps using Azure AD Application Proxy, you can take advantage of the rich authorization controls and security analytics in Azure. You get cloud-scale security and Azure security features like conditional access and two-step verification.
-  - You don't have to open any inbound connections through your firewall to give your users remote access.
-- Cost-effective
-  - Application Proxy works in the cloud, so you can save time and money. On-premises solutions typically require you to set up and maintain DMZs, edge servers, or other complex infrastructures.
+- 단순
+  - 응용 프로그램 프록시를 사용하도록 응용 프로그램을 변경하거나 업데이트할 필요가 없습니다.
+  - 사용자에게 일관된 인증 환경이 제공됩니다. MyApps 포털을 사용하여 클라우드 및 앱 온-프레미스의 SaaS 앱에 Single Sign-On을 가져올 수 있습니다.
+- 안전
+  - Azure AD 응용 프로그램 프록시를 사용하여 앱을 게시하면 Azure의 다양한 권한 부여 제어 및 보안 분석을 이용할 수 있습니다. 조건부 액세스 및 2단계 인증과 같은 클라우드 규모 보안 및 Azure 보안 기능이 제공됩니다.
+  - 사용자에게 원격 액세스를 제공하기 위해 방화벽을 통해 모든 인바운드 연결을 열 필요가 없습니다.
+- 비용 효율적
+  - 응용 프로그램 프록시는 클라우드에서 작업하므로 시간과 비용을 절약할 수 있습니다. 온-프레미스 솔루션을 사용하려면 일반적으로 DMZ, 에지 서버 또는 기타 복잡한 인프라를 설정하고 유지 관리해야 합니다.
 
-Azure AD Application Proxy is comprised of two components: a connector agent that sits on a Windows server within your corporate network and an external endpoint, either the MyApps portal or an external URL. When a user navigates to the endpoint, they authenticate with Azure AD and are routed to the on-premises application via the connector agent.
+Azure AD 응용 프로그램 프록시는 두 가지 구성 요소로 이루어진: 회사 네트워크 및 외부 끝점을 MyApps 포털 또는 외부 URL 내에 있는 Windows 서버에 상주 하는 커넥터 에이전트입니다. 사용자는 엔드포인트를 탐색할 때 Azure AD로 인증하며 커넥터 에이전트를 통해 온-프레미스 응용 프로그램으로 라우팅됩니다.
 
-## Working with consumer identities
+## <a name="working-with-consumer-identities"></a>소비자 ID 사용
 
-Since integrating modern authentication with their existing application, Lamna Healthcare has quickly acknowledged the power a managed identity system such as Azure AD can bring to their organization. The leadership team is now interested in exploring other ways Microsoft identity services can add business value. They have now focused their attention on external customers and how modernization of existing customer interactions could provide tight integration with third-party identity providers such as Google, Facebook, and LinkedIn.
+최신 인증을 기존 응용 프로그램 통합, 이후 Lamna Healthcare에 신속 하 게 승인 전원 관리 되는 id 시스템을 Azure AD 조직에 제공할 수 있는 등. 리더십 팀 이제 관심 있는 노력 하 고 다른 Microsoft id 서비스는 비즈니스 가치를 추가할 수 있습니다. 외부 고객 및 기존 고객 상호 작용의 현대화 수 Google, Facebook, LinkedIn 등의 타사 id 공급자와의 긴밀 한 통합을 제공 하는 방법에 주의가 집중 이제 있습니다.
 
-Azure AD B2C is an identity management service built on the solid foundations of Azure Active Directory that enables you to customize and control how customers sign up, sign in, and manage their profiles when using your applications. This includes applications developed for iOS, Android, and .NET, among others. Azure AD B2C provides a social identity login experience, while at the same time protecting your customer identity profile information. Azure AD B2C directories are distinct from standard Azure AD directories and can be created in the Azure portal.
+Azure AD B2C는 Azure Active Directory의 견고한 기반을 바탕으로 제작된 ID 관리 서비스로, 응용 프로그램을 사용할 때 고객이 자신의 프로필을 등록, 로그인 및 관리하는 방법을 사용자 지정하고 제어할 수 있습니다. 여기에는 iOS, Android 및 .NET용으로 개발된 응용 프로그램이 포함됩니다. Azure AD B2C는 소셜 ID 로그인 환경을 제공하는 동시에 고객 ID 프로필 정보를 보호합니다. Azure AD B2C 디렉터리는 표준 Azure AD 디렉터리와 다르며 Azure Portal에서 만들 수 있습니다.
 
-## Identity management at Lamna Healthcare
+## <a name="identity-management-at-lamna-healthcare"></a>Lamna Healthcare의 ID 관리
 
-We've seen here how Lamna Healthcare has used identity management solutions on Azure to improve the security of their environment. They've started by providing users a single sign-on experience to minimize the accounts users have to deal with, and reduce the operational complexity that excess accounts bring. They have enforced MFA for access to their application and have updated a legacy application to use modern authentication with minimal effort. They've also learned how they can improve their ability to work with consumer identities, improving the application usability for their patients.
+Lamna Healthcare가 Azure에서 ID 관리 솔루션을 사용하여 환경의 보안을 개선한 방법을 살펴보았습니다. 먼저 사용자에게 Single Sign-On 환경을 제공하여 사용자가 처리해야 하는 계정을 최소화하고, 계정이 가져오는 운영 복잡성을 줄였습니다. 응용 프로그램 액세스에 MFA를 적용했으며, 최소한의 노력으로 최신 인증을 사용하도록 레거시 응용 프로그램을 업데이트했습니다. 또한 소비자 ID를 다루는 기능을 개선하여 환자들이 응용 프로그램을 편하게 사용할 수 있게 만들었습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-In this unit, we have seen how a number of Azure Active Directory features can be combined to provide a solid identity solution for securing access to applications, regardless of their location. Identity is a critical layer of security. When designed well and included in your architecture, you can ensure your environment is secure.
+이 섹션에서는 다양한 Azure Active Directory 기능을 결합하여 위치에 관계없이 응용 프로그램에 안전하게 액세스할 수 있는 견고한 ID 솔루션을 제공하는 방법을 살펴보았습니다. ID는 중요한 보안 레이어입니다. 적절하게 설계하여 아키텍처에 포함하면 환경을 안전하게 보호할 수 있습니다.

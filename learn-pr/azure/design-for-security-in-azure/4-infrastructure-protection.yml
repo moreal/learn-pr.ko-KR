@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.4-infrastructure-protection
-title: Infrastructure protection
+title: 인프라 보호
 metadata:
-  title: Infrastructure protection
-  description: In this unit we'll discuss how to protect access to your infrastructure
+  title: 인프라 보호
+  description: 이 섹션에서는 인프라 액세스를 보호하는 방법에 대해 알아보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/4-infrastructure-protection.md)]
 quiz:
-  title: 'Knowledge Check - Infrastructure protection'
+  title: 지식 검사 - 인프라 보호
   questions:
-  - content: 'Role-based access control can be applied to all but which of the following scopes?'
-    choices:
-    - content: 'Subscription'
-      isCorrect: false
-      incorrectExplanation: 'RBAC can be applied to the subscription scope.'
-    - content: 'Resource group'
-      isCorrect: false
-      incorrectExplanation: 'RBAC can be applied to the resource group scope.'
-    - content: 'Linux filesystem'
-      isCorrect: true
-      correctExplanation: 'RBAC can only be applied to Azure resources. Linux filesystems are not within the scope that can be secured with Azure RBAC.'
-    - content: 'Resource'
-      isCorrect: false
-      incorrectExplanation: 'RBAC can be applied directly to resources.'
-  - content: 'A managed service identity could be assigned to a virtual machine to give it rights to start and stop other virtual machines.'
-    choices:
-    - content: 'True'
-      isCorrect: true
-      correctExplanation: 'Managed service identity is a method of assigning an identity to services. Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.'
-    - content: 'False'
-      isCorrect: false
-      incorrectExplanation: 'Managed service identity is a method of assigning an identity to services. Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.'
+    - content: 역할 기반 액세스 제어는 다음과 같은 범위를 제외한 모든 적용할 수 있습니다.
+      choices:
+        - content: 구독
+          isCorrect: false
+          incorrectExplanation: 구독 범위에 RBAC는 적용할 수 있습니다.
+        - content: 리소스 그룹
+          isCorrect: false
+          incorrectExplanation: RBAC는 리소스 그룹 범위에 적용할 수 있습니다.
+        - content: Linux 파일 시스템
+          isCorrect: true
+          correctExplanation: RBAC Azure 리소스에만 적용할 수 있습니다. Linux 파일 시스템 Azure RBAC를 사용 하 여 보호할 수 있는 범위 내에서 않습니다.
+        - content: 리소스
+          isCorrect: false
+          incorrectExplanation: RBAC는 리소스에 직접 적용할 수 있습니다.
+    - content: 관리 서비스 id는 다른 가상 머신을 시작 및 중지에 대 한 권한을 부여할 가상 컴퓨터에 지정할 수 있습니다.
+      choices:
+        - content: 'True'
+          isCorrect: true
+          correctExplanation: 관리 서비스 id는 서비스 id를 할당 하는 메서드입니다. 이 할당을 통해 가상 머신 시작 및 중지와 같은 Azure 서비스를 관리 하려면 RBAC 액세스를 부여할 수 있습니다.
+        - content: 'False'
+          isCorrect: false
+          incorrectExplanation: 관리 서비스 id는 서비스 id를 할당 하는 메서드입니다. 이 할당을 통해 가상 머신 시작 및 중지와 같은 Azure 서비스를 관리 하려면 RBAC 액세스를 부여할 수 있습니다.

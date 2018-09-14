@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.automate-azure-tasks-with-powershell.5-create-resource-interactively
-title: Create an Azure Resource using scripts in Azure PowerShell
+title: Azure PowerShell에서 스크립트를 사용 하 여 Azure 리소스 만들기
 metadata:
-  title: Create an Azure Resource using scripts in Azure PowerShell
-  description: Create an Azure Resource using scripts in Azure PowerShell
+  title: Azure PowerShell에서 스크립트를 사용 하 여 Azure 리소스 만들기
+  description: Azure PowerShell에서 스크립트를 사용 하 여 Azure 리소스 만들기
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

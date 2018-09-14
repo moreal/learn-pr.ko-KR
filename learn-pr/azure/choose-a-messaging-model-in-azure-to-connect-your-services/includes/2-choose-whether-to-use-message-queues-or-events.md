@@ -4,6 +4,8 @@
 
 처음 살펴봐야 할 통신 관련 내용은 **메시지**나 **이벤트**를 보낼지 여부입니다. 이것은 사용하기에 적합한 Azure 서비스를 선택하는 데 도움이 되는 기본적인 선택입니다.
 
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuaw]
+
 ## <a name="what-is-a-message"></a>메시지란?
 배포 응용 프로그램의 용어에서 **메시지**의 특성은 다음과 같습니다.
 

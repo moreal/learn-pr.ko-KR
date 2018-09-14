@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
-title: Develop a disaster recovery strategy
+title: 재해 복구 전략 개발
 metadata:
-  title: Develop a disaster recovery strategy
-  description: Develop a disaster recovery strategy
+  title: 재해 복구 전략 개발
+  description: 재해 복구 전략 개발
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 20
 content: |
   [!include[](includes/3-disaster-recovery.md)]
 quiz:
-  title: 'Knowledge Check - Develop a disaster recovery strategy'
+  title: 지식 확인 - 재해 복구 전략 개발
   questions:
-  - content: 'Which of the following can be excluded from your recovery steps in your recovery plan?'
-    choices:
-    - content: 'How to restore backups'
-      isCorrect: false
-      incorrectExplanation: 'The steps needed to restore backups are a critical piece of a recovery plan.'
-    - content: 'How to fail over to replicated systems'
-      isCorrect: false
-      incorrectExplanation: 'The process to fail over to replicated systems is a critical piece of a recovery plan.'
-    - content: 'How to reestablish network connectivity to on-premises or external networks'
-      isCorrect: false
-      incorrectExplanation: 'Network connectivity to on-premises or external networks are often critical pieces of infrastructure. The steps to reestablish after failure are critical pieces of a recovery plan.'
-    - content: 'All of the above are important details to include in a recovery plan.'
-      isCorrect: true
-      correctExplanation: 'All of the above are important details to include in a recovery plan.'
-  - content: 'By storing data on Azure Blob storage, you are fully protected in the event of a disaster.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Blob storage replication can help you recover from Azure service-level issues, but it will not protect you from localized disasters, such as data loss or corruption.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Blob storage replication can help you recover from Azure service-level issues, but it will not protect you from localized disasters, such as data loss or corruption.'
+    - content: 다음 중 복구 계획의 복구 단계에서 제외할 수 있는 것은 어느 것입니까?
+      choices:
+        - content: 백업 복원 방법
+          isCorrect: false
+          incorrectExplanation: 백업 복원에 필요한 단계는 복구 계획의 중요한 부분입니다.
+        - content: 복제된 시스템으로 장애 조치(failover)하는 방법
+          isCorrect: false
+          incorrectExplanation: 복제된 시스템으로 장애 조치(failover)하는 프로세스는 복구 계획의 중요한 부분입니다.
+        - content: 온-프레미스 또는 외부 네트워크에 대한 네트워크 연결을 다시 설정하는 방법
+          isCorrect: false
+          incorrectExplanation: 온-프레미스 또는 외부 네트워크에 대 한 네트워크 연결 인프라의 중요 한 부분이 많습니다. 오류가 발생 한 후 다시 설정 하는 단계는 복구 계획의 중요 한 부분입니다.
+        - content: 위에 해당 복구 계획에서 제외 해야 합니다.
+          isCorrect: true
+          correctExplanation: 위의 모든 중요 한 세부 정보는 복구 계획에 포함 됩니다.
+    - content: Azure Blob storage에서 데이터를 저장 하 여 완벽 하 게 재해 발생 시 보호 됩니다.
+      choices:
+        - content: 'True'
+          isCorrect: false
+          incorrectExplanation: Blob 저장소 복제 수 Azure 서비스 수준 문제에서 복구할 수 있지만 하면 데이터가 손실 되거나 손상 같은 지역화 재해 로부터 보호 하지 않습니다 하 합니다.
+        - content: 'False'
+          isCorrect: true
+          correctExplanation: Blob 저장소 복제 수 Azure 서비스 수준 문제에서 복구할 수 있지만 하면 데이터가 손실 되거나 손상 같은 지역화 재해 로부터 보호 하지 않습니다 하 합니다.

@@ -1,66 +1,32 @@
-Microsoft Cognitive Services is a rich suite of intelligent services that we can use to enrich our apps. We explored a small part of the Text Analytics API service to find out higher-level information about text. We used the service to analyze text feedback from customers for sentiment. We created a solution hosted in Azure Functions to sort these text messages into different buckets, or queues, for further processing.
+Microsoft Cognitive Services는 응용 프로그램을 보강을 사용할 수 있는 지능형 서비스의 다양 한 제품군입니다. Text Analytics API에 텍스트를 의미 있는 정보로 변환 하는 몇 가지 작업이 있습니다. 고객의 피드백을 텍스트에서 감정 검색 서비스를 사용 했습니다. 이러한 텍스트 메시지를 여러 버킷으로 분류 또는 추가 처리를 위해 큐를 정렬 하기 위해 Azure Functions에서 호스팅되는 솔루션을 만들었습니다.
 
-Once you know how to call a REST API, then you can easily integrate these intelligent services into your solutions. They all follow a similar pattern:
+REST API를 호출 하는 방법을 알면 다음 쉽게 통합할 수 있습니다 이러한 지능형 서비스를 솔루션에. 모두 비슷한 패턴을 따릅니다.
 
-- Sign up for an access key
-- Explore in the API testing console
-- Formulate requests using the access key and the correct region.
-- POST requests from your solution and parse the responses for insights.
+- 액세스 키에 대 한 등록
+- API 테스트 콘솔에서 탐색
+- 액세스 키 및 올바른 지역을 사용 하 여 요청을 작성 합니다.
+- 솔루션에서 요청을 게시 하 고 정보에 대 한 응답을 구문 분석 합니다.
 
-We added this intelligence to serverless logic created in Azure Functions. You can easily call these services from other types of apps. There are many client libraries, tutorials and,  quickstarts to get you started.
+Azure Functions에서 생성 하는 서버 리스 논리로 이러한 인텔리전스를 추가 했습니다. 다른 유형의 앱에서 이러한 서비스를 쉽게 호출할 수 있습니다. 여러 클라이언트 라이브러리가 자습서 및 빠른 시작을 시작 합니다.
 
-## Suggestions for further enhancement of our solution
+## <a name="suggestions-for-further-enhancement-of-our-solution"></a>솔루션의 추가 기능에 대 한 제안
 
-Here are some ideas for you to consider if you want to take what we did further. 
+일부의 좋은 방법이 더 않았습니다에서는 수행 하려는 경우 고려해 야 합니다.
 
-- Test the solution with more text examples and decide whether the thresholds we set to categorize sentiment scores into positive, negative, and neutral are appropriate. 
-- Consider adding another function into your function app that reads messages from the [!INCLUDE [negative-q](./q-name-negative.md)] queue and calls the Text Analytics API to find key phrases in the text.
-- Our input queue contains raw text feedback. In the real-world, we would associate feedback with some form of user ID such as email address, account number, and so on. So, enhance the input queue items to be JSON documents containing and ID field and the text. Then use that ID when working with the text message.
- - Currently our solution is "hard coded" to English. Think about what changes you would do to make it capable or handling text in all languages supported by the Text Analytics API.  
+- 자세한 텍스트 예제를 사용 하 여 솔루션을 테스트 합니다. 양수, 음수이 고 중립으로 감정 점수를 분류를 설정 하는 임계값을 적절 한 되는지 여부를 결정 합니다.
+- 메시지를 읽는 함수 앱에 다른 함수를 추가 하는 것이 좋습니다는 [!INCLUDE [negative-q](./q-name-negative.md)] 큐 및 텍스트에서 키 구 찾기 텍스트 분석 API를 호출 합니다.
+- 입력된 큐에는 원시 텍스트 피드백 포함 되어 있습니다. 실제 환경에는 일종의 전자 메일 주소, 계좌 번호와 같은 사용자 ID 사용 하 여 피드백을 연결 하 고 등. 포함 된 JSON 문서를 ID 필드 및 텍스트 입력된 큐 항목을 향상 시킵니다. 다음 텍스트 메시지와 함께 작업 하는 경우 해당 ID를 사용 합니다.
+- 현재 솔루션은 "하드 코딩" 영어입니다. Text Analytics API에서 지 원하는 모든 언어에서 텍스트를 처리할 수 있도록 구현 하는 변경 내용에 대 한 생각 합니다.
+- Logic Apps에 익숙한 경우 기본 제공 커넥터 추가 정보 섹션에서 텍스트 분석에 대 한 링크를 방문 합니다.
 
-Now that you know how to call one of these Cognitive Services APIs, take a look at some of the other services and think about how you might use them in your solutions. 
+이제 이러한 Cognitive Services Api 중 하나를 호출 하는 방법을 알았으므로 몇 가지 다른 서비스를 탐색 하 고 솔루션에서 이러한를 사용 하는 방법을 고려해 야.
 
-## Further reading
+## <a name="further-reading"></a>추가 참고 자료
 
-- [Text Analytics overview](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)
-- [How to detect sentiment in Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
-- [Cognitive Services Documentation](https://docs.microsoft.com/azure/cognitive-services/)
+- [Text Analytics 개요](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)
+- [텍스트 분석 감정 감지 하는 방법](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
+- [Cognitive Services 설명서](https://docs.microsoft.com/azure/cognitive-services/)
 
-## Clean up resources
+- [텍스트 분석 Logic Apps 커넥터](https://docs.microsoft.com/connectors/cognitiveservicestextanalytics/)
 
-*Resources* in Azure refer to function apps, functions, storage accounts, and so forth. They are grouped into *resource groups*, and you can delete everything in a group by deleting the group.
-
-You created resources to complete this module. You may be billed for these resources, depending on your [account status](https://azure.microsoft.com/account/) and [service pricing](https://azure.microsoft.com/pricing/). If you don't need the resources anymore, here's how to delete them:
-
-1. In the Azure portal, go to the **Resource group** page.
-
-   To get to that page from the function app page, select the **Overview** tab and then select the link under **Resource group**.
-
-   To get to that page from the dashboard, select **Resource groups**, and then select the resource group that you used for this module. 
-
-> [!NOTE]
-> The default name of the resource group we suggested for this module was [!INCLUDE [resource-group-name](./rg-name.md)] but it is possible that you used another name.
-
-2. In the **Resource group** page, review the list of included resources, and verify that they are the ones you want to delete.
-
-3. Select **Delete resource group**, and follow the instructions.
-
-   Deletion may take a couple of minutes. When it's done, a notification appears for a few seconds. You can also select the bell icon at the top of the page to view the notification.
-
-## Further Reading
-
-While this is not intended to be an exhaustive list, the following are some resources related to the topics covered in this module that you might find interesting.
-
- * [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/)
-
-* [The Azure Functions Challenge](https://aka.ms/afc)
-
-* [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
-
- * [How to use Queue storage from Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
-
- * [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
-
-* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
-
-* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

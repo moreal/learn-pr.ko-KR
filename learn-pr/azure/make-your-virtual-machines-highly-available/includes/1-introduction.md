@@ -1,17 +1,17 @@
-Azure Load Balancer can help scale your cloud applications and improve the availability of your services.
+Azure Load Balancer는 클라우드 응용 프로그램을 확장 하 고 서비스의 가용성을 향상할 수 있습니다.
 
-Suppose you work as the server administrator responsible for your on-premises Enterprise Resource Planning (ERP) application. The application is business-critical, and you want to minimize the downtime that results from server failure.
+온-프레미스 엔터프라이즈 리소스 계획 (ERP) 응용 프로그램에 대 한 책임 서버 관리자 권한으로 작업을 가정 합니다. 응용 프로그램은 비즈니스 크리티컬 및 서버 오류를 발생 하는 가동 중지 시간을 최소화 하려는 경우.
 
-Your company is looking to take advantage of some of the scalability options in the cloud and wants to determine if the ERP application can be made highly available by adding more servers and load balancing network traffic. Your job is to determine if a load balancer is appropriate for this type of application, and if so, how to deploy and configure the system.
+회사는 클라우드에서 확장성 옵션 중 일부를 활용 하고자 하 고 ERP 응용 프로그램 수 항상 사용 가능한 서버를 더 추가 하 여 부하 분산 네트워크 트래픽을 확인 하려고 합니다. 작업을 확인 하는 load balancer는 응용 프로그램의이 형식에 대 한 적절 한 고 그렇다면 배포 시스템을 구성 하는 방법입니다.
 
-Here, you will identify internal and external workloads that are suitable for load balancing. You will learn how to choose between the basic and standard load balancer products. Finally, you will see how to create a load balancer, associate the load balancer with virtual servers, and configure the associated rules and probes.
+여기에서 부하 분산에 적합 하는 내부 및 외부 작업을 식별 합니다. 기본 및 표준 load balancer 제품 중에서 선택 하는 방법을 배우게 됩니다. 마지막으로, 부하 분산 장치 만들기, 가상 서버를 사용 하 여 부하 분산 장치를 연결, 연결 된 규칙 및 프로브를 구성 하는 방법을 표시 됩니다.
 
-## Learning objectives:
+## <a name="learning-objectives"></a>목표를 학습 합니다.
 
-In this module, you will:
-- Decide when to use a load balancer
-- Identify the differences between the basic and standard Load Balancer editions
-- Create a new load balancer
-- Create virtual networks associated with a load balancer
-- Configure load balancer rules
-- Configure a load balancer health probe
+이 모듈에서 수행하는 작업:
+- 부하 분산 장치를 사용 하는 경우 결정
+- 기본 및 표준 Load Balancer 버전 간의 차이점을 식별 합니다.
+- 새 부하 분산 장치 만들기
+- 부하 분산 장치를 사용 하 여 연결 된 가상 네트워크 만들기
+- 부하 분산 장치 규칙 구성
+- 부하 분산 장치 상태 프로브 구성

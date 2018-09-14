@@ -31,9 +31,9 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
     | **AuthTokenSetting** | “TwilioAuthToken” | Twilio 계정의 인증 토큰. 이 매개 변수는 인증 토큰을 직접 설정하기 보다는 이를 검색하는 데 사용될 함수 앱 설정의 값 이름입니다. |
     | **From** | Twilio 전화 번호 | 국가별 형식(+\<국가 코드\>\<전화 번호\>, 예를 들어 “+1555123456”)으로 SMS 메시지가 오는 Twilio 전화 번호. |
 
-    Twilio 계정을 만들 때 메시지를 보낼 수 있는 전화 번호가 할당됩니다. 이 전화 번호는 Twilio **전화 번호** 대시보드에서 찾을 수 있습니다. Twilio 사이트 왼쪽 메뉴 아래쪽에 있는 줄임표를 선택합니다. 그런 다음, ‘슈퍼 네트워크->전화 번호’를 선택합니다. 고정 아이콘을 사용하여 이 대시보드를 왼쪽 메뉴에 고정할 수 있습니다. Twilio 번호는 ‘번호 관리->활성 번호’ 아래에 있습니다. 번호에서 공백을 제거해야 합니다.
+    Twilio 계정을 만들 때 메시지를 보낼 수 있는 전화 번호가 할당됩니다. 이 전화 번호는 Twilio **전화 번호** 대시보드에서 찾을 수 있습니다. Twilio 사이트 왼쪽 메뉴 아래쪽에 있는 줄임표를 선택합니다. 그런 다음, ‘슈퍼 네트워크->전화 번호’를 선택합니다.** 고정 아이콘을 사용하여 이 대시보드를 왼쪽 메뉴에 고정할 수 있습니다. Twilio 번호는 ‘번호 관리->활성 번호’ 아래에 있습니다.** 번호에서 공백을 제거해야 합니다.
 
-    ![Twilio 번호 찾기](../media-drafts/7-twilio-find-number.png)
+    ![Twilio 번호 찾기](../media/7-twilio-find-number.png)
 
     ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",
@@ -57,7 +57,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
 
     \<SID\> 및 \<인증 토큰\>을 Twilio 대시보드의 값으로 바꿉니다.
 
-    > 이러한 로컬 설정은 로컬에서 실행하는 경우에만 사용됩니다. 프로덕션 앱에서는 이러한 값이 로컬 개발 또는 테스트 계정 자격 증명입니다. Azure에 Azure 함수가 배포되면 프로덕션 값을 구성할 수 있습니다.
+    > 이러한 로컬 설정은 로컬에서 실행하는 경우에만 사용됩니다. 프로덕션 앱에서 이러한 값은 로컬 개발 또는 테스트 계정 자격 증명입니다. Azure에 Azure 함수가 배포되면 프로덕션 값을 구성할 수 있습니다.
     > 코드를 소스 제어에 체크 인하는 경우 이러한 로컬 응용 프로그램 설정 값도 체크 인되므로 코드가 어떤 형식이든 오픈 소스이거나 공용인 경우 이러한 파일의 실제 값을 체크 인하지 않도록 주의하세요.
 
 ## <a name="create-the-sms-messages"></a>SMS 메시지 만들기
@@ -128,17 +128,17 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. 고유한 전화 번호를 국가별 형식(+\<국가 코드\>\<전화 번호\>)으로 Xamarin.Forms 앱에 입력합니다. Twilio 평가판 계정은 확인된 전화 번호로만 메시지를 보낼 수 있으므로 현재로서는 유료 계정으로 업그레이드하거나 다른 번호를 확인하지 않는 한 자신에게만 메시지를 보낼 수 있습니다.
 
-1. **위치 보내기** 단추를 클릭합니다. SMS 메시지를 성공적으로 보낸 경우 Xamarin.Forms 앱에 “위치를 성공적으로 보냄” 메시지가 표시됩니다.
+1. **위치 보내기** 단추를 클릭합니다. SMS 메시지를 성공적으로 보낸 경우 Xamarin.Forms 앱에 "위치를 성공적으로 보냄" 메시지가 표시됩니다.
 
-    ![위치를 보냈음을 보여 주는 Xamarin.Forms 앱](../media-drafts/7-ui-location-sent.png)
+    ![위치를 보냈음을 보여주는 Xamarin.Forms 앱](../media/7-ui-location-sent.png)
 
 1. Azure 함수 콘솔 로그에는 만들고 보내는 메시지가 표시됩니다. 오류가 발생하면(예: 번호가 잘못된 형식인 경우) 여기에 기록됩니다.
 
-    ![메시지를 보냈음을 보여 주는 Azure 함수 콘솔](../media-drafts/7-function-message-sent.png)
+    ![메시지를 보냈음을 보여 주는 Azure 함수 콘솔](../media/7-function-message-sent.png)
 
 1. 휴대폰에서 메시지를 확인합니다. 메시지의 링크를 따라 위치를 확인합니다.
 
-    ![휴대폰에 수신된 SMS 메시지](../media-drafts/7-message-received.png)
+    ![휴대폰에 수신된 SMS 메시지](../media/7-message-received.png)
 
 ## <a name="summary"></a>요약
 

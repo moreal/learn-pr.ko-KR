@@ -1,14 +1,14 @@
-Suppose you work for a company that processes fitness tracker data for runners. Your company tracks the runners' routes and performance using a relational database hosted on an on-premise server.
+실행 기에 대 한 적합성에 대 한 추적 데이터를 처리 하는 회사에 대 한 작업을 가정 합니다. 회사에는 실행 기의 경로 및 온-프레미스 서버에서 호스트 되는 관계형 데이터베이스를 사용 하 여 성능을 추적 합니다.
 
-The company wants to expand by tracking additional fitness tracking models and types and do that it will need to scale its database, both for capacity and performance. You want to move away from your current on-premise databases servers without compromising security.
+회사에서는 추가 적합성에 대 한 추적 모델 및 종류를 추적 하 여 확장 하려고 합니다. 확장을 위해 회사 한 용량 및 성능에 대 한 해당 데이터베이스를 확장 해야 합니다. 보안 수준을 떨어뜨리지 않고 현재 온-프레미스 데이터베이스 서버에서를 이동 하려고 합니다.
 
-When you consider cloud hosted database offerings, some of the questions that you may have might be aspects such as availability, scalability, and security. Azure Database for PostgreSQL allows you to take advantage of built-in security, fault tolerance, and data protection that you otherwise have to buy or design separately, build, and manage.
+클라우드에서 호스팅하는 데이터베이스 제품을 고려할 때 발생할 수 있는 질문 중 일부는 가용성, 확장성 및 보안과 같은 측면을 수 있습니다. Azure Database for PostgreSQL 사용 하면 기본 제공 보안, 내결함성 및 데이터 보호 해야 하는 그렇지 않은 경우 구입 또는 개별적으로 디자인, 빌드 및 관리를 활용할 수 있습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-By the end of this module, you will:
+이 모듈의 끝을 하 여 다음을 수행 해야합니다.
 
-- Create an Azure Database for PostgreSQL using the Azure portal
-- Create an Azure Database for PostgreSQL using Azure CLI
-- Configure a PostgreSQL server-level firewall rule
-- Connect to the PostgreSQL server using _psql_ in Azure Cloud Shell
+- Azure portal을 사용 하 여 PostgreSQL 용 Azure Database 만들기
+- Azure CLI를 사용하여 PostgreSQL용  Azure Database 만들기
+- PostgreSQL 서버 수준 방화벽 규칙 구성
+- 사용 하 여 PostgreSQL 서버에 연결 된 `psql` Azure Cloud Shell 명령

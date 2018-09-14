@@ -1,0 +1,38 @@
+### YamlMime:ZonePivotGroups
+groups:
+  - id: platform
+    title: 플랫폼
+    prompt: 플랫폼 선택
+    pivots:
+      - id: linux
+        title: Linux
+      - id: macos
+        title: Mac
+      - id: windows
+        title: Windows
+  - id: azure-interface
+    title: 셸
+    prompt: 셸을 선택 합니다.
+    pivots:
+      - id: bash
+        title: Bash
+      - id: powershell
+        title: PowerShell
+      - id: portal
+        title: Azure Portal
+  - id: dev-lang-csharp-javascript
+    title: 개발 언어
+    prompt: 개발 언어를 선택 합니다.
+    pivots:
+      - id: csharp
+        title: 'C#'
+      - id: javascript
+        title: JavaScript
+  - id: platform-cloud
+    title: 플랫폼
+    prompt: 클라우드에서 실행 하려면 어떤 플랫폼 선택
+    pivots:
+      - id: windows-cloud
+        title: Windows
+      - id: linux-cloud
+        title: Linux

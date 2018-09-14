@@ -6,10 +6,9 @@
 
 ## <a name="opening-ports-in-azure-vms"></a>Azure VM에서 포트 열기
 
-<!-- TODO: Azure portal is inconsistent here in applying the NSG.
-By default, new VMs are locked down. 
+기본적으로 새 Vm은 잠겨 있습니다. 
 
-Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g. other resources on the same local network), and from Azure's Load Balancer (probe checks). -->
+앱에 보내는 요청 가능 이지만 허용 된 인바운드 트래픽만 가상 네트워크 (예: 다른 리소스에서 동일한 로컬 네트워크)에서 Azure의 부하 분산 장치 (프로브 확인).
 
 FTP를 지원하도록 구성을 조정하는 두 가지 단계가 있습니다. 새 VM을 만들 때 몇 가지 공통 포트(RDP, HTTP, HTTPS 및 SSH)를 열 수 있습니다. 그러나 방화벽에 다른 변경이 필요하면 직접 변경해야 합니다.
 
@@ -26,11 +25,11 @@ VNet(가상 네트워크)은 Azure 네트워킹 모델의 기초이며 격리 �
 
 #### <a name="security-group-rules"></a>보안 그룹 규칙
 
-NGS는 _규칙_을 사용하여 네트워크를 통해 이동하는 트래픽을 허용하거나 거부합니다. 각 규칙은 원본 및 대상 주소(또는 범위), 프로토콜, 포트(또는 범위), 방향(인바운드 또는 아웃바운드), 숫자 우선 순위 및 규칙과 일치하는 트래픽의 허용 또는 거부를 식별합니다. 다음 그림에서는 서브넷 및 네트워크 인터페이스 수준에 적용되는 NSG 규칙을 보여줍니다.
+NSG는 _규칙_을 사용하여 네트워크를 통해 이동하는 트래픽을 허용하거나 거부합니다. 각 규칙은 원본 및 대상 주소(또는 범위), 프로토콜, 포트(또는 범위), 방향(인바운드 또는 아웃바운드), 숫자 우선 순위 및 규칙과 일치하는 트래픽의 허용 또는 거부를 구분합니다. 다음 그림에서는 서브넷 및 네트워크 인터페이스 수준에 적용되는 NSG 규칙을 보여줍니다.
 
 ![두 개의 다른 서브넷에서 네트워크 보안 그룹의 아키텍처를 보여주는 그림. 한 서브넷에 각각 고유한 네트워크 인터페이스 규칙을 사용하는 두 개의 가상 머신이 있습니다.  서브넷 자체에는 두 가상 머신에 모두 적용되는 규칙 집합이 있습니다.](../media/7-nsg-rules.png)
 
-각 보안 그룹에는 위에서 설명한 기본 네트워크 규칙을 적용하는 기본 보안 규칙 집합이 있습니다. 이러한 기본 규칙은 수정할 수 없지만 _재정의할 수 있습니다_.
+각 보안 그룹에는 위에서 설명한 기본 네트워크 규칙을 적용하는 기본 보안 규칙 집합이 있습니다. 기본 규칙은 수정할 수 없지만 재정의는 _가능_합니다.
 
 #### <a name="how-azure-uses-network-rules"></a>Azure에서 네트워크 규칙을 사용하는 방법
 

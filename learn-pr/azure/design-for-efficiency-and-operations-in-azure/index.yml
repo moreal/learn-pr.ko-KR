@@ -1,39 +1,37 @@
 ### YamlMime:Module
 uid: learn.design-for-efficiency-and-operations
 metadata:
-  title: Design for efficiency and operations in Azure
-  description: How efficient is your cloud environment? Are you maximizing the use of your cloud spend and minimizing the amount of waste? When something happens in your environment, do you have visibility and alerting in place, so you can take action? How advanced is your automation, and how much manual work is your organization performing? These are all questions we’ll answer in this module focused on design principles for efficiency and operations.
+  title: 효율성 및 Azure에서 작업을 위한 디자인
+  description: '클라우드 환경이 얼마나 효율적인가요? 클라우드 지출을 최대로 활용하고 낭비를 최소화하고 있나요? 환경에서 어떤 일이 발생하면 적절한 조치를 취할 수 있도록 가시성 및 경고 기능이 마련되어 있나요? 자동화가 얼마나 진행되었으며, 조직에서 수동 작업을 얼마나 수행하나요? 이 모듈에서는 효율성 및 운영을 위한 디자인 원칙에 초점을 두고 이러한 질문에 대답해 보겠습니다.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for efficiency and operations in your cloud infrastructure
-summary: How efficient is your cloud environment? Are you maximizing the use of your cloud spend and minimizing the amount of waste? When something happens in your environment, do you have visibility and alerting in place, so you can take action? How advanced is your automation, and how much manual work is your organization performing? These are all questions we’ll answer in this module focused on design principles for efficiency and operations.
-abstract:  | 
-  In this module, you will:
-    - Learn how to maximize the efficiency of your cloud environment
-    - Learn how to use monitoring and analytics to gain operational insights
-    - Learn how to use automation to reduce effort and error
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: 클라우드 인프라에서 효율성 및 운영을 위한 디자인
+summary: '클라우드 환경이 얼마나 효율적인가요? 클라우드 지출을 최대로 활용하고 낭비를 최소화하고 있나요? 환경에서 어떤 일이 발생하면 적절한 조치를 취할 수 있도록 가시성 및 경고 기능이 마련되어 있나요? 자동화가 얼마나 진행되었으며, 조직에서 수동 작업을 얼마나 수행하나요? 이 모듈에서는 효율성 및 운영을 위한 디자인 원칙에 초점을 두고 이러한 질문에 대답해 보겠습니다.'
+abstract: |
+  이 모듈에서 수행하는 작업:
+    - 클라우드 환경의 효율성을 극대화 하는 방법 알아보기
+    - Operational insights를 분석 및 모니터링을 사용 하는 방법에 알아봅니다
+    - 활동 및 오류를 줄이기 위해 automation을 사용 하는 방법 알아보기
+prerequisites: 없음
+iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
-- azure-cost-management
-- azure-advisor
-- azure-monitor
-- azure-application-insights
-- azure-log-analytics
+  - azure
+  - azure-cost-management
+  - azure-advisor
+  - azure-monitor
+  - azure-application-insights
+  - azure-log-analytics
 units:
-- learn.design-for-efficiency-and-operations.1-introduction
-- learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
-- learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
-- learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
-- learn.design-for-efficiency-and-operations.5-summary
+  - learn.design-for-efficiency-and-operations.1-introduction
+  - learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+  - learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+  - learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
+  - learn.design-for-efficiency-and-operations.5-summary
 achievement: learn.design-for-efficiency-and-operations.badge

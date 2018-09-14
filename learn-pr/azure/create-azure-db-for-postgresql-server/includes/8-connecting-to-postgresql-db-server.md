@@ -1,66 +1,54 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now have a good understanding of how to configure the same server level firewall rules in Azure.
+온-프레미스 PostgreSQL 데이터베이스를 사용 하는 경우를 가정해 봅니다. 모든 보안 측면을 관리 하 고 및 표준 PostgreSQL 서버 수준 방화벽 규칙을 사용 하는 서버에 대 한 모든 액세스 잠겨 했습니다. 이제 Azure에서 동일한 서버 수준 방화벽 규칙을 구성 하는 방법 이해를 해야 합니다.
 
-You now have the chance to connect to one of the previous Azure Databases for PostgreSQL servers you created using `psql`.
+이제 이전 Azure Database for PostgreSQL 서버를 사용 하 여 만든 중 하나에 연결할 수 있는 기회 `psql`합니다.
 
-## Allow Azure service access
+## <a name="allow-azure-service-access"></a>Azure 서비스 액세스 허용
 
-Before we begin. You'll have to allow access to Azure services if you want to use PowerShell and `psql` to connect to your server. Recall, that you can allow access in two ways.
+PowerShell을 사용 하려는 경우 Azure 서비스에 대 한 액세스를 허용 해야 시작 하기 전에 및 `psql` 서버에 연결 합니다. 회수는 두 가지 방법으로 액세스를 허용할 수 있습니다.
 
-Your first option is to enable **Allow access to Azure services**. Allowing access will create a firewall rule even though the rule isn't entered in the list of custom rules you create.
+첫 번째 옵션을 사용 하도록 설정 하는 것 **Azure 서비스 방문 허용**합니다. 액세스 허용 규칙을 만든 사용자 지정 규칙의 목록에 입력 되지 않습니다 하는 경우에 방화벽 규칙을 만듭니다.
 
-Your second option is to create a firewall rule that allows access to all IP addresses. The rule will include the IP address for the client running PowerShell that you'll use to execute `psql` from.
+두 번째 옵션 모든 IP 주소에 대 한 액세스를 허용 하는 방화벽 규칙을 만드는 것입니다. 규칙을 실행 하는 데 사용할 수 있는 PowerShell을 실행 하는 클라이언트에 대 한 IP 주소를 포함 합니다 `psql` 에서 합니다.
 
-You also need to disable the **Enforce SSL connection**.
+사용 하지 않도록 설정 해야 합니다 **SSL 연결 적용** 옵션입니다.
 
-Let's begin.
+시작 해 보겠습니다.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). Navigate to the server resource for which you would like to create a firewall rule.
+[Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다. 방화벽 규칙을 만들려면 하려는 서버가 리소스를 이동 합니다.
 
-Select the **Connection Security** option to open the connection security blade to the right.
+선택 된 **연결 보안** 옵션 오른쪽 연결 보안 블레이드를 엽니다.
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![PostgreSQL 데이터베이스 리소스 블레이드의 연결 보안 섹션을 보여 주는 Azure portal의 스크린샷](../media-draft/7-db-security-settings.png)
 
-Recall, you want to allow access to PowerShell clients running `psql`.
+실행 하는 PowerShell 클라이언트에 대 한 액세스를 허용 하려는 회수 `psql`합니다.
 
-You can choose to either:
+선택할 수 있습니다.
 
-- Set **Allow access to Azure services** to **ON**
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- 설정할 **Azure 서비스 방문 허용** 에 **ON**
+- 설정할 **SSL 연결 적용** 에 **사용 안 함**
+- 클릭 합니다 **저장할** 변경 내용을 저장 하는 단추
 
-Or, you can add a firewall rule to allow access to all IP addresses by adding a firewall rule. Use the following values:
+또는 방화벽 규칙을 추가 하 여 모든 IP 주소에 대 한 액세스를 허용 하는 방화벽 규칙을 추가할 수 있습니다. 다음 값을 사용합니다.
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- 규칙 이름: `AllowAll`
+- 시작 IP: `0.0.0.0`
+- 끝 IP: `255.255.255.255`
+- 설정할 **SSL 연결 적용** 에 **사용 안 함**
+- 클릭 합니다 **저장할** 변경 내용을 저장 하는 단추
 
 > [!Warning]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Even though clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications. In production environments, you'll only allow access to specific client IP addresses.
+> 이 방화벽 규칙을 만드는 모든 IP 주소에서 인터넷을 통해 서버에 연결 하려고 하면 있습니다. 클라이언트 서버 사용자 이름 및 암호 없이 액세스할 수 없습니다, 경우에 주의 사용 하 여이 규칙을 사용 하도록 설정 하 고 보안 문제를 숙지 해야 합니다. 프로덕션 환경에서는 특정 클라이언트 IP 주소에 대 한 액세스를 허용할 수 있습니다.
 
-For the next steps, you'll start an Azure Cloud Shell session. This lab uses `bash` as the command-line environment.
+Azure Cloud Shell에서 psql 명령을 사용 하 여 서버에 연결 합니다.
 
-- Open the Cloud Shell from the Azure portal. Go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
+```bash
+psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
+```
 
-- In case you have several subscriptions, check to make sure you're using the correct subscription when asked. You can also run the following command to set the active subscription. Remember to replace the zeros with your subscription identifier.
+말해서 `server-name`, 및 `admin-user` 은 서버를 만들 때 관리자 계정에 대해 선택한 값입니다. `postgres` 기본 관리 데이터베이스 서버를 사용 하 여 만든 모든 PostgreSQL입니다. 서버를 만들 때 제공한 암호에 대 한 라는 메시지가 표시 됩니다.
 
-   ```bash
-   az account set --subscription 00000000-0000-0000-0000-000000000000
-   ```
+성공적으로 연결 되 면 실행을 `\l` 모든 데이터베이스를 나열 하는 명령입니다. 이 명령은 반환 된 기본 데이터베이스를 두 개 이상 발생 합니다.
 
-- Connect psql to your server using the following command:
+명령을 실행 하는 서버에서 psql 작업 실행이 끝나면 `\q` 취소 하려면 `psql`합니다.
 
-  ```bash
-  psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
-  ```
-
-   Recall, `server-name`, and `admin-user` are the values you chose for the administrator account when you created the server. `postgres` is the default management database every PostgreSQL server is created with. You'll be prompted for the password you provided when you created the server.
-
-- Once successfully connected, execute the `\l` command to list all databases.
-
-   This command will result in two or more default databases returned from.
-
-- When you're finished executing psql operations on your server, execute the command `\q` to quit `psql`.
-
-- Finally, to exit Cloud Shell, execute the command `exit`.
+마지막으로 Cloud Shell을 종료 하려면 명령을 실행 `exit`합니다.

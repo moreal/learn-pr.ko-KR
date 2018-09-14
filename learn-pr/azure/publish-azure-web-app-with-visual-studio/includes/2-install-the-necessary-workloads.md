@@ -2,13 +2,13 @@
 
 ## <a name="prepare-your-development-environment"></a>개발 환경 준비
 
-Visual Studio 2017에는 웹 사이트를 만들고, 게시하고, Azure에 배포하는 데 필요한 두 개의 워크로드가 있습니다. 이러한 워크로드는 ASP.NET 사이트에 대한 모든 템플릿을 포함하고 있으며 Azure에 사이트를 연결하고 배포하는 기능을 제공합니다.
+Visual Studio 2017에는 만들기, 게시 및 Azure에 웹 사이트를 배포 해야 하는 두 가지 워크 로드에 있습니다. 이러한 워크로드는 ASP.NET 사이트에 대한 모든 템플릿을 포함하고 있으며 Azure에 사이트를 연결하고 배포하는 기능을 제공합니다.
 
 다음 워크로드가 설치되어 있는지 확인해야 합니다.
 
 - ASP.NET 및 웹 개발
 
-Visual Studio 2017의 웹 개발 워크로드는 HTML 및 JavaScript 같은 표준 기반 기술과 ASP.NET을 사용하여 웹 응용 프로그램 개발 생산성을 극대화하도록 설계되었습니다.
+Visual Studio 2017의 웹 개발 워크 로드는 ASP.NET 및 HTML 및 JavaScript와 같은 표준 기반 기술을 사용 하 여 웹 응용 프로그램 개발의 생산성을 극대화 하도록 설계 되었습니다.
 
 - Azure 개발
 

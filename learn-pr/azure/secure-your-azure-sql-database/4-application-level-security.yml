@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-sql-database.4-application-level-security
+metadata:
+  title: 응용 프로그램 수준 보안
+  description: 데이터베이스에 액세스 하는 응용 프로그램 코드를 작성 하는 동안 하지 않으려면 문제를 알아보고 위협은 중요 한 정보를 보호 하는 방법에 알아봅니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 응용 프로그램 수준 보안
+durationInMinutes: 15
+content: |
+  [!include[](includes/4-application-level-security.md)]

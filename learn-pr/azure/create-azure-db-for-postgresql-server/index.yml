@@ -1,40 +1,39 @@
 ### YamlMime:Module
 uid: learn.create-azure-db-for-postgresql
 metadata:
-  title: Create an Azure Database for PostgreSQL server
-  description: Azure Database for PostgreSQL provides fully managed, enterprise-ready community PostgreSQL database as a service. Learn how to create and deploy this service and connect it to your applications.
+  title: PostgreSQL용 Azure Database 서버 만들기
+  description: 'Azure Database for PostgreSQL 서비스로 엔터프라이즈 지원 완전히 관리 되는 커뮤니티 PostgreSQL 데이터베이스를 제공 합니다. 만들기 및이 서비스를 배포 하 고, 응용 프로그램에 연결 하는 방법에 알아봅니다.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Create an Azure Database for PostgreSQL server
-summary: Azure Database for PostgreSQL provides fully managed, enterprise-ready community PostgreSQL database as a service. Learn how to create and deploy this service and connect it to your applications.
+title: PostgreSQL용 Azure Database 서버 만들기
+summary: 'Azure Database for PostgreSQL 서비스로 엔터프라이즈 지원 완전히 관리 되는 커뮤니티 PostgreSQL 데이터베이스를 제공 합니다. 만들기 및이 서비스를 배포 하 고, 응용 프로그램에 연결 하는 방법에 알아봅니다.'
 abstract: |
-  In this module, you will:
-  - Create an Azure Database for PostgreSQL using the Azure portal
-  - Create an Azure Database for PostgreSQL using the Azure CLI
-  - Configure a PostgreSQL server-level firewall rule
-  - Connect to the PostgreSQL server using the `psql` command in Azure Cloud Shell
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
+  이 모듈에서 수행하는 작업:
+  - Azure portal을 사용 하 여 PostgreSQL 용 Azure Database 만들기
+  - Azure CLI를 사용하여 PostgreSQL용  Azure Database 만들기
+  - PostgreSQL 서버 수준 방화벽 규칙 구성
+  - 사용 하 여 PostgreSQL 서버에 연결 된 `psql` Azure Cloud Shell 명령
+prerequisites: 없음
+iconUrl: /learn/achievements/create-azure-db-for-postgresql-server.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-clis
-- azure-cloud-shell
+  - azure
+  - azure-clis
+  - azure-cloud-shell
 units:
-- learn.create-azure-db-for-postgresql.introduction
-- learn.create-azure-db-for-postgresql.postgresql-decision
-- learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-portal
-- learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-portal
-- learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
-- learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-cli
-- learn.create-azure-db-for-postgresql.server-security-considerations
-- learn.create-azure-db-for-postgresql.connecting-to-postgresql-db-server
-- learn.create-azure-db-for-postgresql.summary
+  - learn.create-azure-db-for-postgresql.introduction
+  - learn.create-azure-db-for-postgresql.postgresql-decision
+  - learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-portal
+  - learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-portal
+  - learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
+  - learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-cli
+  - learn.create-azure-db-for-postgresql.server-security-considerations
+  - learn.create-azure-db-for-postgresql.connecting-to-postgresql-db-server
+  - learn.create-azure-db-for-postgresql.summary
 achievement: learn.create-azure-db-for-postgresql.badge

@@ -10,7 +10,7 @@
 
     ![이벤트 허브 메시지 보기](../media-draft/6-view-messages.png)
 
-1. SimpleSend 및 EventProcessorSample 응용 프로그램은 100개의 메시지를 보내거나 받도록 구성됩니다. 이벤트 허브가 SimpleSend 응용 프로그램에서 100개의 메시지를 처리했고 100개의 메시지를 EventProcessorSample 응용 프로그램으로 전송했음을 알 수 있습니다.
+1. SimpleSend 및 EventProcessorSample 응용 프로그램은 100개의 메시지를 보내거나 받도록 구성됩니다. 이벤트 허브 SimpleSend 응용 프로그램에서 100 개 메시지 처리를 EventProcessorSample 응용 프로그램에 100 개 메시지를 전송한 볼 수 있습니다.
 
 ## <a name="test-event-hub-resilience"></a>이벤트 허브 복원력 테스트
 
@@ -22,7 +22,6 @@
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. **보내기 완료...** 가 표시되면 Enter 키를 누릅니다.
@@ -43,12 +42,11 @@
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. 메시지가 콘솔에 표시되는 작업이 중지하면 Enter 키를 누릅니다.
 
-1. Azure Portal에서 이벤트 허브 **‘네임스페이스’** 를 찾아 엽니다. 
+1. Azure Portal에서 이벤트 허브 **‘네임스페이스’** 를 찾아 엽니다.__ 
 
 1. **Event Hubs 네임스페이스** > **모니터링** > **메트릭(미리 보기)** 을 클릭합니다.
 

@@ -22,15 +22,12 @@ Azure Cosmos DB 내에서 원자성 트랜잭션을 수행하는 방법은 저�
 
 다음 샘플은 현재 컨텍스트를 가져온 다음 “Hello, World”를 표시하는 응답을 보내는 간단한 HelloWorld 저장 프로시저입니다. 저장 프로시저에도 Azure Cosmos DB 문서처럼 ID 값이 있습니다.
 
-```java
-var helloWorldStoredProc = {
-    id: "helloWorld",
-    serverScript: function () {
-        var context = getContext();
-        var response = context.getResponse();
+```javascript
+function helloWorld() {
+    var context = getContext();
+    var response = context.getResponse();
 
-        response.setBody("Hello, World");
-    }
+    response.setBody("Hello, World");
 }
 ```
 
@@ -42,35 +39,31 @@ UDF는 Azure Cosmos DB SQL 쿼리 언어 문법을 확장하고 사용자 지정
 
 ## <a name="user-defined-function-example"></a>사용자 정의 함수 예제
 
-다음 샘플에서는 주문 총액 기준 할인액을 계산하는 UDF를 만든 다음 할인액에 따라 수정된 주문 총액을 반환합니다.
+다음 샘플에서 제품 비용 가상의 회사의 제품에 대 한 세금을 계산 하는 UDF를 만듭니다.
 
-```java
-var discountUdf = {
-    id: "discount",
-    serverScript: function discount(orderTotal) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-        if(orderTotal == undefined) 
-            throw 'no input';
+    var amount = parseFloat(price);
 
-        if (orderTotal < 50) 
-            return orderTotal * 0.9;
-        else if (orderTotal < 100) 
-            return orderTotal * 0.8;
-        else
-            return orderTotal * 0.7;
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
 ## <a name="create-a-stored-procedure-in-the-portal"></a>포털에서 저장 프로시저 만들기
 
-그러면 포털에서 새 저장 프로시저를 만들어 보겠습니다. 포털에서는 컬렉션의 첫 번째 항목을 검색하는 단순한 저장 프로시저가 자동으로 입력되므로, 이 저장 프로시저를 먼저 실행해 보겠습니다.
+포털에서 저장 프로시저를 새로 만들어 보겠습니다. 포털에서는 컬렉션의 첫 번째 항목을 검색하는 단순한 저장 프로시저가 자동으로 입력되므로, 이 저장 프로시저를 먼저 실행해 보겠습니다.
 
 1. 데이터 탐색기에서 **새 저장 프로시저**를 클릭합니다.
 
     데이터 탐색기에 샘플 저장 프로시저가 포함된 새 탭이 표시됩니다.
-
-  <!--TODO: Insert animated .gif of creating the stored procedure.-->
 
 2. **저장 프로시저 ID** 상자에 이름을 *sample*로 입력하고 **저장**, **실행**을 차례로 클릭합니다.
 
@@ -87,54 +80,56 @@ var discountUdf = {
 
 1. 데이터 탐색기에서 **새 저장 프로시저**를 클릭합니다. 이 저장 프로시저의 이름을 *createDocuments*로 지정하고 **저장**, **실행**을 차례로 클릭합니다.
 
-    ```java
-    var createDocumentStoredProc = {
-        id: "createMyDocument",
-        productid: "5"
-        serverScript: function createMyDocument(documentToCreate) {
-            var context = getContext();
-            var collection = context.getCollection();
-    
-            var accepted = collection.createDocument(collection.getSelfLink(),
-                  documentToCreate,
-                  function (err, documentCreated) {
-                      if (err) throw new Error('Error' + err.message);
-                      context.getResponse().setBody(documentCreated.id)
-                  });
-            if (!accepted) return;
-        }
-    }
-    ```
+```javascript
+function createMyDocument(id, productid, name, description, price) {
+    var context = getContext();
+    var collection = context.getCollection();
 
-<!--TODO: Need to fix code above.-->
+    var doc = {
+        "id": id,
+        "productId": productid,
+        "description": description,
+        "price": price    
+    };
 
-2. 파티션 키 값으로 *3*을 입력하고 **실행**을 클릭합니다.
+    var accepted = collection.createDocument(collection.getSelfLink(),
+        doc,
+        function (err, documentCreated) {
+            if (err) throw new Error('Error' + err.message);
+            context.getResponse().setBody(documentCreated)
+        });
+    if (!accepted) return;
+}
+```
 
-    새로 만든 문서가 데이터 탐색기에 표시됩니다. 
+2. 입력 매개 변수 상자에서 파티션 키 값을 입력 *999* 클릭 하 고 **새 매개 변수 추가** 값을 입력 하 고 id에 대 한 키를 누릅니다 **새 매개 변수를 추가** 다시 값을 입력 하 고 productid 합니다. 계정 이름, 설명 및 해당 순서에 따라에서 가격의 이름에 대해 동일한 작업을 수행 하 고 클릭 **Execute**합니다.
+
+    데이터 탐색기에서 새로 만든된 문서를 표시 한 다음 됩니다. 
 
 ## <a name="create-a-user-defined-function"></a>사용자 정의 함수 만들기
 
 이제 데이터 탐색기에서 UDF를 만들어 보겠습니다.
 
-데이터 탐색기에서 **새 UDF**를 클릭합니다. 다음 코드를 창에 복사하고 UDF 이름을 *tax*로 지정한 다음 **저장**을 클릭합니다. UDF는 포털에서는 실행할 수 없으며, 이후 모듈에서 사용할 것입니다.
+데이터 탐색기에서 **새 UDF**를 클릭합니다. 창에 다음 코드를 복사, 이름 지정 UDF *producttax*를 클릭 하 고 **저장**합니다.
 
-```java
-function userDefinedFunction(){
-    var taxUdf = {
-        id: "tax",
-        serverScript: function tax(income) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-            if(income == undefined) 
-                throw 'no input';
+    var amount = parseFloat(price);
 
-            if (income < 1000) 
-                return income * 0.1;
-            else if (income < 10000) 
-                return income * 0.2;
-            else
-                return income * 0.4;
-        }
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
+사용자 정의 함수를 정의한 경우 실행할 수 있습니다 다음 해당 컬렉션에 대해 다음 쿼리를 실행 하 여:
+
+```sql
+SELECT c.id, c.productId, c.price, udf.producttax(c.price) AS producttax FROM c
+```

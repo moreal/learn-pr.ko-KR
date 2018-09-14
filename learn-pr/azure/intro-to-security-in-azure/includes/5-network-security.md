@@ -1,43 +1,43 @@
-Securing your network from attacks and unauthorized access is an important part of any architecture. Here, we'll take a look at what network security looks like, how to integrate a layered approach into your architecture, and how Azure can help you provide network security for your environment.
+공격 및 무단 액세스로부터 네트워크를 보호하는 것은 아키텍처의 중요한 부분입니다. 여기서는 네트워크 보안의 특징, 아키텍처에 계층화 접근 방식을 통합하는 방법, Azure가 환경에 네트워크 보안을 제공하는 방식에 대해 알아보겠습니다.
 
-## A layered approach to network security
+## <a name="a-layered-approach-to-network-security"></a>네트워크 보안에 대한 계층화된 접근 방식
 
-A common thread throughout this module has been taking a layered approach to security, and this approach is no different at the network layer. It's not enough to just focus on securing the network perimeter, or focusing on the network security between services inside a network. A layered approach provides multiple levels of protection, so that if an attacker gets through one layer, there's further protections in place to limit further attack.
+이 모듈 전체에서 계층화된 접근 방식을 보안에 사용하고 있으며, 이 접근 방식은 네트워크 계층에서 아무런 차이가 없습니다. 네트워크 경계 보호에만 집중하거나 또는 네트워크 내부의 서비스 간 네트워크 보안에 집중하기에 충분하지 않습니다. 계층화된 접근 방식은 여러 보호 수준을 제공하므로 공격자가 한 계층을 돌파하더라도 추가 보호가 작동하므로 추가 공격이 제한됩니다.
 
-Let's take a look at how Azure can provide the tools for a layered approach to securing your network footprint.
+Azure가 어떻게 네트워크 공간을 보호하는 계층화된 접근 방식을 위한 도구를 제공하는지 살펴보겠습니다.
 
-### Internet protection
+### <a name="internet-protection"></a>인터넷 보호
 
-If we start on the perimeter of the network, we're focused on limiting and eliminating attacks from the internet. A great first place to start is to assess the resources that are internet-facing, and allow only inbound and outbound communication where necessary. Identify all resources that are allowing inbound network traffic of any type, and ensure they are necessary and restricted to only the ports/protocols required. Azure Security Center is a great place to look for this information, because it will identify internet-facing resources that don't have network security groups associated with them, as well as resources that are not secured behind a firewall.
+네트워크 경계에서 시작하는 경우 인터넷 공격을 제안하고 제거하는 것이 집중해야 합니다. 시작 하려면 첫 번째를 살펴보는 인터넷에 연결 되며 필요한 경우에 인바운드 및 아웃 바운드 통신을 허용 하는 리소스를 평가 하는 것입니다. 모든 종류의 인바운드 네트워크 트래픽을 허용하는 리소스를 식별하고, 리소스가 필요한지 확인하여 반드시 필요한 포트/프로토콜로 제한해야 합니다. Azure Security Center를 살펴보는이 정보를 검색할 이므로 인터넷 연결 네트워크 보안 그룹 관련 되지 않은 리소스 뿐만 아니라 방화벽이 보호 하지 않는 리소스를 식별 합니다.
 
-To provide inbound protection at the perimeter, you have a couple of choices:
+경계에서 인바운드 보호를 제공 하기 몇 가지 방법 있습니다.
 
-* Azure Application Gateway is a load balancer that includes a web application firewall that provides protection from common, known vulnerabilities.
+* Azure Application Gateway는 알려진 취약성의 일반적인 보호를 제공 하는 웹 응용 프로그램 방화벽을 포함 하는 부하 분산 장치.
 
-* For non-HTTP services or advanced configurations, network virtual appliances (NVAs) can be used. NVAs are similar to hardware firewall appliances.
+* HTTP가 아닌 서비스 또는 고급 구성에 대 한 네트워크 가상 어플라이언스 (Nva)를 사용할 수 있습니다. Nva는 방화벽 어플라이언스 하드웨어와 비슷합니다.
 
 
-Any resource exposed to the internet is at risk of being attacked by a denial of service attack. These types of attacks attempt to overwhelm a network resource by sending so many requests that the resource becomes slow or unresponsive. To mitigate these attacks, Azure DDoS protection provides basic protection across all Azure services and enhanced protection for further customization for your resources. Azure DDoS protection blocks attack traffic and forwards the remaining traffic to its intended destination. Within a few minutes of attack detection, you are notified using Azure Monitor metrics.
+인터넷에 노출 하는 모든 리소스는 서비스 공격의 거부 공격 위험이 있습니다. 이러한 유형의 공격은 네트워크 리소스에 과부하를 걸어서 리소스가 느려지거나 응답할 수 없도록 수많은 요청을 전송합니다. 이러한 공격을 완화 하려면 Azure DDoS 보호는 모든 Azure 서비스 및 리소스에 대 한 추가 사용자 지정에 대 한 향상 된 보호에서 기본 보호를 제공 합니다. Azure DDoS 보호는 공격 트래픽을 차단 하 고 나머지 트래픽을 의도 한 대상에 전달 합니다. 공격이 감지되면 몇 분 안에 Azure Monitor 메트릭을 통해 알림이 전송됩니다.
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![DDoS](../media-COPIED-FROM-DESIGNFORSECURITY/ddos.png)
 
-### Virtual network security
+### <a name="virtual-network-security"></a>가상 네트워크 보안
 
-Once inside a virtual network (VNet), it's important to limit communication between resources to only what is required.
+VNet(가상 네트워크) 내에서는 꼭 필요한 곳에서만 리소스 간 통신이 이루어지도록 제한해야 합니다.
 
-For communication between virtual machines, network security groups are a critical piece to restrict unnecessary communication. They provide a list of allowed and denied communication to and from network interfaces and subnets, and are fully customizable.
+가상 머신 간의 통신에 대 한 네트워크 보안 그룹은 불필요 한 통신을 제한 하는 중요 한 부분입니다. 허용 및 거부 된 통신에서 네트워크 인터페이스와 서브넷의 목록을 제공 하며 완전히 사용자 지정할 수 있습니다.
 
-You can completely remove public internet access to your services by restricting access to service endpoints. With service endpoints, Azure service access can be limited to your virtual network.
+서비스 끝점에 대 한 액세스를 제한 하 여 서비스에 공용 인터넷을 완전히 제거할 수 있습니다. 서비스 끝점을 사용 하 여 Azure 서비스 액세스는 가상 네트워크를 제한할 수 있습니다.
 
-### Network integration
+### <a name="network-integration"></a>네트워크 통합
 
-It's common to have existing network infrastructure that needs to be integrated to provide communication from on-premises networks or to provide improved communication between services in Azure. There are a few key ways to handle this integration and improve the security of your network.
+것이 일반적으로 통합 하 여 온-프레미스 네트워크에서 통신을 제공 하려면 또는 Azure에서 서비스 간의 향상 된 통신을 제공 해야 하는 기존 네트워크 인프라를 있습니다. 이러한 통합을 처리하고 네트워크 보안을 향상할 수 있는 몇 가지 방법이 있습니다.
 
-Virtual private network (VPN) connections are a common way of establishing secure communication channels between networks. Connection between Azure Virtual Network and an on-premises VPN device is a great way to provide secure communication between your network and your VNet on Azure.
+가상 사설망 (VPN) 연결은 네트워크 간의 보안 통신 채널을 설정 하는 일반적인 방법입니다. Azure Virtual Network와 온-프레미스 VPN 장치 간 연결에는 Azure에서 네트워크와 VNet 간에 보안 통신을 제공 하는 좋은 방법입니다.
 
-To provide a dedicated, private connection between your network and Azure, you can use Azure ExpressRoute. ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider. With ExpressRoute, you can establish connections to Microsoft cloud services, such as Microsoft Azure, Office 365, and Dynamics 365. This improves the security of your on-premises communication by sending this traffic over the private circuit instead of over the internet. You don't need to allow access to these services for your end users over the internet, and youcan send this traffic through appliances for further traffic inspection.
+네트워크와 Azure 간의 개인 전용된 연결을 위해 Azure ExpressRoute를 사용할 수 있습니다. ExpressRoute를 사용하면 연결 공급자가 지원하는 개인 연결을 통해 온-프레미스 네트워크를 Microsoft 클라우드로 확장할 수 있습니다. ExpressRoute를 사용하면 Microsoft Azure, Office 365 및 Dynamics 365와 같은 Microsoft 클라우드 서비스에 대한 연결을 설정할 수 있습니다. 이렇게 하면 인터넷 대신 사설 회로를 통해 이 트래픽을 전송하여 온-프레미스 통신의 보안이 향상됩니다. 인터넷을 통해 최종 사용자에 대 한 이러한 서비스에 대 한 액세스를 허용 하도록 필요가 및 있습니다 어플라이언스 추가 트래픽 검사를 통해이 트래픽을 전송 합니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-A layered approach to network security helps reduce your risk of exposure through network-based attacks. Azure provides several services and capabilities to secure your internet-facing resource, internal resources, and communication between on-premises networks. These features make it possible to create secure solutions on Azure.
+네트워크 보안에 계층화된 접근 방식을 사용하면 네트워크 기반 공격에 의한 노출 위험을 줄일 수 있습니다. Azure는 여러 서비스와 인터넷 리소스에서 내부 리소스와 온-프레미스 네트워크 간의 통신을 보호 하는 기능을 제공 합니다. 이러한 기능을 통해 Azure에서 안전한 솔루션을 만들 수 있습니다.

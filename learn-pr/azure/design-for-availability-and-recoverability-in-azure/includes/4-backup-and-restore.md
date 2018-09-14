@@ -1,72 +1,72 @@
-Backup is the final and most powerful line of defense against permanent data loss. An effective backup strategy requires more than simply making copies of data. It needs to take your application's data architecture and infrastructure into consideration. Your app may manage many kinds of data of varying importance, spread widely across filesystems, databases, and other storage services both in the cloud and on-premises. Using the right services and products for the job will simplify your backup process and increase recovery time if a backup needs to be restored.
+백업은 영구적인 데이터 손실로부터 보호하는 가장 강력한 최종 방어선입니다. 효과적인 백업 전략은 단순히 데이터의 복사본을 만들어 필요 합니다. 응용 프로그램의 데이터 아키텍처 및 인프라를 고려해 야 해야 합니다. 앱에 여러 종류의 파일 시스템, 데이터베이스 및 다른 저장소 서비스는 클라우드 및 온-프레미스 모두에서 광범위 하 게 분산 하는 다양 한 중요 한 데이터를 관리할 수 있습니다. 이 작업에 적합한 서비스와 제품을 사용하면 백업 프로세스를 간소화하고 백업을 복원해야 할 때 복구 시간을 단축할 수 있습니다.
 
-## Establish backup and restoration requirements
+## <a name="establish-backup-and-restoration-requirements"></a>백업 및 복원 요구 사항 설정
 
-As with a disaster recovery strategy, backup requirements are based on a cost-benefit analysis. Analysis of your app's data should be guided by the relative importance of the different categories of data the app manages, as well as external requirements, such as data retention laws.
+재해 복구 전략을 진행하면서 백업 요구 사항은 비용 효과 분석을 기준으로 합니다. 데이터 보존 법률을 준수와 같은 외부 요구 사항 뿐만 아니라, 앱을 관리 하는 데이터의 다양 한 범주의 상대적 중요도 따라 앱의 데이터를 분석을 안내 합니다.
 
-To establish backup requirements for your app, take stock of your application's data and perform an analysis to group it based on the following requirements:
+앱에 대한 백업 요구 사항을 수립하려면 응용 프로그램 데이터를 사용하여 분석을 수행하여 다음 요구 사항에 따라 그룹화합니다.
 
-* How much of this type of data can afford to be lost, measured in duration
-* The maximum amount of time a restore of this type of data should require
-* Backup retention requirements: how long and at what frequency do backups need to remain available
+* 손실을 감당할 수 있는 이 유형의 데이터 크기(기간 단위)
+* 이런 유형의 데이터 복원에 필요한 최대 시간
+* 백업 보존 요구 사항: 기간 및 빈도에 백업 해야 계속 사용할 수 있습니다
 
-These concepts map neatly to the concepts of Recovery Point Objective and Recovery Time Objective (RPO and RTO). The duration of acceptable loss will generally translate directly to required backup intervals and RPO. The maximum amount of time a restore takes corresponds to the RTO for the data component of your application. Both requirements should be developed relative to the cost of achieving them. Every organization would like to say that they truly can't afford to lose *any* data, but often that's not the case when the cost of achieving that requirement is considered.
+이러한 개념 복구 지점 목표 및 복구 시간 목표 (RPO 및 RTO)의 개념을 어림잡아 매핑합니다. 용인 가능한 손실 길이는 일반적으로 필요한 백업 간격 및 RPO로 직접 연결됩니다. 최대 복원 소요 시간은 응용 프로그램의 데이터 구성 요소에 대한 RTO에 해당합니다. 요구 사항은 모두 실현 하 고 비용을 기준으로 개발 되어야 합니다. 이러한 진정으로 수용할 수 없는 가정해 하려는 모든 조직이 *모든* 데이터 않지만 종종 있지 않은 경우 해당 요구 사항을 달성 하는 비용으로 간주 됩니다.
 
-Backup absolutely plays a role in disaster recovery (DR), but backups, restores and their associated scenarios extend beyond the scope of DR. Backups may need to be restored in non-disaster situations, including those where RTO and RPO aren't of great concern. For example, if a small amount of data older than your backup interval is corrupted or deleted, but the application doesn't experience downtime, your application may never be in danger of missing its SLA and a successful restore will result in no data lost. Your disaster recovery plan may or may not include guidance on performing restores in non-disaster situations.
+백업은 DR(재해 복구)에서 중대한 역할을 하지만 백업, 복원 및 관련 시나리오는 DR의 범위를 넘어섭니다. 백업을 포함 되지 않은 재해 상황에서 복원 해야 할 수 있습니다 RTO 및 RPO 크게 문제가 없습니다. 예를 들어 약간에 백업 간격 보다 오래 된 데이터의 손상 되었거나 삭제 하지만 응용 프로그램 가동 중지 시간이 발생 하지 않습니다 발생할 위험이 없습니다. 해당 SLA의 응용 프로그램 수 및 성공적으로 복원 하면 데이터 손실이 없습니다. 재해 복구 계획에서 비 재해 상황에서의 복원 수행에 대한 지침을 포함하거나 포함하지 않을 수 있습니다.
 
 > [!TIP]
-> Don't confuse *archival*, *replication*, and *backup*. Archival is the storage of data for long-term preservation and read access. Replication is the near-real-time copying of data between replicas to support high availability and certain disaster recovery scenarios. Some requirements, such as data retention laws, may influence your strategies for all three of these concerns. Archival, replication, and backup all require separate analysis and implementation.
+> *보관*, *복제* 및 *백업*을 혼동해서는 안 됩니다. 보관 장기 보존 및 읽기 액세스 데이터를 저장 하는 것입니다. 복제는 거의 실시간으로 데이터 복사를 고가용성을 지원 하기 위해 복제본 사이의 특정 재해 복구 시나리오입니다. 데이터 보존 법률 같은 일부 요구 사항의 이러한 문제 중 세 가지 전략에 영향을 줄 수 있습니다. 보관, 복제 및 백업 필요한 별도 분석 및 구현 합니다.
 
-## Azure backup and restore capabilities
+## <a name="azure-backup-and-restore-capabilities"></a>Azure 백업 및 복원 기능
 
-Azure offers several backup-related services and features for various scenarios, including data in Azure as well as on-premises data. Most Azure services offer some kind of backup functionality. Here, we'll look at a few of the most popular backup-related Azure offerings.
+Azure는 온-프레미스 데이터뿐 아니라 Azure의 데이터를 포함하여 다양한 시나리오에서 몇 가지 백업 관련 서비스와 기능을 제공합니다. 대부분의 Azure 서비스는 어떤 종류의 백업 기능을 제공합니다. 여기에서는 가장 인기 있는 백업 관련 Azure 제품 몇 가지를 살펴봅니다.
 
-### Azure Backup
+### <a name="azure-backup"></a>Azure Backup
 
-Azure Backup is a family of backup products that back up data to Azure Recovery Services vaults for storage and recovery. Recovery Service vaults are storage resources in Azure that are dedicated to holding data and configuration backups for virtual machines, servers, and individual workstations and workloads.
+Azure Backup은 저장 및 복구를 위해 Azure Recovery Services 자격 증명 모음에 데이터를 백업하는 백업 제품군입니다. Recovery Service 자격 증명 모음은 가상 머신, 서버 및 개별 워크스테이션과 워크로드에 대한 데이터와 구성 백업 보관을 전담하는 Azure의 저장소 리소스입니다.
 
 > [!NOTE]
-> Both Azure Backup and Azure Site Recovery use Azure Recovery Service vaults for storage. Azure Backup is a general-purpose backup solution. Azure Site Recovery can coordinate replication and failover and support low RPO and RTO disaster recovery operations.
+> Azure Backup과 Azure Site Recovery 모두 저장소에 Azure Recovery Service 자격 증명 모음을 사용합니다. Azure Backup에는 범용 백업 솔루션입니다. Azure Site Recovery 복제를 조정할 수 있습니다 하 고 장애 조치 및 지원 낮은 RPO 및 RTO 재해 복구 작업입니다.
 
-Azure Backup serves as a general-purpose backup solution for cloud and on-premises workflows that run on VMs or physical servers. It's designed to be a drop-in replacement for traditional backup solutions that stores data in Azure instead of archive tapes or other local physical media.
+Azure Backup은 VM이나 물리적 서버에서 실행되는 클라우드와 온-프레미스 워크플로에 대한 범용 백업 솔루션 역할을 합니다. 보관 테이프나 기타 로컬 물리적 장치 대신 Azure에 데이터를 저장하는 전통적 백업 솔루션을 그대로 대체하도록 설계되었습니다.
 
-Four different products and services can use Azure Backup to create backups:
+다음 4가지 제품 및 서비스가 Azure Backup을 사용하여 백업을 만듭니다.
 
-* **Azure Backup Agent** is a small Windows application that backs up files, folders, and system state from the Windows VM or server on which it's installed. It works in a way that's similar to many consumer cloud-based backup solutions, but requires configuration of an Azure Recovery vault. Once you download and install it onto a Windows server or VM, you can configure it to create backups up to three times a day.
-* **System Center Data Protection Manager** is a robust, fully featured, enterprise-level backup and recovery system. Data Protection Manager is a Windows Server application that can back up filesystems and virtual machines (Windows and Linux), create bare-metal backups of physical servers, and perform application-aware backup of many Microsoft server products, such as SQL Server and Exchange. Data Protection Manager is part of the System Center family of products and is licensed and sold with System Center, but it's considered part of the Azure Backup family because it can store backups in an Azure Recovery vault.
-* **Azure Backup Server** is similar to Data Protection Manager, but it's licensed as part of an Azure subscription and doesn't require a System Center license. Azure Backup Server supports the same functionality as Data Protection Manager except for local tape backup and integration with the other System Center products.
-* **Azure IaaS VM Backup** is a turnkey backup and restore feature of Azure Virtual Machines. VM backup supports once-per-day backups for Windows and Linux virtual machines. It supports recovery of individual files, full disks, and entire VMs, and can also perform application-consistent backups. Individual applications can be made aware of backup operations and get their filesystem resources into a consistent state before the snapshot is taken.
+* **Azure Backup 에이전트** 작은 Windows 응용 프로그램 설치 된 서버 또는 Windows VM에서 파일, 폴더 및 시스템 상태 백업입니다. 많은 소비자 클라우드 기반 백업 솔루션 유사 하지만 Azure 복구 자격 증명 모음을 구성 해야 하는 방식으로 작동 합니다. 다운로드하여 Windows 서버나 VM에 설치하면 최대 하루 3회 백업을 만들도록 구성할 수 있습니다.
+* **System Center Data Protection Manager**는 강력하고 기능이 풍부한 엔터프라이즈급 백업 및 복구 시스템입니다. Data Protection Manager는 파일 시스템 및 virtual machines (Windows 및 Linux)를 백업, 물리적 서버의 완전 백업을 만들 하 고 다양 한 Microsoft 서버 제품 SQL 등의 응용 프로그램 인식 백업을 수행할 수 있는 Windows Server 응용 프로그램 서버와 교환 합니다. Data Protection Manager를 System Center 제품군의 일부인 및 사용이 허가 되어 System Center를 사용 하 여 판매 되지만 Azure 복구 자격 증명에 백업을 저장할 수 있으므로 Azure Backup 제품군의 일부로 간주 됩니다.
+* **Azure Backup Server** 와 비슷하지만 Data Protection Manager의 Azure 구독의 일부로 사용이 허가 되며 System Center 라이선스가 필요 하지 않습니다. Azure Backup Server는 로컬 테이프 백업 및 기타 System Center 제품과 통합 제외 하 고 Data Protection Manager와 동일한 기능을 지원 합니다.
+* **Azure IaaS VM Backup**은 Azure Virtual Machines의 턴키 방식 백업 및 복원 기능입니다. VM backup에는 Windows 및 Linux virtual machines에 대 한 매일 한 번 백업을 지원합니다. 개별 파일, 전체 디스크 및 전체 Vm의 복구를 지원 하며 응용 프로그램에 일관 된 백업을 수행할 수도 있습니다. 개별 응용 프로그램 인식 백업 작업의 수 및 스냅숏을 생성 하기 전에 해당 파일 시스템 리소스를 일관 된 상태로 가져옵니다.
 
-![Azure Backup](../media-draft/azure-backup.png)
+![Azure Backup](../media/azure-backup.png)
 
-Azure Backup can add value and contribute to the backup and restore strategy for IaaS and on-premises applications of virtually any size and shape.
+Azure Backup은 값을 추가할 수 있고 사실상 모든 규모와 형태의 IaaS 및 온-프레미스 응용 프로그램에 대한 백업 및 복원 전략에 기여할 수 있습니다.
 
-### Azure Blob storage
+### <a name="azure-blob-storage"></a>Azure Blob 저장소
 
-Azure Storage doesn't include an automated backup feature, but blobs are commonly used to back up all kinds of data from various sources. Many services that provide backup capabilities use blobs to store their data, and blobs are a common target for scripts and tools in every kind of backup scenario.
+Azure Storage는 자동화 된 백업 기능을 포함 하지 않습니다 하지만 blob은 일반적으로 다양 한 원본에서 모든 종류의 데이터를 백업 하는 데 사용 됩니다. 백업 기능을 제공하는 많은 서비스가 Blob를 사용하여 데이터를 저장하며, Blob는 모든 종류의 백업 시나리오에서 스크립트 및 도구의 공통 대상입니다.
 
-General Purpose v2 storage accounts support three different blob storage tiers of varying performance and cost. **Cool** storage offers the best cost-to-performance ratio for most backups, as opposed to **hot** storage, which offers lower access costs but higher storage costs. **Archive**-tier storage may be appropriate for secondary backups or backups of data with low expectations for recovery time. It's low in cost, but requires up to 15 hours of lead time to access.
+범용 v2 저장소 계정은 성능과 비용이 다양한 3가지 Blob 저장소 계층을 지원합니다. **쿨** 저장소와는 반대로 대부분의 백업에 대 한 최상의 성능 비용 비율을 제공 **핫** 낮은 액세스 비용이 저장소 비용 더 높음 하지만 제공 하는 저장소입니다. **보관**-계층 저장소 복구 시간에 대 한 낮은 기대치를 사용 하 여 보조 백업 또는 데이터의 백업을 적절 한 수 있습니다. 비용, 낮은 하지만 시간에 액세스 하려면 최대 15 시간이 필요 합니다.
 
-Immutable blob storage is configurable to be non-erasable and non-modifiable for a user-specified interval. Immutable blob storage was designed primarily to fulfill strict requirements for certain kinds of data, such as financial data. It's a great option for ensuring that backups are protected against accidental deletion or modification.
+변경할 수 없는 Blob 저장소는 사용자 지정 간격 동안은 삭제 및 수정이 불가능하게 구성할 수 있습니다. 변경이 불가능 한 blob 저장소는 주로 특정 종류의 재무 데이터와 같은 데이터에 대 한 엄격한 요구 사항을 충족 시키기 위해 설계 되었습니다. 우발적인 삭제 나 수정에 대 한 백업을 보호 하는 보장 하기 위한 유용한 옵션입니다.
 
-### Azure SQL Database
+### <a name="azure-sql-database"></a>Azure SQL Database
 
-Comprehensive, automatic backup functionality is included with Azure SQL Database at no extra charge. Full backups are created weekly, with differential backups performed every 12 hours, and log backups created every five minutes. Backups created by the service can be used to restore a database to a specific point in time, even if it's been deleted. Restores can be performed using the Azure portal, PowerShell, or the REST API. Backups for databases encrypted with Transparent Data Encryption, enabled by default, are also encrypted.
+Azure SQL Database에는 추가 비용 없이 종합적인 자동 백업 기능이 포함됩니다. 전체 백업은 매주 만들어지고 서로 다른 백업이 12시간마다 수행되며 로그 백업은 5분마다 만들어집니다. 서비스가 만든 백업을 사용하면 삭제된 경우에도 데이터베이스를 특정 지점으로 복원할 수 있습니다. Azure Portal, PowerShell 또는 REST API를 사용하여 복원을 수행할 수 있습니다. 기본적으로 활성화되는 TDE(투명한 데이터 암호화)로 암호화된 데이터베이스의 백업은 역시 암호화됩니다.
 
-SQL Database backup is enterprise-grade, production ready, and enabled by default. If you're evaluating different database options for an app, it should be included as part of cost-benefit analysis, as it's a significant benefit of the service. Every app that uses Azure SQL Database should take advantage of it by including it in their disaster recovery plan and backup/restore procedures.
+SQL Database 백업은 엔터프라이즈급으로, 프로덕션 환경용이며 기본적으로 활성화됩니다. 앱에 대 한 다른 데이터베이스 옵션을 평가 하 고 하는 경우 서비스의 중요 한 이점은 그대로 비용-이익 분석의 일부로 포함 되어야 합니다. Azure SQL Database를 사용하는 모든 앱은 재해 복구 계획과 백업/복원 절차에 포함하여 이를 활용해야 합니다.
 
-### Azure App Service
+### <a name="azure-app-service"></a>Azure App Service
 
-Web applications hosted in the Azure App Service Standard and Premium tiers support turnkey scheduled and manual backups. Backups include configuration and file contents as well as contents of databases used by the app. They also support simple filters for excluding files. Restore operations can target different App Service instances, making App Service back up a simple way to move one app's contents to another.
+웹 응용 프로그램 지원 턴키 예약 된 백업과 수동 백업을 Azure App Service 표준 및 프리미엄 계층에서 호스팅됩니다. 백업에는 앱에서 사용하는 데이터베이스의 콘텐츠 외에도 구성 및 파일 콘텐츠가 포함됩니다. 파일을 제외하기 위한 단순 필터도 지원됩니다. 복원 작업에서 다른 앱의 콘텐츠를 이동 하는 간단한 방법은 백업 App Service를 만드는 다른 App Service 인스턴스를 대상으로 지정할 수 있습니다.
 
-App Service backups are limited to 10 GB total, including app and database content. They're a good solution for new apps under development and small-scale apps. More mature applications won't generally use App Service backup. They will instead rely on robust deployment and rollback procedures, storage strategies that don't use application disk storage, and dedicated backup strategies for databases and persistent storage.
+App Service 백업은 앱과 데이터베이스 콘텐츠를 포함하여 총 10GB로 제한됩니다. 개발 중인 새 앱과 소규모 앱에 적합한 솔루션입니다. 적더라도 더 안정적인 응용 프로그램에는 App Service 백업 일반적으로 사용 되지 않습니다. 대신 강력한 배포 및 롤백 절차, 응용 프로그램 디스크 저장소를 사용 하지 않는 저장소 전략과 데이터베이스 및 영구 저장소에 대 한 전용된 백업 전략에 의존 합니다.
 
-## Verify backups and test restore procedures
+## <a name="verify-backups-and-test-restore-procedures"></a>백업 확인 및 복원 절차 테스트
 
-No backup system is complete without a strategy for verifying backups and testing restore procedures. Even if you use a dedicated backup service or product, you should still document and practice recovery procedures to ensure that they're well-understood and return the system to the expected state.
+백업을 확인하고 복원 절차를 테스트하기 위한 전략이 없다면 어떤 백업 시스템도 완전하지 않습니다. 전용된 백업 서비스 또는 제품을 사용 하는 경우에 잘 이해 하 고 있으며 예상 되는 상태 시스템 돌아가려면 되는지를 확인 하는 문서 및 연습 복구 절차 해야 계속 합니다.
 
-Strategies for verifying backups vary and will depend on the nature of your infrastructure. You may want to consider techniques, such as creating a new deployment of the application, restoring the backup to it, and comparing the state of the two instances. In many cases, this technique closely mimics actual disaster recovery procedures. Simply performing a comparison of a subset of the backup data with the live data immediately after creating a backup is enough. A common component of backup verification is attempting to restore old backups to ensure that they're still available and operational, and that the backup system hasn't changed in a way that renders them incompatible.
+백업 확인 전략은 인프라의 특성에 따라 달라집니다. 응용 프로그램의 새 배포를 만들고, 백업, 복원, 두 인스턴스의 상태를 비교 등의 기술을 고려해 야 할 수 있습니다. 대부분의 경우이 기술은 밀접 하 게 실제 재해 복구 절차를 모방합니다. 단순히 백업을 만든 직후 실제 데이터로 백업 데이터의 하위 집합을 비교하는 것이면 충분합니다. 백업 확인의 일반적인 구성 요소를 여전히 사용할 수 있고 작업 이기 및 호환 되지 않는 렌더링 하는 방식으로 백업 시스템 달라 지지는 되도록 이전 백업을 복원 하려고 합니다.
 
-Any strategy is better than finding out that your backups are corrupted or incomplete while attempting to recover from a disaster.
+어떤 전략도 재해 복구를 시도하면서 백업이 손상되었거나 호환되지 않는 것을 알게 되는 것보다는 낫습니다.
 
-A backup and restore strategy is an important part of ensuring your architecture can recover from the loss or corruption of data. Review your architecture to define your backup and restore requirements. Azure provides several services and features to provide backup and restore capabilities to any architecture.
+백업 및 복원 전략은 아키텍처가 데이터 손실이나 손상으로부터 복구할 수 있도록 하는 데 중요한 부분입니다. 아키텍처를 검토하여 백업 및 복원 요구 사항을 정의합니다. Azure는 모든 아키텍처에 백업 및 복원 기능을 제공하기 위한 여러 서비스와 기능을 제공합니다.

@@ -1,18 +1,18 @@
-In this unit, you will connect your bot to the QnA Maker knowledge base you built earlier so the bot can carry on an intelligent conversation. Connecting to the knowledge base involves retrieving some information from the QnA Maker portal, copying it into the Azure portal, updating the bot code, and then redeploying the bot to Azure.
+이 단원에서는 이전에 빌드한 QnA Maker 기술 자료에 봇을 연결하여 봇이 지능적인 대화를 수행할 수 있도록 합니다. 기술 자료에 연결하려면 QnA Maker 포털에서 일부 정보를 검색하여 Azure Portal에 복사하고 봇 코드를 업데이트한 후 Azure에 봇을 다시 배포합니다.
 
-1. Return to the [QnA Maker portal](https://www.qnamaker.ai/) and click your name in the upper-right corner. Select **Manage endpoint keys** from the menu that drops down. Click **Show** to show the primary endpoint key, and **Copy** to copy it to the clipboard. Then, paste it into a text file so you can easily retrieve it in a moment.
+1. [QnA Maker 포털](https://www.qnamaker.ai/)로 돌아가서 오른쪽 위에 있는 이름을 클릭합니다. 드롭다운 메뉴에서 **엔드포인트 키 관리**를 선택합니다. **표시**를 클릭하여 기본 엔드포인트 키를 표시하고 **복사**를 클릭하여 키를 클립보드에 복사합니다. 그런 다음, 쉽게 바로 검색할 수 있도록 키를 텍스트 파일에 붙여넣습니다.
 
-1. Click **My knowledge bases** in the menu at the top of the page. Then, click **View Code** for the knowledge base that you created earlier.
+1. 페이지 맨 위 메뉴에서 **내 기술 자료**를 클릭합니다. 그런 다음, 이전에 만든 기술 자료에 대한 **코드 보기**를 클릭합니다.
 
-1. Copy the knowledge base ID from the first line and the host name from the second line. Paste them into a text file, as well. Then, close the dialog. **Do not** include the "https://" prefix in the host name that you copy.
+1. 첫 번째 줄의 기술 자료 ID와 두 번째 줄의 호스트 이름을 복사하여 텍스트 파일에도 붙여넣습니다. 그런 다음, 대화 상자를 닫습니다. 복사하는 호스트 이름에 “https://” 접두사를 포함시키지 **마세요**.
 
-    ![Screenshot of the QnA Maker portal showing the Sample HTTP Request with the endpoint knowledge base ID and host name highlighted.](../media/6-copy-endpoint-info.png)
+    ![QnA Maker 포털 끝점 기술 자료 ID 및 호스트 이름을 강조 표시 된 예제 HTTP 요청을 보여 주는 스크린샷.](../media/6-copy-endpoint-info.png)
 
-1. Return to the web app bot in the Azure portal. Click **Application settings** in the menu on the left and scroll down until you find application settings named "QnAKnowledgebaseId," "QnAAuthKey," and "QnAEndpointHostName." Paste the knowledge base ID and host name obtained in Step 3 and the endpoint key obtained in Step 1 into these fields. Then, click **Save**.
+1. Azure Portal의 웹앱 봇으로 돌아갑니다. 왼쪽의 메뉴에서 **응용 프로그램 설정**을 클릭하고 “QnAKnowledgebaseId”, “QnAAuthKey” 및 “QnAEndpointHostName”이라는 응용 프로그램 설정을 찾을 때까지 아래로 스크롤합니다. 3단계에서 얻은 지식 기반 ID 및 호스트 이름과 1단계에서 얻은 엔드포인트 키를 이러한 필드에 붙여넣습니다. 그런 다음, **저장**을 클릭합니다.
 
-    ![Screenshot of the Azure portal showing the bot blade and Application Settings details with the Application Settings menu item and appropriate setting keys highlighting.](../media/6-enter-app-settings.png)
+    ![Azure portal 블레이드 및 응용 프로그램 설정 메뉴 항목을 강조 표시 하는 적절 한 설정 키를 사용 하 여 응용 프로그램 설정 세부 정보 봇을 보여 주는 스크린샷.](../media/6-enter-app-settings.png)
 
-1. Return to Visual Studio Code and replace the contents of **app.js** with the code below. Then, save the file.
+1. Visual Studio Code로 돌아가서 **app.js**의 콘텐츠를 아래 코드로 바꿉니다. 그런 다음, 파일을 저장합니다.
 
     ```JavaScript
     var restify = require('restify');
@@ -61,10 +61,10 @@ In this unit, you will connect your bot to the QnA Maker knowledge base you buil
     ```
 
     > [!Note]
-    > The call to create a `QnAMakerDialog` instance on line 30. This creates a dialog that integrates a bot built with the Azure Bot Service with a knowledge base built Microsoft QnA Maker.
+    > 만들기에 대 한 호출을 `QnAMakerDialog` 30 줄에는 인스턴스. Azure Bot Service로 빌드된 봇과 기술 자료로 빌드된 Microsoft QnA Maker를 통합하는 대화 상자가 만들어집니다.
 
-1. Click the **Source Control** button in the activity bar in Visual Studio Code. Type "Connected to knowledge base" into the message box, and click the check mark to commit your changes. Then, click the ellipsis and use the **Publish Branch** command to push these changes to the remote repository (and therefore. to the Azure Web App).
+1. Visual Studio Code의 작업 막대에서 **소스 제어** 단추를 클릭합니다. 메시지 상자에 “기술 자료에 연결됨”을 입력하고 확인 표시를 클릭하여 변경 내용을 커밋합니다. 그런 다음, 줄임표를 클릭하고 **분기 게시** 명령을 사용하여 이러한 변경 내용을 원격 리포지토리로(따라서, Azure 웹앱으로) 푸시합니다.
 
-1. Return to the web app bot in the Azure portal and click **Test in Web Chat** on the left to open the test console. Type "What's the most popular software programming language in the world?" into the box at the bottom of the chat window and press **Enter**. Confirm that the bot responds.
+1. Azure Portal의 웹앱 봇으로 돌아가서 왼쪽의 **웹 채팅에서 테스트**를 클릭하여 테스트 콘솔을 엽니다. “세계에서 가장 인기 있는 소프트웨어 프로그래밍 언어는 무엇인가요?”를 채팅창 아래쪽에 있는 상자에 입력하고 **Enter** 키를 누릅니다. 봇 응답 하는지 확인 합니다.
 
-Now that the bot is connected to the knowledge base, the final step is to test it in the wild. And what could be wilder than testing it with Skype?
+이제 봇이 기술 자료에 연결되었으므로 마지막 단계로 실제 환경에서 봇을 자유롭게 테스트합니다. Skype를 사용하면 그 어떤 환경보다도 자유롭게 테스트할 수 있습니다.

@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.5-scale-up
+title: 강화
+metadata:
+  title: 강화
+  description: 가상 컴퓨터를 자세히 제공 강화 성능과 메모리를 계산 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+interactive: bash
+azureSandbox: true
+durationInMinutes: 7
+content: |
+  [!include[](includes/5-scale-up.md)]

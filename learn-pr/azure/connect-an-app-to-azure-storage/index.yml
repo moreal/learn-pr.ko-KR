@@ -1,42 +1,40 @@
 ### YamlMime:Module
 uid: learn.connect-app-to-azure-storage
 metadata:
-  title: Connect an app to Azure Storage
-  description: Create a simple application and add configuration, client library references, and code to connect it to Azure Storage.
+  title: Azure Storage에 앱 연결
+  description: '간단한 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 Azure Storage에 연결 하는 코드를 추가 합니다.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Connect an app to Azure Storage
-summary: Create a simple application and add configuration, client library references, and code to connect it to Azure Storage.
-abstract: | 
-  In this module, you will:
-  - Explore the data types and services supported by an Azure storage account
-  - Create a new Azure storage account using the Azure portal
-  - Create a new application and connect the app to an Azure Storage account
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Azure Storage에 앱 연결
+summary: '간단한 응용 프로그램을 만들고 구성, 클라이언트 라이브러리 참조 및 Azure Storage에 연결 하는 코드를 추가 합니다.'
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - 데이터 형식 및 Azure storage 지 원하는 서비스를 탐색 합니다.
+  - Azure portal을 사용 하 여 새 Azure storage 계정을 만듭니다.
+  - 새 응용 프로그램을 만들고 앱을 Azure Storage 계정에 연결
+prerequisites: 없음
+iconUrl: /learn/achievements/connect-an-app-to-azure-storage.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-storage
+  - azure
+  - azure-storage
 units:
-- learn.connect-app-to-azure-storage.1-introduction
-- learn.connect-app-to-azure-storage.2-explore-azure-storage
-- learn.connect-app-to-azure-storage.3-exercise-create-your-app
-- learn.connect-app-to-azure-storage.4-exercise-create-storage-account
-- learn.connect-app-to-azure-storage.5-interact-with-azure-storage-apis
-- learn.connect-app-to-azure-storage.6-exercise-add-the-azure-storage-lib
-- learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
-- learn.connect-app-to-azure-storage.8-exercise-add-azure-storage-configuration-to-your-app
-- learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
-- learn.connect-app-to-azure-storage.10-exercise-connect-with-your-azure-storage-configuration
-- learn.connect-app-to-azure-storage.11-knowledge-check
-- learn.connect-app-to-azure-storage.12-summary
+  - learn.connect-app-to-azure-storage.1-introduction
+  - learn.connect-app-to-azure-storage.2-explore-azure-storage
+  - learn.connect-app-to-azure-storage.3-exercise-create-your-app
+  - learn.connect-app-to-azure-storage.4-exercise-create-storage-account
+  - learn.connect-app-to-azure-storage.5-interact-with-azure-storage-apis
+  - learn.connect-app-to-azure-storage.6-exercise-add-the-azure-storage-lib
+  - learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
+  - learn.connect-app-to-azure-storage.8-exercise-add-azure-storage-configuration-to-your-app
+  - learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
+  - learn.connect-app-to-azure-storage.10-exercise-connect-with-your-azure-storage-configuration
+  - learn.connect-app-to-azure-storage.11-knowledge-check
+  - learn.connect-app-to-azure-storage.12-summary
 achievement: learn.connect-app-to-azure-storage.badge

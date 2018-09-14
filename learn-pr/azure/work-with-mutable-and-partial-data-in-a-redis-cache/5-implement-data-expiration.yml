@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
+title: 데이터 만료를 구현 합니다.
+metadata:
+  title: 데이터 만료를 구현 합니다.
+  description: 데이터 만료를 구현 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+interactive: bash-editor
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-implement-data-expiration.md)]

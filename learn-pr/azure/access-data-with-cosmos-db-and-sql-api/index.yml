@@ -1,35 +1,37 @@
 ### YamlMime:Module
 uid: learn.access-data-with-cosmos-db-and-sql-api
 metadata:
-  title: Insert and query data in your Azure Cosmos DB database
-  description: Learn how to add data and query data in your Azure Cosmos DB database.
+  title: Azure Cosmos DB 데이터베이스의 데이터를 삽입 및 쿼리
+  description: Azure Cosmos DB 데이터베이스의 데이터 및 NoSQL 데이터를 쿼리를 추가 하는 방법에 알아봅니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Insert and query data in your Azure Cosmos DB database
-summary: Learn how to add data to your database and query data in Azure Cosmos DB. 
+title: Azure Cosmos DB 데이터베이스의 데이터를 삽입 및 쿼리
+summary: Azure Cosmos DB에서 NoSQL 데이터를 쿼리 하 고 데이터베이스에 데이터를 추가 하는 방법에 알아봅니다.
 abstract: |
-  In this module, you will:
-    - Create product catalog documents in the Data Explorer
-    - Perform Azure Cosmos DB queries
-    - Create and run operations on your documents by using stored procedures
-#TODO: Update icon URL with real image.
-iconUrl: http://via.placeholder.com/120x120
+  이 모듈에서 수행하는 작업:
+  - 데이터 탐색기에서 제품을 카탈로그 문서 만들기
+  - Azure Cosmos DB 쿼리를 수행 합니다.
+  - 만들기 및 저장된 프로시저를 사용 하 여 문서에 대 한 작업 실행
+prerequisites: 없음
+iconUrl: /learn/achievements/access-data-with-cosmos-db-and-sql-api.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
+  - azure-cosmos-db
+  - azure-clis
+  - azure-portal
 units:
-- learn.access-data-with-cosmos-db-and-sql-api.1-introduction
-- learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
-- learn.access-data-with-cosmos-db-and-sql-api.3-add-data
-- learn.access-data-with-cosmos-db-and-sql-api.4-query-types
-- learn.access-data-with-cosmos-db-and-sql-api.5-run-queries
-- learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
-- learn.access-data-with-cosmos-db-and-sql-api.7-summary
+  - learn.access-data-with-cosmos-db-and-sql-api.1-introduction
+  - learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
+  - learn.access-data-with-cosmos-db-and-sql-api.3-add-data
+  - learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+  - learn.access-data-with-cosmos-db-and-sql-api.5-run-queries
+  - learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
+  - learn.access-data-with-cosmos-db-and-sql-api.7-summary
 achievement: learn.access-data-with-cosmos-db-and-sql-api.badge

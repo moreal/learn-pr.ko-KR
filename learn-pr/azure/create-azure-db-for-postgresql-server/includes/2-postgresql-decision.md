@@ -1,13 +1,13 @@
-As a PostgreSQL user, you may already know the benefits of PostgreSQL. You plan to use **Azure Database for PostgreSQL** and you want to make sure you'll have access to the same benefits as your on-premise server before moving to the cloud.
+PostgreSQL 사용자로 PostgreSQL의 혜택을 이미 알 수 있습니다. 사용 하려는 **PostgreSQL 용 Azure Database** 클라우드로 이동 하기 전에 온-프레미스 서버와 동일한 혜택에 대 한 액세스를 사용 해야 하는지 확인 하려고 합니다.
 
-Azure Database for PostgreSQL is a relational database service in the Microsoft cloud. The server software is based on the community version of the open-source PostgreSQL database engine. Your familiarity with tools and expertise with PostgreSQL is applicable when using Azure Database for PostgreSQL.
+Azure Database for PostgreSQL은 Microsoft 클라우드의 관계형 데이터베이스 서비스입니다. 서버 소프트웨어 커뮤니티 버전의 오픈 소스 PostgreSQL 데이터베이스 엔진을 기반으로 합니다. 도구를 사용 하 여 사용자 경험 및 전문 지식을 PostgreSQL 사용 하 여 PostgreSQL 용 Azure Database를 사용 하는 경우 적용 됩니다.
 
-Moreover, Azure Database for PostgreSQL delivers the following benefits:
+또한 Azure Database for PostgreSQL에서는 다음 혜택을 제공 합니다.
 
-- Built-in high availability compared to on-premises resources. There is no additional configuration, replication, or cost required to make sure your applications are always available.
-- Simple and flexible pricing. You have predictable performance based on a selected pricing tier choice that includes software patching, automatic backups, monitoring, and security.
-- Scale up or down as needed within seconds. You can scale compute or storage independently as needed to make sure you adapt your service to match usage.
-- Adjustable automatic backups and point-in-time-restore for up to 35 days.
-- Enterprise-grade security and compliance to protect sensitive data at-rest and in-motion that covers data encryption on disk and SSL encryption between client and server communication.
+- 기본 제공 고가용성 온-프레미스 리소스에 비교 합니다. 없는 추가 구성, 복제 또는 응용 프로그램을 항상 사용할 수 있는지 확인 하는 데 드는 비용이 있습니다.
+- 단순 하 고 유연한 가격 책정 합니다. 선택한 소프트웨어 패치, 자동 백업에 포함 된 계층 선택한 가격 책정, 모니터링 및 보안을 기반으로 하는 예측 가능한 성능을 해야 합니다.
+- 시간 (초) 내에서 필요에 따라 위로 또는 아래로 확장 합니다. 확장할 수 있습니다 계산 또는 저장소 서비스 사용에 맞게 조정 되도록 필요에 따라 독립적으로 합니다.
+- 조정할 수 있는 자동 백업 및 지정-시간-복원 최대 35 일에 대 한 합니다.
+- 엔터프라이즈급 보안 및 중요 한 데이터를 보호 하는 준수 미사용 및 사용 중인 디스크에서 해당 설명 데이터 암호화 및 클라이언트 및 서버 통신 사이 SSL 암호화 합니다.
 
-These benefits should help make your decision to go from om-premise PostgeSQL to Azure Database for PostgreSQL simple.
+이러한 혜택 온-프레미스 PostgreSQL에서 간단한 PostgreSQL 용 Azure 데이터베이스로 이동 하 여 결정을 내리는 데 도움이 됩니다.

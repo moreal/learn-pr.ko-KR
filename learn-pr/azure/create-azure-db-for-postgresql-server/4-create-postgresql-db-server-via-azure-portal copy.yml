@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-portal
-title: Create an Azure Database for PostgreSQL server using the Azure portal
+title: Azure portal을 사용 하 여 PostgreSQL 서버용 Azure Database 만들기
 metadata:
-  title: Create an Azure Database for PostgreSQL server using the Azure portal
-  description: In this lab, you will use the Azure portal to create an Azure Database for PostgreSQL server.
+  title: Azure portal을 사용 하 여 PostgreSQL 서버용 Azure Database 만들기
+  description: 이 랩에서 Azure Database for PostgreSQL 서버를 만들려면 Azure portal을 사용 합니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+azureSandbox: true
 durationInMinutes: 10
 content: |
   [!include[](includes/4-create-postgresql-db-server-via-azure-portal.md)]

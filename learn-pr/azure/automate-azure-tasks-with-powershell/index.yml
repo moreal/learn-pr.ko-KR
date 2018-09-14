@@ -2,43 +2,39 @@
 uid: learn.automate-azure-tasks-with-powershell
 metadata:
   title: PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화
-  description: Azure PowerShell은 Azure 리소스를 제어하기 위한 cmdlet을 포함하는 PowerShell 모듈입니다. 관리자 머신에 로컬로 설치한 후 대화형 명령 및 스크립트를 실행할 수 있습니다. Azure PowerShell은 Azure 구독의 컨텍스트에서 실행되는 Azure 데이터 센터로 명령을 전달합니다. 이 모듈에서는 Linux, macOS 또는 Windows용 Azure PowerShell을 설치한 후 이 모듈을 사용하여 Azure에 연결하고 리소스를 관리하는 방법을 보여 줍니다.
+  description: 'Azure PowerShell은 Azure 리소스를 제어하기 위한 cmdlet을 포함하는 PowerShell 모듈입니다. 관리자 머신에 로컬로 설치한 후 대화형 명령 및 스크립트를 실행할 수 있습니다. Azure PowerShell은 Azure 구독의 컨텍스트에서 실행되는 Azure 데이터 센터로 명령을 전달합니다. 이 모듈에서는 Linux, macOS 또는 Windows용 Azure PowerShell을 설치한 후 이 모듈을 사용하여 Azure에 연결하고 리소스를 관리하는 방법을 보여 줍니다.'
   ms.date: 09/24/2018
-  ms.openlocfilehash: 358023bae2be05dc4a004a93178c907ec2765585
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43824568"
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화
 summary: Azure PowerShell을 로컬로 설치하고 Azure 리소스를 관리하는 데 사용합니다.
-abstract: >
-  이 모듈에서는 다음을 수행합니다.
-    - Azure PowerShell이 Azure 관리 작업에 적합한 도구인지 결정합니다.
-    - Linux, macOS 및 Windows에 Azure PowerShell을 설치합니다.
-    - Azure PowerShell을 사용하여 Azure 구독에 연결합니다.
-    - Azure PowerShell을 사용하여 Azure 리소스를 만듭니다.
-prerequisites: >
-  - PowerShell 또는 Bash 같은 명령줄 인터페이스 경험
-
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - Azure PowerShell이 Azure 관리 작업에 적합한 도구인지 결정
+  - Linux, macOS 및/또는 Windows Azure PowerShell 설치
+  - Azure PowerShell을 사용하여 Azure 구독에 연결
+  - Azure PowerShell을 사용하여 Azure 리소스 만들기
+prerequisites: |
+  - PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
   - 리소스 그룹 및 가상 머신과 같은 기본 Azure 개념에 대한 지식
-
   - Azure Portal을 사용하여 Azure 리소스 관리 경험
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.automate-azure-tasks-with-powershell.1-introduction
-- learn.automate-azure-tasks-with-powershell.2-decide-if-azure-powershell-is-right-for-your-tasks
-- learn.automate-azure-tasks-with-powershell.3-install-azure-powershell
-- learn.automate-azure-tasks-with-powershell.4-exercise-install-azure-powershell
-- learn.automate-azure-tasks-with-powershell.5-create-resource-interactively
-- learn.automate-azure-tasks-with-powershell.6-exercise-create-resource-interactively
-- learn.automate-azure-tasks-with-powershell.7-create-resource-using-script
-- learn.automate-azure-tasks-with-powershell.8-exercise-create-resource-using-script
-- learn.automate-azure-tasks-with-powershell.9-summary
+  - learn.automate-azure-tasks-with-powershell.1-introduction
+  - learn.automate-azure-tasks-with-powershell.2-decide-if-azure-powershell-is-right-for-your-tasks
+  - learn.automate-azure-tasks-with-powershell.3-install-azure-powershell
+  - learn.automate-azure-tasks-with-powershell.4-exercise-install-azure-powershell
+  - learn.automate-azure-tasks-with-powershell.5-create-resource-interactively
+  - learn.automate-azure-tasks-with-powershell.6-exercise-create-resource-interactively
+  - learn.automate-azure-tasks-with-powershell.7-create-resource-using-script
+  - learn.automate-azure-tasks-with-powershell.8-exercise-create-resource-using-script
+  - learn.automate-azure-tasks-with-powershell.9-summary
 achievement: learn.automate-azure-tasks-with-powershell.badge

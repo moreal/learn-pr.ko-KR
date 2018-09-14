@@ -9,11 +9,43 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ce5e1852bec8bd2fae48d5abc05ccc41c6ddd368
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233223"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: '지식 검사: 캐싱 및 Azure storage 및 디스크의 성능'
+  questions:
+    - content: 캐싱 옵션은 로그 파일을 저장 하는 등 많은 쓰기 작업에 적합 한?
+      choices:
+        - content: 읽기 전용
+          isCorrect: false
+          incorrectExplanation: TempDB 데이터 등의 데이터 디스크에 읽기 전용 캐싱 적합 합니다. 그러나 쓰기 집약적 작업의 성능을 개선 하지는 않습니다 및 성능이 약간 저하 문제가 발생할 수 있습니다.
+        - content: 읽기/쓰기
+          isCorrect: false
+          incorrectExplanation: 앱이 사용자는 필요할 때 영구 디스크에 캐시 된 데이터를 쓰기 제대로 처리 하는 경우 좋은 옵션입니다.
+        - content: 없음
+          isCorrect: true
+          correctExplanation: 쓰기 집약적 작업 일반적으로 유용 하지 않습니다 caching에서. 전용된 디스크에 가장 적합 한 로그 파일에 'none' 때문일 수 있습니다.
+    - content: 어떤 유형의 디스크는 Azure VM을 다시 시작 캐싱 유형을 변경 하려면?
+      choices:
+        - content: 데이터
+          isCorrect: false
+          incorrectExplanation: 데이터 디스크의 캐시 설정을 변경 분리 되 고 대상 디스크를 다시 연결 되지만 VM 다시 시작 하지 않습니다.
+        - content: 운영 체제 (OS)
+          isCorrect: true
+          correctExplanation: VM 다시 시작이 필요한 OS 디스크의 캐시 설정을 변경 합니다.
+        - content: 임시
+          isCorrect: false
+          incorrectExplanation: 임시 디스크의 캐싱 옵션을 변경할 수 없습니다.
+        - content: ZRS(영역 중복 저장소)
+          isCorrect: false
+          incorrectExplanation: 프리미엄 저장소 계정을 ZRS를 지원 하지 않습니다.
+    - content: Azure PowerShell을 사용 하 여 VM을 관리 하는 것을 가정 합니다. VM을 나타내는 로컬 개체 있고 로컬 개체에 여러 업데이트 했습니다. 실제 VM에 해당 로컬 변경 내용을 적용 하는 PowerShell cmdlet를 사용 해야 할까요?
+      choices:
+        - content: Update-AzureRmVM
+          isCorrect: true
+          correctExplanation: 이 cmdlet은 가상 컴퓨터 개체의 상태를 Azure 가상 머신의 상태를 업데이트합니다.
+        - content: Set-AzureRmVM
+          isCorrect: false
+        - content: New-AzureRmVM
+          isCorrect: false

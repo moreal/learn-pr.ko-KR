@@ -1,40 +1,36 @@
-You have added the required client libraries to your application and are ready to connect to your Azure storage account.
+필요한 클라이언트 라이브러리를 응용 프로그램에 추가했고 Azure 저장소 계정에 연결할 준비가 되었습니다.
 
-To work with data in a storage account, your app will need two pieces of data:
+저장소 계정에 데이터를 사용 하려면 앱에는 두 개의 데이터 조각이 필요 합니다.
 
-1. [An access key](#access-key)
-1. [The REST API endpoint](#rest-endpoint)
+1. 액세스 키
+1. REST API 끝점
 
-<a name="access-key"></a>
+## <a name="security-access-keys"></a>보안 액세스 키
 
-## Security access keys
+각 저장소 계정에는 두 개의 고유 _선택키가_ 저장소 계정을 보호 하는 데 사용 되는 합니다. 여러 storage 계정에 연결 해야 하는 앱, 앱 각 저장소 계정에 대 한 액세스 키를 해야 합니다.
 
-Each storage account has two unique _access keys_ that are used to secure the storage account. If your app needs to connect to multiple storage accounts, then your app will require an access key for each storage account.
+![응용 프로그램을 보여 주는 예시 클라우드에서 두 개의 저장소 계정에 연결 합니다. 각 저장소 계정은 고유 키를 사용 하 여 액세스할 수 있습니다.](..\media\6-multiple-accounts.png)
 
-![An illustration showing an application connected to two different storage accounts in the cloud. Each storage account is accessible with a unique key.](..\media\6-multiple-accounts.png)
+## <a name="rest-api-endpoint"></a>REST API 엔드포인트
 
-<a name="rest-endpoint"></a>
+저장소 계정에 대 한 인증에 대 한 액세스 키 외에도 앱 REST 요청을 발급 하도록 저장소 서비스 끝점을 파악 해야 합니다. 
 
-## REST API endpoint
+REST 끝점은 저장소 계정 조합 _이름을_, 데이터 형식 및 알려진된 도메인입니다. 예: 
 
-In addition to access keys for authentication to storage accounts, your app will need to know the storage service endpoints to issue the REST requests. 
-
-The REST endpoint is a combination of your storage account _name_, the data type, and a known domain. For example:
-
-| Data type | Example endpoint |
+| 데이터 형식 | 예제 끝점 |
 |-----------|------------------|
-| Blobs     | `https://[name].blob.core.windows.net/` |
-| Queues    | `https://[name].queue.core.windows.net/` |
-| Table     | `https://[name].table.core.windows.net/` |
-| Files     | `https://[name].file.core.windows.net/` |
+| Blob     | `https://[name].blob.core.windows.net/` |
+| 큐    | `https://[name].queue.core.windows.net/` |
+| 테이블     | `https://[name].table.core.windows.net/` |
+| 파일     | `https://[name].file.core.windows.net/` |
 
-If you have a custom domain tied to Azure, then you can also create a custom domain URL for the endpoint.
+Azure에 연결 하는 사용자 지정 도메인에 있는 경우 끝점에 대 한 사용자 지정 도메인 URL을 만들 수도 있습니다 것입니다.
 
-## Connection strings
+## <a name="connection-strings"></a>연결 문자열
 
-The simplest way to handle this information is to use a **storage account connection string** A connection string provides all needed connectivity information in a single text string.
+이 정보를 처리 하는 가장 간단한 방법은 사용 하는 것을 **저장소 계정 연결 문자열**합니다. 연결 문자열을 모두 필요한 단일 텍스트 문자열에서 연결 정보를 제공 합니다.
 
-Azure Storage connection strings look similar to the example below but with the access key and account name of your specific storage account:
+Azure Storage 연결 문자열은 아래 예제와 비슷하지만 특정 저장소 계정의 액세스 키 및 계정 이름이 포함됩니다.
 
 ```
 DefaultEndpointsProtocol=https;AccountName={your-storage};
@@ -42,29 +38,29 @@ DefaultEndpointsProtocol=https;AccountName={your-storage};
    EndpointSuffix=core.windows.net
 ```
 
-## Security
+## <a name="security"></a>보안
 
-Access keys are critical to providing access to your storage account and as a result, should not be given to any system or person that you do not wish to have access to your storage account. Access keys are the equivalent of a username and password to access your computer.
+액세스 키는 저장소 계정에 대한 액세스를 제공하는 데 중요하므로 사용자 저장소 계정에 액세스하지 않게 하려는 시스템 또는 개인에게 제공해서는 안 됩니다. 액세스 키는 컴퓨터에 액세스하기 위한 사용자 이름 및 암호와 같습니다.
 
-Typically, storage account connectivity information is stored within an environment variable, database, or configuration file.
+일반적으로 저장소 계정 연결 정보는 환경 변수, 데이터베이스 또는 구성 파일에 저장됩니다.
 
 > [!IMPORTANT]
-> It is important to note that storing this information in a configuration file can be dangerous if you include that file in source control and store it in a public repository. This is a common mistake and means that anyone can browse your source code in the public repository and see your storage account connection information.
+> 구성 파일에이 정보를 저장할 수 있습니다 위험한 소스 제어에 해당 파일을 포함 하 고 공용 리포지토리에 저장 하는 것이 반드시 합니다. 이는 일반적인 실수이며 누구나 공용 리포지토리에서 소스 코드를 찾아보고 저장소 계정 연결 정보를 볼 수 있다는 것을 의미합니다.
 
-Each storage account has two access keys. The reason for this is to allow keys to be rotated (regenerated) periodically as part of security best practice in keeping your storage account secure. This process can be done from the Azure portal or the Azure CLI / PowerShell command line tool.
+각 저장소 계정에는 두 개의 액세스 키가 있습니다. 그 이유는 저장소 계정의 보안을 유지하기 위한 보안 모범 사례의 일환으로 키를 주기적으로 순환(다시 생성)하도록 허용하기 위해서입니다. Azure portal 또는 Azure CLI에서이 프로세스를 수행할 수 있습니다 PowerShell 명령을 명령줄 도구입니다.
 
-Rotating a key will invalidate the original key value immediately and will revoke access to anyone who obtained the key inappropriately. With support for two keys, you can rotate keys without causing downtime in your applications that use them. Your app can switch to using the alternate access key, while the other key is regenerated. If you have multiple apps using this storage account, they should all use the same key to support this technique. Here's the basic idea:
+키를 순환하면 원래 키 값이 즉시 무효화되며 부적절하게 키를 얻은 모든 사람의 액세스 권한이 철회됩니다. 두 개의 키가 지원되므로 이러한 키를 사용하는 응용 프로그램에 가동 중지 시간을 일으키지 않고 키를 회전할 수 있습니다. 앱은 다른 키가 다시 생성 하는 동안 다른 액세스 키를 사용 하 여 전환할 수 있습니다. 이 저장소 계정을 사용하는 앱이 여러 개인 경우 이 기술을 지원하려면 해당 앱 모두 동일한 키를 사용해야 합니다. 기본 아이디어는 다음과 같습니다.
 
-1. Update the connection strings in your application code to reference the secondary access key of the storage account.
-2. Regenerate the primary access key for your storage account using the Azure portal or command line tool.
-3. Update the connection strings in your code to reference the new primary access key.
-4. Regenerate the secondary access key in the same manner.
+1. 저장소 계정의 보조 액세스 키를 참조하도록 응용 프로그램 코드의 연결 문자열을 업데이트합니다.
+2. Azure portal 또는 명령줄 도구를 사용 하 여 저장소 계정의 기본 액세스 키 다시 생성 합니다.
+3. 새 기본 액세스 키를 참조하도록 코드의 연결 문자열을 업데이트합니다.
+4. 같은 방식으로 보조 액세스 키를 다시 생성합니다.
 
 > [!TIP]
-> It's highly recommended that you periodically rotate your access keys to ensure they remain private - just like changing your passwords. If you are using the key in a server application, you can use an **Azure Key Vault** to store the access key for you. Key Vaults include support to synchronize directly to the Storage Account and automatically rotate the keys periodically. Using a Key Vault provides an additional layer of security so your app never has to work directly with an access key.
+> 암호 변경과 마찬가지로 비공개로 유지 하도록 액세스 키를 정기적으로 회전 하는 것이 좋습니다. 키를 서버 응용 프로그램을 사용 하는 경우 사용할 수는 **Azure Key Vault** 수에 대 한 액세스 키를 저장 하 합니다. 키 자격 증명 모음에는 저장소 계정에 직접 동기화 하 고 자동으로 키를 정기적으로 회전 하는 지원이 포함 됩니다. Key Vault를 사용 하 여 앱을 전혀 액세스 키를 직접 작업할 수 있도록 보안 강화를 제공 합니다.
 
-### Shared access signatures (SAS)
+### <a name="shared-access-signatures-sas"></a>SAS(공유 액세스 서명)
 
-Access keys are the easiest approach to authenticating access to a storage account, however they provide full access to anything in the storage account - similar to a root password on a computer. 
+액세스 키는 저장소 계정에 대 한 액세스를 인증 하는 가장 쉬운 방법입니다. 그러나 컴퓨터에서 루트 암호와 비슷한 저장소 계정에서 모든 항목에 대 한 모든 권한을 제공합니다.
 
-Storage accounts offer a separate authentication mechanism called _shared access signatures_ that support expiration and limited permissions for scenarios where you need to grant limited access. You should use this approach when you are allowing other users to read and write data to your storage account. There are links to our documentation on this advanced topic at the end of the module.
+저장소 계정 이라고 하는 별도 인증 메커니즘을 제공 _공유 액세스 서명_ 만료 및 제한 된 권한 제한 된 액세스 권한을 부여 해야 하는 시나리오에 대 한 지원입니다. 다른 사용자가 저장소 계정에 데이터를 읽고을 허용 하는 경우이 방법을 사용 해야 합니다. 모듈의 끝이 고급 항목에 설명서에 대 한 링크가 있습니다.

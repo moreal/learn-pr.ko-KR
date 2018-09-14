@@ -1,1 +1,28 @@
-We discussed how to make your application available and recoverable by architecting for high availability, disaster recovery, and backups. High availability is the ability to handle the loss or severe degradation of a component of a system. Disaster recovery is about *recovering from high-impact events* that result in downtime and loss of data. And, backups refer to restoring your data after a disaster has occurred. Following these three principles will help ensure your application is resilient.
+고가용성, 재해 복구 및 백업에 대 한 설계를 통해 사용 가능 하 고 복구할 수 있는 응용 프로그램을 확인 하는 방법에 설명한 했습니다. 핵심 내용 중 일부를 살펴보겠습니다.
+
+## <a name="high-availability"></a>고가용성
+
+- 고가용성은 시스템 구성 요소의 손실이나 심각한 성능 저하를 처리하는 능력입니다.
+- 세 가지 주요 영역에 집중 하 여 고가용성을 위해 응용 프로그램을 평가 합니다.
+  - 정의 된 SLA입니다.
+  - 응용 프로그램의 HA 기능입니다.
+  - 종속 응용 프로그램의 HA 기능입니다.
+- Azure에서 가용성 집합과 가용성 영역을 사용 하 여 VM 워크 로드에 대 한 HA를 제공 합니다.
+- 부하 분산 서비스를 사용할 수 있는 시스템에서 Azure Traffic Manager, Azure Application Gateway 및 Azure Load Balancer 배포 하려면 로드 등을 사용 합니다.
+- PaaS 서비스에 기본 제공 HA가 있으므로 아키텍처에서 이러한 서비스를 활용 하 여 가능한 경우.
+
+## <a name="disaster-recovery"></a>재해 복구
+
+- 재해 복구는 가동 중지 시간과 데이터 손실을 초래하는 *영향력이 높은 이벤트로부터 회복*하는 것입니다.
+- 프로시저, 책임 및 재해 로부터 복구 하는 데 필요한 작업을 정의 하는 재해 복구 계획을 만듭니다.
+- 응용 프로그램에 대 한 DR 요구 사항을 결정 하는 데 응용 프로그램에 대 한 RTO와 RPO를 정의 합니다.
+- 백업 및 복제를 사용 하 여 시스템 및 복구 하는 데이터의 복사본을 제공 합니다.
+- 응용 프로그램에 대 한 DR 프로세스 복구 기능에 대 한 Azure Site Recovery를 사용 합니다.
+- 간격 및 단계의 관련성을 식별 하 여 재해 복구 계획을 테스트 합니다.
+
+## <a name="backup-and-restore"></a>Backup 및 복원
+
+- 백업을 사용 하 여 더 격리 된 데이터 손실 시나리오 또는 DR 전략의 일부로 데이터를 복원 합니다.
+- 전체 VM 백업, 파일 및 폴더 백업 및 온-프레미스 환경에서 시스템의 백업에 대 한 Azure Backup을 사용 합니다.
+- Azure SQL Database 및 Azure App Service 같은 PaaS 서비스에 백업 기능 빌드되는 경우가 많습니다. 가능한 경우 이러한 백업 기능을 활용 하기 위해, 기본 구성 및 전반적인 기능을 이해 합니다.
+- 복원 프로세스 및 정기적으로 올바르고 충분 한지 확인 하는 절차를 테스트 합니다.

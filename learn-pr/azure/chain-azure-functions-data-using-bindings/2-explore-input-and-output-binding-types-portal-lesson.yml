@@ -1,28 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.2-explore-input-and-output-binding-types-portal-lesson
 metadata:
-  title: Explore input and output binding types
-  description: In this unit, we'll use the Azure Portal to explore understand bindings and the array of supported bindings that are available to us. 
+  title: 입력 탐색 및 출력 바인딩 형식
+  description: 이 단위에서는를 사용 하 여 Azure Portal 탐색 바인딩과 우리에 게 사용할 수 있는 지원 되는 바인딩 배열을 이해 합니다.
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Explore input and output binding types
+title: 입력 탐색 및 출력 바인딩 형식
 durationInMinutes: 10
 content: |
   [!include[](includes/2-explore-input-and-output-binding-types-portal-lesson.md)]
-#tasks:
-#- action: exists
-#  environment: azure
-#  hint: 'Please make sure that you have named the resource group "myResourceGroup" and it was added to the "eastus" location'
-#  azure:
-#    location: eastus
-#- action: exists
-#  environment: azure
-#  azure:
-#    resource:
-#      type: Microsoft.Storage/storageAccounts
-#      name: docsproxyppea427
-#      tags:
-#        triplecrown: true

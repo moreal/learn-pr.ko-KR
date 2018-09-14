@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.2-what-is-azure
+title: 'Azure란? '
+metadata:
+  title: 'Azure란? '
+  description: 새로운 클라우드 컴퓨팅 방법 및 Azure virtual machines를 실행할 수 있는 곳에 보다 더는 방법을 알아봅니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 3
+content: |
+  [!include[](includes/2-what-is-azure.md)]

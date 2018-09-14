@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.3-exercise-create-the-azure-storage-infrastructure
-title: Create a storage account
+title: 저장소 계정 만들기
 metadata:
-  title: Create a storage account
-  description: Create a storage account
+  title: 저장소 계정 만들기
+  description: 저장소 계정 만들기
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

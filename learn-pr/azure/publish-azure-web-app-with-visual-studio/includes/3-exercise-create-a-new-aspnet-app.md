@@ -1,8 +1,6 @@
-이제 로컬 머신에서 앱이 실행되고 있으므로 Azure에 게시해보겠습니다. 
-
 이 단원에서는 로컬 컴퓨터에서 새 ASP.NET 웹 응용 프로그램을 만들고, 빌드하고, 실행합니다.
 
-## <a name="create-a-new-project"></a>새 프로젝트 만들기
+## <a name="create-a-project"></a>프로젝트 만들기
 
 ### <a name="visual-studio-for-windows"></a>Windows용 Visual Studio
 
@@ -37,7 +35,7 @@
 
 1. **.NET Core**에서 **ASP.NET Core 웹앱**을 선택하고 **다음**을 클릭합니다.
 
-1. **프로젝트 이름**으로 **AlpineSkiHouse**를 입력합니다. 이렇게 하면 솔루션 이름도 자동으로 입력되어야 합니다.
+1. **프로젝트 이름**으로 **AlpineSkiHouse**를 입력합니다. 이 자동 채우기 솔루션 이름입니다.
 
 1. 프로젝트의 로컬 머신에서 **위치**를 선택합니다.
 

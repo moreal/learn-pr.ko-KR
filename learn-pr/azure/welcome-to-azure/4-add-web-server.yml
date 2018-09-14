@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.4-add-web-server
+title: 웹 서버를 추가 합니다.
+metadata:
+  title: 웹 서버를 추가 합니다.
+  description: 웹 서버를 구성 하 고 일부 사용자 지정 콘텐츠를 제공 하 여 가상 컴퓨터를 상태로 전환 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+interactive: bash
+azureSandbox: true
+durationInMinutes: 7
+content: |
+  [!include[](includes/4-add-web-server.md)]

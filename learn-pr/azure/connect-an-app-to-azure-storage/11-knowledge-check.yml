@@ -1,52 +1,48 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.11-knowledge-check
-title: Knowledge check
+title: 지식 검사
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: 지식 검사
+  description: 지식 검사
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 3
 quiz:
-  title: "Connecting to Azure Storage"
+  title: Azure Storage에 연결
   questions:
-
-  - content: "How many access keys are provided for accessing your Azure storage account?"
-    choices:
-    - content: "1"
-      isCorrect: false
-    - content: "2"
-      isCorrect: true
-      correctExplanation: "Each storage account has two access keys. This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime."
-    - content: "3"
-      isCorrect: false
-    - content: "4"
-      isCorrect: false
-
-  - content: "You can use either the REST API or the Azure client library to programmatically access a storage account. What is the primary advantage of using the client library?"
-    choices:
-    - content: "Cost"
-      isCorrect: false
-    - content: "Availability"
-      isCorrect: false
-    - content: "Localization"
-      isCorrect: false
-    - content: "Convenience"
-      isCorrect: true
-      correctExplanation: "Code that uses the client library is generally much shorter and simpler than code that uses the REST API. The client library handles assembling requests and parsing responses for you."
-
-  - content: "Which of the following is a good analogy for the access keys of a storage account?"
-    choices:
-    - content: "IP Address"
-      isCorrect: false
-    - content: "REST Endpoint"
-      isCorrect: false
-    - content: "Username and password"
-      isCorrect: true
-      correctExplanation: "Possession of an access key identifies the account and grants you access. This is very similar to login credentials like a username and password."
-    - content: "Cryptographic algorithm"
-      isCorrect: false
+    - content: Azure Storage 계정에 액세스하기 위해 제공되는 액세스 키의 수는 몇 개인가요?
+      choices:
+        - content: '1'
+          isCorrect: false
+        - content: '2'
+          isCorrect: true
+          correctExplanation: 각 저장소 계정에는 두 개의 액세스 키가 있습니다. 이렇게 하면 정기적으로 별도 가동 중지 시간 없이 응용 프로그램에서 사용 된 키를 바꾸는 모범 사례 지침을 따르세요.
+        - content: '3'
+          isCorrect: false
+        - content: '4'
+          isCorrect: false
+    - content: 프로그래밍 방식으로 저장소 계정에 액세스 하도록 REST API 또는 Azure 클라이언트 라이브러리를 사용할 수 있습니다. 클라이언트 라이브러리 사용의 주요 이점은 무엇입니까?
+      choices:
+        - content: 비용
+          isCorrect: false
+        - content: 가용성
+          isCorrect: false
+        - content: 지역화
+          isCorrect: false
+        - content: 편의
+          isCorrect: true
+          correctExplanation: 클라이언트 라이브러리를 사용 하는 코드는 일반적으로 훨씬 더 간결 하 고 REST API를 사용 하는 코드 보다 간단 합니다. 클라이언트 라이브러리 핸들 요청 및 응답을 구문 분석 합니다.
+    - content: 다음은 저장소 계정의 액세스 키에 대 한 유사한 부분이 무엇입니까?
+      choices:
+        - content: IP 주소
+          isCorrect: false
+        - content: REST 끝점
+          isCorrect: false
+        - content: 사용자 이름 및 암호
+          isCorrect: true
+          correctExplanation: 액세스 키를 소유한 계정을 식별 하 고 액세스 권한을 부여 합니다. 이 로그인 자격 증명을 사용자 이름 및 암호와 같은 매우 비슷합니다.
+        - content: 암호화 알고리즘
+          isCorrect: false

@@ -20,9 +20,9 @@ Azure CLI에는 Azure의 가상 머신에서 작동하는 `vm` 명령이 포함�
 
 | 매개 변수 | 설명 |
 |-----------|-------------|
-| `resource-group` | 가상 머신을 소유할 리소스 그룹입니다. |
-| `name` | 가상 머신의 이름은 리소스 그룹 내에서 고유해야 합니다. |
-| `image` | VM을 만드는 데 사용할 운영 체제 이미지입니다. |
+| `resource-group` | 가상 컴퓨터를 소유 하는 리소스 그룹. |
+| `name` | -가상 머신의 이름을 리소스 그룹 내에서 고유 해야 합니다. |
+| `image` | 운영 체제 이미지 VM을 만드는 데입니다. |
 
 또한 VM이 만들어지는 동안 진행률을 확인하기 위해 `--verbose` 플래그를 추가하는 것이 좋습니다. 
 
@@ -31,7 +31,7 @@ Azure CLI에는 Azure의 가상 머신에서 작동하는 `vm` 명령이 포함�
 새 Linux 가상 머신을 만들어 보겠습니다. Azure Cloud Shell에서 다음 명령을 실행합니다.
 
 ```azurecli
-az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
 ```
 
 이 명령은 이름이 `SampleVM`인 새 **Debian** Linux 가상 머신을 만듭니다. VM을 만드는 동안 Azure CLI 도구가 차단되었습니다. 기다리지 않으려면 `--no-wait` 옵션을 사용하여 즉시 반환하도록 Azure CLI 도구에 지시할 수 있습니다(예: 스크립트에서 명령을 실행 중인 경우). 스크립트의 뒷부분에서 `azure vm wait --name [vm-name]` 명령을 사용하여 VM이 만들어질 때까지 기다리세요.
@@ -55,6 +55,8 @@ Accepted: vm_deploy_vzKnQDyyq48yPUO4VrSDfFIi81vHKZ9g (Microsoft.Resources/deploy
 
 VM 만들기가 완료되면, 가상 머신의 현재 상태와 Azure에서 할당한 공용 및 개인 IP 주소를 포함하는 JSON 응답을 가져올 것입니다.
 
+<!-- TODO: find out the default location! -->
+
 ```json
 {
   "fqdns": "",
@@ -68,6 +70,8 @@ VM 만들기가 완료되면, 가상 머신의 현재 상태와 Azure에서 할�
   "zones": ""
 }
 ```
+
+<!-- TODO: find out the default location! -->
 
 > [!NOTE]
 > VM이 **eastus** 위치에 생성되었습니다. 기본적으로 가상 머신은 소유 지역으로 식별되는 위치에 생성됩니다. 그러나 경우에 따라 VM을 기존 지역과 연결하려고 할 수 있지만 실제로는 전 세계의 다른 곳으로 스핀업하도록 합니다. `az vm create` 명령의 부분으로 옵션 `--location` 매개 변수를 지정하여 이 작업을 수행할 수 있습니다.

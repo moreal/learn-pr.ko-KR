@@ -1,26 +1,16 @@
 Azure Container Instances를 사용하면 가상 머신을 프로비전하거나 상위 수준 서비스를 도입하지 않고도 Azure에서 Docker 컨테이너를 쉽게 만들고 관리할 수 있습니다. 이 단원에서는 Azure에서 컨테이너를 만들어서 FQDN(정규화된 도메인 이름)으로 인터넷에 노출합니다.
 
-## <a name="create-a-resource-group"></a>리소스 그룹 만들기
-
-모든 Azure 리소스와 마찬가지로 Azure Container Instances는 Azure 리소스를 배포하고 관리하는 논리적 컬렉션인 리소스 그룹에 배치되어야 합니다.
-
-`az group create` 명령을 사용하여 리소스 그룹을 만듭니다.
-
-다음 예제에서는 *eastus* 위치에 *myResourceGroup*이라는 리소스 그룹을 만듭니다.
-
-```azurecli
-az group create --name myResourceGroup --location eastus
-```
-
 ## <a name="create-a-container"></a>컨테이너 만들기
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 **az container create** 명령에 이름, Docker 이미지 및 Azure 리소스 그룹을 제공하여 컨테이너를 만들 수 있습니다. 필요에 따라 DNS 이름 레이블을 지정하여 컨테이너를 인터넷에 노출할 수 있습니다. 이 예제에서는 작은 웹앱을 호스트하는 컨테이너를 배포합니다.
 
-컨테이너 인스턴스를 시작하려면 다음 명령을 실행합니다. *--dns-name-label* 값은 인스턴스를 만드는 Azure 지역 내에서 고유해야 하므로 고유성을 유지하기 위해 이 값을 수정해야 할 수도 있습니다.
+컨테이너 인스턴스를 시작 하려면 Cloud Shell에서 다음 명령을 실행 합니다. *--dns-name-label* 값은 인스턴스를 만드는 Azure 지역 내에서 고유해야 하므로 고유성을 유지하기 위해 이 값을 수정해야 할 수도 있습니다.
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --image microsoft/aci-helloworld \
     --ports 80 \
@@ -31,7 +21,7 @@ az container create \
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
     --out table

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
-title: Design for efficiency and operations
+title: 효율성 및 운영을 위한 디자인
 metadata:
-  title: Design for efficiency and operations
-  description: Design for efficiency and operations
+  title: 효율성 및 운영을 위한 디자인
+  description: 효율성 및 운영을 위한 디자인
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 10
 content: |
   [!include[](includes/6-design-for-efficiency-and-operations.md)]
 quiz:
-  title: 'Knowledge check - Design for efficiency and operations'
+  title: 지식 확인 - 효율성 및 운영을 위한 디자인
   questions:
-  - content: 'What are the benefits of a pay-as-you-go cost model?'
-    choices:
-    - content: 'Full transparency into the costs of your resources'
-      isCorrect: false
-      incorrectExplanation: 'This is a benefit that comes with a pay-as-you-go cost model, but is not the only correct choice.'
-    - content: 'The flexibility to adjust your resources and costs to match demand'
-      isCorrect: false
-      incorrectExplanation: 'This is a benefit that comes with a pay-as-you-go cost model, but is not the only correct choice.'
-    - content: 'Reduced risk when evaluating new tools and technologies'
-      isCorrect: false
-      incorrectExplanation: 'This is a benefit that comes with a pay-as-you-go cost model, but is not the only correct choice.'
-    - content: 'All of the above are benefits of a pay-as-you-go cost model'
-      isCorrect: true
-      correctExplanation: 'All of the above are benefits of a pay-as-you-go cost model'
-  - content: 'Which of the following is an example of improving operational efficiency?'
-    choices:
-    - content: 'Automating the deployment of infrastructure'
-      isCorrect: true
-      correctExplanation: 'Automating the deployment of infrastructure is a great example of improving your operational efficiency.'
-    - content: 'Moving serivces from PaaS to IaaS'
-      isCorrect: false
-      incorrectExplanation: 'Moving services fro PaaS to IaaS can be seen as a step backwards in operational efficiency, as PaaS services typically come with reduced operational costs.'
-    - content: 'Documenting manual steps for the deployment of infrastructure'
-      isCorrect: false
-      incorrectExplanation: 'Documentation is important with any architecture, but operational improvement comes with automating the manual activities as opposed to simply documenting them.'
-    - content: 'Maintaining multiple logging systems'
-      isCorrect: false
-      incorrectExplanation: 'Maintaing multiple logging systems comes with increased operational overhead and a reduced ability to correlate events and metrics across the logging systems. Centralizing on a single loggin system can improve operational efficiency.'
+    - content: 종량제 비용 모델의 이점은 무엇인가요?
+      choices:
+        - content: 리소스 비용에 대한 완전한 투명성
+          isCorrect: false
+          incorrectExplanation: 종량제 비용 모델의 장점이기는 하지만 유일한 정답은 아닙니다.
+        - content: 리소스와 비용을 수요에 맞게 조정할 수 있는 유연성
+          isCorrect: false
+          incorrectExplanation: 종량제 비용 모델의 장점이기는 하지만 유일한 정답은 아닙니다.
+        - content: 새로운 도구와 기술을 평가할 때 위험 감소
+          isCorrect: false
+          incorrectExplanation: 종량제 비용 모델의 장점이기는 하지만 유일한 정답은 아닙니다.
+        - content: '위 항목 모두 종량제 비용 모델의 이점 '
+          isCorrect: true
+          correctExplanation: '위 항목 모두 종량제 비용 모델의 이점 '
+    - content: 다음 중 운영 효율성 향상의 예는 무엇인가요?
+      choices:
+        - content: 인프라 배포 자동화
+          isCorrect: true
+          correctExplanation: 인프라 배포 자동화는 운영 효율성 향상의 좋은 예입니다.
+        - content: PaaS에서 IaaS로 서비스 이동
+          isCorrect: false
+          incorrectExplanation: '일반적으로 PaaS 서비스는 운영 비용이 더 낮기 때문에 PaaS에서 IaaS로의 서비스 이동은 운영 효율성 면에서의 후퇴로 볼 수 있습니다. '
+        - content: 인프라 배포의 수동 단계 문서화
+          isCorrect: false
+          incorrectExplanation: 설명서는 모든 아키텍처에서 중요한 부분이지만 운영 향상은 단순한 문서화와는 반대로 수동 작업의 자동화를 통해 이루어집니다.
+        - content: 여러 로깅 시스템 유지 관리
+          isCorrect: false
+          incorrectExplanation: 여러 로깅 시스템을 유지 관리하면 운영 과부하가 늘어나고 로깅 시스템 간의 이벤트 및 지표 상관 기능이 감소합니다. 단일 로깅 시스템에 집중화하면 운영 효율성을 증대할 수 있습니다.

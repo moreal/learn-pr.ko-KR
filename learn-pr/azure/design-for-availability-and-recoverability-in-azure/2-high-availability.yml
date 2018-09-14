@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.2-high-availability
-title: Build a highly available architecture
+title: 고가용성 아키텍처 빌드
 metadata:
-  title: Build a highly available architecture
-  description: Build a highly available architecture
+  title: 고가용성 아키텍처 빌드
+  description: 고가용성 아키텍처 빌드
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 20
 content: |
   [!include[](includes/2-high-availability.md)]
 quiz:
-  title: 'Knowledge Check - Build a highly available architecture'
+  title: 지식 확인 - 고가용성 아키텍처 빌드
   questions:
-  - content: 'An SLA is important to define for your service because:'
-    choices:
-    - content: 'It helps you determine your backup retention requirements.'
-      isCorrect: false
-      incorrectExplanation: 'Backup retention is important to define, but it is not driven by SLA.'
-    - content: 'It helps you determine the availability of your service that you will commit to your customers.'
-      isCorrect: true
-      correctExplanation: 'Service level agreement is a commitment you are making to your customers for the availability of your service.'
-    - content: 'You can use it to convince your manager to automate virtual machine creation.'
-      isCorrect: false
-      incorrectExplanation: 'While this is a good discussion to have, your SLA will likely not have any impact on the outcome.'
-    - content: 'You use it to define the RBAC settings for your resources.'
-      isCorrect: false
-      incorrectExplanation: 'RBAC settings are important, but they are not related to the SLA of your application.'
-  - content: 'Which of the following is not used in a highly available architecture?'
-    choices:
-    - content: 'Load balancing'
-      isCorrect: false
-      incorrectExplanation: 'Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.'
-    - content: 'Availability zones'
-      isCorrect: false
-      incorrectExplanation: 'Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.'
-    - content: 'Availability sets'
-      isCorrect: false
-      incorrectExplanation: 'Availability sets are used in a highly available architecture to minimize the impact from localized failures and maintenance events.'
-    - content: 'A recovery service vault'
-      isCorrect: true
-      correctExplanation: 'Recovery service vaults provide a destination for backups, but they are not part of a highly available architecture.'
+    - content: SLA는 때문에 서비스에 대해 정의 하는 것이 중요 합니다.
+      choices:
+        - content: 백업 보존 요구 사항을 결정할 수 있습니다.
+          isCorrect: false
+          incorrectExplanation: 백업 보존을 정의 해야 이지만 SLA로 결정 되지 않습니다.
+        - content: 고객에 게 커밋하는 서비스의 가용성을 확인할 수 있습니다.
+          isCorrect: true
+          correctExplanation: 서비스 수준 계약은 서비스의 가용성에 대 한 고객에 게 하는 약속입니다.
+        - content: 가상 머신 만들기를 자동화 하려면 관리자에 게 유도를 사용할 수 있습니다.
+          isCorrect: false
+          incorrectExplanation: 좋은 논의가 될 수는 있으나 SLA가 그 결과에 영향을 미칠 가능성은 낮습니다.
+        - content: 리소스에 대 한 RBAC 설정을 정의 하는 데 사용할 수 있습니다.
+          isCorrect: false
+          incorrectExplanation: RBAC 설정을 중요 하지만 응용 프로그램의 SLA에 관련이 없습니다.
+    - content: 다음 중 고가용성 아키텍처에서 사용되지 않는 것은 어느 것입니까?
+      choices:
+        - content: 부하 분산
+          isCorrect: false
+          incorrectExplanation: 부하 분산은 일반적으로 고가용성 아키텍처에서 부하를 사용 가능한 시스템에 분산시키고 부하에서 장애 시스템을 제거하는 데 사용됩니다.
+        - content: 가용성 영역
+          isCorrect: false
+          incorrectExplanation: 가용성 영역은 한 지역 내 여러 데이터센터에서 시스템을 분산하는 고가용성 아키텍처에서 사용됩니다.
+        - content: 가용성 집합
+          isCorrect: false
+          incorrectExplanation: 가용성 집합은 지역화 된 오류 및 유지 관리 이벤트의 영향을 최소화 하려면 항상 사용 가능한 아키텍처에 사용 됩니다.
+        - content: 복구 서비스 자격 증명 모음
+          isCorrect: true
+          correctExplanation: 복구 서비스 자격 증명 모음에 백업에 대 한 대상을 제공 되지만 없습니다 고가용성 아키텍처의 일부입니다.

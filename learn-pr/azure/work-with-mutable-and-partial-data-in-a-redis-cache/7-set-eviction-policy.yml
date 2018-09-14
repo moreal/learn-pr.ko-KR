@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-set-eviction-policy
+title: 제거 정책을 설정합니다
+metadata:
+  title: 제거 정책을 설정합니다
+  description: 제거 정책을 설정합니다
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+azureSandbox: true
+durationInMinutes: 5
+content: |
+  [!include[](includes/7-set-eviction-policy.md)]

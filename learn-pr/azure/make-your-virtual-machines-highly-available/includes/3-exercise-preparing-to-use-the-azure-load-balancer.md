@@ -1,126 +1,130 @@
-In this exercise, you will create a load balancer, a virtual network, and multiple virtual machines using the Azure portal.
+이 연습에서는 부하 분산 장치, 가상 네트워크 및 Azure portal을 사용 하 여 여러 가상 머신을 만듭니다.
 
-Suppose you work for Woodgrove Bank, a startup that is about to launch online banking services. This sector is highly competitive, so you need to guarantee of a minimum of 99.99% service availability. You have determined that Azure Load Balancer with a pool of three virtual machines will meet this goal.
+Woodgrove bank, 온라인 뱅킹 서비스를 시작 하려고 하는 시작 작업을 가정 합니다. 이 섹터 경쟁이 치열 이므로 최소 99.99%의 서비스 가용성을 보장 해야 합니다. 3 개의 가상 머신 풀을 사용 하 여 Azure Load Balancer는이 목표를 충족 하는지 확인 합니다.
 
-## Create a public load balancer
+## <a name="create-a-public-load-balancer"></a>공용 부하 분산 장치 만들기
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/?azure-portal=true) and sign in to your account.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. In the sidebar, click **Create a resource**. Then, in the **New** blade, click **Networking**, and then click **Load Balancer**.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. In the **Create load balancer** blade, enter or select the following information:
-    - Name: **woodgrove-LB**
-    - Type: **Public**
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
+
+1. 세로 막대를 클릭 **리소스 만들기**합니다. 그런 다음 합니다 **새로 만들기** 블레이드에서 클릭 **네트워킹**를 클릭 하 고 **Load Balancer**.
+
+1. 에 **부하 분산 장치 만들기** 블레이드에서 입력 하거나 다음 정보를 선택 합니다.
+    - 이름: **woodgrove LB**
+    - 형식: **공개**
     - SKU: **Basic**
-    - Public IP address: Select **Create new**. In the text box, type **woodgrove-LB-ip**. Leave the Assignment as **Dynamic**.
-    - Resource group: Select **Create new**, and in the box, type **woodgrove-RG**.
-    - Location: Select a region near you.
+    - 공용 IP 주소: 선택 **새로 만들기**합니다. 텍스트 상자에 입력 **woodgrove-LB-ip**입니다. 로 할당 둡니다 **동적**합니다.
+    - 리소스 그룹: 선택 **기존 항목 사용** 선택한 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.
+    - 위치: 가까운 지역을 선택 합니다.
 
-1. Click **Create**.
+1. **만들기**를 클릭합니다.
 
-1. Wait until the load balancer has deployed before continuing with the exercise.
+1. 연습을 진행 하기 전에 부하 분산 장치에 배포 될 때까지 기다립니다.
 
-## Create a virtual network
+## <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
-1. In the left menu, click **Create a resource**. In the **New** blade, click **Networking**, and then click **Virtual network**.
+1. 왼쪽된 메뉴에서 클릭 **리소스 만들기**합니다. 에 **새로 만들기** 블레이드에서 클릭 **네트워킹**를 클릭 하 고 **가상 네트워크**합니다.
 
-1. In the **Create virtual network** blade, enter or select the following information:
-    - Name: **woodgrove-VNET**
-    - Address space: **172.20.0.0/16**
-    - Resource group: Select **Use existing**, and then select **woodgrove-RG**.
+1. 에 **가상 네트워크 만들기** 블레이드에서 입력 하거나 다음 정보를 선택 합니다.
+    - 이름: **woodgrove VNET**
+    - 주소 공간: **172.20.0.0/16**
+    - 리소스 그룹: 선택 **기존 항목 사용**를 선택한 후 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.
     - Subnet: **backendSubnet**
-    - Address space: **172.20.0.0/24**
-    - DDoS protection: **Basic**
-    - Service endpoints: **Disabled**
+    - 주소 공간: **172.20.0.0/24**
+    - DDoS protection: **기본**
+    - 서비스 끝점: **사용 안 함**
 
-1. Click **Create**.
+1. **만들기**를 클릭합니다.
 
-1. Wait until the virtual network has deployed before continuing with the exercise.
+1. 연습을 진행 하기 전에 가상 네트워크에 배포 될 때까지 기다립니다.
 
-## Create a VM template
+## <a name="create-a-vm-template"></a>VM 템플릿 만들기
 
-Start by defining the basic VM information:
+먼저 기본 VM 정보부터 정의합니다.
 
-1. In the Azure portal, in the left menu, click **Virtual machines**, and then click **Create virtual machine**.
+1. 왼쪽된 메뉴에서 Azure 포털에서 클릭 **Virtual machines**를 클릭 하 고 **가상 머신 만들기**합니다.
 
-1. On the **Compute** blade, in the **Recommended** section, click **Windows Server**.
+1. 에 **계산** 블레이드는 **권장** 섹션에서 **Windows Server**합니다.
 
-1. In the **Windows Server** blade, click **Windows Server 2016 Datacenter**.
+1. **Windows Server** 블레이드에서 **Windows Server 2016 Datacenter**를 클릭합니다.
 
-1. In the **Windows Server 2016 Datacenter** blade, click **Create**.
+1. **Windows Server 2016 Datacenter** 블레이드에서 **만들기**를 클릭합니다.
 
-1. In the **Basics** blade, in the **Name** box, type **woodgrove-SVR01**.
+1. 에 **기본 사항** 블레이드는 **이름** 상자에 입력 **woodgrove-s v r 01**.
 
-1. In the **Username** and **Password boxes**, type a secure name and password for an administrator account on this server.
+1. 에 **사용자 이름** 하 고 **암호 상자**,이 서버의 보안 이름 및 관리자 계정에 대 한 암호를 입력 합니다.
 
-1. In the **Subscription** box, select your Azure subscription.
+1. **구독** 상자에서 Azure 구독을 선택합니다.
 
-1. Under **Resource group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. 아래 **리소스 그룹**를 선택 **기존 항목 사용**합니다. 목록에서 선택 **woodgrove RG**합니다.
 
-1. In the **Location** drop-down list, select a region near you.
+1. **위치** 드롭다운 목록에서 인근 지역을 선택합니다.
 
-1. Click **OK**.
+1. **확인**을 클릭합니다.
 
-Choose a size for the VM, and then configure the settings:
+VM의 크기를 선택 하 고 설정을 구성 합니다.
 
-1. On the **Choose a size** blade, select a **Standard** SKU, such as **D2s_v3**. Then click **Select**.
+1. 에 **크기 선택** 블레이드에서 **표준** SKU와 같은 **D2s_v3**. 그런 다음, **선택**을 클릭합니다.
 
-1. On the **Settings** blade, click **Availability set**.
+1. 에 **설정을** 블레이드에서 클릭 **가용성 집합**합니다.
 
-1. On the **Change availability set** blade, click **Create new**.
+1. 에 **가용성 집합 변경** 블레이드에서 클릭 **새로 만들기**합니다.
 
-1. On the **Create new** blade, in the **Name** box, type **woodgrove-AS**, and then click **OK**.
+1. 에 **새로 만들기** 블레이드는 **이름** 상자에 입력 **woodgrove-AS**, 클릭 하 고 **확인**합니다.
 
-1. On the **Settings** blade, under **Network Security Group**, click **Advanced**, and then click **(new) woodgrove-SVR01-nsg**.
+1. 에 **설정** 블레이드 아래에 있는 **네트워크 보안 그룹**, 클릭 **고급**를 클릭 하 고 **(신규) woodgrove-s v r 01-nsg**합니다.
 
-1. On the **Create network Security group** blade, in the **Name** box, change the name to **woodgrove-NSG**, and then click **OK**.
+1. 에 **네트워크 보안 그룹 만들기** 블레이드는 **이름** 상자에서 이름을 변경 **woodgrove-NSG**, 클릭 하 고 **확인**합니다.
 
-1. On the **Settings** blade, click **OK**.
+1. 에 **설정을** 블레이드에서 클릭 **확인**합니다.
 
-Save the settings to a template, so that you can easily deploy multiple VMs.
+여러 Vm을 쉽게 배포할 수 있도록 설정을 템플릿으로 저장 합니다.
 
-1. On the **Create** blade, click **Download template and parameters**.
+1. 에 **Create** 블레이드에서 클릭 **템플릿 및 매개 변수 다운로드**합니다.
 
-1. On the **Template** blade, click **Add to library**.
+1. 에 **템플릿을** 블레이드에서 클릭 **라이브러리에 추가**합니다.
 
-1. On the **Save template** blade, in the **Name** and **Description** boxes, type **woodgrove-server-template**. Then click **Save**.
+1. 에 **저장 템플릿** 블레이드는 **이름** 및 **설명** 상자, 형식 **woodgrove-서버-템플릿**합니다. 그런 다음, **저장**을 클릭합니다.
 
 > [!NOTE]
-> If you need to find this template, click **All services** in the left menu, type **template** in the filter box, and then click **Templates (PREVIEW)**.
+> 이 템플릿을 찾으려면 해야 할 경우 클릭 **모든 서비스** 왼쪽된 메뉴에서 입력 **템플릿** 클릭 한 다음 확인 하 고 필터 상자 **템플릿 (미리 보기)** 합니다.
 
-## Use the template to provision the first VM
+## <a name="use-the-template-to-provision-the-first-vm"></a>템플릿을 사용 하 여 첫 번째 VM을 프로 비전
 
-1. On the **Template** blade, click **Deploy**.
+1. 에 **템플릿을** 블레이드에서 클릭 **배포**합니다.
 
-1. On the **Custom deployment** blade, under **Resource Group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. 에 **사용자 지정 배포** 블레이드 아래에서 **리소스 그룹**를 선택 **기존 항목 사용**합니다. 목록에서 선택 **woodgrove RG**합니다.
 
-1. On the **Custom deployment** blade, in the **Admin password** box, type the same password that you used previously.
+1. 에 **사용자 지정 배포** 블레이드는 **관리자 암호** 상자에 이전에 사용한 동일한 암호를 입력 합니다.
 
-1. On the **Custom deployment** blade, select the **I agree to the terms and conditions** check box, and then click **Purchase** (the cost is the regular Azure compute charge, which depends on the VM pricing tier).
+1. 에 **사용자 지정 배포** 블레이드를 선택 합니다 **사용 약관에 동의** 확인란을 선택한 다음 클릭 **구매** (비용은 기본 Azure 계산은 청구 에 따라 달라 집니다 VM 가격 책정 계층).
 
-1. Wait until the VM has deployed before continuing with the exercise. This is so you can be sure that the template is correctly configured before you use it to provision additional VMs, and that all the associated resources have been created.
+1. VM이 배포될 때까지 기다렸다가 연습을 계속 진행합니다. 이므로 추가 Vm을 프로 비전을 사용 하기 전에 템플릿을 올바르게 구성 되 고 연결 된 모든 리소스가 만들어졌는지 확인할 수 있습니다.
 
-## Use the template to provision two additional VMs
+## <a name="use-the-template-to-provision-two-additional-vms"></a>템플릿을 사용 하 여 두 개의 추가 Vm을 프로 비전
 
-1. In the Azure portal, on the **Template** blade, click **Deploy**.
+1. Azure portal에서에 **템플릿을** 블레이드에서 클릭 **배포**합니다.
 
-1. On the **Custom deployment** blade, under **Resource Group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. 에 **사용자 지정 배포** 블레이드 아래에서 **리소스 그룹**를 선택 **기존 항목 사용**합니다. 목록에서 선택 **woodgrove RG**합니다.
 
-1. On the **Custom deployment** blade, in the **Virtual Machine Name** box, change the name to **woodgrove-SVR02**.
+1. 에 **사용자 지정 배포** 블레이드는 **가상 머신 이름** 상자에서 이름을 변경 **woodgrove SVR02**합니다.
 
-1. On the **Custom deployment** blade, in the **Network Interface Name** box, change the name to **woodgrovesvr02222**.
+1. 에 **사용자 지정 배포** 블레이드는 **네트워크 인터페이스 이름을** 상자에서 이름을 변경 **woodgrovesvr02222**합니다.
 
-1. On the **Custom deployment** blade, in the **Admin password** box, type the same password that you used previously.
+1. 에 **사용자 지정 배포** 블레이드는 **관리자 암호** 상자에 이전에 사용한 동일한 암호를 입력 합니다.
 
-1. On the **Custom deployment** blade, in the **Public Ip Address Name** box, change the name to **woodgrove-SVR02-ip**.
+1. 에 **사용자 지정 배포** 블레이드, 합니다 **공용 Ip 주소 이름** 상자에서 이름을 변경 **woodgrove-SVR02-ip**.
 
-1. On the **Custom deployment** blade, select the **I agree to the terms and conditions** check box, and then click **Purchase** (the cost is the regular Azure compute charge, which depends on the VM pricing tier).
+1. 에 **사용자 지정 배포** 블레이드를 선택 합니다 **사용 약관에 동의** 확인란을 선택한 다음 클릭 **구매** (비용은 기본 Azure 계산은 청구 에 따라 달라 집니다 VM 가격 책정 계층).
 
-1. Repeat steps 1 - 7, using the following information:
-    - Virtual machine name: **woodgrove-SVR03**
-    - Network interface name: **woodgrovesvr03333**
-    - Public IP address name: **woodgrove-SVRr03-ip**
+1. 다음 정보를 사용 하 여 1 ~ 7, 단계를 반복 합니다.
+    - 가상 머신 이름: **woodgrove SVR03**
+    - 네트워크 인터페이스 이름: **woodgrovesvr03333**
+    - 공용 IP 주소 이름: **woodgrove-SVRr03-ip**
 
-1. Wait until the VMs have deployed before continuing with the exercise.
+1. 연습을 진행 하기 전에 Vm을 배포한 때까지 기다립니다.
 
-You now have a public load balancer ready to configure, and three VMs ready to use with this load balancer.
+공용 부하 분산 장치를 구성할 수 있으며 3 개의 Vm이 부하 분산 장치를 사용 하 여 사용할 준비가 수 있습니다.

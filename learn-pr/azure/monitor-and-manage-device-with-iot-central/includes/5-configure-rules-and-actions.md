@@ -1,84 +1,84 @@
-You have connected your coffee machine to the Azure IoT Central application, enabling the exchange of data that allows you to monitor and manage your coffee machine. In this unit, you create rules that trigger actions when the water temperature of the coffee machine is outside the normal range. The actions are either emails or mobile notifications depending on whether or not the machine is under warranty. To add Microsoft Flow as an action, you need an Azure subscription. If you do not have an Azure subscription, adding Microsoft Flow as an action is optional.
+데이터를 교환하여 커피 머신을 관리하고 모니터링할 수 있도록 커피 머신을 Azure IoT Central 응용 프로그램에 연결했습니다. 이 단위 커피 머신 물 온도가 정상 범위를 벗어날 때 작업을 트리거하는 규칙을 만듭니다. 머신의 보증 기간이 남아 있는지 여부에 따라 이메일 또는 모바일 알림이 전송됩니다. Microsoft Flow를 작업으로 추가하려면 Azure 구독이 필요합니다. Azure 구독이 없다면 필요에 따라 Microsoft Flow를 작업으로 추가할 수 있습니다.
 
-## Create rules in IoT Central with Email as the action
-Azure IoT Central has its native email capabilities to send notifications. In this scenario, if the coffee machine is outside the optimal temperature range and is not protected by the warranty, an email is sent by IoT Central to the client’s maintenance department.
+## <a name="create-rules-in-iot-central-with-email-as-the-action"></a>이메일을 보내는 작업을 추가하여 IoT Central에서 규칙 만들기
+Azure IoT Central에는 알림을 전송하기 위한 기본적인 이메일 기능이 있습니다. 이 시나리오에서는 최적 온도 범위를 벗어나는 커피 머신이 보증을 통해 보호되지 않는 경우 IoT Central에서 고객의 유지 관리 부서로 이메일이 전송됩니다.
 
-Navigate to the **Rules** page for the exercises in this unit. Select **+ New Rule**, then **Telemetry**. Add the following two rules when the coffee machine warranty has expired and the water temperature is outside the optimal range. When you're finished, choose **Save**. 
+로 이동 합니다 **규칙** 이 단위로 연습에 대 한 페이지입니다. 선택 **+ 새 규칙**, 한 다음 **원격 분석**합니다. 보증이 만료된 커피 머신의 물 온도가 최적 범위를 벗어나는 경우 다음의 두 규칙을 추가합니다. 작업을 완료하면 **저장**을 선택합니다. 
 
 > [!NOTE]
-> When conditions are applied, all statements have to be true for the rules to be executed. If your condition is an "or" statement as in this scenario (e.g. the optimal temperature is less or greater than the predefined values while the warranty has expired), split the statement into two rules as shown here.
+> 조건 적용 시에는 모든 문이 참이어야 규칙이 실행됩니다. 조건 에서처럼 "또는" 문이 면 (예: 최적의 온도가 작은 또는 보증 하는 동안 미리 정의 된 값 보다 큰 만료 된)이이 시나리오에서는 다음과 같이 두 개의 규칙으로 문을 분할 합니다.
 
-1. Name the rule: Coffee Maker Water Too Cold (Expired)
+1. 규칙 이름을 ‘커피 메이커 물 온도가 너무 낮음(만료)’으로 지정합니다.
 
-    Add the conditions:      
-    * Device Warranty Expired equals 1
-    * Water Temperature is less than Coffee Makers Min Temperature
+    다음 조건을 추가합니다.      
+    * 장치 보증 만료 = 1
+    * 최고 수 위 온도 커피 메이커 Min 온도 보다 작습니다.
 
-    ![Using Rule](../images/5-flow-a.png)
+    ![규칙을 사용 하 여](../images/5-flow-a.png)
 
-1. Name the rule: Coffee Maker Water Too Hot (Expired)
+1. 규칙 이름을 커피 메이커 물 온도가 너무 높음(만료)으로 지정합니다.
 
-    Add the conditions:      
-    * Device Warranty Expired equals 1
-    * Water Temperature is greater than Coffee Makers Max Temperature
+    다음 조건을 추가합니다.      
+    * 장치 보증 만료 = 1
+    * 최고 수 위 온도 커피 메이커 최대 온도 보다 큽니다.
 
-1. To add an **Action**, scroll down on the Configure Telemetry Rule panel and choose **+** next to Actions, then choose **Email**.
+1. 추가 하는 **동작**, 원격 분석 규칙 구성 패널에서 아래로 스크롤하여 마우스 선택 **+** 작업 옆에 있는 선택한 **전자 메일**합니다.
 
-1. To define the action, add the email address that you used to sign in to the IoT Central application. Add the notification message when the water temperature is too hot: "Coffee maker's water is too hot. Maintenance is required.  Warranty has expired." Repeat the same steps for when the water temperature is too cold. Add the message: "Coffee maker's water is too cold. Maintenance is required.  Warranty has expired."
+1. 작업을 정의하려면 IoT Central 응용 프로그램에 로그인하는 데 사용한 이메일 주소를 추가합니다. 물 온도가 너무 높을 때의 알림 메시지인 “커피 메이커 물이 너무 뜨겁습니다. 유지 관리 작업이 필요합니다.  보증이 만료되었습니다."를 추가합니다. 물 온도가 너무 낮을 때의 알림 메시지에 대해서도 같은 단계를 반복합니다. 이 경우에는 메시지로 “커피 메이커 물이 너무 차갑습니다. 유지 관리 작업이 필요합니다.  보증이 만료되었습니다."를 추가합니다.
 
-1. Choose **Save**. Your rule is listed on the Rules page.
+1. **저장**을 선택합니다. 규칙은 규칙 페이지에 나열 됩니다.
 
-1. To trigger the rule, set the optimal temperature in Settings outside the range that you specified under Properties. Once you are done with the validation, turn off the rules to avoid flooding your Inbox with emails. 
+1. 규칙을 트리거하기 위해 최적의 온도 속성에서 지정한 범위 밖에 설정에서 설정 합니다. 유효성 검사를 사용 하 여 완료 되 면 전자 메일을 사용 하 여 받은 편지함 폭주를 방지 하려면 규칙을 해제 합니다. 
 
-## Create rules in IoT Central with Microsoft Flow as the action
+## <a name="create-rules-in-iot-central-with-microsoft-flow-as-the-action"></a>Microsoft Flow를 작업으로 추가하여 IoT Central에서 규칙 만들기
 
-Microsoft Flow automates workflows across many applications. It’s one of the actions that can be triggered when a rule is fired in IoT Central. In this scenario, Microsoft Flow sends a mobile notification to a local technician when the coffee machine reaches certain temperature threshold and is under warranty. Navigate to **Rules** to configure conditions and add a Flow as an action when the rule is fired. 
+여러 응용 프로그램에서 워크플로를 자동화하는 Microsoft Flow는 IoT Central에서 규칙이 실행될 때 트리거할 수 있는 작업 중 하나입니다. 이 시나리오에서는 보증 기간이 남아 있는 커피 머신이 특정 온도 임계값에 도달하면 Microsoft Flow가 해당 지역의 서비스 기사에게 모바일 알림을 보냅니다. **규칙**으로 이동하여 조건을 구성하고 규칙 발생 시의 작업으로 Microsoft Flow 를 추가합니다. 
  
 > [!NOTE]
-> This exercise is optional if you do not have an Azure subscription to turn on Microsoft Flow.
+> Azure 구독이 없다면 필요에 따라 이 연습을 진행하여 Microsoft Flow를 설정할 수 있습니다.
 
 
-### Extend your IoT Central trial to 30 days
+### <a name="extend-your-iot-central-trial-to-30-days"></a>30 일에 IoT Central 평가판을 연장
 
-1. To turn on Microsoft Flow, you need to extend your trial to 30 days. To do so, select **Extend Trial to 30 days** on the Billing page, choose an Azure Active Directory and Azure subscription. An Azure subscription enables you to create instances of Azure services. Azure IoT Central automatically finds all the Azure Subscriptions you have access to, and displays them in the drop-down.
+1. Microsoft Flow 켜려면 30 일 평가판을 연장 해야 합니다. 이 위해 선택 **30 일 평가판 확장** 청구 페이지에서 Azure Active Directory 및 Azure 구독을 선택 합니다. Azure 구독을 사용하여 Azure 서비스 인스턴스를 만들 수 있습니다. Azure IoT Central은 액세스 권한이 있는 모든 Azure 구독을 자동으로 찾아서 드롭다운에 표시합니다.
     
-1. If you don’t have an Azure subscription, you can create one on the [Azure sign-up page](https://aka.ms/createazuresubscription). After you create the Azure subscription, navigate back to the **Application Manager** page. Your new subscription appears in the **Azure Subscription** drop-down.
+1. Azure 구독이 아직 없는 경우 [Azure 등록 페이지](https://aka.ms/createazuresubscription)에서 만들 수 있습니다. Azure 구독을 만든 후에 다시 이동 합니다 **응용 프로그램 관리자** 페이지입니다. **Azure 구독** 드롭다운에 새 구독이 표시됩니다.
         
 
-### Add the following rules when the coffee machine is under warranty. 
+### <a name="add-the-following-rules-when-the-coffee-machine-is-under-warranty"></a>커피 머신 보증 기간이 남아 있는 경우 다음 규칙을 추가합니다. 
 
-1. Name the rule: Coffee Maker Water Too Cold (Warranty)
+1. 규칙 이름을 커피 메이커 물 온도가 너무 낮음(보증)으로 지정합니다.
 
-    Add the conditions:      
-    * Device Warranty Expired equals 0
-    * Water Temperature is less than Coffee Makers Min Temperature
+    다음 조건을 추가합니다.      
+    * 장치 보증 만료 = 0
+    * 최고 수 위 온도 커피 메이커 Min 온도 보다 작습니다.
 
-1. Name the rule: Coffee Maker Water Too Hot (Warranty)
+1. 규칙 이름을 커피 메이커 물 온도가 너무 높음(보증)으로 지정합니다.
 
-    Add the conditions:      
-    * Device Warranty Expired equals 0
-    * Water Temperature is greater than Coffee Makers Max Temperature
+    다음 조건을 추가합니다.      
+    * 장치 보증 만료 = 0
+    * 최고 수 위 온도 커피 메이커 최대 온도 보다 큽니다.
 
-1. After you save the rule conditions, choose Microsoft Flow as a new action when the coffee maker is under warranty. A new tab or window should open in your browser, taking you to Microsoft Flow. You land on an overview page showing an IoT Central connector connecting to a custom action. Choose **Continue**. 
+1. 규칙 조건을 저장한 후 커피 메이커 보증 기간이 남아 있을 때 수행할 새 작업으로 Microsoft Flow를 선택합니다. 브라우저에서 새 탭이나 창이 열려 Microsoft Flow가 표시됩니다. 그리고 사용자 지정 작업에 연결하는 IoT Central 커넥터를 보여주는 개요 페이지로 연결됩니다. **계속**을 선택합니다. 
 
-    You are taken to the Microsoft Flow designer to build your workflow. The workflow has an IoT Central trigger that has your Application and Rule already filled in.
+    워크플로를 구축하는 Microsoft Flow 디자이너로 이동됩니다. 워크플로에는 응용 프로그램 및 규칙이 이미 채워져 있는 IoT Central 트리거가 있습니다.
 
-    At this point, you can add any action you want to your workflow. As an example, let's send a mobile notification. Search for notification, and choose Notifications - Send me a mobile notification.
+    이 시점에서 워크플로에 원하는 모든 작업을 추가할 수 있습니다. 예를 들어 모바일 알림을 전송해 보겠습니다. 알림을 검색하고 알림 - 모바일 알림 보내기를 선택합니다.
 
-    In the action, fill in the Text field with what you want your notification to say. You can include Dynamic content from your IoT Central rule, passing along important information such as device ID and name.
+    작업에서 알림에서 알리려는 내용으로 텍스트 필드를 채웁니다. IoT Central 규칙에서 동적 콘텐츠를 포함하면 알림에 장치 ID 및 이름과 같은 중요한 정보를 전달할 수 있습니다.
     
-    ![Using Microsoft Flow as an action](../images/5-flow-b.png)
+    ![작업으로 Microsoft Flow 사용](../images/5-flow-b.png)
 
-1. Once you've set up the workflow in Microsoft Flow, download the [Flow app](https://www.microsoft.com/en-us/p/microsoft-flow/9nkn0p5l9n84?activetab=pivot%3aoverviewtab) from Microsoft Store to your mobile device. Sign in using the same account that you used to set up the flow in the Flow web app. For testing purposes, set the optimal temperature out of range to trigger the rule. 
+1. Microsoft Flow에서 워크플로를 설정한 후에는 Microsoft Store에서 모바일 장치에 [Flow 앱](https://www.microsoft.com/en-us/p/microsoft-flow/9nkn0p5l9n84?activetab=pivot%3aoverviewtab)을 다운로드합니다. Flow 웹앱에서 워크플로를 설정하는 데 사용했던 것과 같은 계정을 사용하여 로그인합니다. 테스트를 위해 규칙을 트리거하는 범위를 벗어났습니다. 최적의 온도 설정 합니다. 
 
     > [!NOTE]
-    > Device Property: Device Warranty Expired (1 for expired or 0 for under warranty in the device code) is randomly generated by the device and then sent by the device to the Azure IoT Central application. For testing purposes, if you'd like to control Device Warranty Expired (1 or 0), reboot your coffee machine until you receive the intended warranty state to trigger the action that you're testing. To receive a mobile notification, reboot your coffee machine until you see that Device Warranty Expired is 0 in the console log. 
+    > 장치 속성: 장치 보증 만료(장치 코드에서 보증이 만료된 경우 1, 보증 기간이 남은 경우 0 설정)는 장치에서 무작위로 생성된 후 장치에서 Azure IoT Central 응용 프로그램으로 전송됩니다. 테스트 목적으로 장치 보증 만료 (1 또는 0)으로 제어 하려는 경우 컴퓨터를 다시 부팅 커피 의도 한 보증 상태 테스트 하는 작업 트리거를 받을 때까지 합니다. 모바일 알림을 받으려면 장치 보증 만료 콘솔 로그에는 0 인지 하는 것이 표시 될 때까지 커피 컴퓨터를 다시 부팅 합니다. 
 
-    After several minutes, notifications appear in the Flow mobile app.
+    몇 분 후 Flow 모바일 앱에서 알림을 표시 합니다.
 
-    ![Using Microsoft Flow as an action](../images/5-flow-c.png)
+    ![작업으로 Microsoft Flow 사용](../images/5-flow-c.png)
 
-## Summary
-You’ve learned to create rules in IoT Central and triggered actions such as an email or a mobile notification through Microsoft Flow when the rule is fired. In this case, when the water temperature of the coffee machine is out of the optimal range, notifications are sent to either a repair technician or the client depending on the status of the warranty. 
+## <a name="summary"></a>요약
+IoT Central에서 규칙을 만들고, 해당 규칙이 실행될 때 Microsoft Flow를 통해 이메일 또는 모바일 알림과 같은 작업을 트리거하는 방법을 배웠습니다. 이 경우 커피 머신 물 온도가 최적의 범위를 벗어나는 경우 복구 기술자에 게 하거나 품질 보증의 상태에 따라 클라이언트 알림은 전송 됩니다. 
 
 

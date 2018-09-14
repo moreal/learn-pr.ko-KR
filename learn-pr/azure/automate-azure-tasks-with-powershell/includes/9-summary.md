@@ -2,8 +2,8 @@
 
 PowerShell 경험이 있는 관리자는 자동화에 Azure PowerShell을 사용하는 것이 좋습니다. 정리된 구문 및 강력한 스크립팅 언어를 함께 사용하는 방법은 PowerShell을 처음 사용할 경우에도 고려할 만합니다. 시간이 오래 걸리고 오류가 발생하기 쉬운 작업에 이 자동화 수준을 사용하면 관리 시간을 줄이고 품질을 개선할 수 있습니다.
 
-## <a name="clean-up-your-resources"></a>리소스 정리
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+## <a name="clean-up"></a>정리
+<!---TODO: Update for sandbox?--->
 
 프로비전되어 실행 중인 VM을 사용하면 구독에 대한 비용이 발생합니다. 불필요한 비용을 방지하려면 불필요한 VM을 제거해야 합니다. Azure 구독을 정리하는 가장 쉬운 방법은 연결된 리소스 그룹을 제거하는 것입니다. 이렇게 하면 그룹의 모든 VM도 삭제됩니다. PowerShell에서 이 작업을 수행할 수 있습니다. 완료되면 다음 Azure PowerShell cmdlet을 실행하세요.
 

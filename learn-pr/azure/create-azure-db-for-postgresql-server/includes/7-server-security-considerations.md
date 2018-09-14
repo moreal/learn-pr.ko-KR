@@ -1,130 +1,130 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now want to make sure that you can configure the same server level firewall rules in Azure.
+온-프레미스 PostgreSQL 데이터베이스를 사용 하는 경우를 가정해 봅니다. 모든 보안 측면을 관리 하 고 및 표준 PostgreSQL 서버 수준 방화벽 규칙을 사용 하는 서버에 대 한 모든 액세스 잠겨 했습니다. 서버 수준 동일한 구성할 수 있는지 확인 하려면 지금 Azure 방화벽 규칙입니다.
 
-## Server Security Considerations and Connection Methods
+## <a name="server-security-considerations-and-connection-methods"></a>서버 보안 고려 사항 및 연결 메서드
 
-You have a number of options to restrict access to your Azure Database for PostgreSQL server and databases. Network access can be restricted at a network, server, or database level. You can use any of the following options:
+다양 한 Azure Database for PostgreSQL 서버 및 데이터베이스에 대 한 액세스를 제한 하는 옵션을 해야 합니다. 네트워크 액세스는 네트워크, 서버 또는 데이터베이스 수준에서 제한할 수 있습니다. 다음 옵션 중 하나를 사용할 수 있습니다.
 
-- User accounts to restrict database access
-- Virtual networks to restrict network access
-- Firewall rules to restrict server access
+- 데이터베이스 액세스를 제한 하려면 사용자 계정
+- 가상 네트워크에 대 한 네트워크 액세스 제한
+- 서버 액세스를 제한 하는 방화벽 규칙
 
-### Authentication and authorization
+### <a name="authentication-and-authorization"></a>인증 및 권한 부여
 
-Azure Database for PostgreSQL server supports native PostgreSQL authentication. You can connect and authenticate to server with the server's admin login. You'll also create users to connect to specific databases to limit access.
+Azure Database for PostgreSQL 서버는 네이티브 PostgreSQL 인증을 지원합니다. 연결 하 고 서버 관리자 로그인을 사용 하 여 서버에 인증할 수 있습니다. 사용자가 액세스를 제한 하는 특정 데이터베이스에 연결할도 만들어야 합니다.
 
-### What is a Virtual Network?
+### <a name="what-is-a-virtual-network"></a>가상 네트워크란?
 
-A virtual network is a logically isolated network created within the Azure network. You can use a virtual network to control what Azure resources can connect to other resources.
+가상 네트워크는 Azure 네트워크 내에서 만든 논리적으로 격리 된 네트워크입니다. 다른 리소스에 연결 하는 Azure 리소스 수를 제어 하는 가상 네트워크를 사용할 수 있습니다.
 
-Imagine you're running a web application that connects to a database. You'll use subnets to isolate different parts of the network. A subnet is a part of a network based upon a range of IP addresses.
+데이터베이스에 연결 하는 웹 응용 프로그램을 실행 중인 한다고 가정 합니다. 네트워크의 다른 부분을 격리 서브넷을 사용 합니다. 서브넷의 IP 주소 범위를 기반으로 하는 네트워크의 일부인 합니다.
 
-To configure these subnets, you'll create a virtual network and then subdivide the network into subnets. The web application will operate on one subnet and the database on another subnet. Each subnet would have its own rules for communicating to and from the other network. These rules give you the ability to restrict access from the database to the web application.
+이러한 서브넷을 구성 하려면 가상 네트워크를 만들고 네트워크 서브넷으로 세분화 합니다. 하나의 서브넷에서 다른 서브넷에 있는 데이터베이스에 웹 응용 프로그램을 작동 합니다. 각 서브넷에 다른 네트워크에서 통신에 대 한 규칙을 직접 해야 합니다. 이러한 규칙 데이터베이스에서 웹 응용 프로그램에 대 한 액세스를 제한 하는 기능을 제공 합니다.
 
-Creating a virtual network is beyond the scope of this module. If you need more information, please explore other learning modules related to virtual networks.
+가상 네트워크를 만드는이 모듈의 범위를 벗어납니다. 에 자세한 정보가 필요한 경우에 가상 네트워크와 관련 된 다른 학습 모듈을 탐색 하세요.
 
-### What is a firewall?
+### <a name="what-is-a-firewall"></a>방화벽 이란?
 
-A firewall is a service that grants server access based on the originating IP address of each request. You create firewall rules that specify ranges of IP addresses. Only clients from these granted IP addresses, will be allowed to access the server. Firewall rules generally speaking also includes specific network protocol and port information. For example, a PostgreSQL server by default listens to TCP requests on port 5432.
+방화벽은 각 요청의 원래 IP 주소를 기반으로 하는 서버 액세스 권한을 부여 하는 서비스. IP 주소 범위를 지정 하는 방화벽 규칙을 만듭니다. 이러한 클라이언트 중 하나만 부여 IP 주소는 서버에 액세스할 수 합니다. 방화벽 규칙을 일반적으로 특정 네트워크 프로토콜 및 포트 정보도 포함 합니다. 예를 들어, 기본적으로 PostgreSQL 서버는 5432 포트에서 TCP 요청에 수신 대기합니다.
 
-### Azure Database for PostgreSQL server firewall
+### <a name="azure-database-for-postgresql-server-firewall"></a>PostgreSQL 서버 방화벽에 대 한 azure 데이터베이스
 
-The Azure Database for PostgreSQL server firewall prevents all access to your database server until you specify which computers have permission. The firewall configuration allows you to specify a range of IP addresses that are allowed to connect to the server. The server always uses the default PostgreSQL connection information.
+Azure Database for PostgreSQL 서버 방화벽 권한이 있는 컴퓨터를 지정할 때까지 데이터베이스 서버에 대 한 모든 액세스를 방지 합니다. 방화벽 구성에는 서버에 연결할 수 있는 범위의 IP 주소를 지정할 수 있습니다. 서버는 항상 기본 PostgreSQL 연결 정보를 사용합니다.
 
-![Azure firewall functional diagram](../media-draft/7-firewall-diagram.png)
+![Azure 방화벽 기능 다이어그램](../media-draft/7-firewall-diagram.png)
 
-### Azure Database for PostgreSQL server SSL connections
+### <a name="azure-database-for-postgresql-server-ssl-connections"></a>PostgreSQL 서버 SSL 연결에 대 한 azure 데이터베이스
 
-Azure Database for PostgreSQL prefers your client applications connects to the PostgreSQL service using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against "man in the middle" and similar attacks by encrypting the data between the server and client. Enabling SSL requires the exchange of keys and strict authentication between client and server for the connection to work. Details about using SSL are beyond the scope of this learning module. If you need more information, please explore other learning modules related to SSL.
+Azure Database for PostgreSQL 클라이언트 응용 프로그램 보안 소켓 레이어 (SSL)를 사용 하 여 PostgreSQL 서비스에 연결 하는 것을 선호 합니다. 데이터베이스 서버와 클라이언트 응용 프로그램 간 SSL 연결 적용는 "man-in-the-middle" 으로부터 보호 하 고 서버와 클라이언트 간에 데이터를 암호화 하 여 비슷한 공격입니다. SSL을 사용 하도록 설정 하면 엄격한 클라이언트와 서버 간의 인증 연결에 대 한 작업 및 키 교환이 필요 합니다. SSL을 사용 하는 방법에 대 한 자세한 내용은이 학습 모듈의 범위를 벗어납니다. 에 자세한 정보가 필요한 경우 SSL과 관련 된 다른 학습 모듈을 탐색 하세요.
 
-## Configure Connection Security
+## <a name="configure-connection-security"></a>연결 보안 구성
 
-Let's look at the decisions and steps you make to configure an Azure Database for PostgreSQL server firewall. You'll also see how to connect to the server you've created earlier.
+결정 사항 및 Azure Database for PostgreSQL 서버 방화벽을 구성 하는 단계에 살펴보겠습니다. 또한 이전에 만든 서버에 연결 하는 방법을 표시 됩니다.
 
-First, you'll open the [Azure portal](https://portal.azure.com?azure-portal=true) and navigate to the server resource for which you would like to create a firewall rule.
+먼저 엽니다는 [Azure portal](https://portal.azure.com?azure-portal=true) 방화벽 규칙을 만들려면 하려는 서버가 리소스를 이동 합니다.
 
-Then you'll select the **Connection Security** option to open the connection security blade to the right.
+그런 다음, 선택 하는 **연결 보안** 옵션 오른쪽 연결 보안 블레이드를 엽니다.
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![PostgreSQL 데이터베이스 리소스 블레이드의 연결 보안 섹션을 보여 주는 Azure portal의 스크린샷](../media-draft/7-db-security-settings.png)
 
-On this screen, you have several options. You can:
+이 화면에는 몇 가지 옵션이 있습니다. 다음을 수행할 수 있습니다.
 
-- Add the IP address you use to access the portal as a firewall entry by clicking on the **+ Add client IP** button
-- Allow access to Azure services. By default all Azure services **don't** have access to the PostgreSQL server
-- Add firewall rules by entering ranges of IP addresses
-- Enforce SSL connections. This option forces you client to connect to the server using an SSL certificate.
+- 클릭 하 여 방화벽 항목으로 포털에 액세스 하는 데 사용할 수 있는 IP 주소를 추가 합니다 **클라이언트 IP 추가** 단추입니다.
+- Azure 서비스에 대 한 액세스를 허용 합니다. 기본적으로 모든 Azure 서비스 **하지** PostgreSQL 서버에 액세스할 수 있습니다.
+- IP 주소 범위를 입력 하 여 방화벽 규칙을 추가 합니다.
+- SSL 연결을 적용 합니다. 이 옵션에는 SSL 인증서를 사용 하 여 서버에 연결 하도록 클라이언트를 실행 하도록 합니다.
 
-Always remember to click on the **Save** icon above the entry fields to save the updated configuration once you've made changes.
+클릭을 항상 기억 합니다 **저장** 변경한 후 업데이트 된 구성을 저장 하려면 입력 필드 위에 아이콘입니다.
 
-### Allow access to Azure services
+### <a name="allow-access-to-azure-services"></a>Azure 서비스에 대한 액세스 허용
 
-To use Azure Cloud Shell to access or configure your server, make sure to enable **Allow Access to Azure Services**. This step is going to add a firewall rule to the server configuration to allow access from Cloud Shell. This rule will not show as one of the custom rules you add though.
+Azure Cloud Shell에 액세스 하거나 서버를 구성 하는 데 사용 하려면 확인을 사용 하도록 **Azure 서비스에 대 한 액세스 허용**합니다. 이 단계는 Cloud Shell에서 액세스를 허용 하도록 서버 구성에 방화벽 규칙을 추가할 예정입니다. 이 규칙은 추가 하는 사용자 지정 규칙 중 하나로 표시 되지 않습니다.
 
-You also need to disable **Enforce SSL connection**. PowerShell cann't connect to the server if SSL is required for client connections.
+사용 하지 않도록 설정 해야 **SSL 연결 적용**합니다. PowerShell은 SSL 클라이언트 연결에 필요한 경우 서버에 연결할 수 없습니다.
 
-Both of these options will result in an error message displayed on the command line if not configured correctly.
+두이 옵션 모두에 명령줄에 표시 된 구성 되지 않은 경우 올바르게 오류 메시지가 발생 합니다.
 
-For example, if access is not allowed to Azure services and enforce SSL connections is enabled then you'll see something similar to this error when the firewall is blocking access.
+예를 들어 액세스는 Azure 서비스에 허용 되지 않으며 SSL 연결 적용 하는 경우 사용 되, 방화벽에서 액세스를 차단 하는 경우이 오류와 유사한 화면이 표시 됩니다.
 
-> psql: FATAL: no pg_hba.conf entry for host "123.45.67.89", user "adminuser", database "postgres", SSL on FATAL:  SSL connection is required. Please specify SSL options and retry.
+> psql: FATAL: 호스트 "123.45.67.89" 사용자 "adminuser"에 대 한 pg_hba.conf 항목이 데이터베이스 "postgres", SSL on FATAL: SSL 연결이 필요 합니다. SSL 옵션을 지정하고 다시 시도하십시오.
 
-### Create a firewall rule using the portal
+### <a name="create-a-firewall-rule-using-the-portal"></a>포털을 사용 하 여 방화벽 규칙 만들기
 
-Let's say, you want to create a firewall rule that provides access from any IP address.
+모든 IP 주소에서 액세스를 제공 하는 방화벽 규칙을 만들려는 경우를 가정해 봅니다.
 
 > [!WARNING]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Eventhough clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications.
+> 이 방화벽 규칙을 만드는 모든 IP 주소에서 인터넷을 통해 서버에 연결 하려고 하면 있습니다. 있어도 클라이언트 서버일 수도 있고 액세스할 수 없는 사용자 이름 및 암호를 없습니다, 그리고 주의 해 서이 규칙을 사용 및 보안에 미치는 영향을 이해 해야 합니다.
 
-You create a new firewall rule by entering the following data in the labeled fields:
+다음 데이터를 레이블이 지정 된 필드에 입력 하 여 새 방화벽 규칙을 만듭니다.
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
+- 규칙 이름: `AllowAll`
+- 시작 IP: `0.0.0.0`
+- 끝 IP: `255.255.255.255`
 
-To remove a firewall rule, you'll click the ellipsis at the end of the rule you want to delete. Click the Delete button to delete the rule.
+방화벽 규칙을 제거 하려면 삭제 하려는 규칙의 끝에 줄임표 (...)를 클릭 하겠습니다. 클릭 합니다 **삭제** 규칙을 삭제 하는 단추입니다.
 
-Click on the **Save** icon above the entry fields to commit the deletion of the rule.
+클릭 합니다 **저장** 커밋을 삭제 규칙의 입력 필드 위에 아이콘.
 
-### Create a firewall rule using the Azure CLI
+### <a name="create-a-firewall-rule-using-the-azure-cli"></a>Azure CLI를 사용 하 여 방화벽 규칙 만들기
 
-You use the Azure CLI to add firewall rules to your server with the `az postgres server firewall-rule create` command using Azure CloudShell.
+Azure CLI를 사용 하 여 방화벽 규칙을 사용 하 여 서버를 추가 하는 `az postgres server firewall-rule create` Azure cloud Shell을 사용 하 여 명령입니다.
 
-Let's say you want to create the same rules as above You'' use the following command:
+위와 동일한 규칙을 만들려는 경우를 가정해 봅니다. 다음 명령을 사용할 수 있습니다.
 
-  ```bash
+  ```azurecli
   az postgres server firewall-rule create --resource-group <resource_group_name> --server <server-name> --name AllowAll --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
   ```
 
-You remove firewall rules from your server with the command `az postgres server firewall-rule delete`.
+명령 사용 하 여 서버에서 방화벽 규칙을 제거 하면 `az postgres server firewall-rule delete`합니다.
 
-Let's say you want to delete the firewall you created then use the following command:
+사용자가 만든 방화벽을 삭제 하려는 경우를 가정해 봅니다. 다음 명령을 사용 합니다.
 
-  ```bash
+  ```azurecli
   az postgres server firewall-rule delete --name AllowAll --resource-group <resource_group_name> --server-name <server-name>
   ```
 
-## Connecting to your server
+## <a name="connecting-to-your-server"></a>서버에 연결
 
-Like any modern database, PostgreSQL requires regularly server administration to achieve best performance. You have a number of options to connect and manage your Azure Database for PostgreSQL server. We'll use `psql` to connect to the server.
+모든 최신 데이터베이스와 같은 PostgreSQL에는 최상의 성능을 얻으려면 일반 서버 관리가 필요 합니다. 다양 한 옵션이 연결 및 Azure Database for PostgreSQL 서버를 관리 해야 합니다. 사용 하 여 `psql` 서버에 연결 합니다.
 
-### What is psql?
+### <a name="what-is-psql"></a>Psql 란?
 
-The command-line tool called `psql` is the PostgreSQL distributed interactive terminal for working with PostgreSQL server and databases. `psql` works with Azure Database for PostgreSQL the same as with any other PostgreSQL implementation and is included with the Azure Cloud Shell. The `psql` tool allows you to manage databases as well as execute structure queries against these databases.
+명령줄 도구 라는 `psql` 은 PostgreSQL에 PostgreSQL 서버 및 데이터베이스 작업을 위한 대화형 터미널 분산 합니다. `psql` Azure database for PostgreSQL 동일 하 게 작동 다른 PostgreSQL 구현 하 고 Azure Cloud Shell을 사용 하 여 포함 됩니다. `psql` 도구를 사용 하면 데이터베이스를 관리할 수 있을 뿐만 아니라 이러한 데이터베이스에 대 한 구조 쿼리를 실행할 수 있습니다.
 
-Using `psql` requires a successful connection to a PostgreSQL server. There are a number of command-line parameters available for use when working with `psql`.
+사용 하 여 `psql` PostgreSQL 서버에 성공적으로 연결 해야 합니다. 여러 가지 명령줄 매개 변수 사용에 대 한 사용 가능한 작업할 때 `psql`합니다.
 
-- `--host` - the host to which you'd like to connect
-- `--username` - the user name/i.d. with which to connect
-- `--dbname` - the name of the database to connect to.
+- `--host` -호스트를 연결 하려는입니다.
+- `--username` -사용자 이름/i d 연결 하는 데 사용 합니다.
+- `--dbname` -연결할 데이터베이스의 이름입니다.
 
 > [!Note]
-> You'll typically connect to the `postgres` management database when managing your server access and databases configuration.
+> 일반적으로 연결할 수는 `postgres` 관리 데이터베이스 서버 액세스 및 데이터베이스 구성에 사용자를 관리 하는 경우.
 
-Here is the complete command:
+전체 명령은 다음과 같습니다.
 
   ```bash
   psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=<database>
   ```
 
-Once connected, you'll be presented with a command prompt and can execute commands to your server and databases.
+연결 되 면 명령 프롬프트가 표시 됩니다 하 고 서버 및 데이터베이스에 명령을 실행할 수 있습니다.
 
-You've now seen the steps you take to configure an Azure Database for PostgreSQL security settings. In the next unit, you'll configure an  Azure Database for PostgreSQL security settings. You'll also connect to the server using Cloud Shell.
+이제 Azure Database for PostgreSQL 보안 설정을 구성 하기 위해 수행 하는 단계를 살펴보았습니다. 다음 단위에 있는 PostgreSQL 보안 설정에 대 한 Azure Database를 구성 합니다. Cloud Shell을 사용 하 여 서버에 연결할 수 있습니다.

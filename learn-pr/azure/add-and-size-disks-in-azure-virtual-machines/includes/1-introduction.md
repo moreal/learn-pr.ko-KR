@@ -1,12 +1,12 @@
-You're the system architect for a law firm. The firm has asked you to migrate key systems to Azure. Systems include the database of case histories, currently hosted by an on-premises SQL server and accessed from a desktop application. The SQL server also runs some custom in-house services to perform database maintenance. You've decided that a solution based on Azure virtual machines (VMs) will allow you to host your SQL server and continue using your custom services. You'll create an Azure virtual hard disk based on the contents of your existing on-premises server to ease migration.
+법률 회사가 대 한 시스템 설계자 것입니다. 이 회사는 핵심 시스템을 Azure로 마이그레이션할 수 있습니다를 요청 했습니다. 시스템의 현재는 온-프레미스 SQL server에서 호스트 되 고 데스크톱 응용 프로그램에서 액세스할 경우 기록 데이터베이스를 포함 합니다. 또한 SQL server 데이터베이스 유지 관리 하는 데 몇 가지 사용자 지정 사내 서비스를 실행 합니다. Azure virtual machines (Vm)에 따라 솔루션에 SQL server를 호스트 하 여 사용자 지정 서비스를 사용 하 여 계속 사용할 수 있음을 결정 했습니다. 쉽게 마이그레이션하기 위해 기존 온-프레미스 서버의 내용에 따라 Azure 가상 하드 디스크를 만들어야 합니다.
 
-In this module, you'll learn how to architect the optimal disk configuration for the VMs you create in Azure. You'll create virtual hard disks through the Azure portal and add them to VMs to create fully functional compute resources.
+이 단원에서는 Azure에서 만든 Vm에 대 한 최적의 디스크 구성을 설계 하는 방법을 배웁니다. Azure portal 통해 가상 하드 디스크 만들어 완벽 하 게 작동 하는 계산 리소스를 만드는 Vm에 추가 합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서 수행하는 작업:
 
-- Create a VM in the Azure portal
-- Create operating system disks and data disks in Azure VMs
-- Choose between and create standard and premium disks
-- Choose between and create unmanaged and managed disks
+- Azure portal에서 VM 만들기
+- Azure Vm에서 운영 체제 디스크 및 데이터 디스크 만들기
+- 표준 및 프리미엄 디스크를 만들고 중에서 선택
+- 중에서 선택 하 고 관리 되지 않는 만들기 및 관리 디스크

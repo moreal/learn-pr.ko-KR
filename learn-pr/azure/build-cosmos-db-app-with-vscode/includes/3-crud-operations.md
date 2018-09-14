@@ -241,7 +241,7 @@ Azure Cosmos DB 문서에 대한 기본 작업은 [DocumentClient](https://docs.
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Program.cs 파일을 저장한 후에 통합 터미널에서 다음 명령을 실행합니다.
+1. Program.cs 파일을 저장한 다음, 통합 터미널에서 다음 명령을 실행합니다.
 
     ```
     dotnet run
@@ -340,7 +340,7 @@ Azure Cosmos DB는 JSON 문서 바꾸기를 지원합니다. 이 경우 사용�
     }
     ```
 
-1. 두 번째 쿼리 실행의 **BasicOperations** 메서드에 다음 코드를 복사하여 붙여넣습니다.
+1. 두 번째 쿼리 실행 아래의 **BasicOperations** 메서드에 다음 코드를 복사하여 붙여넣습니다.
 
     ```csharp
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);

@@ -18,4 +18,4 @@ Azure AD Premium에는 Multi-Factor Authentication 및 조건부 액세스 정�
 
 ## <a name="summary"></a>요약
 
-이 단원에서는 Azure AD의 기본 사항과 응용 프로그램에 대한 액세스를 보호하는 데 사용할 수 있는 기능을 알아보았습니다. 이제 기본 사항을 알고 있으므로 Azure AD를 시작해 보겠습니다. 이 모듈의 나머지 부분에서는 조건부 액세스를 사용하여 Multi-Factor Authentication을 사용하도록 설정하고 테스트할 수 있는 실습을 제공합니다.
+이 단원에서는 Azure AD의 기본 사항과 응용 프로그램에 대한 액세스를 보호하는 데 사용할 수 있는 기능을 알아보았습니다. 했으므로 기본 사항으로, 시작 Azure AD를 사용 하 여 합니다. 이 모듈의 나머지 부분에서는 조건부 액세스를 사용하여 Multi-Factor Authentication을 사용하도록 설정하고 테스트할 수 있는 실습을 제공합니다.

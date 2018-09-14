@@ -1,39 +1,37 @@
 ### YamlMime:Module
 uid: learn.introduction-to-azure-virtual-machines
 metadata:
-  title: Introduction to Azure Virtual Machines
-  description: Learn about the decisions you make before creating a VM, the options to create and manage the VM, and the extensions and services you use to manage your VM.
+  title: Azure Virtual Machines 소개
+  description: VM을 만들기 전에 결정에 알아봅니다 만들기 및 VM 확장 및 VM을 관리 하는 데 사용할 서비스를 관리 하는 옵션입니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to Azure Virtual Machines
-summary: Learn about the decisions you make before creating a VM, the options to create and manage the VM, and the extensions and services you use to manage your VM.
+title: Azure Virtual Machines 소개
+summary: VM을 만들기 전에 결정에 알아봅니다 만들기 및 VM 확장 및 VM을 관리 하는 데 사용할 서비스를 관리 하는 옵션입니다.
 abstract: |
-  In this module, you will:
-  - Compile a checklist for creating a virtual machine
-  - Describe the options to create and manage virtual machines
-  - Describe the additional services available to administer virtual machines
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  이 모듈에서 수행하는 작업:
+  - 가상 머신 만들기에 대한 검사 목록 작성
+  - 가상 머신을 만들고 관리하는 옵션에 대한 설명
+  - 가상 머신을 관리하는 데 사용할 수 있는 추가 서비스에 대한 설명
+prerequisites: 없음
+iconUrl: /learn/achievements/intro-to-azure-virtual-machines.svg
 levels:
-- beginner
+  - beginner
 roles:
-- administrator
-- developer
-- solution-architect
+  - administrator
+  - developer
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.introduction-to-azure-virtual-machines.1-introduction
-- learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
-- learn.introduction-to-azure-virtual-machines.3-create-a-vm
-- learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
-- learn.introduction-to-azure-virtual-machines.5-high-availability
-- learn.introduction-to-azure-virtual-machines.6-backup-services
-- learn.introduction-to-azure-virtual-machines.7-knowledge-check
-- learn.introduction-to-azure-virtual-machines.8-summary
+  - learn.introduction-to-azure-virtual-machines.1-introduction
+  - learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
+  - learn.introduction-to-azure-virtual-machines.3-create-a-vm
+  - learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
+  - learn.introduction-to-azure-virtual-machines.5-high-availability
+  - learn.introduction-to-azure-virtual-machines.6-backup-services
+  - learn.introduction-to-azure-virtual-machines.7-knowledge-check
+  - learn.introduction-to-azure-virtual-machines.8-summary
 achievement: learn.introduction-to-azure-virtual-machines.badge

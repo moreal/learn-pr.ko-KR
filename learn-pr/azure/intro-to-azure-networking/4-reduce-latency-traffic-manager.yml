@@ -1,37 +1,33 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Traffic Manager를 사용하여 대기 시간 단축
+title: Azure Traffic Manager를 사용 하 여 대기 시간 줄이기
 metadata:
-  title: Traffic Manager를 사용하여 대기 시간 단축
+  title: Azure Traffic Manager를 사용 하 여 대기 시간 줄이기
   description: Traffic Manager를 사용하여 지리적 영역의 대기 시간을 단축하고 복원력을 구현하는 방법을 알아보세요.
-  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477826"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/4-reduce-latency-traffic-manager.md)]
 quiz:
   title: '지식 검사: Traffic Manager를 사용하여 대기 시간 단축'
   questions:
-  - content: Traffic Manager로 대기 시간을 단축하는 방법은 무엇인가요?
-    choices:
-    - content: 엔드포인트 간에 가장 빠른 네트워크만 선택합니다.
-      isCorrect: false
-      incorrectExplanation: Traffic Manager는 특정 네트워크 속도를 고려하지 않습니다.
-    - content: 사용자의 DNS 서버와 가장 가까운 엔드포인트를 선택합니다.
-      isCorrect: true
-      correctExplanation: 사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.
-    - content: 콘텐츠 전송 네트워크와 비슷한 방식으로 콘텐츠를 캐시합니다.
-      isCorrect: false
-      incorrectExplanation: Traffic Manager는 클라이언트와 서버 간에 전달되는 트래픽을 확인하지 않으며 콘텐츠를 캐시하지도 않습니다.
-  - content: 귀하는 영국에 거주하고 있는데 DNS 서버는 이탈리아에 있습니다. Traffic Manager로 트래픽을 전달하는 방법은 무엇인가요?
-    choices:
-    - content: 영국과 가장 가까운 서비스를 선택합니다.
-      isCorrect: false
-      incorrectExplanation: Traffic Manager는 사용자의 위치가 아닌 사용자와 가장 가까운 _DNS 서버_를 사용하여 트래픽을 전달합니다.
-    - content: 이탈리아와 가장 가까운 서비스를 선택합니다.
-      isCorrect: true
-      correctExplanation: Traffic Manager는 사용자의 위치가 아닌 사용자와 가장 가까운 _DNS 서버_를 사용하여 트래픽을 전달합니다.
+    - content: Azure Traffic Manager 대기 시간을 줄이고 하는 방법
+      choices:
+        - content: 엔드포인트 간에 가장 빠른 네트워크만 선택합니다.
+          isCorrect: false
+        - content: 사용자의 DNS 서버와 가장 가까운 엔드포인트를 선택합니다.
+          isCorrect: true
+          correctExplanation: 사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.
+        - content: 콘텐츠 전송 네트워크와 비슷한 방식으로 콘텐츠를 캐시합니다.
+          isCorrect: false
+    - content: '거주 하시는 잉글랜드, 하지만 이탈리아에서 DNS 서버를 가정 합니다. Traffic Manager로 트래픽을 전달하는 방법은 무엇인가요?'
+      choices:
+        - content: 영국과 가장 가까운 서비스를 선택합니다.
+          isCorrect: false
+        - content: 이탈리아와 가장 가까운 서비스를 선택합니다.
+          isCorrect: true
+          correctExplanation: Traffic Manager는 사용 된 _DNS 서버_ 트래픽을 사용자에 게 가장 가까운입니다.

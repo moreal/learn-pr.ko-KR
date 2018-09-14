@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
-title: Configure a load balancer in Azure
+title: Azure에서 부하 분산 장치 구성
 metadata:
-  title: Configure a load balancer in Azure
-  description: Configure a load balancer in Azure
+  title: Azure에서 부하 분산 장치 구성
+  description: Azure에서 부하 분산 장치 구성
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.summary
-title: Clean up resources
+title: 리소스 정리
 metadata:
-  title: Clean up resources
-  description: Clean up and delete all resources used in the module.
+  title: 리소스 정리
+  description: 정리 하 고 모듈에서 사용 하는 모든 리소스를 삭제 합니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

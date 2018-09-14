@@ -1,35 +1,33 @@
 ### YamlMime:Module
 uid: learn.intro-to-compute
 metadata:
-  title: Introduction to Azure compute
-  description: Review the Azure compute services and how they can be used to solve common business needs.
+  title: Azure 계산 소개
+  description: Azure 계산 서비스를 검토 하 고 일반 비즈니스 요구 사항을 어떻게 해결 하는지를 살펴봅니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to Azure compute
-summary: Review the Azure compute services and how they can be used to solve common business needs.
-abstract:  | 
-  In this module, you will:
-  - Identify Azure compute options
-  - Select one or more compute options that are appropriate for solving your business needs
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Azure 계산 소개
+summary: Azure 계산 서비스를 검토 하 고 일반 비즈니스 요구 사항을 어떻게 해결 하는지를 살펴봅니다.
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - Azure 계산 옵션 식별
+  - 특정 비즈니스 요구를 해결할 수 있는 계산 옵션 선택
+prerequisites: 없음
+iconUrl: /learn/achievements/intro-to-azure-compute.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- solution-architect
-- administrator
+  - developer
+  - solution-architect
+  - administrator
 products:
-- azure
+  - azure
 units:
-- learn.intro-to-compute.1-introduction
-- learn.intro-to-compute.2-essential-azure-compute-concepts
-- learn.intro-to-compute.3-select-and-manage-compute-options
-- learn.intro-to-compute.4-knowledge-check
-- learn.intro-to-compute.5-summary
+  - learn.intro-to-compute.1-introduction
+  - learn.intro-to-compute.2-essential-azure-compute-concepts
+  - learn.intro-to-compute.3-select-and-manage-compute-options
+  - learn.intro-to-compute.4-knowledge-check
+  - learn.intro-to-compute.5-summary
 achievement: learn.intro-to-compute.badge

@@ -1,16 +1,16 @@
-Whether you're running a public-facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks, and optimizing your storage performance are important things you can do to ensure your users have the best experience. In this module, we'll talk through details of how to make your application perform at its best.
+대량의 트래픽을 처리해야 하는 공용 응용 프로그램 또는 내부 시스템에 대한 중요한 데이터를 처리하는 내부 비즈니스 API를 실행하는 경우 사용자는 성능이 뛰어난 시스템을 기대합니다. 부하를 처리하기 위해 시스템의 크기를 조정하고, 네트워크 병목 상태를 식별하고, 저장소 성능을 최적화하는 일은 최상의 사용자 환경을 보장하기 위해 수행할 수 있는 중요한 작업입니다. 이 모듈에서는 응용 프로그램을 최고의 성능으로 수행하게 하는 방법을 자세히 알아보겠습니다.
 
-As we learn about architecting our cloud solutions for performance and scalability, we'll see how one fictional Azure customer puts these principles to work. Lamna Healthcare is a national healthcare provider with several thousand physicians and clinicians across multiple facilities throughout the country. Their IT organization has recently undertaken an effort to reduce their datacenter footprint and move the majority of their IT systems to Azure. They have a mixture of in-house developed applications, open source, and off-the-shelf applications, with varying architectures and technology platforms. They want to make their journey to the cloud successful, and would like to learn what they need to focus on to help make it possible.
+성능 및 확장성을 위해 클라우드 솔루션을 설계하는 방법을 알아보면서 한 가상의 Azure 고객이 이러한 원칙을 구현하는 방법을 살펴보겠습니다. Lamna Healthcare는 국내의 여러 설비에 수천 명의 의사와 임상의를 보유하고 있는 국립 의료 공급업체입니다. 이 회사의 IT 조직은 최근에 데이터 센터 공간을 줄이고 대부분의 IT 시스템을 Azure로 이동하기 위해 작업해 왔습니다. 이 회사에는 다양한 아키텍처 및 기술 플랫폼과 함께 사내 개발 응용 프로그램, 오픈 소스 및 맞춤형 응용 프로그램이 있습니다. 또한 이 회사는 클라우드로 성공적으로 전환하고, 이러한 성공을 위해 주안점을 두어야 하는 부분을 배우려고 합니다.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> 이 모듈에 설명 된 개념 모든 제품을 포함 하지 않지만 클라우드 솔루션을 빌드할 때 중요 한 고려 사항 중 일부를 나타냅니다. Microsoft는 광범위 한 패턴, 지침 및 Azure에서 응용 프로그램 디자인에 대 한 예제를 게시 합니다. 콘텐츠를 확인 하는 것이 좋습니다 합니다 [Azure 아키텍처 센터](https://docs.microsoft.com/azure/architecture/) 계획 및 아키텍처 설계를 시작 합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Learn how scaling up and scaling out allows you to dynamically adjust capacity to your workload.
-- Learn how to optimize network performance.
-- Learn how to optimize storage and database performance.
+- 확장 및 스케일 아웃을 통해 워크로드에 맞게 용량을 동적으로 조정하는 방법에 대해 알아봅니다.
+- 네트워크 성능을 최적화하는 방법을 알아봅니다.
+- 저장소 및 데이터베이스 성능을 최적화하는 방법을 알아봅니다.
 
-Let's get started!
+이제 시작하겠습니다.

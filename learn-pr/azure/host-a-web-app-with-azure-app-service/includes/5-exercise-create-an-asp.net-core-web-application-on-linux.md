@@ -25,7 +25,7 @@ sudo apt-get update
 sudo apt-get install dotnet-sdk-2.1
 ```
 
-설치 프로세스 중에 계정 암호를 입력하라는 메시지가 표시될 수 있습니다. 암호를 입력하고 Enter 키를 눌러 계속합니다.
+설치 과정에서 계정 암호를 입력하라는 메시지가 표시될 수 있습니다. 암호를 입력하고 Enter 키를 눌러 계속합니다.
 
 설치를 확인하려면 다음을 입력합니다.
 
@@ -43,13 +43,13 @@ dotnet --version
 
 ## <a name="open-a-terminal-window"></a>터미널 창 열기
 
-먼저 터미널 창을 열어야 합니다. 터미널 창에서 명령을 실행할 수 있고 이 창은 Windows 명령 프롬프트 창과 유사한 역할을 할 수 있습니다.
+먼저 터미널 창을 열어야 합니다. 터미널 창에서 명령을 실행할 수 있으며, 터미널 창은 Windows 명령 프롬프트 창과 비슷한 역할을 합니다.
 
 ## <a name="create-a-new-web-project"></a>새 웹 프로젝트 만들기
 
 .NET CLI 도구의 핵심은 *dotnet* 드라이버 도구입니다. 이 명령을 사용하여 새 ASP.NET Core 웹 프로젝트를 만듭니다.
 
-새 ASP.NET Core MVC 응용 프로그램을 만들려면 다음 명령을 입력하면 됩니다.
+새 ASP.NET Core MVC 응용 프로그램을 만들려면 다음 명령만 입력하면 됩니다.
 
 ```console
 cd ~/Documents
@@ -58,7 +58,7 @@ cd BestBikeApp      # Hit Enter
 dotnet new mvc      # Hit Enter
 ```
 
-위 명령은 *Documents* 루트 폴더로 이동한 후 새 폴더를 만듭니다. 그런 다음 해당 폴더 내로 이동합니다. 마지막으로 .NET CLI 명령을 실행하여 모든 패키지가 복원된 새 ASP.NET MVC 응용 프로그램을 생성합니다.
+위 명령을 실행하면 *Documents* 루트 폴더로 이동한 후 새 폴더를 만듭니다. 그런 다음, 해당 폴더 내로 이동됩니다. 마지막으로 .NET CLI 명령을 실행하여 모든 패키지가 복원된 새 ASP.NET MVC 응용 프로그램을 생성합니다.
 
 ```console
 The template "ASP.NET Core Web App (Model-View-Controller)" was created successfully.
@@ -69,13 +69,13 @@ Running 'dotnet restore' on /home/your-user/Documents/BestBikeApp/BestBikeApp.cs
 ...
 ```
 
-이제 다음 명령을 실행하여 응용 프로그램을 실행하면 됩니다.
+이제 다음 명령을 실행하여 응용 프로그램을 실행하기만 하면 됩니다.
 
 ```console
 dotnet run
 ```
 
-‘터미널’에서 *dotnet* 명령은 실행 중인 앱에 대한 몇 가지 유용한 정보를 표시합니다.
+‘터미널’에서 *dotnet* 명령은 실행 중인 앱에 대한 몇 가지 유용한 정보를 표시합니다.**
 
 ```console
 Using launch settings from /home/your-user/Documents/BestBikeApp/Properties/launchSettings.json...
@@ -107,11 +107,11 @@ The HTTPS developer certificate was generated successfully.
 
 ## <a name="run-the-application"></a>응용 프로그램 실행
 
-이 데모에서는 Firefox 브라우저를 사용하고 있습니다.
+이 데모에서는 Firefox 브라우저를 사용합니다.
 
 브라우저를 열고 주소로 `http://localhost:5001`을 입력하여 응용 프로그램이 정상적으로 실행되고 있는지 확인합니다.
 
-![ASP.NET Core MVC 템플릿 기본 웹 페이지의 웹 브라우저 보기를 보여 주는 스크린샷.](../media/5-asp-core-mvc-default-template.PNG)
+![ASP.NET Core MVC 템플릿 기본 웹 페이지의 웹 브라우저 보기를 보여주는 스크린샷.](../media/5-asp-core-mvc-default-template.PNG)
 
 > [!NOTE]
 > 개발 자체 서명 인증서는 Firefox에서 확인할 수 없으므로 응용 프로그램 URL에 대한 **예외를 추가**해야 합니다.

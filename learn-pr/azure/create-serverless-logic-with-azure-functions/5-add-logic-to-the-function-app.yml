@@ -1,17 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.5-add-logic-to-the-function-app
-title: Add logic to the function app
+title: 함수 앱에 논리 추가
 metadata:
-  title: Add logic to the function app
-  description: Add the business logic + trigger into the Function App
+  title: 함수 앱에 논리 추가
+  description: 함수 앱에 비즈니스 논리 + 트리거 추가
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
 azureSandbox: true
 durationInMinutes: 10
 content: |

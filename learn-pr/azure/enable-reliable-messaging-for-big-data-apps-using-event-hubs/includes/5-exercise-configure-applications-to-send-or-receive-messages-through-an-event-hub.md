@@ -11,7 +11,7 @@
 1. 다음 명령을 사용하여 리소스 그룹에서 저장소 계정(범용 V2)을 만듭니다.
 
     ```azurecli
-    az storage account create --name <storage account name> --resource-group <resource group name>  --location <location> --sku Standard_RAGRS --encryption blob
+    az storage account create --name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>  --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
     |매개 변수      |설명|
@@ -23,7 +23,7 @@
 1. 다음 명령을 사용하여 저장소 계정과 연결된 모든 액세스 키를 나열합니다.
 
     ```azurecli
-    az storage account keys list --account-name <storage account name> --resource-group <resource group name>
+    az storage account keys list --account-name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |매개 변수      |설명|
@@ -36,7 +36,7 @@
 1. 다음 명령을 사용하여 저장소 계정의 연결 문자열을 봅니다.
 
     ```azurecli
-    az storage account show-connection-string -n <storage account name> -g <resource group name>
+    az storage account show-connection-string -n <storage account name> -g <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |매개 변수      |설명|
@@ -55,8 +55,6 @@
 ## <a name="clone-the-event-hubs-github-repository"></a>Event Hubs GitHub 리포지토리 복제
 
 다음 단계를 사용하여 Event Hubs GitHub 리포지토리를 복제합니다.
-
-1. Azure Cloud Shell(Bash)에 로그인합니다.
 
 1. 이 단원에서 빌드할 응용 프로그램의 원본 파일은 [GitHub 리포지토리](https://github.com/Azure/azure-event-hubs)에 있습니다. 다음 명령을 사용하여 Cloud Shell의 홈 디렉터리에 있는지 확인한 후 이 리포지토리를 복제합니다.
 

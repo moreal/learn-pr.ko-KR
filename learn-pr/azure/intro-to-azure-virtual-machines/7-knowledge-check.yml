@@ -1,36 +1,35 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
-title: Knowledge check
+title: 지식 검사
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: 지식 검사
+  description: 지식 검사
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 3
 quiz:
-  title: 'Azure Virtual Machine'
+  title: Azure Virtual Machine
   questions:
-  - content: 'Suppose you want to run a network appliance on a virtual machine. Which workload option will you choose?'
-    choices:
-    - content: General purpose
-      isCorrect: false
-    - content: Compute optimized
-      isCorrect: true
-    - content: Memory optimized
-      isCorrect: false
-    - content: Storage optimized
-      isCorrect: false
-  - content: 'Assume you want to deploy a copy of an existing Azure virtual machine. Which option will you choose to complete the job?'
-    choices:
-    - content: PowerShell
-      isCorrect: false
-    - content: Resource Manager Templates
-      isCorrect: true
-    - content: Azure CLI
-      isCorrect: false
-    - content: Azure Client SDK
-      isCorrect: false
+    - content: 가상 머신에서 네트워크 어플라이언스를 실행하려고 한다고 가정합니다. 선택할 워크로드 옵션은 무엇인가요?
+      choices:
+        - content: 범용
+          isCorrect: false
+        - content: 계산 최적화
+          isCorrect: true
+        - content: 메모리 최적화
+          isCorrect: false
+        - content: 저장소 최적화
+          isCorrect: false
+    - content: 기존 Azure 가상 머신의 복사본을 배포하려고 한다고 가정합니다. 작업을 완료 하는 옵션을 선택 하는?
+      choices:
+        - content: PowerShell
+          isCorrect: false
+        - content: Resource Manager 템플릿
+          isCorrect: true
+        - content: Azure CLI
+          isCorrect: false
+        - content: Azure 클라이언트 SDK
+          isCorrect: false

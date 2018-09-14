@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.3-identity-management
-title: Identity management
+title: ID 관리
 metadata:
-  title: Identity management
-  description: In this unit we'll discuss how to protect your identities
+  title: ID 관리
+  description: 이 섹션에서는 ID를 보호하는 방법을 살펴보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 5
 content: |
   [!include[](includes/3-identity-management.md)]
 quiz:
-  title: 'Knowledge Check - Identity management'
+  title: 지식 검사 - ID 관리
   questions:
-  - content: 'Which of the following is not a factor in multi-factor authentication?'
-    choices:
-    - content: 'A thumbprint scanner on a mobile device'
-      isCorrect: false
-      incorrectExplanation: 'Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.'
-    - content: 'A token generated from the Azure Authenticator application'
-      isCorrect: false
-      incorrectExplanation: 'Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.'
-    - content: 'A password'
-      isCorrect: false
-      incorrectExplanation: 'Passwords can be used as factors in multi-factor authentication.'
-    - content: 'Your shoe size'
-      isCorrect: true
-      correctExplanation: 'Your shoe size is not something that can be used in multi-factor authentication.'
-  - content: 'Which of the following is NOT a benefit SSO provides?'
-    choices:
-    - content: 'Increased complexity assigning permissions to users'
-      isCorrect: true
-      correctExplanation: 'SSO can reduce the complexity needed to assign permissions to users.'
-    - content: 'Fewer IDs and passwords for users to remember'
-      isCorrect: false
-      incorrectExplanation: 'Fewer IDs and passwords for users to remember is a key benefit of SSO.'
-    - content: 'Lower adminmistration effort when users change roles or leave an organization'
-      isCorrect: false
-      incorrectExplanation: 'SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization. This is a key benefit of SSO.'
-    - content: 'Ensures a consistent password policy across applications'
-      isCorrect: false
-      incorrectExplanation: 'By using SSO, users have a single password policy for all accounts. This is a key benefit of SSO.'
+    - content: 다음 중 다단계 인증의 요소가 아닌 것은 무엇입니까?
+      choices:
+        - content: 모바일 장치에서 검색 된 지문
+          isCorrect: false
+          incorrectExplanation: 생체 인식 요소 지문 검색 같은 사용할 수 있습니다 multi-factor authentication에서 요소로 합니다.
+        - content: Azure Authenticator 응용 프로그램에서 생성된 토큰
+          isCorrect: false
+          incorrectExplanation: Multi-factor authentication에서 요소로 keyfobs 및 응용 프로그램에서 생성 된 토큰을 사용할 수 있습니다.
+        - content: 암호
+          isCorrect: false
+          incorrectExplanation: 암호는 multi-factor authentication의 요소로 사용할 수 있습니다.
+        - content: 신발 크기
+          isCorrect: true
+          correctExplanation: 신발 크기의 multi-factor authentication에 사용할 수 있는 사항도 아닙니다.
+    - content: 중 없는 SSO 혜택을 제공 합니다.
+      choices:
+        - content: 사용자에게 권한을 할당하는 복잡성 증가
+          isCorrect: true
+          correctExplanation: SSO는 사용자에 게 권한을 할당 하는 데 필요한 복잡성을 줄일 수 있습니다.
+        - content: 사용자가 기억해야 하는 ID 및 암호 감소
+          isCorrect: false
+          incorrectExplanation: 적은 Id 및 사용자의 암호를 기억해 야 기능은 SSO의 주요 혜택입니다.
+        - content: 사용자가 역할을 변경하거나 조직을 떠날 때 해야 하는 관리 업무 감소
+          isCorrect: false
+          incorrectExplanation: SSO에는 업데이트 하거나 사용자가 역할을 변경 하거나 조직을 액세스를 사용 하지 않도록 설정 하는 데 필요한 관리 양이 줄어듭니다. 이 기능은 SSO의 주요 혜택입니다.
+        - content: 모든 응용 프로그램에서 일관적인 암호 정책 적용
+          isCorrect: false
+          incorrectExplanation: SSO를 사용 하 여 사용자는 모든 계정에 대해 단일 암호 정책이 있습니다. 이 기능은 SSO의 주요 혜택입니다.

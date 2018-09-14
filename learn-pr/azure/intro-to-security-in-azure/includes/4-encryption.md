@@ -1,70 +1,70 @@
-For most organizations, data is the most valuable and irreplaceable asset. Encryption serves as the last and strongest line of defense in a layered security strategy. 
+대부분의 조직에 대 한 데이터는 가장 중요 하 고 대체할 수 없는 자산입니다. 암호화는 마지막 및 강력한 방어선 계층화 된 보안 전략의 역할도합니다. 
 
-Contoso Shipping knows that encryption is the only protection their data has once it leaves the datacenter as it heads to those mobile apps.
+Contoso 전달 해당 암호화를 나가면이 데이터 센터 처럼이 헤드 해당 모바일 앱에 해당 데이터에만 보호는 알고 있습니다.
 
-## What is encryption?
+## <a name="what-is-encryption"></a>암호화란?
 
-Encryption is the process of making data unreadable and unusable. To use or read the encrypted data, it must be *decrypted*, which requires the use of a secret key. There are two top-level types of encryption: **symmetric** and **asymmetric**.
+암호화는 데이터를 읽을 수 없고 사용할 수 없게 만드는 프로세스입니다. 암호화된 데이터를 사용하거나 읽으려면 *암호를 해독*해야 하고, 암호를 해독하려면 비밀 키를 사용해야 합니다. 두 가지가 최상위 암호화: **대칭** 하 고 **비대칭**합니다.
 
-Symmetric encryption uses the same key to encrypt and decrypt the data. Consider a desktop password manager application. You enter your passwords and they are encrypted with your own personal key (your key is often derived from your master password). When the data needs to be retrieved, the same key is used and the data is decrypted.
+대칭 암호화는 데이터 암호화 및 암호 해독에 동일한 키를 사용합니다. 데스크톱 암호 관리자 응용 프로그램을 생각해 보세요. 사용자가 암호를 입력하면 사용자의 고유한 개인 키를 사용하여 암호가 암호화됩니다(키는 종종 마스터 암호에서 파생됨). 데이터를 검색해야 하는 경우 동일한 키를 사용하여 데이터가 암호 해독됩니다.
 
-Asymmetric encryption uses a public key and private key pair. Either key can encrypt but a single key can't decrypt its own encrypted data. To decrypt, you need the paired key. Asymmetric encryption is used for things like Transport Layer Security (TLS) (used in HTTPS) and data signing.
+비대칭 암호화는 공개 키와 개인 키 쌍을 사용합니다. 두 키를 암호화할 수 있지만 단일 키 자체 암호화 된 데이터를 암호 해독할 수 없습니다. 를 암호 해독 하려면 쌍으로 연결 된 키가 필요 합니다. 비대칭 암호화는 전송 계층 보안 (TLS) (HTTPS 사용) 및 데이터 서명 등을 위해 사용 됩니다.
 
-Both symmetric and asymmetric encryption play a role in properly securing your data. 
+대칭 및 비대칭 암호화 둘 다 데이터를 적절하게 보호합니다. 
 
-Encryption is typically approached in two ways: encryption at rest and encryption in transit.
+암호화는 일반적으로 미사용 암호화 및 전송 중 암호화의 두 가지 방법으로 접근합니다.
 
-## Encryption in transit
+## <a name="encryption-in-transit"></a>전송 중 암호화
 
-Data in transit is the data actively moving from one location to another, such as across the internet or through a private network. Secure transfer can be handled by several different layers. It could be done by encrypting the data at the application layer prior to sending it over a network. HTTPS is an example of application layer in transit encryption. 
+전송 중인 데이터는 인터넷을 통해 또는 사설 네트워크를 통해 한 위치에서 다른 위치로 능동적으로 이동하는 데이터입니다. 보안 전송 여러 다른 계층에서 처리할 수 있습니다. 이 네트워크를 통해 보내기 전에 응용 프로그램 계층에서 데이터를 암호화 하 여 수행할 수 있습니다. HTTPS는 전송 중 암호화에서 응용 프로그램 계층의 예입니다. 
 
-You can also set up a secure channel, like a virtual private network (VPN), at a network layer, to transmit data between two systems. 
+또한 두 시스템 간에 데이터를 전송 하려면, 가상 사설망 (VPN), 네트워크 계층에서 같은 보안 채널을 설정할 수 있습니다. 
 
-Encrypting data in transit protects the data from outside observers and provides a mechanism to transmit data while limiting risk of exposure. 
-
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Encryption in transit](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-in-transit.png)
-
-
-## Encryption at rest
-
-Data at rest is the data that has been stored on a physical medium. This could be data stored on the disk of a server, data stored in a database, or data stored in a storage account. Regardless of the storage mechanism, encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it. If an attacker was to obtain a hard drive with encrypted data and did not have access to the encryption keys, the attacker would not compromise the data without great difficulty.
-
-The actual data that is encrypted could vary in its content, usage, and importance to the organization. This could be financial information critical to the business, intellectual property that has been developed by the business, personal data about customers or employees that the business stores, and even the keys and secrets used for the encryption of the data itself.
+전송 중인 데이터 암호화하면 외부 관찰자로부터 데이터를 보호할 수 있으며, 노출 위험을 제한하면서 데이터를 전송하는 메커니즘이 제공됩니다. 
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Encryption at rest](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-at-rest.png)
+![전송 중 암호화](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-in-transit.png)
 
-## Encryption on Azure
 
-Let's take a look at some ways that Azure enables you to encrypt data across services.
+## <a name="encryption-at-rest"></a>미사용 암호화
 
-### Encrypt raw storage
+미사용 데이터는 물리적 매체에 저장된 데이터입니다. 서버 디스크에 저장된 데이터, 데이터베이스에 저장된 데이터 또는 저장소 계정에 저장된 데이터가 여기에 속합니다. 저장 메커니즘에 관계없이, 미사용 데이터를 암호화하면 암호 해독에 필요한 키와 비밀 없이는 저장된 데이터를 읽을 수 없습니다. 공격자가 암호화 된 데이터를 사용 하 여 하드 드라이브를 가져오려고 되어 암호화 키에 액세스 하지 않은, 경우 공격자는 어려움을 겪고 없이 데이터를 손상 되지 합니다.
 
-Azure Storage Service Encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. With this feature, the Azure storage platform automatically encrypts your data before persisting it to Azure Managed Disks, Azure Blob storage, Azure Files, or Azure Queue storage, and decrypts the data before retrieval. The handling of encryption, encryption at rest, decryption, and key management in Storage Service Encryption is transparent to applications using the services.
+암호화된 실제 데이터의 콘텐츠, 사용량 및 조직에서 갖는 중요성은 다를 수 있습니다. 키와 자체 데이터의 암호화에 사용 되는 비밀도 및 수에서 비즈니스, 고객 또는 비즈니스를 저장 하는 직원에 대 한 개인 데이터에서 개발 된 지적 재산권 비즈니스에 중요 한 재무 정보가 .
 
-### Encrypt virtual machines
+<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
+![휴지 상태의 암호화](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-at-rest.png)
 
-Storage Service Encryption provides low-level encryption protection for data written to physical disk, but how do you protect the virtual hard disks (VHDs) of virtual machines? If a malicious attacker gained access to your Azure subscription and exfiltrated the VHDs of your virtual machines, how would you ensure they would be unable to access data stored on the VHD?
+## <a name="encryption-on-azure"></a>Azure의 암호화
 
-Azure Disk Encryption is a capability that helps you encrypt your Windows and Linux IaaS virtual machine disks. Azure Disk Encryption leverages the industry-standard BitLocker feature of Windows and the dm-crypt feature of Linux to provide volume encryption for the OS and data disks. The solution is integrated with Azure Key Vault to help you control and manage the disk encryption keys and secrets (and you can use managed service identities for accessing Key Vault).
+Azure가 여러 서비스에서 데이터를 암호화하는 몇 가지 방법을 살펴보겠습니다.
 
-For Contoso Shipping, using VMs was one of their first moves toward the cloud. Having all the VHDs encrypted is a very easy, low-impact way to ensure they are doing all they can to secure their data.
+### <a name="encrypt-raw-storage"></a>원시 저장소 암호화
 
-### Encrypt databases
+미사용 데이터에 Azure Storage 서비스 암호화를 사용하면 조직의 보안 및 규정 준수 약정에 맞게 데이터를 보호할 수 있습니다. 이 기능을 사용하면 Azure 저장소 플랫폼은 자동으로 데이터를 암호화한 후 Azure Managed Disks, Azure Blob 저장소, Azure Files 또는 Azure Queue 저장소에 보관하고, 데이터를 암호 해독한 후 검색합니다. 저장소 서비스 암호화의 암호화, 미사용 데이터의 암호화, 암호 해독, 키 관리는 서비스를 사용하여 응용 프로그램에 투명하게 처리됩니다.
 
-Transparent data encryption (TDE) helps protect Azure SQL Database and Azure Data Warehouse against the threat of malicious activity. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all newly deployed Azure SQL Database instances.
+### <a name="encrypt-virtual-machines"></a>Virtual machines 암호화
 
-TDE encrypts the storage of an entire database by using a symmetric key called the database encryption key. By default, Azure provides a unique encryption key per logical SQL Server instance and handles all the details. Bring your own key (BYOK) is also supported with keys stored in Azure Key Vault.
+Storage 서비스 암호화는 실제 디스크에 기록 된 데이터에 대 한 하위 수준 암호화 보호를 제공 하지만 가상 머신의 가상 하드 디스크 (Vhd) 어떻게 보호 합니까? 악의적인 공격자가 Azure 구독 및 exfiltrated 가상 머신의 Vhd에 대 한 액세스를 획득 하는 경우 어떻게는 보장 VHD에 저장 된 데이터에 액세스할 수 있게 됩니다는?
 
-Because TDE is enabled by default, Contoso Shipping can be confident they have the proper protections in place for data stored in their databases.
+Azure Disk Encryption은 Windows 및 Linux IaaS 가상 머신 디스크를 암호화할 수 있도록 하는 기능입니다. Azure Disk Encryption은 Windows의 업계 표준 BitLocker 기능과 OS 및 데이터 디스크를 위한 볼륨 암호화를 제공 하는 Linux의 dm-crypt 기능을 활용 합니다. 솔루션은 디스크 암호화 키 및 비밀 관리 및 제어할 수 있도록 Azure Key Vault와 통합 되어 (및 Key Vault에 액세스 하기 위한 관리 서비스 id를 사용할 수 있습니다).
 
-### Encrypt secrets
+Contoso 전달에 대 한 Vm을 사용 하 여 중 하나인 클라우드 쪽으로 해당 첫 번째 이동 합니다. 암호화 된 모든 Vhd는 것이 해당 데이터를 보호 할 모든을 수행 하 고 확인 하는 방법을 쉽게 하 고 영향이 적은 합니다.
 
-We've seen that the encryption services all use keys to encrypt and decrypt data, so how do we ensure that the keys themselves are secure? Corporations may also have passwords, connection strings, or other sensitive pieces of information that they need to securely store.
+### <a name="encrypt-databases"></a>데이터베이스 암호화
 
-Azure Key Vault is a cloud service that works as a secure secrets store. Key Vault allows you to create multiple secure containers, called vaults. These vaults are backed by hardware security modules (HSMs). Vaults help reduce the chances of accidental loss of security information by centralizing the storage of application secrets. Key vaults also control and log the access to anything stored in them. Azure Key Vault can handle requesting and renewing TLS certificates, providing the features required for a robust certificate life cycle management solution. Key Vault is designed to support any type of secret. These secrets could be passwords, database credentials, API keys, and certificates.
+TDE(투명한 데이터 암호화)는 악의적인 활동의 위협으로부터 Azure SQL Database 및 Azure Data Warehouse를 보호하는 데 도움이 됩니다. 응용 프로그램에 대한 변경 없이 미사용 데이터베이스, 연결된 백업 및 트랜잭션 로그 파일의 실시간 암호화 및 암호 해독을 수행합니다. 기본적으로 모든 새로 배포 된 Azure SQL Database 인스턴스에 대해 TDE는 사용 합니다.
 
-Because Azure AD identities can be granted access to use Azure Key Vault secrets, applications with managed service identities enabled can automatically and seamlessly acquire the secrets they need.
+TDE는 데이터베이스 암호화 키라는 대칭 키를 사용하여 전체 데이터베이스의 저장소를 암호화합니다. 기본적으로 Azure 논리적 SQL Server 인스턴스마다 고유한 암호화 키를 제공 하 고 모든 세부 정보를 처리 합니다. 자신의 키 (BYOK) Azure Key Vault에 저장 된 키를 사용 하 여도 지원 됩니다.
 
-Encryption is often the last layer of defense from attackers and is an important piece of a layered approach to securing your systems. Azure provides built-in capabilities and services to encrypt and protect data from unintended exposure. Protection of customer data stored within Azure services is of paramount importance to Microsoft and should be included in any design. Foundational services such as Azure Storage, Azure Virtual Machines, Azure SQL Database, and Azure Key Vault can help secure your environment through encryption.
+기본적으로 TDE를 사용 하기 때문에는 Contoso 전달 되는 데이터베이스에 저장 된 데이터에 대 한 적절 한 보호를 갖습니다 확신할 수 있습니다.
+
+### <a name="encrypt-secrets"></a>암호 암호화
+
+모든 키를 암호화 및 데이터를 해독 하 고, 그렇게 하는 방법을 사용 하 여 암호화 서비스 협력 키 자체가 안전 하다는 살펴본? 기업에서는 암호나 연결 문자열을 안전 하 게 저장 하는 데 필요한 기타 중요 한 정보가 있을 수도 있습니다.
+
+Azure Key Vault는 보안 비밀 저장소 역할을 하는 클라우드 서비스입니다. Key Vault를 사용하면 자격 증명 모음이라는 보안 컨테이너를 여러 개 만들 수 있습니다. 이러한 자격 증명 모음은 HSM(하드웨어 보안 모듈)에 의해 백업됩니다. 자격 증명 모음은 응용 프로그램 비밀을 중앙 집중식으로 저장하여 보안 정보의 우발적인 손실 가능성을 줄이는 데 도움이 됩니다. 또한 키 자격 증명 모음을 제어 하 고에 저장 된 모든 항목에 대 한 액세스를 기록 합니다. Azure Key Vault 처리할 수 있습니다를 요청 하 고 TLS 인증서를 갱신 하는 중 강력한 인증서 수명 주기 관리 솔루션에 필요한 기능을 제공 합니다. Key Vault는 모든 종류의 비밀을 지원하도록 설계되었습니다. 이러한 암호는 암호, 데이터베이스 자격 증명, API 키 및 인증서 일 수 있습니다.
+
+Azure AD id는 Azure Key Vault 비밀을 사용 하는 권한을 부여할 수 있습니다 때문에 사용 하도록 설정 하는 관리 서비스 id 사용 하 여 응용 프로그램 자동으로 수행할 수 및 원활 하 게 필요한 암호를 획득 합니다.
+
+암호화 종종 공격자가 방어의 마지막 계층 이며 보안 시스템에 계층화 된 접근 방식의 중요 한 부분입니다. Azure 기본 제공 기능 및 암호화 하 고 의도 하지 않은 노출 로부터 데이터를 보호 하는 서비스를 제공 합니다. Azure 서비스 내에 저장 된 고객 데이터의 보호는 Microsoft에 매우 중요 이며 모든 디자인에 포함 되어야 합니다. Azure Storage, Azure Virtual Machines, Azure SQL Database 및 Azure Key Vault 같은 기본 서비스는 암호화를 통해 환경을 보호하는 데 도움을 줍니다.

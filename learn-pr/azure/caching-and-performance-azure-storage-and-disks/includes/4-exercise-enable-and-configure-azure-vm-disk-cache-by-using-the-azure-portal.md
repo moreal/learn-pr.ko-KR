@@ -1,114 +1,111 @@
-Suppose you run a photo sharing site, with data stored on Azure virtual machines (VMs) running SQL Server and custom applications. You want to make the following adjustments:
+SQL Server 및 사용자 지정 응용 프로그램을 실행 중인 Azure virtual machines (Vm)에 저장 된 데이터를 사용 하 여 사이트를 공유 하는 사진을 실행 한다고 가정 합니다. 다음과 같이 조정 하려면:
 
-- You need to change the disk cache settings on a VM.
-- You want to add a new data disk to the VM with caching enabled.
+- VM의 디스크 캐시 설정을 변경 해야 합니다.
+- 캐싱이 활성화 된 VM에 새 데이터 디스크를 추가 하려고 합니다.
 
-You've decided to make these changes through the Azure portal.
+Azure portal 통해 이러한 변경을 수행 하기로 합니다.
 
-In this exercise, we'll walk through making the changes to a VM that we described above. First, let's sign in to the portal and create a VM.
+이 연습에서는 위에서 설명한 VM를 변경 하는 방법을 살펴봅니다. 먼저 포털에 로그인 하 고 VM을 만드는 보겠습니다.
 
-## Sign in to the Azure portal
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-the-azure-portal"></a>Azure Portal에 로그인
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create a virtual machine
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-In this step, we're going to create a VM with the following properties:
+## <a name="create-a-virtual-machine"></a>가상 머신 만들기
 
-|Property  |Value  |
+이 단계에서는 다음 속성을 사용 하 여 VM을 만들려면 하겠습니다.
+
+|자산  |값  |
 |---------|---------|
-|Image     |   **Windows Server 2016 Datacenter**      |
-|Name     |   **fotoshareVM**     |
-|Resource group     |   **fotoshare-rg**      |
+|이미지     |   **Windows Server 2016 Datacenter**      |
+|이름     |   **fotoshareVM**     |
+|리소스 그룹     |   **<rgn>[샌드박스 리소스 그룹 이름]</rgn>**      |
 
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. In the left menu of the portal, select **Virtual machines**.
+1. 포털의 왼쪽된 메뉴에서 선택 **가상 머신**합니다.
 
-1. Now select **+ Add** in the top left of the **Virtual machines** screen. This action starts the creation process.
+1. 이제 선택 **추가** 에서 맨 왼쪽의 **가상 머신** 화면. 이 작업은 생성 프로세스를 시작 합니다.
 
-1. On the **Compute** panel that lists available VM images, type *Windows Server 2016 Datacenter* into the search box.
+1. 에 **계산** 형식을 사용할 수 있는 VM 이미지를 나열 하는 패널 *Windows Server 2016 Datacenter* 검색 상자에 있습니다.
 
-1. Select **Windows Server 2016 Datacenter** from the search results, and then select **Create** to start the VM creation process.
+1. 선택 **Windows Server 2016 Datacenter** 검색 결과에서 선택 **만들기** VM 만들기 프로세스를 시작 합니다.
 
-1. In the **Basics** panel, in the **Name** box, enter **fotoshareVM**.
+1. 에 **기본 사항을** 패널에서 선택한 확인 **구독**합니다.
 
-1. In the **Username** and **Password**  boxes, enter a name and password for an administrator account on this server.
+1. 에 대 한 **리소스 그룹**, 클릭 **새로 만들기** 제공 합니다 **이름** 의 `fotoshare-rg` 클릭 **확인**합니다.
 
-1. In the **Subscription** drop-down list, select your Azure subscription.
+1. 에 **가상 머신 이름을** 상자에 입력 `fotoshareVM`합니다.
 
-1. Under **Resource Group**, select **Create new**, and in the box, type **fotoshare-rg**.
+1. 아래 **리소스 그룹**를 선택 **사용 하 여 기존** 선택한 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.
 
-1. In the **Location** drop-down list, select a region near you.
+1. 에 **위치** 드롭 다운 목록에서 위 목록에서 지역 선택 합니다.
 
-    The following is an example of what the **Basics** configuration looks like when filled out:
+1. VM에 대 한 **크기**, 권장 되는 기본값을 그대로 두거나 클릭 **크기를 변경** 에서 다른 크기를 선택 하는 **크기를 선택** 블레이드입니다.
 
-    ![Screenshot of VM Basics config filled out.](../media-draft/vm-basics-settings.PNG)
+    > [!NOTE]
+    > 내 에서도이 경우 디스크 캐싱을 구성 하는 옵션이 없습니다 합니다 **디스크** 만들기 블레이드는 탭 합니다.
 
-1. Select **OK** to move on to the next step.
+    > [!IMPORTANT]
+    > L 시리즈 및 B 시리즈 가상 머신의 디스크 캐싱은 변경할 수 없습니다를 기억 합니다. 에서는 다양 한 크기를 선택 합니다.
 
-You now need to choose a size for the VM, and then start the deployment:
+1. **관리자 계정** 섹션에서 입력을 **사용자 이름** 하 고 **암호**/**암호 확인** 에 대 한는 새 VM에서 관리자 계정입니다.
+
+1. 다음 이미지는 모양의 예는 **기본 사항** 구성 같습니다 작성 하는 경우. 나머지 탭 및 필드에 대 한 기본값을 그대로 두고 클릭 **검토 + 만들기**합니다.
+
+    ![에 설명 된 대로 입력 한 일부 예제에서는 기본 구성을 사용 하 여 가상 머신 블레이드 만들기를 보여 주는 Azure portal의 스크린샷](../media/4-basics-vm.png)
+
+1. 설정을 새 VM을 검토 한 후 클릭 **만들기** 새 VM 배포를 시작 합니다.
+
+VM 생성 시간이 걸릴 수 있습니다. VM이 배포될 때까지 기다렸다가 연습을 계속 진행합니다. 메시지가 표시 됩니다는 알림 허브에는 프로세스가 완료 되 면 합니다.
 
 > [!IMPORTANT]
-> Remember that disk caching can't be changed for L-Series and B-series virtual machines. We'll select a different size.
+> 다음 단원에서이 VM을 사용 하 여, 따라서 유지할 잠시에서는 했습니다!
 
-1. In the **Choose a size** section, select a **Standard** SKU, such as **F1s**, and then choose **Select**.
+## <a name="view-os-disk-cache-status-in-the-portal"></a>포털에서 보기 OS 디스크 캐시 상태
 
-1. Scroll down the **Settings** pane and observe that there is no option to configure disk caching. Let's accept the defaults on this step and choose **OK** at the bottom of the pane.
+VM을 배포한 후 다음 단계를 사용 하 여 OS 디스크의 캐싱 상태를 확인할 수 있습니다.
 
-1. On the **Create** panel, review the summary, and then choose **Create**.
+1. 왼쪽된 메뉴에서 클릭 **모든 리소스**를 선택한 다음 VM **fotoshareVM**합니다.
 
-1. VM creation can take a while. Wait until the VM has deployed before continuing with the exercise. You'll get a message in the notification hub when the process is complete.
+1. 에 **가상 머신** 블레이드 아래에 있는 **설정**를 선택 **디스크**합니다.
 
-> [!IMPORTANT]
-> We'll use this VM in the next lesson, so keep it around for a while!
+1. 에 **디스크** 창, VM에는 하나의 디스크, OS 디스크. 캐시 유형을 현재의 기본값으로 설정 되어 **읽기/쓰기**합니다.
 
-## View OS disk cache status in the portal
+![로 표시 되며 읽기 전용 캐싱로 OS 디스크를 사용 하 여 VM 블레이드의 디스크 섹션을 보여 주는 Azure portal의 스크린샷.](../media/4-os-disk-rw.PNG)
 
-Once our VM is deployed, we can confirm the caching status of the OS disk using the following steps:
+## <a name="change-the-cache-settings-of-the-os-disk-in-the-portal"></a>포털에서 OS 디스크의 캐시 설정을 변경 합니다.
 
-1. In the left menu, click **All resources**, and then select your VM,  **fotoshareVM**.
+1. 에 **디스크** 창 **편집** 화면의 왼쪽 위에 있습니다.
 
-1. On the **Virtual machine** screen, under **SETTINGS**, select **Disks**.
+1. 변경 합니다 **호스트 캐싱을** 하도록 OS 디스크에 대 한 값 **읽기 전용** 드롭다운을 사용 하 여 목록에서 선택한 후 **저장** 화면의 왼쪽 위에 있는 합니다.
 
-1. On the **Disks** pane, the VM has one disk, the OS disk. Its cache type is currently set to the default value of **Read/write**.
+1. 이 업데이트에는 약간의 시간이 걸릴 수 있습니다. 이유는 Azure 디스크의 캐시 설정을 변경 분리 되었다가 대상 디스크입니다. 운영 체제 디스크를 VM 다시 시작도 됩니다. 작업이 완료 되 면 VM 디스크를 업데이트 한다는 알림을 받게 됩니다.
 
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/os-disk-rw.PNG)
+1. OS 디스크 캐시 유형이 설정 되어 완료 되 면 **읽기 전용**합니다.
 
-## Change the cache settings of the OS disk in the portal
+데이터 디스크 캐시 구성으로 진행 해 보겠습니다. 디스크를 구성 하려면 먼저 만들어야 해야 합니다.
 
-1. On the **Disks** pane, select **Edit** in the upper left of the screen.
+## <a name="add-a-data-disk-to-the-vm-and-set-caching-type"></a>VM 및 캐싱 유형 집합에 데이터 디스크를 추가 합니다.
 
-1. Change the **HOST CACHING** value for the OS disk to **Read-only** using the drop-down list, and then select **Save** in the upper left of the screen.
+1. 다시 합니다 **디스크** 해 선택 포털에서 VM의 뷰 **데이터 디스크 추가**합니다. 오류가 즉시 표시 합니다 **이름을** 필드에 표시 되는데 필드를 비워 둘 수 없습니다. 에서는 데이터 디스크를 사용 하는 아직 없는, 하나를 만들어 보겠습니다.
 
-1. This update takes a while. The reason is that changing the cache setting of an Azure disk detaches and reattaches the target disk. If it's the operating system disk, the VM is also restarted. You'll get a message similar to the following notification when the update has finished:
+1. **이름** 목록을 클릭하고 **디스크 만들기**를 클릭합니다.
 
-    ![Example of notification you receive when the cache setting update has completed.](../media-draft/vm-disk-update-complete.PNG)
+1. 에 **관리 디스크 만들기** 창에서를 **이름** 상자에 입력 **fotosharesVM 데이터**입니다.
 
-4. Once complete, the OS disk cache type is set to **Read-only**.
+1. 아래 **리소스 그룹**를 선택 **기존 항목 사용**를 선택 하 고 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.
 
-Let's move on to data disk cache configuration. To configure a disk, we'll need to first create one.
+1. 나머지 필드는 기본값으로 그대로 두고 클릭 **만들기** 화면 맨 아래에 있습니다.
 
-## Add a data disk to the VM and set caching type
+    디스크가 만들어질 때까지 기다렸다가 계속 진행합니다.
 
-1. Back on the **Disks** view of our VM in the portal, go ahead and select **Add data disk**. An error immediately appears in the **Name** field, telling us that the field can't be empty. We don't have a data disk yet, so let's create one.
+1. 변경 합니다 **호스트 캐싱을** 에 새 데이터 디스크에 대 한 값 **읽기 전용** 드롭 다운을 사용 하 여 목록에서 선택한 후 **저장** 화면의 왼쪽 위에 있는 합니다.
 
-1. Click in the **Name** list, and then click **Create disk**.
+    VM이 새 데이터 디스크 업데이트 완료 될 때까지 기다립니다. 완료 되 면 데이터 디스크 캐시 형식에 설정할 **읽기 전용**합니다.
 
-1. In the **Create managed disk** pane, in the **Name** box, type **fotosharesVM-data**.
+이 연습에서는 새 VM에 캐싱을 구성, 기존 디스크에서 캐시 설정을 변경 하며 새 데이터 디스크에서 캐싱을 구성 하려면 Azure portal을 사용 했습니다. 다음 스크린 샷에서 최종 구성을 보여 줍니다.
 
-1. Under **Resource Group**, select **Use existing**, and select **fotoshare-rg** from the drop-down menu.
-
-1. Select **Create** at the bottom of the screen.
-
-1. Wait until the disk has been created before continuing.
-
-1. Change the **HOST CACHING** value for our new data disk to **Read-only** using the drop-down list, and then select **Save** in the upper left of the screen.
-
-1. Wait for the VM to update. Updating takes a while because Azure detaches and reattaches the data disk to change this setting.
-
-1. Once complete, the data disk cache type is set to **Read-only**.
-
-In this exercise, we used the Azure portal to configure caching on a new VM, change cache settings on an existing disk, and configure caching on a new data disk. The following screenshot shows the final configuration: 
-
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/disks-final-config-portal.PNG)
+![OS 디스크와 새 데이터 디스크는 VM 블레이드의 디스크 섹션에 캐싱 읽기 전용으로 설정 하는 두 디스크를 사용 하 여 보여 주는 Azure portal의 스크린샷.](../media/disks-final-config-portal.PNG)

@@ -31,6 +31,7 @@ WHERE p.id ="1"
         "category": "Women's Clothing",
         "manufacturer": "Contoso Sport",
         "description": "Quick dry crew neck t-shirt",
+        "price": "14.99",
         "shipping": {
             "weight": 1,
             "dimensions": {
@@ -39,11 +40,11 @@ WHERE p.id ="1"
                 "depth": 1
             }
         },
-        "_rid": "glAZAJFm0VsBAAAAAAAAAA==",
-        "_self": "dbs/glAZAA==/colls/glAZAJFm0Vs=/docs/glAZAJFm0VsBAAAAAAAAAA==/",
-        "_etag": "\"00006000-0000-0000-0000-5b71be760000\"",
+        "_rid": "iAEeANrzNAAJAAAAAAAAAA==",
+        "_self": "dbs/iAEeAA==/colls/iAEeANrzNAA=/docs/iAEeANrzNAAJAAAAAAAAAA==/",
+        "_etag": "\"00003a02-0000-0000-0000-5b9208440000\"",
         "_attachments": "attachments/",
-        "_ts": 1534180982
+        "_ts": 1536297028
     }
 ]
 ```
@@ -96,22 +97,22 @@ FROM Products.shipping
 
 ```
 [
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
+    {
+        "weight": 1,
+        "dimensions": {
+            "width": 6,
+            "height": 8,
+            "depth": 1
+        }
+    },
+    {
+        "weight": 2,
+        "dimensions": {
+            "width": 8,
+            "height": 11,
+            "depth": 3
+        }
     }
-},
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
-    }
-}
 ]
 ```
 
@@ -202,7 +203,7 @@ JOIN 절을 사용하면 문서 및 하위 루트와 내부 조인을 수행할 
 
 ## <a name="geospatial-queries"></a>지리 공간적 쿼리
 
-지리 공간적 쿼리를 사용하면 GeoJSON 지점을 사용하여 공간 쿼리를 수행할 수 있습니다. 데이터베이스의 좌표를 사용하여 두 지점 간의 거리를 계산하여 지점 다각형 또는 LineString이 또 다른 지점, 다각형 또는 LineString 내에 있는지 판단할 수 있습니다.
+지리 공간적 쿼리를 통해 GeoJSON 포인트를 사용 하 여 공간 쿼리를 수행할 수 있습니다. 좌표를 사용 하 여 데이터베이스에서를 두 점 사이의 거리를 계산 하 고 Point, Polygon 또는 LineString 인지 내에서 다른 Point, Polygon 또는 LineString 확인할 수 있습니다.
 
 제품 카탈로그 데이터에 대해 이렇게 하면 사용자가 자신의 위치 정보를 입력하고 반경 50마일 내에 원하는 제품이 있는 매장이 있는지를 확인할 수 있습니다. 
 

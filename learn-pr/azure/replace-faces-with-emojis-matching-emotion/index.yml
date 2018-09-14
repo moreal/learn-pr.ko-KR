@@ -1,35 +1,37 @@
 ### YamlMime:Module
 uid: learn.the-mojifier
 metadata:
-  title: The Mojifier - Create a bot to replace people's faces with emojis matching their emotion
-  description: Learn how to get images, calculate emotion, match emotions to emojis, and replace faces with emoji.
+  title: Mojifier-해당 감정 일치 하는 모 지를 사용 하 여 사람의 얼굴을 대체 하는 Slack 봇 만들기
+  description: '이미지 가져오기, emotion 계산,이 모 지를 하는 감정 일치 및이 모 지를 사용 하 여 얼굴을 대체 하는 방법에 알아봅니다.'
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: The Mojifier - Create a bot to replace people's faces with emojis matching their emotion
-summary: Learn how to get images, calculate emotion, match emotions to emojis, and replace faces with emoji.
-abstract: | 
- In this module, you will:
-  - TBD
-  - TBD
-iconUrl: http://via.placeholder.com/120x120
+title: Mojifier-해당 감정 일치 하는 모 지를 사용 하 여 사람의 얼굴을 대체 하는 Slack 봇 만들기
+summary: '이미지 가져오기, emotion 계산,이 모 지를 하는 감정 일치 및이 모 지를 사용 하 여 얼굴을 대체 하는 방법에 알아봅니다.'
+abstract: |
+  이 모듈에서 수행하는 작업:
+   - TBD
+   - TBD
+prerequisites: 없음
+iconUrl: /learn/achievements/replace-faces-with-emojis-matching-emotion.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.the-mojifier.1-introduction
-- learn.the-mojifier.2-setup
-- learn.the-mojifier.3-conceptual-overview
-- learn.the-mojifier.4-calibrate-emojis
-- learn.the-mojifier.5-matching-faces-to-emojis
-- learn.the-mojifier.6-add-an-emoji-to-an-image
-- learn.the-mojifier.7-create-the-mojifyimage-azure-function
-- learn.the-mojifier.8-create-the-respondtoslackcommand-function
-- learn.the-mojifier.9-integrate-with-slack
-- learn.the-mojifier.10-deploy-to-azure
+  - learn.the-mojifier.1-introduction
+  - learn.the-mojifier.2-setup
+  - learn.the-mojifier.3-conceptual-overview
+  - learn.the-mojifier.4-calibrate-emojis
+  - learn.the-mojifier.5-matching-faces-to-emojis
+  - learn.the-mojifier.6-add-an-emoji-to-an-image
+  - learn.the-mojifier.7-create-an-azure-function-project
+  - learn.the-mojifier.8-create-the-mojifyimage-azure-function
+  - learn.the-mojifier.9-create-the-respondtoslackcommand-function
+  - learn.the-mojifier.10-integrate-with-slack
+  - learn.the-mojifier.11-deploy-to-azure
 achievement: learn.the-mojifier.badge

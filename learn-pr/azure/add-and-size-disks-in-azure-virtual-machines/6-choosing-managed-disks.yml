@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.6-choosing-managed-disks
-title: Determine whether to use managed disks
+title: 관리 디스크를 사용할지 여부를 결정합니다
 metadata:
-  title: Determine whether to use managed disks
-  description: Determine whether to use managed disks
+  title: 관리 디스크를 사용할지 여부를 결정합니다
+  description: 관리 디스크를 사용할지 여부를 결정합니다
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

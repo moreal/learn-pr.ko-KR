@@ -1,0 +1,36 @@
+### YamlMime:Module
+uid: learn.secure-your-azure-sql-database
+metadata:
+  title: Azure SQL Server 데이터베이스를 보호 합니다.
+  description: 정보를 안전 하 게 유지 하 고 즉시 잠재적인 보안 문제를 진단 하는 Azure SQL Server 데이터베이스를 보호 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Azure SQL Server 데이터베이스를 보호 합니다.
+summary: 정보를 안전 하 게 유지 하 고 즉시 잠재적인 보안 문제를 진단 하는 Azure SQL Server 데이터베이스를 보호 합니다.
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - Azure SQL Server 데이터베이스에 대 한 방화벽 구성
+  - 데이터베이스 및 Active Directory 수준에서 사용자 액세스 제어
+  - 클라이언트와 서버 간에 암호화를 관리 합니다.
+  - 감사를 추가 하 고 Azure SQL Server 데이터베이스 모니터링 위협
+prerequisites: 없음
+iconUrl: /learn/achievements/secure-your-azure-sql-database.svg
+levels:
+  - intermediate
+roles:
+  - administrator
+products:
+  - azure
+  - azure-portal
+units:
+  - learn.secure-your-azure-sql-database.1-introduction
+  - learn.secure-your-azure-sql-database.2-restricting-network-access
+  - learn.secure-your-azure-sql-database.3-managing-authentication
+  - learn.secure-your-azure-sql-database.4-application-level-security
+  - learn.secure-your-azure-sql-database.5-monitoring-your-database
+  - learn.secure-your-azure-sql-database.6-knowledge-check
+  - learn.secure-your-azure-sql-database.7-summary
+achievement: learn.secure-your-azure-sql-database.badge

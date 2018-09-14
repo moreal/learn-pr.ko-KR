@@ -44,21 +44,20 @@
     저장 프로시저가 완료되었음을 나타내는 출력이 콘솔에 표시됩니다.
 
 ## <a name="clean-up"></a>정리
-<!---TODO: Update for sandbox?--->
 
 이 학습 경로의 모듈에서 계속 작업하려면 정리 프로세스를 건너뛰거나, 다음 단계를 사용하여 서비스 사용 요금이 발생하지 않도록 리소스를 삭제합니다.
 
-1. Azure Portal에서 맨 왼쪽에 있는 **리소스 그룹**을 선택한 후에 만든 리소스 그룹을 선택합니다.  
+1. Azure Portal의 왼쪽 끝에 있는 **리소스 그룹**을 선택한 다음, 자신이 만든 리소스 그룹을 선택합니다.  
 
     왼쪽 메뉴가 접혀 있으면 ![[확장] 단추를](../media/5-javascript-programming/expand.png) 클릭하여 펼칩니다.
 
    ![Azure Portal의 메트릭](../media/5-javascript-programming/delete-resources-select.png)
 
-1. 새 창에서 리소스 그룹을 선택한 후에 **리소스 그룹 삭제**를 클릭합니다.
+1. 새 창에서 리소스 그룹을 선택한 다음, **리소스 그룹 삭제**를 클릭합니다.
 
    ![Azure Portal의 메트릭](../media/5-javascript-programming/delete-resources.png)
 
-1. 새 창에서 삭제할 리소스 그룹의 이름을 입력한 후에 **삭제**를 클릭합니다.
+1. 새 창에서 삭제할 리소스 그룹의 이름을 입력한 다음, **삭제**를 클릭합니다.
 
 ## <a name="summary"></a>요약
 

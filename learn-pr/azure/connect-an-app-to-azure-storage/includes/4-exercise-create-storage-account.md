@@ -1,45 +1,45 @@
-Now that we have an app, we need an Azure storage account to work with. We created one using the Azure portal in the **Create an Azure storage account** module. Let's use the Azure CLI this time.
+이제 앱을 만들었으므로 Azure storage 계정을 사용 해야 합니다. Azure portal을 사용 하 여 만든 합니다 **Azure storage 계정 만들기** 모듈입니다. 이 이번에 Azure CLI를 사용 합니다.
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Use the Azure CLI to create an Azure storage account
+## <a name="use-the-azure-cli-to-create-an-azure-storage-account"></a>Azure CLI를 사용 하 여 Azure storage 계정을 만들려면
 
-We will use the `az storage account create` command to create a new storage account. It takes several parameters which we either need to supply (or should) to configure it the way we want.
+사용 하 여는 `az storage account create` 새 저장소 계정을 만드는 명령입니다. 에서는 제공 해야 (또는 해야)는 여러 매개 변수를 사용 하려면 원하는 방식으로 구성 합니다.
 
 > [!div class="mx-tableFixed"]
-> | Option | Description |
+> | 옵션 | 설명 |
 > |--------|-------------|
-> | `--name` | A **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long and can contain only lowercase letters and numbers. |
-> | `--resource-group` | Use <rgn>[Sandbox resource group name]</rgn> to place the storage account into the free sandbox. |
-> | `--location` | Select a location near you. |
-> | `--kind` | This determines the storage account _type_. Options include BlobStorage, Storage, and StorageV2. |
-> | `--sku` | This decides the storage account performance and replication model. Options include Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, and Standard_ZRS. |
-> | `--access-tier` | The **Access tier** is only used for Blob storage, available options are Cool and Hot. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value - when you create a Blob, you can set a different value for the data. |
+> | `--name` | A **저장소 계정 이름**합니다. 계정에서 데이터에 액세스 하는 데 공용 URL을 생성 하는 이름 사용 됩니다. Azure의 모든 기존 저장소 계정 이름에서 고유 해야 합니다. 3 ~ 24 자 여야 하 고 소문자와 숫자만 포함할 수 있습니다. |
+> | `--resource-group` | 사용 하 여 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 무료 샌드박스를 저장소 계정에 배치할 수 있습니다. |
+> | `--location` | 가까운 위치를 선택 하 고 (아래 참조) 키를 누릅니다. |
+> | `--kind` | 이 저장소 계정에 따라 결정 _형식_합니다. 옵션에 포함 됩니다 `BlobStorage`, `Storage`, 및 `StorageV2`합니다. |
+> | `--sku` | 이 저장소 계정의 성능 및 복제 모델을 결정합니다. 옵션에 포함 됩니다 `Premium_LRS`, `Standard_GRS`를 `Standard_LRS`를 `Standard_RAGRS`, 및 `Standard_ZRS`합니다. |
+> | `--access-tier` | 합니다 **액세스 계층** 는 사용 가능한 옵션은 [Blob 저장소에 대 한 사용만`Cool` | `Hot`]. 합니다 **핫 액세스 계층** 자주 액세스 하는 데이터에 적합 하며 **쿨 액세스 계층** 자주 액세스 하지 않는 데이터에 대 한 것이 좋습니다. 이 설정 하는 참고 합니다 _기본_ 값&mdash;Blob을 만들 때 데이터에 대 한 다른 값을 설정할 수 있습니다. |
     
-Use the above table to craft a command line in the Cloud Shell on the right to create the account.
-- Use a unique name, we recommend something like "photostore" with your initials and a random number. You will get an error if it's not unique.
-- Normally you would create a new resource group to hold your app resources, in this case use the Sandbox resource group.
-- Use "Standard_LRS" for the **sku**, this will use standard storage with local replication which is fine for this example.
-- Use "Cold" for the **Access Tier**.
+위의 표를 사용 하 여 계정을 만들려면 오른쪽 Cloud Shell에서 명령줄을 만들 수 있습니다.
+- 고유한 이름을 사용합니다. "Photostore" 난수 이니셜에 숫자와 같은 것이 좋습니다. 고유 하지 않은 경우 오류를 받습니다.
+- 일반적으로 앱 리소스를 보유 하지만 경우 샌드박스 리소스 그룹을 사용 하 여 새 리소스 그룹을 만듭니다.
+- 에 대 한 "Standard_LRS"를 사용 합니다 **sku**합니다. 이 사용할지 표준 저장소 지역 복제를 사용 하 여이 예제에 대 한 것입니다.
+- 에 대 한 "콜드"를 사용 합니다 **액세스 계층**합니다.
 
-### Selecting a location
+### <a name="selecting-a-location"></a>위치 선택
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-### Example command
+### <a name="example-command"></a>예제 명령
 
-```bash
+```azurecli
 az storage account create \
         --name <name> \
         --resource-group <rgn>[Sandbox resource group name]</rgn> \
         --location <region> \
         --kind StorageV2 \
         --sku Standard_LRS \ 
-        --access-tier Cold
+        --access-tier Cool
 ```
 
 > [!TIP]
-> If you are interested in exploring the options for the storage account, make sure to go through the **Create an Azure storage account** where we go through them in depth.
+> 저장소 계정에 대 한 옵션을 살펴보려는 경우 진행할 수 있는지 확인 합니다 **Azure storage 계정 만들기** 갈 통해 방어 합니다.
 
-It will take a few minutes to deploy the account. While Azure is working on that, let's explore the APIs we'll use with this account.
+계정 배포 하려면 몇 분 정도 걸립니다. Azure에 작동 하는 동안이 계정으로 사용 하는 Api를 살펴보겠습니다.

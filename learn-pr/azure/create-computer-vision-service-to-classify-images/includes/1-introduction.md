@@ -1,13 +1,15 @@
-End users often post content that may be inappropriate for work in their personal online interactions. As a lead developer at Contoso Beverage Distribution, you are responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of store shelves where they are restocking. 
+Contoso Beverage 배포에서 수석 개발자 건물에 대 한 책임을 유지 관리 메일용 유통업 있도록 기간 업무 앱을 검색 하 고 저장소 선반 재입고 되는 위치의 이미지를 업로드.
 
-You need to validate that any images posted by users respect the content rules set by your company. Your goals are clear; the company doesn't want inappropriate content posted to company sites. Given the advancements in Artificial Intelligence, you decide that rewriting this app to include Computer Vision will proactively prevent these types of incidents from occurring. The service you create will identify images and provide many other functionalities to fulfill your company's needs.
+사용자가 게시 하는 모든 이미지에서 회사 콘텐츠 규칙을 준수 하는지 유효성을 검사 해야 합니다. 회사는 회사 사이트에 게시 된 부적절 한 콘텐츠를 원하지 않습니다. 
 
-## Learning objectives
+하 한 빌드하거나 솔루션을 구입 여부를 결정 합니다. 복잡 한 이미지 처리 및 분석 엔진을 작성 하는 것은 비용이 많이 드는입니다. 대신 Microsoft에서 Computer Vision API를 사용 하도록 합니다. 이 모듈에서는에서는이 API에서 제공 하는 기능을 탐색 하 고 일부 이미지 처리 서비스를 호출 합니다. 
 
-In this module, you will:
+## <a name="learning-objectives"></a>학습 목표
 
-- Create a Computer Vision API service
-- Analyze an image and identify its content
-- Generate thumbnails
-- Extract printed text
-- Convert handwritten words into text
+이 모듈에서 수행하는 작업:
+
+- Cognitive Services 계정 만들기
+- 이미지에서 찾은 시각적 콘텐츠에 대 한 정보 가져오기
+- 이미지의 미리 보기를 생성 합니다.
+- 감지 하 고 이미지에서 인쇄 된 텍스트 추출
+- 이미지에서 필기된 텍스트 검색 및 추출

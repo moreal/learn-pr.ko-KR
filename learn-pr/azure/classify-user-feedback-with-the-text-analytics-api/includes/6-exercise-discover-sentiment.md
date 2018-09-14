@@ -1,83 +1,83 @@
-Let's update our function implementation to call the Text Analytics API service and get back a sentiment score.
+Text Analytics API 서비스를 호출 하 고 감정 점수를 다시 우리의 함수 구현을 업데이트 해 보겠습니다.
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. 이 함수를 선택 [!INCLUDE [func-name-discover](./func-name-discover.md)], 포털에서 함수 앱에서 합니다.
 
-1. Expand the **View files** menu on the right of the screen.
+1. 확장 된 **파일을 볼** 화면 오른쪽의 메뉴.
 
-1. Under the **View files** tab, select **index.js** to open the code file in the editor.
+1. 아래는 **파일을 볼** 탭을 선택 **index.js** 를 편집기에서 코드 파일을 엽니다.
 
-1. Replace the entire content of the code file with the following JavaScript.
+1. 전체 내용을 바꿉니다 **index.js** 다음과 같은 JavaScript를 사용 하 여 및 **저장**합니다.
 
 [!code-javascript[](../code/discover-sentiment-sort.js?highlight=7)]
 
-Let's look at what's happening in this code:
+이 코드의 상황을 살펴보겠습니다.
 
-- To call the text analytics service, set `accessKey`, highlighted in the code snippet, to the key you saved earlier.
-- Update `uri` to the region from which you obtained your access key, if that region is different than *westus* shown in this example.
-- At the bottom of the code file, we've defined a `documents` array. This array is the payload we send to the Text Analytics service. 
-- The `documents` array has a single entry in this case, which is the queue message that triggered our function. Although we only have one document in our array, it doesn't mean that our solution can only handle one message at a time. The Azure Functions runtime retrieves and processes messages in batches, calling several instances of our function *in parallel*. Currently, the default batch size is 16 and the maximum batch size is 32.
-- The `id` must be unique within the array. The `language` property specifies the language of the document text.  
-- We then call our method `get_sentiments`, which uses the HTTPS module to make the call to Text Analytics API. Notice that we pass our subscription, or access, key in the header of every request.
-- When the service returns, our `response_handler` is called and we log the response to the console using `context.log` 
+- 텍스트 분석 서비스를 호출 하려면 설정 `accessKey`, 이전에 저장 한 키 코드 조각 강조 표시 합니다.
+- 업데이트 `uri` 올 얻은 액세스 키를 사용 하 여 해당 지역의 다른 경우 지역 *westus* 이 예제에 표시 합니다.
+- 코드 파일의 맨 아래에서 정의한는 `documents` 배열입니다. 이 배열은 텍스트 분석 서비스에 보내는 페이로드입니다.
+- `documents` 배열에 단일 항목을이 예제의 경우이 함수를 트리거한 큐 메시지는 합니다. 배열에서 하나의 문서 에서만 있다고 있지만 솔루션 한 번에 하나의 메시지를 처리할 수만 것은 아닙니다. 검색 하 고이 함수의 여러 인스턴스를 호출 하는 일괄 처리의 메시지를 처리 하는 Azure Functions 런타임은 *병렬로*합니다. 현재 기본 일괄 처리 크기는 16와 최대 일괄 처리 크기는 32 개입니다.
+- `id` 배열 내에서 고유 해야 합니다. `language` 속성 문서 텍스트의 언어를 지정 합니다.
+- 메서드에 다음 호출 `get_sentiments`, 텍스트 분석 API를 호출할 수 있도록 HTTPS 모듈을 사용 하는 합니다. 모든 요청의 헤더에는 구독 또는 액세스 키를 전달할 것을 알 수 있습니다.
+- 서비스는 반환 될 때이 `response_handler` 라고 응답 하 여 콘솔에 로그인 하 고 `context.log`
 
-## Try it out
 
-Before we look at sorting into queues, let's take what we have for a test run. 
+## <a name="try-it-out"></a>체험
 
-1.  With our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+큐에 정렬 살펴보기 전에 새로운 실행 했으며, 그는 테스트를 살펴보겠습니다.
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+1. 이 함수를 사용 하 여 [!INCLUDE [func-name-discover](./func-name-discover.md)], 함수 앱 포털에서 선택한 테스트 메뉴 항목 맨 왼쪽에 있는 확장을 클릭 합니다.
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+1. 선택 된 **테스트** 메뉴 항목을 열고 테스트 패널에 있는지 확인 합니다. 다음 스크린샷은 처럼 보여야 합니다.
 
-3. Add a string of text into the request body as shown in the screenshot. 
+    ![테스트 창 함수를 보여 주는 스크린 샷 확장 합니다.](../media/test-panel-open-small.png)
 
-1.  Click **Run** at the bottom of the test panel.
+1. 스크린샷에 표시 된 것 처럼 요청 본문에 텍스트 문자열을 추가 합니다.
 
-1. Make sure the **Logs** tab is expanded at the bottom left of the main screen, under the code editor. 
+1.  클릭 **실행** 테스트 패널의 맨 아래에 있습니다.
 
-1. Verify that the **Logs** tab displays log information that the function completed. The window will also display the response from the Text Analytics API call. 
+1. 있는지 확인 합니다 **로그** 코드 편집기에서 기본 화면의 왼쪽 아래에 있는 탭을 확장 합니다.
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/sentiment-response-log1.png)
+1. 있는지 확인 합니다 **로그** 탭 함수 완료 하는 로그 정보를 표시 합니다. 창에는 Text Analytics API 호출의 응답도 표시 됩니다.
 
-Congratulations! The [!INCLUDE [func-name-discover](./func-name-discover.md)] works as designed. In  this example, we passed in a very upbeat message and received a score of over 0.98. Try changing the message to something less optimistic, rerun the test and note the response.
+![패널 테스트 및 성공적인 테스트의 결과 보여주는 스크린샷.](../media/sentiment-response-log1.png)
 
-## Try it out again (optional)
+축하합니다. [!INCLUDE [func-name-discover](./func-name-discover.md)] 정상적으로 작동 합니다. 이 예제에서는 매우 upbeat 메시지를 전달 하 고 0.98 통해의 점수를 받은. 낙관적 작은 값으로 메시지를 변경, 테스트를 다시 실행 해 응답 합니다.
 
-Let's repeat the test. This time, instead of using the Test window of the portal, we'll actually place a message into the input queue and watch what happens. 
+## <a name="add-a-message-to-the-queue"></a>큐에 메시지 추가
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+테스트를 반복 해 보겠습니다. 이 이번에는 포털의 테스트 창을 사용 하는 대신에서는 실제로 입력된 큐에 메시지를 배치 하 고 어떤 상황이 발생 하는지.
 
-1. Select the resource group used in this lesson.
+1. 리소스 그룹으로 이동 합니다 **리소스 그룹** 포털의 섹션입니다.
 
-1. In the **Resource group** panel that appears, locate the Storage 
-Account entry and select it.
+1. 이 단원에 사용 되는 리소스 그룹을 선택 합니다.
 
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+1. 에 **리소스 그룹** 패널에 표시 되는 저장소 계정 항목을 찾아 선택 합니다.
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage. 
+    ![스크린 샷 저장소 계정 리소스 그룹 창에서 선택 합니다.](../media/select-storage-account.png)
 
-![Screenshot of storage explorer showing our storage account, with no queues currently.](../media-draft/sa-no-queue.png)
+1. 선택 **저장소 탐색기 (미리 보기)** 주 저장소 계정 창의 왼쪽된 메뉴에서.  이 작업은 포털 내부에서 Azure Storage 탐색기를 엽니다. 화면은이 단계에서 다음 스크린샷과 같이 표시 됩니다.
 
-As you can see, we don't have any queues in this storage account yet, so let's fix that.
+![Storage 탐색기는 저장소 계정에 현재 없는 큐를 사용 하 여 보여 주는 스크린샷.](../media/sa-no-queue.png)
 
-1. If you remember from earlier in this lesson, we named the queue associated with our trigger **new-feedback-q**. Right-click on the **Queues** item in the storage explorer and select *Create Queue*.
+알 수 있듯이 아직이 저장소 계정에 큐가, 보겠습니다 수정 하지 했습니다.
 
-1. In the dialog that opens, enter **new-feedback-q** and click **OK**. We now have our input queue. 
+5. 트리거를 사용 하 여 연결 된 큐 이름을이 단원의 앞부분에서 기억나지 **피드백 q 새**합니다. 마우스 오른쪽 단추로 클릭 합니다 **큐** storage 탐색기에서 항목을 선택 *Create Queue*합니다.
 
-1. Select the new queue in the left-hand menu to see the data explorer for this queue. As expected, the queue is empty. Let's add a message to the queue using the **Add Message** command at the top of the window.
+1. 열리는 대화 상자에서 입력 **새 피드백-q** 클릭 **확인**합니다. 이제 입력된 큐입니다.
 
-1. In the **Add Message** dialog, enter "This message came from our input queue, new-feedback-q" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. 이 큐에 대 한 데이터 탐색기를 보려면 왼쪽 메뉴에서 새 큐를 선택 합니다. 예상 대로 큐가 비어 있습니다. 사용 하 여 큐 메시지를 추가 해 보겠습니다 합니다 **메시지 추가** 창의 맨 위에 있는 명령입니다.
 
-1. Observe the message, similar to the message in the following screenshot, in the data explorer.
-![Screenshot of storage explorer showing our storage account, with the message we created in the queue.](../media-draft/message-in-input-queue.png)
+1. 에 **메시지 추가** 대화 상자에서 입력 "이이 메시지는 입력된 큐에서 제공 새 피드백-q"에 **메시지 텍스트** 필드를 클릭 **확인** 대화 상자의 맨 아래에서.
 
-1. After a few seconds, click **Refresh** to refresh the view of the queue. Observe that the queue is empty once again. Something must have read the message from the queue. 
+1. 데이터 탐색기에서 다음 스크린샷과에서 유사한 메시지를 관찰 합니다.
+    ![Storage 탐색기는 저장소 계정에 만든 큐에 메시지를 사용 하 여 보여 주는 스크린샷.](../media/message-in-input-queue.png)
 
-1. Navigate back to our function in the portal and open the **Monitor** tab. Select the newest message and in the list. Observe that our function processed the queue message we had posted to the new-feedback-q.
+1. 몇 초 후 클릭 **새로 고침** 큐의 보기를 새로 고칩니다. 다시 한 번 큐가 비어 있는지 확인 합니다. 큐에서 메시지를 읽기 있어야 것입니다.
 
-![Screenshot of Monitor dashboard showing an entry that tells us that our function processed the queue message that we posted to new-feedback-q.](../media-draft/message-in-monitor.png)
+1. 포털에서 열기 함수를 다시 탐색 합니다 **모니터** 탭 합니다. 최신 메시지를 선택 하 고 목록에서. 이 함수는 새 피드백 q에 게시 했습니다에서는 큐 메시지 처리를 관찰 합니다.
 
-In this test, we did a complete round trip of posting something into our queue and then seeing the function process it.
+![함수는 알려 주는 항목을 보여 주는 스크린 샷의 모니터링 대시보드는 큐 메시지를 게시 하면서 새 q 피드백을 처리 합니다.](../media/message-in-monitor.png)
 
-We're making progress with our solution! Our function is now doing something useful. It's receiving text from our input queue and then calling out to the Text Analytics API service to get a sentiment score.  We've also learned how to test our function through the Azure portal and the Storage Explorer. In the next exercise, we'll see how easy it is to write to queues using output bindings.
+이 테스트에서는 큐에 게시 하는 것을 처리 하는 함수를 표시 한 다음 왕복을 완료 했습니다.
+
+솔루션을 사용 하 여 진행 중인 했습니다! 이 함수는 유용한는 이제 수행 됩니다. 텍스트 입력된 큐에서 수신 되며 감정 점수를 가져오기 위해 텍스트 분석 API 서비스에 호출 합니다.  또한 Azure portal 및 Storage 탐색기를 통해이 함수를 테스트 하는 방법을 배웠습니다. 다음 연습에서는 출력 바인딩을 사용 하 여 큐에 쓸 얼마나 쉬운지 알아봅니다.

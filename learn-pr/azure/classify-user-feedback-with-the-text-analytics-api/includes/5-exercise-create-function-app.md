@@ -1,87 +1,77 @@
-To build our solution, we'll need to host some code.  An Azure Functions function app is a good place to host our logic. 
+ 함수 앱을 관리 하 고 함수 실행에 대 한 컨텍스트를 제공 합니다. 이제 함수 앱 만들기 및 함수를 추가 합니다. 
 
-## Create a Function App to host our function
+## <a name="create-a-function-app-to-host-our-function"></a>이 함수를 호스트 하는 함수 앱 만들기
 
-[!INCLUDE [resource-group-note](./rg-notice.md)]
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-1. Make sure you are signed in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+1. 선택 된 **리소스 만들기** 단추 찾으면 Azure portal의 왼쪽 위 모서리에서 선택 **Compute** > **함수 앱**합니다.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Compute** > **Function App**.
+1. 다음 테이블에 지정 된 함수 앱 설정을 입력 합니다.
 
-1. Enter the function app settings as specified in the following table.
-
-
-    | Setting      | Suggested value  | Description                                        |
+    | 설정      | 제안 값  | 설명                                        |
     | ------------ |  ------- | -------------------------------------------------- |
-    | **App name** | Globally unique name | Name that identifies your new function app. Valid characters are `a-z`, `0-9`, and `-`.  | 
-    | **Subscription** | Your subscription | The subscription under which this new function app is created. | 
-    | **Resource Group**|  [!INCLUDE [resource-group-name](./rg-name.md)] | Name for the  resource group in which to create your function app.<br/><br/>Make sure to select **Use existing** and use the resource group that we created in the last exercise. That way, all resource we made in this module are kept together. | 
-    | **OS** | Windows | The operating system that hosts the function app.  |
-    | **Hosting** |   Consumption plan | Hosting plan that defines how resources are allocated to your function app. In the default **Consumption Plan**, resources are added dynamically as required by your functions. In this [serverless](https://azure.microsoft.com/overview/serverless-computing/) hosting, you only pay for the time your functions run.   |
-    | **Location** | West US | Choose a [region](https://azure.microsoft.com/regions/) near you or near other services your functions access.<br/><br/>Select the same region that you used when creating the Text Analytics API account in the last exercise. |
-    | **Storage account** |  Globally unique name |  Name of the new storage account used by your function app. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. This dialog populates the field with a unique name that is derived from the name you gave the app. However, feel free to use a different name or even an existing account. |
+    | **앱 이름** | 전역적으로 고유한 이름 | 새 함수 앱을 식별하는 이름입니다. 유효한 문자는 `a-z`, `0-9` 및 `-`입니다.  | 
+    | **구독** | 사용자의 구독 | 이 새 함수 앱이 만들어질 구독입니다. | 
+    | **리소스 그룹**|  <rgn>[샌드박스 리소스 그룹 이름]</rgn> | 함수 앱을 만들려는 리소스 그룹의 이름입니다.<br/><br/>선택 되어 있는지 확인 **기존 항목 사용** 마지막 연습에서 리소스 그룹을 사용 합니다. 이런 방식으로이 모듈에서 수행한 모든 리소스 함께 유지 됩니다. | 
+    | **OS** | Windows | 함수 앱을 호스팅하는 운영 체제입니다.  |
+    | **호스팅** |   소비 계획 | 함수 앱에 리소스가 할당되는 방법을 정의하는 호스팅 계획입니다. 기본 **소비 계획**에서 함수의 필요에 따라 리소스가 동적으로 추가됩니다. [서버 없는](https://azure.microsoft.com/overview/serverless-computing/) 호스팅에서는 함수가 실행되는 시간 만큼만 요금을 지불하면 됩니다.   |
+    | **위치** | 목록에서 선택 | 사용자 근처 또는 함수가 액세스할 기타 서비스에 가까운 [지역](https://azure.microsoft.com/regions/)을 선택합니다.<br/><br/>마지막 연습에서 Text Analytics API 계정을 만들 때 했던 동일한 지역을 선택 합니다. |
+    | **Storage 계정** |  전역적으로 고유한 이름 |  함수 앱에 사용된 새 저장소 계정의 이름. Storage 계정 이름은 3자에서 24자 사이여야 하고 숫자 및 소문자만 포함할 수 있습니다. 이 대화 상자에 필드를 앱에 제공한 이름에서 파생 된 고유한 이름입니다. 그러나 자유롭게 다른 이름을 사용할지도 기존 계정. |
 
-3. Select **Create** to provision and deploy the function app.
+1. **만들기**를 선택하여 함수 앱을 프로비전하고 배포합니다.
 
-4. Select the Notification icon in the upper-right corner of the portal and watch for a **Deployment in progress** message similar to the following message.
+1. 포털의 오른쪽 위 모서리에 있는 알림 아이콘을 선택 하 고 확인을 **배포 진행에서** 다음 메시지와 비슷한 메시지입니다.
 
-![Notification that function app deployment is in progress](../media-draft/func-app-deploy-progress-small.PNG)
+1. 배포에는 약간의 시간이 걸릴 수 있습니다. 따라서 알림 허브의 상태를 유지 하 고 확인을 **배포 성공** 다음 메시지와 비슷한 메시지입니다.
 
-5. Deployment can take some time. So, stay in the notification hub and  watch for a **Deployment succeeded** message similar to the following message.
+1. 축하합니다. 생성을 함수 앱을 배포 했습니다. **리소스로 이동**을 선택하여 함수 앱을 봅니다.
 
-![Notification that function app deployment has completed](../media-draft/func-app-text-analytics-deploy-success.png)
+> [!TIP]
+> 포털에서 앱 함수를 찾는 데 문제가 있는 경우 [Azure Portal에서 즐겨찾기에 함수 앱을 추가](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite)합니다.
 
-6. Congratulations! You've created and deployed your function app. Select **Go to resource** to view your new function app.
+## <a name="create-a-function-to-execute-our-logic"></a>이 논리를 실행 하기 위한 함수 만들기
 
->[!TIP]
->Having trouble finding your function apps in the portal, try [adding Function Apps to your favorites in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
+이제 함수 앱을 한 함수를 만드는 시간입니다. 함수는 트리거를 통해 활성화 됩니다. 이 단원에서는 큐 트리거를 사용 하겠습니다. 런타임에서 큐를 폴링하고 새 메시지를 처리 하는 데이 함수를 시작 합니다.
 
-## Create a function to hold our logic
+1. 새 함수 앱을 확장 한 다음 위로 합니다 **함수** 컬렉션입니다. 추가 선택 (__+__) 단추가 나타나면 함수 생성 프로세스를 시작 합니다.
 
-Now that we have a function app, it's time to create a function. A function is activated through a trigger. In this module, we'll use a Queue trigger. The runtime will poll a queue and start this function to process a new message.
+1. 에 **신속 하 게 시작** 선택 페이지가 이제 나타납니다 **사용자 지정 함수**, 사용 가능한 함수 템플릿 목록을 로드 하는 합니다.
 
-1. Expand your new function app, then hover over the **Functions** collection. Select the Add (**+**) button when it appears to start the function creation process.
+1. 선택 **JavaScript** 에 **큐 트리거** 템플릿 목록 항목입니다.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![큐 트리거 항목을 선택 하는 JavaScript 사용 하 여 Azure Functions의 스크린 샷 템플릿.](../media/quickstart-select-queue-trigger.png)
 
-2. In the **Get started quickly** page that now appears, select **Custom function**, which loads the list of available function templates. 
+4. 에 **새 함수** 대화 상자가 나타나면 다음 값을 입력 합니다.
 
-1. Select **JavaScript** on the **Queue trigger** template list entry.
-
-![Screenshot of Azure Functions templates with JavaScript selected on the Queue trigger entry.](../media-draft/quickstart-select-queue-trigger.png)
-
-1. In the **New Function** dialog that appears, enter the following values.
-
-
-|Property  |Value  |
+|자산  |값  |
 |---------|---------|
-|Language     |   **JavaScript**      |
-|Name     |   **discover-sentiment-function**      |
-|Queue name     |   **new-feedback-q**      |
-|Storage account connection        |  **AzureWebJobsDashboard**       |
+|언어     |   **JavaScript**      |
+|이름     |   **discover-sentiment-function**      |
+|큐 이름     |   **new-feedback-q**      |
+|Storage 계정 연결        |  **AzureWebJobsDashboard**       |
 
-![Screenshot of Azure Functions templates with JavaScript selected on the Queue trigger entry.](../media-draft/new-function-dialog.png)
+![큐 트리거 항목을 선택 하는 JavaScript 사용 하 여 Azure Functions의 스크린 샷 템플릿.](../media/new-function-dialog.png)
 
-5. Select **Create** to begin the function creation process.
+5. 선택 **만들기** 함수 생성 프로세스를 시작 합니다.
 
-1. A function is created in your chosen language using the Queue Trigger function template. While we'll implement the function in JavaScript in this module, you can create a function in any [supported language](https://docs.microsoft.com/azure/azure-functions/supported-languages).
+1. 함수는 큐 트리거 함수 템플릿을 사용 하 여 선택한 언어로 생성 됩니다. 이 단원에서는 JavaScript에서 함수 구현 하겠습니다, 하는 동안에 함수를 만들 수 있습니다 [지원 되는 언어](https://docs.microsoft.com/azure/azure-functions/supported-languages)합니다.
 
-When the create process is complete, the code editor opens in the portal and loads the *index.js* page. This file is the code file where we write our function logic.
+만들기 프로세스가 완료 되 면 코드 편집기에서 포털 및 로드 열립니다는 *index.js* 페이지입니다. 이 파일은이 함수 논리를 작성 하는 코드 파일.
 
-## Try it out
+## <a name="try-it-out"></a>체험
 
-Let's test what we have so far. We haven't written any code yet, so this test is to make sure what we've configured so far, runs.
+지금에 있는 테스트해 보겠습니다. 모든 코드가 아직이 테스트 되도록 지금 구성 했으니 내용 이므로 실행을 작성 하지 않은 것입니다.
 
-1. Click **Run** at the top of the code editor.
+1. 클릭 **실행** 코드 편집기의 맨 위에 있는 합니다.
 
-2. Observe the **Logs** tab that opens at the bottom of the screen. If everything works as planned, you'll see a message similar to the following message.
-![Screenshot of response message of a successful call to our function.](../media-draft/func-default-run.PNG)
+1. 관찰 된 **로그** 화면의 맨 아래에서 열리는 탭 합니다. 계획 대로 작동 하는 경우 다음 메시지와 유사한 메시지가 표시 됩니다.
+    ![이 함수를 성공적으로 호출의 응답 메시지의 스크린샷.](../media/func-default-run.PNG)
 
-The **Run** button started our function and passed *sample queue data*, the default text from the **Test** request window to our function.
+**실행** 단추는 함수를 시작 하 고 전달 *큐 데이터를 샘플링*에서 기본 텍스트는 **테스트** 이 작동 하려면 요청 창.
 
-Nice work! You've successfully added a Queue-triggered function to your function app and tested to make sure it's working as expected! We'll add more functionality to the function in the next exercise.
+많으 셨습니다! 함수 앱에는 큐 트리거 함수를 추가 하 고 예상 대로 작동 하는지 테스트를 성공적으로 있습니다! 다음 연습에서 함수에 기능을 더 추가 하겠습니다.
 
- Let's look briefly at the function's other file, the *function.json* config file. The configuration data from this file is shown in the following JSON listing.
+보겠습니다 함수에서 간단 하 게 확인의 기타 파일을 *function.json* 구성 파일입니다. 이 파일에서 구성 데이터는 다음과 같이 JSON 목록입니다.
 
 ```json
 {
@@ -98,11 +88,11 @@ Nice work! You've successfully added a Queue-triggered function to your function
 }
 ```
 
-As you can see, this function has a trigger binding named **myQueueItem** of type `queueTrigger`. When a new message arrives in the queue we've named **new-feedback-q**, our function is called. We reference the new message through the myQueueItem binding parameter. Bindings really do take care of some of the heavy lifting for us!
+이 함수에 명명 된 트리거 바인딩이 알 수 있듯이 **myQueueItem** 형식의 `queueTrigger`합니다. 로 명명 하 고 큐에 새 메시지가 도착할 때 **피드백 q 새**,이 함수를 호출 합니다. MyQueueItem 바인딩 매개 변수를 통해 새 메시지를 참조 하는 것입니다. 바인딩 실제로 수행 주의 어려운 작업 중 일부에!
 
-In the next step, we'll add code to call the Text Analytics API service.
+다음 단계에서 Text Analytics API 서비스를 호출 하는 코드를 추가 합니다.
 
->[!TIP]
->You can see index.js and function.json by expanding the **View Files** menu on the right of the function panel in the Azure portal. 
+> [!TIP]
+> 확장 하 여 index.js 및 function.json을 볼 수 있습니다 합니다 **파일 보기** Azure portal에서 함수 패널의 오른쪽의 메뉴.
 
-This exercise was all about getting our Azure Functions infrastructure in place. We have a working function hosted in a function app that runs when a new message arrives in our queue that we've named [!INCLUDE [input-q](./q-name-input.md)]. The real fun begins in the next exercise, when we add code to call a Microsoft Cognitive Service to do sentiment analysis.
+이 연습이 했습니다. 모든 곳에서 Azure Functions 인프라를 시작 합니다. 로 명명 하 고 있는 큐에 새 메시지가 도착할 때 실행 되는 함수 앱에 호스트 되는 작업 함수를 있다고 [!INCLUDE [input-q](./q-name-input.md)]합니다. 가장 흥미로운 감정 분석을 위해 Microsoft Cognitive 서비스를 호출 하는 코드를 추가 하는 경우 다음 연습을 시작 합니다.

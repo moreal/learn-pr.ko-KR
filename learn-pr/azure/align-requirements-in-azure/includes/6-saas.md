@@ -1,18 +1,18 @@
-Software as a service (SaaS) allows users to connect to and use cloud-based apps over the Internet. Common examples are email, calendaring, and office tools such as Microsoft Office 365. SaaS provides a complete software solution that you purchase on a pay-as-you-go basis from a cloud service provider. You can *rent* the use of an application for your organization. Your users connect to the service over the Internet, usually with a web browser. All of the underlying infrastructure, middleware, app software, and app data are located in the service provider’s data center. The service provider manages the hardware and software, and with the appropriate service agreement, will ensure the availability and the security of the app and your data as well. SaaS allows your organization to get quickly up and running with an app at minimal upfront cost.
+SaaS(Software as a Service)를 도입하면 사용자가 인터넷을 통해 클라우드 기반 앱에 연결하여 이를 사용할 수 있습니다. 일반적인 예로는 메일, 일정 및 Office 도구(예: Microsoft Office 365)가 있습니다. SaaS는 클라우드 서비스 공급자로부터 종량제 방식으로 구매하는 완전한 소프트웨어 솔루션을 제공합니다. 관리자는 조직을 위한 응용 프로그램 사용을 ‘대여’하고,** 사용자는 일반적으로 웹 브라우저를 사용하여 인터넷을 통해 서비스에 연결합니다. 모든 기본 인프라, 미들웨어, 앱 소프트웨어 및 앱 데이터는 서비스 공급자의 데이터 센터에 있습니다. 서비스 공급자는 하드웨어 및 소프트웨어를 관리하고 적절한 서비스 계약을 통해 앱과 데이터의 가용성과 보안도 보장합니다. SaaS를 통해 조직은 최소의 사전 투자 비용으로 신속하게 앱을 시작하고 실행할 수 있습니다.
 
-If you’ve used a web-based email service such as Outlook, Hotmail, or Yahoo! Mail, then you’ve already used a form of SaaS. With these services, you log into your account over the Internet, often from a web browser. The email software is located on the service provider’s network, and your messages are stored there too. You can access your email and stored messages from a web browser on any computer or Internet-connected device.
+Outlook, Hotmail 또는 Yahoo! Mail과 같은 웹 기반 메일 서비스를 사용한 적이 있다면 이미 일종의 SaaS를 사용한 것입니다. 이러한 서비스에서는 대체로 웹 브라우저에서 인터넷을 통해 계정에 로그인합니다. 이메일 소프트웨어는 서비스 공급자의 네트워크에 있고, 메시지도 이 네트워크에 저장됩니다. 임의의 컴퓨터 또는 인터넷에 연결된 장치를 사용하여 웹 브라우저에서 이메일 및 저장된 메시지에 액세스할 수 있습니다.
 
-### Common scenarios
+### <a name="common-scenarios"></a>일반적인 시나리오
 
-Let's imagine your healthcare company requires a customer relationship management (CRM) solution for its sales team. The team is global. You can use a SaaS CRM provider to quickly implement a solution to your organization's sales team.
+의료 서비스 기업에 영업 팀을 위한 CRM(고객 관계 관리) 솔루션이 필요하다고 가정해 보겠습니다. 팀은 세계적으로 분포되어 있습니다. SaaS CRM 공급자를 사용하여 조직의 영업 팀에게 신속하게 솔루션을 구현할 수 있습니다.
 
-For organizational use, you can rent productivity apps, such as email, collaboration, and calendaring; and sophisticated business applications such as customer relationship management (CRM), enterprise resource planning (ERP), and document management. You pay for the use of these apps by subscription or according to the level of use.
+조직에서 사용할 수 있도록 메일, 공동 작업, 일정과 같은 생산성 앱과 CRM(고객 관계 관리), ERP(전사적 자원 관리), 문서 관리와 같은 정교한 비즈니스 응용 프로그램을 대여할 수 있습니다. 구독에 의해서나 사용량 수준에 따라 이러한 앱의 사용에 대해 요금을 지불합니다.
 
-### Advantages
+### <a name="advantages"></a>장점
 
-**Gain access to sophisticated applications:** To provide SaaS apps to users, you don’t need to purchase, install, update, or maintain any hardware, middleware, or software. SaaS makes even sophisticated enterprise applications, such as ERP and CRM, affordable for organizations that lack the resources to buy, deploy, and manage the required infrastructure and software themselves.
-Pay only for what you use. You also save money because the SaaS service automatically scales up and down according to the level of usage.
+**정교한 응용 프로그램에 대한 액세스 권한 획득**: 사용자에게 SaaS 앱을 제공하기 위해 하드웨어, 미들웨어 또는 소프트웨어를 구매, 설치, 업데이트 또는 유지 관리할 필요가 없습니다. SaaS를 사용할 경우 필요한 인프라 및 소프트웨어를 구입, 배포 및 관리하는 리소스가 부족한 조직에서 정교한 엔터프라이즈 응용 프로그램(예: ERP 및 CRM)도 감당할 수 있습니다.
+사용한 만큼만 요금을 지불합니다. SaaS 서비스는 사용량 수준에 따라 자동으로 크기를 확장 및 축소하므로 비용도 절약합니다.
 
-**Use free client software:** Users can run most SaaS apps directly from their web browser without needing to download and install any software. You don't need to purchase or deploy client software for your users.
+**무료 클라이언트 소프트웨어 사용**: 사용자는 소프트웨어를 다운로드하여 설치할 필요 없이 웹 브라우저에서 직접 대부분의 SaaS 앱을 실행할 수 있습니다. 사용자를 위해 클라이언트 소프트웨어를 구입하거나 배포할 필요가 없습니다.
 
-**Access app data from anywhere:** With data stored in the cloud, users can access their information from any Internet-connected computer or mobile device. And as app data is stored in the cloud, no data is lost if a user’s computer or device fails.
+**어디서나 앱 데이터에 액세스**: 데이터가 클라우드에 저장되어 있으면 사용자는 인터넷에 연결된 컴퓨터 또는 모바일 장치에서 정보에 액세스할 수 있습니다. 또한 앱 데이터가 클라우드에 저장되어 있기 때문에 사용자의 컴퓨터나 장치가 작동하지 않는 경우에도 데이터가 손실되지 않습니다.

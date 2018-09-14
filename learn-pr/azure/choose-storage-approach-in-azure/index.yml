@@ -1,36 +1,34 @@
 ### YamlMime:Module
 uid: learn.choose-storage-approach-in-azure
 metadata:
-  title: Choose a data storage approach in Azure
-  description: Learn how to choose a storage approach for your data in Azure
+  title: Azure에서 데이터 저장소 접근 방식 선택
+  description: Azure에서 데이터에 대한 저장소 접근 방식을 선택하는 방법 알아보기
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Choose a data storage approach in Azure
-summary: Learn how to choose a storage approach for your data.<br><br>This module teaches you how to classify data as structured, semi-structured, and unstructured. You'll learn about determining the operational needs, latency requirements, and transaction requirements for your data. Then given all of these requirements, you'll learn why using a combination of Azure Storage, Azure SQL Database, and Azure Cosmos DB for different components of an online retail scenario is the best way to get the most performant solution, because you'll be using the services optimized for each component.
-abstract: | 
-  In this module, you will:
-    - Identify the different categories of data
-    - Determine the usage of your data
-    - Determine whether your data requires transactions 
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Azure에서 데이터 저장소 접근 방식 선택
+summary: '데이터에 대한 저장소 접근 방식을 선택하는 방법에 대해 알아봅니다.<br><br>이 모듈은 데이터를 구조적, 반구조적, 비구조적 상태로 분류하는 방법을 설명합니다. 운영 요구 사항, 대기 시간 요구 사항 및 데이터에 대 한 트랜잭션 요구 사항을 결정 하는 방법 알아봅니다. 그런 다음, 이러한 모든 요구 사항을 고려할 때, 온라인 판매점 시나리오의 다양한 구성 요소에 Azure Storage, Azure SQL Database 및 Azure Cosmos DB 조합을 사용하는 것이 각 구성 요소에 최적화된 서비스를 사용할 수 있으므로 가장 뛰어난 성능의 솔루션을 얻는 최상의 방법이 된다는 것을 설명합니다.'
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - 다양한 데이터 범주 이해
+  - 데이터 사용량 확인
+  - 데이터에 트랜잭션이 필요한지 확인 
+prerequisites: 없음
+iconUrl: /learn/achievements/choose-storage-approach-in-azure.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-storage
+  - azure
+  - azure-storage
 units:
-- learn.choose-storage-approach-in-azure.1-introduction
-- learn.choose-storage-approach-in-azure.2-classify-data
-- learn.choose-storage-approach-in-azure.3-operations-and-latency
-- learn.choose-storage-approach-in-azure.4-transactions
-- learn.choose-storage-approach-in-azure.5-choose-the-right-azure-service-for-your-data
-- learn.choose-storage-approach-in-azure.6-summary
+  - learn.choose-storage-approach-in-azure.1-introduction
+  - learn.choose-storage-approach-in-azure.2-classify-data
+  - learn.choose-storage-approach-in-azure.3-operations-and-latency
+  - learn.choose-storage-approach-in-azure.4-transactions
+  - learn.choose-storage-approach-in-azure.5-choose-the-right-azure-service-for-your-data
+  - learn.choose-storage-approach-in-azure.6-summary
 achievement: learn.choose-storage-approach-in-azure.badge

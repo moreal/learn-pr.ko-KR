@@ -1,37 +1,36 @@
 ### YamlMime:Module
 uid: learn.introduction-to-security
 metadata:
-  title: Introduction to security in Azure
-  description: Discuss the basic concepts for protecting your infrastructure and data when you work in the cloud. Understand what responsibilities are yours and what Azure takes care of for you.
+  title: Azure에서 보안 소개
+  description: 클라우드에서 작업 하는 경우 인프라 및 데이터 보호에 대 한 기본 개념을 설명 합니다. 어떤 책임은 사용자 및 어떤 Azure는 처리를 이해 합니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to security in Azure
-summary: Discuss the basic concepts for protecting your infrastructure and data when you work in the cloud. Understand what responsibilities are yours and what Azure takes care of for you.
-abstract: |  
-  In this module, you will:
-  - Learn how security responsibility is shared with Azure
-  - Learn how identity management provides protection, even outside your network
-  - Learn how encryption capabilities built in to Azure can protect your data
-  - Learn how to protect your network and virtual networks
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
+title: Azure에서 보안 소개
+summary: 클라우드에서 작업 하는 경우 인프라 및 데이터 보호에 대 한 기본 개념을 설명 합니다. 어떤 책임은 사용자 및 어떤 Azure는 처리를 이해 합니다.
+abstract: |
+  이 모듈에서 수행하는 작업:
+  - Azure를 사용 하 여 보안 책임 공유 되는 방법에 대해 알아봅니다.
+  - Id 관리 네트워크 외부 에서도 보호를 제공 하는 방법에 대해 알아봅니다.
+  - Azure에 기본 제공 암호화 기능 데이터를 보호 하는 방법을 알아봅니다
+  - 네트워크와 가상 네트워크를 보호 하는 방법 알아보기
+prerequisites: 없음
+iconUrl: /learn/achievements/intro-to-security-in-azure.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- administrator
-- solution-architect
+  - developer
+  - administrator
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.introduction-to-security.1-introduction
-- learn.introduction-to-security.2-shared-responsibility
-- learn.introduction-to-security.3-identity-and-access
-- learn.introduction-to-security.4-encryption
-- learn.introduction-to-security.5-network-security
-- learn.introduction-to-security.6-summary
+  - learn.introduction-to-security.1-introduction
+  - learn.introduction-to-security.2-shared-responsibility
+  - learn.introduction-to-security.3-identity-and-access
+  - learn.introduction-to-security.4-encryption
+  - learn.introduction-to-security.5-network-security
+  - learn.introduction-to-security.6-summary
 achievement: learn.introduction-to-security.badge

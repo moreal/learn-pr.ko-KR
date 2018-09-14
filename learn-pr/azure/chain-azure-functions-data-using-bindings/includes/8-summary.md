@@ -1,52 +1,33 @@
-This module was all about integrating data and services into your functions. We started off with a quick tour of the binding types that show up when you add them to a function. We then looked at reading data from an Azure Cosmos DB using an input binding. The platform takes care of managing connection strings and we saw how easy it is to read data in our code using the binding. Finally we focused our attention on writing data different sources with the help of output bindings. This journey is summarized in the following table.
+이 모듈을 함수에 데이터 및 서비스 통합이 전부 였습니다. 함수에 추가 하면 표시 되는 바인딩 형식 둘러보기로 시작 했습니다. 그런 다음 입력된 바인딩을 사용 하 여 Azure Cosmos DB에서 데이터를 읽는 살펴보았습니다. 연결 문자열을 관리 하는 플랫폼을 담당 하 고 바인딩을 사용 하 여 코드의 데이터를 읽을 얼마나 쉬운지 살펴보았습니다. 마지막 주의 데이터 출력 바인딩 사용 하 여 다양 한 원본 작성에 집중 했습니다. 이 과정은 다음 표에 요약 되어 있습니다.
 
 [!INCLUDE [summary table](./summary-table.md)]
 
-You can apply the approaches you have learned here to add and test bindings in your functions. Here are a few interesting ideas to get more practice with bindings and to build on what you have learned here.
+추가 및 함수에 바인딩을 테스트할 여기 배웠습니다 접근 방식을 적용할 수 있습니다. 다음은 몇 흥미로운 아이디어 바인딩을 사용 하 여 자세한 연습을 얻으려면 하 고 여기서 학습 한 내용에서 빌드할 수 있습니다.
 
-* Create another function to read from Blob Storage and other input bindings that we haven't used in this module.
+* 이 모듈에서 사용 하지 않은 하는 다른 입력된 바인딩은 Blob Storage에서 읽기를 다른 함수를 만듭니다.
 
-* Create another function to write to more destinations using other supported output binding types.
+* 다른 지원 되는 출력 바인딩 유형을 사용 하 여 더 많은 대상에 쓸 다른 함수를 만듭니다.
 
-* In the last unit, we introduced a queue and posted messages to it with an output binding. As a next step, consider adding another function that reads the messages in the queue and prints out the **MESSAGE TEXT** to the console with `Console.Log()`.
+* 마지막 단위에 있는 큐를 도입 하 고 출력 바인딩 사용 하 여 메시지를 게시 합니다. 다음 단계에서는 큐의 메시지를 읽고 인쇄 하는 다른 함수를 추가 고려 합니다 **메시지 텍스트** 콘솔에 `Console.Log()`입니다.
 
-As we saw in this module, the Azure portal offers easy-to-use features to start building functions and connecting them to data and other services.
+이 모듈에서 살펴본 것 처럼 Azure portal 함수를 작성 하 고 데이터 및 기타 서비스에 연결 하려면 사용 하기 쉬운 기능을 제공 합니다.
 
-## Clean up resources
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-*Resources* in Azure refers to function apps, functions, storage accounts, and so forth. They are grouped into *resource groups*, and you can delete everything in a group by deleting the group.
+## <a name="further-reading"></a>추가 참고 자료
 
-You created resources to complete this module. You may be billed for these resources, depending on your [account status](https://azure.microsoft.com/account/) and [service pricing](https://azure.microsoft.com/pricing/). If you don't need the resources anymore, here's how to delete them:
+이 목록은 되도록 아니며 하는 동안 발생할 수 있는 흥미로운이 모듈에서 다루는 항목에 관련 된 일부 리소스는 다음과 같습니다.
 
-1. In the Azure portal, go to the **Resource group** page.
+ * [Azure Functions 설명서](https://docs.microsoft.com/azure/azure-functions/)
 
-   To get to that page from the function app page, select the **Overview** tab and then select the link under **Resource group**.
+* [Azure Functions 과제](https://aka.ms/afc)
 
-   To get to that page from the dashboard, select **Resource groups**, and then select the resource group that you used for this module. 
+* [Azure 서버 리스 컴퓨팅 쿡 북](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
 
-> [!NOTE]
-> The default name of the resource group we suggested for this module was [!INCLUDE [resource-group-name](./rg-name.md)] but it is possible that you used another name.
+ * [Node.js에서 큐 저장소를 사용하는 방법](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
 
-2. In the **Resource group** page, review the list of included resources, and verify that they are the ones you want to delete.
+ * [Azure Cosmos DB 소개: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 
-3. Select **Delete resource group**, and follow the instructions.
+* [Azure Cosmos DB의 기술 개요](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 
-   Deletion may take a couple of minutes. When it's done, a notification appears for a few seconds. You can also select the bell icon at the top of the page to view the notification.
-
-## Further Reading
-
-While this is not intended to be an exhaustive list, the following are some resources related to the topics covered in this module that you might find interesting.
-
- * [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/)
-
-* [The Azure Functions Challenge](https://aka.ms/afc)
-
-* [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
-
- * [How to use Queue storage from Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
-
- * [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
-
-* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
-
-* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+* [Azure Cosmos DB 설명서](https://docs.microsoft.com/azure/cosmos-db/)

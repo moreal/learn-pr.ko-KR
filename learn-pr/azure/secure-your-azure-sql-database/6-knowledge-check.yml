@@ -1,0 +1,67 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-sql-database.6-knowledge-check
+metadata:
+  title: 지식 검사
+  description: 지식을 테스트합니다
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 지식 검사
+durationInMinutes: 5
+content: |
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: 퀴즈
+  questions:
+    - content: 사용자의 전자 메일 주소를 보유 하는 데이터베이스의 열에 적용 된 마스크 laura@contoso.com합니다. 옵션의 목록에서 어떤 마스크가 표시 됩니다 dbo 계정에 대 한?
+      choices:
+        - content: lxxx@xxxx.com
+          isCorrect: false
+          incorrectExplanation: dbo 계정에 데이터에 적용 하는 마스크를 사용할 필요가 없습니다.
+        - content: laura@xxxxxxx.com
+          isCorrect: false
+          incorrectExplanation: dbo 계정에 데이터에 적용 하는 마스크를 사용할 필요가 없습니다. 또한 전자 메일 마스크 적용 되 면 이러한도 mask 전자 메일 주소의 이름 부분입니다.
+        - content: laura@contoso.com
+          isCorrect: true
+          correctExplanation: 맞습니다! Dbo 계정을 적용 하는 마스크 된 데이터에 액세스 하는 경우 데이터에 적용 하는 마스크 표시 되지 않습니다.
+        - content: 데이터를 사용할 수 없음
+          isCorrect: false
+          incorrectExplanation: 데이터는 마스크를 전자 메일에 액세스할 때 표시 됩니다. dbo 계정 데이터에 적용 하는 마스크를 표시 되지 않습니다. 비-dbo 계정을 마스크 해제 된 데이터를 나열 하지 않는 한 데이터에 적용할 마스크 표시 됩니다.
+    - content: 투명 한 데이터 암호화는 데이터베이스 파일 암호화는?
+      choices:
+        - content: 데이터베이스 파일에만
+          isCorrect: false
+          incorrectExplanation: '투명 한 데이터 암호화를 사용 하는 경우 모든 데이터베이스, 로그 및 백업 파일 암호화 됩니다.'
+        - content: 로그 파일 및 백업 파일의 경우에
+          isCorrect: false
+          incorrectExplanation: '투명 한 데이터 암호화를 사용 하는 경우 모든 데이터베이스, 로그 및 백업 파일 암호화 됩니다.'
+        - content: 백업 파일의 경우에
+          isCorrect: false
+          incorrectExplanation: '투명 한 데이터 암호화를 사용 하는 경우 모든 데이터베이스, 로그 및 백업 파일 암호화 됩니다.'
+        - content: '데이터베이스 파일, 로그 파일 및 백업 파일'
+          isCorrect: true
+          correctExplanation: '맞습니다! 투명 한 데이터 암호화를 사용 하는 경우 모든 데이터베이스, 로그 및 백업 파일 암호화 됩니다.'
+    - content: 데이터베이스 방화벽 규칙을 IP 주소를 필터링 할 수 있습니까?
+      choices:
+        - content: Azure 전용 IP 주소
+          isCorrect: false
+          incorrectExplanation: 데이터베이스 방화벽 규칙 IP 주소 또는 Azure와 인터넷 IP 주소에 대 한 IP 주소 범위를 정의할 수 있습니다.
+        - content: 다른 데이터베이스의 IP 주소
+          isCorrect: false
+          incorrectExplanation: 데이터베이스 방화벽 규칙 IP 주소 또는 Azure와 인터넷 IP 주소에 대 한 IP 주소 범위를 정의할 수 있습니다.
+        - content: Azure virtual network에 생성 된 네트워크
+          isCorrect: false
+          incorrectExplanation: 데이터베이스 방화벽 규칙 IP 주소 또는 Azure와 인터넷 IP 주소에 대 한 IP 주소 범위를 정의할 수 있습니다.
+        - content: 모든 IP 주소 또는 IP 주소 범위
+          isCorrect: true
+          correctExplanation: 맞습니다! 데이터베이스 방화벽 규칙 IP 주소 또는 Azure와 인터넷 IP 주소에 대 한 IP 주소 범위를 정의할 수 있습니다.
+    - content: 암호화 된 통신 상태에서 자동으로 Azure SQL Server에 연결할 때?
+      choices:
+        - content: 예
+          isCorrect: false
+          incorrectExplanation: 암호화 옵션은 데이터베이스에 연결할 연결 문자열에 정의 됩니다. 연결 문자열은 암호화를 사용 하 고 중간자 개입 공격 가능성을 줄이기 위해 인증서를 신뢰 하지 않도록 설정 되어야 합니다.
+        - content: 아니요
+          isCorrect: true
+          correctExplanation: 맞습니다! 암호화 옵션은 데이터베이스에 연결할 연결 문자열에 정의 됩니다. 연결 문자열은 암호화를 사용 하 고 중간자 개입 공격 가능성을 줄이기 위해 인증서를 신뢰 하지 않도록 설정 되어야 합니다.

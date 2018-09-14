@@ -1,16 +1,16 @@
-You can configure virtual machine disk cache settings with any of the following tools:
+다음 도구 중 하나를 사용 하 여 가상 머신 디스크 캐시 설정을 구성할 수 있습니다.
 
-- Azure portal
-- Resource Manager templates
+- Azure Portal
+- Resource Manager 템플릿
 - Azure CLI
 - Azure PowerShell
 
-In the next exercise, we're going to use the portal to create a VM and configure caching on its disks. Here's some information to keep in mind. 
+다음 연습에서는 포털을 사용 하 여 VM을 만들고 해당 디스크의 캐싱을 구성 하겠습니다. 염두에 몇 가지 정보는 다음과 같습니다.
 
-When you provision a new VM using the Azure portal, you can't change the default caching configuration for the OS disk from read/write until the VM is deployed.
+Azure portal을 사용 하 여 새 VM을 프로 비전 기본 VM 배포 될 때까지 읽기/쓰기에서 OS 디스크에 대 한 구성을 캐싱를 변경할 수 없습니다.
 
-When you add a data disk to an existing VM, you can configure the cache option before the disk is deployed to the VM.
+기존 VM에 데이터 디스크를 추가 하면 디스크를 VM에 배포 하기 전에 캐시 옵션을 구성할 수 있습니다.
 
-Changing the cache setting of an Azure disk detaches and reattaches the target disk. If it's the operating system disk, the VM is restarted. Stop all applications/services that might be affected by this disruption before changing the disk cache setting.
+Azure 디스크의 캐시 설정을 변경 분리 되었다가 대상 디스크. 운영 체제 디스크를 VM 다시 시작 됩니다. 디스크 캐시 설정을 변경하기 전에 이 중단의 영향을 받을 수 있는 모든 응용 프로그램/서비스를 중지합니다.
 
-Let's create a VM and change the cache settings using the Azure portal.
+VM을 만들고 Azure portal을 사용 하 여 캐시 설정을 변경 하겠습니다.

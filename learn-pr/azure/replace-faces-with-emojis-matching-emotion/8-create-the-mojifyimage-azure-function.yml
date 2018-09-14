@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.8-create-the-mojifyimage-azure-function
+metadata:
+  title: MojifyImage Azure Function 만들기
+  description: Mojified 이미지를 반환 하는 HTTP 끝점을 만듭니다.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45987
+title: MojifyImage Azure Function 만들기
+durationInMinutes: 15
+content: |
+  [!include[](includes/8-create-the-mojifyimage-azure-function.md)]

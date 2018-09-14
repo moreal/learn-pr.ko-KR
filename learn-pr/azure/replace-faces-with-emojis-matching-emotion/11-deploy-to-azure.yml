@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.11-deploy-to-azure
+metadata:
+  title: Deploy to Azure
+  description: 클라우드로는 Azure Function을 배포 하 고 새 프로덕션 버전의 코드를 사용 하 여 slack 구성을 업데이트 합니다.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Deploy to Azure
+durationInMinutes: 8
+content: |
+  [!include[](includes/11-deploy-to-azure.md)]

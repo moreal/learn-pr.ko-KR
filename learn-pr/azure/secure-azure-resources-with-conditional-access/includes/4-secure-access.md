@@ -1,4 +1,4 @@
-이전 연습에서는 평가판 라이선스를 사용하도록 설정하고, 디렉터리와 사용자를 만들고, 솔루션을 테스트할 그룹을 만들었습니다. 이 연습에서는 Azure Portal에 Azure Multi-Factor Authentication을 요구하는 조건부 액세스 규칙을 만듭니다.
+이전 연습에서는 평가판 라이선스를 사용하도록 설정하고, 디렉터리와 사용자를 만들고, 솔루션을 테스트할 그룹을 만들었습니다. 이 장치에서 Azure portal에 대해 Azure Multi-factor Authentication을 요구 하는 조건부 액세스 규칙을 만들겠습니다.
 
 ## <a name="enable-conditional-access-based-multi-factor-authentication"></a>조건부 액세스 기반 Multi-Factor Authentication 사용
 

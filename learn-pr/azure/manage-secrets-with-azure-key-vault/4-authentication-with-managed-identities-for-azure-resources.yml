@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
-title: Vault authentication with managed identities for Azure resources
+title: Azure 리소스에 대 한 관리 되는 id 사용 하 여 자격 증명 모음 인증
 metadata:
-  title: Vault authentication with managed identities for Azure resources
-  description: Vault authentication with managed identities for Azure resources
+  title: Azure 리소스에 대 한 관리 되는 id 사용 하 여 자격 증명 모음 인증
+  description: Azure 리소스에 대 한 관리 되는 id 사용 하 여 자격 증명 모음 인증
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,25 @@ durationInMinutes: 4
 content: |
   [!include[](includes/4-authentication-with-managed-identities-for-azure-resources.md)]
 quiz:
-  title: 'Knowledge check: Managed identities for Azure resources'
+  title: '지식 검사: Azure 리소스에 대 한 id 관리'
   questions:
-  - content: How does using managed identities for Azure resources change the way an app authenticates to Azure Key Vault?
-    choices:
-    - content: The app uses a certificate to authenticate instead of a secret.
-      isCorrect: false
-      incorrectExplanation: Apps *can* use secrets or certificates to get authentication tokens from Azure Active Directory, but with managed identities they don't have to. 
-    - content: Each user of the app must enter a password.
-      isCorrect: false
-      incorrectExplanation: It is the *app* that authenticates to Key Vault, not individual users of the app. Use of a managed identity does not impact whether or not your app requires authentication from your users.
-    - content: The app gets tokens from a token service powered by the managed identities feature instead of from Azure Active Directory.
-      isCorrect: true
-      correctExplanation: The managed identities token service gets tokens from Azure Active Directory on behalf of your app, and allows your app to authenticate with a secret injected into its envirionment variables.
-    - content: Managed identities are automatically recognized by Key Vault and authenticated automatically.
-      isCorrect: false
-      incorrectExplanation: Key Vault does not control or manage identities. Identities exist within Azure Active Directory.
-  - content: Which one of these statements describes a primary benefit of using managed identities for Azure resources to authenticate an app to Key Vault?
-    choices:
-    - content: Using managed identities improves application performance.
-      isCorrect: false
-      incorrectExplanation: Use of managed identities for Azure resources has no effect on your application's performance.
-    - content: Managed identities eliminate the need to handle secrets in configuration.
-      isCorrect: true
-      correctExplanation: Your app authenticates to the managed identities token service with a secret injected into its environment variables at runtime, eliminating the need to store secrets in configuration.
-    - content: Managed identities are automatically granted Key Vault permissions.
-      isCorrect: false
-      incorrectExplanation: All identities, including managed identities, must be explicitly granted permissions within a vault.
-    - content: Managed identities make it easier to choose passwords for remote services.
-      isCorrect: false
-      incorrectExplanation: The managed identities feature has no effect on your secrets or authentication workflows with remote services. Using a managed identity only impacts how your app authenticates to Key Vault.
+    - content: 어떻게 Azure Key Vault에는 인증 방법을 앱을 변경 하는 Azure 리소스에 대 한 관리 되는 id를 사용 하 여 했습니까?
+      choices:
+        - content: 앱은 비밀 대신 인증서를 사용하여 인증합니다.
+          isCorrect: false
+        - content: 앱 사용자 각자는 암호를 입력해야 합니다.
+          isCorrect: false
+        - content: 응용 프로그램 대신 Azure Active Directory 토큰 서비스에서 토큰을 가져옵니다.
+          isCorrect: true
+          correctExplanation: 웹 앱에서 관리 되는 id를 사용 하면 Azure 앱에서 특별히 사용 하기 위해 별도 토큰이 부여 REST 서비스를 활성화 합니다. 앱이이 서비스 대신 Azure Active Directory에서에서 토큰을 요청 합니다.
+        - content: 관리 되는 id는 자동으로 Azure Key Vault에서 인식 하 고 자동으로 인증 합니다.
+          isCorrect: false
+    - content: 다음이 문 중 하나는 Azure 리소스에 대 한 관리 되는 id를 사용 하 여 Key Vault에 앱을 인증 하는 주요 이점은 주십시오.
+      choices:
+        - content: 관리 되는 id를 사용 하 여 응용 프로그램 성능이 향상 됩니다.
+          isCorrect: false
+        - content: 관리 되는 id를 사용 하 여 구성 하는 동안 비밀을 처리할 필요가 없습니다.
+          isCorrect: true
+          correctExplanation: 응용 프로그램 런타임 시 환경 변수를 삽입 하는 암호를 사용 하 여 관리 되는 id 토큰 서비스에 인증 합니다. 이를 구성 하는 동안 암호를 저장할 필요가 없습니다.
+        - content: 관리 되는 id에는 Azure Key Vault 사용 권한 자동으로 부여 수 있습니다.
+          isCorrect: false

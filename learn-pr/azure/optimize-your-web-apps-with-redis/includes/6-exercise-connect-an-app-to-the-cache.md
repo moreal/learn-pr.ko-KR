@@ -1,37 +1,37 @@
-Now that we have a Redis cache created in Azure, let's create an application to use it. Make sure you have your connection string information from the Azure portal.
+Azure에서 만든 Redis cache를 만들었으므로를 사용 하도록 응용 프로그램을 만들어 보겠습니다. Azure portal에서 연결 문자열 정보가 있는지 확인 합니다.
 
 > [!NOTE]
-> The integrated Cloud Shell is available on the right. You can use that command prompt to create and run the example code we are building here, or perform these steps locally if you have a development environment setup. If you decide to use the Cloud Shell, please select the Bash shell if you are prompted for a selection.
+> 통합 된 Cloud Shell은 오른쪽에 사용할 수 있습니다. 만들고 여기에서 우리가 제작 하려는 예제 코드를 실행 하는 명령 프롬프트를 사용 하거나 로컬로 개발 환경을 설정 해야 하는 경우 이러한 단계를 수행 수 있습니다. Cloud Shell을 사용 하려는 경우 선택 영역에 대 한 메시지가 표시 되는 경우 Bash 셸을 선택 하십시오.
 
-## Create a Console Application
+## <a name="create-a-console-application"></a>콘솔 응용 프로그램 만들기
 
-We'll use a simple Console Application so we can focus on the Redis implementation.
+Redis 구현에 집중할 수 있도록 간단한 콘솔 응용 프로그램을 사용 하겠습니다.
 
-1. In the Cloud Shell, create a new .NET Core Console Application, name it "SportsStatsTracker"
+1. Cloud Shell에 새.NET Core 콘솔 응용 프로그램을 만들기, 이름을 "SportsStatsTracker"
 
     ```bash
     dotnet new console --name SportsStatsTracker
     ```
     
-1. This will create a folder for the project, go ahead and change the current directory.
+1. 이 프로젝트의 폴더, 계속 해 서를 만들고 현재 디렉터리를 변경 합니다.
 
     ```bash
     cd SportsStatsTracker
     ```
     
-## Add the connection string
+## <a name="add-the-connection-string"></a>연결 문자열 추가
 
-Let's add the connection string we got from the Azure portal into the code. Never store credentials like this in your source code. To keep this sample simple, we're going to use a configuration file. A better approach for a server-side application in Azure would be to use Azure Key Vault with certificates.
+코드에 Azure portal에서 가져온 연결 문자열을 추가 해 보겠습니다. 소스 코드에서 다음과 같은 자격 증명을 저장 하지 마십시오. 간단히 유지 하기 위해이 샘플 구성 파일을 사용 하는 것이 하겠습니다. Azure에서 서버 쪽 응용 프로그램을 위한 더 나은 방법 인증서를 사용 하 여 Azure Key Vault를 사용 하는 것입니다.
 
-1. Create a new **appsettings.json** file to add to the project.
+1. 새 **appsettings.json** 파일을 프로젝트에 추가 합니다.
 
     ```bash
     touch appsettings.json
     ```
 
-1. Open the code editor by typing `code .` in the project folder. If you are working locally, we recommend using **Visual Studio Code**. The steps here will mostly align with it's usage.
+1. 입력 하 여 코드 편집기를 열고 `code .` 프로젝트 폴더에 있습니다. 로컬로 작업 하는 경우 사용 하는 것이 좋습니다 **Visual Studio Code**합니다. 여기에 나오는 단계의 사용 대부분 정렬 됩니다.
 
-1. Select the **appsettings.json** file in the editor and add the following text. Paste your connection string into the **value** of the setting.
+1. 선택 된 **appsettings.json** 편집기에서 파일을 다음 텍스트를 추가 합니다. 에 연결 문자열을 붙여 합니다 **값** 설정 합니다.
 
     ```json
     {
@@ -39,9 +39,9 @@ Let's add the connection string we got from the Azure portal into the code. Neve
     }
     ```
 
-1. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. 파일 저장-온라인 편집기에서 일반적인 파일 작업에는 상단 오른쪽 모서리의 메뉴가입니다.
 
-1. Add the following configuration block to include the new file in the project and copy it to the output folder. This ensures that the app configuration file is placed in the output directory when the app is compiled/built.
+1. 프로젝트에 새 파일을 포함 하 고 출력 폴더에 복사 하려면 다음 구성 블록을 추가 합니다. 이렇게 하면 앱이 컴파일/빌드되는 경우 앱 구성 파일이 출력 디렉터리에 배치됩니다.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -54,32 +54,32 @@ Let's add the connection string we got from the Azure portal into the code. Neve
     </Project>
     ```
 
-1. Save the file. (Make sure you do this or you will lose the change when you add the package below!)
+1. 파일을 저장합니다. (이 작업을 수행 하거나 아래의 패키지를 추가 하면 변경 내용이 손실 됩니다 있는지 확인!)
 
-## Add support to read a JSON configuration file
+## <a name="add-support-to-read-a-json-configuration-file"></a>JSON 구성 파일을 읽도록 지원 추가
 
-A .NET Core application requires additional NuGet packages to read a JSON configuration file.
+.NET Core 응용 프로그램을 추가 NuGet 패키지는 JSON 구성 파일을 읽이 필요 합니다.
 
-1. In the command prompt section of the window, add a reference to the  **Microsoft.Extensions.Configuration.Json** NuGet package.
+1. 명령 프롬프트 창의 섹션에서 참조를 추가 합니다 **Microsoft.Extensions.Configuration.Json** NuGet 패키지.
 
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.Json
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>구성 파일을 읽는 코드를 추가 합니다.
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our console application.
+구성을 읽을 수 있도록 하는 데 필요한 라이브러리를 추가했으므로 콘솔 응용 프로그램 내에서 해당 기능을 사용하도록 설정해야 합니다.
 
-1. Select **Program.cs** in the editor.
+1. 선택 **Program.cs** 편집기에서.
 
-1. At the top of the file, a **using System;** line is present. Underneath that line, add the following lines of code:
+1. 파일 맨 위에 **using System;** 줄이 표시됩니다. 해당 줄 아래에 다음 코드 줄을 추가합니다.
 
     ```csharp
     using Microsoft.Extensions.Configuration;
     using System.IO;
     ```
 
-1. Replace the contents of the **Main** method with the following code. This code initializes the configuration system to read from the **appsettings.json** file.
+1. 내용을 대체 합니다 **Main** 메서드를 다음 코드로 합니다. 이 코드는 **appsettings.json** 파일에서 읽을 구성 시스템을 초기화합니다.
 
     ```csharp
     var config = new ConfigurationBuilder()
@@ -88,7 +88,7 @@ Now that we have added the required libraries to enable reading configuration, w
         .Build();
     ```
 
-Your **Program.cs** file should now look like the following:
+**Program.cs** 파일은 이제 다음과 같이 표시됩니다.
 
 ```csharp
 using System;
@@ -110,42 +110,42 @@ namespace SportsStatsTracker
 }
 ```
 
-## Get the connection string from configuration
+## <a name="get-the-connection-string-from-configuration"></a>구성에서 연결 문자열 가져오기
 
-1. In **Program.cs**, at the end of the **Main** method, use the new **config** variable to retrieve the connection string and store it in a new variable named **connectionString**.
-    - The **config** variable has an indexer where you can pass in a string to retrieve from your **appSettings.json** file.
+1. **Program.cs**, 끝에 **Main** 메서드를 사용 하 여 새 **구성** 연결 문자열을 검색 하 고 새 변수에 저장 하는 변수  **connectionString**합니다.
+    - 합니다 **config** 변수가 인덱서에서 검색할 문자열에 전달 될 수 있는 프로그램 **appSettings.json** 파일입니다.
 
     ```csharp
     string connectionString = config["CacheConnection"];
     ```
     
-## Add support for the Redis cache .NET client
+## <a name="add-support-for-the-redis-cache-net-client"></a>Redis 캐시.NET 클라이언트에 대 한 지원 추가
 
-Next, let's configure the console application to use the **StackExchange.Redis** client for .NET.
+다음으로 사용 하 여 콘솔 응용 프로그램을 구성 하겠습니다 합니다 **StackExchange.Redis** .NET 용 클라이언트입니다.
 
-1. Add the **StackExchange.Redis** NuGet package to the project using the command prompt at the bottom of the Cloud Shell editor.
+1. 추가 된 **StackExchange.Redis** Cloud Shell 편집기의 맨 아래에서 명령 프롬프트를 사용 하 여 프로젝트에 NuGet 패키지.
 
     ```bash
     dotnet add package StackExchange.Redis
     ```
 
-1. Select **Program.cs** in the editor and add a `using` for the namespace **StackExchange.Redis**
+1. 선택 **Program.cs** 편집기에서 추가 된 `using` 네임 스페이스에 대 한 **StackExchange.Redis**
 
     ```csharp
     using StackExchange.Redis;
     ```
     
-Once the installation is completed, the Redis cache client is available to use with your project.
+설치가 완료 되 면 Redis 캐시 클라이언트는 프로젝트를 사용 하 여 사용할 수 있습니다.
 
-## Connect to the cache
+## <a name="connect-to-the-cache"></a>캐시에 연결
 
-Let's add the code to connect to the cache.
+캐시에 연결 하기 위한 코드를 추가 해 보겠습니다.
 
-1. Select **Program.cs** in the editor.
+1. 선택 **Program.cs** 편집기에서.
 
-1. Create a `ConnectionMultiplexer` using `ConnectionMultiplexer.Connect` by passing it your connection string. Name the returned value **cache**.
+1. 만들기는 `ConnectionMultiplexer` 를 사용 하 여 `ConnectionMultiplexer.Connect` 연결 문자열을 전달 하 여 합니다. 반환 된 값의 이름을 **캐시**합니다.
 
-1. Since the created connection is _disposable_, wrap it in a `using` block. Your code should look something like:
+1. 만든된 연결 이므로 _일회용_를 래핑합니다를 `using` 블록입니다. 코드는 다음과 유사해야 합니다.
 
     ```csharp
     string connectionString = config["CacheConnection"];
@@ -157,36 +157,36 @@ Let's add the code to connect to the cache.
     ```
 
 > [!NOTE] 
-> The connection to Azure Redis Cache is managed by the `ConnectionMultiplexer` class. This class should be shared and reused throughout your client application. We do _not_ want to create a new connection for each operation. Instead, we want to store it off as a field in our class and reuse it for each operation. Here we are only going to use it in the **Main** method, but in a production application, it should be stored in a class field, or a singleton.
+> Azure Redis Cache에 연결 하 여 관리 되는 `ConnectionMultiplexer` 클래스입니다. 이 클래스는 클라이언트 응용 프로그램 전체에서 공유하고 다시 사용해야 합니다. 우리가 _되지_ 각 작업에 대 한 새 연결을 만들려면. 대신 하고자 클래스에서 필드로 해제 저장 하 고 각 작업에 다시 사용 합니다. 여기만 하겠습니다에서 사용 하는 **Main** 메서드 하지만 프로덕션 응용 프로그램에서 단일 클래스 필드에 저장 되어야 합니다.
 
-## Add a value to the cache
+## <a name="add-a-value-to-the-cache"></a>캐시에 값을 추가 합니다.
 
-Now that we have the connection, let's add a value to the cache.
+이제 연결 했으므로 캐시에 값을 추가 해 보겠습니다.
 
-1. Inside the `using` block after the connection has been created, use the `GetDatabase` method to retrieve an `IDatabase` instance.
+1. 내부를 `using` 연결이 만들어진 후 블록에서 사용 하 여는 `GetDatabase` 검색 하는 메서드는 `IDatabase` 인스턴스.
 
-1. Call `StringSet` on the `IDatabase` object to set the key "test:key" to the value "some value".
-    - the return value from `StringSet` is a `bool` indicating whether the key was added.
+1. 호출 `StringSet` 에 `IDatabase` "일부 값" 키 "테스트: 키" 값으로 설정할 개체입니다.
+    - 반환 값 `StringSet` 는 `bool` 는 키가 추가 되어 있는지 여부를 나타내는입니다.
 
-1. Display the return value from `StringSet` onto the console.
+1. 반환 값을 표시 `StringSet` 콘솔에 있습니다.
 
     ```csharp
     bool setValue = db.StringSet("test:key", "some value");
     Console.WriteLine($"SET: {setValue}");
     ```
     
-## Get a value from the cache
+## <a name="get-a-value-from-the-cache"></a>캐시에서 값 가져오기
 
-1. Next, retrieve the value using `StringGet`. This takes the key to retrieve and returns the value.
+1. 다음으로 사용 하 여 값을 검색할 `StringGet`합니다. 이 키를 검색 하 고 값을 반환 합니다.
 
-1. Output the returned value.
+1. 반환된 된 값을 출력 합니다.
 
     ```csharp
     string getValue = db.StringGet("test:key");
     Console.WriteLine($"GET: {getValue}");
     ```
     
-1. Your code should look like this:
+1. 코드는 다음과 같습니다.
 
     ```csharp
     using System;
@@ -222,25 +222,25 @@ Now that we have the connection, let's add a value to the cache.
     }
     ```
     
-1. Run the application to see the result. Type `dotnet run` into the terminal window below the editor. Make sure you are in the project folder or it won't find your code to build and run.
+1. 결과를 보려면 응용 프로그램을 실행 합니다. 형식 `dotnet run` 편집기 아래의 터미널 창에 있습니다. 프로젝트 폴더에 빌드 및 실행 하는 코드를 찾지 못합니다 되었는지 확인 합니다.
     
     ```bash
     dotnet run
     ```
     
-## Use the async versions of the methods
+## <a name="use-the-async-versions-of-the-methods"></a>메서드의 비동기 버전을 사용 하 여
 
-We have been able to get and set values from the cache, but we are using the older synchronous versions. In server-side applications, these are not an efficient use of our threads. Instead, we want to use the _asynchronous_ versions of the methods. You can easily spot them - they all end in **Async**.
+가져오기 및 캐시에서 값을 설정 하려면 연결할 수 있지만 이전 동기 버전을 사용 하는 것입니다. 서버 쪽 응용 프로그램에서 이러한 없는 스레드를 효율적으로 사용 합니다. 사용 하고자 하는 대신 합니다 _비동기_ 메서드의 버전입니다. 쉽게 확인할 수 있습니다-모두 끝날 **비동기**합니다.
 
-To make these methods easy to work with, we can use the C# `async` and `await` keywords. However, we will need to be using _at least_ C# 7.1 to be able to apply these keywords to our **Main** method.
+이러한 메서드를 더 쉽게 작업을 사용할 수 있습니다. C# `async` 고 `await` 키워드입니다. 하지만 사용 해야 _적어도_ C# 7.1에 이러한 키워드를 적용할 수 있게 되기를 우리의 **Main** 메서드.
 
-### Switch to C# 7.1
+### <a name="switch-to-c-71"></a>C# 7.1로 전환
 
-C#'s `async` and `await` keywords were not valid keywords in **Main** methods until C# 7.1. We can easily switch to that compiler through a flag in the **.csproj** file.
+C#의 `async` 하 고 `await` 키워드의 유효한 키워드 없습니다 **Main** C# 7.1까지 메서드. 해당 컴파일러 플래그를 통해 쉽게 전환할 수 있습니다 합니다 **.csproj** 파일입니다.
 
-1. Open the **SportsStatsTracker.csproj** file in the editor.
+1. 엽니다는 **SportsStatsTracker.csproj** 파일을 편집기에서.
 
-1. Add `<LangVersion>7.1</LangVersion>` into the first `PropertyGroup` in the build file. It should look like the following when you are finished.
+1. 추가 `<LangVersion>7.1</LangVersion>` 첫 번째 `PropertyGroup` 빌드 파일에서입니다. 완료 했으면 다음과 같이 표시 됩니다.
     
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -253,13 +253,13 @@ C#'s `async` and `await` keywords were not valid keywords in **Main** methods un
     ...
     ```
     
-### Apply the async keyword
+### <a name="apply-the-async-keyword"></a>Async 키워드를 적용 합니다.
 
-Next, apply the `async` keyword to the **Main** method. We will have to do three things.
+다음에 적용 합니다 `async` 키워드를 합니다 **Main** 메서드. 세 가지를 수행 해야 합니다.
 
-1. Add the `async` keyword onto the **Main** method signature.
-1. Change the return type from `void` to `Task`.
-1. Add a `using` statement to include `System.Threading.Tasks`.
+1. 추가 합니다 `async` 키워드에는 **Main** 메서드 시그니처입니다.
+1. 반환 형식을 변경 `void` 에 `Task`입니다.
+1. 추가 된 `using` 포함 하도록 문을 `System.Threading.Tasks`합니다.
 
 ```csharp
 using System;
@@ -277,13 +277,13 @@ namespace SportsStatsTracker
         ...
 ```
 
-### Get and set values asynchronously
+### <a name="get-and-set-values-asynchronously"></a>가져오기 및 값을 비동기적으로 설정
 
-1. Use the `StringSetAsync` and `StringGetAsync` methods to set and retrieve a key named "counter". Set the value to "100".
+1. 사용 된 `StringSetAsync` 및 `StringGetAsync` 설정 하 고 키를 검색 하는 메서드 이름이 "counter"입니다. "100" 값을 설정 합니다.
 
-1. Apply the `await` keyword to get the results from each method.
+1. 적용 된 `await` 키워드를 각 메서드에서 결과 가져옵니다.
 
-1. Output the results to the console window - just as you did with the synchronous versions.
+1. 동기 버전과 마찬가지로 콘솔 창-결과 출력 합니다.
 
     ```csharp
     // Simple get and put of integral data types into the cache
@@ -294,27 +294,27 @@ namespace SportsStatsTracker
     Console.WriteLine($"GET: {getValue}");
     ```
     
-1. Run the application again - it should still work and now have two values.
+1. 응용 프로그램을 다시 실행이 계속 작동 하 고 이제 다음 두 값 해야 합니다.
 
-#### Increment the value
+#### <a name="increment-the-value"></a>증분 값
 
-1. Use the `StringIncrementAsync` method to increment your **counter** value. Pass the number **50** to add to the counter.
-    - Notice that the method takes the key _and_ either a `long` or `double`.
-    - Depending on the parameters passed, it either returns a `long` or `double`.
+1. 사용 된 `StringIncrementAsync` 증가 하는 방법에 **카운터** 값입니다. 번호를 전달 **50** 카운터를 추가 합니다.
+    - 메서드는 키 _하 고_ 중 하나는 `long` 또는 `double`합니다.
+    - 전달 된 매개 변수에 따라 반환 된 `long` 또는 `double`합니다.
 
-1. Output the results of the method to the console.
+1. 콘솔로 메서드의 결과 출력 합니다.
 
     ```csharp
     long newValue = await db.StringIncrementAsync("counter", 50);
     Console.WriteLine($"INCR new value = {newValue}");
     ```
     
-## Other operations
+## <a name="other-operations"></a>기타 작업
 
-Finally, let's try executing a few additional methods with the `ExecuteAsync` support.
+마지막으로, 몇 가지 추가 메서드를 사용 하 여 실행 해 보겠습니다 시도 `ExecuteAsync` 지원 합니다.
 
-1. Execute "PING" to test the server connection. It should respond with "PONG".
-1. Execute "FLUSHDB" to clear the database values. It should respond with "OK".
+1. 서버 연결을 테스트 하려면 "PING"를 실행 합니다. "퐁"를 사용 하 여 응답 해야 합니다.
+1. "FLUSHDB"를 실행 합니다. 데이터베이스 값의 선택을 취소 합니다. "OK"로 응답 해야 합니다.
 
 ```csharp
 var result = await db.ExecuteAsync("ping");
@@ -324,14 +324,14 @@ result = await db.ExecuteAsync("flushdb");
 Console.WriteLine($"FLUSHDB = {result.Type} : {result}");
 ```
 
-## Challenge
+## <a name="challenge"></a>챌린지
 
-As a challenge, try serializing an object type to the cache. Here are the basic steps.
+으로 캐시에 개체 형식을 직렬화 하는 작업을 시도 합니다. 기본 단계는 다음과 같습니다.
 
-1. Create a new `class` with some public properties. You can invent one of your own ("Person" or "Car" are popular), or use the "GameStats" example given in the previous unit.
-1. Add support for the **Newtonsoft.Json** NuGet package using `dotnet add package`.
-1. Add a `using` for the `Newtonsoft.Json` namespace.
-1. Create one of your objects.
-1. Serialize it with `JsonConvert.SerializeObject` and use `StringSetAsync` to push it into the cache.
-1. Get it back from the cache with `StringGetAsync` and then deserialize it with `JsonConvert.DeserializeObject<T>`.
+1. 새 `class` 몇 가지 공용 속성을 사용 하 여 합니다. 자신만의 하나를 만들 수 있습니다 ("Person" 또는 "Car"은 인기 있는) 하거나 이전 단위에 제공 된 "GameStats" 예제를 사용 합니다.
+1. 에 대 한 지원을 추가 합니다 **Newtonsoft.Json** NuGet 패키지를 사용 하 여 `dotnet add package`입니다.
+1. 추가 된 `using` 에 대 한는 `Newtonsoft.Json` 네임 스페이스입니다.
+1. 개체 중 하나를 만듭니다.
+1. 사용 하 여 serialize `JsonConvert.SerializeObject` 사용 하 여 `StringSetAsync` 캐시로 푸시를 합니다.
+1. 캐시에서 다시 가져와야 `StringGetAsync` 한 다음 사용 하 여 deserialize `JsonConvert.DeserializeObject<T>`합니다.
 

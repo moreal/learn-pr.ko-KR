@@ -1,4 +1,4 @@
-이 단원에서는 Windows 또는 macOS 컴퓨터에 Visual Studio를 설치합니다. Windows에서는 Azure 개발 워크로드를 설치해야 합니다. Mac용 Visual Studio에서는 기본 제공 연결된 서비스 워크플로를 통해 Azure App Service에 대한 앱을 빌드할 수 있습니다. 그러면 응용 프로그램을 만들어 Azure에 게시할 준비가 완료됩니다.
+이 단원에서는 Windows 또는 macOS 컴퓨터에 Visual Studio를 설치합니다. Windows에서는 Azure 개발 워크로드를 설치해야 합니다. Mac 용 Visual Studio를 사용 하 여 기본 제공 연결 된 서비스 워크플로 사용 하면 Azure App Service에 대 한 앱을 빌드할 수 있습니다. 그러면 응용 프로그램을 만들어 Azure에 게시할 준비가 완료됩니다.
 
 ## <a name="exercise-steps"></a>연습 단계
 
@@ -8,7 +8,7 @@ Windows와 macOS 간에는 Visual Studio를 설치하는 데 약간의 차이가
 
 1. https://visualstudio.microsoft.com/downloads/에서 Visual Studio 설치 관리자를 다운로드합니다.
 
-1. 설치 관리자를 실행하면 워크로드 창이 열립니다.
+1. 작업 창이 열립니다는 설치 관리자를 실행 합니다.
 
 1. **Azure 개발** 워크로드를 선택합니다.
 
@@ -32,7 +32,7 @@ Windows와 macOS 간에는 Visual Studio를 설치하는 데 약간의 차이가
 
 1. https://visualstudio.microsoft.com/으로 이동하여 Mac용 Visual Studio 설치 관리자를 다운로드합니다.
 
-1. VisualStudioInstaller.dmg 파일을 클릭하여 설치 관리자를 탑재한 후 로고를 두 번 클릭하여 실행합니다.
+1. 설치 관리자를 탑재 하 고 로고를 두 번 클릭 하 여 실행할 VisualStudioInstaller.dmg 파일을 클릭 합니다.
 
 1. 개인정보처리방침 및 사용 조건이 표시되면 동의합니다.
 

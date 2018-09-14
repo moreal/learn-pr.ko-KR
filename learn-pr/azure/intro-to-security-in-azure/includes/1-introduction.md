@@ -1,14 +1,14 @@
-Every system, architecture, and application needs to be designed with security in mind. A denial of service attack prevents you from doing business. Defacement of your website damages your reputation. And a data breach is perhaps worst of all. It can ruin hard-earned trust and cause significant personal and financial harm. As administrators, developers, and IT management, we all must work to guarantee the security of our systems. 
+모든 시스템, 아키텍처 및 응용 프로그램 보안을 고려 하 여 디자인 해야 합니다. 서비스 공격 거부가 사업에서 수 없습니다. 웹 사이트 파손에 평판을 손상 시킵니다. 및 데이터 위반이 모든 최악의 것입니다. 힘들게 신뢰를 손상 하 고 중요 한 개인 및 재무 위험할 수 있습니다. 관리자, 개발자 및 IT 관리를으로 우리는 모두 시스템의 보안을 보장 하기 위해 작동 해야 합니다. 
 
-Let's say you work for shipping and logistics company Contoso Shipping. Contoso Shipping is in the process of moving a lot of their infrastructure to the cloud. Several physical servers in their datacenter are moving over to Azure virtual machines. The current plans involve a hybrid solution, with some of the servers remaining on-premises, but they will need a secure, high-quality connection between the new virtual machines and the existing network.
+전달에 대 한 작업 및 물류 Contoso 배송 회사를 가정해 보겠습니다. Contoso 전달 많은 인프라를 클라우드로 이동 하는 중입니다. 데이터 센터에서 여러 물리적 서버는 Azure virtual machines에 이동 됩니다. 현재 계획에 남아 있는 온-프레미스 서버 중 일부를 사용 하 여 하이브리드 솔루션을 포함 하지만 새 가상 컴퓨터와 기존 네트워크를 안전 하 고 고품질 연결 해야 합니다.
 
-Additionally, Contoso Shipping has some out-of-network devices that are part of its operations. They are using network-enabled sensors in their trucks that send data to Azure Event Hubs. And delivery drivers use mobile apps to get route maps and record signatures for receipt of shipments. These devices and apps must be securely authenticated before data can be sent to or from them.
+또한 Contoso 전달 작업에 포함 된 일부 아웃-네트워크의 장치에 있습니다. Azure Event Hubs에 데이터를 전송 하는 해당 트럭에 센서 네트워크 지원 사용 합니다. 배달원을 사용 하 여 모바일 앱 경로 맵과 배송물 수령에 대 한 레코드 서명을 가져옵니다. 이러한 장치 및 앱 안전 하 게 먼저 인증 해야 하거나에서 데이터를 보낼 수 있습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서 수행하는 작업:
 
-- Learn how security responsibility is shared with Azure
-- Learn how identity management provides protection, even outside your network
-- Learn how encryption capabilities built in to Azure can protect your data
-- Learn how to protect your network and virtual networks
+- Azure를 사용 하 여 보안 책임 공유 되는 방법에 대해 알아봅니다.
+- Id 관리 네트워크 외부 에서도 보호를 제공 하는 방법에 대해 알아봅니다.
+- Azure에 기본 제공 암호화 기능 데이터를 보호 하는 방법을 알아봅니다
+- 네트워크와 가상 네트워크를 보호 하는 방법 알아보기

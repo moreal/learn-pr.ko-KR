@@ -1,154 +1,156 @@
-In this exercise, let's assume your company runs a Simple Mail Transfer Protocol (SMTP) email server. You want to migrate this server into Azure. You want the SMTP server to store incoming messages for your own domain in a folder called "Drop" on a dedicated VHD.
+이 연습에서는 간단한 메일 전송 프로토콜 (SMTP) 전자 메일 서버를 실행 하는 회사 가정해 보겠습니다. 이 서버를 Azure로 마이그레이션할 해야 합니다. SMTP 서버에 전용된 VHD에서 "삭제" 라는 폴더에 고유한 도메인에 대 한 들어오는 메시지를 저장 해야 합니다.
 
-The goal of the exercise is to create a Windows virtual machine (VM) and attach a new virtual hard disk (VHD) called "Incoming" to store the "Drop" directory.
+Windows 가상 머신 (VM) 만들기 "Drop" 디렉터리를 저장 하는 "수신" 라는 새 가상 하드 디스크 (VHD)를 연결 하는 연습의 목표가입니다.
 
-## Sign in to Azure
-<!---TODO: Need update for sanbox?--->
+## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create a Windows VM in the Azure portal
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-To create a VM to host the SMTP server with its data drives, follow these steps:
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-1. Choose **Create a resource** in the upper left corner of the Azure portal.
+## <a name="create-a-windows-vm-in-the-azure-portal"></a>Azure portal에서 Windows VM 만들기
 
-1. In the search box above the list of Azure Marketplace resources, search for and select **Windows Server 2016 Datacenter**, and then choose **Create**.
+해당 데이터 드라이브를 사용 하 여 SMTP 서버를 호스트 하는 VM을 만들려면 다음이 단계를 수행 합니다.
 
-1. In the **Basics** pane that opens to the right, enter the following property values. 
+1. 선택할 **리소스 만들기** Azure portal의 왼쪽된 위 모퉁이에서.
+
+1. Azure Marketplace 리소스 목록 위의 검색 상자에 검색 하 고 선택할 **Windows Server 2016 Datacenter**를 선택한 후 **만들기**합니다.
+
+1. 에 **기본 사항** 창 오른쪽에 열리는 다음 속성 값을 입력 합니다. 
 
 
-|Property  |Value  |Notes  |
+|자산  |값  |참고  |
 |---------|---------|---------|
-|Name     |   **MailSenderVM**      |         |
-|VM disk type     |  **Standard HDD**       |   Select this value from the dropdown.      |
-|User name     |  **mailmaster**       |         |
-|Password     |  The password must be at least 12 characters long and meet the [defined complexity requirements](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm).       | Make sure to remember this user name and password because we'll use them throughout the module.         |
-|Subscription     |  Choose your subscription.       |  Select this value from the dropdown.       |
-|Resource group     |  Select **Create new**, and then type **MailInfrastructure**.       |  We'll gather all resource used in this module into one resource group.       |
-|Location     |   A location near you.      | Select this value from the dropdown.        |
+|이름     |   **MailSenderVM**      |         |
+|VM 디스크 유형     |  **Standard HDD**       |   드롭다운 목록에서이 값을 선택 합니다.      |
+|사용자 이름     |  **mailmaster**       |         |
+|암호     |  암호는 12자 이상이어야 하며 [정의된 복잡성 요구 사항](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm)을 충족해야 합니다.       | 모듈 전체에 사용 해야 하므로이 사용자 이름 및 암호를 기억할 수 있는지 확인 합니다.         |
+|구독     |  구독을 선택합니다.       |  드롭다운 목록에서이 값을 선택 합니다.       |
+|리소스 그룹     |  선택 **기존 항목 사용** 선택한 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.       |  하나의 리소스 그룹에이 모듈에 사용 되는 모든 리소스를 수집 했습니다.       |
+|위치     |   가까운 위치입니다.      | 드롭다운 목록에서이 값을 선택 합니다.        |
 
-4. Select **OK** at the bottom of the **Basics** page to continue to the **Size** configuration pane.
+4. 선택 **확인** 맨 아래에 **기본 사항** 계속 해 서 페이지를 **크기** 구성 창입니다.
 
-1. In the **Size** configuration pane, search for and select **B1ms**, and then click **Select**.
+1. 에 **크기** 구성 창, 검색 및 선택 **B1ms**를 클릭 하 고 **선택**합니다.
 
-1. In the **Settings** pane, under **Use managed disks**, click **No**. We'll discuss managed disks later in this module.
+1. 에 **설정을** 창 기본값으로에서 대부분의 값을 유지 됩니다. 아래 **managed disks 사용**, 클릭 **No**합니다. 나중에이 모듈의에서 managed disks에 이야기해 보겠습니다.
 
-1. In the **Select public inbound ports** dropdown list, select **RDP (3389)**. We'll use this port to remote into our VM after it's created.
+1. 에 **공용 인바운드 포트 선택** 드롭다운 목록에서 선택 **RDP (3389)** 합니다. 만들어진 후 VM에 원격이 포트를 사용 하겠습니다.
 
-1. Leave all the other settings at their default, and then click **OK**.
+1. 다른 모든 설정을 해당 기본값으로 유지 하 고 클릭 **확인**합니다.
 
-1. In the **Create** pane, review the configuration.
+1. 에 **만들기** 창 구성을 검토 합니다.
 
-1. When you have reviewed the configuration,  select **Create**. Azure creates and starts the new VM.
+1. 구성을 검토 한 경우 선택할 **만들기**합니다. Azure에서는 만들고 새 VM이 시작 됩니다.
 
 > [!TIP]
-> Creating your VM and deploying it in Azure can take a few minutes. You can watch the progress in the **Notifications** hub. Azure will display a notification dialog when it finishes.
+> VM을 만들고 Azure에 배포 하기에 몇 분 정도 걸릴 수 있습니다. 진행률을 확인할 수는 **알림을** 허브입니다. 완료 되 면 azure에서 알림 대화 상자가 표시 됩니다.
 
-## Add an empty data disk to our VM
+## <a name="add-an-empty-data-disk-to-our-vm"></a>빈 데이터 디스크를 VM에 추가
 
-We're going to name the disk stores the "Drop" directory for your SMTP server "Incoming". Let's add a new empty disk to the server using the following steps:
+우리가 진행 디스크 이름을 "수신" SMTP 서버에 대 한 "Drop" 디렉터리에 저장 합니다. 다음 단계를 사용 하 여 서버에 새 빈 디스크를 추가 해 보겠습니다.
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. 왼쪽 탐색 창에서 아래 **Favorits**를 선택 **가상 머신**합니다.
 
-1. In the list of VMs, select **MailSenderVM**.
+1. Vm 목록에서 선택 **MailSenderVM**합니다.
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. 아래 **설정을** 의 합니다 **MailSenderVM** 구성 메뉴 왼쪽에서 선택 **디스크**합니다.
 
-1. Under **Data disks**, select **Add data disk**.
+1. 아래 **데이터 디스크**를 선택 **데이터 디스크 추가**합니다.
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. 에 **관리 되지 않는 디스크를 연결** 창에 다음 속성을 설정 합니다.
 
-
-|Property  |Value  |Notes  |
+|자산  |값  |참고  |
 |---------|---------|---------|
-|Name     |   **MailSenderVMIncoming**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Standard HDD**       |  Select this value from the dropdown.        |
+|이름     |   **MailSenderVMIncoming**      |         |
+|원본 형식     |  **새 (빈 디스크)**       |   드롭다운 목록에서이 값을 선택 합니다.       |
+|계정 유형     |  **Standard HDD**       |  드롭다운 목록에서이 값을 선택 합니다.        |
+
+6. 왼쪽에는 **저장소 컨테이너** 필드를 선택한 **찾아보기**합니다.
+
+1. 저장소 계정 목록에서 저장소 계정 이름이 시작에 대 한 검색 **mailinfrastructure** 선택 합니다.
+
+1. 컨테이너 목록에서 클릭 **vhd** 를 선택한 후 **선택**합니다.
+
+1. 다시 합니다 **관리 되지 않는 디스크 연결** 화면에서 **확인**합니다.
+
+1. 다시 합니다 **MailSenderVM-디스크** 화면에서 **저장**합니다.
+
+호출 하는 디스크를 정의 하겠습니다 **MainSenderVMIncoming**합니다. 디스크를 사용 하려면 먼저 해야 분할 하 고 VM에 로그인 하는 경우 포맷 합니다.
+
+## <a name="partition-and-format-a-data-disk"></a>파티션 및 데이터 디스크 포맷
+
+실제 디스크를 사용 하 여 시작 하 고 사용할 수 있습니다 하려면 먼저 VHD의 파티션을 포맷 합니다.
+
+### <a name="log-into-our-windows-vm-using-rdp"></a>RDP를 사용 하 여 Windows VM에 로그인
+
+1. 에 **MailSenderVM** 가상 머신 주 화면에서 **개요**합니다.
+
+1. 선택 **Connect** 에서 개요 화면 왼쪽 위에서 합니다.
+
+1. 에 **가상 컴퓨터에 연결** 오른쪽에 열립니다 선택 대화 상자가 **RDP 파일을 다운로드**합니다.
+
+   !["RDP 파일 다운로드" 단추가 강조 표시 된 "가상 컴퓨터에 연결" 대화 상자의 스크린샷.](../media-draft/download-rdp.png)
+
+4. 이라는 파일이 **MailSenderVM.rdp** 로컬에 다운로드 됩니다 `Downloads` 폴더입니다. 이 파일은 MailSenderVM 가상 머신에 대 한 원격 데스크톱 구성 파일. 연결 프로세스를 시작 하려면 파일을 엽니다.
+
+1. 에 **원격 데스크톱 연결** 대화 상자에서 클릭 **Connect**합니다.
+
+1. **Windows 보안** 대화 상자에서 **다른 계정 사용**을 클릭합니다.
+
+1. 에 **사용자 이름** 텍스트 상자에 입력 **mailmaster**합니다.
+
+1. 에 **암호** 텍스트 상자에이 연습에서이 사용자 이름을 입력 한 암호를 입력 합니다. 
+
+1. 에 **원격 데스크톱 연결** 대화 상자에서 클릭 **예**합니다.
+
+가상 컴퓨터에 원격 데스크톱 세션을 이제 시작 됩니다. 처음으로 로그인 하는 데는 몇 분 정도 걸릴 수 있습니다. 로그인 완료 되 면 합니다 **서버 관리자** 도구 화면에 표시 됩니다.
+
+### <a name="partition-and-format-our-data-disk-using-server-manager"></a>분할 하 고 서버 관리자를 사용 하 여 데이터 디스크를 포맷 합니다.
+
+1. 때 **서버 관리자** 표시 된, select **File and Storage Services** 왼쪽 탐색 창에서.
+
+1. 아래 **볼륨이**를 선택 **디스크**합니다.
+
+1. 디스크 목록에서 디스크 **0** 는 운영 체제 디스크 및 디스크 **1** 임시 디스크입니다. 디스크 선택 **2**를 방금 추가한 새 VHD는 합니다.
+
+1. 맨 위에 있는 합니다 **볼륨** 창 **태스크** 뒤에 **새 볼륨...** . 위쪽의 메뉴는 다음과 같이 화면의 오른쪽입니다.
+
+   !["작업" 메뉴의 스크린샷 세 가지 메뉴 항목을 표시 하려면 확장 합니다. 이들은 "새 볼륨...", "저장소 다시 검사" 및 "새로 고침"입니다.](../media-draft/tasks-menu.png)
 
 
-6. To the left of the **Storage container** field, select **Browse**.
+1. 에 **새 볼륨** 마법사를 클릭 **다음**합니다.
 
-1. In the list of storage accounts, search for the storage account whose name begins with **mailinfrastructure** and select it.
+1. 에 **서버 및 디스크 선택** 페이지에서 선택 **MailSenderVM** 및 **디스크 2**를 클릭 하 고 **다음**합니다.
 
-1. In the list of containers, click **vhds** and then choose **Select**.
+1. 에 **오프 라인 또는 초기화 되지 않은 상태로 디스크** 대화 상자에서 클릭 **확인**합니다.
 
-1. Back on the **Attach unmanaged disk** screen, select **OK**.
+1. 에 **볼륨의 크기를 지정** 페이지에서 클릭 **다음**합니다.
 
-1. Back on the **MailSenderVM - Disks** screen, select **Save**.
+1. 에 **드라이브 문자를 할당** 페이지에서 **f:** 뒤 **다음**합니다.
 
-We've now defined a disk called **MainSenderVMIncoming**. To use the disk, we'll first need to partition and format it when we log into the VM. 
+1. 에 **파일 시스템 설정 선택** 페이지를 **볼륨 레이블을** 텍스트 상자에 입력 **들어오는** 선택한 후 **다음**합니다.
 
-## Partition and format a data disk
+1. 에 **선택 확인** 페이지에서 **만들기**합니다. Windows는 디스크를 시작 하 고 새 파티션을 포맷 합니다.
 
-As with physical disks, initiate and format a partition on a VHD before it can be used.
+1. 에 **완성** 페이지에서 **닫기**합니다.
 
-### Log into our Windows VM using RDP
+파일 탐색기에서이 새 디스크 볼륨에서 보시 죠.
 
-1. In the **MailSenderVM** virtual machine main screen, select **Overview**.
+1. 오픈 **파일 탐색기**합니다.
 
-1. Select **Connect** from the top left of the overview screen.
+1. 왼쪽에서 탐색에서 클릭 **이 PC** 차례로 클릭 한 다음 **들어오는 (f:)** 합니다.
 
-1. In the **Connect to virtual machine** dialog that opens on the right, select **Download to RDP File**.
+1. 선택 **Home**를 차례로 **새 폴더**합니다.
 
-   ![Screenshot of the "Connect to virtual machine" dialog with the "Download RDP file" button highlighted.](../media-draft/download-rdp.png)
+1. 형식 **Drop** 한 다음 Enter를 누릅니다.
 
-4. A file called **MailSenderVM.rdp** is downloaded to your local `Downloads` folder. This file is the remote desktop configuration file for the MailSenderVM virtual machine. Open the file to start the connection process.
+이제 호출 하 여 VHD에서 만든 새 볼륨 **들어오는**, 라는 폴더를 만들었으므로 **Drop** 해당 볼륨에 있습니다.  
 
-1. In the **Remote Desktop Connection** dialog, click **Connect**.
+1. Windows 탐색기를 닫습니다.
 
-1. In the **Windows Security** dialog, click **Use another account**.
+1. 에 **작업 표시줄**, 클릭 합니다 **시작** 단추를 클릭 하는 **Power** 단추를 클릭 한 다음 클릭 **연결 끊기**.
 
-1. In the **Username** textbox, type **mailmaster**.
-
-1. In the **Password** textbox, type the password you entered for this user name in this exercise. 
-
-1. In the **Remote Desktop Connection** dialog, click **Yes**.
-
-A remote desktop session to the virtual machine is now started. It might take a few moments to sign in for the first time. When sign-in is finished, the **Server Manager** tool will be displayed on the screen.
-
-### Partition and format our data disk using Server Manager
-
-1. When **Server Manager** is displayed, select **File and Storage Services** in the navigation on the left.
-
-1. Under **Volumes**, select **Disks**.
-
-1. In the list of disks, disk **0** is the operating system disk and disk **1** is the temporary disk. Select disk **2**, which is the new VHD you just added.
-
-1. At the top of the **VOLUMES** pane, select **TASKS** followed by **New Volume...**. The menu is in the top right of the screen as follows.
-
-   ![Screenshot of "TASKS" menu expanded to reveal three menu items. They are "New Volume...", "Rescan Storage", and "Refresh".](../media-draft/tasks-menu.png)
-
-
-1. In the **New Volume** wizard, click **Next**.
-
-1. In the **Select server and disk** page, select **MailSenderVM** and **Disk 2**, and then click **Next**.
-
-1. In the **Offline or Uninitiated Disk** dialog, click **OK**.
-
-1. In the **Specify the size of the volume** page, click **Next**.
-
-1. In the **Assign a drive letter** page, select **F:** followed by **Next**.
-
-1. In the **Select file system settings** page, in the **Volume label** textbox, type **Incoming** and then select **Next**.
-
-1. In the **Confirm selections** page, select **Create**. Windows initiates the disk and formats the new partition.
-
-1. In the **Completion** page, select **Close**.
-
-Let's have a look at our new disk volume in File Explorer. 
-1. Open **File Explorer**.
-
-1. In the navigation in the left, click **This PC** and then double-click **Incoming (F:)**.
-
-1. Select **Home**, and then **New Folder**.
-
-1. Type **Drop** and then press Enter.
-
-We now have a new volume created on our VHD called **Incoming**, and we've created a folder called **Drop** on that volume.  
-
-1. Close Windows Explorer.
-
-1. On the **Task Bar**, click the **Start** button, click the **Power** button, and then click **Disconnect**.
-
-Congratulations! You've successfully created a Windows VM, attached a new VHD, created a volume on that VHD and added a folder to that volume. If you recall, the disk type we used for the new VHD was a **Standard HDD**. In the next unit, we'll learn the differences between standard and premium storage. 
+축하합니다. 성공적으로 Windows VM을 만들고, 새 VHD를 연결, 볼륨 해당 VHD에서 만들고 했 해당 볼륨에 폴더를 추가 합니다. 디스크 형식에서는 새 VHD에 대 한 사용 된 변수를 **표준 HDD**합니다. 다음 단위에 있는 표준 및 프리미엄 저장소 간의 차이점에 알아보겠습니다. 

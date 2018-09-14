@@ -4,25 +4,16 @@ Azure CLI를 사용하여 이벤트 허브를 만듭니다. 이 연습에서는 
 
 ## <a name="create-an-event-hubs-namespace"></a>Event Hubs 네임스페이스 만들기
 
-다음 단계를 수행하여 Azure Cloud Shell에서 지원하는 Bash 셸을 사용하여 Event Hubs 네임스페이스를 만듭니다.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Cloud Shell(Bash)에 로그인합니다.  
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. 다음 명령을 사용하여 Azure 리소스 그룹을 만듭니다.
-
-    ```azurecli
-        az group create --name <resource group name> --location <location>
-    ```
-
-    |매개 변수      |설명|
-    |---------------|-----------|
-    |--name(필수)      |새 리소스 그룹 이름을 입력합니다.|
-    |--location(필수)     |가장 가까운 Azure 데이터 센터의 위치를 입력합니다(예: westus).|
+Azure Cloud shell에서 지원 되는 bash 셸을 사용 하 여 Event Hubs 네임 스페이스를 만들려면 다음 단계를 사용 합니다.
 
 1. 다음 명령을 사용하여 Event Hubs 네임스페이스를 만듭니다.
 
     ```azurecli
-        az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
+        az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <rgn>[Sandbox resource group name]</rgn> -l <location>
     ```
 
     |매개 변수      |설명|
@@ -34,7 +25,7 @@ Azure CLI를 사용하여 이벤트 허브를 만듭니다. 이 연습에서는 
 1. 다음 명령을 사용하여 Event Hubs 네임스페이스에 대한 연결 문자열을 페치합니다. 이벤트 허브를 사용하여 메시지를 보내고 받도록 응용 프로그램을 구성하려면 필요합니다.
 
     ```azurecli
-        az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
+        az eventhubs namespace authorization-rule keys list --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
     ```
 
     |매개 변수      |설명|
@@ -54,7 +45,7 @@ Azure CLI를 사용하여 이벤트 허브를 만듭니다. 이 연습에서는 
 1. 다음 명령을 사용하여 새 이벤트 허브를 만듭니다.
 
     ```azurecli
-        az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
+        az eventhubs eventhub create --name <event hub name> --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <Event Hubs namespace name>
     ```
 
     |매개 변수      |설명|
@@ -66,7 +57,7 @@ Azure CLI를 사용하여 이벤트 허브를 만듭니다. 이 연습에서는 
 1. 다음 명령을 사용하여 이벤트 허브의 세부 정보를 봅니다. 
 
     ```azurecli
-        az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>
+        az eventhubs eventhub show --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <Event Hubs namespace name> --name <event hub name>
     ```
 
     |매개 변수      |설명|

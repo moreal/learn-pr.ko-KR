@@ -1,34 +1,33 @@
 ### YamlMime:Module
 uid: learn.monitor-manage-device-with-iotcentral
 metadata:
-  title: Monitor and manage your coffee machine with Azure IoT Central
-  description: In this tutorial you connect Azure IoT Central, a SaaS solution, to a simulated coffee machine to monitor and manage issues. In Azure IoT Central, you create your device template to define measurements (telemetry and state), settings, properties, and commands. Once your coffee machine is connected, you then take action on the state of the machine to remediate simulated issues when the rules trigger emails from IoT Central and mobile notifications from Microsoft Flow.
+  title: Azure IoT Central로 커피 머신 모니터 및 관리
+  description: '이 자습서에서는 SaaS 솔루션인 Azure IoT Central을 시뮬레이션된 커피 머신에 연결하여 문제를 모니터 및 관리합니다. Azure IoT Central에서 장치 템플릿을 만들어 측정(원격 분석 및 상태), 설정, 속성 및 명령을 정의합니다. 커피 머신이 연결되면 규칙이 IoT Central의 이메일과 Microsoft Flow의 모바일 알림을 트리거했을 때 머신 상태에 대한 조치를 취하여 시뮬레이션된 문제를 해결합니다.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Monitor and manage your coffee machine with Azure IoT Central
-summary: In this tutorial you connect a simulated coffee machine to the Azure IoT Central application to monitor and manage issues. In Azure IoT Central, the data that a device can exchange with your application is specified in a device template that defines the behavior and capability of a device or in this case, a coffee machine. You begin by creating a device template where you define measurements (telemetry and state), settings, properties, and commands for the coffee machine. Once your coffee machine is connected, rules in IoT Central can use data from your device to identify issues. When an issue is detected, IoT Central can generate emails and mobile notifications. You can then take action to remediate an issue with the coffee machine. To complete units 1�4, you need a Microsoft account, a 7-day free trial of Azure IoT Central application, and Node.js version 4.0.x or later installed on your machine. If you wish to complete the exercise on using Microsoft Flow to send a mobile notification in unit 5, you need to extend the IoT Central trial to 30 days. The extension is enabled if you have an Azure subscription.  
+title: Azure IoT Central로 커피 머신 모니터 및 관리
+summary: '이 자습서에서는 Azure IoT Central 응용 프로그램 모니터링 및 문제 관리에 시뮬레이트된 커피 머신을 연결 합니다. Azure IoT Central에서는 장치(여기서는 커피 머신)의 동작과 기능을 정의하는 장치 템플릿에서 장치가 응용 프로그램과 교환할 수 있는 데이터가 지정됩니다. 장치 템플릿으로 측정 (원격 분석 및 상태), 설정, 속성 및 커피 머신에 대 한 명령 정의 만들어 시작 합니다. 커피 컴퓨터 연결 되 면 IoT Central의 규칙 문제를 식별 하 장치에서 데이터를 사용할 수 있습니다. 문제가 감지 되 면 IoT Central은 전자 메일 및 모바일 알림을 생성할 수 있습니다. 그런 다음 커피 머신을 사용 하 여 문제를 해결 하기 위한 조치를 수행할 수 있습니다. 단위 1 4를 완료 하려면 Microsoft 계정, Azure IoT Central 응용 프로그램에서 Node.js 버전을 7 일 무료 평가판 4.0.x 이상이 컴퓨터에 설치 합니다. Microsoft Flow 사용 하 여 단위 5에서 모바일 알림 전송을 연습을 완료 하려는 경우 30 일에 IoT Central 평가판을 연장 해야 합니다. 확장에는 Azure 구독이 있는 경우 활성화 됩니다.'
 abstract: |
-  In this module, you will:
-  - Connect to the Azure IoT Central, a SaaS solution, to a simulated coffee machine to monitor and manage issues
-  - Create your device template to define measurements (telemetry and state), settings, properties, and commands
-  - Take action on the state of the machine to remediate simulated issues when the rules trigger emails from IoT Central and mobile notifications from Microsoft Flow
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- beginner
-roles: 
-- administrator
-products: 
-- azure
+  이 모듈에서 수행하는 작업:
+  - Azure IoT Central의 모니터링 및 문제를 관리 하는 시뮬레이션 된 커피 머신을 SaaS 솔루션에 연결
+  - 측정값 (원격 분석 및 상태), 설정, 속성 및 명령을 정의 하 여 장치 템플릿 만들기
+  - IoT Central에서 전자 메일 및 Microsoft Flow 모바일 알림 규칙을 트리거하는 경우 시뮬레이션 된 문제를 해결 하는 컴퓨터의 상태에 대 한 작업 수행
+prerequisites: 없음
+iconUrl: /learn/achievements/monitor-and-manage-device-with-iot-central.svg
+levels:
+  - beginner
+roles:
+  - administrator
+products:
+  - azure
 units:
-- learn.monitor-manage-device-with-iotcentral.1-create-azure-iot-central-application
-- learn.monitor-manage-device-with-iotcentral.2-define-coffee-machine-with-device-template
-- learn.monitor-manage-device-with-iotcentral.3-connect-your-application-to-simulator
-- learn.monitor-manage-device-with-iotcentral.4-validate-your-connection
-- learn.monitor-manage-device-with-iotcentral.5-configure-rules-and-actions 
-- learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+  - learn.monitor-manage-device-with-iotcentral.1-create-azure-iot-central-application
+  - learn.monitor-manage-device-with-iotcentral.2-define-coffee-machine-with-device-template
+  - learn.monitor-manage-device-with-iotcentral.3-connect-your-application-to-simulator
+  - learn.monitor-manage-device-with-iotcentral.4-validate-your-connection
+  - learn.monitor-manage-device-with-iotcentral.5-configure-rules-and-actions
+  - learn.monitor-manage-device-with-iotcentral.6-knowledge-check
 achievement: learn.monitor-manage-device-with-iotcentral.badge

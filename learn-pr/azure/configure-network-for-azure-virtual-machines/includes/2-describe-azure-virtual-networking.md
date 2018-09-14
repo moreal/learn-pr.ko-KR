@@ -1,183 +1,184 @@
-You have an on-premises datacenter that you plan to keep, but you want to use Azure to offload peak traffic using virtual machines (VMs) hosted in Azure. You want to keep your existing IP addressing scheme and network appliances, while ensuring that any data transfer is secure.
+를 유지 하려고 하는 온-프레미스 데이터 센터를 갖지만 Azure를 사용 하 여 Azure에 호스트 된 가상 머신 (Vm)를 사용 하 여 최고 트래픽을 오프 로드 하려는. 데이터를 전송 하는 안전한 지 확인 하는 동안 스키마 및 네트워크 어플라이언스를 주소 지정 기존 IP를 유지 하려고 합니다.
 
-## What is Azure virtual networking?
+## <a name="what-is-azure-virtual-networking"></a>Azure 가상 네트워킹 란?
 
-**Azure virtual networks** enable Azure resources, such as virtual machines, web apps, and databases, to communicate with: each other, users on the Internet, and on-premises client computers. You can think of an Azure network as a set of resources that links other Azure resources.
+**Azure virtual network** 가상 머신, 웹 앱 및 데이터베이스와 통신할 수와 같은 Azure 리소스를 사용 하도록 설정: 각 다른 사용자에 게 인터넷 및 온-프레미스 클라이언트 컴퓨터입니다. Azure 네트워크를 다른 Azure 리소스와 연결되는 리소스 집합으로 생각할 수 있습니다.
 
-Azure virtual networks provide key networking capabilities:
+Azure virtual network 주요 네트워킹 기능을 제공합니다.
 
-- Isolation and segmentation
-- Internet communications
-- Communicate between Azure resources
-- Communicate with on-premises resources
-- Route network traffic
-- Filter network traffic
-- Connect virtual networks
+- 격리 및 구분
+- 인터넷 통신
+- Azure 리소스 간 통신
+- 온-프레미스 리소스와 통신
+- 네트워크 트래픽 라우팅
+- 네트워크 트래픽 필터링
+- 가상 네트워크 연결
 
-### Isolation and segmentation
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEve]
 
-Azure allows you to create multiple isolated virtual networks. When you set up a virtual network, you define a private Internet Protocol (IP) address space, using either public or private IP address ranges. You can then segment that IP address space into subnets, and allocate part of the defined address space to each named subnet.
+### <a name="isolation-and-segmentation"></a>격리 및 구분
 
-For name resolution, you can use the name resolution service that's built in to Azure, or you can configure the virtual network to use either an internal or an external Domain Name System (DNS) server.
+Azure를 사용하면 여러 격리된 가상 네트워크를 만들 수 있습니다. 가상 네트워크를 설정할 때 정의한 개인 IP (인터넷 프로토콜) 주소 공간을 공용 또는 개인 IP 주소 범위를 사용 하 여 합니다. 그런 다음, 서브넷에 해당 IP 주소 공간을 분할하고, 각 명명된 서브넷에 정의된 주소 공간의 일부를 할당할 수 있습니다.
 
-### Internet communications
+이름 확인을 위해 azure 기본 제공 되는 이름 확인 서비스를 사용할 수 있습니다 또는 내부 또는 외부 도메인 이름 시스템 (DNS) 서버를 사용 하도록 가상 네트워크를 구성할 수 있습니다.
 
-A VM in Azure can connect to the Internet by default. However, you need to connect to and control that VM, with either the Azure CLI, Remote Desktop Protocol (RDP), or Secure Shell (SSH). You can enable incoming communications by defining a public IP address or a public load balancer.
+### <a name="internet-communications"></a>인터넷 통신
 
-### Communicate between Azure resources
+Azure에서 VM을 기본적으로 인터넷을 연결할 수 있습니다. 그러나 연결 하 고 Azure CLI, 원격 데스크톱 프로토콜 (RDP) 또는 SSH (보안 셸)를 사용 하 여 해당 VM을 제어 해야 합니다. 공용 IP 주소 또는 공용 부하 분산 장치를 정의하여 들어오는 통신을 사용하도록 설정할 수 있습니다.
 
-You'll want to enable Azure resources to communicate securely with each other. You can do that in one of two ways:
+### <a name="communicate-between-azure-resources"></a>Azure 리소스 간 통신
 
-- **Virtual networks**
+Azure 리소스를 서로 안전 하 게 통신할 수 있도록 해야 합니다. 다음 두 가지 방법 중 하나를 수행할 수 있습니다.
+
+- **가상 네트워크**
     
-    Virtual networks can connect not only VMs, but other Azure resources, such as the App Service Environment, Azure Kubernetes Service, and Azure virtual machine scale sets.
+    가상 네트워크는 Vm 뿐만 아니라 Azure Kubernetes Service를 App Service Environment와 같은 다른 Azure 리소스에 연결할 수 있습니다 하 고 Azure 가상 머신 확장 집합입니다.
 
-- **Service endpoints**
+- **서비스 엔드포인트**
      
-     You can use service endpoints to connect to other Azure resource types, such as Azure SQL databases and storage accounts. This approach enables you to link multiple Azure resources to virtual networks, thereby improving security and providing optimal routing between resources.
+     Azure SQL 데이터베이스 및 저장소 계정과 같은 다른 Azure 리소스 유형에 연결 하려면 서비스 끝점을 사용할 수 있습니다. 이 방법을 사용하면 가상 네트워크에 여러 Azure 리소스를 연결하여 보안을 개선하고 리소스 간에 최적의 라우팅을 제공할 수 있습니다.
 
-### Communicate with on-premises resources
+### <a name="communicate-with-on-premises-resources"></a>온-프레미스 리소스와 통신
 
-Azure virtual networks enable you to link resources together in your on-premises environment and within your Azure subscription, in effect creating a network that spans both your local and cloud environments. There are three mechanisms for you to achieve this connectivity:
+Azure virtual network는 온-프레미스 환경에 적용 모두 로컬에 걸쳐 있는 네트워크를 만들 Azure 구독 내에서 리소스를 함께 연결 하는 것을 사용 하도록 설정 및 클라우드 환경입니다. 이 연결을 수행하는 세 가지 메커니즘이 있습니다.
 
-- **Point-to-site Virtual Private Networks**
+- **지점-사이트 간 가상 사설망**
 
-   This approach is like a Virtual Private Network (VPN) connection that a computer outside your organization makes back into your corporate network, except that it's working in the opposite direction. In this case, the client computer initiates an encrypted VPN connection to Azure, connecting that computer to the Azure virtual network.
+   이 방법은 반대 방향으로 작동 한다는 점을 제외 하면 회사 네트워크에 다시 조직 외부의 컴퓨터는 가상 개인 네트워크 (VPN) 연결 처럼입니다. 이 경우에 클라이언트 컴퓨터는 Azure에 대한 암호화된 VPN 연결을 시작하여 Azure Virtual Network에 해당 컴퓨터를 연결합니다.
 
-- **Site-to-site Virtual Private Networks**
-    A site-to-site VPN links your on-premises VPN device or gateway to the Azure VPN gateway in a virtual network. In effect, the devices in Azure can appear as being on the local network. The connection is encrypted and works over the Internet.
+- **사이트 간 가상 사설망** 온-프레미스 VPN 장치 또는 게이트웨이 가상 네트워크에서 Azure VPN 게이트웨이에 사이트 간 VPN을 연결 합니다. 실제로 Azure의 장치는 로컬 네트워크에 있는 것으로 나타날 수 있습니다. 연결 암호화 되 고 인터넷을 통해 작동 합니다.
 
 - **Azure ExpressRoute**
 
-    For environments where you need greater bandwidth and even higher levels of security, Azure ExpressRoute is the best approach. Azure ExpressRoute provides dedicated private connectivity to Azure that does not travel over the Internet.
+    큰 대역폭 및 더 높은 수준의 보안이 필요한 환경에 대 한 Azure ExpressRoute는 가장 좋은 방법입니다. Azure ExpressRoute는 인터넷을 통해 이동 하지 않습니다 하는 Azure에 전용된 개인 연결을 제공 합니다.
 
-### Route network traffic
+### <a name="route-network-traffic"></a>네트워크 트래픽 라우팅
 
-By default, Azure will route traffic between subnets on any connected virtual networks, on-premises networks, and the Internet. However, you can control routing and override those settings as follows:
+Azure 경로 기본적으로 모든 서브넷 간에 트래픽을 가상 네트워크, 온-프레미스 네트워크 및 인터넷 연결 합니다. 그러나 라우팅을 제어하고 다음과 같이 해당 설정을 재정의할 수 있습니다.
 
-- **Route tables**
+- **경로 테이블**
 
-    A route table allows you to define rules as to how traffic should be directed. You can create custom route tables that control how packets are routed between subnets.
+    경로 테이블을 사용 하면 트래픽이 전달 되어야 하는 방법에 대 한 규칙을 정의할 수 있습니다. 서브넷 간에 패킷이 라우팅되는 방법을 제어하는 사용자 지정 경로 테이블을 만들 수 있습니다.
 
 - **Border Gateway Protocol**
 
-    Border Gateway Protocol (BGP) works with Azure VPN gateways or ExpressRoute to propagate on-premises BGP routes to Azure virtual networks.
+    프로토콜 BGP (경계 게이트웨이)와 함께 Azure VPN gateway 또는 ExpressRoute 전파 하는 데 온-프레미스 Azure 가상 네트워크에 대 한 BGP 경로.
 
-### Filter network traffic
+### <a name="filter-network-traffic"></a>네트워크 트래픽 필터링
 
-Azure virtual networks enable you to filter traffic between subnets by using the following approaches:
+Azure Virtual Networks를 사용하면 다음 방법 중 하나를 사용하여 서브넷 간에 트래픽을 필터링할 수 있습니다.
 
-- **Network security groups**
+- **네트워크 보안 그룹**
 
-    A network security group is an Azure resource that can contain multiple inbound and outbound security rules. You can define these rules to allow or block traffic, based on factors such as source and destination IP address, port, and protocol.
+    네트워크 보안 그룹은 여러 개의 인바운드 및 아웃 바운드 보안 규칙이 포함 될 수 있는 Azure 리소스. 원본 및 대상 IP 주소, 포트 및 프로토콜 등의 요인에 따라 트래픽을 허용하거나 차단하도록 이러한 규칙을 정의할 수 있습니다.
 
-- **Network virtual appliances**
+- **네트워크 가상 어플라이언스**
     
-    A network virtual appliance is a specialized VM that can be compared to a hardened network appliance. A network virtual appliance carries out a particular network function, such as running a firewall or performing WAN optimization.
+    네트워크 가상 어플라이언스는 강화 된 네트워크 어플라이언스로 비교할 수 있는 전문화 된 VM입니다. 네트워크 가상 어플라이언스 방화벽 또는 WAN 최적화 수행과 같은 특정 네트워크 기능을 수행 합니다.
 
-## Connect virtual networks
+## <a name="connect-virtual-networks"></a>가상 네트워크 연결
 
-You can link virtual networks together using virtual network _peering_. Peering enables resources in each virtual network to communicate with each other. These virtual networks can be in separate regions, allowing you to create a global interconnected network through Azure.
+가상 네트워크 _피어링_을 사용하여 가상 네트워크를 함께 연결할 수 있습니다. 피어링을 사용하면 각 가상 네트워크의 리소스가 서로 통신할 수 있습니다. 이러한 가상 네트워크는 별도 지역에 위치할 수 있으며 Azure를 통해 상호 연결된 글로벌 네트워크를 만들 수 있습니다.
 
-## Azure virtual network settings
+## <a name="azure-virtual-network-settings"></a>Azure 가상 네트워크 설정
 
-You can create and configure Azure virtual networks from the Azure portal, Azure PowerShell on your local computer, or Azure Cloud Shell.
+수 만들고 로컬 컴퓨터에 Azure PowerShell 또는 Azure Cloud Shell은 Azure portal에서 Azure 가상 네트워크를 구성 합니다.
 
-### Create a virtual network
+### <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
-When you create an Azure virtual network, you configure a number of basic settings. You'll have the option to configure advanced settings, such as multiple subnets, distributed denial of service (DDoS) protection, and service endpoints.
+Azure virtual network를 만들 때 다양 한 기본 설정 구성 합니다. 여러 서브넷, 분산된 거부 (DDoS) 서비스 보호 및 서비스 끝점 등의 고급 설정을 구성 하는 옵션을 해야 합니다.
 
-![Screenshot of the Azure portal showing an example of the Create virtual network blade fields.](../media/2-create-virtual-network.PNG)
+![Azure portal 블레이드 필드 만들기 가상 네트워크의 예제를 보여 주는 스크린샷.](../media/2-create-virtual-network.PNG)
 
-You'll configure the following settings for a basic virtual network:
+기본 가상 네트워크에 대 한 다음 설정을 구성할 수 있습니다.
 
-- **Network name**
+- **네트워크 이름**
 
-    The network name must be unique in your subscription, but does not need to be globally unique. Make the name a descriptive one that is easy to remember and identified from other virtual networks.
+    네트워크 이름을 구독에서 고유 해야 하지만 전역적으로 고유할 필요가 없습니다. 이름을 기억 하기 쉽고 다른 가상 네트워크에서 식별 되는 설명이 포함 된 항목을 확인 합니다.
 
-- **Address space**
+- **주소 공간**
     
-    When you set up a virtual network, you define the internal address space in Classless Inter-Domain Routing (CIDR) format. This address space needs to be unique within your subscription and any other networks that you connect to.
+    가상 네트워크를 설정 하는 경우 도메인 간 라우팅 (CIDR (Classless) 형식으로 내부 주소 공간을 정의 합니다. 이 주소 공간은 구독 및 연결 하는 다른 네트워크 내에서 고유 해야 합니다.
     
-    Let's assume, you choose an address space of 10.0.0.0/24 for your first virtual network. The addresses defined in this address space ranges from 10.0.0.1 - 10.0.0.254. You the create a second virtual network and choose an address space of 10.1.0.0./8. The address in this address space ranges from 10.0.0.1 - 10.255.255.254. Some of the address overlap and can't be used for the two virtual networks.
+    가정, 첫 번째 가상 네트워크에 대 한 10.0.0.0/24의 주소 공간을 선택 합니다. 10.0.0.1-에서이 주소 공간 범위에 정의 된 주소 10.0.0.254 합니다. 수 만들기는 두 번째 가상 네트워크 및 10.1.0.0./8의 주소 공간을 선택 합니다. 이 주소 공간에 주소 범위 10.0.0.1-10.255.255.254 합니다. 두 가상 네트워크에 사용할 수 없습니다 겹치고 주소의 일부입니다.
 
-    However, you can use 10.0.0.0/16, with addresses ranging from 10.0.0.1 - 10.0.255.254, and 10.1.0.0/16, with addresses ranging from 10.1.0.1 - 10.1.255.254. You can assign these address spaces to your virtual networks since there's no address overlap.
+    그러나 10.0.0.0/16, 10.0.0.1에서 사이의 주소를 사용 하 여 사용할 수 있습니다-10.0.255.254를 및 10.1.0.1의에서 사이의 주소로 10.1.0.0/16-10.1.255.254 합니다. 주소가 중복 되므로이 주소 공간은 가상 네트워크에 할당할 수 있습니다.
 
     > [!NOTE] 
-    > You can add address spaces after creating the virtual network.
+    > 가상 네트워크를 만든 후 주소 공간을 추가할 수 있습니다.
 
-- **Subscription**
+- **구독**
 
-    Only applies if you have multiple subscriptions to choose from.
+    선택할 구독이 여러 개 있는 경우에 적용 됩니다.
 
-- **Resource group**
+- **리소스 그룹**
     
-    Like any other Azure resource, a virtual network needs to exist in a resource group. You can either select an existing resource group or create a new one.
+    모든 Azure 리소스와 같은 가상 네트워크를 리소스 그룹에 존재 해야 합니다. 기존 리소스 그룹을 선택 하거나 새로 만들 수 있습니다.
     
-- **Location**
+- **위치**
 
-    Select the location where you want the virtual network to exist.
+    에 가상 네트워크가 저장할 위치를 선택 합니다.
 
-- **Subnet**
+- **서브넷**
     
-    Within each virtual network address range, you can create one or more subnets that partition the virtual network's address space. Routing between subnets will then depend on the default traffic routes, or you can define custom routes. Alternatively, you can define one subnet that encompasses all the virtual networks' address ranges.
+    각 가상 네트워크 주소 범위 내에서 가상 네트워크의 주소 공간을 분할 하는 하나 이상의 서브넷을 만들 수 있습니다. 서브넷 간의 라우팅은 기본 트래픽 경로에 따라 다릅니다. 또는 사용자 지정 경로를 정의할 수 있습니다. 또는 모든 가상 네트워크의 주소 범위를 포함 하는 하나의 서브넷을 정의할 수 있습니다.
 
     > [!NOTE]
-    > Subnet names must begin with a letter or number, end with a letter, number or underscore, and may contain only letters, numbers, underscores, periods, or hyphens.
+    > 서브넷 이름은 영문, 숫자, 밑줄, 마침표 또는 하이픈만 포함할 수 있습니다. 단 영문 또는 숫자로 시작하고 영문, 숫자 또는 밑줄로 끝나야 합니다.
 
-- **Distributed Denial of Service (DDoS) protection**
+- **분산된 서비스 거부 (DDoS) 보호**
 
-    You can select either Basic or Standard DDoS protection. Standard DDoS Protection is a premium service. The [Azure DDoS Protection Standard](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview) provides for more information on Standard DDoS protection. 
+    기본 또는 표준 DDoS 보호를 선택할 수 있습니다. 표준 DDoS Protection은 프리미엄 서비스입니다. 합니다 [Azure DDoS Protection 표준](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview) DDoS 표준 보호에 대 한 자세한 정보를 제공 합니다. 
 
-- **Service Endpoints**
+- **서비스 끝점**
     
-    Here, you enable service endpoints, and then select from the list which Azure service endpoints you want to enable. Options include Azure Cosmos DB, Azure Service Bus, Azure Key Vault, and so on.
+    여기에서 서비스 끝점을 선택한 후 사용 하려는 Azure 서비스 끝점 목록에서 사용 합니다. 옵션에는 등 및 Azure Cosmos DB, Azure Service Bus, Azure Key Vault를 포함 합니다.
 
-When you have configured these settings, click the **Create** button.
+이러한 설정을 구성한 경우 **만들기** 단추를 클릭합니다.
 
-### Define additional settings
+### <a name="define-additional-settings"></a>추가 설정 정의
 
-After creating a virtual network, you can then define further settings. These include:
+가상 네트워크를 만든 후에 추가 설정을 정의할 수 있습니다. 내용은 다음과 같습니다.
 
-- **Network security group**
+- **네트워크 보안 그룹**
     
-    Network security groups have security rules that enable you to filter the type of network traffic that can flow in and out of virtual network subnets and network interfaces. You create the network security group separately, and then associate it with the virtual network.
+    네트워크 보안 그룹에 가상 네트워크 서브넷 및 네트워크 인터페이스 내 외부로 이동할 수 있는 네트워크 트래픽 유형을 필터링 할 수 있도록 하는 보안 규칙이 있습니다. 네트워크 보안 그룹을 별도로 만들고 가상 네트워크를 연결 합니다.
 
-- **Route table**
+- **경로 테이블**
 
-    Azure automatically creates a route table for each subnet within an Azure virtual network and adds system default routes to the table. However, you can add custom route tables to modify traffic between virtual networks.
+    Azure는 Azure 가상 네트워크 내의 각 서브넷에 대한 경로 테이블을 자동으로 만들고 시스템 기본 경로를 테이블에 추가합니다. 그러나 사용자 지정 경로 테이블을 추가하여 가상 네트워크 간에 트래픽을 수정할 수 있습니다.
 
-You can also amend the service endpoints.
+서비스 엔드포인트를 수정할 수도 있습니다.
 
-![Screenshot of the Azure portal showing an example blade for editing virtual network settings.](../media/2-virtual-network-additional-settings.PNG)
+![가상 네트워크 설정 편집에 대 한 예제 블레이드를 보여 주는 Azure portal의 스크린샷.](../media/2-virtual-network-additional-settings.PNG)
 
-### Configure virtual networks
+### <a name="configure-virtual-networks"></a>가상 네트워크 구성
 
-When you have created a virtual network, you can change any further settings from the Virtual Networks blade in the Azure portal. Alternatively, you can use PowerShell commands or commands in Cloud Shell to make changes.
+가상 네트워크를 만들면 Azure Portal에서 Virtual Networks 블레이드에서 추가 설정을 변경할 수 있습니다. 또는 사용할 수 PowerShell 명령 또는 명령 Cloud Shell에서 변경할 수 있도록 합니다.
 
-![Screenshot of the Azure portal showing an example blade for configuring a virtual network.](../media/2-configure-virtual-network.PNG)
+![가상 네트워크를 구성 하기 위한 예제 블레이드를 보여 주는 Azure portal의 스크린샷.](../media/2-configure-virtual-network.PNG)
 
-You can then review and change settings in further sub-blades.
-These settings include:
+그런 다음, 추가 하위 블레이드에서 설정을 검토하고 변경할 수 있습니다.
+이러한 설정에는 다음이 포함됩니다.
 
-- Address spaces
+- 주소 공간
 
-    You can add further address spaces to the initial definition
+    에 추가할 수 있습니다 추가 주소 공간 초기 정의
 
-- Connected devices
+- 연결된 장치
 
-    Use the virtual network to connect machines
+    가상 네트워크를 사용 하 여 컴퓨터를 연결 하려면
 
-- Subnets
+- 서브넷
 
-    Add further subnets
+    서브넷 추가
 
-- Peerings
+- 피어링
 
-    Link virtual networks in peering arrangements
+    가상 네트워크에 피어 링
 
-You can also monitor and troubleshoot virtual networks, or create an automation script to generate the current virtual network.
+가상 네트워크를 모니터링하고 문제를 해결하거나 자동화 스크립트를 만들어서 현재 가상 네트워크를 생성할 수 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-Virtual networks are powerful and highly configurable mechanisms for connecting entities in Azure. You can connect Azure resources to one another or to resources you have on-premises. You can isolate, filter and route your network traffic, and Azure allows you to increase security where you feel you need it.
+가상 네트워크는 Azure에서 엔터티를 연결하기 위한 강력하고 구성 가능한 메커니즘입니다. Azure 리소스를 서로 또는 온-프레미스 리소스에 연결할 수 있습니다. 격리, 필터링 및 프로그램 네트워크 트래픽을 라우팅할 수 있습니다 및 Azure 생각 하면 보안을 강화 하려면 필요할 수 있습니다.

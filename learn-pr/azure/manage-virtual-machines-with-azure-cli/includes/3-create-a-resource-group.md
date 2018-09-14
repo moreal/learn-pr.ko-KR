@@ -4,24 +4,23 @@
 
 Azure는 _리소스 그룹_을 사용하여 가상 머신 및 데이터베이스와 같은 관련 리소스를 그룹화합니다. 또한 리소스 그룹은 리소스가 배치되는 데이터 센터를 결정하는 특정 위치(“지역”이라고 함)를 식별합니다.
 
-실험을 진행하고 있으므로 먼저 `ExerciseResources`라는 새 리소스 그룹을 만들고 `eastus` 지역에 배치합니다.
+> [!NOTE]
+> 라는 미리 생성된 된 리소스 그룹을 제공 하는 Azure 샌드박스 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다. 다음이 단계를 실행할 필요가 없습니다. 그러나 만드는 경우에 _고유의_ 실제 프로젝트에 대 한 리소스를이 값은 명령을 수행 해야 합니다. Azure 샌드박스 리소스 그룹을 직접 만들 수 없도록 합니다.
 
-<!-- TODO: replace with free ed-tier -->
-
-Azure Cloud Shell에 다음 Azure CLI 명령을 입력하여 구독에서 리소스 그룹을 만듭니다.
+예를 들어 다음 Azure CLI 명령에서 리소스 그룹을 만들려면 Azure Cloud Shell에서 입력할 수 있습니다 합니다 **미국 동부** 지역입니다. 바꿀 **[리소스 그룹]** 활성 구독 내에서 고유한을 올바른 이름입니다.
 
 ```azurecli
-az group create --name ExerciseResources --location eastus
+az group create --name [resource-group] --location eastus
 ```
 
-이렇게 하면 리소스 그룹이 생성되었음을 나타내는 JSON 블록이 반환됩니다. 다음과 같이 표시됩니다.
+이 JSON 블록을 나타내기 위해 만든 리소스 그룹을 반환 합니다.
 
 ```json
 {
-  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/<resourcegroup>",
   "location": "eastus",
   "managedBy": null,
-  "name": "ExerciseResources",
+  "name": "<resourcegroup>",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -31,4 +30,4 @@ az group create --name ExerciseResources --location eastus
 
 응답의 일부로 구독 고유 식별자, 위치 및 이름이 반환됩니다. 이들 항목을 사용하여 리소스 그룹이 적절한 구독 및 위치에서 생성되었는지 확인할 수 있습니다.
 
-이제 리소스 그룹이 있으므로 새 가상 머신을 만들어 보겠습니다.
+리소스 그룹을 만드는 방법을 알았으므로 새 가상 컴퓨터를 만들어 보겠습니다.

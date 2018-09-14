@@ -76,7 +76,8 @@ PowerShell을 시작하고 스크립트 파일을 저장한 디렉터리로 변�
 
 스크립트를 완료하는 데 몇 분이 걸릴 수 있습니다. 완료되면 성공적으로 실행되었는지 확인합니다.
 
-1. 브라우저에서 Azure Portal에 로그인합니다.
+<!---TODO: Update for sandbox?--->
+1. 브라우저에서에 로그인 합니다 [Azure portal](https://portal.azure.com/?azure-portal=true)합니다.
 
 1. 왼쪽 탐색에서 **리소스 그룹**을 클릭합니다.
 

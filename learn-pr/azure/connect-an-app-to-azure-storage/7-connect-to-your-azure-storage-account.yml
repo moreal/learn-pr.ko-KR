@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
-title: Connect to your Azure storage account
+title: Azure Storage 계정에 연결
 metadata:
-  title: Connect to your Azure storage account
-  description: Connect to your Azure storage account
+  title: Azure Storage 계정에 연결
+  description: Azure Storage 계정에 연결
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

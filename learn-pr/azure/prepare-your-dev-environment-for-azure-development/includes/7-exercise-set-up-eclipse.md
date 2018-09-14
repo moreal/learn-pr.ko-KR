@@ -1,4 +1,4 @@
-이 단원에서는 로컬 머신에 Eclipse를 설치한 후, Azure Toolkit를 설치하여 Azure 통합을 통해 Java 응용 프로그램을 개발할 준비를 합니다. 설치는 빠르고 간단합니다. 이 연습을 마치면 첫 번째 Java 응용 프로그램을 시작하는 데 필요한 모든 것이 설정되어 Azure의 기능과 서비스를 활용할 수 있습니다.
+이 장치에서 로컬 컴퓨터에 Eclipse 및 Azure 도구 키트를 설치 합니다. 설치는 빠르고 간단합니다. 연습의 끝 Azure에서 첫 번째 Java 응용 프로그램을 만드는 데 필요한 모든 해야 합니다.
 
 ## <a name="install-eclipse-ide"></a>Eclipse IDE 설치
 
@@ -8,7 +8,7 @@
 
     1. Windows에서 다운로드한 파일을 두 번 클릭합니다.
 
-    1. macOS 및 Linux에서, 다운로드된 파일의 설치 관리자 압축을 풉니다. 압축이 풀리면 설치 관리자를 시작합니다.
+    1. MacOS 및 Linux에서 다운로드 한 파일에서 설치 관리자를 압축 해제 하 고 실행 합니다.
 
         > [!NOTE]
         > Java Development Kit가 누락된 경우 설치 관리자에서 설치하라는 메시지를 표시합니다.
@@ -47,8 +47,8 @@ Azure Toolkit는 Windows, macOS 및 Linux에서 동일하게 설치됩니다.
 
 1. 필요한 경우 Eclipse를 다시 시작합니다.
 
-1. Eclipse에서 **도구** > **Azure** 메뉴 옵션을 찾을 수 있는지 확인하여 Azure Toolkit 설치 유효성을 검사합니다.
+1. 확인 하 여 찾을 수 있는 Azure 도구 키트 설치 유효성 검사를 **도구** > **Azure** Eclipse의 메뉴 옵션입니다.
 
 ## <a name="summary"></a>요약
 
-이 단원에서는 Java용 Eclipse를 설치하고 Azure 서비스 및 제품과 통합하여 활용할 수 있도록 준비했습니다. 설치가 빠르고 간편한 Eclipse는 클라우드 서비스 통합을 통한 Java 개발 작업에 이상적입니다.
+이 단위에서 Eclipse를 설치 하 고 Azure 서비스 및 제품과 통합을 활용 하도록 준비 합니다.

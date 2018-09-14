@@ -1,27 +1,27 @@
 ### YamlMime:Module
 uid: learn.ci-cd-pipelines-azure-devops
-title: Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps
-summary: Learn how to quickly build out Continuous Integration/Continuous Deployment (CI/CD) pipelines into Azure for your apps.
-abstract: This module shows how you can use Azure DevOps Projects to quickly build out your CI/CD pipelines into Azure. It starts with creating an Azure DevOps project in the language and technology of your choice. This will create a VSTS account and a VSTS Team Project with a sample app in the git repo. It will also create a build and release pipeline that takes the sample app, builds it and deploys it into infrastructure it provisions for you up in Azure. Next it covers replacing the sample app with your app code. And finally, this module covers how to customize the build and release pipelines.
-cardDescription: Learn how to quickly build out Continuous Integration/Continuous Deployment (CI/CD) pipelines into Azure for your apps.
-iconUrl: http://via.placeholder.com/120x120
-levels:
-- intermediate
-roles:
-- developer
-products:
-- azure
 metadata:
-  title: Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps
-  description: Learn how to quickly build out Continuous Integration/Continuous Deployment (CI/CD) pipelines into Azure for your apps.
+  title: Azure DevOps를 사용 하 여 연속 통합/지속적인 배포 파이프라인 빌드
+  description: 신속 하 게 앱에 대 한 Azure로 지속적인 통합/지속적인 배포 (CI/CD) 파이프라인 아웃을 빌드하는 방법에 알아봅니다.
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+title: Azure DevOps를 사용 하 여 연속 통합/지속적인 배포 파이프라인 빌드
+summary: 신속 하 게 앱에 대 한 Azure로 지속적인 통합/지속적인 배포 (CI/CD) 파이프라인 아웃을 빌드하는 방법에 알아봅니다.
+abstract: '이 모듈은 Azure DevOps Projects를 사용 하 여 CI/CD 파이프라인을 Azure에 신속 하 게 구축 하는 방법을 보여 줍니다. 언어와 기술을 선택한 Azure DevOps 프로젝트를 만드는 작업부터 시작 합니다. Git 리포지토리에서 샘플 앱을 사용 하 여 VSTS 계정 및 VSTS 팀 프로젝트 만들어집니다. 샘플 앱 사용, 빌드합니다 및 프로 비전 하기를 Azure에서 인프라에 배포 하는 빌드 및 릴리스 파이프라인을 만듭니다. 다음 샘플 앱은 앱 코드를 사용 하 여 대체을 설명 합니다. 이 모듈에서는 빌드 사용자 지정 파이프라인을 릴리스 하는 방법을 설명 하는 마지막으로 하며'
+prerequisites: 없음
+iconUrl: /learn/achievements/ci-cd-pipelines-azure-devops.svg
+levels:
+  - intermediate
+roles:
+  - developer
+products:
+  - azure
 units:
-- learn.ci-cd-pipelines-azure-devops.1-getting-started-with-azure-devops-projects
-- learn.ci-cd-pipelines-azure-devops.2-replacing-sample-code-with-your-own-code
-- learn.ci-cd-pipelines-azure-devops.3-customizing-your-ci-cd-pipelines
-- learn.ci-cd-pipelines-azure-devops.4-summary-and-cleanup
+  - learn.ci-cd-pipelines-azure-devops.1-getting-started-with-azure-devops-projects
+  - learn.ci-cd-pipelines-azure-devops.2-replacing-sample-code-with-your-own-code
+  - learn.ci-cd-pipelines-azure-devops.3-customizing-your-ci-cd-pipelines
+  - learn.ci-cd-pipelines-azure-devops.4-summary-and-cleanup
 achievement: learn.ci-cd-pipelines-azure-devops.badge

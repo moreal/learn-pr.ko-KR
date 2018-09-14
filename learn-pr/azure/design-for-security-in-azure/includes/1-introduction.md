@@ -1,19 +1,19 @@
-Security is one of the most important aspects of any architecture. Ensuring that your business data and customer data are secure is critical. A public data breach can ruin a company's reputation as well as cause significant personal and financial harm. In this module, we’ll discuss key architectural security considerations as you design an environment on the cloud.
+보안은 아키텍처의 가장 중요 한 측면 중 하나입니다. 비즈니스 데이터 및 고객 데이터를 안전하게 보호하는 것이 매우 중요합니다. 공용 데이터 위반 수는 회사의 평판 손상 뿐만 아니라 중요 한 개인 및 재무 지장이 발생 합니다. 이 모듈에서는 클라우드 환경을 디자인할 때 고민해야 하는 주요 아키텍처 보안 고려 사항을 알아보겠습니다.
 
-As we learn about architecting our cloud solutions with security as a primary consideration, we'll see how one fictional Azure customer puts these principles to work:
+방법을 가상의 Azure 기본 고려 사항으로 보안을 사용 하 여 클라우드 솔루션 설계에 대해 알아보면 살펴보겠습니다 고객 작동 하도록 이러한 원칙을 배치 합니다.
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare는 국립 의료 서비스 공급자입니다. Lamna Healthcare의 IT 조직은 최근에 대부분의 IT 시스템을 Azure로 이동했습니다. 사용자 지정 응용 프로그램, 오픈 소스 앱 및 다양 한 아키텍처 및 기술 플랫폼을 사용 하 여 상업용 응용 프로그램의 혼합을 갖습니다. 시스템을 유지 하면서 클라우드로 마이그레이션할 하기 위해 필요한 알아보겠습니다 및 데이터 보호.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> 이 모듈에 설명 된 개념 모든 제품을 포함 하지 않지만 클라우드 솔루션을 빌드할 때 중요 한 고려 사항 중 일부를 나타냅니다. Microsoft는 광범위 한 패턴, 지침 및 Azure에서 응용 프로그램 디자인에 대 한 예제를 게시 합니다. 콘텐츠를 확인 하는 것이 좋습니다 합니다 [Azure 아키텍처 센터](https://docs.microsoft.com/azure/architecture/) 계획 및 아키텍처 설계를 시작 합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Learn how to take a defense in depth approach to securing your architecture.
-- Learn how to protect your identities.
-- Learn what technologies are available to protect your Azure infrastructure.
-- Learn how and where to use encryption to secure your data.
-- Learn how to protect your architecture at the network level.
-- Learn how to leverage application security best practices to integrate security into your application.
+- 심층 방어 접근 방식을 사용하여 아키텍처를 보호하는 방법을 알아봅니다.
+- ID를 보호하는 방법을 알아봅니다.
+- Azure 인프라 보호에 사용할 수 있는 기술을 알아봅니다.
+- 암호화를 사용하여 데이터를 보호하는 방법 및 위치를 알아봅니다.
+- 네트워크 수준에서 아키텍처를 보호하는 방법을 알아봅니다.
+- 응용 프로그램 보안 모범 사례를 활용하여 응용 프로그램에 보안을 통합하는 방법을 알아봅니다.

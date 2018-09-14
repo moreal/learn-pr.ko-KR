@@ -1,111 +1,111 @@
-In this exercise, you will create a virtual network in Microsoft Azure. You will then create two virtual machines and use the virtual network to connect the virtual machines to each other and to the Internet.
+이 연습에서는 Microsoft Azure의 가상 네트워크를 만듭니다. 그런 다음, 두 개의 가상 머신을 만들고 가상 네트워크를 사용하여 가상 머신을 서로 또는 인터넷에 연결합니다.
 
-Before you begin this unit, you will need to log into [Azure Cloud Shell](https://shell.azure.com) with your trial subscription credentials. We will use Azure CLI via Azure Cloud Shell to create the resource groups, virtual networks, and virtual machines.
+이 단위를 시작 하기 전에 로그인 해야 합니다 [Azure Cloud Shell](https://shell.azure.com) 평가판 구독 자격 증명을 사용 하 여 합니다. Azure Cloud Shell을 통해 Azure CLI 리소스 그룹, 가상 네트워크 및 가상 컴퓨터를 만들려면 사용 합니다.
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-1. In the **Welcome to Azure Cloud Shell** window, click **Bash (Linux)**.
+1. 에 **Azure Cloud Shell 시작** 창에서 클릭 **Bash (Linux)** 합니다.
 
-1. In the **you have no storage mounted** window, click **Create Storage**.
+1. **탑재된 저장소가 없음** 화면에서 **저장소 만들기**를 클릭합니다.
 
-1. In the Azure PowerShell command-line prompt, type the following code and press Enter. Replace the `<myResourceGroup>` value with a descriptive name to make it easy to remember when you clean up any resources created later. You'll use this name through the reset of this lab.
+1. Azure PowerShell 명령줄 프롬프트에서 다음 코드를 입력 하 고 Enter 키를 누릅니다. 대체는 `<myResourceGroup>` 나중에 만들어진 모든 리소스를 정리 하는 경우 기억 하기 쉽게 설명 하는 이름 사용 하 여 값입니다. 이 랩의 리셋이 이름을 사용 합니다.
 
-    ```bash
+    ```azurecli
     az group create --name <myResourceGroup> --location eastus
     ```
 
-## Create a virtual network
+## <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
-1. To create a virtual network, enter the following command and press Enter. Replace the `<myVirtualNetwork>` value with a descriptive name to make it easy to remember
+1. 가상 네트워크를 만들려면 다음 명령을 입력하고 Enter 키를 누릅니다. 대체는 `<myVirtualNetwork>` 기억 하기 쉽게 설명 하는 이름 사용 하 여 값
 
-    ```bash
+    ```azurecli
     az network vnet create --name <myVirtualNetwork> --resource-group <myResourceGroup> --subnet-name default
     ```
 
-## Create two virtual machines
+## <a name="create-two-virtual-machines"></a>두 개의 가상 머신 만들기
 
-1. To create the first virtual machine, execute the following command to create a Windows VM with a public IP address that is accessible over port 3389 (Remote Desktop). Name the VM `dataProcStage1`:
+1. 첫 번째 가상 컴퓨터를 만들려면 포트 3389 (원격 데스크톱)를 통해 액세스할 수 있는 공용 IP 주소를 사용 하 여 Windows VM을 만들려면 다음 명령을 실행 합니다. VM 이름을 `dataProcStage1`:
 
-    ```bash
+    ```azurecli
     az vm create --name dataProcStage1 --resource-group <myResourceGroup> --admin-username "DataAdmin" --image Win2016Datacenter
     ```
 
-1. Supply values for your password at the prompts. Remeber to write this password down as you'll need it later to access the server.
+1. 프롬프트에서 암호의 값을 입력합니다. 이 암호를 적어 둡니다 서버에 액세스 하 나중에 필요 해야 합니다.
 
-1. You'll now create the second VM. This VM will not have a public IP adderss. Execute the following command to create a Windows VM **without** a public IP address using an empty string. Name the VM `dataProcStage2`:
+1. 이제 두 번째 VM을 만들 수 있습니다. 이 VM은 공용 IP 주소가 없습니다. Windows VM을 만들려면 다음 명령을 실행 **없이** 빈 문자열을 사용 하 여 공용 IP 주소입니다. VM 이름을 `dataProcStage2`:
 
-    ```bash
+    ```azurecli
     az vm create -n dataProcStage2 -g <myResourceGroup> --public-ip-address "" --admin-username "DataAdmin" --image Win2016Datacenter
     ```
 
-1. When completed, the output from the second command will return a value for publicIpAddress.  
+1. 작업이 완료되면 두 번째 명령의 출력이 publicIpAddress의 값을 반환합니다.  
 
-## Connect to dataProcStage1 using Remote Desktop
+## <a name="connect-to-dataprocstage1-using-remote-desktop"></a>DataProcStage1 연결할 원격 데스크톱을 사용 하 여
 
-1. On your client computer, press the Windows key and type RDP.
+1. 클라이언트 컴퓨터에서 Windows 로고 키를 누르고 RDP를 입력합니다.
 
-1. Ensure that **Remote Desktop Connection** app is selected, and then press Enter.
+1. 했는지 **원격 데스크톱 연결** 앱을 선택한 다음 Enter를 누릅니다.
 
-1. In the **Remote Desktop Connection** dialog box, in the **Computer** field, enter the value of `dataProcStage1`'s PublicIPAddress, and then click **Connect**.
+1. 에 **원격 데스크톱 연결** 대화 상자의 **컴퓨터** 필드의 값을 입력 합니다 `dataProcStage1`PublicIPAddress, 고 클릭 **Connect**합니다.
     
-    Instructions to get remote ip if not written down
+    기록 되지 경우 원격 ip를 가져오는 지침
 
-1. In the **Do you trust this remote connection?** dialog box, click **Connect**.
+1. **이 원격 연결을 신뢰하십니까?** 대화 상자에서 **연결**을 클릭합니다.
 
-1. In the **Windows Security** dialog box, enter the user name and password you used when you created `dataProcStage1`. 
+1. 에 **Windows 보안** 대화 상자에 사용자 이름 및 암호를 만들 때 사용한 입력 `dataProcStage1`합니다. 
 
-    Have to change profiles here
+    여기에 프로필을 변경 해야 합니다.
 
-1. In the **Remote Desktop Connection** dialog box, click **OK**.
+1. **원격 데스크톱 연결** 대화 상자에서 **확인**을 클릭합니다.
 
-1. Sign in to the remote computer in Azure.
+1. Azure에서 원격 컴퓨터에 로그인합니다.
 
-1. When the **Networks** message appears, click **No**.
+1. **네트워크** 메시지가 나타나는 경우 **아니요**를 클릭합니다.
 
-1. Close Server Manager.
+1. 서버 관리자를 닫습니다.
 
-1. In the remote session, right-click the Windows key and click **Command Prompt**.
+1. 원격 세션에서 Windows 키를 마우스 오른쪽 단추로 클릭 하 고 클릭 **명령 프롬프트**합니다.
 
-1. In the command prompt window, type the following command and press Enter.
-
-    ```cmd
-    ping dataProcStage2 -4
-    ```
-
-1. There should be no response from `dataProcStage2`. This is because by default, Windows Firewall prevents ICMP responses on `dataProcStage2`.
-
-## Connect to dataProcStage2 using Remote Desktop
-
-You'll configure the Windows Firewall on `dataProcStage2` using a new remote desktop seesion. However, you'll not able to access `dataProcStage2` from your desktop. Recall, `dataProcStage2` does not have a public IP address. You will using remote desktop from `dataProcStage1` to connect to `dataProcStage2`.
-
-1. On `dataProcStage1`, press the Windows key and type **RDP**. Select the **Remote Desktop Connection** app and press Enter.
-
-1. In the **Computer** field, enter `dataProcStage2`, and then click **Connect**. Based on the default network configuration`dataProcStage1` is able to resolve the address for `dataProcStage2` using the computer name.
-
-1. In the **Do you trust this remote connection?** dialog box, click **Connect**.
-
-1. In the **Windows Security** dialog box, enter the user name and password you used when you created `dataProcStage2`.
-
-1. In the **Remote Desktop Connection** dialog box, click **OK**. You now sign in to the remote computer in Azure.
-
-1. When the **Networks** message appears, click **No**.
-
-1. Close Server Manager.
-
-1. On `dataProcStage2`, press the Windows key, type **Firewall**, and press Enter. The **Windows Firewall with Advanced Security** console appears.
-
-1. In the left-hand pane, click **Inbound Rules**.
-
-1. In the right-hand pane, scroll down and right-click **File and Printer Sharing (Echo Request - ICMPv4-In)**, and then click **Enable Rule**.
-
-1. Switch back to the `dataProcStage1` console and in the command prompt window, type the following command and press Enter.
+1. 명령 프롬프트 창에서 다음 명령을 입력하고 Enter 키를 누릅니다.
 
     ```cmd
     ping dataProcStage2 -4
     ```
 
-1. `dataProcStage2` responds with four replies, demonstrating connectivity between the two VMs.
+1. 응답이 없는 없어야 `dataProcStage2`합니다. 기본적으로 Windows 방화벽에서 ICMP 응답을 방지 하기 때문에 이것이 `dataProcStage2`합니다.
 
-## Summary
+## <a name="connect-to-dataprocstage2-using-remote-desktop"></a>DataProcStage2 연결할 원격 데스크톱을 사용 하 여
 
-You have successfully created a virtual network, created two VMs that are attached to that virtual network, connected to one of the VMs and shown network connectivity to the other VM within the same virtual network. You can use Azure Virtual Network to connect resources within the Azure network. However, those resources need to be within the same resource group and subscription. Next, we will look at VPN gateways, which enable you to connect virtual network in different resource groups, subscriptions, and even geographical regions.
+Windows 방화벽을 구성한 것 `dataProcStage2` 새 원격 데스크톱 seesion를 사용 하 여 합니다. 그러나에서는 액세스할 수 없습니다. `dataProcStage2` 바탕 화면에서. 기억 `dataProcStage2` 는 공용 IP 주소가 없습니다. 원격 데스크톱을 사용 하면 `dataProcStage1` 연결할 `dataProcStage2`합니다.
+
+1. `dataProcStage1`, Windows 키 및 형식은 키를 누릅니다 **RDP**합니다. **원격 데스크톱 연결** 앱을 선택하고, Enter 키를 누릅니다.
+
+1. 에 **컴퓨터** 필드를 입력 합니다 `dataProcStage2`를 클릭 하 고 **Connect**합니다. 기본 네트워크 구성에 따라`dataProcStage1` 의 주소를 확인할 수 `dataProcStage2` 컴퓨터 이름을 사용 합니다.
+
+1. **이 원격 연결을 신뢰하십니까?** 대화 상자에서 **연결**을 클릭합니다.
+
+1. 에 **Windows 보안** 대화 상자에 사용자 이름 및 암호를 만들 때 사용한 입력 `dataProcStage2`합니다.
+
+1. **원격 데스크톱 연결** 대화 상자에서 **확인**을 클릭합니다. 이제 Azure에서 원격 컴퓨터에 로그인합니다.
+
+1. **네트워크** 메시지가 나타나는 경우 **아니요**를 클릭합니다.
+
+1. 서버 관리자를 닫습니다.
+
+1. 온 `dataProcStage2`, Windows 키를 형식 키를 누릅니다 **방화벽**, Enter 키를 누릅니다. **고급 보안이 포함된 Windows 방화벽** 콘솔이 표시됩니다.
+
+1. 왼쪽 창에서 **인바운드 규칙**을 클릭합니다.
+
+1. 오른쪽 창에서 아래로 스크롤하여 마우스 오른쪽 단추로 클릭 **파일 및 프린터 공유 (에코 요청-ICMPv4-In)** 를 클릭 하 고 **규칙 사용**합니다.
+
+1. 전환의 `dataProcStage1` 콘솔 및 명령 프롬프트 창에서 다음 명령을 입력 한 다음 Enter 키를 누릅니다.
+
+    ```cmd
+    ping dataProcStage2 -4
+    ```
+
+1. `dataProcStage2` 두 Vm 간의 연결을 보여 주는 4 개의 응답을 사용 하 여 응답 합니다.
+
+## <a name="summary"></a>요약
+
+해당 가상 네트워크에 연결, Vm 중 하나에 연결 및 동일한 가상 네트워크 내의 다른 VM에 대 한 네트워크 연결을 표시 하는 두 개의 Vm을 만든 가상 네트워크를 만들었습니다. Azure 네트워크 내에서 리소스에 연결할 Azure 가상 네트워크를 사용할 수 있습니다. 그러나 이러한 리소스는 동일한 리소스 그룹 및 구독 내에 있어야 합니다. 다음으로, 다른 리소스 그룹, 구독 및 지리적 지역에서 가상 네트워크에 연결할 수 있도록 하는 VPN gateway를 살펴보겠습니다.

@@ -1,76 +1,76 @@
-The following is a high-level illustration of what we're going to build in this exercise.
+다음은 대략적인 설명은이 연습에서 작성 하려고 합니다.
 
-![Visual representation of default HTTP trigger, showing HTTP request and response as well as respective req and res binding parameters.](../media-draft/default-http-trigger-visual-small.PNG)
+![기본 HTTP 트리거를 바인딩 매개 변수에 HTTP 요청 및 응답 뿐만 아니라 해당 요청 및 응답을 보여 주는 시각적 표현입니다.](../media-draft/default-http-trigger-visual-small.PNG)
 
-We'll create a function that will start when it receives an HTTP request and will respond to each request by sending back a message. The parameters `req` and `res` are the trigger binding and output binding respectively. Let's get going!
+HTTP 요청을 받고 메시지 다시 전송 하 여 각 요청에 응답할 때 시작 하는 함수를 만들겠습니다. 매개 변수 `req` 고 `res` 는 트리거 바인딩 및 바인딩 각각 출력 합니다. 진행 해 보겠습니다!
 
-Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+### <a name="create-a-function-app"></a>함수 앱 만들기
 
-### Create a function app
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Let's create a function app that we'll use throughout this entire module. A function app lets you group functions as a logical unit for easier management, deployment, and sharing of resources.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-[!INCLUDE [resource-group-note](./rg-notice.md)]
+이 전체 모듈 전체에서 사용 하 여 함수 앱을 만들어 보겠습니다. 함수 보다 쉽게 관리, 배포 및 리소스의 공유를 논리 단위로 그룹화 하는 함수 앱 수 있습니다.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Compute** > **Function App**.
-1. Set the function app properties as follows:
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
+1. 선택 된 **리소스 만들기** 단추 찾으면 Azure portal의 왼쪽 위 모서리에서 선택 **Compute** > **함수 앱**합니다.
+1. 함수 앱 속성을 다음과 같이 설정 합니다.
 
-
-    | Property      | Suggested value  | Description                                        |
+    | 자산      | 제안 값  | 설명                                        |
     | ------------ |  ------- | -------------------------------------------------- |
-    | **App name** | Globally unique name | Name that identifies your new function app. Valid characters are `a-z`, `0-9`, and `-`.  | 
-    | **Subscription** | Your subscription | The subscription under which this new function app is created. | 
-    | **Resource Group**|  [!INCLUDE [resource-group-name](./rg-name.md)] | Name for the new resource group in which to create your function app. | 
-    | **OS** | Windows | The operating system that hosts the function app.  |
-    | **Hosting** |   Consumption plan | Hosting plan that defines how resources are allocated to your function app. In the default **Consumption Plan**, resources are added dynamically as required by your functions. In this [serverless](https://azure.microsoft.com/overview/serverless-computing/) hosting, you only pay for the time your functions run.   |
-    | **Location** | West Europe | Choose a [region](https://azure.microsoft.com/regions/) near you or near other services your functions access. |
-    | **Storage account** |  Globally unique name |  Name of the new storage account used by your function app. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. This dialog populates the field with a unique name that is derived from the name you gave the app. However, feel free to use a different name or even an existing account. |
+    | **앱 이름** | 전역적으로 고유한 이름 | 새 함수 앱을 식별하는 이름입니다. 유효한 문자는 `a-z`, `0-9` 및 `-`입니다.  | 
+    | **구독** | 사용자의 구독 | 이 새 함수 앱이 만들어질 구독입니다. | 
+    | **리소스 그룹**|  선택 **기존 항목 사용** 선택한 <rgn>[샌드박스 리소스 그룹 이름]</rgn> | 함수 앱을 만들 리소스 그룹의 이름입니다. | 
+    | **OS** | Windows | 함수 앱을 호스팅하는 운영 체제입니다.  |
+    | **호스팅** |   소비 계획 | 함수 앱에 리소스가 할당되는 방법을 정의하는 호스팅 계획입니다. 기본 **소비 계획**에서 함수의 필요에 따라 리소스가 동적으로 추가됩니다. [서버 없는](https://azure.microsoft.com/overview/serverless-computing/) 호스팅에서는 함수가 실행되는 시간 만큼만 요금을 지불하면 됩니다.   |
+    | **위치** | 목록에서 선택 | 사용자 근처 또는 함수가 액세스할 기타 서비스에 가까운 [지역](https://azure.microsoft.com/regions/)을 선택합니다. |
+    | **Storage 계정** |  전역적으로 고유한 이름 |  함수 앱에 사용된 새 저장소 계정의 이름. Storage 계정 이름은 3자에서 24자 사이여야 하고 숫자 및 소문자만 포함할 수 있습니다. 이 대화 상자에 필드를 앱에 제공한 이름에서 파생 된 고유한 이름입니다. 그러나 자유롭게 다른 이름을 사용할지도 기존 계정. |
 
 
-3. Select **Create** to provision and deploy the function app.
+3. **만들기**를 선택하여 함수 앱을 프로비전하고 배포합니다.
 
-4. Select the Notification icon in the upper-right corner of the portal and watch for a **Deployment in progress** message similar to the following message.
+4. 포털의 오른쪽 위 모서리에 있는 알림 아이콘을 선택 하 고 확인을 **배포 진행에서** 다음 메시지와 비슷한 메시지입니다.
 
-![Notification that function app deployment is in progress](../media-draft/func-app-deploy-progress-small.PNG)
+![함수 앱 배포가 진행에서 되는 알림](../media-draft/func-app-deploy-progress-small.PNG)
 
-5. Deployment can take some time. So, stay in the notification hub and  watch for a **Deployment succeeded** message similar to the following message.
+5. 배포에는 약간의 시간이 걸릴 수 있습니다. 따라서 알림 허브의 상태를 유지 하 고 확인을 **배포 성공** 다음 메시지와 비슷한 메시지입니다.
 
-![Notification that function app deployment has completed](../media-draft/func-app-deploy-success-small.PNG)
+![함수 앱 배포 완료 되었음을 알림](../media-draft/func-app-deploy-success-small.PNG)
 
-6. Congratulations! You've created and deployed your function app. Select **Go to resource** to view your new function app.
+6. 축하합니다. 생성을 함수 앱을 배포 했습니다. **리소스로 이동**을 선택하여 함수 앱을 봅니다.
 
 >[!TIP]
->If you are having trouble finding your function apps in the portal, find out how to [add Function Apps to your favorites in the portal](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
+>포털에서 함수 앱 찾기 하는 데 문제가 있는 경우 하는 방법을 알아봅니다 [포털의 즐겨찾기에 함수 앱을 추가](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite)합니다.
 
-### Create a function
+### <a name="create-a-function"></a>함수 만들기
 
-Now that we have a function app, it's time to create a function. A function is activated through a trigger. In this module, we'll use an HTTP trigger.
+이제 함수 앱을 한 함수를 만드는 시간입니다. 함수는 트리거를 통해 활성화 됩니다. 이 모듈에서는 HTTP 트리거를 사용 하겠습니다.
 
-1. Expand your new function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+1. 새 함수 앱을 확장 하 고 함수 컬렉션을 마우스로 추가 선택 (**+**) 옆에 단추 **함수**합니다. 이 작업에는 함수 만들기 프로세스를 시작합니다. 다음 애니메이션은이 작업을 보여 줍니다.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![사용자가 함수 메뉴 항목을 마우스로 가리킬 때 표시 되는 더하기의 애니메이션.](../media-draft/func-app-plus-hover-small.gif)
 
-2. In the **Get started quickly** page, select **WebHook + API**, select a language for your function, and click **Create this function**.
+2. 에 **신속 하 게 시작** 페이지에서 **WebHook + API**함수에 대 한 언어를 선택 하 고 클릭 **이 함수 만들기**합니다.
 
-3. A function is created in your chosen language using the template for an HTTP triggered function. In this exercise, we'll create a JavaScript function.
+3. 함수는 HTTP 트리거 함수에 대한 템플릿을 사용하여 선택한 언어로 만들어집니다. 이 연습에서는 JavaScript 함수를 만듭니다.
 
-### Try it out
+### <a name="try-it-out"></a>체험
 
-Let's test what we have so far by doing the following:
+다음과 같은 방법으로 지금까지 우리가 가진 테스트해 보겠습니다.
 
-1. In your new function, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy**.
+1. 새 함수에서 오른쪽 맨 위에 있는 **</> 함수 URL 가져오기**를 클릭하고 **기본값(함수 키)** 를 선택한 후 **복사**를 클릭합니다.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&name=<yourname>` to the end of this URL and press the `Enter` key on your keyboard to execute the request. You should see a response similar to the following response returned by the function displayed in your browser.  
+2. 브라우저의 주소 표시줄에 복사해 둔 함수 URL을 붙여넣습니다. `&name=<yourname>` 쿼리 문자열을 이 URL의 마지막에 추가하고 키보드에서 `Enter` 키를 눌러 요청을 실행합니다. 브라우저에 표시 된 함수에서 반환한 다음 응답과 유사한 응답이 표시 됩니다.  
 
-Nice work! You have now added a HTTP-triggered function to your function app and tested to make sure it is working as expected!
+많으 셨습니다! 함수 앱으로 HTTP 트리거 함수를 추가 하 고 예상 대로 작동 하는지 테스트를 이제!
 
-![Screenshot of response message of a successful call to our function.](../media-draft/default-http-trigger-response-small.PNG)
+![이 함수를 성공적으로 호출의 응답 메시지의 스크린샷.](../media-draft/default-http-trigger-response-small.PNG)
 
-As you can see from this exercise so far, you have to select a trigger type when creating a function. Every function has one, and only one trigger. In this example, we're using an HTTP trigger, which means our function starts when it receives an HTTP request. The default implementation, shown in the following screenshot in JavaScript, responds with the value of a parameter *name* it received in the query string  or body of the request. If no string was provided, the function responds with a message asking whoever is calling to supply a name value.
+알 수 있듯이이 연습에서 지금까지, 함수를 만들 때 트리거 유형을 선택 해야 합니다. 모든 함수에 하나, 그리고 하나의 트리거가 있습니다. 이 예제에서는 HTTP 요청을 받으면이 함수 시작을 의미 하는 HTTP 트리거를 사용 하는 것입니다. 매개 변수의 값을 사용 하 여 JavaScript에서 다음 스크린샷에 표시 된 기본 구현에서는 응답 *이름* 받고 요청 본문 또는 쿼리 문자열입니다. 문자열이 제공 된 경우 함수는 누구 든 지를 호출 하는 이름 값을 제공 하 라는 메시지를 사용 하 여 응답 합니다.
 
-![Screenshot of default JavaScript implementation of a HTTP-triggered Azure function.](../media-draft/default-http-trigger-implementation-small.PNG)
+![HTTP에서 트리거한 Azure 함수의 기본 JavaScript 구현은 스크린샷.](../media-draft/default-http-trigger-implementation-small.PNG)
 
-All of this code is in the *index.js* file in this function's folder. Let's look briefly at the function's other file, the *function.json* config file. This configuration data is shown in the following JSON listing.
+이 코드의 모든 합니다 *index.js* 이 함수의 폴더에는 파일입니다. 보겠습니다 함수에서 간단 하 게 확인의 기타 파일을 *function.json* 구성 파일입니다. 이 구성 데이터는 다음과 같이 JSON 목록입니다.
 
 ```json
 {
@@ -91,40 +91,40 @@ All of this code is in the *index.js* file in this function's folder. Let's look
 }
 ```
 
-As you can see, this function has a trigger binding named **req** of type `httpTrigger` and an output binding named **res**  of type `HTTP`. In the preceding code for our function, we saw how we accessed the payload of the incoming HTTP request through our **req** parameter. Similarly, we sent an HTTP response simply by setting our **res** parameter. Bindings really do take care of some of the heavy lifting for us!
+이 함수에 명명 된 트리거 바인딩이 알 수 있듯이 **req** 형식의 `httpTrigger` 및 출력 바인딩을 **res** 형식의 `HTTP`합니다. 에서는 통해 들어오는 HTTP 요청의 페이로드에 액세스 하는 방법을 살펴보았습니다 함수에 대 한 이전 코드에서 우리의 **req** 매개 변수입니다. 마찬가지로, 보냈습니다. HTTP 응답을 설정 하 여 당사의 **res** 매개 변수입니다. 바인딩 실제로 수행 주의 어려운 작업 중 일부에!
 
 >[!TIP]
->You can see index.js and function.json by expanding the **View Files** menu on the right of the function panel in the Azure portal.  
+>확장 하 여 index.js 및 function.json을 볼 수 있습니다 합니다 **파일 보기** Azure portal에서 함수 패널의 오른쪽의 메뉴.  
 
-### Explore binding types
+### <a name="explore-binding-types"></a>바인딩 형식을 탐색합니다
 
-1. Notice under the function entry there is a set of menu items as shown in the following screenshot.
+1. 함수 항목에서 다음 스크린샷에 표시 된 것 처럼 메뉴 항목 집합이 있는지 확인 합니다.
 
-![Screenshot showing menu items under a function in the Function Apps blade.](../media-draft/func-menu-small.PNG)
+![함수 앱 블레이드에서 함수 아래에 있는 메뉴 항목을 보여주는 스크린샷.](../media-draft/func-menu-small.PNG)
 
-2. Select the Integrate menu item to open the integration tab for our function. If you have been following along with this unit, the integrate tab should look very similar to the following screenshot.
+2. 이 함수에 대 한 통합 탭이 열리고 통합 메뉴 항목을 선택 합니다. 이 단위와 함께 수행 된 경우 통합 탭 하 여 다음 스크린샷과 매우 유사 해야 합니다.
 
-![Screenshot showing integrate UI or tab.](../media-draft/func-integrate-tab-small.PNG)
+![스크린샷 UI 또는 탭에 통합 합니다.](../media-draft/func-integrate-tab-small.PNG)
 
-Notice that we have already defined a trigger and an output binding as shown in this screenshot. You can also see that we can't add more than one trigger. In fact, to change the trigger for our function we would have to first delete the trigger and create a new one.
+이미 정의 된 트리거 및 출력 바인딩을이 스크린샷에 표시 된 대로 확인 합니다. 둘 이상의 트리거를 추가할 수 없습니다 것을 볼 수 있습니다. 사실,이 함수에 대 한 트리거를 변경 하려면 필요가 먼저 트리거를 삭제 하 고 새로 만드십시오.
 
-On the other hand, the **Inputs** and **Outputs** sections of this form display a plus `+` sign to add more bindings.
+다른 한편으로 **입력** 하 고 **출력** 이 폼의 섹션에서는 더하기 기호를 표시 `+` 자세한 바인딩을 추가 하려면 로그인 합니다.
 
-3. Select **+ New Input** under the **Inputs** column. A list of all possible input binding types is displayed as shown in the following screenshot.
+3. 선택 **+ 새 입력** 아래의 합니다 **입력** 열입니다. 다음 스크린샷에 표시 된 것 처럼 모든 입력된 바인딩 가능한 형식 목록이 표시 됩니다.
 
-![Screenshot showing the list of possible input bindings.](../media-draft/func-input-bindings-selector-small.PNG)
+![입력된 바인딩 가능한 목록을 보여주는 스크린샷.](../media-draft/func-input-bindings-selector-small.PNG)
 
-Take a moment to consider each of these input bindings and how you might use them in a solution. There are a lot to choose from. This list may even have changed by the time you read this module as we continue to support more data sources.
+잠시이 입력 바인딩의 각 하 고 솔루션에서 이러한를 사용 하는 방법을 고려해 야 합니다. 많은에서 선택할 수 있습니다. 이 목록은 계속 더 많은 데이터 원본을 지원 됨에 따라이 모듈을 읽은 시간을 기준으로 변경 되었습니다.
 
-4. Select **Cancel** to dismiss this list.
+4. 선택 **취소** 이 목록 해제 합니다.
 
-5. Select **+ New Output** under the **Outputs** column. A list of all possible output binding types is displayed as shown in the following screenshot.
+5. 선택 **+ 새 출력** 아래의 합니다 **출력** 열입니다. 다음 스크린샷에 표시 된 대로 모든 가능한 출력 바인딩 형식 목록이 표시 됩니다.
 
-![Screenshot showing the list of possible output bindings.](../media-draft/func-output-bindings-selector-small.PNG)
+![출력 바인딩 목록을 보여주는 스크린샷.](../media-draft/func-output-bindings-selector-small.PNG)
 
-Again, you have lots of options here, as shown by the need for a scroll bar to the right in this screenshot.
+마찬가지로 많은 옵션 여기에서 필요할 경우이 스크린샷에 오른쪽으로 스크롤 막대를 표시 된 것과 같이 합니다.
 
 >[!TIP]
->To learn more details about the bindings that are supported, check out the [list of supported bindings](https://docs.microsoft.com/azure/azure-functions/functions-versions) in the Azure Functions documentation.
+>에 지원 되는 바인딩에 대 한 자세한 내용을 알아보려면 확인 합니다 [지원 되는 바인딩 목록을](https://docs.microsoft.com/azure/azure-functions/functions-versions) Azure Functions 설명서에서.
 
-So far we've learned how to create a function app and add a function to it. We've seen a simple function in action that runs when an HTTP request is made to it. We've also explored the portal UI and types of input and output binding that are available to our functions. In the next unit, we'll use an input binding to read text from a a database.
+지금까지 함수 앱을 만들고 함수를 추가 하는 방법을 배웠습니다. HTTP 요청에 만들어질 때 실행 되는 작업에서 간단한 함수를 살펴보았습니다. 또한 살펴보았습니다 포털 UI 및 기능을 사용할 수 있는 입력 및 출력 바인딩의 형식입니다. 다음 단위에 사용 하 여 입력된 바인딩을에서 텍스트 읽기는 데이터베이스입니다.

@@ -1,23 +1,21 @@
-Azure Cosmos DB 데이터베이스에 데이터를 추가하는 작업은 간단합니다. Azure Portal을 열어서 데이터베이스로 이동한 다음 데이터 탐색기를 사용하여 JSON 문서를 데이터베이스에 추가합니다. 데이터를 추가하는 더 복잡한 방법도 있지만, 여기서는 Azure Cosmos DB에서 제공하는 기능과 내부 작동 방식을 익히는 데 유용한 도구인 데이터 탐색기를 사용하여 데이터 추가 과정을 시작하겠습니다.
+Azure Cosmos DB에 데이터 추가 데이터베이스는 간단 합니다. Azure Portal을 열어서 데이터베이스로 이동한 다음 데이터 탐색기를 사용하여 JSON 문서를 데이터베이스에 추가합니다. 데이터를 추가하는 더 복잡한 방법도 있지만, 여기서는 Azure Cosmos DB에서 제공하는 기능과 내부 작동 방식을 익히는 데 유용한 도구인 데이터 탐색기를 사용하여 데이터 추가 과정을 시작하겠습니다.
 
 ## <a name="what-is-the-data-explorer"></a>데이터 탐색기란?
-Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Azure Cosmos DB에 저장된 데이터를 관리하는 데 사용됩니다. 데이터 탐색기에서는 데이터 컬렉션 보기/탐색 및 데이터베이스 내 문서 편집을 위한 UI가 제공됩니다.
+Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Azure Cosmos DB에 저장된 데이터를 관리하는 데 사용됩니다. 데이터베이스 내에서 문서를 편집, 데이터, 쿼리 및 만들기 및 저장된 프로시저 실행에 대 한 뿐만 아니라 보고 데이터 컬렉션을 탐색 하는 UI를 제공 합니다.
 
 ## <a name="add-data-using-the-data-explorer"></a>데이터 탐색기를 사용하여 데이터 추가
 
-1. 이전 모듈에 이어서 진행하는 경우 Azure Portal 창에서 **데이터 탐색기**를 클릭한 다음 **전체 화면 열기**를 클릭합니다.
-
-    그렇지 않으면 [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인하고 **모든 서비스** > **데이터베이스** > **Azure Cosmos DB**를 클릭합니다. 그런 다음 계정을 선택하고 **데이터 탐색기**를 클릭한 다음 **전체 화면 열기**를 클릭합니다.
+1. 에 로그인 합니다 [Azure portal](https://portal.azure.com/?azure-portal=true), 클릭 **모든 서비스** > **데이터베이스** > **Azure Cosmos DB**합니다. 다음 계정을 선택, 클릭 **데이터 탐색기**를 클릭 하 고 **열려 전체 화면**합니다.
  
-   ![Azure Portal의 데이터 탐색기에서 새 문서 만들기](../media-draft/3-azure-cosmosdb-data-explorer-full-screen.png)
+   ![Azure Portal의 데이터 탐색기에서 새 문서 만들기](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
 
 2. **전체 화면 열기** 상자에서 **열기**를 클릭합니다.
 
     웹 브라우저에 새로운 전체 화면 데이터 탐색기가 표시됩니다. 이를 통해 데이터베이스 작업 전용 환경과 공간이 확보됩니다.
 
-3. 새 JSON 문서를 만들려면 **새 문서**를 클릭합니다.
+3. SQL API 창의 새 JSON 문서를 만들려면 확장 된 **제품** > **의류**, 클릭 **문서**, 클릭 **새 문서** .
 
-   ![Azure Portal의 데이터 탐색기에서 새 문서 만들기](../media-draft/3-azure-cosmosdb-data-explorer-new-document.png)
+   ![Azure Portal의 데이터 탐색기에서 새 문서 만들기](../media/3-azure-cosmosdb-data-explorer-new-document.png)
 
 4. 이제 다음과 같은 구조를 사용하여 컬렉션에 문서를 추가합니다. 다음 코드를 복사하여 **문서** 탭에 붙여넣으세요.
 
@@ -28,6 +26,7 @@ Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Az
         "category": "Women's Clothing",
         "manufacturer": "Contoso Sport",
         "description": "Quick dry crew neck t-shirt",
+        "price": "14.99",
         "shipping": {
             "weight": 1,
             "dimensions": {
@@ -36,13 +35,14 @@ Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Az
             "depth": 1
            }
         }
+    }
      ```
 
 5. **문서** 탭에 JSON을 추가했으면 **저장**을 클릭합니다.
 
-    ![Azure Portal의 데이터 탐색기에서 JSON 데이터를 복사하고 저장을 클릭합니다.](../media-draft/3-azure-cosmosdb-data-explorer-save-document.png)
+    ![Azure Portal의 데이터 탐색기에서 JSON 데이터를 복사하고 저장을 클릭합니다.](../media/3-azure-cosmosdb-data-explorer-save-document.png)
 
-6. 다음 JSON 개체를 데이터 탐색기에 복사하고 **저장**을 클릭하여 문서 하나를 더 만들고 저장합니다.
+6. 만들고 저장 한 자세한 문서를 클릭 하 **새 문서** 다시 데이터 탐색기에 다음 JSON 개체를 복사 및 클릭 **저장**합니다.
 
      ```
     {
@@ -51,6 +51,7 @@ Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Az
         "category": "Women's Outerwear",
         "manufacturer": "Contoso",
         "description": "Black wool pea-coat",
+        "price": "49.99",
         "shipping": {
             "weight": 2,
             "dimensions": {

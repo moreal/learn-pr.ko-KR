@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
-title: Optimize storage performance
+title: 저장소 성능 최적화
 metadata:
-  title: Optimize storage performance
-  description: In this unit we'll discuss how to optimize storage performance for your architecture
+  title: 저장소 성능 최적화
+  description: 이 단원에서는 아키텍처의 저장소 성능을 최적화하는 방법을 알아봅니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/4-optimize-storage-performance.md)]
 quiz:
-  title: 'Knowledge Check - Optimize storage performance'
+  title: 지식 검사 - 저장소 성능 최적화
   questions:
-  - content: 'What is polyglot persistence?'
-    choices:
-    - content: 'Using Azure SQL Database to store all of your data'
-      isCorrect: false
-      incorrectExplanation: 'Storing all data in a single technology is not the definition of polyglot persistence.'
-    - content: 'A way to keep connections alive for data transfers'
-      isCorrect: false
-      incorrectExplanation: 'Keepalives are methods of keeping connections alive for data transfers and are not related to polyglot persistence.'
-    - content: 'The usage of different data storage technologies for different purposes in your application'
-      isCorrect: true
-      correctExplanation: 'Polyglot persistence is the usage of different data storage technologies for different purposes.'
-    - content: 'An approach to deal with transient data faults'
-      isCorrect: false
-      incorrectExplanation: 'While dealing with transient data faults is beneficial in an application architecture, it is not related to polyglot persistence.'
-  - content: 'Redis Cache can be used to improve the performance of your application by storing a snapshot of data in memory.'
-    choices:
-    - content: 'True'
-      isCorrect: true
-      correctExplanation: 'Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.'
-    - content: 'False'
-      isCorrect: false
-      incorrectExplanation: 'Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.'
+    - content: 다중저장소 지속성이란 무엇인가요?
+      choices:
+        - content: Azure SQL Database를 사용하여 모든 데이터 저장
+          isCorrect: false
+          incorrectExplanation: 단일 기술로 모든 데이터를 저장하는 것은 다중 언어 지속성에 대한 정의가 아닙니다.
+        - content: 데이터 전송을 위해 연결 상태를 유지하는 방법
+          isCorrect: false
+          incorrectExplanation: Keepalive는 데이터 전송을 위해 연결 상태를 유지하는 방법이며 다중 언어 지속성과는 관련이 없습니다.
+        - content: 응용 프로그램의 다양한 용도를 위해 다양한 데이터 저장 기술 사용
+          isCorrect: true
+          correctExplanation: 다중저장소 지속성은 다양한 용도를 위해 다양한 데이터 저장 기술을 사용하는 것입니다.
+        - content: 일시적인 데이터 결함을 처리하는 방법
+          isCorrect: false
+          incorrectExplanation: 일시적인 데이터 장애를 처리하는 것은 응용 프로그램 아키텍처에 유익하지만 다중저장소 지속성과는 관련이 없습니다.
+    - content: Redis Cache는 데이터 스냅숏을 메모리에 저장하여 응용 프로그램의 성능을 향상시키는 데 사용할 수 있습니다.
+      choices:
+        - content: 'True'
+          isCorrect: true
+          correctExplanation: Redis Cache는 응용 프로그램 데이터를 메모리에 저장하기 때문에 검색 시간이 빨라지고 자주 액세스하는 데이터와 관련된 응용 프로그램 성능이 향상됩니다.
+        - content: 'False'
+          isCorrect: false
+          incorrectExplanation: Redis Cache는 응용 프로그램 데이터를 메모리에 저장하기 때문에 검색 시간이 빨라지고 자주 액세스하는 데이터와 관련된 응용 프로그램 성능이 향상됩니다.

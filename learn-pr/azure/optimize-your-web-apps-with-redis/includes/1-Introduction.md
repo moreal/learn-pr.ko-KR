@@ -1,17 +1,17 @@
-You work at a company that tracks professional sports statistics and provides an API to query results. It helps fans track and review games and scores, both live and historical. Users can also request team statistics using a natural language search, such as, "How many times has John Smith hit a home run against a left-handed pitcher?"
+전문 스포츠 통계를 추적 하 고 쿼리 결과에 API를 제공 하는 회사에서 작업 합니다. 이 회사는 스포츠 팬들이 실시간/과거 게임 및 기록을 추적하고 검토하는 데 도움을 줍니다. 사용자가 자연어 검색을 사용 하는 팀 통계와 같은 "횟수 유무는 왼쪽 전화가 투 수에 대해 실행 되는 홈 적중 John Smith"을 요청할 수도 있습니다.
 
-During times of peak demand, such as during playoffs, response time of your service slows down because the back-end service doesn't have the capacity to meet demand. You want to improve performance for your users and reduce the workload on your back-end and data storage services. Your metrics show that 50% to 80% of the data returned is for read-only or recently requested values. Implementing a cache of commonly used data could improve performance and reduce latency.
+최대 수요의 시간 동안와 같은 결승을 하는 동안 서비스의 응답 시간 저하 백 엔드 서비스는 수요를 충족 하는 역량 없기 때문입니다. 사용자를 위해 성능을 향상하고 백 엔드 및 데이터 저장소 서비스의 워크로드를 줄이려고 합니다. 메트릭에 따르면 반환된 데이터의 50%에서 80%가 읽기 전용이거나 최근에 요청된 값입니다. 일반적으로 사용되는 데이터의 캐시를 구현하면 성능을 향상하고 대기 시간을 줄일 수 있습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서 수행하는 작업:
 
-- Describe what a Redis cache is and how you can use it for your business needs
-- Create a design and plan to use a Redis cache
-- Provision a Redis cache in Azure
-- Connect an application to the cache
+- 어떤 Redis cache는 및 비즈니스 요구 사항에 대 한이 사용 하는 방법을 설명 합니다.
+- 디자인을 만들고 Redis cache를 사용.
+- Azure에서 Redis cache 프로 비전
+- 응용 프로그램 캐시에 연결
 
-## Prerequisites
+## <a name="prerequisites"></a>필수 구성 요소
 
-- Experience with app development
-- Experience using data in apps
+- 앱 개발 경험
+- 앱에서 데이터를 사용해 본 경험

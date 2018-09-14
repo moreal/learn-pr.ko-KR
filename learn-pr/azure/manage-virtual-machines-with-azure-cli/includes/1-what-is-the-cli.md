@@ -19,7 +19,7 @@ Azure CLI를 사용하면 명령줄이나 스크립트를 통해 가상 머신 �
 
 ## <a name="learning-objectives"></a>학습 목표
 
-이 모듈에서는 다음을 수행합니다.
+이 모듈에서 수행하는 작업:
 
 - Azure CLI를 사용하여 가상 머신 만들기
 - Azure CLI를 사용하여 가상 머신 크기 조정

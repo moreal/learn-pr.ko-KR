@@ -1,50 +1,48 @@
-Let's put our knowledge of Text Analytics to work in a practical solution. Our solution will focus on Sentiment Analysis  of text documents. Let's set the context by describing the problem we want to tackle. 
+텍스트 분석 실용적인 솔루션을 작업에 대 한 지식을 보겠습니다. 솔루션은 텍스트 문서에 대 한 감정 분석에 집중 됩니다. 해결 하려는 문제를 설명 하 여 컨텍스트를 설정 해 보겠습니다.
 
-## Manage customer feedback more efficiently
+## <a name="manage-customer-feedback-more-efficiently"></a>고객의 의견을 보다 효율적으로 관리
 
-Social media is active with talk of your company's product. Your feedback email alias is also active with customers eager to share their opinion of your product.
+소셜 미디어 회사 제품의 대화를 사용 하 여 활성화 됩니다. 사용자 의견 전자 메일 별칭 고객에 게 제품의 의견을 공유 하는 즉시 활성 이기도 합니다.
 
-As is the case with any new startup, you live by the mantra of listening to your customers. However, the success of your product has made keeping this promise easier said than done. It's a good problem but a problem all the same. 
+모든 새 시작을 사용 하 여이 처럼 현대의 고객에 게 수신 대기 하 여 live. 그러나 제품의 성공 여부는 보관이 프라미스 쉽게 말을 만들었습니다. 것 모두 동일한 문제가 발생 하지만 좋은 문제가 발생 합니다.
 
-The team can't keep up with the volume of feedback anymore. They need help sorting the feedback so that issues can be managed as efficiently as possible. As the lead developer in the organization, you have been asked to build a solution. 
+팀 따라갈 수 없는 볼륨 피드백을 더 이상. 도움말 문제를 최대한 효율적으로 관리할 수 있도록 피드백을 정렬 해야 합니다. 조직에서 수석 개발자로 요청을 받았을 솔루션을 빌드합니다.
 
-Let's look at some high-level requirements:
+일부 높은 수준의 요구 사항을 살펴보겠습니다.
 
-
-|Requirement  | Details  |
+|요구 사항  | 세부 정보  |
 |---------|---------|
-|Categorize feedback so we can react to it.     |   Not all feedback is equal. Some is glowing testimony. Other feedback is scathing criticism from a frustrated customer.  Perhaps you can't tell what the customer wants in other cases. <br/><br/>At a minimum, having an indication of the sentiment, or tone, of feedback would help us categorize it.     |
-|The solution should scale up or down to meet demand.    |   We're a startup. Fixed costs are difficult to justify and we haven't figured out  the exact pattern of feedback traffic. We'll need a solution that can tackle bursts of activity, but cost as little as possible during quiet times. <br/><br/> A serverless architecture billed on a consumption plan is a good candidate in this case.     |
-| Produce a Minimal Viable Product (MVP), but make the solution adaptable.    | Today we want to categorize feedback so we can apply our limited resources to the feedback that matters. If a customer is frustrated, we want to know immediately and start chatting to them.  In the future, we'll enhance this solution to do more. One idea for a new feature is to examine key phrases in feedback to detect pain points before they reach critical mass with our customers.   Another idea is to automate responses back to customers who are either positive or neutral. Even though they love us, we want them to know we are still listening to their feedback. <br/><br/>A solution that offers a plug-and-play architecture is a good fit here. We could, for example, use queues as a form of factory line. You perform one task, then place the result into a queue for the next part of the system to pick it up and process.   |
-|Deliver quickly.     |   We've all heard this one before! Remember, this solution is an MVP and we want to test it with our scenario quickly. To deliver at speed and with quality will mean writing less code. <br/><br/> Taking advantage of the Text Analytics API means we don't have to train a model to detect sentiment.  Using Azure Functions and binding to queues declaratively reduces the amount of code we have to write.  A serverless solution also means we don't have to worry about server management.   |
+|이에 대응할 수 있도록 피드백을 분류 합니다.     |   모든 피드백와 같습니다. 일부는 빛나는 증언 만한 있습니다. 기타 피드백은 생각 한 겁니다 절망감된 고객 으로부터 비판은 합니다.  아마도 다른 경우에서 고객이 원하는 것을 확인할 수 없습니다. <br/><br/>최소한 정서, 또는 피드백의 목소리를 표시 하지 알려 주시면 분류 합니다.     |
+|솔루션 또는 충족 요청으로 확장 해야 합니다.    |   시작을 것입니다. 고정된 비용을 정당화할 어려운 및 피드백 트래픽의 정확한 패턴을 파악 하지 못했기 합니다. 활동에 자동 시간을 최소화 하는 비용의 갑작스러운 증가 처리할 수 있는 솔루션을 해야 합니다. <br/><br/> 소비 계획에서 청구 하는 서버 리스 아키텍처는이 경우에 좋은 후보입니다.     |
+| 최소한의 실행 가능한 제품 (MVP)를 생성 하지만 융통성 있는 솔루션을 확인 합니다.    | 현재 제한 된 리소스는 중요 한 피드백을 적용할 수 있도록 피드백을 분류 하려고 합니다. 고객이 가득한 경우 즉시 알고 있고에 채팅 시작 하려고 합니다.  나중에이 솔루션을 더욱 강화할 것입니다. 새로운 기능에 대 한 하나의 아이디어 고객과 맞추는 도달 하기 전에 문제점을 검색 하는 피드백에서 키 구의 조사 하는 것입니다.   다른 아이디어는 고객은 양수 또는 중립으로 응답을 자동화 하는 것입니다. 미국에 상존 하는 경우에 피드백을 계속 수신 것을 알고 하도록 하려고 합니다. <br/><br/>플러그 앤 플레이 아키텍처를 제공 하는 솔루션은 여기에 적합 합니다. 예를 들어 팩터리 선의 형태로 큐 사용 수 있습니다. 하나의 작업을 수행 한 다음 결과 시스템을 선택 하 고 프로세스의 다음 부분에 대 한 큐에 배치 합니다.   |
+|신속 하 게 제공 합니다.     |   많이 들어왔습니다 전에이 이와! 이 솔루션은 MVP 및 시나리오를 사용 하 여 신속 하 게 테스트 하려고 해야 합니다. 속도 품질을 제공 하는 것을 의미 적은 코드를 작성 합니다. <br/><br/> 텍스트 분석 API를 활용 하 고 감정 검색 하는 모델을 학습 시킬 필요가 의미 합니다.  큐를 선언적으로 바인딩할 및 Azure Functions를 사용 하 여 작성 해야 하는 코드의 양을 줄일 수 있습니다.  서버 리스 솔루션을 서버 관리에 걱정할 필요가 의미 이기도 합니다.   |
 
-Our proposed solution for each requirement in the preceding table offers a glimpse into how to map requirements to solutions.  Let's now see  what a solution might look like based on Azure.
+앞의 표에서 각 요구 사항에 대 한 제안 된 솔루션 요구 사항 솔루션에 매핑하는 방법에 간략히를 제공 합니다.  이제 살펴보겠습니다 솔루션 모양을 Azure를 기반으로 합니다.
 
-## A solution based on Azure Functions, Azure Queue Storage, and Text Analytics API
+## <a name="a-solution-based-on-azure-functions-azure-queue-storage-and-text-analytics-api"></a>Azure Functions, Azure Queue Storage 및 Text Analytics API를 기반으로 솔루션
 
-The following diagram is a design proposal for a solution. It uses three core components of Azure - Azure Queue Storage, Azure Functions, and Microsoft Cognitive Services on Azure.
+다음 다이어그램은 솔루션에 대 한 디자인 제안 합니다. Azure에서 세 가지 핵심 구성 요소-Azure의 Azure Queue Storage, Azure Functions 및 Microsoft Cognitive Services를 사용합니다.
 
-![Conceptual diagram of a feedback sorting architecture.](../media-draft/proposed-solution.PNG)
+![아키텍처를 정렬 하는 피드백의 개념적 다이어그램입니다.](../media/proposed-solution.PNG)
 
-The idea is that text documents containing user feedback are placed into a queue that we've named *new-feedback-q* in the preceding diagram. The arrival of a text document into the queue triggers, or starts, an Azure Function. The function reads the new documents from the input queue and sends them for analysis to the Text Analytics API. Based on the results that the API returns, the document is placed into an output queue for further processing.
+사용자에 게 피드백을 포함 텍스트 문서로 명명 하 고 큐에 배치 되는 것입니다 *피드백 q 새* 위의 다이어그램에서. 큐에 텍스트 문서를 포함 하는 메시지의 도착 트리거 또는 함수 실행을 시작 합니다. 함수 입력된 큐에서 새 문서를 포함 하는 메시지를 읽고 분석을 위해 텍스트 분석 API에 보냅니다. API에서 반환 하는 결과 따라 문서가 포함 된 새 메시지를 처리할 수 있도록 출력 큐에 배치 됩니다.
 
-The result we get back for each document is a sentiment score. The output queues are used to store feedback sorted into positive, neutral, and negative. Hopefully the negative queue will always be empty! :-)   Once we've bucketed each incoming piece of feedback into an output queue based on sentiment, you can imagine adding logic to take action on the messages in each queue. 
+감정 점수를 각 문서에 대 한 다시 얻게 됩니다. 출력 큐 양수, 중립 및 음수를 정렬 하는 피드백을 저장 하는 데 사용 됩니다. 다행히 음수 큐 항상 비어 있게 됩니다. :-)   감정에 따라 출력 큐에 들어오는 각 부분의 피드백을 버킷 팅 했습니다에서는 되 면 각 큐의 메시지에 작업을 수행 하는 논리가 추가 상상할 수 있습니다.
 
-Let's look at a flowchart next to see what the function logic needs to do.
+다음 수행 해야 하는 함수 논리를 참조 하는 순서도 살펴보겠습니다.
 
-![Flowchart of the logic inside the Azure function to sort text documents by sentiment into output queues.](../media-draft/flow.PNG)
+![출력 큐에 감정 별로 텍스트 문서를 정렬 하는 Azure 함수 내에서 논리의 순서도입니다.](../media/flow.PNG)
 
-Our logic is like a router. It takes text input and routes it to an output queue based on the sentiment score of the text. We have a dependency on Text Analytics API. While the logic seems trivial, this function will remove the need for people on the team to analyze feedback manually.
+이 논리는 라우터과 같습니다. 텍스트 입력을 사용 하 고 텍스트의 감정 점수를 기준으로 하는 출력 큐로 라우팅합니다. Text Analytics API에 의존을 했습니다. 간단한 논리 처럼 보이지만, 하는 동안이 함수에는 팀에서 사용자에 대 한 피드백을 수동으로 분석할 필요성이 제거 됩니다.
 
-## Steps to implement our solution
+## <a name="steps-to-implement-our-solution"></a>솔루션을 구현 하는 단계
 
-To implement the solution described in this unit, we'll need to complete the following steps.
+이 단위에 설명 된 솔루션을 구현 하려면 다음 단계를 완료 해야 합니다.
 
-1. Create a function app to host our solution.
+1. 솔루션을 호스트 하는 함수 앱을 만듭니다.
 
-1. Look for sentiment in incoming feedback messages using the Text Analytics API. We'll use our access key from the preceding exercise and write some code to send the requests.
+1. Text Analytics API를 사용 하 여 들어오는 피드백 메시지에서 정서를 찾습니다. 이전 연습에서 선택 키를 사용 하 고 요청을 보내도록 코드를 작성 하겠습니다.
 
-1. Post feedback to processing queues based on sentiment.
+1. 감정에 따라 큐를 처리 하는 의견을 게시 합니다.
 
-
-Let's move on to creating our function and function app. 
+에 대해 알아 보며 함수 앱을 작성 합니다.

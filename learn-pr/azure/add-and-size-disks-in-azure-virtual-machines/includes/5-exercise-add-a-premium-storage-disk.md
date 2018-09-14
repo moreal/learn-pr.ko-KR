@@ -1,77 +1,76 @@
-If your virtual machine (VM) hosts a disk-intensive application, you should consider using premium storage for the virtual hard drives (VHDs).
+가상 컴퓨터 (VM) 디스크를 많이 사용 하는 응용 프로그램을 호스트 하는 경우 가상 하드 드라이브 (Vhd)에 대 한 premium storage를 사용 하는 것이 좋습니다.
 
-For example, you decide to add a VHD to store outgoing mail on your SMTP server VM. To optimize disk performance, you decide on premium storage for outgoing mail. 
+예를 들어, SMTP 서버 VM에서 보내는 메일을 저장 하는 VHD를 추가 하기로 합니다. 디스크 성능을 최적화 하려면 보내는 메일에 대 한 premium storage에서 결정 합니다.
 
-Let's add a premium SSD to the VM. 
+VM에 프리미엄 SSD를 추가 해 보겠습니다.
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-## Create a premium storage account
+## <a name="create-a-premium-storage-account"></a>프리미엄 저장소 계정 만들기
 
-All premium storage VHDs must be stored in a premium storage account. Follow these steps to create a premium storage account.
+모든 premium storage Vhd를 premium storage 계정에 저장 되어야 합니다. 프리미엄 저장소 계정을 만들려면 다음이 단계를 수행 합니다.
 
-1. Select **Storage accounts** under **FAVORITES** in the left-hand menu of the portal.
+1. 선택 **Storage 계정** 아래에서 **즐겨찾기** 포털의 왼쪽 메뉴에서.
 
-1. Select **+ Add** at the top left of the **Storage accounts** screen.
+1. 선택 **+ 추가** 에서 맨 왼쪽의 **저장소 계정** 화면.
 
-1. In the **Create storage account** pane that opens, set the following properties.
+1. 에 **저장소 계정 만들기** 열리는 창에 다음 속성을 설정 합니다.
 
-|Property  |Value  |Notes  |
+|자산  |값  |참고  |
 |---------|---------|---------|
-|Name     |    *A unique name (see note)*     |   This name must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long, and can contain only lowercase letters and numbers.      |
-|Account kind     |  **Storage (general-purpose v1)**       |         |
-|Location     |  *Select the same location as the VM you created earlier*       |         |
-|Replication     |   **Locally redundant storage (LRS)**      |  Select this value from the dropdown. If you recall, we're creating a premium storage account, and premium storage supports only LRS replication.       |
-|Performance     |  **Premium**       | Premium storage accounts are backed by solid-state drives and offer consistent, low-latency performance.        |
-|Resource group     |  *Select **Use existing** and then  **MailInfrastructure***      |  We want to keep all resources together under the same resource group.       |
+|이름     |    *고유 이름 (참고 참조)*     |   이 이름은 Azure에서 모든 기존 저장소 계정 이름은 고유 해야 합니다. 3 ~ 24 자 이어야 하 고 소문자와 숫자만 포함할 수 있습니다.      |
+|계정 종류     |  **저장소 (범용 v1)**       |         |
+|위치     |  *이전에 만든 VM과 동일한 위치를 선택 합니다.*       |         |
+|복제     |   **LRS(로컬 중복 저장소)**      |  드롭다운 목록에서이 값을 선택 합니다. 기억 하듯이, 프리미엄 저장소 계정을 만들겠습니다 하 고 premium storage는 LRS 복제만 지원 합니다.       |
+|성능     |  **Premium**       | 프리미엄 저장소 계정은 반도체 드라이브에서 지 및 일관 되 고 대기 시간이 짧은 성능을 제공 합니다.        |
+|리소스 그룹     |  *선택 **기존 항목 사용** 차례로 <rgn>[샌드박스 리소스 그룹 이름]</rgn>*      |  모든 리소스를 동일한 리소스 그룹 아래에 함께 유지 하려고 합니다.       |
 
-When you've filled out this dialog, it should look like the following screenshot. 
+이 대화 상자, 작성 하는 경우 다음 스크린샷과 같이 표시 됩니다. 
 
-!["Create storage account" dialog showing all properties set as instructed.](../media-draft/create-premium-sa.png)
+!["저장소 계정 만들기" 대화 상자 설명 된 대로 설정 된 모든 속성을 표시 합니다.](../media-draft/create-premium-sa.png)
 
-1. Select **Create** to start the storage account creation process. This process can take a few moments to complete. 
+1. 선택 **만들기** 저장소 계정 만들기 프로세스를 시작 합니다. 이 프로세스를 완료 하려면 몇 분 정도 걸릴 수 있습니다. 
 
-1. When you receive a notification that deployment of the new storage account finished successfully, select **Refresh** in the storage accounts list to display the premium storage account we created. Note the name of this account, as it will be used in the next step.
+1. 새 저장소 계정 배포를 성공적으로 완료 알림을 받으면 선택 **새로 고침** 저장소에서 계정 목록에서 만든 프리미엄 저장소 계정을 표시 합니다. 다음 단계에서 사용 되므로이 계정의 이름을 note 합니다.
 
-## Create VHD in the premium storage account
+## <a name="create-vhd-in-the-premium-storage-account"></a>프리미엄 저장소 계정에 VHD를 만들려면
 
-Now you can add a new VHD to the VM and specify the premium storage account as its location. Follow these steps:
+이제 새 VHD를 VM에 추가 하 고이 해당 위치로 프리미엄 저장소 계정을 지정할 수 있습니다. 다음 단계를 수행하세요.
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. 왼쪽 탐색 창에서 아래 **즐겨찾기**를 선택 **가상 머신**합니다.
 
-1. In the list of VMs, select **MailSenderVM**.
+1. Vm 목록에서 선택 **MailSenderVM**합니다.
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. 아래 **설정을** 의 합니다 **MailSenderVM** 구성 메뉴 왼쪽에서 선택 **디스크**합니다.
 
-1. Under **Data disks**, select **Add data disk**.
+1. 아래 **데이터 디스크**를 선택 **데이터 디스크 추가**합니다.
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. 에 **관리 되지 않는 디스크를 연결** 창에 다음 속성을 설정 합니다.
 
 
-|Property  |Value  |Notes  |
+|자산  |값  |참고  |
 |---------|---------|---------|
-|Name     |   **MailSenderVMOutgoing**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Premium SSD**       |  Select this value from the dropdown.        |
+|이름     |   **MailSenderVMOutgoing**      |         |
+|원본 형식     |  **새 (빈 디스크)**       |   드롭다운 목록에서이 값을 선택 합니다.       |
+|계정 유형     |  **Premium SSD**       |  드롭다운 목록에서이 값을 선택 합니다.        |
 
-1. To the left of the **Storage container** field, select **Browse**.
+1. 왼쪽에는 **저장소 컨테이너** 필드를 선택한 **찾아보기**합니다.
 
-1. In the list of storage accounts, find and select the premium storage account you created earlier in this unit. The type of the entry will be listed as **Premium-LRS**.
+1. 저장소 계정 목록에서 찾아이 장치에서 이전에 만든 프리미엄 저장소 계정을 선택 합니다. 항목의 형식으로 나열 됩니다 **PREMIUM-LRS**합니다.
 
-1. In the list of containers, select __+ Container__.
+1. 컨테이너 목록에서 선택 __+ 컨테이너__합니다.
 
-1. In the **New container** pane, in the **Name** textbox, type **vhds** and then select **OK**.
+1. 에 **새 컨테이너** 창에서를 **이름** 텍스트 상자에 입력 **vhd** 선택한 후 **확인**합니다.
 
-1. In the list of containers, select **vhds** and then choose **Select**.
+1. 컨테이너 목록에서 선택 **vhd** 를 선택한 후 **선택**합니다.
 
-1. Back on the **Attach unmanaged disk** pane, select **OK**.
+1. 다시 합니다 **관리 되지 않는 디스크 연결** 창 **확인**합니다.
 
-1. Back on the **MailSenderVM - Disks** pane, select **Save**. Azure adds the new premium storage disk to the VM.
+1. 다시 합니다 **MailSenderVM-디스크** 창 **저장**합니다. Azure VM에 새 프리미엄 저장소 디스크를 추가합니다.
 
-Our virtual machine has an operating system disk, a standard disk, and a premium SSD-based disk.
+가상 컴퓨터에 운영 체제 디스크, 디스크를 표준 및 premium SSD 기반 디스크를 합니다.
 
 > [!NOTE]
-> The new disk must be initialized, partitioned, and formatted before it can store data. To avoid repetition, these steps have been omitted from this exercise. If you want to complete these tasks, complete the steps in the [Partition and format a data disk](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) section of the preceding exercise.
+> 새 디스크 초기화, 분할 하 고 데이터를 저장할 수도 하기 전에 포맷 합니다. 반복을 방지 하려면 다음이 단계에서이 연습에서는 생략 되었습니다. 이러한 작업을 완료 하려면의 단계를 완료 합니다 [파티션 및 데이터 디스크를 포맷](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) 앞의 섹션입니다.

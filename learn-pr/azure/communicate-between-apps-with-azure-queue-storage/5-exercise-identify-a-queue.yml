@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.5-exercise-identify-a-queue
-title: Identify a queue - Part 2
+title: 큐 식별 - 2부
 metadata:
-  title: Identify a queue - Part 2
-  description: Exercise - Identify a queue
+  title: 큐 식별 - 2부
+  description: 연습 - 큐 식별
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

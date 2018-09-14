@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+title: 확장 집합을 사용 하 여 수평적 크기 조정
+metadata:
+  title: 확장 집합을 사용 하 여 수평적 크기 조정
+  description: 확장 집합을 사용 하 여 수평적 크기 조정
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 5
+content: |
+  [!include[](includes/4-horizontal-scaling-using-scale-sets.md)]

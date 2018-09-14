@@ -30,7 +30,7 @@ PowerShell 스크립트 파일에는 **.ps1** 파일 확장명이 있습니다. 
 PowerShell에는 일반 프로그래밍 언어에서 제공되는 많은 기능이 있습니다. 변수를 정의하고, 분기 및 루프를 사용하고, 명령줄 매개 변수를 캡처하고, 함수를 작성하고, 주석을 추가할 수 있습니다. 예제 스크립트에는 변수, 루프 및 매개 변수의 세 가지 기능이 필요합니다.
 
 ### <a name="variables"></a>variables
-PowerShell은 변수를 지원합니다. **$** 를 사용하여 변수를 선언하고, **=** 를 사용하여 값을 할당합니다. 예:
+PowerShell은 변수를 지원합니다. **$** 를 사용하여 변수를 선언하고, **=** 를 사용하여 값을 할당합니다. 예: 
 
 ```powershell
 $loc = "East US"
@@ -88,6 +88,7 @@ param([int]$size, [string]$location)
 ```
 
 ## <a name="how-to-create-a-linux-virtual-machine"></a>Linux 가상 머신을 만드는 방법
+
 Azure PowerShell은 가상 머신을 만드는 **New-AzureRmVm** cmdlet을 제공합니다. 이 cmdlet에는 많은 VM 구성 설정을 처리할 수 있는 여러 매개 변수가 있습니다. 대부분의 매개 변수에 적절한 기본값이 있으므로 다음 5개 매개 변수만 지정하면 됩니다.
 
 - **ResourceGroupName**: 새 VM이 배치될 리소스 그룹입니다.

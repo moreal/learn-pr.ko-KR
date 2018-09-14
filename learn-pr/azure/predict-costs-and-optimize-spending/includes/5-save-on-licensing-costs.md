@@ -2,13 +2,13 @@
 
 ## <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server용 Azure Hybrid Benefit
 
-많은 고객이 Windows Server 라이선스에 대한 투자를 높이고 Azure에서 이 투자의 용도를 변경하려고 합니다. Azure 하이브리드 혜택은 고객이 Azure의 가상 머신에 대해 이러한 라이선스를 사용할 수 있는 권한을 제공합니다. 즉, Windows Server 라이선스에 대해서는 비용이 청구되지 않고 Linux 요금이 청구됩니다. 
+많은 고객이 Windows Server 라이선스에 대한 투자를 높이고 Azure에서 이 투자의 용도를 변경하려고 합니다. Azure 하이브리드 혜택은 고객이 Azure의 가상 머신에 대해 이러한 라이선스를 사용할 수 있는 권한을 제공합니다. 즉, Windows Server 라이선스에 대해서는 비용이 청구되지 않고 Linux 요금이 청구됩니다.
 
 이 혜택을 받으려면 Windows 라이선스에 Software Assurance가 적용되어야 합니다. 다음 지침도 적용됩니다.
 
 - 각 2개 프로세서 라이선스 또는 각 16코어 라이선스 집합이 있으면 최대 8코어 인스턴스 두 개 또는 최대 16코어 인스턴스 한 개를 받을 수 있습니다.
 - Standard Edition 라이선스는 온-프레미스 또는 Azure에서 한 번만 사용할 수 있습니다. 즉, Azure VM 및 로컬 컴퓨터에 동일한 라이선스를 사용할 수 없습니다.
-- Datacenter Edition 혜택은 온-프레미스와 Azure 둘 다에서 동시에 사용할 수 있으므로 라이선스 한 개로 두 대의 Windows 머신을 실행할 수 있습니다.
+- Datacenter Edition 혜택은 온-프레미스와 Azure 둘 다에서 동시에 사용할 수 있으므로 라이선스 한 개로 두 대의 Windows 컴퓨터를 실행할 수 있습니다.
 
 > [!NOTE]
 > 대부분의 고객은 일반적으로 코어 단위로 라이선스가 부여되므로 해당 모델을 계산에 사용합니다. 보유한 라이선스에 대해 궁금한 점이 있으면 라이선스 리셀러 또는 Microsoft 계정 팀에 문의하세요.
@@ -31,7 +31,7 @@ Azure SQL Database에 대한 Azure 하이브리드 혜택은 다음과 같습니
 
 다음 그림은 SQL Server 라이선스에 대한 Azure 하이브리드 혜택을 통해 각 서비스 계층에서 사용할 수 있는 vCore 기반 옵션을 보여 줍니다.
 
-![Azure 하이브리드 혜택을 사용하여 기존 SQL Server 라이선스의 가치를 최대화하는 방법에 대한 예제를 보여 주는 그림입니다.](../media-drafts/5-sql-tradein-value.png)
+![Azure 하이브리드 혜택을 사용하여 기존 SQL Server 라이선스의 가치를 최대화하는 방법에 대한 예제를 보여 주는 그림입니다.](../media/5-sql-tradein-value.png)
 
 Azure Virtual Machines의 SQL Server에 대한 Azure 하이브리드 혜택은 다음과 같습니다.
 
@@ -49,7 +49,7 @@ Azure Virtual Machines의 SQL Server에 대한 Azure 하이브리드 혜택은 �
 
 기업계약 고객이고 SQL Server 라이선스에 대한 기존 투자가 있으며 Azure로 리소스를 이동하는 과정에서 라이선스가 확보된 경우, Azure Marketplace에서 **BYOL**(사용자 라이선스 필요) 이미지를 프로비전하여 사용하지 않는 이러한 라이선스를 이용하고 Azure VM 비용을 줄일 수 있습니다. 언제든지 Windows VM을 프로비전하고 SQL Server를 수동으로 설치하여 이 작업을 수행할 수 있었지만, 이 경우 Microsoft 인증 이미지를 활용하여 생성 프로세스가 간소화됩니다. Marketplace에서 **BYOL**을 검색하여 해당 이미지를 찾으세요.
 
-![Azure의 SQL Server용 BYOL](../media-drafts/5-byol-sql-server.png)
+![SQL Server에 대 한 BYOL 옵션을 보여 주는 Azure portal의 스크린샷.](../media/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > 인증된 BYOL 이미지를 사용하려면 기업계약 구독이 필요합니다.
@@ -58,12 +58,12 @@ Azure Virtual Machines의 SQL Server에 대한 Azure 하이브리드 혜택은 �
 
 SQL Server Developer Edition이 **비프로덕션 용도**로 사용할 수 있는 무상 제품임을 모르는 사람들이 많습니다. Developer Edition에는 Enterprise Edition의 모든 기능이 포함되어 있으므로, 비프로덕션 워크로드의 경우 라이선스 비용을 훨씬 절약할 수 있습니다.
 
-Azure Marketplace에서 Developer Edition용 SQL Server 이미지를 찾아 개발 또는 테스트 용도로 사용하면 이러한 경우의 SQL Server에 대한 추가 비용이 발생하지 않습니다. 
+Azure Marketplace에서 Developer Edition용 SQL Server 이미지를 찾아 개발 또는 테스트 용도로 사용하면 이러한 경우의 SQL Server에 대한 추가 비용이 발생하지 않습니다.
 
 > [!TIP]
 > 전체 라이선스 정보를 보려면 [문서화된 가격 책정 지침](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance)을 확인하세요.
 
-## <a name="use-constrained-instance-sizes-for-database-workloads"></a>데이터베이스 워크로드에 대해 제한된 인스턴스 크기 사용 
+## <a name="use-constrained-instance-sizes-for-database-workloads"></a>데이터베이스 워크로드에 대해 제한된 인스턴스 크기 사용
 
 메모리, 저장소 또는 I/O 대역폭에 대한 요구 사항이 높지만 CPU 코어 개수는 적은 고객이 많습니다. 이러한 일반적인 요청에 따라, Microsoft는 가장 많이 사용되는 VM 크기(DS, ES, GS 및 MS)에 대해 동일한 메모리, 저장소 및 I/O 대역폭을 유지하면서 vCPU 개수를 원래 VM 크기의 1/2 또는 1/4로 제한하는 새로운 크기를 제공합니다.
 
@@ -74,4 +74,4 @@ Azure Marketplace에서 Developer Edition용 SQL Server 이미지를 찾아 개�
 | Standard_GS5      | 32 | 448    | 64 | 80,000 IOPS 또는 2GB/s   |           |           |
 | Standard_GS5-8    | **8**  | 448    | 64 | 80,000 IOPS 또는 2GB/s   | 75% 더 낮음 | 42% 더 낮음 |
 
-SQL Server 및 Oracle과 같은 데이터베이스 제품은 CPU당 라이선스가 부여되므로, 이 혜택을 통해 고객은 최대 75%까지 라이선스 비용을 절감하면서도 여전히 고성능의 데이터베이스를 유지할 수 있습니다. 
+SQL Server 및 Oracle과 같은 데이터베이스 제품은 CPU당 라이선스가 부여되므로, 이 혜택을 통해 고객은 최대 75%까지 라이선스 비용을 절감하면서도 여전히 고성능의 데이터베이스를 유지할 수 있습니다.

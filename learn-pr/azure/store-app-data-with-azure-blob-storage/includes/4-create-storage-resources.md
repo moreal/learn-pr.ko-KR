@@ -1,6 +1,6 @@
 저장소 계정, 컨테이너 및 Blob에서 데이터를 저장하는 방법을 이해한 후 앱을 지원하기 위해 만들어야 하는 Azure 리소스를 생각할 수 있습니다.
 
-### <a name="storage-accounts"></a>Storage 계정
+### <a name="storage-accounts"></a>저장소 계정
 
 저장소 계정 만들기는 앱을 배포하고 실행하기 전에 발생하는 관리 작업입니다. 계정은 일반적으로 배포 또는 환경 설정 스크립트, Azure Resource Manager 템플릿을 통해 또는 관리자가 수동으로 만듭니다. 관리 도구 이외의 응용 프로그램에는 일반적으로 저장소 계정을 만들 권한이 없습니다.
 
@@ -14,7 +14,7 @@
 
 Azure Blob Storage를 사용하도록 코드를 추가하여 완료되지 않은 ASP.NET Core 앱을 완료하겠습니다. 이 연습에서는 조직 및 이름 지정 체계를 디자인하기보다는 Blob Storage API를 살펴보지만, 다음은 앱 및 앱이 데이터를 저장하는 방법에 대한 빠른 개요입니다.
 
-![FileUploader 웹앱 스크린샷](../media-drafts/fileuploader-with-files.PNG)
+![FileUploader 웹앱 스크린샷](../media/4-fileuploader-with-files.PNG)
 
 앱은 파일 업로드를 허용하고 파일을 다운로드할 수 있는 공유 폴더와 같이 작동합니다. Blob을 구성하는 데 데이터베이스를 사용하지 않고, 대신에 업로드된 파일의 이름을 삭제하고 직접 Blob 이름으로 사용합니다. 모든 업로드된 파일은 단일 컨테이너에 저장됩니다.
 
@@ -22,15 +22,16 @@ Azure Blob Storage를 사용하도록 코드를 추가하여 완료되지 않은
 
 앱에 대한 저장소 인프라를 설정하겠습니다.
 
-### <a name="resource-group-and-storage-account"></a>리소스 그룹 및 저장소 계정
+### <a name="storage-account"></a>Storage 계정
 
-먼저 이 연습의 모든 리소스를 포함하는 리소스 그룹을 만듭니다. 종료 시 리소스 그룹을 삭제하여 만든 모든 항목을 정리합니다. 앱에서 Blob을 저장하는 데 사용할 저장소 계정도 만듭니다.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Azure Cloud Shell 터미널을 통해 다음 Azure CLI 명령을 실행하여 리소스 그룹 및 저장소 계정을 만듭니다. 저장소 계정의 고유한 이름을 제공해야 합니다. 나중에 사용하도록 기록해 두세요. 위치에 대한 `eastus`를 선택하는 것은 선택 사항입니다.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+저장소 계정을 만들려면 Azure Cloud Shell 터미널을 사용 합니다. 저장소 계정의 고유한 이름을 제공해야 합니다. 나중에 사용하도록 기록해 두세요.
 
 ```console
-az group create --name blob-exercise-group --location eastus
-az storage account create --name <your-unique-storage-account-name> --resource-group blob-exercise-group --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location-name> --kind StorageV2
 ```
 
 > [!NOTE]

@@ -1,75 +1,75 @@
-Securing your network from attacks and unauthorized access is an important part of any architecture. Before their environment became too large, Lamna Healthcare took the time to plan out their network infrastructure. Here, we'll take a look at what network security looks like, how to integrate a layered approach into your architecture, and how Azure can help you provide network security for your environment.
+공격 및 무단 액세스로부터 네트워크를 보호하는 것은 아키텍처의 중요한 부분입니다. 해당 클라우드 마이그레이션에 대 한 계획의 일부로, Lamna Healthcare 시간 공격 으로부터 네트워크 인프라를 보호 하기 위해에서 적절 한 네트워크 보안 컨트롤을 가졌던 되도록 해당 네트워크 인프라 계획을 걸렸습니다. 여기서는 네트워크 보안의 특징, 아키텍처에 계층화 접근 방식을 통합하는 방법, Azure가 환경에 네트워크 보안을 제공하는 방식에 대해 알아보겠습니다.
 
-## What is network security
+## <a name="what-is-network-security"></a>네트워크 보안이란?
 
-Network security is protecting the communication of resources within and outside of your network. The goal is to limit exposure at the network layer across your services and systems. By limiting this exposure, you decrease the likelihood that your resources can be attacked. In the focus on network security, efforts can be focused on the following areas:
+네트워크 보안은 네트워크 내부 및 외부에서 이루어지는 리소스 통신을 보호하는 것입니다. 목표는 서비스 및 시스템에 걸쳐 네트워크 레이어 수준에서 노출을 제한하는 것입니다. 노출을 제한하여 리소스가 공격당할 가능성을 줄일 수 있습니다. 네트워크 보안에 중점을 두고, 다음 영역에 노력을 집중할 수 있습니다.
 
-- Securing traffic flow between applications and the internet
-- Securing traffic flow amongst applications
-- Securing traffic flow between users and the application
+- 응용 프로그램과 인터넷 간 트래픽 흐름 보호
+- 응용 프로그램 간 트래픽 흐름 보호
+- 사용자와 응용 프로그램 간 트래픽 흐름 보호
 
-Securing traffic flow between applications and the internet focuses on limiting exposure outside your network. Network attacks will most frequently start outside your network, so by limiting the internet exposure and securing the perimeter, the risk of being attacked can be reduced.
+응용 프로그램과 인터넷 간 트래픽 흐름 보호는 네트워크 외부에서 노출을 제한하는 것에 집중합니다. 네트워크 공격은 대부분 네트워크 외부에서 시작되므로 인터넷 노출을 제한하고 경계를 보호하면 공격 받을 위험을 줄일 수 있습니다.
 
-Securing traffic flow amongst applications focuses on  data between applications, their tiers, between different environments, and other services within your network. By limiting exposure between these resources, you reduce the effect a compromised resource can have. This can help reduce further propagation within a network.
+응용 프로그램 간 트래픽 흐름 보호는 응용 프로그램, 응용 프로그램 계층, 여러 환경, 네트워크 내부의 다른 서비스 사이에 오가는 데이터에 집중합니다. 이러한 리소스 간의 노출을 제한하면 손상된 리소스가 미치는 영향을 줄일 수 있습니다. 이를 통해 네트워크 내에서 영향이 추가 전파되는 것을 줄일 수 있습니다.
 
-Securing traffic flow between users and the application focuses on securing the network flow for your end users. This limits the exposure your resources have to outside attacks, and provides a secure mechanism for users to utilize your resources. 
+사용자와 응용 프로그램 간 트래픽 흐름 보호는 최종 사용자의 네트워크 흐름 보호에 집중합니다. 이를 통해 리소스 노출을 외부 공격으로 제한하고, 사용자가 리소스를 활용하는 보안 메커니즘을 제공합니다. 
 
-## A layered approach to network security
+## <a name="a-layered-approach-to-network-security"></a>네트워크 보안에 대한 계층화된 접근 방식
 
-A common thread throughout this module has been taking a layered approach to security, and this approach is no different at the network layer. It's not enough to just focus on securing the network perimeter, or focusing on the network security between services inside a network. A layered approach provides multiple levels of protection, so that if an attacker gets through one layer, there's further protections in place to limit further attack.
+이 모듈 전체에서 계층화된 접근 방식을 보안에 사용하고 있으며, 이 접근 방식은 네트워크 계층에서 아무런 차이가 없습니다. 네트워크 경계 보호에만 집중하거나 또는 네트워크 내부의 서비스 간 네트워크 보안에 집중하기에 충분하지 않습니다. 계층화된 접근 방식은 여러 보호 수준을 제공하므로 공격자가 한 계층을 돌파하더라도 추가 보호가 작동하므로 추가 공격이 제한됩니다.
 
-Let's take a look at how Azure can provide the tools for a layered approach to securing your network footprint.
+Azure가 어떻게 네트워크 공간을 보호하는 계층화된 접근 방식을 위한 도구를 제공하는지 살펴보겠습니다.
 
-### Internet protection
+### <a name="internet-protection"></a>인터넷 보호
 
-If we start on the perimeter of the network, we're focused on limiting and eliminating attacks from the internet. A great first place to start is to assess the resources that are internet facing, and only allow inbound and outbound communication where necessary. Identify all resources that are allowing inbound network traffic of any type, and ensure they are necessary and restricted to only the ports/protocols required. Azure Security Center is a great place to look for this information, as it will identify internet facing resources that don't have network security groups (NSG) associated with them, as well as resources that are not secured behind a firewall.
+네트워크 경계에서 시작하는 경우 인터넷 공격을 제안하고 제거하는 것이 집중해야 합니다. 가장 먼저 할 일은 인터넷에 연결되는 리소스를 평가하고 필요한 경우에만 인바운드 및 아웃바운드 통신을 허용하는 것입니다. 모든 종류의 인바운드 네트워크 트래픽을 허용하는 리소스를 식별하고, 리소스가 필요한지 확인하여 반드시 필요한 포트/프로토콜로 제한해야 합니다. Azure Security Center는 이 정보를 살펴보기에 적합한 위치입니다. 왜냐하면 NSG(네트워크 보안 그룹)가 연결되지 않은 인터넷 연결 리소스과 방화벽의 보호를 받지 않는 리소스를 식별하기 때문입니다.
 
-To provide inbound protection at the perimeter, there are a couple of ways to do this. Application Gateway is a Layer 7 load balancer that also includes a web application firewall (WAF) to provide advanced security for your HTTP-based services. The WAF is based on rules from the OWASP 3.0 or 2.2.9 core rule sets, and provides protection from common-known vulnerabilities such as cross-site scripting and SQL injection.
+경계에서 인바운드 보호를 제공하는 몇 가지 방법이 있습니다. Application Gateway는 HTTP 기반 서비스에 고급 보안을 제공하는 WAF(웹 응용 프로그램 방화벽)를 포함하고 있는 레이어 7 부하 분산 장치입니다. WAF는 OWASP 3.0에서 규칙에 따라 또는 2.2.9 핵심 규칙 집합 및 사이트 간 스크립팅 및 SQL 삽입 같은 일반적인 알려진 취약성 으로부터 보호를 제공 합니다.
 
-![Application Gateway with WAF](../media-draft/appgw-waf.png)
+![WAF가 포함된 Application Gateway](../media-draft/appgw-waf.png)
 
-For protection of non-HTTP-based services or for increased customization, network virtual appliances (NVA) can be used to secure your network resources. NVAs are similar to firewall appliances you might find in on-premises networks, and are available from many of the most popular network security vendors. NVAs can provide greater customization of security for those applications that require it, but can come with increased complexity, so careful consideration of requirements is advised.
+HTTP 기반 서비스에 대 한 보호에 대 한 또는 향상 된 사용자 지정에 대 한 네트워크 가상 어플라이언스 (NVA) 네트워크 리소스를 사용 하 여 보호를 사용할 수 있습니다. NVA는 온-프레미스 네트워크에서 볼 수 있는 방화벽 어플라이언스와 비슷하며, 가장 인기 있는 네트워크 보안 공급업체를 통해 구매할 수 있습니다. NVA는 보안 사용자 지정이 필요한 응용 프로그램을 위해 우수한 사용자 지정 기능을 제공하지만, 복잡성이 증가할 수 있으므로 요구 사항을 신중하게 고려해야 합니다.
 
-Any resource exposed to the internet is at risk of being attacked by a denial-of-service attack. These types of attacks attempt to overwhelm a network resource by sending so many requests that the resource becomes slow or unresponsive. To mitigate these attacks, Azure DDoS provides basic protection across all Azure services and enhanced protection for further customization for your resources. DDoS protection blocks attack traffic and forwards the remaining traffic to its intended destination. Within a few minutes of attack detection, you are notified using Azure Monitor metrics.
+인터넷에 노출 하는 모든 리소스는 서비스 거부 공격으로 공격 위험을 있습니다. 이러한 유형의 공격은 네트워크 리소스에 과부하를 걸어서 리소스가 느려지거나 응답할 수 없도록 수많은 요청을 전송합니다. 이러한 공격을 완화 하려면 Azure DDoS 기본 보호를 모든 Azure 서비스 및 리소스에 대 한 추가 사용자 지정에 대 한 향상 된 보호에서 제공 합니다. DDoS 보호는 공격 트래픽을 차단하고 나머지 트래픽을 의도하는 대상으로 전달합니다. 공격이 감지되면 몇 분 안에 Azure Monitor 메트릭을 통해 알림이 전송됩니다.
 
 ![DDoS](../media-draft/ddos.png)
 
-### Virtual network security
+### <a name="virtual-network-security"></a>가상 네트워크 보안
 
-Once inside a virtual network (VNet), it's important to limit communication between resources to only what is required.
+VNet(가상 네트워크) 내에서는 꼭 필요한 곳에서만 리소스 간 통신이 이루어지도록 제한해야 합니다.
 
-For communication between virtual machines, network security groups (NSG) are a critical piece to restrict unnecessary communication. NSGs operate at layers 3 & 4, and provide a list of allowed and denied communication to and from network interfaces and subnets. NSGs are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines. By using NSGs, you can isolate applications between environments, tiers, and services.
+가상 머신 간의 통신에서는 NSG(네트워크 보안 그룹)를 통해 불필요한 통신을 제한하는 것이 중요합니다. NSG는 계층 3 및 4에서 작동하며, 네트워크 인터페이스 및 서브넷과 주고 받는 허용/거부된 통신 목록을 제공합니다. NSG는 완전히 사용자 지정할 수 있으며, 가상 머신과 주고 받는 네트워크 통신을 완전히 차단하는 기능을 제공합니다. NSG를 사용하여 환경, 계층 및 서비스 간에 응용 프로그램을 격리할 수 있습니다.
 
-![Azure network security groups](../media-draft/azure-network-security.png)
+![Azure 네트워크 보안 그룹](../media-draft/azure-network-security.png)
 
-To isolate Azure services to only allow communication from virtual networks, use VNet service endpoints. With service endpoints, Azure service resources can be secured to your virtual network. Securing service resources to a virtual network provides improved security by fully removing public internet access to resources, and allowing traffic only from your virtual network. This reduces the attack surface for your environment, reduces the administration required to limit communication between your VNet and Azure services, and provides optimal routing for this communication.
+가상 네트워크의 통신만 허용하도록 Azure 서비스를 격리하려면 VNet 서비스 엔드포인트를 사용합니다. 서비스 엔드포인트를 사용하면 Azure 서비스 리소스를 가상 네트워크로 보호할 수 있습니다. 가상 네트워크에 대 한 서비스 리소스를 보호 하는 완벽 하 게 리소스에 공용 인터넷 액세스를 제거 하 고 가상 네트워크의 트래픽을 허용 하 여 향상 된 보안을 제공 합니다. 이렇게 하면 환경의 공격 노출 영역이 줄어들고, VNet과 Azure 서비스 간의 통신을 제한하는 데 필요한 관리 업무가 줄어들고, 이 통신에 대한 최적의 라우팅이 제공됩니다.
 
-### Network integration
+### <a name="network-integration"></a>네트워크 통합
 
-It's common to have existing network infrastructure that needs to be integrated to provide communication from on-premises networks, or to provide improved communication between services in Azure. There are a few key ways to handle this integration and improve the security of your network.
+온-프레미스 네트워크에서 통신을 제공하기 위해 또는 Azure의 서비스 간 통신을 향상하기 위해 기존 네트워크 인프라를 통합해야 하는 경우가 자주 있습니다. 이러한 통합을 처리하고 네트워크 보안을 향상할 수 있는 몇 가지 방법이 있습니다.
 
-Virtual private network (VPN) connections are a common way of establishing secure communication channels between networks, and this is no different when working with virtual networking on Azure. Connection between Azure VNets and an on-premises VPN device is a great way to provide secure communication between your network and your virtual machines on Azure.
+VPN(가상 사설망) 연결은 네트워크 간에 보안 통신 채널을 설정하는 일반적인 방법이며, Azure에서 가상 네트워킹을 사용할 때와 동일합니다. Azure VNet과 온-프레미스 VPN 장치 간의 연결은 Azure에서 네트워크와 가상 머신 간의 통신을 보호하는 훌륭한 방법입니다.
 
-To provide a dedicated, private connection between your network and Azure, you can use ExpressRoute. ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider. With ExpressRoute, you can establish connections to Microsoft cloud services, such as Microsoft Azure, Office 365, and Dynamics 365. This improves the security of your on-premises communication by sending this traffic over the private circuit instead of over the internet. You don't need to allow access to these services for your end users over the internet, and can send this traffic through appliances for further traffic inspection.
+네트워크와 Azure 간에 전용 사설 연결을 제공하려면 ExpressRoute를 사용합니다. ExpressRoute를 사용하면 연결 공급자가 지원하는 개인 연결을 통해 온-프레미스 네트워크를 Microsoft 클라우드로 확장할 수 있습니다. ExpressRoute를 사용하면 Microsoft Azure, Office 365 및 Dynamics 365와 같은 Microsoft 클라우드 서비스에 대한 연결을 설정할 수 있습니다. 이렇게 하면 인터넷 대신 사설 회로를 통해 이 트래픽을 전송하여 온-프레미스 통신의 보안이 향상됩니다. 최종 사용자가 인터넷을 통해 이러한 서비스에 액세스하도록 허용할 필요가 없으며, 어플라이언스를 통해 이 트래픽을 전송하여 트래픽을 추가로 검사할 수 있습니다.
 
 ![ExpressRoute](../media-draft/expressroute-connection-overview.png)
 
-To easily integrate multiple VNets in Azure, VNet peering establishes a direct connection between designated VNets. Once established, you can use NSGs to provide isolation between resources in the same way you secure resources within a VNet. This integration gives you the ability to provide the same fundamental layer of security across any peered VNets. Communication is only allowed between directly connected VNets.
+Azure에서 여러 VNet을 쉽게 통합하기 위해 VNet 피어링은 지정된 VNet 간에 직접 연결을 설정합니다. 연결이 설정되면 VNet 내에서 리소스를 보호하는 것과 동일한 방법으로 NSG를 사용하여 리소스를 격리할 수 있습니다. 이렇게 통합하면 모든 피어링된 VNet에 동일한 기본 보안 계층을 제공할 수 있습니다. 직접 연결된 VNet 간의 통신만 허용됩니다.
 
-## Network security at Lamna Healthcare
+## <a name="network-security-at-lamna-healthcare"></a>Lamna Healthcare의 네트워크 보안
 
-Lamna Healthcare has taken advantage of many of these services to build out a secure network infrastructure. Communication between resources is denied by default, and allowed only when required. Inbound connectivity from the internet is enabled only for services that require it; RDP and SSH are not permitted from internet endpoints, only from trusted internal resources.
+Lamna Healthcare는 이러한 서비스를 여러 개 활용하여 보안 네트워크 인프라를 빌드했습니다. 리소스 간 통신은 기본적으로 거부되고, 필요한 경우에만 허용됩니다. 인터넷에서 인바운드 연결 않으면 필요한 서비스에만 가능 합니다. RDP 및 SSH 인터넷 끝점에만 신뢰할 수 있는 내부 리소스에서 허용 되지 않습니다.
 
-To secure their internet facing web services, they place them behind Application Gateways with WAF enabled. This is true both for services running on virtual machines as well as on App Service. By using Application Gateways, they have protection from many of the common vulnerabilities.
+Lamna Healthcare는 인터넷 연결 웹 서비스를 보호하기 위해 WAF가 설정된 Application Gateway 뒤에 서비스를 배치했습니다. 이것은 가상 머신에서 실행되는 서비스는 물론이고 App Service에서 실행되는 서비스에도 적용됩니다. Lamna Healthcare는 Application Gateway를 사용하여 여러 가지 일반적인 취약점으로부터 시스템을 보호합니다.
 
-They have DDoS standard enabled, to provide protection for their internet facing endpoints from denial-of-service attacks.
+DDoS 표준을 사용하여 서비스 거부 공격으로부터 인터넷 연결 엔드포인트를 보호합니다.
 
-Through the use of NSGs, they are able to fully isolate communication between application services and between environments. They only allow the necessary communication between services within an environment, and no access is allowed between production and non-production environments.
+NSG를 사용하여 응용 프로그램 서비스 간 통신과 환경 간 통신을 완전하게 격리할 수 있습니다. Lamna Healthcare는 환경 내에서 꼭 필요한 서비스 간 통신만 허용하고, 프로덕션 환경과 비 프로덕션 환경 간 액세스는 허용되지 않습니다.
 
-To provide dedicated connectivity between their end users and applications in Azure, they have provisioned an ExpressRoute circuit with connectivity to their on-premises network. This keeps their traffic to Azure off the internet and a private connection for their services in Azure to communicate with systems remaining on-premises.
+Azure에서 최종 사용자와 응용 프로그램 간에 전용 연결을 제공하기 위해, 온-프레미스 네트워크에 연결된 ExpressRoute 회로를 프로비전했습니다. 이렇게 하면 Azure로의 트래픽이 인터넷과 분리되고 Azure 서비스가 시스템과 통신하기 위한 사설 연결은 온-프레미스를 유지합니다.
 
-With this approach, Lamna Healthcare has leveraged Azure services to provide security at multiple layers of their network infrastructure.
+이 방법을 통해 Lamna Healthcare는 Azure 서비스를 활용하여 네트워크 인프라의 여러 레이어에서 보안을 제공합니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-A layered approach to network security helps reduce your risk of exposure through network-based attacks. Azure provides several services and capabilities to secure your internet facing resource, internal resources, and communication between on-premises networks. These features make it possible to create secure solutions on Azure.
+네트워크 보안에 계층화된 접근 방식을 사용하면 네트워크 기반 공격에 의한 노출 위험을 줄일 수 있습니다. Azure는 인터넷 연결 리소스, 내부 리소스, 온-프레미스 네트워크 간 통신을 보호하는 여러 가지 서비스와 기능을 제공합니다. 이러한 기능을 통해 Azure에서 안전한 솔루션을 만들 수 있습니다.

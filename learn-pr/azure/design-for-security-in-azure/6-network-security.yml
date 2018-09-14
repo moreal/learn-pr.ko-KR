@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.6-network-security
-title: Network security
+title: 네트워크 보안
 metadata:
-  title: Network security
-  description: In this unit we'll discuss how to secure your network infrastructure
+  title: 네트워크 보안
+  description: 이 섹션에서는 네트워크 인프라를 보호하는 방법에 대해 알아보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 5
 content: |
   [!include[](includes/6-network-security.md)]
 quiz:
-  title: 'Knowledge Check - Network security'
+  title: 지식 검사 - 네트워크 보안
   questions:
-  - content: 'Azure NSGs can be used to secure communication between which of the following?'
-    choices:
-    - content: 'Communication between virtual machines and the internet'
-      isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'Communication between virtual machines within a VNet'
-      isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'Communication with systems in an on-premises network'
-      isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'All of the above'
-      isCorrect: true
-      correctExplanation: 'NSGs can be used to secure all of the above communication flows.'
-  - content: 'Which of the following is not a method of protecting internet facing services from network attacks?'
-    choices:
-    - content: 'Azure DDoS'
-      isCorrect: false
-      incorrectExplanation: 'Azure DDoS can be used to protect your internet facing services from a DoS attack. '
-    - content: 'Azure Application Gateway WAF'
-      isCorrect: false
-      incorrectExplanation: 'Application Gateway WAF can be used to protect your internet facing services from attacks such as XSS and SQL injection.'
-    - content: 'Azure Disk Encryption'
-      isCorrect: true
-      correctExplanation: 'Azure Disk Encryption protects your virtual machine VHDs from exposure, but does not provide protection from network based attacks.'
-    - content: 'A network virtual appliance'
-      isCorrect: false
-      incorrectExplanation: 'Network virtual appliances can provide customized network protection for your internet facing resources.'
+    - content: Azure Nsg 다음 간 보안 통신에 사용할 수 있나요?
+      choices:
+        - content: 가상 컴퓨터와 인터넷 간의 통신
+          isCorrect: false
+          incorrectExplanation: Nsg를이 통신 흐름을 보호 하는 데 사용할 수 있지만 올바른만 선택 하는 것은 아닙니다.
+        - content: VNet 내의 가상 머신 간의 통신
+          isCorrect: false
+          incorrectExplanation: Nsg를이 통신 흐름을 보호 하는 데 사용할 수 있지만 올바른만 선택 하는 것은 아닙니다.
+        - content: 온-프레미스 네트워크의 시스템과 통신
+          isCorrect: false
+          incorrectExplanation: Nsg를이 통신 흐름을 보호 하는 데 사용할 수 있지만 올바른만 선택 하는 것은 아닙니다.
+        - content: 위의 모든 항목
+          isCorrect: true
+          correctExplanation: 위의 통신 흐름의 모든 보호를 위해 Nsg은 사용할 수 있습니다.
+    - content: 다음 중 인터넷 연결 서비스를 네트워크 공격으로부터 보호하는 방법이 아닌 것은 무엇입니까?
+      choices:
+        - content: Azure DDoS
+          isCorrect: false
+          incorrectExplanation: 'Azure DDoS는 인터넷에 맞는 DoS 공격 으로부터 서비스를 보호 하기 위해 사용할 수 있습니다. '
+        - content: Azure Application Gateway WAF
+          isCorrect: false
+          incorrectExplanation: 인터넷에 맞는 XSS 및 SQL 주입과 같은 공격 으로부터 서비스를 보호 하기 위해 application Gateway WAF는 사용할 수 있습니다.
+        - content: Azure Disk Encryption
+          isCorrect: true
+          correctExplanation: Azure Disk Encryption 노출을에서 가상 컴퓨터 Vhd을 보호 하지만 네트워크 기반 공격 으로부터 보호를 제공 하지 않습니다.
+        - content: 네트워크 가상 어플라이언스
+          isCorrect: false
+          incorrectExplanation: 네트워크 가상 어플라이언스는 인터넷 연결 리소스에 대 한 사용자 지정된 네트워크 보호를 제공할 수 있습니다.

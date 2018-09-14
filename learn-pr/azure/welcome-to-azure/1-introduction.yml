@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.1-introduction
+title: 소개
+metadata:
+  title: 소개
+  description: 클라우드 경험을 시작 하 고이 흥미로운 대 다 혁명 경력을 맞춥니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 1
+content: |
+  [!include[](includes/1-introduction.md)]

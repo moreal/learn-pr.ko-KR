@@ -9,23 +9,16 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245973"
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: 메시징 모델
+  title: 지식 검사
   questions:
-  - content: 분산 응용 프로그램에 사용자를 인증하는 웹 서비스가 있습니다. 사용자가 로그온하면 이 웹 서비스는 모든 사용자의 컴퓨터에서 실행되는 데스크톱 응용 프로그램과 통신하여 해당 사용자의 상태를 “온라인”으로 표시해야 합니다. 참 또는 거짓은 분산 응용 프로그램의 메시지 예입니다.
-    choices:
-    - content: "True"
-      incorrectExplanation: 죄송합니다. 분산 응용 프로그램의 이벤트 예입니다. 통신은 모든 구독자에게 라우팅되며, 게시자는 통신이 구독자에 의해 처리되는 방법에 대한 지식이나 선호가 없고 구독자 수에 대해서도 알지 못합니다.
-      isCorrect: false
-    - content: "False"
-      correctExplanation: 맞습니다! 작업을 트리거하는 이벤트 알림입니다. 이벤트를 사용하는 완벽한 사례입니다.
-      isCorrect: true
+    - content: 사용자를 인증 하는 웹 서비스를 사용 하 여 분산된 응용 프로그램이 있다고 가정 합니다. 사용자가 로그온 할 때 "Online"의 상태를 표시 하는 클라이언트 응용 프로그램의 모든 웹 서비스 통신 합니다. 참 또는 거짓은 분산 응용 프로그램의 메시지 예입니다.
+      choices:
+        - content: 'True'
+          isCorrect: false
+        - content: 'False'
+          correctExplanation: '메시지는 일반적으로 원시 데이터 자체, 예를 들어, 미디어 파일을 포함 합니다. 이 경우 간단한 부분을 사용자의 상태를 나타내는 데이터를 전송 하는 것입니다. 또한 데이터 이벤트를 사용 하 여에 대 한 완벽 한 경우 작업에 대 한 응답에서 보내는 것입니다.'
+          isCorrect: true

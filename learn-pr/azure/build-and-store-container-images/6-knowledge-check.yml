@@ -1,52 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.knowledge-check
-title: Knowledge check
+title: 지식 검사
 metadata:
-  title: Knowledge check
-  description: Azure Container Registry knowledge check.
+  title: 지식 검사
+  description: Azure Container Registry 지식 검사입니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 5
 quiz:
-  title: 'Knowledge check'
+  title: 지식 검사
   questions:
-  - content: 'Which of the following is not a benefit of using Azure Container Registry?'
-    choices:
-    - content: Replicate container images to many Azure datacenters.
-      incorrectExplanation: The Azure Container Registry geo-replication feature enables this.
-      isCorrect: false
-    - content: Pull container images from Container Registry using any Docker container-related technology.
-      isCorrect: false
-      incorrectExplanation: Container Registry can be used with all Docker-related technology.
-    - content: Make container images publicly available for pull operations.
-      isCorrect: true
-      correctExplanation: Container Registry is a private registry. Images stored in Container Registry cannot be accessed without authentication.
-    - content: Build container images without the need for locally installed Docker tools.
-      isCorrect: false
-      incorrectExplanation: Container images can be built in the cloud using Azure Container Registry Build.
-  - content: 'What is the recommended authentication method for Azure Container Registry?'
-    choices:
-    - content: Admin account.
-      incorrectExplanation: Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.
-      isCorrect: false
-    - content: User name and password.
-      incorrectExplanation: An Azure container registry can be admin-account enabled, which provides a user name and password. However, this is not the recommended authentication method.
-      isCorrect: false
-    - content: Azure service principal.
-      isCorrect: true
-      correctExplanation: Azure service principals provide granular access to container images in Azure Container Registry. Using a service principal, read-only and full access can be provided to the container registry.
-    - content: No authentication.
-      incorrectExplanation: Azure Container Registry is a private registry and cannot be accessed without authentication..
-      isCorrect: false
-  - content: 'Geo-replication is available in the Container Registry Standard SKU.'
-    choices:
-    - content: True.
-      incorrectExplanation: Geo-replication is only available in the Premium SKU.
-      isCorrect: false
-    - content: False.
-      isCorrect: true
-      correctExplanation: Geo-replication is only available in the Premium SKU.
+    - content: 다음 중 Azure Container Registry를 사용하여 얻을 수 있는 혜택이 아닌 것은 무엇인가요?
+      choices:
+        - content: 여러 Azure 데이터 센터로 컨테이너 이미지를 복제합니다.
+          incorrectExplanation: Azure Container Registry 지역 복제 기능을 통해 사용할 수 있습니다.
+          isCorrect: false
+        - content: Docker 컨테이너 관련 기술을 사용하여 Container Registry에서 컨테이너 이미지를 끌어옵니다.
+          isCorrect: false
+          incorrectExplanation: Container Registry는 모든 Docker 관련 기술과 함께 사용할 수 있습니다.
+        - content: 컨테이너 이미지를 끌어오기 작업에 공용으로 사용할 수 있도록 합니다.
+          isCorrect: true
+          correctExplanation: Container Registry는 개인 레지스트리입니다. Container Registry에 저장된 이미지는 인증 없이 액세스할 수 없습니다.
+        - content: 로컬로 설치된 Docker 도구를 사용할 필요 없이 컨테이너 이미지를 빌드합니다.
+          isCorrect: false
+          incorrectExplanation: 컨테이너 이미지는 Azure Container Registry 빌드를 사용하여 클라우드에서 빌드할 수 있습니다.
+    - content: Azure Container Registry에 권장되는 인증 방법은 무엇인가요?
+      choices:
+        - content: 관리자 계정.
+          incorrectExplanation: Azure Container Registry용 관리자 계정을 만들 수 있지만 이 인증 방법은 권장되지 않습니다.
+          isCorrect: false
+        - content: 사용자 이름 및 암호.
+          incorrectExplanation: Azure Container Registry에서 관리자 계정을 사용하도록 설정하면 사용자 이름과 암호를 제공합니다. 하지만 이 인증 방법은 권장되지 않습니다.
+          isCorrect: false
+        - content: Azure 서비스 주체.
+          isCorrect: true
+          correctExplanation: Azure 서비스 주체는 Azure Container Registry의 컨테이너 이미지에 대한 세부적인 액세스를 제공합니다. 서비스 주체를 사용하면 읽기 전용 및 전체 액세스가 Container Registry에 제공될 수 있습니다.
+        - content: 인증 없음.
+          incorrectExplanation: Azure Container Registry는 개인 레지스트리이므로 인증 없이 액세스할 수 없습니다.
+          isCorrect: false
+    - content: 지역 복제는 Container Registry 표준 SKU에서 사용할 수 있습니다.
+      choices:
+        - content: True.
+          incorrectExplanation: 지역 복제는 프리미엄 SKU에서만 사용할 수 있습니다.
+          isCorrect: false
+        - content: False.
+          isCorrect: true
+          correctExplanation: 지역 복제는 프리미엄 SKU에서만 사용할 수 있습니다.

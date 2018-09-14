@@ -1,21 +1,21 @@
-Azure Storage provides a Representational State Transfer (REST) based web API to work with the containers and data stored in each account. There are independent APIs available to work with each type of data you can store. Recall that we have four specific data types:
+Azure Storage 컨테이너 및 각 계정에 저장 된 데이터 작업에 따라 Representational State Transfer (REST) web API를 제공 합니다. 독립 Api 저장할 수 있는 데이터의 각 형식을 다루는 데 사용할 수 있습니다. 네 가지 특정 데이터 형식이 있다는 것을 회수 합니다.
 
-- **Blobs** for unstructured data such as binary and text files.
-- **Queues** for persistent messaging.
-- **Tables** for structured storage of key/values.
-- **Files** for traditional SMB file shares.
+- **Blob** 이진 및 텍스트 파일과 같은 구조화 되지 않은 데이터에 대 한 합니다.
+- **큐** 영구 메시징에 대 한 합니다.
+- **테이블** 구조화 된 키/값 저장소입니다.
+- **파일** 기존 SMB 파일 공유 합니다.
 
-## Using the REST API
+## <a name="using-the-rest-api"></a>REST API 사용
 
-The Storage REST APIs are accessible from services running in Azure over a virtual network, or over the Internet from any application that can send an HTTP/HTTPS request and receive an HTTP/HTTPS response.
+Storage REST Api를 HTTP/HTTPS 요청을 보내고 HTTP/HTTPS 응답을 받을 수 있는 모든 응용 프로그램에서 가상 네트워크를 통해 인터넷을 통해 Azure에서 실행 하는 서비스에서 액세스할 수 있습니다.
 
-For example, if you wanted to list all the blobs in a container, you would send something like:
+예를 들어 컨테이너의 모든 blob을 나열 하려는 경우 보내는 것 같이:
 
 ```http
 GET https://[url-for-service-account]/?comp=list&include=metadata
 ```
 
-This would return an XML block with data specific to the account:
+이 반환 데이터를 사용 하 여 XML 블록에는 특정 계정에 합니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
@@ -65,27 +65,20 @@ This would return an XML block with data specific to the account:
 </EnumerationResults>  
 ```
 
-However, this approach requires a lot of manual parsing and creation of HTTP packets to work with each API. For this reason, Azure provides pre-built _client libraries_ that make working with the service easier for common languages and frameworks.
+그러나이 방법은 많은 수동 구문 분석 및 각 API를 사용 하려면 HTTP 패킷 생성 해야 합니다. 따라서 Azure에서 제공 하는 미리 빌드된 _클라이언트 라이브러리_ 는 쉽게 작업할 서비스를 공용 언어 및 프레임 워크에 대 한 합니다.
 
-## Using a client library
+## <a name="using-a-client-library"></a>클라이언트 라이브러리를 사용 하 여
 
-Client libraries can save a significant amount of work for application developers because the API is tested and it often provides nicer wrappers around the data models sent and received by the REST API.
+클라이언트 라이브러리는 API가 테스트 하 고 REST API를 통해 보내고 받은 데이터 모델에 대 한 편리한 래퍼를 제공 하기도 없으므로 상당한 양의 응용 프로그램 개발자를 위한 작업을 절약할 수 있습니다.
 
 :::row:::
     :::column:::
-        Microsoft has Azure client libraries that support a number of languages and frameworks including:
-        - .NET
-        - Java
-        - Python
-        - Node.js
-        - Go
-    :::column-end::::
-    :::column:::
-        <br> ![Sample logos of supported frameworks you can use with Azure](../media/4-common-tools.png)
+        Microsoft는 다양 한 언어 및 프레임 워크를 지 원하는 Azure 클라이언트 라이브러리:-.NET-Java-Python-Node.js-Go :::column-end:::: :::column:::
+        <br> ![Azure를 사용 하 여 사용할 수는 지원 되는 프레임 워크의 샘플 로고](../media/4-common-tools.png)
     :::column-end:::
 :::row-end:::
 
-For example, to retrieve the same list of blobs in C#, we could use the following code snippet:
+예를 들어, 동일한 목록을 C#의 blob 검색 하려면 다음 코드 조각 사용 수 있습니다.:
 
 ```csharp
 CloudBlobDirectory directory = ...;
@@ -97,7 +90,7 @@ foreach (IEnumerable<IListBlobItem> blob in directory.ListBlobs(
 }
 ```
 
-Or in JavaScript:
+또는 JavaScript에서:
 
 ```javascript
 const containerName = "...";
@@ -113,6 +106,6 @@ blobService.listBlobsSegmented(containerName, null, function (error, results) {
 ```
 
 > [!NOTE]
-> The client libraries are just thin _wrappers_ over the REST API. They are doing exactly what you would do if you used the web services directly. These libraries are also open source making them very transparent. Look for them on GitHub.
+> 클라이언트 라이브러리는 방금 씬 _래퍼_ REST API를 통해. 정확 하 게 수행 하는 웹 서비스를 직접 사용 하는 경우 수행 하 고 있습니다. 이러한 라이브러리는 오픈 소스, 투명 한 매우 쉽게도 합니다. GitHub에서 검색 합니다.
 
-Let's add the client library support for our application.
+클라이언트 라이브러리 지원 응용 프로그램에 추가 해 보겠습니다.

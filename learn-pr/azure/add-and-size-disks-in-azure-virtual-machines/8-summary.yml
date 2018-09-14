@@ -9,11 +9,38 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 357689c42fb2bfb076bf2aebd1aae20d3d346d25
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233801"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: |
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: '지식 검사: 추가 하 고 Azure virtual machines의 디스크 크기'
+  questions:
+    - content: 가상 하드 드라이브 파일 (Vhd)는 다음과 같은 유형의 Azure Storage에서 blob에 저장 되는 방법
+      choices:
+        - content: 블록 Blob
+          isCorrect: false
+        - content: 추가 Blob
+          isCorrect: false
+        - content: 페이지 Blob
+          isCorrect: true
+          correctExplanation: Vhd는 Azure Storage의 페이지 blob에서 지원 됩니다. 페이지 blob는 임의 읽기 및 쓰기 액세스에 최적화 된 512 바이트 페이지 컬렉션 이기 때문에 적합 합니다. 블록 blob 또는 추가 blob은 모두 임의 읽기에 최적화 된 및 Vhd를 사용 하 여 일반적인 작업을 작성 합니다.
+    - content: 다음 데이터 복제 전략의 프리미엄 저장소 계정에서 지 원하는 유일한 옵션은 무엇입니까?
+      choices:
+        - content: RA-GRS(읽기 액세스 지역 중복 저장소)
+          isCorrect: false
+        - content: LRS(로컬 중복 저장소)
+          isCorrect: true
+          correctExplanation: 프리미엄 저장소 계정은 복제 옵션으로 로컬 중복 저장소만 지원합니다. 로컬 중복 저장소는 단일 지역 내에 데이터 복사본 3개를 유지합니다. 지역 재해 복구를 위해 Azure Backup을 사용 하 여 다른 지역에 VM 디스크를 백업 하는 것이 있어야 합니다. 또한 백업 자격 증명 모음으로 GRS(지역 중복 저장소) 계정을 사용해야 합니다.
+        - content: GRS(지역 중복 저장소)
+          isCorrect: false
+        - content: ZRS(영역 중복 저장소)
+          isCorrect: false
+    - content: 디스크 형식은 제공 되는 관리 되는 디스크에 대 한?
+      choices:
+        - content: 표준 Ssd (반도체 드라이브)
+          isCorrect: true
+          correctExplanation: '관리 디스크 사용 하면 표준 Ssd를 사용 하는 옵션을 선택 합니다. 이 디스크 유형은 표준 Hdd, 성능 및 비용 측면에서 premium Ssd 사이입니다.'
+        - content: 표준 하드 디스크 드라이브 (Hdd)
+          isCorrect: false
+        - content: Premium Ssd (반도체 드라이브)
+          isCorrect: false

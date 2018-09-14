@@ -1,59 +1,53 @@
-Accessing and processing data are key tasks in many software solutions. Consider some of these scenarios:
+액세스 및 데이터 처리는 많은 소프트웨어 솔루션의 핵심 작업 합니다. 이러한 시나리오 중 일부를 고려 합니다.
 
-* You've been asked to implement a way to move incoming data from blob storage to Azure Cosmos DB.
-* You want to post incoming messages to a queue for processing by another component in your enterprise.
-* Your service needs to grab gamer scores from a queue and update an online scoreboard.
+* Blob storage에서 Azure Cosmos DB로 들어오는 데이터를 이동 하는 방법을 구현 요청 했습니다.
+* 엔터프라이즈의 다른 구성 요소에서 처리를 위해 큐에 들어오는 메시지를 게시 하려고 합니다.
+* 서비스 큐에서 게이머 점수를 잡고 온라인 스코어를 업데이트 해야 합니다.
 
-All of these examples are about moving data. The data source and destinations differ from scenario to scenario, but the pattern is similar. You connect to a data source, you read and write data. Azure Functions helps you integrate with data and services using bindings. 
+이 예는 데이터 이동 하려고 합니다. 데이터 원본 및 대상에서 시나리오를 시나리오 다르지만 패턴과 비슷합니다. 데이터를 읽고 데이터 원본에 연결 합니다. Azure Functions를 사용 하면 데이터 바인딩을 사용 하 여 서비스와 통합할 수 있습니다. 
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>바인딩이란?
 
-In functions, bindings provide a declarative way to connect to data from within your code. They make it easier to integrate with data streams consistently in a function. A trigger defines how a function is invoked. You can only have one trigger, but you can have multiple bindings in a function. This is powerful because you can connect to your data sources without having to hard code the values, like for instance, the *connection string*.
+함수에서 바인딩은 코드 내에서 데이터에 연결 하기 위한 선언적 방식을 제공 합니다. 이러한 쉽게 함수에서 일관 되 게 데이터 스트림과 통합 합니다. 트리거는 함수가 호출되는 방식을 정의합니다. 하나의 트리거를 하나만 사용할 수 있지만 함수에 바인딩이 여러 개를 포함할 수 있습니다. 하드 코드 된 값을 같은 예를 들어 필요가 없는 데이터 소스에 연결 될 수 있으므로이 강력한 합니다 *연결 문자열*합니다.
 
-### Two kinds of bindings
+### <a name="two-kinds-of-bindings"></a>두 가지 바인딩
 
-There are two kinds of bindings you can use for your functions:
+두 가지 종류의 바인딩 함수에 대해 사용할 수 있습니다.
 
-1. **Input binding**
-    An input binding is a connection to a data **source**. Our function reads data from this source.
+1. **입력 바인딩** 입력된 바인딩 데이터에 대 한 연결이 **소스**합니다. 이 함수는이 원본의 데이터를 읽습니다.
 
-1. **Output binding**
-    An output binding is a connection to a data **destination**. Our function writes data to this destination.
+1. **출력 바인딩** 출력 바인딩을 데이터에 대 한 연결이 **대상**합니다. 이 함수는이 대상에 데이터를 씁니다.
 
-### Types of supported bindings
+### <a name="types-of-supported-bindings"></a>지원 되는 바인딩의 유형
 
-The *type* of binding defines where we are reading or sending data. There is a binding to respond to web requests and a large selection of bindings to interact with storage.
+합니다 *형식* 바인딩 정의 읽고 있는지 아니면 데이터를 전송 합니다. 바인딩을 웹 요청 및 다양 한 바인딩 storage와 상호 작용에 응답할 수 있습니다.
 
-Here's a list of commonly used bindings:
+자주 사용 되는 바인딩 목록은 다음과 같습니다.
 - Blob
-- Queue
+- 큐
 - CosmosDB
 - Event Hubs
-- External Files
-- External Tables
+- 외부 파일
+- 외부 테이블
 - HTTP
 
-### Binding properties
+### <a name="binding-properties"></a>바인딩 속성
 
-There are four properties that are required in all bindings. You may have to supply additional properties based on the type of binding and/or storage you are using.
+모든 바인딩에서 필요한 네 가지 속성이 있습니다. 바인딩 및/또는 사용 하는 저장소의 유형에 따라 추가 속성을 제공 해야 합니다.
 
-- **Name**
-    The `name` property defines the function parameter through which you access the data. For example, in a queue input binding, this is the name of the function parameter that receives the queue message content. 
+- **이름을** 는 `name` 속성은 데이터에 액세스 하는 함수 매개 변수를 정의 합니다. 예를 들어 큐 입력된 바인딩을에서 큐 메시지 콘텐츠를 받는 함수 매개 변수의 이름입니다. 
 
-- **Type**
-    The `type` property identifies the type of binding, i.e., the type of data or service we want to interact with.
+- **형식** 는 `type` 속성은 바인딩 유형 즉, 식별, 상호 작용 하려고 하는 데이터의 서비스 유형입니다.
 
-- **Direction**
-    The `direction` property identifies the direction data is flowing ie. is it an input or output binding?
+- **방향** 는 `direction` ie 데이터가 흐르는 방향을 식별 하는 속성.는 입력 또는 출력 바인딩을 입니까?
 
-- **Connection**
-    The `connection` property is the name of an app setting that contains the connection string, not the connection string itself. Bindings use connection strings stored in app settings to enforce the best practice that function.json does not contain service secrets.
+- **연결** 는 `connection` 속성은 연결 문자열이 아니라 연결 문자열을 포함 하는 앱 설정의 이름입니다. 연결 문자열을 사용 하는 바인딩 모범 사례를 적용 하려면 앱 설정에 저장 된 해당 function.json 않습니다 비밀이 포함 되지 않은 서비스입니다.
 
-## Create a binding
+## <a name="create-a-binding"></a>바인딩 만들기
 
-Bindings are defined in JSON. A binding is configured in your function's configuration file, which is named `function.json` and lives in the same folder as your function code.
+바인딩은 JSON에서 정의 됩니다. 명명 된 함수의 구성 파일에는 바인딩이 구성 되어 `function.json` 함수 코드와 동일한 폴더에 거주 하 고 있습니다.
 
- Let's examine a sample of an *input binding*:
+ 예제를 검토해 보겠습니다를 *입력 바인딩*:
 
 ```json
     ...
@@ -67,18 +61,18 @@ Bindings are defined in JSON. A binding is configured in your function's configu
     ...
 ```
 
-To create this binding we:
+에서는이 바인딩을 만들려면:
 
-1. Create a binding in our `function.json` file.
+1. 바인딩 만들기는 `function.json` 파일입니다.
 
-1. Provide the value for the `name` variable. In this example, the variable will hold the blob data.
+1. 값을 제공 하는 `name` 변수입니다. 이 예제에서는 변수에 blob 데이터를 저장 됩니다.
 
-1. Provide the storage `type`, in the preceding example, we are using Blob storage.
+1. 저장소를 제공 `type`, 앞의 예제에서는 Blob 저장소 사용 합니다.
 
-1. Provide the `path`, which specifies the container and the item name which goes in it. The `path` property is required for Blobs.
+1. 제공 된 `path`에서 전환 되는 항목 이름과 컨테이너를 지정 하는 합니다. `path` Blob에 대 한 필수 속성입니다.
 
-1. Provide the `connection` string setting name defined in the application's settings file. It's used as a lookup to find the connection string to connect to your storage.
+1. 제공 된 `connection` 문자열 설정 이름은 응용 프로그램의 설정 파일에 정의 합니다. 저장소에 연결할 연결 문자열을 찾는 조회로 사용 됩니다.
 
-1. Define the `direction` as `in`, it will read data from the Blob.
+1. 정의 된 `direction` 으로 `in`, Blob에서 데이터를 읽게 됩니다.
 
-Bindings are used to connect to data into your function. In the example we looked at, we used an input binding to connect user images to be processed by our function as thumbnails.
+바인딩 함수로 데이터에 연결할 사용 됩니다. 여기서 살펴본 예에서 축소판 그림으로이 함수에 의해 처리 될 사용자 이미지에 연결할 입력된 바인딩을 사용 했습니다.

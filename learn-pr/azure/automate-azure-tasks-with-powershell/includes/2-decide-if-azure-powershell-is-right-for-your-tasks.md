@@ -1,11 +1,11 @@
-CRM(고객 관계 관리) 시스템을 테스트하는 데 사용되는 Azure 리소스를 관리하는 도구를 선택해야 한다고 가정합니다. 수행해야 하는 주요 작업은 리소스 그룹을 만들고 VM(가상 머신)을 프로비전하는 것입니다.
+CRM(고객 관계 관리) 시스템을 테스트하는 데 사용되는 Azure 리소스를 관리하는 도구를 선택해야 한다고 가정합니다. 테스트를 사용 하면 리소스 그룹을 만들고 가상 머신 (Vm)를 프로 비전 해야 합니다.
 
-관리자가 쉽게 배울 수 있지만 여러 VM(가상 머신)의 설치 및 설정을 자동화하거나 전체 응용 프로그램 환경을 스크립팅할 만큼 충분히 강력한 어떤 것을 원합니다. 사용 가능한 여러 도구가 있고, 사용자와 작업에 가장 적합한 도구를 찾아야 합니다.
+원하는 것에 대해 알아보려면 관리자에 대 한 간단 하지만 설치 및 설정 여러 virtual machines의 자동화 스크립트는 전체 응용 프로그램 환경에 수 있을 만큼 강력 합니다. 사용 가능한 여러 도구가 있고, 사용자와 작업에 가장 적합한 도구를 찾아야 합니다.
 
 ## <a name="what-tools-are-available"></a>어떤 도구를 사용할 수 있나요?
-Azure는 다음과 같이 선택 가능한 세 가지 관리 도구를 제공합니다. 
+Azure는 다음과 같이 선택 가능한 세 가지 관리 도구를 제공합니다.
 
-- Azure Portal 
+- Azure Portal
 - Azure CLI
 - Azure PowerShell
 
@@ -21,7 +21,7 @@ Azure Portal은 Azure 구독에서 리소스를 만들고, 구성하고, 변경�
 ## <a name="what-is-the-azure-cli"></a>Azure CLI란?
 Azure CLI는 Azure에 연결하고 Azure 리소스에서 관리 명령을 실행하는 플랫폼 간 명령줄 프로그램입니다. 예를 들어 VM을 만들려면 다음과 같은 명령을 사용합니다.
 
-```bash
+```azurecli
 az vm create \
   --resource-group CrmTestingResourceGroup \
   --name CrmUnitTests \
@@ -34,7 +34,7 @@ Azure CLI는 Azure Cloud Shell을 통해 브라우저 내부에서 또는 Linux,
 ## <a name="what-is-azure-powershell"></a>Azure PowerShell이란?
 Azure PowerShell은 Windows PowerShell 또는 PowerShell Core에 추가하여 Azure 구독에 연결하고 리소스를 관리할 수 있는 모듈입니다. Azure PowerShell을 사용하려면 PowerShell이 작동해야 합니다. PowerShell은 셸 창, 명령 구문 분석 등과 같은 서비스를 제공합니다. Azure PowerShell은 Azure 특정 명령을 추가합니다.
 
-예를 들어 Azure PowerShell은 Azure 구독 내에서 가상 머신을 만드는 **New-AzureRmVM** 명령을 제공합니다. 이 명령을 사용하려면 PowerShell 응용 프로그램을 시작한 후 다음과 같은 명령을 실행합니다.
+예를 들어, Azure PowerShell은 제공 된 **New-azurermvm** Azure 구독 내의 가상 컴퓨터를 만드는 명령입니다. 이 명령을 사용하려면 PowerShell 응용 프로그램을 시작한 후 다음과 같은 명령을 실행합니다.
 
 ```powershell
 New-AzureRmVm `

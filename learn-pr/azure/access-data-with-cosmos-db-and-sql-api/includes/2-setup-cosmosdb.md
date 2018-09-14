@@ -5,60 +5,73 @@
 
 # <a name="create-a-cosmos-db-account--database-with-the-azure-cli"></a>Azure CLI를 사용하여 Cosmos DB 계정 + 데이터베이스 만들기
 
-1. 먼저 올바른 구독을 선택합니다. 무료 교육용 구독과 연결된 구독 ID를 선택해야 합니다.
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+<!--
+TODO: This is original text prior to updates to use the sandbox. These can be worked back in as instructions for people using their own subscriptions. There is one more block like this below. Note that the assignment of RESOURCE_GROUP below would need to be different as well.
+
+1. Start by selecting the correct subscription - you want to select the subscription ID associated with your free education access subscription.
 
     ```azurecli
     az account list --output table
     ```
 
-1. 구독 목록에 “샌드박스”가 표시되는지 확인한 다음 해당 항목을 사용할 현재 구독으로 설정합니다. <!-- TODO: get official name here -->
+1. Make sure you see "sandbox" in the subscription list and set it as the current one to use:
 
     ```azurecli
     az account set --subscription "sandbox"
     ```
     
-1. 자동으로 작성된 리소스 그룹을 가져옵니다. 자체 구독을 사용 중인 경우 이 단계를 건너뛰고 아래의 `RESOURCE_GROUP` 환경 변수에서 사용하려는 고유한 이름만 입력하면 됩니다. 리소스 그룹 이름을 적어 둡니다. 이 그룹에 데이터베이스를 만들 것입니다. <!-- Do we get a token for this? -->
+1. Get the Resource Group that has been created for you. If you are using your own subscription, skip this step and just supply a unique name you want to use in the `RESOURCE_GROUP` environment variable below. Take note of the Resource Group name. This is where we will create our database.
 
     ```azurecli
     az group list --out table
     ```
+-->
 
-1. 이 작업을 좀 더 쉽게 수행하려면 매번 공통 값을 입력하지 않아도 되도록 환경 변수 몇 개를 설정합니다. 
+1. 공통의 가치를 매번 입력 하지 않아도 되므로 몇 가지 환경 변수를 설정 합니다.
 
     > [!IMPORTANT]
-    > 이러한 값은 세션에 적합한 값으로 변경해야 합니다. 예를 들어 `<resource group>` 값은 위에 나와 있는 리소스 그룹 이름으로 바꿉니다.
+    > 이러한 값은 세션에 적합한 값으로 변경해야 합니다. 예를 들어 대체 된 `<comsos db name>` 에 Cosmos DB에서 원하는 이름의 값입니다.
 
     ```azurecli
-    export RESOURCE_GROUP="<resource group>"
+    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
     export NAME="<cosmos db name>"
     export LOCATION="<location>"
     ```
-    
-1. 다음으로는 데이터베이스 이름에 대한 변수를 설정합니다. 마지막 모듈에서 만든 데이터베이스와 일치하도록 변수 이름을 “Users”로 지정합니다.
+
+2. 다음으로는 데이터베이스 이름에 대한 변수를 설정합니다. 마지막 모듈에서 만든 데이터베이스와 일치하도록 변수 이름을 “Users”로 지정합니다.
 
     ```azurecli
     export DB_NAME="Products"
     ```
-    
-1. 자체 구독에서 이 작업을 수행하며 _새_ 리소스 그룹을 사용하는 경우(권장)에는 다음 명령을 사용하여 리소스 그룹을 만듭니다. **중요:** Microsoft Learn에서 제공되는 무료 교육 리소스를 사용하는 경우에는 이 단계를 실행할 필요가 없습니다. 대신 위의 `RESOURCE_GROUP` 변수가 할당된 리소스 그룹으로 설정되어 있는지 확인합니다.
+
+<!-- 
+
+TODO: Pre-sandbox text to be worked back in.
+
+1. If you are doing this on your own subscription, and you are using a _new_ Resource Group (recommended), then use the following command to create the Resource Group. **Important:** If you are using the free education resources provided by Microsoft Learn, then you do not need to execute this step. Instead, make sure the `RESOURCE_GROUP` variable above is set to your assigned resource group.
 
     ```azurecli
     az group create --name $RESOURCE_GROUP --location $LOCATION
     ```
-    
-1. 다음으로는 Cosmos DB 계정을 만듭니다. 작업을 완료하는 데 몇 분 정도 걸립니다.
+-->
+
+3. 다음으로는 Cosmos DB 계정을 만듭니다. 작업을 완료하는 데 몇 분 정도 걸립니다.
 
     ```azurecli
     az cosmosdb create --name $NAME --kind GlobalDocumentDB --resource-group $RESOURCE_GROUP
     ```
-    
-1. 계정에서 `Products` 데이터베이스를 만듭니다.
+
+4. 계정에서 `Products` 데이터베이스를 만듭니다.
 
     ```azurecli
     az cosmosdb database create --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP
     ```
-    
-1. 마지막으로 `Clothing` 컬렉션을 만듭니다.
+
+5. 마지막으로 `Clothing` 컬렉션을 만듭니다.
 
     ```azurecli
     az cosmosdb collection create --collection-name "Clothing" --partition-key-path "/productId" --throughput 1000 --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP

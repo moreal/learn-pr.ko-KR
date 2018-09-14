@@ -1,42 +1,42 @@
-As mentioned earlier, Redis is an in-memory NoSQL database which can be replicated across multiple servers. It is often used as a cache, but can be used as a formal database or even message-broker. 
+앞에서 설명한 대로 Redis 여러 서버 간에 복제할 수 있는 메모리 내 NoSQL 데이터베이스입니다. 캐시에 사용 되는 경우가 있지만 정식 데이터베이스 또는 심지어 메시지 브로커도 사용할 수 있습니다. 
 
-It can store a variety of data types and structures and supports a variety of commands you can issue to retrieve cached data or query information about the cache itself. The data you work with is always stored as key/value pairs.
+다양 한 데이터 형식 및 구조를 저장할 수 있습니다 하 고 다양 한 캐시 자체에 대 한 캐시 된 데이터 또는 쿼리 정보를 검색 하는 동안 실행할 수 있습니다 하는 명령 지원 합니다. 사용 하 여 작업 하는 데이터는 항상 키/값 쌍으로 저장 됩니다.
 
-## Executing commands on the Redis cache
+## <a name="executing-commands-on-the-redis-cache"></a>Redis cache에서 명령을 실행
 
-Typically, a client application will use a _client library_ to form requests and execute commands on a Redis cache. You can get a list of client libraries directly from the [Redis clients page](https://redis.io/clients). A popular high-performance Redis client for the .NET language is **StackExchange.Redis**. The package is available through NuGet and can be added to your .NET code using the command line or IDE.
+클라이언트 응용 프로그램을 사용 하는 일반적으로 _클라이언트 라이브러리_ 요청 하는 Redis cache에서 명령을 실행 합니다. 클라이언트 라이브러리에서 직접 목록을 가져올 수 있습니다 합니다 [Redis 클라이언트 페이지](https://redis.io/clients)합니다. .NET 언어를 위한 인기 있는 고성능 Redis 클라이언트는 **StackExchange.Redis**입니다. 패키지가는 NuGet을 통해 사용할 수 있으며 명령줄 또는 IDE를 사용 하 여.NET 코드에 추가할 수 있습니다.
 
-### Connecting to your Redis cache with StackExchange.Redis
+### <a name="connecting-to-your-redis-cache-with-stackexchangeredis"></a>StackExchange.Redis 사용 하 여 Redis cache에 연결
 
-Recall that we use the host address, port number, and an access key to connect to a Redis server. Azure also offers a _connection string_ for some Redis clients which bundles this data together into a single string.
+Redis 서버에 연결할 호스트 주소, 포트 번호 및 액세스 키를 사용 하는 회수 합니다. 또한 azure 제공을 _연결 문자열_ 일부 Redis 클라이언트는 단일 문자열에이 데이터를 함께 번들에 대 한 합니다.
 
-### What is a connection string?
+### <a name="what-is-a-connection-string"></a>연결 문자열 이란?
 
-A connection string is a single line of text that includes all the required pieces of information to connect and authenticate to a Redis cache in Azure. It will look something like the following (with the **cache-name** and **password-here** fields filled in with real values):
+연결 문자열은 모든 필요한 가지 연결 하 여 azure에서 Redis cache에 대 한 인증 정보를 포함 하는 텍스트 한 줄. 다음과 같이 표시 됩니다 (사용 하 여 합니다 **캐시 이름** 하 고 **암호 여기** 실제 값으로 채워진 필드):
 
 ```
 [cache-name].redis.cache.windows.net:6380,password=[password-here],ssl=True,abortConnect=False
 ```
 
 > [!TIP]
-> The connection string should be protected in your application. If the application is hosted on Azure, consider using an Azure Key Vault to store the value.
+> 연결 문자열은 응용 프로그램에서 보호 되어야 합니다. 응용 프로그램이 Azure에서 호스트 되는 경우에 Azure Key Vault를 사용 하 여 값을 저장 하는 것이 좋습니다.
 
-You can pass this string to **StackExchange.Redis** to create a connection the server. 
+이 문자열을 전달할 수 있습니다 **StackExchange.Redis** 서버 연결을 만들려고 합니다. 
 
-Notice that there are two additional parameters at the end: 
+끝에 두 개의 추가 매개 변수가 있는지 확인 합니다. 
 
-- **ssl** - ensures that communication is encrypted.
-- **abortConnection** - allows a connection to be created even if the server is unavailable at that moment.
+- **ssl** -통신이 암호화 됨을 보장 합니다.
+- **abortConnection** -특정 시점에서 서버를 사용할 수 없는 경우에 만들 수에 대 한 연결을 허용 합니다.
 
-There are several other [optional parameters](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Configuration.md#configuration-options) you can append to the string to configure the client library.
+몇 가지 다른 [선택적 매개 변수](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Configuration.md#configuration-options) 클라이언트 라이브러리를 구성 하는 문자열에 추가할 수 있습니다.
 
-### Creating a connection
+### <a name="creating-a-connection"></a>연결 만들기
 
-The main connection object in **StackExchange.Redis** is the `StackExchange.Redis.ConnectionMultiplexer` class. This object abstracts the process of connecting to a Redis server (or group of servers). It's optimized to manage connections efficiently and intended to be kept around while you need access to the cache.
+기본 연결 개체 **StackExchange.Redis** 되는 `StackExchange.Redis.ConnectionMultiplexer` 클래스입니다. 이 개체는 Redis 서버 (또는 서버 그룹)에 연결 하는 프로세스를 추상화 합니다. 액세스에 최적화 된 연결을 효율적으로 관리 하 고 캐시에 액세스 해야 하는 동안 유지 되어야 하는 데 있습니다.
 
-You create a `ConnectionMultiplexer` instance using the static `ConnectionMultiplexer.Connect` or `ConnectionMultiplexer.ConnectAsync` method, passing in either a connection string or a `ConfigurationOptions` object. 
+만든를 `ConnectionMultiplexer` 정적을 사용 하 여 인스턴스 `ConnectionMultiplexer.Connect` 또는 `ConnectionMultiplexer.ConnectAsync` 하거나 연결 문자열을 전달 하는 메서드 또는 `ConfigurationOptions` 개체입니다. 
 
-Here's a simple example:
+간단한 예는 다음과 같습니다.
 
 ```csharp
 using StackExchange.Redis;
@@ -46,41 +46,41 @@ var redisConnection = ConnectionMultiplexer.Connect(connectionString);
     // ^^^ store and re-use this!!!
 ```
 
-Once you have a `ConnectionMultiplexer`, there are 3 primary things you might want to do:
+만든 후는 `ConnectionMultiplexer`, 가지 3 기본 작업을 수행 하는 것이 좋습니다.
 
-1. Access a Redis Database. This is what we will focus on here.
-2. Make use of the publisher/subscript features of Redis. This is outside the scope of this module.
-3. Access an individual server for maintenance or monitoring purposes.
+1. Redis 데이터베이스에 액세스 합니다. 여기에 맞게 중점적입니다.
+2. 확인의 Redis 게시자/첨자 기능을 사용 합니다. 이이 모듈의 범위를 벗어납니다.
+3. 유지 관리 또는 모니터링을 위해 개별 서버에 액세스 합니다.
 
-### Accessing a Redis database
+### <a name="accessing-a-redis-database"></a>Redis 데이터베이스 액세스
 
-The Redis database is represented by the `IDatabase` type. You can retrieve one using the `GetDatabase()` method:
+Redis 데이터베이스는 표현 된 `IDatabase` 형식입니다. 사용 하 여 검색할 수 있습니다는 `GetDatabase()` 메서드:
 
 ```csharp
 IDatabase db = redisConnection.GetDatabase();
 ```
 
 > [!TIP]
-> The object returned from `GetDatabase` is a lightweight object, and does not need to be stored. Only the `ConnectionMultiplexer` needs to be kept alive.
+> 반환 되는 개체 `GetDatabase` 경량 개체 이며 저장할 필요가 없습니다. 만 `ConnectionMultiplexer` 활성 상태로 유지 해야 합니다.
 
-Once you have a `IDatabase` object, you can execute methods to interact with the cache. All methods have synchronous and asynchronous versions which return `Task` objects to make them compatible with the `async` and `await` keywords.
+만든 후를 `IDatabase` 개체를 캐시와 상호 작용 하는 메서드를 실행할 수 있습니다. 모든 메서드를 반환 하는 동기 및 비동기 버전을 보유 `Task` 개체를 사용 하 여 호환 되는 `async` 및 `await` 키워드입니다.
 
-Here is an example of storing a key/value in the cache:
+캐시에 키/값을 저장 하는 예는 다음과 같습니다.
 
 ```csharp
 bool wasSet = db.StringSet("favorite:flavor", "i-love-rocky-road");
 ```
 
-The `StringSet` method returns a `bool` indicating whether the value was set (`true`) or not (`false`). We can then retrieve the value with the `StringGet` method:
+합니다 `StringSet` 메서드가 반환 되는 `bool` 값이 설정 되었는지 여부를 나타내는 (`true`) 여부 (`false`). 다음 값을 검색할 수는 `StringGet` 메서드:
 
 ```csharp
 string value = db.StringGet("favorite:flavor");
 Console.WriteLine(value); // displays: ""i-love-rocky-road""
 ```
 
-#### Getting and Setting binary values
+#### <a name="getting-and-setting-binary-values"></a>가져오기 및 이진 값 설정
 
-Recall that Redis keys and values are _binary safe_. These same methods can be used to store binary data. There are implicit conversion operators to work with `byte[]` types so you can work with the data naturally:
+Redis 키와 값이는 회수 _안전한 이진_합니다. 이진 데이터를 저장 하려면 동일한 메서드를 사용할 수 있습니다. 암시적 변환 연산자를 사용 하려면 가지 `byte[]` 자연스럽 게 데이터를 사용 하 여 작업할 수 있도록 형식:
 
 ```csharp
 byte[] key = ...;
@@ -95,49 +95,49 @@ byte[] value = db.StringGet(key);
 ```
 
 > [!TIP]
-> **StackExchange.Redis** represents keys using the `RedisKey` type. This class has implicit conversions to and from both `string` and `byte[]`, allowing both text and binary keys to be used without any complication. Values are represented by the `RedisValue` type. As with `RedisKey`, there are implicit conversions in place to allow you to pass `string` or `byte[]`.
+> **StackExchange.Redis** 를 사용 하 여 키를 나타내는 `RedisKey` 형식입니다. 이 클래스는 둘 다의 암시적 변환 `string` 고 `byte[]`, 텍스트 및 이진을 모두 키 모든 complication 없이 사용할 수 있습니다. 값은 표시 되는 `RedisValue` 형식입니다. 와 마찬가지로 `RedisKey`에 전달할 수 있도록 할에서의 암시적 변환은 `string` 또는 `byte[]`합니다.
 
-#### Other common operations
+#### <a name="other-common-operations"></a>다른 일반적인 작업
 
-The `IDatabase` interface includes several other methods to work with the Redis cache. There are methods to work with hashes, lists, sets, and ordered sets.
+`IDatabase` 인터페이스 Redis cache를 사용 하려면 몇 가지 다른 방법도 포함 되어 있습니다. 가지 해시, 목록, 집합 및 정렬 된 집합을 사용 하는 방법이 있습니다.
 
-Here are some of the more common ones that work with single keys, you can [read the source code](https://github.com/StackExchange/StackExchange.Redis/blob/master/src/StackExchange.Redis/Interfaces/IDatabase.cs) for the interface to see the full list.
+다음은 단일 키를 사용 하는 흔한 문제 중 일부를 할 수 있습니다 [소스 코드를 읽기](https://github.com/StackExchange/StackExchange.Redis/blob/master/src/StackExchange.Redis/Interfaces/IDatabase.cs) 전체 목록을 보려면 인터페이스에 대 한 합니다.
 
-| Method | Description |
+| 방법 | 설명 |
 |--------|-------------|
-| `CreateBatch` | Creates a _group of operations_ that will be sent to the server as a single unit, but not necessarily processed as a unit. |
-| `CreateTransaction` | Creates a group of operations that will be sent to the server as a single unit _and_ processed on the server as a single unit. |
-| `KeyDelete` | Delete the key/value. |
-| `KeyExists` | Returns whether the given key exists in cache. |
-| `KeyExpire` | Sets a time-to-live (TTL) expiration on a key. |
-| `KeyRename` | Renames a key. |
-| `KeyTimeToLive` | Returns the TTL for a key. |
-| `KeyType` | Returns the string representation of the type of the value stored at key. The different types that can be returned are: string, list, set, zset and hash. |
+| `CreateBatch` | 만듭니다는 _작업 그룹_ 하나의 단위로 서버로 전송 되지만 반드시 하나의 단위로 처리 됩니다 하는 합니다. |
+| `CreateTransaction` | 하나의 단위로 서버로 전송 될 작업 그룹을 만듭니다 _고_ 단일 단위로 서버에서 처리 합니다. |
+| `KeyDelete` | 키/값을 삭제 합니다. |
+| `KeyExists` | 지정된 된 키 캐시에 있는지 여부를 반환 합니다. |
+| `KeyExpire` | 키에 대 한 활성 시간 (TTL) 만료를 설정합니다. |
+| `KeyRename` | 키를 이름을 바꿉니다. |
+| `KeyTimeToLive` | 키에 대 한 TTL을 반환합니다. |
+| `KeyType` | 키에 저장 된 값 형식의 문자열 표현을 반환 합니다. 반환 될 수 있는 다른 형식은: 문자열, 목록, zset 및 해시를 설정 합니다. |
        
-### Executing other commands
+### <a name="executing-other-commands"></a>다른 명령을 실행합니다.
 
-The `IDatabase` object has an `Execute` and `ExecuteAsync` method which can be used to pass textual commands to the Redis server. For example:
+합니다 `IDatabase` 개체에는 `Execute` 및 `ExecuteAsync` 텍스트 명령을 Redis 서버에 전달 하는 메서드. 예: 
 
 ```csharp
 var result = db.Execute("ping");
 Console.WriteLine(result.ToString()); // displays: "PONG"
 ```
 
-The `Execute` and `ExecuteAsync` methods return a `RedisResult` object which is a data holder that includes two properties:
+`Execute` 하 고 `ExecuteAsync` 메서드는 반환을 `RedisResult` 두 속성을 포함 하는 데이터 보유자 인 개체:
 
-- `Type` which returns a `string` indicating the type of the result - "STRING", "INTEGER", etc.
-- `IsNull` a true/false value to detect when the result is `null`.
+- `Type` 반환 하는 한 `string` 결과-"STRING", "INTEGER" 등의 형식을 나타내는입니다.
+- `IsNull` 결과 시기를 감지 하는 true/false 값 `null`합니다.
 
-You can then use `ToString()` on the `RedisResult` to get the actual return value.
+사용할 수 있습니다 `ToString()` 에 `RedisResult` 가져오려면 실제 값을 반환 합니다.
 
-You can use `Execute` to perform any supported commands - for example, we can get all the clients connected to the cache ("CLIENT LIST"):
+사용할 수 있습니다 `Execute` 수행 하려면 지원 되는 명령-예를 들어, 캐시 ("클라이언트 목록")에 연결 된 모든 클라이언트 가져올 수 있습니다.
 
 ```csharp
 var result = await db.ExecuteAsync("client", "list");
 Console.WriteLine($"Type = {result.Type}\r\nResult = {result}");
 ```
 
-This would output all the connected clients:
+이 연결된 된 모든 클라이언트 출력 됩니다.
 
 ```output
 Type = BulkString
@@ -145,8 +145,8 @@ Result = id=9469 addr=16.183.122.154:54961 fd=18 name=DESKTOP-AAAAAA age=0 idle=
 id=9470 addr=16.183.122.155:54967 fd=13 name=DESKTOP-BBBBBB age=0 idle=0 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free=32768 obl=0 oll=0 omem=0 ow=0 owmem=0 events=r cmd=client numops=17
 ```
 
-### Storing more complex values
-Redis is oriented around binary safe strings, but you can cache off object graphs by serializing them to a textual format - typically XML or JSON. For example, perhaps for our statistics, we have a `GameStats` object which looks like:
+### <a name="storing-more-complex-values"></a>더 복잡 한 값 저장
+Redis는 이진 안전한 문자열을 지향 하지만 캐시할 수 있습니다 개체 그래프 해제-일반적으로 텍스트 형식으로 직렬화 하 여 XML 또는 JSON입니다. 예를 들어, 아마도 통계에 대 한 것을 `GameStats` 개체과 같은 형식입니다.
 
 ```csharp
 public class GameStat
@@ -177,7 +177,7 @@ public class GameStat
 }
 ```
 
-We could use the **Newtonsoft.Json** library to turn an instance of this object into a string:
+사용할 수는 **Newtonsoft.Json** 문자열로이 개체의 인스턴스를 설정 하려면 라이브러리:
 
 ```csharp
 var stat = new GameStat("Soccer", new DateTime(1950, 7, 16), "FIFA World Cup", 
@@ -188,7 +188,7 @@ string serializedValue = Newtonsoft.Json.JsonConvert.SerializeObject(stat);
 bool added = db.StringSet("event:1950-world-cup", serializedValue);
 ```
 
-We could retrieve it and turn it back into an object using the reverse process:
+검색 하 고 역 프로세스를 사용 하 여 개체를 다시 설정할 수 있었습니다.
 
 ```csharp
 var result = db.StringGet("event:1950-world-cup");
@@ -196,12 +196,12 @@ var stat = Newtonsoft.Json.JsonConvert.DeserializeObject<GameStat>(result.ToStri
 Console.WriteLine(stat.Sport); // displays "Soccer"
 ```
 
-## Cleaning up the connection
-Once you are done with the Redis connection, you can **Dispose** the `ConnectionMultiplexer`. This will close all connections and shutdown the communication to the server.
+## <a name="cleaning-up-the-connection"></a>연결을 정리
+Redis 연결이 끝나면 있습니다 **Dispose** 는 `ConnectionMultiplexer`합니다. 모든 연결 및 서버 통신이 종료 닫힙니다.
 
 ```csharp
 redisConnection.Dispose();
 redisConnection = null;
 ```
 
-Let's create an application and do some simple work with our Redis cache.
+응용 프로그램을 만들고이 Redis cache 사용 하 여 간단한 작업을 수행 하겠습니다.

@@ -1,75 +1,73 @@
-We're going to look at the factors that affect disk performance in Azure, and at how caching can help optimize performance. 
+Azure 및 캐싱 어떻게 도움이 되는지 성능 최적화의 디스크 성능에 영향을 주는 요소를 확인 하려고 합니다.
 
-### Disk caching
+### <a name="disk-caching"></a>디스크 캐싱
 
-A cache is a specialized component in a computer that stores data so it can be accessed faster, typically in memory. The data in a cache is often data that has been read previously, or is data that resulted from an earlier calculation. The goal is to access data faster than getting it from disk.
+캐시는 데이터를 더 빠르게 액세스할 수 있도록 일반적으로 메모리에 저장 하는 컴퓨터는 특수 한 요소입니다. 캐시에 데이터가 이전에 읽은 또는 이전 계산을 통해 얻은 데이터가 있는 데이터 경우가 많습니다. 목표는 디스크에서 가져오는 것 보다 더 빠르게 데이터에 액세스 하는 것입니다.
 
-Caching uses specialized, and sometimes expensive, temporary storage that has faster read and/or write performance than permanent storage. Because this cache storage is often limited, decisions need to be made as to what data operations will benefit most from caching. But even where the cache can be made widely available, such as in Azure, it's still important to know the workload patterns of each disk before deciding on what caching type to use.
+캐싱을 사용 하 여 특수화 된 경우에 따라 비용이 많이 드는, 임시 저장소 하 고 더 빠르게 읽거나 영구 저장소 보다 성능이 작성 합니다. 이 캐시 저장소 제한 종종 이기 때문에 어떤 데이터 작업은 가장 큰 혜택을 캐싱에서 대 한 수를 결정 해야 합니다. 이지만 여기서 캐시 가능 하 게 광범위 하 게,와 같은 Azure에서 각 디스크의 워크 로드 패턴을 사용 하 여 캐싱 유형을 결정 하기 전에 알아야 여전히 중요 합니다.
 
-**Read caching** tries to speed up data retrieval. Instead of reading from permanent storage, the data is read from the faster cache. Data reads hit the cache under the following conditions:
+**읽기 캐싱** 데이터 검색 속도를 시도 합니다. 영구 저장소에서 읽기를 대신 데이터를 더 빠르게 캐시에서 읽힙니다. 다음 조건에서 캐시 적중 하는 데이터 읽기:
 
-- The data has been read before and exists in the cache.
-- And the cache is large enough to hold all of this data.
+- 데이터 전에 읽은 및 캐시에 존재 합니다.
+- 및 캐시는 모든이 데이터를 저장 하기에 충분 합니다.
 
-It's important to note that read caching helps when there is some _predictability_ to the read queue, such as a set of sequential reads. For random I/O, where the data you're accessing is scattered across storage, caching will be of little or no benefit, and can even reduce disk performance.
+일부 경우는 읽기 캐싱을 사용 하는 중요 한 것 _예측 가능성_ 순차 읽기 집합과 같은 읽기 큐에 있습니다. 임의 I/O가 위치에 액세스 하는 데이터에 분산 된 저장소에 대 한 캐싱 거의 또는 전혀 도움이 되며 디스크 성능을 줄일 수 있습니다.
 
-**Write caching** tries to speed up writing data to storage. By using a write cache, the app can consider the data to be saved. In reality, the data is queued up in a cache, waiting to be written to permanent storage. As you can imagine, this mechanism can be a potential point of failure, like if the system shuts down before this cached data is flushed to disk. Some systems, such as SQL Server, handle writing cached data to persistent disk storage themselves.  
+**쓰기 캐싱** 저장소에 데이터를 쓰는 속도 하려고 합니다. 쓰기 캐시를 사용 하 여 앱 데이터를 저장할 수도 있습니다. 실제로 데이터 큐에 저장 된 캐시의 영구 저장소에 쓸 대기 합니다. 상상할 수 있듯이이 메커니즘에는 잠재적 오류 지점이 될 수 있습니다,이 데이터를 캐시 하려면 먼저 하위 플러시된 경우 시스템 종료와 같은 디스크에 있습니다. SQL Server와 같은 일부 시스템 자체 영구 디스크 저장소에 캐시 된 데이터를 쓰기를 처리 합니다.
 
-### Azure disk caching
+### <a name="azure-disk-caching"></a>Azure 디스크 캐싱
 
-There are two types of disk caching that concern disk storage:
+디스크 캐싱 문제 디스크 저장소의는 다음과 같은 두 종류가 있습니다.
 
-- Azure storage caching
-- Azure virtual machine (VM) disk caching
+- Azure 저장소 캐싱
+- Azure 가상 머신 (VM) 디스크 캐싱
 
-Azure storage caching provides cache services for Azure Blob storage, Azure Files, and other content in Azure. Configuration of these types of cache is beyond the scope of this module.
+Azure storage 캐싱은 캐시 서비스를 Azure Blob storage, Azure Files 및 Azure의 다른 콘텐츠를 제공합니다. 이러한 유형의 캐시의 구성을이 모듈의 범위를 벗어납니다.
 
-Azure virtual machine disk caching is about optimizing read and write access to the virtual hard disk (VHD) files attached to Azure VMs. We'll focus on disk caching in this module.
+Azure 가상 머신 디스크 캐싱은 읽기 및 Azure Vm에 연결 된 가상 하드 디스크 (VHD) 파일에 대 한 쓰기 액세스를 최적화 하는 방법에 대 한 합니다. 이 모듈의 디스크 캐싱 집중적으로 다루겠습니다.
 
-### Azure virtual machine disk types
+### <a name="azure-virtual-machine-disk-types"></a>Azure 가상 머신 디스크 유형
 
-There are three types of disks used with Azure VMs:
+Azure Vm을 사용 하 여 사용 된 디스크는 다음과 같은 세 종류가 있습니다.
 
-- **OS disk**: When you create an Azure VM, Azure automatically attaches a VHD for the operating system (OS). The VHD is stored as a page blob in Azure storage.
-- **Temporary disk**: When you create an Azure VM, Azure also automatically adds a temporary disk. This disk is used for data, such as page and swap files. The data on this disk may be lost during maintenance or a VM redeploy. So, don't use it for storing permanent data, such as database files or transaction logs.
-- **Data disks**: A data disk is a VHD that's attached to a virtual machine to store application data or other data you need to keep.
+- **OS 디스크**: Azure VM을 만들 때 Azure는 운영 체제 (OS)에 대 한 VHD를 자동으로 연결 합니다. VHD는 Azure storage에 페이지 blob으로 저장 됩니다.
+- **임시 디스크**: 임시 디스크에 Azure Azure VM을 만들 때 자동으로 추가 합니다. 이 디스크는 페이지 및 스왑 파일과 같은 데이터에 사용 됩니다. 이 디스크의 데이터를 유지 관리 또는 VM 재배포 하는 동안 손실 될 수 있습니다. 따라서 없는 데이터베이스 파일 또는 트랜잭션 로그와 같은 영구 데이터를 저장 하는 데 사용 합니다.
+- **데이터 디스크**: 데이터 디스크는 응용 프로그램 또는 유지 해야 하는 기타 데이터를 저장 하는 가상 머신에 연결 된 VHD입니다.
 
-OS disks and data disks take advantage of Azure VM disk caching. The cache size for a VM disk depends on the VM instance size and on the number of disks mounted on the VM. Caching can be enabled for only up to four data disks.
+OS 디스크 및 데이터 디스크는 Azure VM 디스크 캐싱을 활용 합니다. VM 디스크에 대 한 캐시 크기는 VM 인스턴스 크기 및 VM에 탑재 된 디스크의 수에 따라 달라 집니다. 최대 4 개의 데이터 디스크에 대 한 캐시를 사용할 수 있습니다.
 
-## Cache options for Azure VMs
+## <a name="cache-options-for-azure-vms"></a>Azure Vm에 대 한 캐시 옵션
 
-There are three common options for VM disk caching:
+가지 VM 디스크 캐싱에 일반적인 세 가지 옵션이 있습니다.
 
-- **Read/write** – Write-back cache. Use this option only if your application properly handles writing cached data to persistent disks when needed.
-- **Read-only** - Reads are performed from cache.
-- **None** - No cache. Select this option for write-only and write-heavy disks. Log files are a good candidate because they're write-heavy operations.
+- **읽기/쓰기** – 나중 쓰기 캐시 합니다. 응용 프로그램이 필요할 때 영구 디스크에 캐시 된 데이터를 쓰기 올바르게 처리 하는 경우에이 옵션을 사용 합니다.
+- **읽기 전용** -캐시에서 읽기를 수행 합니다.
+- **None** -캐시가 없습니다. 쓰기 전용 및 쓰기가 많은 디스크에 대 한이 옵션을 선택 합니다. 로그 파일 쓰기 집약적 작업 이기 때문에 좋은 후보를 않습니다.
 
-Not every caching option is available for each type of disk. The following table shows you the caching options for each disk type:
+모든 캐싱 옵션은 디스크의 각 유형에 사용할 수 있습니다. 다음 표에서 각 디스크 유형에 대 한 캐싱 옵션을 보여 줍니다.
 
-| |**Read-only**  |**Read/write**  |**None**  |
+| |**Read-only**  |**Read/write**  |**없음**  |
 |---------|---------|---------|---------|
-|OS disk     |   yes      |   yes (default)     |   yes      |
-|Data disk     |   yes (default)      |  yes       |  yes       |
-|Temporary disk     |  no       |   no      |   no      |
+|OS 디스크     |   예      |   예 (기본값)     |   예      |
+|데이터 디스크      |   예 (기본값)      |  예       |  예       |
+|임시 디스크     |  no       |   no      |   no      |
 
 > [!NOTE]
-> Disk caching options can't be changed for L-Series and B-series virtual machines.
+> L 시리즈 및 B-시리즈 virtual machines에 대 한 디스크 캐싱 옵션을 변경할 수 없습니다.
 
-## Performance considerations for Azure VM disk caching
+## <a name="performance-considerations-for-azure-vm-disk-caching"></a>Azure VM 디스크 캐싱을 위한 성능 고려 사항
 
-So, how can your cache settings affect the performance of your workloads running on Azure VMs?
+따라서 캐시 설정에 Azure Vm에서 실행 중인 워크 로드의 성능이 저하 되는 어떻게 될 수 있습니까?
 
-### OS disk
+### <a name="os-disk"></a>OS 디스크
 
-For a VM OS disk, the default behavior is to use the cache in read/write mode. If you have applications that store data files on the OS disk, and the applications do lots of random read/write operations to data files, consider moving those files to a data disk that has the caching turned off. Why is that? Well, if the read queue does not contain sequential reads, caching will be of little or no benefit. The overhead of maintaining the cache, as if the data was sequential, can reduce disk performance.
+VM OS 디스크에 대 한 기본 동작은 읽기/쓰기 모드에서 캐시를 사용 하는 것입니다. OS 디스크에 데이터 파일을 저장 하는 응용 프로그램이 있는 경우 응용 프로그램에 대 한 많은 데이터 파일에 임의의 읽기/쓰기 작업 수행 이동 여 해당 파일 캐시 된 데이터 디스크를 해제 합니다. 그 이유는 무엇입니까? 물론 읽기 큐 순차 읽기를 포함 하지 않으면 캐싱 됩니다 거의 또는 전혀 혜택. 데이터를 순차적으로 처럼 캐시를 유지 관리 오버 헤드는 디스크 성능을 줄일 수 있습니다.
 
-### Data disks
+### <a name="data-disks"></a>데이터 디스크
 
-For performance-sensitive applications, you should use data disks rather than the OS disk. Using separate disks allows you to configure the appropriate cache settings for each disk.
+성능에 민감한 응용 프로그램의 경우 OS 디스크 대신 데이터 디스크를 사용 해야 합니다. 별도 디스크를 사용 하 여 각 디스크에 대 한 적절 한 캐시 설정을 구성할 수 있습니다.
 
-For example, on Azure VMs running SQL Server, enabling **Read-only** caching on the data disks (for regular and TempDB data) can result in significant performance improvements. Log files, on the other hand, are good candidates for data disks with no caching.
+예를 들어 Azure Vm에서 SQL Server를 실행 하 고 사용 하도록 설정 **읽기 전용** (일반 및 TempDB 데이터)에 데이터 디스크의 캐싱 성능이 크게 향상 될 수 있습니다. 로그 파일, 반면에 적합 한 후보가 캐싱을 사용 하지 않을 데이터 디스크에 대 한 합니다.
 
 > [!WARNING]
-> Changing the cache setting of an Azure disk detaches and then reattaches the target disk. If it's the operating system disk, the VM is restarted. Stop all applications/services that might be affected by this disruption before changing the disk cache setting.
->
->
+> Azure 디스크의 캐시 설정을 변경 분리 되었다가 다음 대상 디스크. 운영 체제 디스크를 VM 다시 시작 됩니다. 디스크 캐시 설정을 변경하기 전에 이 중단의 영향을 받을 수 있는 모든 응용 프로그램/서비스를 중지합니다.

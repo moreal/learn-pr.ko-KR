@@ -1,20 +1,19 @@
-In this short exercise, we'll learn how to migrate an existing, unmanaged VHD to a managed VHD. 
+이 짧은 연습에서는 관리 되는 VHD를 기존, 관리 되지 않는 VHD를 마이그레이션하는 방법을 알아보겠습니다. 
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-## Migrate our disks to managed disks
+## <a name="migrate-our-disks-to-managed-disks"></a>디스크를 managed disks로 마이그레이션
 
-1. In the Azure portal, in the navigation on the left, select **Virtual machines**.
+1. 왼쪽 탐색 창에서 Azure portal에서 선택 **가상 머신**합니다.
 
-1. In the list of virtual machines, select our virtual machine,  **MailSenderVM**.
+1. 가상 컴퓨터의 목록에서 가상 컴퓨터를 선택 **MailSenderVM**합니다.
 
-1. In the **MailSenderVM** pane, under **SETTINGS**, select **Disks**.
+1. 에 **MailSenderVM** 창 아래에 있는 **설정**를 선택 **디스크**합니다.
 
-1. In the **MailSenderVM - Disks** page, select **Migrate to managed disks**.
+1. 에 **MailSenderVM-디스크** 페이지에서 **managed disks로 마이그레이션**합니다.
 
-1. In the **Migrate to managed disks** page, select **Migrate**. Azure stops the VM, migrates the disks, and then restarts the VM. This process may take several minutes.
+1. 에 **managed disks로 마이그레이션** 페이지에서 **마이그레이션**합니다. Azure VM을 중지 하 고 디스크를 마이그레이션합니다 다음 VM을 다시 시작 합니다. 이 프로세스에는 몇 분 정도 걸릴 수 있습니다.
 
-We migrated our disks to managed disks in this exercise. By using managed disks, you don't have to configure storage accounts for those disks because Azure manages them for you.
+이 연습에서 managed disks로 디스크 마이그레이션 했습니다. 관리 디스크를 사용 하 여 Azure를 관리 하기 때문에 해당 디스크에 대 한 저장소 계정을 구성할 필요가 없습니다.

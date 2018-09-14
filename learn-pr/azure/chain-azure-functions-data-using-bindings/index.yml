@@ -1,39 +1,36 @@
 ### YamlMime:Module
-# Module uids are manually created by the content author and should follow the format (repo).(module-short-name). Keep it easy on yourself and keep the module-short-name the same as the module folder name.
 uid: learn.chain-azure-functions-data-using-input-output-bindings
 metadata:
-  title: Integrate data sources with your Azure Functions serverless logic using bindings.
-  description: In this module, we'll learn how to integrate your Azure Function with various data sources using bindings. 
-title: Integrate data sources with your Azure Functions serverless logic using bindings.
-summary: Azure Functions makes it easy for your function code to integrate with data and services. Through the power of bindings, you just declare the data sources to read and write, and let Azure Functions take care of the rest.
+  title: 입력 및 출력 바인딩을 사용 하 여 함께 체인 Azure functions
+  description: 이 모듈에서는 바인딩을 사용 하 여 다양 한 데이터 소스를 사용 하 여 Azure Function을 통합 하는 방법에 알아보겠습니다.
+  ms.date: 09/24/2018
+  author: andrewjbyrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 입력 및 출력 바인딩을 사용 하 여 함께 체인 Azure functions
+summary: 'Azure Functions를 사용 하면 데이터 및 서비스와 통합 하 여 함수 코드 쉬워집니다. 바인딩의 기능을 통해 있습니다만 선언 읽기 및 쓰기, 데이터 원본 하 고 나머지를 알아서 수행 하는 Azure Functions를 사용 합니다.'
 abstract: |
-  In this module, you will:
-  - Explore what types of data sources can be accessed through bindings
-  - Read data from Azure Cosmos DB using Azure Functions
-  - Store data in Azure Cosmos DB using Azure Functions
-  - Send messages to Azure Queue Storage using Azure Functions
-cardDescription: Integrate data sources with your Azure Functions serverless logic using bindings.
-# iconUrl is the image file that will be shown on the module card and the achievement badge granted at user completion of this module
-iconUrl: http://via.placeholder.com/120x120
-# `iconUrl` is the badge image 
-levels: 
-- beginner
-# `beginner`, `intermediate`, `advanced`; multiple values accepted
-roles: 
-- developer
-# `developer`, `administrator`, `solutionsArchitect`, `businessUser`, `businessAnalyst`; multiple values accepted
-products: 
-- azure
-# `azure`; multiple values accepted
-# Listing of all of the unit uids, in the order they should be displayed to the user in
+  이 모듈에서 수행하는 작업:
+  - 어떤 유형의 데이터 원본 바인딩을 통해 액세스할 수 있습니다를 탐색 합니다.
+  - Azure Functions를 사용 하 여 Azure Cosmos DB에서 데이터 읽기
+  - Azure Functions를 사용 하 여 Azure Cosmos DB에서 데이터를 저장 합니다.
+  - Azure Functions를 사용 하 여 Azure Queue Storage에 메시지 보내기
+prerequisites: 없음
+iconUrl: /learn/achievements/chain-azure-functions-data-using-bindings.svg
+levels:
+  - beginner
+roles:
+  - developer
+products:
+  - azure
 units:
-- learn.chain-azure-functions-data-using-input-output-bindings.1-introduction
-- learn.chain-azure-functions-data-using-input-output-bindings.2-explore-input-and-output-binding-types-portal-lesson
-- learn.chain-azure-functions-data-using-input-output-bindings.3-explore-input-and-output-binding-types-portal-lab
-- learn.chain-azure-functions-data-using-input-output-bindings.4-read-data-with-input-bindings-portal-lesson
-- learn.chain-azure-functions-data-using-input-output-bindings.5-read-data-with-input-bindings-portal-lab
-- learn.chain-azure-functions-data-using-input-output-bindings.6-write-data-with-output-bindings-portal-lesson
-- learn.chain-azure-functions-data-using-input-output-bindings.7-write-data-with-output-bindings-portal-lab
-- learn.chain-azure-functions-data-using-input-output-bindings.8-summary
-achievement: learn.placeholder.badge
-# `achievement` is the `uid` for the badge
+  - learn.chain-azure-functions-data-using-input-output-bindings.1-introduction
+  - learn.chain-azure-functions-data-using-input-output-bindings.2-explore-input-and-output-binding-types-portal-lesson
+  - learn.chain-azure-functions-data-using-input-output-bindings.3-explore-input-and-output-binding-types-portal-lab
+  - learn.chain-azure-functions-data-using-input-output-bindings.4-read-data-with-input-bindings-portal-lesson
+  - learn.chain-azure-functions-data-using-input-output-bindings.5-read-data-with-input-bindings-portal-lab
+  - learn.chain-azure-functions-data-using-input-output-bindings.6-write-data-with-output-bindings-portal-lesson
+  - learn.chain-azure-functions-data-using-input-output-bindings.7-write-data-with-output-bindings-portal-lab
+  - learn.chain-azure-functions-data-using-input-output-bindings.8-summary
+achievement: learn.chain-azure-functions-data-using-input-output-bindings.badge

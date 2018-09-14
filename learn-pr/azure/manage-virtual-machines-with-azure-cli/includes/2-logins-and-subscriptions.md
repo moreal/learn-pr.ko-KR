@@ -9,21 +9,18 @@ az [command] [subcommand] [--parameter --parameter]
 부분 명령을 입력하여 명령, 하위 명령 및 매개 변수의 목록을 볼 수 있습니다. 예를 들어, 명령줄에 `az`를 입력하면 최상위 레벨 도움말 화면이 표시되고, `az vm`을 입력하면 가상 머신에 대한 모든 하위 명령이 표시됩니다. 이 접근법은 Azure CLI 도구를 탐색하는 훌륭한 방법입니다.
 
 > [!NOTE]
-> Azure CLI 작업을 위해 브라우저 기반의 Azure Cloud Shell을 사용하려고 합니다. 로컬 머신에서 작업하는 것이 편한 경우, [Azure CLI를 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)하면 여기에서 다루는 모든 명령을 명령줄에서 실행할 수 있습니다.
+> Azure CLI 작업을 위해 브라우저 기반의 Azure Cloud Shell을 사용하려고 합니다. 로컬 머신에서 작업하는 것이 편한 경우, [Azure CLI를 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)하면 여기에서 다루는 모든 명령을 명령줄에서 실행할 수 있습니다. 이 작업에 설명 했습니다 합니다 **Azure CLI를 사용 하 여 컨트롤 Azure services** 모듈입니다.
 
-## <a name="log-in-to-azure"></a>Azure에 로그인
+## <a name="login-to-azure"></a>Azure에 로그인
 
-Azure CLI로 작업할 때 처음 하는 일은 Azure 계정에 로그인하는 것입니다. 이 작업은 `login` 명령을 통해 수행됩니다. Cloud Shell을 사용하는 경우 Azure에 로그인하는 단추가 있습니다.
+일반적으로 가장 먼저 Azure CLI를 사용 하 여 작업 하는 경우 작업을 수행 Azure 계정에 로그인 됩니다. 이 작업은 `az login` 명령을 통해 수행됩니다. 이 명령을 실행하면 브라우저 창이 열리며, 여기에서 사용할 Microsoft 계정을 선택할 수 있습니다. 이 단계가 필요 하지 않습니다. Azure 샌드박스를 사용 하 고 있으므로 Azure 샌드박스를 활성화 해야 대신 합니다.
 
-```azurecli
-az login
-```
-
-이 명령을 실행하면 브라우저 창이 열리며, 여기에서 사용할 Microsoft 계정을 선택할 수 있습니다.
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 ## <a name="working-with-subscriptions"></a>구독 작업
 
-이 모듈에서는 테스트용으로 만들어진 임시 구독으로 작업하지만, 일반적으로는 본인 계정의 구독을 사용합니다. 둘 이상의 구독이 있는 경우 `az account list --output table` 문을 사용하여 명확하게 서식이 지정된 구독 목록을 가져올 수 있습니다.
+이 모듈에서는 임시 구독에서 작업 하지만 사용자 고유의 계정에서 구독을 일반적으로 사용 됩니다. 둘 이상의 구독이 있는 경우 `az account list --output table` 문을 사용하여 명확하게 서식이 지정된 구독 목록을 가져올 수 있습니다.
 
 ```
 Name                                  CloudName    SubscriptionId                        State    IsDefault

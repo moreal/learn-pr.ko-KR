@@ -12,7 +12,7 @@ Azure AD를 배포하고 어떤 사용자가 Azure Portal에 액세스할 때 Az
    1. 조직 이름: `First Up Consultants`
    1. 초기 도메인 이름: `firstupconsultants<XXXX>.onmicrosoft.com`
 
-1. 디렉터리가 만들어질 때까지 기다립니다. 링크를 클릭하여 새 디렉터리로 전환하거나 창 위쪽에서 **디렉터리 및 구독 필터**를 클릭한 다음, 새로 만든 디렉터리를 선택합니다.
+1. 디렉터리가 만들어질 때까지 기다립니다. 새 디렉터리로 전환 하거나 클릭에 대 한 링크를 클릭 합니다 **디렉터리 및 구독 필터** 창의 맨 위에 있는 새로 만든된 디렉터리를 선택 합니다.
 
 ## <a name="get-trial-licenses"></a>평가판 라이선스 가져오기
 
@@ -32,7 +32,9 @@ Azure AD를 배포하고 어떤 사용자가 Azure Portal에 액세스할 때 Az
 
 1. 사용자 이름이 **Isabella Simonsen**인 사용자를 만듭니다.
 
-   * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+   `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+
+   후 도메인과 일치는 @에서 만든 도메인과 합니다 *디렉터리를 만듭니다* 위의 섹션.
 
 1. 사용자에 대한 **암호 표시** 확인란을 선택합니다. 나중에 테스트할 때 사용할 수 있도록 암호를 적어 둡니다.
 
@@ -52,7 +54,7 @@ Azure AD를 배포하고 어떤 사용자가 Azure Portal에 액세스할 때 Az
 
 1. 멤버 자격 유형: **할당됨**
 
-1. 이전 단계에서 만든 사용자를 선택하고 **선택**을 선택합니다.
+1. 이전 단계에서 만든 사용자를 선택 하 고 선택 **선택**합니다.
 
 1. **만들기**를 클릭합니다.
 

@@ -1,102 +1,101 @@
-In Azure IoT Central, the data that a device can exchange with your application is specified in a device template that defines the behavior and capabilities of a device or in this case, a coffee machine. When you create a device template, a simulated device is generated from the template. The simulated device generates telemetry that enables you to test the behavior of your application before a physical/real device is connected. 
+Azure IoT Central의 장치의 기능과 동작을 정의 하는 장치 템플릿에서 또는 커피 머신이 예제의 응용 프로그램을 사용 하 여 장치를 교환할 수 있는 데이터 지정 됩니다. 장치 템플릿을 만들 때는 템플릿에서 시뮬레이션된 장치가 생성됩니다. 시뮬레이션된 된 장치는 물리적/실제 장치가 연결 되어 전에 응용 프로그램의 동작을 테스트할 수 있도록 원격 분석을 생성 합니다. 
 
-In this unit, you create a device template for a coffee machine that specifies the following capabilities and behaviors:
-* **Measurements**: The data that comes from your device. You can add multiple measurements to your device template to match the capabilities of your device.
-    * Telemetry measurements : The numerical data points that your device collects over time. They're represented as a continuous stream. In this scenario, the telemetry measurements are air humidity and water temperature. 
+이 단위는 다음 기능 및 동작을 지정 하는 커피 머신 장치 템플릿을 만듭니다.
+* **측정**: 장치에서 제공 되는 데이터입니다. 장치 기능에 맞게 여러 측정값을 장치 템플릿에 추가할 수 있습니다.
+    * 원격 분석 측정 합니다: 장치 시간이 지남에 따라 수집 하는 숫자 데이터 요소입니다. 연속 스트림으로 표시됩니다. 이 시나리오에서는 원격 분석 측정 air 습도 되며 온도 물. 
 
-    * State measurements : The state of the device or its components over a period of time. In this scenario, you set states as Brewing/Not Brewing, Cup Detected/Cup Not Detected
+    * 측정 상태: 장치 또는 시간의 기간 동안 해당 구성 요소의 상태입니다. 상태 Brewing/Not 조제, Cup 검색/Cup 검색 되지 않으면으로 설정 하면이 시나리오에서는
 
-* **Settings**: You use settings to send configuration data to a device from your application. In this scenario, you adjust the optimal water temperature in settings and send it to the coffee machine. When the setting is updated, it is marked as pending in the UI until the device acknowledges that it has responded to the setting change.
+* **설정**: 설정을 사용 하 여 장치에 응용 프로그램에서 구성 데이터를 보냅니다. 이 시나리오에서는 설정에서 최적의 물 온도 조절 하 고 커피 컴퓨터로 전송 합니다. 보류 중으로 표시 되어 설정이 업데이트 되 면 장치 설정 변경에 응답 했다는 것을 승인 될 때까지 UI에 있습니다.
 
-* **Properties**: 
-The device metadata that's associated with the device. There are two types of properties.
-    * You use *application properties* to record information about your device in your application. In this scenario, you use application properties to set the ideal water temperature range of the coffee machine. Application properties are stored in the application and do not synchronize with the device. 
+* **속성**: 장치와 연결 된 장치 메타 데이터입니다. 속성에는 다음과 같은 두 종류가 있습니다.
+    * 사용할 *응용 프로그램 속성* 응용 프로그램에서 장치에 대 한 정보를 기록 합니다. 이 시나리오에서는 응용 프로그램 속성을 사용 하 여 커피 머신 이상적인 물 온도 범위를 설정 합니다. 응용 프로그램 속성 응용 프로그램에서 저장 되 고 장치를 동기화 하지 않습니다. 
 
-    * You use *device properties* to enable a device to send property values to your application. These properties can only be changed by the device. In this scenario, you configure the Device Property called Device Warranty Expired in IoT Central. The Device Warranty Expired field remains empty until the coffee machine is connected to IoT Central. Once connected, the coffee machine sends the warranty status to the application. 
+    * 속성 값을 응용 프로그램에 보내도록 장치를 설정하려면 *장치 속성*을 사용할 수 있습니다. 이러한 속성은 장치에서만 변경할 수 있습니다. 이 시나리오에서는 IoT Central의 장치 보증 만료를 호출 하는 장치 속성을 구성할 수 있습니다. 커피 머신을 IoT Central에 연결 될 때까지 장치 보증 만료 필드가 빈 상태로 유지 됩니다. 연결 되 면 커피 머신을 보증 상태 응용 프로그램에 보냅니다. 
 
-* **Commands**: You use commands to remotely manage your device from your application. You can directly run commands on the device from the cloud to control the devices. In this scenario, you run the commands on your coffee machine to set it to maintenance or start brewing. 
+* **명령을**: 명령을 사용 하 여 응용 프로그램에서 장치를 원격으로 관리 합니다. 클라우드에서 장치에 대한 명령을 직접 실행하여 장치를 제어할 수 있습니다. 이 시나리오에서는 유지 관리를 설정 하거나 조제 시작 커피 컴퓨터에서 명령을 실행 합니다. 
 
-## Create a device template for the coffee maker
-A device template defines the behavior and capabilities of a device or in this case, a coffee maker.
+## <a name="create-a-device-template-for-the-coffee-maker"></a>커피 메이커용 장치 템플릿 만들기
+장치 템플릿을 동작 및 여기서 커피 메이커 또는 장치의 기능을 정의합니다.
 
-1. Navigate to the Home page and choose **Create Device Templates**.
+1. 홈 페이지로 이동 하 고 선택 **장치 템플릿 만들기**합니다.
 
-1. Enter *Connected Coffee Maker* for your custom device template. 
+1. 입력 *커피 메이커 연결* 사용자 지정 장치 템플릿에 대 한 합니다. 
  
-1. Choose **Create**. You’ve created a blank device template for the coffee maker where you define the behavior and capabilities of the machine. 
+1. **만들기**를 선택합니다. 커피 메이커 동작 및 시스템의 기능을 정의 하는 위치에 대 한 빈 장치 템플릿을 만들었습니다. 
 
-## Define Telemetry measurement temperature and humidity
-1.	In the **Connected Coffee Maker** device template, make sure you are on the **Measurements** page where you define the telemetry. 
+## <a name="define-telemetry-measurement-temperature-and-humidity"></a>원격 분석 측정 온도 및 습도 정의
+1.  **연결된 커피 메이커** 장치 템플릿에서 원격 분석을 정의할 **측정값** 페이지가 표시되어 있는지 확인합니다. 
 
-1.	To add the temperature telemetry measurement, choose **+ New Measurement**. Then choose **Telemetry** as the measurement type.
+1.  온도 원격 분석 단위를 추가 하려면 **+ 새 측정**합니다. 선택한 **원격 분석** 측정 형식으로 합니다.
 
-1.	Each type of telemetry you define for a device template includes configuration options such as:
-    * Display options.
-    * Details of the telemetry.
-    * Simulation parameters.
+1.  장치 템플릿에 대해 정의하는 각 유형의 원격 분석은 다음과 같은 구성 옵션을 포함합니다.
+    * 옵션 표시
+    * 원격 분석의 세부 정보
+    * 시뮬레이션 매개 변수
 
-    To configure your temperature and humidity telemetry, use the information in the following table. When creating telemetry items, you need to add a new measurement by choosing **+ New Measurement** for each item in the table.
+    온도 및 습도 원격 분석을 구성 하려면 다음 테이블의 정보를 사용 합니다. 선택 하 여 새 측정값을 추가 해야 하는 원격 분석 항목을 만들 때 **+ 새 측정** 테이블의 각 항목에 대 한 합니다.
     
-    |Display Name|Field Name|Units|Min|Max|Decimal Places|
+    |표시 이름|필드 이름|단위|최소값|최대값|소수 자릿수|
     |---|---|---|---|---|---|
-    |Water Temperature|waterTemperature|Celsius|86|100|1|
-    |Air Humidity|airHumidity|%|20|100|0|
+    |물 온도|waterTemperature|섭씨|86|100|1|
+    |공기 습도|airHumidity|%|20|100|0|
    
-    You can also choose a color for the telemetry display. To save the telemetry definition, choose **Save**. As you create more definitions for measurements, settings, properties, and commands in the remaining unit, remember to save whenever you're finished.  
+    원격 분석 표시용 색을 선택할 수도 있습니다. 원격 분석 정의 저장 하려면 선택 **저장할**합니다. 나머지 단위로 측정, 설정, 속성 및 명령에 대 한 자세한 정의 만들면 완료 될 때마다 저장 해야 합니다.  
     
-    ![Create a device template](../images/2-device-template-a.png)
+    ![장치 템플릿 만들기](../images/2-device-template-a.png)
 
-    Enter field names exactly as shown in the table in the device template. If the field names do not match the property names in the corresponding device code, the telemetry cannot be displayed in the application. Do the same when you enter settings and properties information. 
+    장치 템플릿에서 표에 표시 된 대로 필드 이름을 입력 합니다. 필드 이름에 해당 장치 코드의 속성 이름과 일치 하지 않으면, 응용 프로그램에서 원격 분석을 표시할 수 없습니다. 설정 및 속성 정보를 입력할 때도 동일한 작업을 수행합니다. 
 
-## Define State measurement for brewing/not brewing, cup detected/cup not detected
-Add the following states in the **Measurements** page by choosing **+ New Measurement**. Then choose **State** as the measurement type:
+## <a name="define-state-measurement-for-brewingnot-brewing-cup-detectedcup-not-detected"></a>끓이는 중/끓이는 중 아님, 컵이 검색됨/컵이 검색되지 않음에 대해 상태 측정을 정의합니다.
+다음 상태를 추가 합니다 **측정** 를 선택 하 여 페이지 **+ 새 측정**합니다. 그런 다음, 측정 유형으로 **상태**를 선택합니다.
     
-   |Display Name|Field Name|Value 1|Display Name 1|Value 2|Display Name 2|
+   |표시 이름|필드 이름|값 1|표시 이름 1|값 2|표시 이름 2|
    |---|---|---|---|---|---|
-   |Brewing|stateBrewing|true|Brewing|false|Not Brewing|
-   |Cup Detected|stateCupDetected|true|Cup Detected|false|Cup Not Detected|
+   |끓이는 중|stateBrewing|true|끓이는 중|false|끓이는 중 아님|
+   |컵이 검색됨|stateCupDetected|true|컵이 검색됨|false|컵이 검색되지 않음|
 
 
-On the State > Brewing page, you add the value as true. Add the other value as false with the optional display name as Not Brewing by clicking **+** next to **Values**.
+상태에 > 값을 true로 추가 페이지 조제, 합니다. 클릭 하 여 선택적 표시 이름으로 false로 없습니다 조제으로 다른 값을 추가할 **+** 옆에 **값**합니다.
 
 > [!NOTE]
-> After you define Telemetry and State, you see the simulated data generated from the device template on the device screen. The simulated data enables you to test the behavior of your application before you connect a physical device to IoT Central. 
+> 원격 분석 및 상태를 정의 하면 장치 화면에서 장치 템플릿에서 생성 된 시뮬레이션 된 데이터를 표시 합니다. 시뮬레이션 된 데이터를 사용 하면 IoT Central에 물리적 장치를 연결 하기 전에 응용 프로그램의 동작을 테스트할 수 있습니다. 
 
-## Use Settings to set the optimal temperature of the coffee machine
-Navigate to the Settings page, the tab next to Measurements. Turn on **Design Mode**. Add the following **Number** setting under **Library** on the **Settings** page:
+## <a name="use-settings-to-set-the-optimal-temperature-of-the-coffee-machine"></a>설정을 사용하여 커피 머신의 최적 온도 설정
+측정값 옆에 있는 탭 설정 페이지로 이동 합니다. **디자인 모드**를 설정합니다. 다음을 추가 합니다 **번호** 설정이 **라이브러리** 에 **설정** 페이지:
 
-|Display Name|Field Name|Units|Decimals|Min|Max|Initial|
+|표시 이름|필드 이름|단위|10진수|최소값|최대값|초기 값|
 |---|---|---|---|---|---|---|---|
-|Optimal Temperature|setTemperature|Celsius|1|86|100|95|
+|최적 온도|setTemperature|섭씨|1|86|100|95|
 
-## Use Properties to store warranty info and water temperature range
+## <a name="use-properties-to-store-warranty-info-and-water-temperature-range"></a>속성을 사용하여 보증 정보 및 물 온도 범위 저장
 
-Add the following **Number** properties on the **Properties** page by first turning on **Design Mode**:
+다음을 추가 합니다 **번호** 속성에는 **속성** 처음 설정 하 여 페이지 **디자인 모드**:
 
-|Display Name|Field Name|Units|Decimal Places|Min|Max|Initial
+|표시 이름|필드 이름|단위|소수 자릿수|최소값|최대값|초기 값
 |---|---|---|---|---|---|---|
-|Coffee Makers Min Temperature|propertyMinTemperature|Celsius|1|88|92|90|
-|Coffee Makers Max Temperature|propertyMaxTemperature|Celsius|1|96|99|98| 
+|커피 메이커 최소 온도|propertyMinTemperature|섭씨|1|88|92|90|
+|커피 메이커 최대 온도|propertyMaxTemperature|섭씨|1|96|99|98| 
 
-Add the following **Device Property** on the **Properties** page:
+**속성** 페이지에서 다음 **장치** 속성을 추가합니다.
 
-   |Display Name|Field Name|Data Type|
+   |표시 이름|필드 이름|데이터 형식|
    |---|---|---|
-   |Device Warranty Expired|propertyWarrantyExpired|number|
+   |장치 보증 만료|propertyWarrantyExpired|숫자|
 
 > [!NOTE]
-> Device Property is sent by your device, in this case, your coffee machine. Once you connect the coffee machine to Azure IoT Central, Device Property Warranty is then sent to the application and displayed in the Device Warranty Expired field. 
+> 장치(여기서는 커피 머신)에서 장치 속성을 전송합니다. Azure IoT Central에 커피 머신을 연결하고 나면 장치 속성 보증이 응용 프로그램으로 전송되어 장치 보증 만료 필드에 표시됩니다. 
 
-## Use Commands to set maintenance mode and start brewing
+## <a name="use-commands-to-set-maintenance-mode-and-start-brewing"></a>명령을 사용하여 유지 관리 모드 설정 및 끓이기 시작
 
-Add the following commands on the **Commands** page by first turning on **Design Mode**.
+먼저 **디자인 모드**를 설정하여 **명령** 페이지에서 다음 명령을 추가합니다.
 
-|Display Name|Field Name|Default Timeout|Data Type|
+|표시 이름|필드 이름|기본 시간 제한|데이터 형식|
 |---|---|---|---|---|---|---|
-|Set Maintenance Mode|cmdSetMaintenance|30|text| 
-|Start Brewing|cmdStartBrewing|30|text|
+|유지 관리 모드 설정|cmdSetMaintenance|30|텍스트| 
+|끓이기 시작|cmdStartBrewing|30|텍스트|
 
-## Summary
+## <a name="summary"></a>요약
 
-In this unit, you created a new device type, a coffee machine, using the device template. In the device template, you specified the data that a coffee machine can exchange with your application. You defined the telemetry such as temperature and humidity, as well as the state such as whether the coffee is brewing or not. You further defined the behavior and capabilities of the coffee machine by configuring settings, properties, and commands. 
+이 단위에 새 장치 유형, 커피 머신을, 장치 템플릿을 사용 하 여 만들었습니다. 장치 템플릿에서 응용 프로그램을 사용 하 여 커피 머신을 교환할 수 있는 데이터를 지정 합니다. 그리고 온도/습도 등의 원격 분석과 커피를 끓이는 중인지 여부 등의 상태도 정의했습니다. 추가 설정, 속성 및 명령을 구성 하 여 동작 및 커피 머신의 기능 정의 했습니다. 
 

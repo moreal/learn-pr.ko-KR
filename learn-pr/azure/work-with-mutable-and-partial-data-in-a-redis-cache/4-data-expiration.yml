@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
+title: 데이터 만료
+metadata:
+  title: 데이터 만료
+  description: 데이터 만료
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-data-expiration.md)]

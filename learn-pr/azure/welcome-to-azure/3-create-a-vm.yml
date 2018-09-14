@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.3-create-a-vm
+title: 가상 머신 만들기
+metadata:
+  title: 가상 머신 만들기
+  description: 관심 분야에 관계 없이 시작 클라우드에 첫 번째 가상 컴퓨터를 만들어 합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-create-a-vm.md)]

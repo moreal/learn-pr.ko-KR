@@ -38,7 +38,7 @@ Azure CLI에서는 일반적으로 기본 브라우저가 시작되어 Azure 로
 
 로그인이 성공하면 Azure 구독에 연결됩니다.
 
-### <a name="create"></a>생성
+### <a name="create"></a>만들기
 
 새 Azure 서비스를 만들려면 먼저 새 리소스 그룹을 만들어야 하므로 CLI에서 Azure 리소스를 만드는 방법을 보여 주는 예로 리소스 그룹을 사용하겠습니다.
 
@@ -48,7 +48,7 @@ Azure CLI **group create** 명령은 리소스 그룹을 만듭니다. 이름 �
 az group create --name <name> --location <location>
 ```
 
-### <a name="verify"></a>Verify
+### <a name="verify"></a>확인
 
 Azure CLI는 여러 Azure 리소스에 대해 리소스 세부 정보를 표시하는 **list** 하위 명령을 제공합니다. 예를 들어 Azure CLI **group list** 명령은 Azure 리소스 그룹을 나열합니다. 여기서는 리소스 그룹 만들기가 성공했는지 확인하는 데 유용합니다.
 

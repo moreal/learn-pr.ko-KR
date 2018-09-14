@@ -1,0 +1,32 @@
+### YamlMime:LearningPath
+uid: learn.administer-infrastructure-resources-in-azure
+metadata:
+  title: Azure에서 컨테이너 관리
+  description: '가상 머신 리소스를 만들고, 관리하고, 보호하고, 크기를 조정하는 방법을 알아봅니다.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Azure에서 인프라 리소스 관리
+summary: '가상 머신 리소스를 만들고, 관리하고, 보호하고, 크기를 조정하는 방법을 알아봅니다.'
+prerequisites: 없음
+iconUrl: /achievements/administer-infrastructure-resources-in-azure.svg
+levels:
+  - beginner
+roles:
+  - administrator
+products:
+  - azure
+modules:
+  - learn.introduction-to-azure-virtual-machines
+  - learn.create-linux-vm-in-azure
+  - learn.create-a-windows-vm-in-azure
+  - learn.manage-vms-with-azure-cli
+  - learn.scale-and-size-virtual-machines
+  - learn.make-your-virtual-machines-highly-available
+  - learn.configure-the-network-for-your-virtual-machines
+  - learn.add-and-size-disks-in-azure-virtual-machines
+  - learn.caching-and-performance-azure-storage-and-disks
+  - learn.secure-your-azure-virtual-machine-disks
+achievement: learn.administer-infrastructure-resources-in-azure.trophy

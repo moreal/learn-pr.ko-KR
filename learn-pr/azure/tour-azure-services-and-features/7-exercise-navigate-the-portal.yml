@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.7-exercise-navigate-the-portal
+title: Azure Portal 사용
+metadata:
+  title: Azure Portal 사용
+  description: Azure Portal 사용
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-exercise-navigate-the-portal.md)]

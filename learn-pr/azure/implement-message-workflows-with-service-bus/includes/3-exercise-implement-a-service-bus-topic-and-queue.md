@@ -9,33 +9,37 @@
 
 ## <a name="create-a-service-bus-namespace"></a>Service Bus 네임스페이스 만들기
 
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
 Azure Service Bus의 네임스페이스는 고유한 정규화된 도메인 이름이 지정된 큐, 항목 및 릴레이용 컨테이너입니다. 먼저 네임스페이스를 만들어야 합니다.
 
-각 네임스페이스에는 기본 및 보조 SAS(공유 액세스 서명) 암호화 키도 포함됩니다. 전송 또는 수신 구성 요소는 네임스페이스 내의 개체에 액세스하기 위해 연결할 때 이러한 키를 제공해야 합니다.
+각 네임 스페이스는 기본 및 보조 공유 액세스 서명 암호화 키도 있습니다. 전송 또는 수신 구성 요소는 네임스페이스 내의 개체에 액세스하기 위해 연결할 때 이러한 키를 제공해야 합니다.
 
-Azure Portal을 사용하여 Service Bus 네임스페이스를 만들려면 다음 단계를 수행하세요.
+Azure portal을 사용 하 여 Service Bus 네임 스페이스를 만들려면 다음이 단계를 수행 합니다.
 
-1. 브라우저에서 [Azure Portal](https://portal.azure.com/)로 이동한 다음 평상시에 사용하는 Azure 계정 자격 증명을 사용하여 로그인합니다.
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
 1. 왼쪽 탐색 영역에서 **모든 서비스**를 클릭합니다.
 
-1. **모든 서비스** 블레이드에서 아래쪽의 **통합** 섹션으로 스크롤한 다음 **Service Bus**를 클릭합니다.
+1. 에 **모든 서비스** 블레이드에서 아래로 스크롤하여 합니다 **통합** 섹션을 클릭 **Service Bus**합니다.
 
-    ![Service Bus 네임스페이스 만들기](../media-draft/3-create-namespace-1.png)
+    ![Service Bus 네임스페이스 만들기](../media/3-create-namespace-1.png)
 
 1. **Service Bus** 블레이드의 왼쪽 위에서 **추가**를 클릭합니다.
 
-1. **이름** 텍스트 상자에 네임스페이스의 고유한 이름을 입력합니다. 예를 들어 "salesteamapp" + *사용자 이니셜* + *현재 날짜*를 입력합니다.
+1. 에 **이름을** 텍스트 상자에 네임 스페이스에 대 한 고유한 이름을 입력 합니다. 예를 들어 "salesteamapp" + *이니셜에 숫자* + *현재 날짜*합니다.
 
 1. **가격 책정 계층** 드롭다운 목록에서 **Standard**를 선택합니다.
 
 1. **구독** 드롭다운 목록에서 구독을 선택합니다.
 
-1. **리소스 그룹**에서 **새로 만들기**를 선택하고 **SalesTeamAppRG**를 입력합니다.
+1. 아래 **리소스 그룹**를 선택 **기존 항목 사용** 선택한 <rgn>[샌드박스 리소스 그룹 이름]</rgn>합니다.
 
-1. **위치** 드롭다운 목록에서 사용자 지역과 가까운 위치를 선택하고 **만들기**를 클릭합니다. 새 Service Bus 네임스페이스가 생성됩니다.
+1. 에 **위치** 드롭 다운 목록에서 위치에 인접 한 클릭 **만들기**합니다. 새 Service Bus 네임스페이스가 생성됩니다.
 
-    ![Service Bus 네임스페이스 만들기](../media-draft/3-create-namespace-2.png)
+    ![Service Bus 네임스페이스 만들기](../media/3-create-namespace-2.png)
 
 ## <a name="create-a-service-bus-queue"></a>Service Bus 큐 만들기
 
@@ -47,9 +51,9 @@ Azure Portal을 사용하여 Service Bus 네임스페이스를 만들려면 다�
 
 1. 네임스페이스 블레이드의 왼쪽 위에서 **+ 큐**를 클릭합니다.
 
-1. **큐 만들기** 블레이드의 **이름** 텍스트 상자에 **salesmessages**를 입력하고 **만들기**를 클릭합니다. 네임스페이스에 큐가 생성됩니다.
+1. 에 **큐 만들기** 블레이드에서는 **이름** 텍스트 상자에서 **salesmessages**를 클릭 하 고 **만들기**. 네임스페이스에 큐가 생성됩니다.
 
-    ![큐 만들기](../media-draft/3-create-queue.png)
+    ![큐 만들기](../media/3-create-queue.png)
 
 ## <a name="create-a-service-bus-topic-and-subscriptions"></a>Service Bus 항목과 구독 만들기
 
@@ -59,18 +63,18 @@ Azure Portal을 사용하여 Service Bus 네임스페이스를 만들려면 다�
 
 1. **Service Bus 네임스페이스** 블레이드에서 **+ 항목**을 클릭합니다.
 
-1. **항목 만들기** 블레이드의 **이름** 텍스트 상자에 **salesperformancemessages**를 입력하고 **만들기**를 클릭합니다. 네임스페이스에 항목이 생성됩니다.
+1. 에 **만들기 항목** 블레이드에서는 **이름** 텍스트 상자에서 **salesperformancemessages**를 클릭 하 고 **만들기**. 네임스페이스에 항목이 생성됩니다.
 
-    ![항목 만들기](../media-draft/3-create-topic.png)
+    ![항목 만들기](../media/3-create-topic.png)
 
-1. 항목이 생성되면 **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **항목**을 클릭합니다.
+1. 때 항목을 만든에 **Service Bus Namespace** 블레이드 아래에서 **엔터티**, 클릭 **항목**합니다.
 
-1. 항목 목록에서 **salesperformancemessages**를 클릭한 다음 **+ 구독**을 클릭합니다.
+1. 항목의 목록에서 클릭 **salesperformancemessages**를 클릭 하 고 **+ 구독**합니다.
 
-1. **이름** 텍스트 상자에 **Americas**를 입력한 다음 **만들기**를 클릭합니다.
+1. 에 **이름을** 텍스트 상자에서 **Americas**를 클릭 하 고 **만들기**합니다.
 
 1. **+ 구독**을 클릭합니다.
 
-1. **이름** 텍스트 상자에 **EuropeAndAfrica**를 입력한 다음 **만들기**를 클릭합니다.
+1. 에 **이름을** 텍스트 상자에서 **EuropeAndAfrica**를 클릭 하 고 **만들기**합니다.
 
 영업용 분산 응용 프로그램의 복원 기능을 개선하기 위해 Service Bus를 사용하는 데 필요한 인프라를 빌드했습니다. 그리고 개별 판매 관련 메시지용 큐와 영업 성과 관련 메시지용 항목을 만들었습니다. 항목으로 전송되는 메시지는 전 세계의 여러 받는 사람 웹 서비스로 배달될 수 있으므로, 항목은 여러 구독을 포함합니다.
