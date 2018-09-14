@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.9-managing-vms
+title: Azure CLI로 VM 시작 및 중지
+metadata:
+  title: Azure CLI로 VM 시작 및 중지
+  description: Azure CLI를 사용하여 가상 머신을 시작 및 중지하는 방법 알아보기
+  ms.openlocfilehash: dcceabd66f496850d3f6b35db5ef12774908027a
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447328"
+interactive: bash
+durationInMinutes: 4
+content: '[!include[](includes/9-managing-vms.md)]'

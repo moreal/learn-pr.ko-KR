@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.8-querying-vms
+title: VM에 대한 시스템 및 런타임 정보 쿼리
+metadata:
+  title: VM에 대한 시스템 및 런타임 정보 쿼리
+  description: Azure CLI를 사용하여 가상 머신에 대한 정보를 쿼리하는 방법 알아보기
+  ms.openlocfilehash: 4e20b6540bdd898415dfe0a862bdecaca913e00d
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446355"
+interactive: bash
+durationInMinutes: 10
+content: '[!include[](includes/8-querying-vms.md)]'
