@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
+title: <span data-ttu-id="42962-101">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="42962-101">Retrieve a message from the queue</span></span>
+metadata:
+  title: <span data-ttu-id="42962-102">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="42962-102">Retrieve a message from the queue</span></span>
+  description: <span data-ttu-id="42962-103">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="42962-103">Retrieve a message from the queue</span></span>
+  ms.openlocfilehash: 384ef2458c85dd7f4ccd13ae19ea8cab2f34cb30
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43316448"
+interactive: bash-editor
+durationInMinutes: 10
+content: '[!include[](includes/8-exercise-implement-dequeue.md)]'

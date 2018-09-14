@@ -1,0 +1,50 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.3-public-private-hybrid-quiz
+title: <span data-ttu-id="a27cf-101">지식 검사 - 공용, 사설 및 하이브리드 클라우드에 대한 Azure 솔루션 이해</span><span class="sxs-lookup"><span data-stu-id="a27cf-101">Knowledge check - Understanding Azure solutions for public, private and hybrid cloud</span></span>
+metadata:
+  title: <span data-ttu-id="a27cf-102">지식 검사 - 공용, 사설 및 하이브리드 클라우드에 대한 Azure 솔루션 이해</span><span class="sxs-lookup"><span data-stu-id="a27cf-102">Knowledge check - Understanding Azure solutions for public, private and hybrid cloud</span></span>
+  description: <span data-ttu-id="a27cf-103">지식 검사 - 공용, 사설 및 하이브리드 클라우드에 대한 Azure 솔루션 이해</span><span class="sxs-lookup"><span data-stu-id="a27cf-103">Knowledge check - Understanding Azure solutions for public, private and hybrid cloud</span></span>
+  ms.openlocfilehash: 2ae34e628e7e20c933856b09a9a813e40788adbc
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445682"
+durationInMinutes: 10
+content: <span data-ttu-id="a27cf-104">지식 검사 - 공용, 사설 및 하이브리드 클라우드에 대한 Azure 솔루션 이해</span><span class="sxs-lookup"><span data-stu-id="a27cf-104">Knowledge check - Understanding Azure solutions for public, private and hybrid cloud</span></span>
+quiz:
+  title: <span data-ttu-id="a27cf-105">공용, 사설 및 하이브리드 클라우드용 Azure 솔루션</span><span class="sxs-lookup"><span data-stu-id="a27cf-105">Azure solutions for public, private and hybrid cloud</span></span>
+  questions:
+  - content: <span data-ttu-id="a27cf-106">다음 시나리오에서 가장 적합한 클라우드 배포 모델은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="a27cf-106">Given the following scenario, what is the best cloud deployment model?</span></span> <span data-ttu-id="a27cf-107">단기 프로젝트를 위해 SQL Server 데이터베이스가 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-107">A SQL server database is needed for a short term project.</span></span> <span data-ttu-id="a27cf-108">이를 배포할 리소스 및 성능 요구 사항을 충족하는 가용 하드웨어가 IT 부서에 없습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-108">The IT department does not have available hardware that meets the performance requirements or resources to deploy it.</span></span> <span data-ttu-id="a27cf-109">프로젝트가 다음 주에 시작됩니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-109">The project starts next week.</span></span> <span data-ttu-id="a27cf-110">프로젝트가 끝나면 데이터베이스는 더 이상 필요하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-110">Once the project is over, the database is no longer needed.</span></span>
+    choices:
+    - content: <span data-ttu-id="a27cf-111">공용 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-111">Public cloud</span></span>
+      correctExplanation: <span data-ttu-id="a27cf-112">SQL 데이터베이스의 긴급도 및 수명 주기 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-112">Because of the urgency and lifecycle of the SQL database.</span></span> <span data-ttu-id="a27cf-113">공용 클라우드는 가장 적합한 옵션입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-113">Public cloud is the best option.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="a27cf-114">사설 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-114">Private cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="a27cf-115">IT 부서에 SQL Server를 배포할 리소스가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-115">The IT department does not have resources to deploy a SQL Server.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a27cf-116">하이브리드 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-116">Hybrid cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="a27cf-117">하이브리드 클라우드는 옵션이 될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-117">Hybrid cloud could be an option.</span></span> <span data-ttu-id="a27cf-118">그러나 사설 클라우드와 공용 클라우드 사이에 연결이 있어야 한다는 요구 사항은 없습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-118">However, there is no requirement that there needs to be a connection between private and public clouds.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="a27cf-119">다음 시나리오에서 가장 적합한 클라우드 배포 모델은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="a27cf-119">Given the following scenario, what is the best cloud deployment model?</span></span> <span data-ttu-id="a27cf-120">클라우드에서 다수의 가상 머신을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-120">You create several virtual machines in the cloud.</span></span> <span data-ttu-id="a27cf-121">VM은 가상 네트워크를 사용하여 함께 네트워크로 연결됩니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-121">The VMs are networked together using a virtual network.</span></span> <span data-ttu-id="a27cf-122">VM이 클라우드 저장소의 x-ray 이미지 파일에 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-122">The VMs have access to x-ray image files in cloud storage.</span></span> <span data-ttu-id="a27cf-123">VM 중 하나는 고객이 레코드에 액세스할 수 있도록 인터넷에 노출되는 웹 사이트를 호스트하는 웹 서버입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-123">One of the VMs is a web server that host a website exposed to the Internet for customers to access their records.</span></span> <span data-ttu-id="a27cf-124">이미지 파일과 함께 고객 정보가 표시되도록 솔루션을 온-프레미스 데이터 센터에 연결하는 VPN이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-124">There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.</span></span>
+    choices:
+    - content: <span data-ttu-id="a27cf-125">공용 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-125">Public cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="a27cf-126">온-프레미스 데이터 센터에 대한 연결 때문에 이는 공용 클라우드 배포가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-126">Because of the connection to the on-premises datacenter, this is not a public cloud deployment.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a27cf-127">사설 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-127">Private cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="a27cf-128">공용 클라우드에 있는 가상 머신 및 네트워크 때문에 이는 사설 클라우드 배포가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-128">Because of the virtual machines and network in the public cloud, this is not a private cloud deployment.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a27cf-129">하이브리드 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-129">Hybrid cloud</span></span>
+      correctExplanation: <span data-ttu-id="a27cf-130">이 시나리오는 공용 클라우드와 사설 클라우드 간의 연결을 통해 두 클라우드를 모두 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-130">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="a27cf-131">따라서 이는 하이브리드 클라우드 배포입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-131">Therefore, it is a hybrid cloud deployment.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="a27cf-132">다음 시나리오에서 클라우드 배포 모델이란?</span><span class="sxs-lookup"><span data-stu-id="a27cf-132">Given the following scenario, what is the cloud deployment model?</span></span> <span data-ttu-id="a27cf-133">조직에 두 개의 데이터 센터가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-133">You have two datacenters in your organization.</span></span> <span data-ttu-id="a27cf-134">하나의 데이터 센터에는 규제 요구 사항 때문에 데이터 센터 중 하나에만 상주할 수 있는 데이터베이스가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-134">One datacenter has a database that can only reside in one of the datacenters because of a regulatory requirement.</span></span> <span data-ttu-id="a27cf-135">다른 데이터 센터에서 데이터베이스에 액세스하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-135">You want to access the database from the other datacenter.</span></span> <span data-ttu-id="a27cf-136">클라우드 공급자를 이용해 VPN을 생성하여 두 데이터 센터를 연결합니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-136">You create a VPN using a cloud provider to connect the two datacenters.</span></span>
+    choices:
+    - content: <span data-ttu-id="a27cf-137">공용 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-137">Public cloud</span></span>
+      incorrectExplanation: <span data-ttu-id="a27cf-138">두 개의 개인 데이터 센터 때문에 이는 공용 클라우드 배포가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-138">Because of the two private datacenters, this is not a public cloud deployment.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="a27cf-139">사설 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-139">Private cloud</span></span>
+      correctExplanation: <span data-ttu-id="a27cf-140">VPN은 공용 클라우드 리소스입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-140">The VPN is a public cloud resource.</span></span> <span data-ttu-id="a27cf-141">그러나 VPN은 두 개의 개인 데이터 센터 간의 개인 연결이므로 이는 사설 클라우드 배포입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-141">However, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="a27cf-142">하이브리드 클라우드</span><span class="sxs-lookup"><span data-stu-id="a27cf-142">Hybrid cloud</span></span>
+      correctExplanation: <span data-ttu-id="a27cf-143">VPN은 공용 클라우드 리소스이고 데이터 센터는 개인용입니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-143">The VPN is a public cloud resource and the datacenters are private.</span></span> <span data-ttu-id="a27cf-144">그러나 VPN은 두 개의 개인 데이터 센터만 연결하므로(공용 클라우드에 연결하지 않음) 이는 하이브리드 클라우드 배포가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="a27cf-144">However, because the VPN only connects two private datacenters (not to the public cloud, this is not a hybrid cloud deployment.</span></span>
+      isCorrect: false
