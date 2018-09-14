@@ -9,7 +9,7 @@ ssh 168.61.54.62 -l aldis
 > 
 > 이는 호스트 이름 대신 직접 IP 주소에 연결하기 때문입니다. “예”를 선택하면 해당 IP가 연결에 대한 유효한 호스트로 저장되고 연결을 계속 진행할 수 있습니다.
 
-```
+```output
 The authenticity of host '168.61.54.62 (168.61.54.62)' can't be established.
 RSA key fingerprint is SHA256:hlFnTCAzgWVFiMxHK194I2ap6+5hZoj9ex8+/hoM7rE.
 Are you sure you want to continue connecting (yes/no)? yes
@@ -18,7 +18,7 @@ Warning: Permanently added '168.61.54.62' (RSA) to the list of known hosts.
 
 그런 다음, Linux 명령을 입력할 수 있는 원격 셸이 표시됩니다.
 
-```
+```output
 The programs included with the Debian GNU/Linux system are free software;
 the exact distribution terms for each program are described in the
 individual files in /usr/share/doc/*/copyright.

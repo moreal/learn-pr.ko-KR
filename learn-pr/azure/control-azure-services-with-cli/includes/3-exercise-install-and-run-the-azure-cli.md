@@ -5,7 +5,7 @@
 
 ::: zone pivot="linux"
 
-### <a name="linux"></a>Linux
+## <a name="linux"></a>Linux
 
 여기서는 고급 패키징 도구(**apt**) 및 Bash 명령줄을 사용하여 **Ubuntu Linux**에 Azure CLI를 설치합니다.
 
@@ -37,7 +37,7 @@
 
 ::: zone pivot="macos"
 
-### <a name="macos"></a>macOS
+## <a name="macos"></a>macOS
 
 여기서는 Homebrew 패키지 관리자를 사용하여 macOS에 Azure CLI를 설치합니다.
 
@@ -60,7 +60,7 @@
 
 ::: zone pivot="windows"
 
-### <a name="windows"></a>Windows
+## <a name="windows"></a>Windows
 
 여기서는 MSI 설치 프로그램을 사용하여 Windows에 Azure CLI를 설치합니다.
 
