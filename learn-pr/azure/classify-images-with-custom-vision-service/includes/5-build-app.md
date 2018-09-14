@@ -12,7 +12,7 @@ Microsoft Custom Vision Service의 진정한 장점은 개발자가 [Custom Visi
 
 1. **보기** > **통합 터미널** 명령을 사용하여 Visual Studio Code에서 통합 터미널 창을 엽니다. 그런 다음, 통합 터미널에서 다음 명령을 실행하여 앱에 필요한 패키지를 로드합니다.
 
-    ```
+    ```console
     npm install
     ```
 
@@ -50,7 +50,7 @@ Microsoft Custom Vision Service의 진정한 장점은 개발자가 [Custom Visi
 
 1. Visual Studio Code의 통합 터미널로 돌아가서 다음 명령을 실행하여 앱을 시작합니다.
 
-    ```
+    ```console
     npm start
     ```
 
