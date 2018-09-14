@@ -1,20 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.6-summary
 metadata:
-  title: <span data-ttu-id="467f1-101">요약</span><span class="sxs-lookup"><span data-stu-id="467f1-101">Summary</span></span>
-  description: <span data-ttu-id="467f1-102">요약</span><span class="sxs-lookup"><span data-stu-id="467f1-102">Summary</span></span>
+  title: <span data-ttu-id="79473-101">요약</span><span class="sxs-lookup"><span data-stu-id="79473-101">Summary</span></span>
+  description: <span data-ttu-id="79473-102">요약</span><span class="sxs-lookup"><span data-stu-id="79473-102">Summary</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0e43c598029df9ca108e7716b7174994cf4fb6ad
-  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
+  ms.openlocfilehash: 745cc00a0ff1675cf527afa6f1dc989ce8b69d29
+  ms.sourcegitcommit: 36ad58bcbe9d89cfae6943e7183fadb140139b74
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44695885"
-title: <span data-ttu-id="467f1-103">요약</span><span class="sxs-lookup"><span data-stu-id="467f1-103">Summary</span></span>
-azureSandbox: true
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45612171"
+title: <span data-ttu-id="79473-103">요약</span><span class="sxs-lookup"><span data-stu-id="79473-103">Summary</span></span>
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'
