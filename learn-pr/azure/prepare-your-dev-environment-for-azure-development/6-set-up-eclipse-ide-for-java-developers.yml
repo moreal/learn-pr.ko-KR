@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
-title: Azure 도구와 함께 Eclipse 사용
+title: Azure 도구에서 Eclipse 사용
 metadata:
-  title: Azure 도구와 함께 Eclipse 사용
-  description: Azure 도구와 함께 Eclipse 사용
+  title: Azure 도구에서 Eclipse 사용
+  description: Azure 도구에서 Eclipse 사용
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

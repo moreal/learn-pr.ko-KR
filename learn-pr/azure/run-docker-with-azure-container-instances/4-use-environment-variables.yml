@@ -2,7 +2,7 @@
 uid: learn.run-docker-containers-aci.4-use-environment-variables
 metadata:
   title: 환경 변수 설정
-  description: Azure Container Instances에서 환경 변수 설정
+  description: Azure Container Instances에서 환경 변수를 설정합니다.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

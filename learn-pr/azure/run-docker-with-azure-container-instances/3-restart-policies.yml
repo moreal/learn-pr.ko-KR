@@ -2,7 +2,7 @@
 uid: learn.run-docker-containers-aci.3-restart-policy
 metadata:
   title: Azure Container Instances 다시 시작 동작 제어
-  description: Container Instances 다시 시작 동작을 제어하는 방법을 알아봅니다.
+  description: Container Instances 다시 시작 동작을 제어합니다.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
