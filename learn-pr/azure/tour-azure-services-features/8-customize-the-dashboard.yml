@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.8-customize-the-dashboard
+title: Azure Portal 대시보드
+metadata:
+  title: Azure Portal 대시보드
+  description: Azure Portal 대시보드
+  ms.openlocfilehash: 7de2934e0750bb7a89d40661c76edbf6b3a26fbc
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790304"
+durationInMinutes: 10
+content: '[!include[](includes/8-customize-the-dashboard.md)]'
