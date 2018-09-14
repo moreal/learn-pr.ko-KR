@@ -1,0 +1,13 @@
+<span data-ttu-id="e710c-101">이 모듈에서는 Azure Storage 계정의 큐가 분산 응용 프로그램의 구성 요소 간에 메시지를 전달하는 데 사용되는 방법을 알아보았습니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-101">In this module, you've seen how queues in Azure storage accounts are used to pass messages between components in a distributed application.</span></span> <span data-ttu-id="e710c-102">이 방식으로 큐를 사용하면 오류가 발생하는 경우와 수요가 높은 기간에 분산 응용 프로그램을 더 안정적이고 만들고, 복원력을 높이는 데 도움이 될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-102">Using queues in this way can help to make a distributed application more reliable and resilient to failures and periods of high demand.</span></span> <span data-ttu-id="e710c-103">.NET용 Microsoft Azure Storage 클라이언트 라이브러리를 사용하는 경우 큐를 만들거나, 메시지를 추가하거나, 큐에서 메시지를 가져와 제거하는 C# 또는 VB.NET 코드를 쉽게 작성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-103">If you use the Microsoft Azure Storage Client Library for .NET, you can easily write C# or VB.NET code that creates queues, adds messages, or retrieves and removes messages from queues.</span></span>
+
+## <a name="clean-up-the-resources"></a><span data-ttu-id="e710c-104">리소스 정리</span><span class="sxs-lookup"><span data-stu-id="e710c-104">Clean up the resources</span></span>
+
+<span data-ttu-id="e710c-105">데이터를 포함하는 저장소 계정이 있으면 Azure 구독에 비용을 부과될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-105">Storage accounts that contain data can incur costs against your Azure subscription.</span></span> <span data-ttu-id="e710c-106">여기에서 사용하는 데이터의 양이 적으므로 비용도 낮지만 항상 모든 리소스를 제거하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-106">The amounts of data we're using here are small - so it would be low, however it's always a good idea to remove all the resources.</span></span>
+
+<span data-ttu-id="e710c-107">모든 리소스를 같은 리소스 그룹에 만들었기 때문에 Azure 구독을 정리하는 가장 쉬운 방법은 리소스 그룹을 제거하여 해당 내용을 모두 제거하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-107">Because you created all the resources in the same resource group, the easiest way to cleanup your Azure subscription is to remove the resource group that will remove all its contents:</span></span>
+
+```azurecli
+az group delete --name ExerciseResources --yes --no-wait
+```
+
+<span data-ttu-id="e710c-108">`--no-wait` 옵션을 사용하면 명령이 완료될 때까지 기다리지 않고 다음 모듈을 계속 진행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e710c-108">The `--no-wait` option will let you move onto the next module without waiting for the command to complete.</span></span>

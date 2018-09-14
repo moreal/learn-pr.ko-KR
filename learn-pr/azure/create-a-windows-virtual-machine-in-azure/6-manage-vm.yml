@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.6-manage-vm
+title: <span data-ttu-id="08d1e-101">Azure 가상 머신 네트워크 설정</span><span class="sxs-lookup"><span data-stu-id="08d1e-101">Azure virtual machine network settings</span></span>
+metadata:
+  title: <span data-ttu-id="08d1e-102">Azure 가상 머신 네트워크 설정</span><span class="sxs-lookup"><span data-stu-id="08d1e-102">Azure virtual machine network settings</span></span>
+  description: <span data-ttu-id="08d1e-103">Azure 가상 머신 네트워크 설정</span><span class="sxs-lookup"><span data-stu-id="08d1e-103">Azure virtual machine network settings</span></span>
+  ms.openlocfilehash: b47d3187e8832163b3e7b5f87ab382e6534602c7
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43412823"
+durationInMinutes: 5
+content: '[!include[](includes/6-manage-vm.md)]'
