@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.2-create-web-app-bot
+title: Azure 웹앱 봇 만들기
+metadata:
+  title: Azure 웹앱 봇 만들기
+  description: Azure 웹앱 봇 만들기
+  ms.openlocfilehash: 57d0c04c4731d1a627c30c0bdcb5c5181c9b43d0
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795211"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-web-app-bot.md)]'

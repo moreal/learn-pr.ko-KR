@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.6-troubleshoot-aci
+interactive: bash
+metadata:
+  title: Azure Container Instances 문제 해결
+  description: Azure Container Instances 문제를 해결합니다.
+  ms.openlocfilehash: 001b41d67dc405e627156cecc5cf40107eb8d5ec
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43458261"
+title: Azure Container Instances 문제 해결
+durationInMinutes: 10
+content: '[!include[](includes/6-troubleshoot-aci.md)]'

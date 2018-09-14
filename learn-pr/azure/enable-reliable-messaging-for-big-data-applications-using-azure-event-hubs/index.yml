@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs
+metadata:
+  title: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용
+  description: 빅 데이터 처리에서 얻은 인사이트는 매우 유용할 수 있습니다. 사기 금융 거래를 발견하고, 장치 원격 분석에서 실시간 경고를 받을 수 있습니다. 그러나 잠재적으로 초당 수백만 개의 데이터 메시지를 처리하는 안정적인 수단이 없다면 해당 응용 프로그램의 가치가 심각하게 훼손될 수 있습니다. 이 모듈에서는 Azure Event Hubs를 사용하여 대용량 데이터 스트림을 안정적으로 처리하는 방법을 보여 줍니다. 허브를 통해 메시지를 보내거나 받기 위해 새 허브 및 코드 응용 프로그램을 차례로 만들고 구성합니다.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 4f56e51f3d2dad0171ff8dc6e6ccef009165f04f
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43410632"
+title: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용
+summary: 보내고 받는 응용 프로그램을 Event Hubs와 연결하므로 데이터 손실 없이 극히 높은 부하를 처리할 수 있습니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - Azure CLI를 사용하여 이벤트 허브를 만듭니다.
+
+  - 이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램을 구성합니다.
+
+  - Azure Portal을 사용하여 이벤트 허브 성능을 평가합니다.
+prerequisites: >
+  - Azure Portal을 사용하여 리소스를 만들고 관리한 경험.
+
+  - Azure CLI 2.0을 사용하여 Azure에 로그인하고 리소스 만들기
+
+  - 스트리밍 및 이벤트 처리와 같은 기본 빅 데이터 개념에 대한 지식.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- eventHubs
+units:
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.1-introduction
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.2-create-an-event-hub-using-azure-cli
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.3-exercise-create-an-event-hub-using-azure-cli
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.4-configure-applications-to-send-or-receive-messages-through-an-event-hub
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.6-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.8-summary
+achievement: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge

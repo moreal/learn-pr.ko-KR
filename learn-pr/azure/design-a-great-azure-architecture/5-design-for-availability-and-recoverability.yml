@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-a-great-azure-architecture.5-design-for-availability-and-recoverability
+title: 가용성 및 복구 기능을 위한 설계
+metadata:
+  title: 가용성 및 복구 기능을 위한 설계
+  description: 가용성 및 복구 기능을 위한 설계
+  ms.openlocfilehash: 117976f472c1fbd963e817c54eceda329e181c6b
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847183"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-design-for-availability-and-recoverability.md)]
+quiz:
+  title: 지식 검사 - 가용성 및 복구 기능을 위한 설계
+  questions:
+  - content: 고객을 위해 커밋할 수 있는 SLA를 확인하는 경우 다음 중 고려해야 할 것은 무엇인가요?
+    choices:
+    - content: 직접 관리 책임이 있는 서비스에 대해 제공할 수 있는 SLA
+      isCorrect: false
+      incorrectExplanation: 고객을 위해 커밋할 수 있는 SLA를 확인하는 경우 중요 고려 사항이지만 유일한 올바른 선택은 아닙니다.
+    - content: 아키텍처에서 활용하는 클라우드 서비스의 SLA
+      isCorrect: false
+      incorrectExplanation: 고객을 위해 커밋할 수 있는 SLA를 확인하는 경우 중요 고려 사항이지만 유일한 올바른 선택은 아닙니다.
+    - content: 종속성 온-프레미스 연결을 위한 네트워킹 서비스의 SLA
+      isCorrect: false
+      incorrectExplanation: 고객을 위해 커밋할 수 있는 SLA를 확인하는 경우 중요 고려 사항이지만 유일한 올바른 선택은 아닙니다.
+    - content: 고객을 위해 커밋할 수 있는 SLA를 확인하는 경우 위의 모든 것을 고려해야 함
+      isCorrect: true
+      correctExplanation: 고객을 위해 커밋할 수 있는 SLA를 확인하는 경우 위의 모든 것을 고려해야 함
+  - content: 다음 중 어느 것이 정의된 RPO에서 영향을 받나요?
+    choices:
+    - content: 데이터베이스 백업 빈도
+      isCorrect: true
+      correctExplanation: 복구 지점 목표가 허용 가능한 데이터 손실 양과 관련이 있으므로 백업의 빈도는 이 시간 범위 내에 있어야 하며 정의된 RPO의 직접적인 영향을 받습니다.
+    - content: 데이터가 복제된 지역 수
+      isCorrect: false
+      incorrectExplanation: 데이터가 복제된 지역 수는 중요한 고려 사항이지만 정의된 RPO의 영향을 받지 않습니다.
+    - content: 데이터베이스 클러스터의 인스턴스 수
+      isCorrect: false
+      incorrectExplanation: 데이터베이스 클러스터의 인스턴스 수는 중요한 결정 사항이지만 정의된 RPO의 영향을 받지 않습니다.
+    - content: 응용 프로그램에 사용된 부하 분산 기술 유형
+      isCorrect: false
+      incorrectExplanation: 응용 프로그램에 사용된 부하 분산 기술 유형은 중요한 결정 사항일 수 있지만 정의된 RPO의 영향을 받지 않습니다.
