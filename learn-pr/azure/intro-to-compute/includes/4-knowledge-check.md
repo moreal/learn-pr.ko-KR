@@ -1,1 +1,0 @@
-<span data-ttu-id="c6be2-101">지금까지 배운 내용을 복습하기 위해 천문학 팀과 관련된 두 가지 시나리오를 읽고 관련 질문에 대답하세요.</span><span class="sxs-lookup"><span data-stu-id="c6be2-101">To help you remember what you've learned, read the two scenarios involving the astronomy team and answer the associated questions.</span></span>
