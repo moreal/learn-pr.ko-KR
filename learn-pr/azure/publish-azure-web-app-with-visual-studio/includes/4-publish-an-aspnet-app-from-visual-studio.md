@@ -1,4 +1,4 @@
-사이트를 만들었으며 이를 Azure에 배포하려고 합니다. 이제 요구 사항을 가장 잘 지원할 수 있는 Azure 서비스를 고려해야 합니다. Web Apps는 응용 프로그램에 대해 확장성이 뛰어나고 자체 패치가 가능한 웹 호스팅 서비스를 제공합니다.
+사이트를 만들었으며 이를 Azure에 배포하려고 합니다. 이제 요구 사항을 가장 잘 지원할 수 있는 Azure 서비스를 고려해야 합니다. App Service는 응용 프로그램에 대해 확장성이 뛰어나고 자체 패치가 가능한 웹 호스팅 서비스를 제공합니다.
 
 여기서는 Visual Studio를 사용하여 ASP.NET Core 웹 응용 프로그램을 Azure App Service 계획에 게시하는 방법을 살펴봅니다.
 
@@ -6,15 +6,17 @@
 
 Azure에 게시하려면 Azure 구독이 있어야 합니다. Azure App Service 기능을 테스트하기 위해 [Azure 체험 구독](https://azure.microsoft.com/free/)을 이용할 수 있습니다.
 
+## <a name="what-is-azure-app-service"></a>Azure App Service 정의
+
 ## <a name="what-is-web-apps"></a>Web Apps란 무엇인가요?
 
-Azure App Service의 Web Apps 기능은 웹 응용 프로그램, REST API 및 모바일 백 엔드를 호스트하는 서비스입니다. Web Apps 호스트 코드는 .NET, .NET Core, Java, Ruby, Node.js, PHP 및 Python과 같은 다양한 언어로 작성됩니다. Web Apps는 특히 호스팅 인프라에 많은 제어가 필요하지 않은 경우 대부분 웹 사이트에 이상적입니다.
+Azure App Service는 웹 응용 프로그램, REST API 및 모바일 백 엔드를 호스트하는 서비스입니다. App Service는 .NET, .NET Core, Java, Ruby, Node.js, PHP 및 Python과 같은 다양한 언어로 작성된 코드를 지원합니다. App Service는 특히 호스팅 인프라에 많은 제어가 필요하지 않은 경우 대부분 웹 사이트에 이상적입니다.
 
 ## <a name="what-is-the-app-service-plan"></a>App Service 계획이란 무엇인가요?
 
 App Service 계획은 앱이 이용할 계산 리소스, 이러한 리소스가 있는 위치, 계획에 사용할 수 있는 추가 리소스의 수 및 사용 중인 서비스 계획 유형을 정의합니다. 이러한 계산 리소스는 기존 웹 호스팅의 서버 팜과 유사합니다. 동일한 App Service 계획에서 실행되도록 하나 이상의 앱을 구성할 수 있습니다.
 
-앱을 배포할 때 새 App Service 계획을 만들 수도 있고 기존 계획에 앱을 계속 추가할 수도 있습니다.  그러나 동일한 App Service 계획의 앱만이 동일한 계산 리소스를 공유합니다. 새 앱에 필요한 리소스가 있는지 확인하려면 기존 App Service 계획의 용량과 새 앱의 예상 부하를 이해해야 합니다. App Service 계획을 오버로드하면 새 앱과 기존 앱의 가동 중지 시간이 발생할 수 있습니다.
+앱을 배포할 때 App Service 계획을 만들거나 기존 계획에 앱을 계속 추가할 수 있습니다.  그러나 동일한 App Service 계획의 앱만이 동일한 계산 리소스를 공유합니다. 새 앱에 필요한 리소스가 있는지 확인하려면 기존 App Service 계획의 용량과 새 앱의 예상 부하를 이해해야 합니다. App Service 계획을 오버로드하면 새 앱과 기존 앱의 가동 중지 시간이 발생할 수 있습니다.
 
 Azure Portal에서 PowerShell 또는 Azure CLI를 사용하여 App Service 계획을 미리 정의할 수도 있고, Visual Studio에서 응용 프로그램을 게시할 때 App Service 계획을 설정할 수도 있습니다.
 
@@ -23,7 +25,7 @@ Azure Portal에서 PowerShell 또는 Azure CLI를 사용하여 App Service 계�
 - 지역(미국 서부, 미국 동부 등)
 - VM 인스턴스 수
 - VM 인스턴스 크기(소, 중, 대)
-- 가격 책정 계층(체험, 공유, 기본, 표준, 프리미엄, Premium V2, 격리, 사용)
+- 가격 책정 계층(무료, 공유, 기본, 표준, 프리미엄, Premium V2, 격리, 사용)
 
 ## <a name="specify-the-region"></a>지역 지정
 
@@ -52,11 +54,9 @@ Azure App Service에 앱을 배포할 때의 핵심 요소는 올바른 서비�
 - 기존 계획에서 다른 앱과 독립적으로 앱을 확장하려고 합니다.
 - 앱에 다른 지역의 리소스가 필요합니다.
 
-**소비**: 이 계층은 함수 앱에서만 사용할 수 있습니다. 그러면 워크로드에 따라 동적으로 함수를 확장합니다. 자세한 내용은 Azure Functions 호스팅 계획 비교를 참조하세요.
-
 ## <a name="specify-the-resource-group"></a>리소스 그룹 지정
 
-대부분의 Azure 리소스와 마찬가지로 사용할 리소스 그룹을 지정해야 합니다. 기존 리소스 그룹을 사용하거나 Visual Studio에서 직접 새 그룹을 만들 수 있습니다. 리소스 그룹은 웹앱, 데이터베이스, 저장소 계정과 같은 Azure 리소스가 배포되고 관리되는 논리적 컨테이너입니다. 이는 연관된 리소스를 함께 유지하는 데 유용한 메커니즘입니다.
+대부분의 Azure 리소스와 마찬가지로 사용할 리소스 그룹을 지정해야 합니다. 기존 리소스 그룹을 사용하거나 Visual Studio에서 직접 그룹을 만들 수 있습니다. 리소스 그룹은 웹앱, 데이터베이스, 저장소 계정과 같은 Azure 리소스가 배포되고 관리되는 논리적 컨테이너입니다. 이는 연관된 리소스를 함께 유지하는 데 유용한 메커니즘입니다.
 
 ## <a name="deploy-your-web-app-from-visual-studio"></a>Visual Studio에서 웹앱 배포
 
@@ -72,7 +72,7 @@ Visual Studio에서 Azure에 앱을 게시하는 짧은 프로세스입니다.
 
 1. App Service 계획 구성
 
-    - 호스팅: 이 탭에서 App Service 계획을 구성합니다. 여기서 앱을 호스트하는 웹 서버의 위치, 크기 및 기능을 지정합니다. 기존 호스팅 계획을 선택하거나 새 계획을 만들 수 있습니다. Windows는 전역적으로 고유한 이름을 자동으로 생성하는데, 이 이름은 설정 중에 변경할 수 있습니다.
+    - 호스팅: 이 탭에서 App Service 계획을 구성합니다. 여기서 앱을 호스트하는 웹 서버의 위치, 크기 및 기능을 지정합니다. 기존 호스팅 플랜을 선택하거나 새로 만들 수 있습니다. Windows는 전역적으로 고유한 이름을 자동으로 생성하는데, 이 이름은 설정 중에 변경할 수 있습니다.
     - 서비스: 여기서 사이트에 대한 SQL 데이터베이스를 구성할 수 있습니다.
 
         > [!NOTE]
@@ -82,12 +82,12 @@ Visual Studio에서 Azure에 앱을 게시하는 짧은 프로세스입니다.
 
 ### <a name="configure-the-app-service-plan-for-mac"></a>Mac용 App Service 계획 구성
 
-1. Azure에 설정된 기존 App Service 계획을 선택하거나 새 App Service 계획을 만들 수 있습니다.
+1. Azure에 설정된 기존 App Service 계획이 있는 경우 이를 선택하거나 새로 만들 수 있습니다.
 
-1. 이 탭에서 App Service 계획을 구성합니다. 여기서 앱을 호스트하는 웹 서버의 위치, 크기 및 기능을 지정합니다. 기존 호스팅 계획을 선택하거나 새 계획을 만들 수 있습니다. 웹 사이트의 이름과 모든 리소스는 전역적으로 고유해야 합니다.
+1. 이 탭에서 App Service 계획을 구성합니다. 여기서 앱을 호스트하는 웹 서버의 위치, 크기 및 기능을 지정합니다. 기존 호스팅 플랜을 선택하거나 새로 만들 수 있습니다. 웹 사이트의 이름과 모든 리소스는 전역적으로 고유해야 합니다.
 
 1. **만들기**를 클릭하여 앱을 배포합니다. 이 작업이 완료되면, Visual Studio에서는 사이트가 호스트되는 웹 페이지를 시작합니다.
 
 ## <a name="summary"></a>요약
 
-ASP.NET Core 웹 응용 프로그램 및 Azure App Services는 ASP.NET 웹앱을 호스트하기 위한 유연하고 확장 가능한 솔루션을 제공합니다. 모든 Azure 서비스가 그렇듯이, 리소스 그룹을 제공하고 요구에 가장 잘 맞는 가격 책정 계층을 선택해야 합니다.
+ASP.NET Core 웹 응용 프로그램 및 Azure App Service는 ASP.NET 웹앱을 호스트하기 위한 유연하고 확장 가능한 솔루션을 제공합니다. 모든 Azure 서비스가 그렇듯이, 리소스 그룹을 제공하고 요구에 가장 잘 맞는 가격 책정 계층을 선택해야 합니다.
