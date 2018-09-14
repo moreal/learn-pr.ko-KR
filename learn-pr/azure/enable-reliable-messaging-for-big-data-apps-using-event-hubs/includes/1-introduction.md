@@ -18,5 +18,5 @@ Azure Event Hubs는 많은 트랜잭션을 수신하고 처리할 수 있습니�
 ## <a name="prerequisites"></a>필수 구성 요소
 
 - Azure Portal을 사용하여 리소스를 만들고 관리한 경험.
-- Azure CLI 2.0을 사용하여 Azure에 로그인하고 리소스를 만든 경험.
+- Azure CLI를 사용 하 여 Azure에 로그인 하 고 리소스를 만들 수을 경험해 보세요.
 - 스트리밍 및 이벤트 처리와 같은 기본 빅 데이터 개념에 대한 지식.

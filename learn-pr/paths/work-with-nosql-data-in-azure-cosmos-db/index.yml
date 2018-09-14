@@ -2,28 +2,34 @@
 uid: learn.work-with-nosql-data-in-azure-cosmos-db
 metadata:
   title: Azure Cosmos DB의 NoSQL 데이터 작업
-  description: NoSQL은 특정 형식의 데이터에 매우 효율적인 고가용성 SQL에 대한 대체 데이터베이스 모델을 제공합니다. Azure Cosmos DB를 사용하여 응용 프로그램 데이터를 저장하고, 인스턴스에서 복제하고, 데이터 액세스를 최적화하는 방법을 알아봅니다.
+  description: NoSQL 데이터는 관계형 SQL 데이터베이스의 요구 사항에 매핑되지 않는 정보를 저장 하는 효율적인 방법입니다.<br><br>NoSQL 데이터에 대 한 데이터베이스 기술과 가용성 및 데이터 일관성 요구 사항을 조정할 수는 간소화 된 확장을 사용 하 여 유연성을 사용 하도록 설정 합니다. Azure Cosmos DB는 도구 및 NoSQL 데이터를 사용 하는 Sdk를 제공 하 여 이러한 모든 혜택 등을 제공 합니다.<br><br>Azure portal, Visual Studio Code 용 Azure Cosmos DB 확장 및 Azure Cosmos DB.NET Core SDK에서 NoSQL 데이터를 사용 하 여 작업을 원하는 위치를 사용 하 여 전 세계에서 현재 위치에 관계 없이 높은 가용성을 사용 하 여 사용자에 게 제공 하는 방법을 알아봅니다.
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: df29cb5cfdefa35c106a2cf822856bf842fc74ac
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: bd7b740111bfef6cfbcd73ebd1f80e28af1e2beb
+  ms.sourcegitcommit: 58a90e44fa548614c6c14153ef64cf67c7e3e6ac
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248200"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45559530"
 title: Azure Cosmos DB의 NoSQL 데이터 작업
-summary: NoSQL은 특정 형식의 데이터에 매우 효율적인 고가용성 SQL에 대한 대체 데이터베이스 모델을 제공합니다. Azure Cosmos DB를 사용하여 응용 프로그램 데이터를 저장하고, 인스턴스에서 복제하고, 데이터 액세스를 최적화하는 방법을 알아봅니다.
+summary: NoSQL 데이터는 관계형 SQL 데이터베이스의 요구 사항에 매핑되지 않는 정보를 저장 하는 효율적인 방법입니다.<br><br>NoSQL 데이터에 대 한 데이터베이스 기술과 가용성 및 데이터 일관성 요구 사항을 조정할 수는 간소화 된 확장을 사용 하 여 유연성을 사용 하도록 설정 합니다. Azure Cosmos DB는 도구 및 NoSQL 데이터를 사용 하는 Sdk를 제공 하 여 이러한 모든 혜택 등을 제공 합니다.<br><br>Azure portal, Visual Studio Code 용 Azure Cosmos DB 확장 및 Azure Cosmos DB.NET Core SDK에서 NoSQL 데이터를 사용 하 여 작업을 원하는 위치를 사용 하 여 전 세계에서 현재 위치에 관계 없이 높은 가용성을 사용 하 여 사용자에 게 제공 하는 방법을 알아봅니다.
 prerequisites: 없음
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-cosmos-db
+- vs
+- vs-code
+- azure-portal
+- azure-clis
 modules:
 - learn.create-cosmos-db-for-scale
 - learn.access-data-with-cosmos-db-and-sql-api

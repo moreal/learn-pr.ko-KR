@@ -29,7 +29,7 @@
 1. 그룹에 많은 항목이 있는 경우 `--query` 옵션을 추가하여 반환 값을 필터링하고 다음 명령을 시도합니다.
 
     ```azurecli
-    az group list --query '[?name == popupResGroup]'
+    az group list --query "[?name == 'popupResGroup']"
     ```
 
     쿼리는 JSON 요청에 대한 표준 쿼리 언어인 **JMESPath**를 사용하여 형식이 지정됩니다. 이 강력한 필터 언어에 대한 자세한 내용은 <http://jmespath.org/>를 참조하세요. 또한 **Azure CLI를 사용하여 VM 관리** 모듈에서 쿼리를 더 자세히 다룹니다.

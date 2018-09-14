@@ -7,6 +7,10 @@ Contoso Aircraft Engines에 근무한다고 가정합니다. 고용주가 제조
 ## <a name="what-is-azure-event-hubs"></a>Azure Event Hubs 정의
 Event Hubs는 게시-구독 통신 패턴에 대한 중간자입니다. 그러나 Event Grid와 달리 극히 높은 처리량, 다수의 게시자, 보안 및 복원력에 최적화되어 있습니다.
 
+#### <a name="what-is-an-event-hub"></a>이벤트 허브 란?
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuat]
+
 Event Grid는 단순히 구독을 관리하고 통신을 해당 구독자에게 라우팅한다는 점에서 게시-구독 패턴에 완벽하게 적합하지만, Event Hubs는 상당수의 추가 서비스를 수행합니다. 이러한 추가 서비스 때문에 단순 이벤트 브로드캐스터보다는 서비스 버스 또는 메시지 큐와 더 비슷합니다.
 
 #### <a name="partitions"></a>파티션

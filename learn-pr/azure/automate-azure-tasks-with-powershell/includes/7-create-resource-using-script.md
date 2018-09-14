@@ -1,6 +1,6 @@
 대체로, 복잡하거나 반복적인 작업을 관리하려면 오랜 시간이 걸립니다. 조직은 이러한 작업을 자동화하여 비용을 줄이고 오류를 방지하려고 합니다.
 
-이는 CRM(고객 관계 관리) 회사 예제에서 중요합니다. 해당 예제에서는 계속해서 삭제하고 다시 만들어야 하는 소프트웨어를 여러 Linux VM(Virtual Machines)에서 테스트합니다. PowerShell 스크립트를 사용하여 VM 생성을 자동화하려고 합니다.
+이는 CRM(고객 관계 관리) 회사 예제에서 중요합니다. 해당 예제에서는 계속해서 삭제하고 다시 만들어야 하는 소프트웨어를 여러 Linux VM(Virtual Machines)에서 테스트합니다. PowerShell 스크립트를 사용 하 여 수동으로 때마다 수행한 것과 같이 만들어 및 vm 만들기를 자동화 하려는 합니다.
 
 VM을 만드는 핵심 작업 외에도 스크립트에 대한 몇 가지 추가 요구 사항이 있습니다. 
 - 여러 개의 VM을 만들기 때문에 생성 작업을 루프 안에 넣으려고 합니다.
@@ -30,7 +30,7 @@ PowerShell 스크립트 파일에는 **.ps1** 파일 확장명이 있습니다. 
 PowerShell에는 일반 프로그래밍 언어에서 제공되는 많은 기능이 있습니다. 변수를 정의하고, 분기 및 루프를 사용하고, 명령줄 매개 변수를 캡처하고, 함수를 작성하고, 주석을 추가할 수 있습니다. 예제 스크립트에는 변수, 루프 및 매개 변수의 세 가지 기능이 필요합니다.
 
 ### <a name="variables"></a>variables
-PowerShell은 변수를 지원합니다. **$** 를 사용하여 변수를 선언하고, **=** 를 사용하여 값을 할당합니다. 예:
+마지막 단위에서 살펴본 것 처럼 PowerShell 변수를 지원 합니다. **$** 를 사용하여 변수를 선언하고, **=** 를 사용하여 값을 할당합니다. 예:
 
 ```powershell
 $loc = "East US"
@@ -87,25 +87,7 @@ param([string]$location, [int]$size)
 param([int]$size, [string]$location)
 ```
 
-## <a name="how-to-create-a-linux-virtual-machine"></a>Linux 가상 머신을 만드는 방법
-Azure PowerShell은 가상 머신을 만드는 **New-AzureRmVm** cmdlet을 제공합니다. 이 cmdlet에는 많은 VM 구성 설정을 처리할 수 있는 여러 매개 변수가 있습니다. 대부분의 매개 변수에 적절한 기본값이 있으므로 다음 5개 매개 변수만 지정하면 됩니다.
-
-- **ResourceGroupName**: 새 VM이 배치될 리소스 그룹입니다.
-- **Name**: Azure의 VM 이름입니다.
-- **Location**: VM이 프로비전될 지리적 위치입니다.
-- **Credential**: VM 관리자 계정의 사용자 이름과 암호를 포함하는 개체입니다. 여기서는 **Get-Credential** cmdlet을 사용하여 사용자 이름과 암호를 묻는 메시지를 표시합니다. **Get-Credential**은 사용자 이름과 암호를 자격 증명 개체로 패키징하고 결과로 반환합니다.
-- **Image**: VM에 사용할 운영 체제의 ID입니다. 여기서는 “UbuntuLTS”를 사용합니다.
-
-cmdlet 구문은 다음과 같습니다.
-
-```powershell
-   New-AzureRmVm 
-       -ResourceGroupName <resource group name> 
-       -Name <machine name> 
-       -Credential <credentials object> 
-       -Location <location> 
-       -Image <image name>
-```
+입력으로 이러한 매개 변수를 사용 하 고 루프를 사용 하 여 지정된 된 매개 변수에서 Vm의 집합을 만들 수 없습니다. 다음에 하겠습니다.
 
 ## <a name="summary"></a>요약
 PowerShell 및 Azure PowerShell을 조합하면 Azure를 자동화하는 데 필요한 모든 도구가 제공됩니다. CRM 예제에서는 매개 변수를 사용해서 스크립트를 제네릭으로 유지하고 루프를 사용해서 반복 코드를 방지하여 여러 개의 Linux VM을 만들 수 있습니다. 이는 이전의 복잡한 작업을 이제 하나의 단계로 실행할 수 있음을 의미합니다.

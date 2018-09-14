@@ -1,11 +1,11 @@
-이 단원에서는 컨테이너 로그, 컨테이너 이벤트 끌어오기 및 컨테이너 인스턴스에 연결과 같은 몇 가지 기본적인 문제 해결 작업을 수행합니다. 이 모듈을 마치면 컨테이너 인스턴스 문제 해결을 위한 기본적인 기능을 이해할 수 있습니다.
+여기에서 컨테이너 로그를 컨테이너 이벤트 것과 같은 일부 기본적인 문제 해결 작업을 수행할 됩니다 하 고 컨테이너 인스턴스를 연결 합니다. 이 모듈을 마치면 컨테이너 인스턴스 문제 해결을 위한 기본적인 기능을 이해할 수 있습니다.
 
 ## <a name="create-a-container"></a>컨테이너 만들기
 
-먼저 이 단원에서 사용할 컨테이너를 만듭니다. 이 모듈에서 만든 첫 번째 컨테이너가 아직 있는 경우 이 단계를 건너뜁니다.
+컨테이너를 만들어 시작 합니다. 이 모듈에서 만든 첫 번째 컨테이너가 아직 있는 경우 이 단계를 건너뜁니다.
 
 ```azurecli
-az container create --resource-group myResourceGroup --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
+az container create --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
 ```
 
 ## <a name="get-logs-from-a-container-instance"></a>컨테이너 인스턴스에서 로그 가져오기
@@ -13,7 +13,7 @@ az container create --resource-group myResourceGroup --name mycontainer --image 
 컨테이너 내의 응용 프로그램 코드에서 로그를 보려면 `az container logs` 명령을 사용할 수 있습니다.
 
 ```azazurecli
-az container logs --resource-group myResourceGroup --name mycontainer
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 다음은 웹앱에 몇 번 액세스한 후 생성된 예제 컨테이너의 로그 출력입니다.
@@ -31,7 +31,7 @@ listening on port 80
 `az container attach` 명령은 컨테이너 시작 중에 진단 정보를 제공합니다. 컨테이너가 시작되면 로컬 콘솔에 STDOUT 및 STDERR도 스트리밍합니다.
 
 ```azazurecli
-az container attach --resource-group myResourceGroup --name mycontainer
+az container attach --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 예제 출력:
@@ -56,7 +56,7 @@ Azure Container Instances는 실행 중인 컨테이너에서 명령을 실행�
 이 예제는 실행 중인 컨테이너를 사용하여 대화형 터미널 세션을 시작합니다.
 
 ```azurecli
-az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
+az container exec --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --exec-command /bin/sh
 ```
 
 이 명령이 완료되면 컨테이너 내부에서 효과적으로 작업할 수 있습니다. 이 예제에서 `ls` 명령을 실행하여 작업 디렉터리의 내용을 표시하였습니다.
@@ -74,7 +74,7 @@ index.js           package-lock.json
 CPU 및 메모리 사용량에 대한 메트릭을 끌어올 수 있습니다. 이렇게 하려면 먼저 Azure 컨테이너 인스턴스의 ID를 가져옵니다. 이 예제에서 이 ID는 `CONTAINER_ID` 변수에 있습니다.
 
 ```azurecli
-CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
+CONTAINER_ID=$(az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --query id --output tsv)
 ```
 
 이제 `az monitor metrics list` 명령을 사용하여 CPU 사용량 정보를 다시 끌어옵니다.
@@ -135,15 +135,4 @@ Timestamp            Name              Average
 
 ![Azure Container Instances CPU 및 메모리 사용량 정보의 Azure Portal 보기](../media-draft/cpu-memory.png)
 
-## <a name="clean-up"></a>정리
-<!---TODO: Update for sandbox?--->
-
-Azure Container Instances 학습 모듈의 마지막 단원입니다. 이제 리소스 그룹을 삭제하여 만든 리소스를 정리할 수 있습니다. 이렇게 하려면 **az group delete** 명령을 사용합니다.
-
-```azurecli
-az group delete --name myResourceGroup --no-wait
-```
-
-## <a name="summary"></a>요약
-
-이 단원에서는 컨테이너 로그, 컨테이너 이벤트 끌어오기 및 컨테이너 인스턴스에 연결과 같은 몇 가지 기본적인 문제 해결 작업에 대해 알아보았습니다.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

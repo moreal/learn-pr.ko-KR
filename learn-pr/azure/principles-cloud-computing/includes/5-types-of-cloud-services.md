@@ -2,20 +2,39 @@
 
 ## <a name="explore-the-three-categories-of-cloud-computing"></a>클라우드 컴퓨팅의 세 가지 범주 알아보기
 
-<!-- TODO: Verify video -->
+#### <a name="iaas-versus-sass-versus-paas"></a>IaaS와 PaaS 및 Sass
+
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
-### <a name="infrastructure-as-a-service-iaas"></a>IaaS(Infrastructure as a Service)
+:::row:::
+  :::column:::
+    ![IaaS 아이콘](../media/5-iaas.png)
+  :::column-end:::
+  ::: 열 범위 = "3"::: **인프라 (IaaS) 서비스**
 
 Infrastructure as a Service는 클라우드 서비스에서 가장 유연한 범주입니다. 응용 프로그램을 실행하는 하드웨어를 완벽하게 제어할 수 있도록 하는 것이 목표입니다. IaaS를 사용하면 하드웨어를 구입하지 않고 대여합니다.
+  :::column-end:::
+:::row-end:::
 
-### <a name="platform-as-a-service-paas"></a>PaaS(Platform as a Service)
+:::row:::
+  :::column:::
+    ![PaaS 아이콘](../media/5-paas.png)
+  :::column-end:::
+  ::: 열 범위 = "3"::: **Platform-as-a-service (PaaS)**
 
 PaaS는 소프트웨어 응용 프로그램을 빌드, 테스트 및 배포하는 환경을 제공합니다. PaaS의 목표는 기본 인프라 관리에 신경 쓰지 않고 최대한 빨리 응용 프로그램을 만들 수 있도록 지원하는 것입니다. 예를 들어 PaaS를 사용하여 웹 응용 프로그램을 배포하는 경우 운영 체제, 웹 서버 또는 시스템 업데이트조차 설치할 필요가 없습니다.
+  :::column-end:::
+:::row-end:::
 
-### <a name="software-as-a-service-saas"></a>SaaS(Software as a Service)
+:::row:::
+  :::column:::
+    ![SaaS 아이콘](../media/5-saas.png)
+  :::column-end:::
+  ::: 열 범위 = "3"::: **서비스 (SaaS) 형태의 소프트웨어**
 
 SaaS는 최종 고객을 위해 중앙에서 호스트되고 관리되는 소프트웨어입니다. 이 서비스는 일반적으로 모든 고객이 한 가지 응용 프로그램 버전을 사용하고 월간 또는 연간 구독을 통해 라이선스가 부여되는 아키텍처를 기반으로 합니다 Office 365는 SaaS 소프트웨어의 좋은 예입니다.
+  :::column-end:::
+:::row-end:::
 
 ## <a name="think-about-service-categories-as-layers"></a>서비스 범주에 레이어 개념 적용
 

@@ -19,4 +19,3 @@ Azure Web Apps를 개발하는 회사에서 근무한다고 가정합니다. 이
 - PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
 - 리소스 그룹과 같은 기본 Azure 개념에 대한 지식
 - Azure Portal을 사용하여 Azure 리소스 관리 경험
-- 

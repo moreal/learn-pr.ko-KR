@@ -11,7 +11,7 @@
 1. 다음 명령을 사용하여 리소스 그룹에서 저장소 계정(범용 V2)을 만듭니다.
 
     ```azurecli
-    az storage account create --name <storage account name> --resource-group <resource group name>  --location <location> --sku Standard_RAGRS --encryption blob
+    az storage account create --name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>  --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
     |매개 변수      |설명|
@@ -23,7 +23,7 @@
 1. 다음 명령을 사용하여 저장소 계정과 연결된 모든 액세스 키를 나열합니다.
 
     ```azurecli
-    az storage account keys list --account-name <storage account name> --resource-group <resource group name>
+    az storage account keys list --account-name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |매개 변수      |설명|
@@ -36,7 +36,7 @@
 1. 다음 명령을 사용하여 저장소 계정의 연결 문자열을 봅니다.
 
     ```azurecli
-    az storage account show-connection-string -n <storage account name> -g <resource group name>
+    az storage account show-connection-string -n <storage account name> -g <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |매개 변수      |설명|
@@ -56,8 +56,6 @@
 
 다음 단계를 사용하여 Event Hubs GitHub 리포지토리를 복제합니다.
 
-1. Azure Cloud Shell(Bash)에 로그인합니다.
-
 1. 이 단원에서 빌드할 응용 프로그램의 원본 파일은 [GitHub 리포지토리](https://github.com/Azure/azure-event-hubs)에 있습니다. 다음 명령을 사용하여 Cloud Shell의 홈 디렉터리에 있는지 확인한 후 이 리포지토리를 복제합니다.
 
     ```azurecli
@@ -66,9 +64,9 @@
     ```
     리포지토리는 `/home/<username>/azure-event-hubs`에 복제됩니다.
 
-## <a name="use-nano-to-edit-simplesendjava"></a>nano를 사용하여 SimpleSend.java 편집
+## <a name="edit-simplesendjava"></a>SimpleSend.java 편집
 
-**nano** 편집기를 사용하여 SimpleSend 응용 프로그램을 편집하고 Event Hubs 네임스페이스, 이벤트 허브 이름, 공유 액세스 정책 이름 및 기본 키를 추가합니다. 기본 명령은 편집기 창의 맨 아래에 표시됩니다. 이 단원에서는 Ctrl+O를 사용하여 편집한 내용을 작성하고 Enter 키를 눌러 출력 파일 이름을 확인한 다음, Ctrl+X를 사용하여 편집기를 종료해야 합니다.
+Cloud Shell 편집기를 사용 하 여 SimpleSend 응용 프로그램을 편집 하 고 Event Hubs 네임 스페이스, 이벤트 허브 이름, 공유 액세스 정책 이름 및 기본 키를 추가 합니다. 기본 명령은 편집기 창의 맨 아래에 표시됩니다. 이 단원에서는 Ctrl+O를 사용하여 편집한 내용을 작성하고 Enter 키를 눌러 출력 파일 이름을 확인한 다음, Ctrl+X를 사용하여 편집기를 종료해야 합니다.
 
 1. 다음 명령을 사용하여 **SimpleSend** 폴더로 변경합니다.
 
@@ -76,13 +74,13 @@
     cd azure-event-hubs/samples/Java/Basic/SimpleSend/src/main/java/com/microsoft/azure/eventhubs/samples/SimpleSend
     ```
 
-1. 다음 명령을 사용하여 **nano** 편집기에서 **SimpleSend.java** 파일을 엽니다.
+1. 엽니다는 **SimpleSend.java** 다음 명령을 사용 하 여 Cloud Shell 편집기에서 파일:
 
     ```azurecli
-    nano SimpleSend.java
+    code SimpleSend.java
     ```
 
-1. nano 편집기에서 다음 문자열을 찾아서 바꿉니다.
+1. 편집기에서 찾은 다음 문자열을 대체 합니다.
 
     - `"Your Event Hubs namespace name"`을 이벤트 허브 네임스페이스의 이름으로 바꿉니다.
     - `"Your event hub"`를 이벤트 허브 이름으로 바꿉니다.
@@ -91,15 +89,9 @@
  
         Event Hubs 네임스페이스를 만들 때 **RootManageSharedAccessKey**라는 256비트 SAS 키가 만들어지고, 여기에는 네임스페이스에 대해 전송, 수신 대기 및 관리 권한을 부여하는 연결된 기본 및 보조 키 쌍이 포함됩니다. 이전 단원에서 Azure CLI 명령을 사용하여 키를 표시했고, Azure Portal의 Event Hubs 네임스페이스에 대한 **공유 액세스 정책** 페이지를 열어 이 키를 찾을 수도 있습니다.
 
-    ![발신자 응용 프로그램에 대한 구성 세부 정보](../media-draft/5-sender-configure.png)
+1. 저장할 **SimpleSend.java** "..." 메뉴 또는 바로 가기 키 (Ctrl + S Windows 및 Linux, macOS에서 Cmd + SS)을 통해.
 
-1. 다음 명령을 사용하여 **SimpleSend.java**를 저장하고 nano를 종료합니다.
-
-    ```azurecli
-    CTRL +O
-    ENTER
-    CTRL +X
-    ```
+1. 클릭 하 여 코드 편집기를 닫을 수 있습니다는 `{}` Cloud Shell 편집기의 맨 위에 있는 중괄호 도구 모음 단추입니다.
 
 ## <a name="use-maven-to-build-simplesendjava"></a>Maven을 사용하여 SimpleSend.java 빌드
 
@@ -122,13 +114,13 @@
 
     ![발신자 응용 프로그램에 대한 빌드 결과](../media-draft/5-sender-build.png)
 
-## <a name="use-nano-to-edit-eventprocessorsamplejava"></a>nano를 사용하여 EventProcessorSample.java 편집
+## <a name="edit-eventprocessorsamplejava"></a>EventProcessorSample.java 편집
 
 이벤트 허브에서 데이터를 수집하도록 **수신자**(**구독자** 또는 **소비자**라고도 함) 응용 프로그램을 구성합니다.
 
 수신자 응용 프로그램의 경우 두 개의 메서드인 **EventHubReceiver** 및 **EventProcessorHost**를 사용할 수 있습니다. EventProcessorHost는 EventHubReceiver의 맨 위에 빌드되지만 EventHubReceiver보다 더 단순한 프로그래밍 인터페이스를 제공합니다. EventProcessorHost는 동일한 저장소 계정을 사용하여 EventProcessorHost의 여러 인스턴스에서 자동으로 메시지 파티션을 배포할 수 있습니다.
 
-이 단원에서는 EventProcessorHost 메서드를 사용합니다. 다시 nano를 사용하고 EventProcessorSample 응용 프로그램을 편집하여 Event Hubs 네임스페이스, 이벤트 허브 이름, 공유 액세스 정책 이름 및 기본 키, 저장소 계정 이름, 연결 문자열, 컨테이너 이름을 추가합니다.
+이 단원에서는 EventProcessorHost 메서드를 사용합니다. EventProcessorSample 응용 프로그램을 추가 하 여 Event Hubs 네임 스페이스, 이벤트 허브 이름, 공유 액세스 정책 이름 및 기본 키, 저장소 계정 이름, 연결 문자열 및 컨테이너 이름을 편집 합니다.
 
 1. 다음 명령을 사용하여 **EventProcessorSample** 폴더로 변경합니다.
 
@@ -137,12 +129,12 @@
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample/src/main/java/com/microsoft/azure/eventhubs/samples/eventprocessorsample
     ```
 
-1. 다음 명령을 사용하여 **nano** 편집기에서 **EventProcessorSample.java** 파일을 엽니다.
+1. 엽니다는 **EventProcessorSample.java** 다음 명령을 사용 하 여 Cloud Shell 편집기에서 파일:
 
     ```azurecli
-    nano EventProcessorSample.java
+    code EventProcessorSample.java
     ```
-1. nano 편집기에서 다음 문자열을 찾아서 바꿉니다.
+1. 찾아 편집기에서 다음 문자열을 대체 합니다.
 
     - `----ServiceBusNamespaceName----`을 Event Hubs 네임스페이스 이름으로 바꿉니다.
     - `----EventHubName----`를 이벤트 허브 이름으로 바꿉니다.
@@ -152,15 +144,9 @@
     - `----StorageContainerName----`을 **messages**로 바꿉니다.
     - `----HostNamePrefix----`를 저장소 계정 이름으로 바꿉니다.
 
-    ![수신자 응용 프로그램에 대한 구성 세부 정보](../media-draft/5-receiver-configure.png)
+1. 저장할 **EventProcessorSample.java** "..." 메뉴 또는 바로 가기 키 (Ctrl + S Windows 및 Linux, macOS에서 Cmd + SS)을 통해.
 
-1. 다음 명령을 사용하여 **EventProcessorSample.java**를 저장하고 nano를 종료합니다.
-
-    ```azurecli
-    CTRL +O
-    ENTER
-    CTRL +X
-    ```
+1. 클릭 하 여 코드 편집기를 닫을 수 있습니다는 `{}` Cloud Shell 편집기의 맨 위에 있는 중괄호 도구 모음 단추입니다.
 
 ## <a name="use-maven-to-build-eventprocessorsamplejava"></a>Maven을 사용하여 EventProcessorSample.java 빌드
 

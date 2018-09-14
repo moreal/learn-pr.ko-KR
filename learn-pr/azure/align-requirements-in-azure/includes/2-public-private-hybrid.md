@@ -10,9 +10,9 @@
 
 ![클라우드 배포 모델에 대한 간략한 개요를 보여 주는 그림입니다.](../media/2-cloud-deployment.png)
 
-!!! 비디오 TC-008 자리 표시자 !!! 
+#### <a name="public-versus-private-versus-hybrid"></a>하이브리드 및 사설과 공용
 
-> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEv7]
 
 ## <a name="public-cloud"></a>공용 클라우드
 
