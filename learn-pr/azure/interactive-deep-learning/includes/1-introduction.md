@@ -10,4 +10,5 @@
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
+<!---TODO: Update for sandbox?--->
 - D 시리즈 VM 액세스 권한이 있는 Azure 구독 

@@ -27,7 +27,7 @@ code .
 }
 ```
 
-사용 가능한 VM 크기 목록은 [Ubuntu DSVM ARM 템플릿](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst)에서 확인할 수 있습니다.
+사용 가능한 VM 크기 목록은 [Ubuntu DSVM ARM 템플릿](https://azure.microsoft.com/global-infrastructure/services/?WT.mc_id=blog-learning-abornst)에서 확인할 수 있습니다.
 
 
 ### <a name="create-a-resource-group-for-your-dsvm-in-a-region-of-your-choice"></a>선택한 지역에서 DSVM용 리소스 그룹을 만듭니다.
@@ -50,7 +50,7 @@ $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 2
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 8888 --priority 901
 ```
 
-포트 8888은 Jupyter Notebook용 기본 포트입니다. 포트를 여는 자세한 단계를 확인하려면 [여기를 클릭](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)하세요.
+포트 8888은 Jupyter Notebook용 기본 포트입니다. 포트를 여는 자세한 단계를 확인하려면 [여기를 클릭](https://docs.microsoft.com/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)하세요.
  
 ## <a name="step-3-connect-to-the-dsvm-with-the-azure-shell"></a>3단계: Azure Shell을 사용하여 DSVM에 연결 
  
