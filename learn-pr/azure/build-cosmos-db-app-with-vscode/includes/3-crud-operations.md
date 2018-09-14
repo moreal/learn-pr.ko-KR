@@ -1,27 +1,27 @@
 <!--TODO: explain Etag in knowledge needed-->
 
-<span data-ttu-id="539cd-101">Azure Cosmos DB에 대한 연결이 설정되면 다음 단계는 데이터베이스에 저장된 문서를 만들고, 읽고, 바꾸고, 삭제하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-101">Once the connection to Azure Cosmos DB has been made, the next step is to create, read, replace, and delete the documents that are stored in the database.</span></span> <span data-ttu-id="539cd-102">이 단원에서는 WebCustomer 컬렉션에 사용자 문서를 만든 후 ID별로 검색하고, 바꾸고, 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-102">In this unit, you will create User documents in your WebCustomer collection, then you'll retrieve them by ID, replace them, and delete them.</span></span>
+<span data-ttu-id="e15d1-101">Azure Cosmos DB에 대한 연결이 설정되면 다음 단계는 데이터베이스에 저장된 문서를 만들고, 읽고, 바꾸고, 삭제하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-101">Once the connection to Azure Cosmos DB has been made, the next step is to create, read, replace, and delete the documents that are stored in the database.</span></span> <span data-ttu-id="e15d1-102">이 단원에서는 WebCustomer 컬렉션에 사용자 문서를 만든 후 ID별로 검색하고, 바꾸고, 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-102">In this unit, you will create User documents in your WebCustomer collection, then you'll retrieve them by ID, replace them, and delete them.</span></span>
 
-## <a name="working-with-documents-programmatically"></a><span data-ttu-id="539cd-103">프로그래밍 방식으로 문서 작업</span><span class="sxs-lookup"><span data-stu-id="539cd-103">Working with documents programmatically</span></span>
+## <a name="working-with-documents-programmatically"></a><span data-ttu-id="e15d1-103">프로그래밍 방식으로 문서 작업</span><span class="sxs-lookup"><span data-stu-id="e15d1-103">Working with documents programmatically</span></span>
 
-<span data-ttu-id="539cd-104">데이터는 Azure Cosmos DB의 JSON 문서에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-104">Data is stored in JSON documents in Azure Cosmos DB.</span></span> <span data-ttu-id="539cd-105">[문서](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents)는 이전 모듈에 나와 있는 대로 또는 이 모듈에서 설명한 대로 프로그래밍 방식으로 포털에서 만들어지거나, 검색되거나, 바뀌거나, 삭제될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-105">[Documents](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) can be created, retrieved, replaced, or deleted in the portal, as shown in the previous module, or programmatically, as described in this module.</span></span> <span data-ttu-id="539cd-106">Azure Cosmos DB는 .NET, .NET Core, Java, Node.js 및 Python에 사용되는 클라이언트 쪽 SDK를 제공합니다. 이러한 도구는 각각 해당 작업을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-106">Azure Cosmos DB provides client-side SDKs for .NET, .NET Core, Java, Node.js, and Python, each of which supports these operations.</span></span> <span data-ttu-id="539cd-107">이 모듈에서는 .NET Core SDK를 사용하여 CRUD(만들기, 검색, 업데이트 및 삭제) 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-107">In this module we'll be using the .NET Core SDK to perform CRUD (create, retrieve, update, and delete) operations.</span></span> 
+<span data-ttu-id="e15d1-104">데이터는 Azure Cosmos DB의 JSON 문서에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-104">Data is stored in JSON documents in Azure Cosmos DB.</span></span> <span data-ttu-id="e15d1-105">[문서](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents)는 이전 모듈에 나와 있는 대로 또는 이 모듈에서 설명한 대로 프로그래밍 방식으로 포털에서 만들어지거나, 검색되거나, 바뀌거나, 삭제될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-105">[Documents](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) can be created, retrieved, replaced, or deleted in the portal, as shown in the previous module, or programmatically, as described in this module.</span></span> <span data-ttu-id="e15d1-106">Azure Cosmos DB는 .NET, .NET Core, Java, Node.js 및 Python에 사용되는 클라이언트 쪽 SDK를 제공합니다. 이러한 도구는 각각 해당 작업을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-106">Azure Cosmos DB provides client-side SDKs for .NET, .NET Core, Java, Node.js, and Python, each of which supports these operations.</span></span> <span data-ttu-id="e15d1-107">이 모듈에 사용할.NET Core SDK CRUD를 수행 하려면 (만들기, 검색, 업데이트 및 삭제) Azure Cosmos DB에 저장 한 NoSQL 데이터에 대 한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-107">In this module we'll be using the .NET Core SDK to perform CRUD (create, retrieve, update, and delete) operations on the NoSQL data stored in Azure Cosmos DB.</span></span> 
 
-<span data-ttu-id="539cd-108">Azure Cosmos DB 문서에 대한 기본 작업은 [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) 클래스의 일부입니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-108">The main operations for Azure Cosmos DB documents are part of the [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) class:</span></span>
-* [<span data-ttu-id="539cd-109">CreateDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="539cd-109">CreateDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentasync?view=azure-dotnet)
-* [<span data-ttu-id="539cd-110">ReadDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="539cd-110">ReadDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentasync?view=azure-dotnet)
-* [<span data-ttu-id="539cd-111">ReplaceDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="539cd-111">ReplaceDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.replacedocumentasync?view=azure-dotnet)
-* <span data-ttu-id="539cd-112">[UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet).</span><span class="sxs-lookup"><span data-stu-id="539cd-112">[UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet).</span></span> <span data-ttu-id="539cd-113">Upsert는 문서가 이미 존재하는지 여부에 따라 만들기 또는 바꾸기 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-113">Upsert performs a create or replace operation depending on whether the document already exists.</span></span>
-* [<span data-ttu-id="539cd-114">DeleteDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="539cd-114">DeleteDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.deletedocumentasync?view=azure-dotnet)
+<span data-ttu-id="e15d1-108">Azure Cosmos DB 문서에 대한 기본 작업은 [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) 클래스의 일부입니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-108">The main operations for Azure Cosmos DB documents are part of the [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) class:</span></span>
+* [<span data-ttu-id="e15d1-109">CreateDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="e15d1-109">CreateDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentasync?view=azure-dotnet)
+* [<span data-ttu-id="e15d1-110">ReadDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="e15d1-110">ReadDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentasync?view=azure-dotnet)
+* [<span data-ttu-id="e15d1-111">ReplaceDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="e15d1-111">ReplaceDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.replacedocumentasync?view=azure-dotnet)
+* <span data-ttu-id="e15d1-112">[UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet).</span><span class="sxs-lookup"><span data-stu-id="e15d1-112">[UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet).</span></span> <span data-ttu-id="e15d1-113">Upsert는 문서가 이미 존재하는지 여부에 따라 만들기 또는 바꾸기 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-113">Upsert performs a create or replace operation depending on whether the document already exists.</span></span>
+* [<span data-ttu-id="e15d1-114">DeleteDocumentAsync</span><span class="sxs-lookup"><span data-stu-id="e15d1-114">DeleteDocumentAsync</span></span>](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.deletedocumentasync?view=azure-dotnet)
 
-<span data-ttu-id="539cd-115">이러한 작업을 수행하려면 데이터베이스에 저장된 개체를 나타내는 클래스를 만들어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-115">To perform any of these operations, you need to create a class that represents the object stored in the database.</span></span> <span data-ttu-id="539cd-116">사용자 데이터베이스로 작업하기 때문에 이름, 성 및 사용자 ID(수평적 확장을 사용하도록 설정할 파티션 키이므로 필수임)와 배송 기본 설정 및 주문 기록에 대한 서브클래스 같은 기본 데이터를 저장할 **User** 클래스를 만들어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-116">Because we're working with a database of users, you'll want to create a **User** class to store primary data such as their first name, last name, and user id (which is required, as that's the partition key to enable horizontal scaling) and subclasses for shipping preferences and order history.</span></span>
+<span data-ttu-id="e15d1-115">이러한 작업을 수행하려면 데이터베이스에 저장된 개체를 나타내는 클래스를 만들어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-115">To perform any of these operations, you need to create a class that represents the object stored in the database.</span></span> <span data-ttu-id="e15d1-116">사용자 데이터베이스로 작업하기 때문에 이름, 성 및 사용자 ID(수평적 확장을 사용하도록 설정할 파티션 키이므로 필수임)와 배송 기본 설정 및 주문 기록에 대한 서브클래스 같은 기본 데이터를 저장할 **User** 클래스를 만들어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-116">Because we're working with a database of users, you'll want to create a **User** class to store primary data such as their first name, last name, and user id (which is required, as that's the partition key to enable horizontal scaling) and subclasses for shipping preferences and order history.</span></span>
 
-<span data-ttu-id="539cd-117">사용자를 나타내는 해당 클래스가 만들어져 있으면 각 인스턴스에 대한 새 사용자 문서를 만든 후에 문서에서 몇 가지 간단한 CRUD 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-117">Once you have those classes created to represent your users, you'll create new user documents for each instance, and then we'll perform some simple CRUD operations on the documents.</span></span>
+<span data-ttu-id="e15d1-117">사용자를 나타내는 해당 클래스가 만들어져 있으면 각 인스턴스에 대한 새 사용자 문서를 만든 후에 문서에서 몇 가지 간단한 CRUD 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-117">Once you have those classes created to represent your users, you'll create new user documents for each instance, and then we'll perform some simple CRUD operations on the documents.</span></span>
 
-## <a name="create-documents"></a><span data-ttu-id="539cd-118">문서 만들기</span><span class="sxs-lookup"><span data-stu-id="539cd-118">Create documents</span></span>
+## <a name="create-documents"></a><span data-ttu-id="e15d1-118">문서 만들기</span><span class="sxs-lookup"><span data-stu-id="e15d1-118">Create documents</span></span>
 
-1. <span data-ttu-id="539cd-119">먼저 Azure Cosmos DB에 저장할 개체를 나타내는 **User** 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-119">First, create a **User** class that represents the objects to store in Azure Cosmos DB.</span></span> <span data-ttu-id="539cd-120">**User** 내에서 사용되는 **OrderHistory** 및 **ShippingPreference** 서브클래스도 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-120">We will also create **OrderHistory** and **ShippingPreference** subclasses that are used within **User**.</span></span> <span data-ttu-id="539cd-121">문서에는 JSON에서 **id**로 직렬화된 **Id** 속성이 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-121">Note that documents must have an **Id** property serialized as **id** in JSON.</span></span>
+1. <span data-ttu-id="e15d1-119">먼저 Azure Cosmos DB에 저장할 개체를 나타내는 **User** 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-119">First, create a **User** class that represents the objects to store in Azure Cosmos DB.</span></span> <span data-ttu-id="e15d1-120">**User** 내에서 사용되는 **OrderHistory** 및 **ShippingPreference** 서브클래스도 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-120">We will also create **OrderHistory** and **ShippingPreference** subclasses that are used within **User**.</span></span> <span data-ttu-id="e15d1-121">문서에는 JSON에서 **id**로 직렬화된 **Id** 속성이 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-121">Note that documents must have an **Id** property serialized as **id** in JSON.</span></span>
 
-    <span data-ttu-id="539cd-122">이러한 클래스를 만들려면 **BasicOperations** 메서드 아래에 있는 **User**, **OrderHistory**, **ShippingPreference** 클래스를 복사하여 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-122">To create these classes, copy and paste the following **User**, **OrderHistory**, and **ShippingPreference** classes underneath the **BasicOperations** method.</span></span>
+    <span data-ttu-id="e15d1-122">이러한 클래스를 만들려면 **BasicOperations** 메서드 아래에 있는 **User**, **OrderHistory**, **ShippingPreference** 클래스를 복사하여 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-122">To create these classes, copy and paste the following **User**, **OrderHistory**, and **ShippingPreference** classes underneath the **BasicOperations** method.</span></span>
 
     ```csharp
     public class User
@@ -82,13 +82,13 @@
     }
     ```
 
-1. <span data-ttu-id="539cd-123">통합 터미널에서 다음 명령을 입력하고 프로그램을 실행하여 프로그램이 실행되는 것을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-123">In the integrated terminal, type the following command to run the program to ensure it runs.</span></span>
+1. <span data-ttu-id="e15d1-123">통합 터미널에서 다음 명령을 입력하고 프로그램을 실행하여 프로그램이 실행되는 것을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-123">In the integrated terminal, type the following command to run the program to ensure it runs.</span></span>
 
     ```csharp
     dotnet run
     ```
 
-1. <span data-ttu-id="539cd-124">이제 **ShippingPreference** 클래스 아래의 **CreateUserDocumentIfNotExists** 작업을 복사하여 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-124">Now copy and paste the **CreateUserDocumentIfNotExists** task under the **ShippingPreference** class.</span></span>
+1. <span data-ttu-id="e15d1-124">이제 **ShippingPreference** 클래스 아래의 **CreateUserDocumentIfNotExists** 작업을 복사하여 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-124">Now copy and paste the **CreateUserDocumentIfNotExists** task under the **ShippingPreference** class.</span></span>
 
     ```csharp
     private async Task CreateUserDocumentIfNotExists(string databaseName, string collectionName, User user)
@@ -113,7 +113,7 @@
         }
     ```
 
-1. <span data-ttu-id="539cd-125">그런 다음, **BasicOperations** 메서드에 다음을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-125">Then add the following to the **BasicOperations** method.</span></span>
+1. <span data-ttu-id="e15d1-125">다음의 끝에 다음을 추가 합니다 **BasicOperations** 메서드.</span><span class="sxs-lookup"><span data-stu-id="e15d1-125">Then add the following to the end of the **BasicOperations** method.</span></span>
 
     ```csharp
      User yanhe = new User
@@ -192,13 +192,13 @@
                 await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);
     ```
 
-1. <span data-ttu-id="539cd-126">통합 터미널에서 다시 다음 명령을 입력하고 프로그램을 실행하여 프로그램이 실행되는 것을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-126">In the integrated terminal, again, type the following command to run the program to ensure it runs.</span></span>
+1. <span data-ttu-id="e15d1-126">통합 터미널에서 프로그램을 실행 하려면 다음 명령을 다시 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-126">In the integrated terminal, again, type the following command to run the program.</span></span>
 
     ```csharp
     dotnet run
     ```
 
-    <span data-ttu-id="539cd-127">터미널은 사용자 레코드가 둘 다 성공적으로 만들어졌음을 나타내는 다음 출력을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-127">The terminal displays the following output, indicating that both user records were successfully created.</span></span>
+    <span data-ttu-id="e15d1-127">응용 프로그램에는 각 새 사용자 문서 생성 터미널 출력을 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-127">The terminal will display output as the application creates each new user document.</span></span> <span data-ttu-id="e15d1-128">프로그램을 완료 하려면 아무 키나를 누릅니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-128">Press any key to complete the program.</span></span>
 
     ```
     Database and collection validation complete
@@ -209,9 +209,9 @@
     End of demo, press any key to exit.
     ```
 
-## <a name="read-documents"></a><span data-ttu-id="539cd-128">문서 읽기</span><span class="sxs-lookup"><span data-stu-id="539cd-128">Read documents</span></span>
+## <a name="read-documents"></a><span data-ttu-id="e15d1-129">문서 읽기</span><span class="sxs-lookup"><span data-stu-id="e15d1-129">Read documents</span></span>
 
-1. <span data-ttu-id="539cd-129">데이터베이스에서 문서를 읽으려면 다음 코드에서 복사하여 Program.cs 파일 끝에 놓습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-129">To read documents from the database, copy in the following code and place it at the end of the Program.cs file.</span></span>
+1. <span data-ttu-id="e15d1-130">문서를 읽기 데이터베이스에서 다음 코드를 Program.cs 파일에서 WriteToConsoleAndPromptToContinue 메서드 이후에 위치에 복사 합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-130">To read documents from the database, copy in the following code and place after the WriteToConsoleAndPromptToContinue method in the Program.cs file.</span></span>
     
     ```csharp
     private async Task ReadUserDocument(string databaseName, string collectionName, User user)
@@ -235,35 +235,35 @@
     }
     ```
 
-1.  <span data-ttu-id="539cd-130">다음 코드를 복사하여 **BasicOperations** 메서드 끝의 `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` 줄 뒤에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-130">Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.</span></span>
+1.  <span data-ttu-id="e15d1-131">다음 코드를 복사하여 **BasicOperations** 메서드 끝의 `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` 줄 뒤에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-131">Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.</span></span>
 
     ```csharp
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. <span data-ttu-id="539cd-131">Program.cs 파일을 저장한 후에 통합 터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-131">Save the Program.cs file and then, in the integrated terminal, run the following command.</span></span>
+1. <span data-ttu-id="e15d1-132">통합된 터미널에서 프로그램을 실행 하려면 다음 명령을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-132">In the integrated terminal, type the following command to run the program.</span></span>
 
     ```
     dotnet run
     ```
-    <span data-ttu-id="539cd-132">터미널은 다음 출력을 표시합니다. 여기서 “사용자 1 읽음” 출력은 문서가 검색되었음을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-132">The terminal displays the following output, where the output "Read user 1" indicates the document was retrieved.</span></span>
+    <span data-ttu-id="e15d1-133">터미널은 다음 출력을 표시합니다. 여기서 “사용자 1 읽음” 출력은 문서가 검색되었음을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-133">The terminal displays the following output, where the output "Read user 1" indicates the document was retrieved.</span></span>
 
     ```
     Database and collection validation complete
-    Created User 1
+    User 1 already exists in the database
     Press any key to continue ...
-    Created User 2
+    User 2 already exists in the database
     Press any key to continue ...
     Read user 1
     Press any key to continue ...
     End of demo, press any key to exit.
     ```
 
-## <a name="replace-documents"></a><span data-ttu-id="539cd-133">문서 바꾸기</span><span class="sxs-lookup"><span data-stu-id="539cd-133">Replace documents</span></span>
+## <a name="replace-documents"></a><span data-ttu-id="e15d1-134">문서 바꾸기</span><span class="sxs-lookup"><span data-stu-id="e15d1-134">Replace documents</span></span>
 
-<span data-ttu-id="539cd-134">Azure Cosmos DB는 JSON 문서 바꾸기를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-134">Azure Cosmos DB supports replacing JSON documents.</span></span> <span data-ttu-id="539cd-135">이 경우 사용자 레코드를 업데이트하여 사용자의 성 변경을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-135">In this case, we'll update a user record to account for a change to their last name.</span></span>
+<span data-ttu-id="e15d1-135">Azure Cosmos DB는 JSON 문서 바꾸기를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-135">Azure Cosmos DB supports replacing JSON documents.</span></span> <span data-ttu-id="e15d1-136">이 경우 사용자 레코드를 업데이트하여 사용자의 성 변경을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-136">In this case, we'll update a user record to account for a change to their last name.</span></span>
 
-1. <span data-ttu-id="539cd-136">**ReplaceFamilyDocument** 메서드를 복사하여 Program.cs 파일 끝에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-136">Copy and paste the **ReplaceFamilyDocument** method at the end of the Program.cs file.</span></span>
+1. <span data-ttu-id="e15d1-137">복사 및 붙여넣기 합니다 **ReplaceFamilyDocument** Program.cs 파일에서 ReadUserDocument 메서드 메서드.</span><span class="sxs-lookup"><span data-stu-id="e15d1-137">Copy and paste the **ReplaceFamilyDocument** method after the ReadUserDocument method in the Program.cs file.</span></span>
 
     ```csharp
     private async Task ReplaceUserDocument(string databaseName, string collectionName, User updatedUser)
@@ -287,36 +287,36 @@
     }
     ```
 
-1. <span data-ttu-id="539cd-137">다음 코드를 복사하여 **BasicOperations** 메서드 끝의 `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` 줄 뒤에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-137">Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.</span></span>
+1. <span data-ttu-id="e15d1-138">다음 코드를 복사하여 **BasicOperations** 메서드 끝의 `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` 줄 뒤에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-138">Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.</span></span>
 
     ```csharp
     yanhe.LastName = "Suh";
     await this.ReplaceUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. <span data-ttu-id="539cd-138">Program.cs 파일을 저장한 후에 통합 터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-138">Save the Program.cs file and then, in the integrated terminal, run the following command.</span></span>
+1. <span data-ttu-id="e15d1-139">통합 터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-139">In the integrated terminal, run the following command.</span></span>
 
     ```
     dotnet run
     ```
-    <span data-ttu-id="539cd-139">터미널은 다음 출력을 표시합니다. 여기서, “Suh의 성을 바꿈” 출력은 문서가 바뀌었음을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-139">The terminal displays the following output, where the output "Replaced last name for Suh" indicates the document was replaced.</span></span>
+    <span data-ttu-id="e15d1-140">터미널은 다음 출력을 표시합니다. 여기서, “Suh의 성을 바꿈” 출력은 문서가 바뀌었음을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-140">The terminal displays the following output, where the output "Replaced last name for Suh" indicates the document was replaced.</span></span>
 
     ```
     Database and collection validation complete
-    Created User 1
-    Press any key to continue ...
-    Created User 2
-    Press any key to continue ...
-    Read user 1
+    User 1 already exists in the database
     Press any key to continue ...
     Replaced last name for Suh
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
     Press any key to continue ...
     End of demo, press any key to exit.
     ```
 
-## <a name="delete-documents"></a><span data-ttu-id="539cd-140">문서 삭제</span><span class="sxs-lookup"><span data-stu-id="539cd-140">Delete documents</span></span>
+## <a name="delete-documents"></a><span data-ttu-id="e15d1-141">문서 삭제</span><span class="sxs-lookup"><span data-stu-id="e15d1-141">Delete documents</span></span>
 
-1. <span data-ttu-id="539cd-141">**DeleteUserDocument** 메서드를 복사하여 **ReplaceUserDocument** 메서드 아래에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-141">Copy and paste the **DeleteUserDocument** method underneath your **ReplaceUserDocument** method.</span></span>
+1. <span data-ttu-id="e15d1-142">**DeleteUserDocument** 메서드를 복사하여 **ReplaceUserDocument** 메서드 아래에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-142">Copy and paste the **DeleteUserDocument** method underneath your **ReplaceUserDocument** method.</span></span>
     
     ```csharp
     private async Task DeleteUserDocument(string databaseName, string collectionName, User deletedUser)
@@ -340,34 +340,34 @@
     }
     ```
 
-1. <span data-ttu-id="539cd-142">두 번째 쿼리 실행의 **BasicOperations** 메서드에 다음 코드를 복사하여 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-142">Copy and paste the following code to your **BasicOperations** method underneath the second query execution.</span></span>
+1. <span data-ttu-id="e15d1-143">복사 하 고 끝에 다음 코드를 붙여 합니다 **BasicOperations** 메서드.</span><span class="sxs-lookup"><span data-stu-id="e15d1-143">Copy and paste the following code in the end of the **BasicOperations** method.</span></span>
 
     ```csharp
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. <span data-ttu-id="539cd-143">통합 터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-143">In the integrated terminal, run the following command.</span></span>
+1. <span data-ttu-id="e15d1-144">통합 터미널에서 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-144">In the integrated terminal, run the following command.</span></span>
 
     ```
     dotnet run
     ```
 
-    <span data-ttu-id="539cd-144">터미널은 다음 출력을 표시합니다. 여기서 “사용자 1 삭제됨” 출력은 문서가 삭제되었음을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-144">The terminal displays the following output, where the output "Deleted user 1" indicates the document was deleted.</span></span>
+    <span data-ttu-id="e15d1-145">터미널은 다음 출력을 표시합니다. 여기서 “사용자 1 삭제됨” 출력은 문서가 삭제되었음을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-145">The terminal displays the following output, where the output "Deleted user 1" indicates the document was deleted.</span></span>
 
     ```
     Database and collection validation complete
-    Created User 1
-    Press any key to continue ...
-    Created User 2
-    Press any key to continue ...
-    Read user 1
+    User 1 already exists in the database
     Press any key to continue ...
     Replaced last name for Suh
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
     Press any key to continue ...
     Deleted user 1
     End of demo, press any key to exit.
     ```
 
-## <a name="summary"></a><span data-ttu-id="539cd-145">요약</span><span class="sxs-lookup"><span data-stu-id="539cd-145">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="e15d1-146">요약</span><span class="sxs-lookup"><span data-stu-id="e15d1-146">Summary</span></span>
 
-<span data-ttu-id="539cd-146">이 단원에서는 Azure Cosmos DB 데이터베이스에서 문서를 만들고, 바꾸고, 삭제했습니다.</span><span class="sxs-lookup"><span data-stu-id="539cd-146">In this unit you created, replaced, and deleted documents in your Azure Cosmos DB database.</span></span>
+<span data-ttu-id="e15d1-147">이 단원에서는 Azure Cosmos DB 데이터베이스에서 문서를 만들고, 바꾸고, 삭제했습니다.</span><span class="sxs-lookup"><span data-stu-id="e15d1-147">In this unit you created, replaced, and deleted documents in your Azure Cosmos DB database.</span></span>
