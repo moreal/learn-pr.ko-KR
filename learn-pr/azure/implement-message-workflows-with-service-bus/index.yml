@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 5629bb883bb9b7bd4b0b74398976ddad6a1beffc
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: cd272cc82342297622b986694773c293881e748c
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44234294"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45556362"
 title: Azure Service Bus를 통한 메시지 기반 통신 워크플로 구현
 summary: Azure Service Bus 토픽 및 큐를 사용하여 메시지를 보내고 받는 사용자 지정 응용 프로그램에서 C# 코드를 작성합니다.
 abstract: >
@@ -27,13 +27,14 @@ abstract: >
 
   - Service Bus 큐를 만들어 메시지 전송/수신에 사용
 prerequisites: 없음
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
 levels:
 - intermediate
 roles:
 - developer
 products:
 - azure
+- azure-service-bus
 units:
 - learn.implement-message-workflows-with-service-bus.1-introduction
 - learn.implement-message-workflows-with-service-bus.2-choose-a-messaging-platform

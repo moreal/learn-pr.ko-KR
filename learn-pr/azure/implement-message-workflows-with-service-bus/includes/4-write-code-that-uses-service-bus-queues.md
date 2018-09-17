@@ -29,7 +29,7 @@ Azure의 큐는 전송 및 수신 구성 요소에서 매우 멀리 떨어져 �
 
 예를 들어 큐에 메시지를 보낼 때는 `await` 키워드가 포함된 `QueueClient.SendAsync()` 메서드를 사용합니다.
 
-## <a name="write-code-that-sends-to-queues"></a>큐로 정보를 보내는 코드 작성 
+## <a name="write-code-that-sends-to-queues"></a>큐로 정보를 보내는 코드 작성
 
 모든 전송 또는 수신 구성 요소에서 Service Bus 큐를 호출하는 코드 파일에 다음의 `using` 문을 추가해야 합니다.
 
@@ -66,4 +66,3 @@ queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
 ```C#
 await queueClient.CompleteAsync(message.SystemProperties.LockToken);
 ```
-    
