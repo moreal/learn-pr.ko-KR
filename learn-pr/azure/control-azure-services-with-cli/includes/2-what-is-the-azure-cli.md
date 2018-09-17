@@ -1,4 +1,4 @@
-Azure CLI는 Azure에 연결하고 Azure 리소스에서 관리 명령을 실행하는 명령줄 프로그램입니다. Linux, macOS 및 Windows에서 실행되며 관리자와 개발자가 이를 사용하여 웹 브라우저 대신 터미널 또는 명령줄 프롬프트(또는 스크립트)를 통해 명령을 실행할 수 있습니다. 예를 들어 VM(가상 머신)을 다시 시작하려면 다음과 같은 명령을 사용합니다.
+Azure CLI는 Azure에 연결하고 Azure 리소스에서 관리 명령을 실행하는 명령줄 프로그램입니다. 이 기능은 Linux, macOS 및 Windows에서 실행되며 관리자와 개발자가 이를 사용하여 웹 브라우저 대신 터미널 또는 명령줄 프롬프트(또는 스크립트)를 통해 명령을 실행할 수 있습니다. 예를 들어 VM(가상 머신)을 다시 시작하려면 다음과 같은 명령을 사용합니다.
 
  ```azurecli
  az vm restart -g MyResourceGroup -n MyVm
@@ -9,6 +9,7 @@ Azure CLI는 Azure 리소스를 관리하기 위한 플랫폼 간 명령줄 도�
 ## <a name="how-to-install-azure-cli"></a>Azure CLI를 설치하는 방법
 
 Linux 및 macOS에서는 둘 다 패키지 관리자를 사용하여 PowerShell Core를 설치합니다. 권장되는 패키지 관리자는 OS 및 배포에 따라 다릅니다.
+
 - Linux: **apt-get**(Ubuntu), **yum**(Red Hat) 및 **zypper**(OpenSUSE)
 - Mac: **Homebrew**
 
@@ -20,18 +21,16 @@ Windows에서는 MSI 파일을 다운로드하고 실행하여 Azure CLI를 설�
 
 스크립트에서 Azure CLI 명령을 사용하려면 스크립트 실행에 사용되는 “셸” 또는 환경에 관련된 문제를 알고 있어야 합니다. 예를 들어 bash 셸에서는 변수를 설정할 때 다음 구문이 사용됩니다.
 
- ```azurecli
- variable="value"
- variable=integer
- ```
+```azurecli
+variable="value"
+variable=integer
+```
 
 Azure CLI 스크립트를 실행하는 데 PowerShell 환경을 사용하는 경우 변수에 이 구문을 사용해야 합니다.
 
- ```powershell
- $variable="value"
- $variable=integer
- ```
+```powershell
+$variable="value"
+$variable=integer
+```
 
-## <a name="summary"></a>요약
-
-로컬 컴퓨터에서 Azure 리소스를 관리하는 데 사용하려면 먼저 Azure CLI를 설치해야 합니다. 설치 단계는 Windows, Linux 및 macOS에 따라 다르지만, 설치된 후에 명령은 전체 플랫폼에서 공통적입니다. 
+로컬 컴퓨터에서 Azure 리소스를 관리하는 데 사용하려면 먼저 Azure CLI를 설치해야 합니다. 설치 단계는 Windows, Linux 및 macOS에 따라 다르지만, 설치된 후에 명령은 전체 플랫폼에서 공통적입니다.
