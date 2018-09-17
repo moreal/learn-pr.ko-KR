@@ -4,7 +4,7 @@
 
 ## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Service Bus 네임스페이스에 대한 연결 문자열 구성
 
-먼저 전송 및 수신 구성 요소에서 연결 문자열을 구성합니다.
+먼저 송신 및 수신 구성 요소에서 연결 문자열을 구성합니다.
 
 1. Azure Portal로 전환합니다.
 
@@ -26,7 +26,7 @@
     const string ServiceBusConnectionString = "";
     ```
 
-1. 따옴표 사이에 커서를 놓고 **Ctrl+V**를 누릅니다.
+1. 따옴표 사이에 커서를 놓은 다음, **Ctrl+V**를 누릅니다.
 
 1. **탐색기** 창의 **performancemessagereceiver** 폴더에서 **Program.cs** 파일을 클릭합니다.
 
@@ -36,9 +36,9 @@
     const string ServiceBusConnectionString = "";
     ```
 
-1. 따옴표 사이에 커서를 놓고 **Ctrl+V**를 누릅니다.
+1. 따옴표 사이에 커서를 놓은 다음, **Ctrl+V**를 누릅니다.
 
-1. **파일**을 클릭한 다음 **모두 저장**을 클릭합니다.
+1. **파일**을 클릭한 다음, **모두 저장**을 클릭합니다.
 
 1. 열려 있는 편집기 창을 모두 닫습니다.
 
@@ -107,15 +107,15 @@
 
 1. Visual Studio Code의 **보기** 메뉴에서 **디버그**를 클릭합니다.
 
-1. **디버그** 창의 드롭다운 목록에서 **Performance Message Sender 시작**을 선택하고 **F5** 키를 누릅니다. Visual Studio Code가 디버깅 모드에서 콘솔 응용 프로그램을 빌드하고 실행합니다.
+1. **디버그** 창의 드롭다운 목록에서 **Performance Message Sender 시작**을 선택한 다음, **F5**를 누릅니다. Visual Studio Code가 디버깅 모드에서 콘솔 응용 프로그램을 빌드하고 실행합니다.
 
 1. 프로그램이 실행되면 **디버그 콘솔**에서 메시지를 검사합니다.
 
 1. Azure Portal로 전환합니다.
 
-1. Service Bus가 표시되지 않으면 홈페이지에서 **모든 리소스**를 클릭한 다음 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
+1. Service Bus 네임스페이스가 표시되지 않으면 홈페이지에서 **모든 리소스**를 클릭한 다음, 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
 
-1. **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **항목**을 클릭한 다음 **salesperformancemessages** 항목을 클릭합니다. 구독 목록의 **아메리카** 및 **유럽** 구독에 모두 메시지 하나가 표시되어야 합니다.
+1. **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **항목**을 클릭한 다음, **salesperformancemessages** 항목을 클릭합니다. 구독 목록의 **아메리카** 및 **유럽** 구독에 모두 메시지 하나가 표시되어야 합니다.
 
 ## <a name="write-code-that-receives-a-message-from-a-topic-subscription"></a>항목 구독에서 메시지를 받는 코드 작성
 
@@ -128,7 +128,7 @@
 1. 이 메서드 내에서 다음 코드 줄을 찾습니다.
 
     ```C#
-    // Create a Subscription Client here
+    // Create a subscription client here
     ```
 
 1. 구독 클라이언트를 만들려면 해당 줄을 다음 코드로 바꿉니다.
@@ -189,7 +189,7 @@
 
 1. Visual Studio Code의 **보기** 메뉴에서 **디버그**를 클릭합니다.
 
-1. **디버그** 창의 드롭다운 목록에서 **Performance Message Receiver 시작**을 선택하고 **F5** 키를 누릅니다. Visual Studio Code가 디버깅 모드에서 콘솔 응용 프로그램을 빌드하고 실행합니다.
+1. **디버그** 창의 드롭다운 목록에서 **Performance Message Receiver 시작**을 선택한 다음, **F5**를 누릅니다. Visual Studio Code가 디버깅 모드에서 콘솔 응용 프로그램을 빌드하고 실행합니다.
 
 1. 프로그램이 실행되면 **디버그 콘솔**에서 메시지를 검사합니다.
 
@@ -197,6 +197,6 @@
 
 1. Azure Portal로 전환합니다.
 
-1. Service Bus가 표시되지 않으면 홈페이지에서 **모든 리소스**를 클릭한 다음 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
+1. Service Bus 네임스페이스가 표시되지 않으면 홈페이지에서 **모든 리소스**를 클릭한 다음, 앞에서 만든 Service Bus 네임스페이스를 클릭합니다.
 
-1. **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **항목**을 클릭한 다음 **salesperformancemessages** 항목을 클릭합니다. 응용 프로그램이 하나뿐이었던 메시지를 처리하여 제거했으므로 구독 목록의 **아메리카** 구독에는 메시지가 표시되지 않아야 합니다. **유럽** 구독에는 여전히 메시지가 있습니다.
+1. **Service Bus 네임스페이스** 블레이드의 **엔터티** 아래에서 **항목**을 클릭한 다음, **salesperformancemessages** 항목을 클릭합니다. 응용 프로그램이 하나뿐이었던 메시지를 처리하여 제거했으므로 구독 목록의 **아메리카** 구독에는 메시지가 표시되지 않아야 합니다. **유럽** 구독에는 여전히 메시지가 있습니다.

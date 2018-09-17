@@ -76,9 +76,10 @@ PowerShell을 시작하고 스크립트 파일을 저장한 디렉터리로 변�
 
 스크립트를 완료하는 데 몇 분이 걸릴 수 있습니다. 완료되면 성공적으로 실행되었는지 확인합니다.
 
-1. 브라우저에서 Azure Portal에 로그인합니다.
+<!---TODO: Update for sandbox?--->
+1. 브라우저에서 [Azure Portal](https://portal.azure.com/?azure-portal=true)에 로그인합니다.
 
-1. 왼쪽 탐색에서 **리소스 그룹**을 클릭합니다.
+1. 왼쪽 탐색 영역에서 **리소스 그룹**을 클릭합니다.
 
 1. 리소스 그룹 목록에서 **TrialsResourceGroup**을 클릭합니다. 리소스 목록에 새로 만든 VM 및 연결된 리소스가 표시됩니다.
 

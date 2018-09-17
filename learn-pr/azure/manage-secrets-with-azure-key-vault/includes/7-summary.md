@@ -1,7 +1,7 @@
-이 모듈에서는 앱의 비밀 구성을 Azure Key Vault로 보호했습니다. 시작 시 앱 코드가 관리 서비스 ID를 통해 자격 증명 모음에 인증되고 비밀이 자격 증명 모음에서 ASP.NET Core의 구성 시스템으로 자동으로 로드됩니다.
+이 모듈에서는 앱의 비밀 구성을 Azure Key Vault로 보호했습니다. 시작 시 앱 코드가 관리 ID로 자격 증명 모음에 인증되고 비밀이 자격 증명 모음에서 ASP.NET Core의 구성 시스템으로 자동으로 로드됩니다.
 
 ## <a name="clean-up"></a>정리
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Azure 구독을 정리하려면 Azure Cloud Shell에서 다음을 실행하여 이 모듈에서 만든 모든 리소스가 포함된 리소스 그룹을 삭제합니다.
 
@@ -25,6 +25,6 @@ Cloud Shell 저장소를 정리하려면 `KeyVaultDemoApp` 디렉터리를 삭�
 ## <a name="further-reading"></a>추가 참고 자료
 
 - [Key Vault 설명서](https://docs.microsoft.com/azure/key-vault/)
-- [AddAzureKeyVault 및 관련 고급 옵션에 대해 자세히 알아보기](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
-- [이 자습서](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application)에서는 MSI 대신 클라이언트 비밀을 사용하여 Azure Active Directory에 수동으로 인증하는 작업을 포함하여 `KeyVaultClient` 사용 방법을 살펴봅니다.
-- 인증 워크플로를 직접 구현하기 위한 [MSI 토큰 서비스 설명서](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol)
+- [AddAzureKeyVault 및 해당 고급 옵션에 대한 자세한 정보](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
+- [이 자습서](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application)에서는 관리 ID 대신 클라이언트 비밀을 사용하여 Azure Active Directory에 수동으로 인증하는 작업을 포함하여 `KeyVaultClient`를 사용하는 방법을 살펴봅니다.
+- 인증 워크플로를 직접 구현하기 위한 [Azure 리소스 토큰 서비스 설명서에 대한 관리 ID](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol).

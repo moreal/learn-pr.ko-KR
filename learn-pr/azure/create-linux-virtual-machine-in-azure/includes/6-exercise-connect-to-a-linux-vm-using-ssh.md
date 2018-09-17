@@ -20,27 +20,25 @@ Azure VM을 SSH 클라이언트와 연결하려면 다음 항목이 필요합니
 
 1. **가상 머신에 연결** 블레이드에서 **IP 주소** 및 **포트 번호** 설정을 확인합니다. **SSH** 탭에는 VM에 연결하기 위해 로컬로 실행해야 하는 명령도 있습니다. 이 명령을 클립보드에 복사합니다.
 
-<!-- TODO: this will be necessary if we ever have inline portal integration 
+<!-- TODO: This will be necessary if we ever have inline portal integration. 
 
-### Open the Azure Cloud Shell
+### Open Azure Cloud Shell
 
-Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account.
+Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account:
 
-1. Switch back to the **Dashboard** by clicking the Dashboard button in the Azure sidebar.
+1. Switch back to the **Dashboard** by clicking the **Dashboard** button in the Azure sidebar.
 
-1. Open the Cloud Shell by clicking the shell button in the top toolbar.
+1. Open Cloud Shell by clicking the **shell** button in the top toolbar.
 
-    ![Open the Azure Cloud Shell](../media-drafts/6-cloud-shell.png)
+    ![Screenshot of the Azure portal top navigation bar with the Azure Cloud Shell button highlighted.](../media/6-cloud-shell.png)
 
 1. Select **Bash** as the shell type. PowerShell is also available if you are a Windows administrator.
-
-    ![Select bash shell in the portal](../media-drafts/6-use-bash-shell.png)
 
 -->
 
 ## <a name="connect-with-ssh"></a>SSH를 사용하여 연결
 
-1. SSH 탭에서 가져온 명령줄을 Cloud Shell에 붙여넣습니다. 해당 명령줄은 다음과 같습니다. 하지만 실제 IP 주소는 다르며, **jim**을 사용하지 않았다면 사용자 이름도 다를 것입니다.
+1. SSH 탭에서 가져온 명령줄을 Azure Cloud Shell에 붙여넣습니다. 해당 명령줄은 다음과 같습니다. 하지만 실제 IP 주소는 다르며, **jim**을 사용하지 않았다면 사용자 이름도 다를 것입니다.
 
     ```bash
     ssh jim@137.117.101.249
@@ -67,12 +65,12 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
     ```bash
     sudo fdisk /dev/sdc
     ```
-1. 새 파티션을 추가하려면 `n` 명령을 사용합니다.  또한 이 예제에서는 주 파티션에 대해 p를 선택하고 나머지 기본값은 그대로 적용합니다. 출력은 다음 예제와 같습니다.   
+1. 새 파티션을 추가하려면 `n` 명령을 사용합니다. 또한 이 예제에서는 주 파티션에 대해 **p**를 선택하고 나머지 기본값을 그대로 적용합니다. 출력은 다음 예제와 같습니다.   
 
     ```output
     Device does not contain a recognized partition table.
     Created a new DOS disklabel with disk identifier 0x1f2d0c46.
-    
+
     Command (m for help): n
     Partition type
        p   primary (0 primary, 0 extended, 4 free)
@@ -81,9 +79,9 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
     Partition number (1-4, default 1): 1
     First sector (2048-2145386495, default 2048):
     Last sector, +sectors or +size{K,M,G,T,P} (2048-2145386495, default 2145386495):
-    
+
     Created a new partition 1 of type 'Linux' and of size 1023 GiB.
-    ```    
+    ```
 
 1. `p` 명령을 사용하여 파티션 테이블을 인쇄합니다. 인쇄한 내용은 다음과 같습니다.
 
@@ -94,11 +92,11 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
     I/O size (minimum/optimal): 4096 bytes / 4096 bytes
     Disklabel type: dos
     Disk identifier: 0x1f2d0c46
-    
+
     Device     Boot Start        End    Sectors  Size Id Type
     /dev/sdc1        2048 2145386495 2145384448 1023G 83 Linux
     ```
-    
+
 1. `w` 명령을 사용하여 변경 내용을 씁니다. 그러면 도구가 종료됩니다.
 
 1. 이제 `mkfs` 명령을 사용하여 파티션에 파일 시스템을 써야 합니다. 이렇게 하려면 `fdisk` 출력에서 가져온 파일 시스템 유형과 장치 이름을 지정해야 합니다.
@@ -120,14 +118,14 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
             32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
             4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
             102400000, 214990848
-    
+
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (262144 blocks): done
     Writing superblocks and filesystem accounting information: done
     ```
 
-1. 다음으로는 탑재 지점으로 사용할 디렉터리를 만듭니다. 여기서는 `data` 폴더가 있다고 가정합니다.
+1. 다음으로, 탑재 지점으로 사용할 디렉터리를 만듭니다. 여기서는 `data` 폴더가 있다고 가정합니다.
 
     ```bash
     sudo mkdir /data
@@ -168,7 +166,7 @@ sudo -i blkid
 /dev/sdc1: UUID="e311c905-e0d9-43ab-af63-7f4ee4ef108e" TYPE="ext4"
 ```
 
-1. `/dev/sdc1` 드라이브의 UUID를 복사한 다음 텍스트 편집기에서 `/etc/fstab` 파일을 엽니다.
+1. `/dev/sdc1` 드라이브의 UUID를 복사하고 텍스트 편집기에서 `/etc/fstab` 파일을 엽니다.
 
     ```bash
     sudo vi /etc/fstab
@@ -188,14 +186,14 @@ sudo -i blkid
     ```output
     UUID=<uuid-goes-here>    /data    ext4    defaults,nofail    1    2
     ```
-1. **Esc** 키를 누르고 **:w!** 를 입력하여 파일을 쓴 다음 **:q**를 입력하여 편집기를 종료합니다.
+1. **ESC** 키를 누른 다음, **:w!** 를 입력하여 파일을 작성하고 **:q**를 입력하여 편집기를 종료합니다.
 
 1. 마지막으로 OS가 탑재 지점을 새로 고치도록 하여 입력 내용이 정확한지 확인해 보겠습니다.
 
     ```bash
     sudo mount -a
     ```
-    
+
     오류가 반환되면 파일을 편집하여 문제를 찾습니다.
 
 > [!TIP]
@@ -203,11 +201,11 @@ sudo -i blkid
 
 ## <a name="install-software-onto-the-vm"></a>VM에 소프트웨어 설치
 
-여러 가지 옵션을 통해 VM에 소프트웨어를 설치할 수 있습니다. 먼저, 앞에서 설명한 것처럼 `scp`를 사용하여 컴퓨터의 로컬 파일을 VM에 복사할 수 있습니다. 이렇게 하면 데이터 또는 실행하려는 사용자 지정 응용 프로그램을 복사할 수 있습니다.
+여러 가지 옵션을 통해 VM에 소프트웨어를 설치할 수 있습니다. 먼저, 앞에서 설명한 것처럼 `scp`를 사용하여 머신의 로컬 파일을 VM에 복사할 수 있습니다. 이렇게 하면 데이터 또는 실행하려는 사용자 지정 응용 프로그램을 복사할 수 있습니다.
 
-Secure Shell을 통해 소프트웨어를 설치할 수도 있습니다. Azure 컴퓨터는 기본적으로 인터넷에 연결됩니다. 표준 명령을 사용하여 표준 리포지토리에서 인기 소프트웨어 패키지를 직접 설치할 수 있습니다. 이 방식을 사용하여 Apache를 설치해 보겠습니다.
+Secure Shell을 통해 소프트웨어를 설치할 수도 있습니다. Azure 머신은 기본적으로 인터넷에 연결됩니다. 표준 명령을 사용하여 표준 리포지토리에서 인기 소프트웨어 패키지를 직접 설치할 수 있습니다. 이 방식을 사용하여 Apache를 설치해 보겠습니다.
 
-### <a name="install-apache-web-server"></a>Apache 웹 서버 설치
+### <a name="install-the-apache-web-server"></a>Apache 웹 서버 설치
 
 Apache는 Ubuntu의 기본 소프트웨어 리포지토리 내에서 제공되므로 기존 패키지 관리 도구를 사용하여 설치하겠습니다.
 
@@ -217,12 +215,12 @@ Apache는 Ubuntu의 기본 소프트웨어 리포지토리 내에서 제공되�
     sudo apt-get update
     ```
     
-1. 그런 다음 Apache를 설치합니다.
+1. 그런 다음, Apache를 설치합니다.
 
     ```bash
     sudo apt-get install apache2
     ```
-    
+
 1. 설치는 자동으로 시작됩니다. `systemctl`을 사용하면 상태를 확인할 수 있습니다.
 
     ```bash
@@ -243,7 +241,7 @@ Apache는 Ubuntu의 기본 소프트웨어 리포지토리 내에서 제공되�
                ├─11156 /usr/sbin/apache2 -k start
                ├─11158 /usr/sbin/apache2 -k start
                └─11159 /usr/sbin/apache2 -k start
-    
+
     test-web-eus-vm1 systemd[1]: Starting The Apache HTTP Server...
     test-web-eus-vm1 apachectl[11129]: AH00558: apache2: Could not reliably determine the server's fully qua
     test-web-eus-vm1 systemd[1]: Started The Apache HTTP Server.
@@ -251,6 +249,6 @@ Apache는 Ubuntu의 기본 소프트웨어 리포지토리 내에서 제공되�
 
 1. 마지막으로 공용 IP 주소를 통해 기본 페이지를 검색해 볼 수 있습니다. 그러면 기본 페이지가 반환되어야 합니다.
 
-    ![Apache 기본 웹 페이지](../media-drafts/6-apache-works.png)
+    ![새 Linux VM의 IP에서 호스팅되는 Apache 기본 웹 페이지를 보여주는 웹 브라우저의 스크린샷.](../media/6-apache-works.png)
 
 보시다시피 SSH를 사용하면 Linux VM을 로컬 컴퓨터처럼 사용할 수 있습니다. 이 VM을 다른 Linux 컴퓨터처럼 관리하면서 소프트웨어를 설치하고, 역할을 구성하고, 기능 및 기타 일상적인 작업을 조정할 수 있습니다. 하지만 이러한 프로세스는 수동으로 수행해야 하므로 소프트웨어를 많이 설치해야 한다면 스크립트를 작성해 프로세스를 자동화할 수 있습니다.

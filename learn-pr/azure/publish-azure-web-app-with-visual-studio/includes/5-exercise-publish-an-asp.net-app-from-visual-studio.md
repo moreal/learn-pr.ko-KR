@@ -60,7 +60,7 @@
 
     ![결과 게시](../media-draft/5-PublishResult.png)
 
-1. 축하합니다. 이제 ASP.NET Core 웹 응용 프로그램이 게시되어 라이브 상태가 됩니다. 빌드 출력과 Visual Studio의 게시 페이지에서 사이트의 최종 URL을 볼 수 있습니다.
+1. 축하합니다. 이제 ASP.NET Core 웹 응용 프로그램이 게시되어 라이브 상태가 됩니다. 빌드 출력과 Visual Studio의 게시 페이지에서도 사이트의 최종 URL을 볼 수 있습니다.
 
     ![결과 게시](../media-draft/5-PublishPage.png)
 

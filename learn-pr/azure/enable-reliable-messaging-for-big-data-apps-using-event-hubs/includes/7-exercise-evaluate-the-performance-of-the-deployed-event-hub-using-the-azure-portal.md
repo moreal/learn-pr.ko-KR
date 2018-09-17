@@ -22,7 +22,6 @@
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. **보내기 완료...** 가 표시되면 Enter 키를 누릅니다.
@@ -43,7 +42,6 @@
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. 메시지가 콘솔에 표시되는 작업이 중지하면 Enter 키를 누릅니다.

@@ -1,6 +1,7 @@
 Xamarin 및 Azure 함수와 Twilio 바인딩을 사용하여 플랫폼 간 모바일 앱을 만들었습니다.
 
-## <a name="clean-up-resources"></a>리소스 정리
+## <a name="clean-up"></a>정리
+<!---TODO: Update for sandbox?--->
 
 이 Azure Functions 응용 프로그램의 작업이 완료되면 Azure Portal에서 자습서 중에 만들어진 모든 리소스를 삭제할 수 있습니다.
 
@@ -25,6 +26,7 @@ Xamarin 및 Azure 함수와 Twilio 바인딩을 사용하여 플랫폼 간 모�
 ## <a name="summary"></a>요약
 
 이 모듈에서는 다음을 수행하는 방법을 알아보았습니다.
+
 - Xamarin.Essentials를 사용하는 플랫폼 간 Xamarin.Forms 앱을 만듭니다.
 - ViewModel에서 응용 프로그램 논리와 함께 XAML을 사용하여 플랫폼 간 UI를 만들고 ViewModel의 속성을 UI에 바인딩합니다.
 - 사용자 위치를 검색합니다.

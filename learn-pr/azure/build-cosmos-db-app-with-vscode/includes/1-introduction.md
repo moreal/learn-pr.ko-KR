@@ -8,9 +8,9 @@ Visual Studio에는 편리한 Azure Cosmos DB용 확장이 있으므로 이전 �
 
 이 모듈에서는 다음을 수행합니다.  
 
-- Azure Cosmos DB에 데이터를 저장하고 쿼리하는 응용 프로그램을 만듭니다.
-- Visual Studio Code의 통합 터미널을 사용하여 콘솔 응용 프로그램을 빠르게 만듭니다.
-- Visual Studio Code용 Azure Cosmos DB 확장을 활용하여 Azure Cosmos DB 기능을 추가합니다.
+- Azure Cosmos DB에 데이터를 저장하고 쿼리하는 응용 프로그램 만들기
+- Visual Studio Code의 통합 터미널을 사용하여 콘솔 응용 프로그램 빠르게 만들기
+- Visual Studio Code용 Azure Cosmos DB 확장을 활용하여 Azure Cosmos DB 기능 추가
 
 ## <a name="prerequisites"></a>필수 구성 요소
 

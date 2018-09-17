@@ -4,12 +4,16 @@ metadata:
   title: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용
   description: 빅 데이터 처리에서 얻은 인사이트는 매우 유용할 수 있습니다. 사기 금융 거래를 발견하고, 장치 원격 분석에서 실시간 경고를 받을 수 있습니다. 그러나 잠재적으로 초당 수백만 개의 데이터 메시지를 처리하는 안정적인 수단이 없다면 해당 응용 프로그램의 가치가 심각하게 훼손될 수 있습니다. 이 모듈에서는 Azure Event Hubs를 사용하여 대용량 데이터 스트림을 안정적으로 처리하는 방법을 보여 줍니다. 허브를 통해 메시지를 보내거나 받기 위해 새 허브 및 코드 응용 프로그램을 차례로 만들고 구성합니다.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 4fc11f61dbc7fb9149d102c6b0ed710d188c5b5a
-  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2c6e32e3526bd267ff6867269f9ef777ef36d5f4
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43854016"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233070"
 title: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용
 summary: 보내고 받는 응용 프로그램을 Event Hubs와 연결하므로 데이터 손실 없이 극히 높은 부하를 처리할 수 있습니다.
 abstract: >
@@ -18,9 +22,9 @@ abstract: >
     - 이벤트 허브를 통해 메시지를 보내거나 받도록 응용 프로그램 구성
     - Azure Portal을 사용하여 이벤트 허브 성능 평가
 prerequisites: >
-  - Azure Portal을 사용하여 리소스를 만들고 관리
+  - Azure Portal을 사용하여 리소스를 만들고 관리하는 환경
 
-  - Azure CLI 2.0을 사용하여 Azure에 로그인하고 리소스 만들기
+  - Azure CLI 2.0을 사용하여 Azure에 로그인하고 리소스를 만드는 환경
 
   - 스트리밍 및 이벤트 처리와 같은 기본 빅 데이터 개념에 대한 지식
 iconUrl: http://via.placeholder.com/120x120
