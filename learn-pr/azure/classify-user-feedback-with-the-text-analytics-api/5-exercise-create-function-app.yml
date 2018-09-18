@@ -1,16 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.5-exercise-create-function-app
 metadata:
-  title: <span data-ttu-id="eb4d1-101">연습 - 포털에서 비즈니스 논리를 호스트하는 함수 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="eb4d1-101">Exercise - Create a function app from the portal to host our business logic</span></span>
-  description: <span data-ttu-id="eb4d1-102">이 실습 랩에서는 함수 앱 및 논리를 호스트하는 함수를 만들어서 피드백 정렬 솔루션을 준비하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="eb4d1-102">In this hands-on lab, we'll prepare our feedback sorter solution by creating a function app and a function to host our logic.</span></span>
-  displayType: two-column
-  interactive: azure-portal
-  ms.openlocfilehash: 44e7cd1474687aaa5c257c2d97bb26e40b07e412
-  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  title: <span data-ttu-id="f0622-101">연습 - 포털에서 비즈니스 논리를 호스트하는 함수 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="f0622-101">Exercise - Create a function app from the portal to host our business logic</span></span>
+  description: <span data-ttu-id="f0622-102">이 실습 랩에서는 함수 앱 및 논리를 호스트하는 함수를 만들어서 피드백 정렬 솔루션을 준비하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="f0622-102">In this hands-on lab, we'll prepare our feedback sorter solution by creating a function app and a function to host our logic.</span></span>
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d329415777ba305a83bb22dcba994a75712d1e0d
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44257990"
-title: <span data-ttu-id="eb4d1-103">연습 - 포털에서 비즈니스 논리를 호스트하는 함수 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="eb4d1-103">Exercise - Create a function app from the portal to host our business logic</span></span>
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45778511"
+title: <span data-ttu-id="f0622-103">연습 - 포털에서 비즈니스 논리를 호스트하는 함수 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="f0622-103">Exercise - Create a function app from the portal to host our business logic</span></span>
+azureSandbox: true
 durationInMinutes: 7
 content: '[!include[](includes/5-exercise-create-function-app.md)]'
