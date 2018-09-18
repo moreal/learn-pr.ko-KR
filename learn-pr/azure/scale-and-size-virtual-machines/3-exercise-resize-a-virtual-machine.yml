@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
+title: <span data-ttu-id="78144-101">연습 - 가상 머신 크기 조정</span><span class="sxs-lookup"><span data-stu-id="78144-101">Exercise - Resize a virtual machine</span></span>
+metadata:
+  title: <span data-ttu-id="78144-102">연습 - 가상 머신 크기 조정</span><span class="sxs-lookup"><span data-stu-id="78144-102">Exercise - Resize a virtual machine</span></span>
+  description: <span data-ttu-id="78144-103">연습 - 가상 머신 크기 조정</span><span class="sxs-lookup"><span data-stu-id="78144-103">Exercise - Resize a virtual machine</span></span>
+  ms.openlocfilehash: 75822b45f092b37f2038b254350a013a1eab6987
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256006"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-resize-a-virtual-machine.md)]'

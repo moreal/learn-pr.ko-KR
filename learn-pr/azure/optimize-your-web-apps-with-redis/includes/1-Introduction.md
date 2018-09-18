@@ -1,0 +1,17 @@
+<span data-ttu-id="d1b6e-101">여러분이 전문 스포츠 통계를 추적하고 결과를 쿼리하는 API를 제공하는 회사에서 일한다고 가정하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-101">You work at a company that tracks professional sports statistics and provides an API to query results.</span></span> <span data-ttu-id="d1b6e-102">이 회사는 스포츠 팬들이 실시간/과거 게임 및 기록을 추적하고 검토하는 데 도움을 줍니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-102">It helps fans track and review games and scores, both live and historical.</span></span> <span data-ttu-id="d1b6e-103">사용자는 "John Smith가 왼손 투수를 상대로 홈런을 친 횟수는 몇 번인가요?"와 같은 자연어 검색을 사용하여 팀 통계를 요청할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-103">Users can also request team statistics using a natural language search, such as, "How many times has John Smith hit a home run against a left-handed pitcher?"</span></span>
+
+<span data-ttu-id="d1b6e-104">플레이오프 기간과 같은 최대 수요 기간에는 백 엔드 서비스 용량이 수요를 맞추지 못하므로 서비스 응답 시간이 느려집니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-104">During times of peak demand, such as during playoffs, response time of your service slows down because the back-end service doesn't have the capacity to meet demand.</span></span> <span data-ttu-id="d1b6e-105">여러분은 사용자를 위해 성능을 향상하고 백 엔드 및 데이터 저장소 서비스의 워크로드를 줄이려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-105">You want to improve performance for your users and reduce the workload on your back-end and data storage services.</span></span> <span data-ttu-id="d1b6e-106">메트릭에 따르면 반환된 데이터의 50%에서 80%가 읽기 전용이거나 최근에 요청된 값입니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-106">Your metrics show that 50% to 80% of the data returned is for read-only or recently requested values.</span></span> <span data-ttu-id="d1b6e-107">일반적으로 사용되는 데이터의 캐시를 구현하면 성능을 향상하고 대기 시간을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-107">Implementing a cache of commonly used data could improve performance and reduce latency.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="d1b6e-108">학습 목표</span><span class="sxs-lookup"><span data-stu-id="d1b6e-108">Learning objectives</span></span>
+
+<span data-ttu-id="d1b6e-109">이 모듈에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="d1b6e-110">Redis 캐시란 무엇이며 비즈니스 요구 사항에 사용하려면 어떻게 해야 하는지 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="d1b6e-110">Describe what a Redis cache is and how you can use it for your business needs</span></span>
+- <span data-ttu-id="d1b6e-111">Redis 캐시를 사용하기 위한 디자인 및 계획 만들기</span><span class="sxs-lookup"><span data-stu-id="d1b6e-111">Create a design and plan to use a Redis cache</span></span>
+- <span data-ttu-id="d1b6e-112">Azure에서 Redis 캐시 프로비전</span><span class="sxs-lookup"><span data-stu-id="d1b6e-112">Provision a Redis cache in Azure</span></span>
+- <span data-ttu-id="d1b6e-113">캐시에 응용 프로그램 연결</span><span class="sxs-lookup"><span data-stu-id="d1b6e-113">Connect an application to the cache</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="d1b6e-114">필수 조건</span><span class="sxs-lookup"><span data-stu-id="d1b6e-114">Prerequisites</span></span>
+
+- <span data-ttu-id="d1b6e-115">앱 개발 경험</span><span class="sxs-lookup"><span data-stu-id="d1b6e-115">Experience with app development</span></span>
+- <span data-ttu-id="d1b6e-116">앱에서 데이터를 사용해 본 경험</span><span class="sxs-lookup"><span data-stu-id="d1b6e-116">Experience using data in apps</span></span>

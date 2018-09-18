@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.classify-user-feedback-with-the-text-analytics-api
+metadata:
+  title: 텍스트 분석 API를 사용하여 텍스트에서 감정 검색
+  description: 텍스트 분석 API를 사용하여 사용자 피드백에서 감정을 검색하는 방법을 알아봅니다.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: c4d249788ef0276b321c988b7ed445199785d525
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258527"
+title: 텍스트 분석 API를 사용하여 텍스트에서 감정 검색
+summary: 고객이 피드백을 보내면서 제품에 대해 진짜로 하는 말을 이해하는 것은 비즈니스에서 매우 중요합니다. Azure Functions 및 텍스트 분석 API의 인텔리전스를 사용하여 텍스트 메시지에서 감정을 검색하는 솔루션을 만들겠습니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - 텍스트 분석 API에 대해 알아보기
+
+  - 텍스트 분석 API에 등록
+
+  - Azure Functions로 텍스트 분석 API를 사용하여 텍스트 피드백을 정렬하는 서비스를 디자인하고 빌드
+
+  - 바인딩의 도움을 받아 함수 앱의 Azure Queue 저장소 메시지를 읽고 쓰기
+cardDescription: 텍스트 분석 API를 사용하여 텍스트에서 감정 검색
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-cosmos-db
+- azure-cloud-shell
+- azure-functions
+- azure-portal
+- azure-storage
+units:
+- learn.classify-user-feedback-with-the-text-analytics-api.1-introduction
+- learn.classify-user-feedback-with-the-text-analytics-api.2-an-introduction-to-text-analytics
+- learn.classify-user-feedback-with-the-text-analytics-api.3-exercise-call-the-text-analytics-api-using-the-api-testing-console
+- learn.classify-user-feedback-with-the-text-analytics-api.4-design-a-feedback-sorter
+- learn.classify-user-feedback-with-the-text-analytics-api.5-exercise-create-function-app
+- learn.classify-user-feedback-with-the-text-analytics-api.6-exercise-discover-sentiment
+- learn.classify-user-feedback-with-the-text-analytics-api.7-exercise-sort-feedback
+- learn.classify-user-feedback-with-the-text-analytics-api.8-summary
+achievement: learn.placeholder.badge
