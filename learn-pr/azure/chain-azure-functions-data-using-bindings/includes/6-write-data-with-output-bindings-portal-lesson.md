@@ -1,54 +1,41 @@
-Similar to input bindings, there are multiple types of output bindings.
+입력 바인딩과 마찬가지로 출력 바인딩에도 여러 형식이 있습니다.
 
-There are multiple types of output bindings, however not all types support both input and output. You'll use them anytime you want to send or store data. Here, we'll look at the types that support output bindings and when to use them.
+여러 가지 출력 바인딩 형식이 있으나 모든 형식이 입력과 출력을 모두 지원하는 것은 아닙니다. 데이터를 보내거나 저장하고자 할 때마다 사용하게 됩니다. 여기에서는 출력 바인딩을 지원하는 형식과 사용 시기에 대해 살펴봅니다.
 
-## Output binding types
+## <a name="output-binding-types"></a>출력 바인딩 형식
 
-- **Blob Storage**
-   You can use the blob output binding to write blobs.
+- **Blob Storage** Blob 출력 바인딩을 사용하여 Blob를 작성하는 데 사용할 수 있습니다.
 
-- **Cosmos DB**
-    The Azure Cosmos DB output binding lets you write a new document to an Azure Cosmos DB database using the SQL API.
+- **Cosmos DB** Azure Cosmos DB 출력 바인딩을 사용하면 Azure Cosmos DB 데이터베이스에 SQL API를 사용하여 새 문서를 작성할 수 있습니다.
 
-- **Event Hubs**
-    Use the Event Hubs output binding to write events to an event stream. You must have send permission to an event hub to write events to it.
+- **Event Hubs** Event Hubs 출력 바인딩을 사용하여 이벤트 스트림에 이벤트를 씁니다. 이벤트를 쓰려면 이벤트 허브에 대한 보내기 사용 권한이 있어야 합니다.
 
-- **HTTP**
-    Use the HTTP output binding to respond to the HTTP request sender. This binding requires an HTTP trigger and allows you to customize the response associated with the trigger's request.
+- **HTTP** HTTP 요청 발신기(sender)에 응답하려면 HTTP 출력 바인딩을 사용합니다. 이 바인딩에는 HTTP 트리거가 필요하며 트리거 요청과 관련된 응답을 사용자 지정할 수 있습니다.
 
-- **Microsoft Graph**
-    Microsoft Graph output bindings allow you to write to files in OneDrive, modify Excel data, and send email through Outlook.
+- **Microsoft Graph** Microsoft Graph 출력 바인딩을 통해 OneDrive에 파일을 쓰고, Excel 데이터를 수정하며, Outlook을 통해 이메일을 보낼 수 있습니다.
 
-- **Mobile Apps**
-    The Mobile Apps output binding writes a new record to a Mobile Apps table.
+- **Mobile Apps** Mobile Apps 출력 바인딩을 사용하여 Mobile Apps 테이블에 새 레코드를 작성합니다.
 
-- **Notification Hubs**
-    You can send push notifications with Notification Hubs output bindings.
+- **Notification Hubs** Notification Hubs 출력 바인딩을 사용하여 푸시 알림을 보낼 수 있습니다.
 
-- **Queue Storage**
-    Use the Azure Queue storage output binding to write messages to a queue.
+- **Queue Storage** Azure Queue Storage 출력 바인딩을 사용하여 메시지를 큐에 씁니다.
 
-- **Send Grid**
-    Send emails using SendGrid bindings.
+- **Send Grid** SendGrid 바인딩을 사용하여 이메일을 보냅니다.
 
-- **Service Bus**
-    Use Azure Service Bus output binding to send queue or topic messages.
+- **Service Bus** Azure Service Bus 출력 바인딩을 사용하여 큐 또는 토픽 메시지를 보냅니다.
 
-- **Table storage**
-    Use an Azure Table storage output binding to write to a table in an Azure Storage account.
+- **Table storage** Azure Table Storage 출력 바인딩을 사용하여 Azure Storage 계정에서 테이블에 쓸 수 있습니다.
 
-- **Twilio**
-    Send text messages with Twilio.
+- **Twilio** Twilio를 사용하여 문자 메시지를 보냅니다.
 
-- **Webhooks**
-    Use the HTTP output binding to respond to the HTTP request sender. This binding requires an HTTP trigger and allows you to customize the response associated with the trigger's request.
+- **Webhooks** HTTP 요청 발신기(sender)에 응답하려면 HTTP 출력 바인딩을 사용합니다. 이 바인딩에는 HTTP 트리거가 필요하며 트리거 요청과 관련된 응답을 사용자 지정할 수 있습니다.
 
 
-## How to create an output binding?
-In order to define a binding an input, you must define the `direction` as `out`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)
+## <a name="how-to-create-an-output-binding"></a>출력 바인딩을 만드는 방법
+입력 바인딩을 정의하려면 `direction`을 `out`으로 정의해야 합니다.
+각 바인딩 유형에 대한 매개 변수는 다를 수 있습니다. 이것은 [Microsoft설명서](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)에서 자세히 설명합니다.
 
-## Combining input and output bindings 
-it's possible to apply multiple bindings to a single function. This allows you to define both input and output bindings.
+## <a name="combining-input-and-output-bindings"></a>입력 및 출력 바인딩 결합 
+단일 함수에 여러 바인딩을 적용할 수 있습니다. 이렇게 하면 입력과 출력 바인딩을 모두 정의할 수 있습니다.
 
-And the input and output can even be the same binding type .....
+입력과 출력이 같은 바인딩 형식을 가질 수도 있습니다.

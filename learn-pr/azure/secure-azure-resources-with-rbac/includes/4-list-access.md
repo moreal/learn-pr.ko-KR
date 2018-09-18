@@ -2,7 +2,9 @@
 
 ## <a name="list-role-assignments-for-yourself"></a>사용자에 대한 역할 할당 목록
 
-현재 사용자에게 할당된 역할을 확인하려면 다음 단계를 수행합니다.
+현재 사용자에게 할당된 역할을 확인하려면 다음 단계를 따릅니다.
+
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true)로 이동합니다.
 
 1. 탐색 목록에서 **Azure Active Directory**를 클릭합니다.
 

@@ -2,25 +2,19 @@
 
 ## <a name="create-a-console-app"></a>콘솔 앱 만들기
 
-1. 작업할 폴더를 만듭니다.
-
-1. 명령 프롬프트를 열고 폴더로 이동합니다.
-
-1. 새 .NET Core 콘솔 응용 프로그램 만들기
-
-```bash
-dotnet new console 
-```
-
 1. Visual Studio Code를 연 다음, **파일** > **폴더 열기**를 선택합니다.
 
-1. 새 C# 프로젝트가 있기를 원하는 새 폴더를 만들고 **폴더 선택**을 클릭합니다.
+1. 새 C# 프로젝트를 저장할 새 폴더를 만들고 **폴더 선택**을 클릭합니다.
 
-1. 파일 메뉴를 클릭하고 비어있는 경우 자동 저장을 확인하여 파일 자동 저장을 사용할 수 있는지 확인합니다.
+1. [파일] 메뉴를 클릭하고 비어있는 경우 **자동 저장**을 확인하여 파일 자동 저장을 사용할 수 있는지 확인합니다.
 
-1. 주 메뉴에서 **보기** > **통합 터미널**을 선택하여 Visual Studio Code의 통합 터미널을 엽니다.
+1. 주 메뉴에서 **보기** > **터미널**을 선택하여 Visual Studio Code의 통합 터미널을 엽니다.
 
-1. 터미널 창에 **dotnet new console**을 입력합니다.
+1. 터미널 창에 다음 명령을 입력합니다.
+
+    ```
+    dotnet new console
+    ```
 
     이 명령은 이미 작성된 간단한 “Hello World” 프로그램과 이름이 **learning-module.csproj**인 C# 프로젝트 파일을 함께 사용하여 폴더에 **Program.cs** 파일을 만듭니다.
 
@@ -38,7 +32,7 @@ dotnet new console
 
     지시에 따라 웹 브라우저에 제공된, Visual Studio Code 세션을 인증하는 코드를 복사하여 붙여넣습니다.
 
-1. 왼쪽 메뉴에서 **탐색기** 아이콘(![탐색기 아이콘](../media/2-setup/visual-studio-code-explorer-icon.png))을 클릭하고 **Azure Cosmos DB**를 확장합니다.
+1. 왼쪽 메뉴에서 ![Azure 아이콘](../media/2-setup/visual-studio-code-explorer-icon.png) **Azure** 아이콘을 클릭하고 **Azure Cosmos DB**를 확장합니다.
 
 1. Azure 구독 > Azure Cosmos DB 계정을 확장합니다. 이전 모듈에서 **Products** 데이터베이스와 **Clothing** 컬렉션을 만든 경우 확장하면 해당 항목이 표시됩니다.
 
@@ -46,11 +40,11 @@ dotnet new console
 
 1. 이제 고객을 위한 새 데이터베이스와 컬렉션을 만들어 보겠습니다.
 
-    탐색기 창에서 계정을 마우스 오른쪽 단추로 클릭하고 **데이터베이스 만들기**를 클릭합니다. 
+    Azure 창에서 계정을 마우스 오른쪽 단추로 클릭하고 **데이터베이스 만들기**를 클릭합니다.
     
     화면 맨 위에 있는 텍스트 상자에서 데이터베이스 이름에 **Users** > **Enter 키** > 컬렉션 이름에 **WebCustomers** > **Enter 키** > 파티션 키에 **userId** > **Enter 키** > 초기 처리 용량에 **1000** > **Enter 키**를 입력합니다.
 
-    ![Azure Cosmos DB Visual Studio Code 확장](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) <!--Retake on fresh machine without the other subscriptions showing-->
+    ![Azure Cosmos DB Visual Studio Code 확장](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
 
     새 Users 데이터베이스와 WebCustomers 컬렉션이 탐색기 창에 표시됩니다.
 
@@ -95,8 +89,6 @@ dotnet new console
     ```
 
 1. learning-module 계정을 마우스 오른쪽 단추로 클릭하고 **연결 문자열 복사**를 클릭하여 Azure Cosmos DB 확장에서 연결 문자열을 복사합니다.
-
-    ![Azure Cosmos DB Visual Studio Code 확장](../media/2-setup/vs-code-copy-connection-string.gif) 
 
 1. 연결 문자열을 텍스트 파일에 붙여넣고 텍스트 파일의 **AccountEndpoint** 부분을 App.config의 **accountEndpoint**로 복사합니다.
 

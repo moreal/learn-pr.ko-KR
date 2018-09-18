@@ -2,7 +2,7 @@ Azure에서 개발자, 엔지니어링, 마케팅 팀의 리소스 액세스 권
 
 ## <a name="what-is-rbac"></a>RBAC란?
 
-RBAC(역할 기반 액세스 제어)는 Azure 리소스에 대한 액세스를 세밀하게 관리할 수 있는 [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) 기반의 권한 부여 시스템입니다. Azure에는 많은 리소스가 있지만 몇 가지만 예를 들면 가상 머신, 웹 사이트, 네트워크, 저장소가 있습니다.
+RBAC(역할 기반 액세스 제어)는 Azure에서 리소스의 세밀한 액세스를 관리하는 Azure Resource Manager 기반의 권한 부여 시스템입니다. Azure에는 많은 리소스가 있지만 몇 가지만 예를 들면 가상 머신, 웹 사이트, 네트워크, 저장소가 있습니다.
 
 ## <a name="what-can-i-do-with-rbac"></a>RBAC로 무엇을 할 수 있나요?
 
@@ -38,14 +38,14 @@ Azure Portal의 여러 영역에서는 ID 및 액세스 관리라고도 하는 *
 
 ![역할 정의](../media-draft/2-rbac-role-definition.png)
 
-Azure에는 사용 가능한 [기본 제공 역할](/azure/role-based-access-control/built-in-roles)이 여러 개 있습니다. 다음은 네 가지 기본 제공 역할입니다.
+Azure에는 사용할 수 있는 기본 제공 역할이 여러 개 있습니다. 네 가지 기본 제공 역할은 다음과 같습니다.
 
 - 소유자 - 액세스 권한을 다른 사용자에게 위임할 수 있는 권한을 포함하여 모든 리소스에 대한 전체 액세스 권한을 보유합니다.
 - 기여자 - 모든 유형의 Azure 리소스를 만들고 관리할 수 있지만 다른 사용자에게 액세스 권한을 부여할 수 없습니다.
 - 읽기 권한자 - 기존 Azure 리소스를 볼 수 있습니다.
 - 사용자 액세스 관리자 - Azure 리소스에 대한 사용자 액세스를 관리할 수 있습니다.
 
-기본 제공 역할이 조직의 특정 요구 사항을 충족하지 않는 경우 [사용자 지정 역할](/azure/role-based-access-control/custom-roles)을 만들면 됩니다.
+기본 제공 역할이 조직의 특정 요구 사항을 충족하지 않는 경우 사용자 지정 역할을 만들면 됩니다.
 
 ### <a name="3-scope-where"></a>3. 범위(어디)
 

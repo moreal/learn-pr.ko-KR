@@ -10,7 +10,7 @@
 
 1. https://myapps.microsoft.com으로 이동합니다.
 
-1. 2단원에서 만든 사용자로 로그인합니다.
+1. 3단원에서 만든 사용자로 로그인합니다.
 
    * Multi-Factor Authentication을 요구하지 않고 포털에 로그인됩니다.
 

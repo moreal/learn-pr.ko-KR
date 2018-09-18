@@ -6,10 +6,9 @@
 
 ## <a name="opening-ports-in-azure-vms"></a>Azure VM에서 포트 열기
 
-<!-- TODO: Azure portal is inconsistent here in applying the NSG.
-By default, new VMs are locked down. 
+기본적으로 새 VM은 잠겨 있습니다. 
 
-Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g. other resources on the same local network), and from Azure's Load Balancer (probe checks). -->
+앱에서는 송신 요청을 할 수 있지만 허용된 인바운드 트래픽만 가상 네트워크(예: 동일한 로컬 네트워크의 다른 리소스) 및 Azure Load Balancer(프로브 검사)에서 수신됩니다.
 
 FTP를 지원하도록 구성을 조정하는 두 가지 단계가 있습니다. 새 VM을 만들 때 몇 가지 공통 포트(RDP, HTTP, HTTPS 및 SSH)를 열 수 있습니다. 그러나 방화벽에 다른 변경이 필요하면 직접 변경해야 합니다.
 

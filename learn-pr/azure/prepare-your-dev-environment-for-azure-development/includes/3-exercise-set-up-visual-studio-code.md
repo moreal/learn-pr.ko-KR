@@ -18,13 +18,13 @@
 
 1. 다운로드한 압축 파일을 두 번 클릭하여 콘텐츠를 확장합니다.
 
-1. Visual Studio Code.app을 응용 프로그램 폴더로 끌어 실행 패드에서 사용할 수 있도록 합니다.
+1. Visual Studio Code.app을 응용 프로그램 폴더로 끌어와 실행 패드에서 사용할 수 있도록 합니다.
 
-1. 아이콘을 마우스 오른쪽 단추로 클릭하고 [옵션] > [Keep in Dock]\(도크에 유지)를 선택하여 VS Code를 도크에 추가합니다.
+1. 아이콘을 마우스 오른쪽 단추로 클릭하고 [옵션] > [도크에 유지]를 선택하여 VS Code를 도크에 추가합니다.
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux - Debian 및 Ubuntu
 
-1. 그래픽 소프트웨어 센터(사용 가능한 경우) 또는 명령줄(다운로드한 .deb 파일 이름으로 `<file>`을 바꿈)을 통해 [.deb 패키지(64비트)](https://go.microsoft.com/fwlink/?LinkID=760868)를 다운로드하여 설치합니다.
+1. 그래픽 소프트웨어 센터(가능한 경우) 또는 명령줄(`<file>`을 다운로드한 .deb 파일 이름으로 바꿈)을 통해 [.deb 패키지(64비트)](https://go.microsoft.com/fwlink/?LinkID=760868)를 다운로드하여 설치합니다.
 
     ```bash
     sudo dpkg -i <file>.deb
@@ -80,4 +80,4 @@ VS Code를 설치했으면 VS Code를 엽니다.
 
     ![검색 결과에 Azure App Service 확장이 강조되어 있는 확장 탭을 보여 주는 VS Code 스크린샷입니다.](../media/3-install-azure-extension.png)
 
-확장이 설치됩니다. Azure 구독에 연결하고 웹, 모바일 또는 API 앱용으로 개발하여 Azure App Service에 배포할 준비도 완료됩니다.
+이렇게 하면 확장이 설치됩니다. Azure 구독에 연결하고 Azure App Service에 웹, 모바일 또는 API 앱을 배포할 준비가 되었습니다.

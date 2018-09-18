@@ -1,81 +1,81 @@
-Imagine we want to create a simple bookmark lookup service. Our service is readonly initially. If a user wants to find an entry, they send a request with the ID of the entry and we return the URL. The following diagram explains the flow.
+간단한 책갈피 조회 서비스를 만들려고 한다고 가정합니다. 서비스는 기본적으로 읽기 전용입니다. 사용자가 항목을 찾으려는 경우 항목의 ID를 통해 요청을 보내고 URL을 반환합니다. 다음 다이어그램은 이 흐름을 설명합니다.
 
-![Flow diagram showing process of finding a bookmark in our Cosmos DB back-end](../media-draft/find-bookmark-flow-small.png)
+![Cosmos DB 백 엔드에서 책갈피를 찾는 프로세스를 보여 주는 흐름 다이어그램](../media-draft/find-bookmark-flow-small.png)
 
-When a user sends us a request with some text, we try to find an entry in our back-end database that contains this text as a key or Id. We return a result that indicates whether we found the entry or not.
+사용자가 어떤 텍스트를 통해 요청을 보내면 백 엔드 데이터베이스에서 이 텍스트가 키나 ID로 포함된 항목을 찾습니다. 항목을 찾았는지 여부를 표시하는 결과를 반환합니다.
 
-We need to store data somewhere. In this flowchart, our data store is shown as an Azure Cosmos DB. But, how do we connect to that database from a function and read data? In the world of functions, we configure an *input binding* for that job.  Configuring a binding through the Azure Portal is straightforward. As we'll see shortly, You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+특정 위치에 데이터를 저장해야 합니다. 이 순서도에서 데이터 저장소는 Azure Cosmos DB로 표시됩니다. 하지만 어떻게 함수에서 해당 데이터베이스에 연결하고 데이터를 읽을까요? 함수 부분에서는 이 작업을 위해 *입력 바인딩*을 구성합니다.  Azure Portal을 통해 간단하게 바인딩을 구성합니다. 앞으로 살펴보겠지만 저장소 연결 열기 같은 작업에 코드를 작성할 필요가 없습니다. Azure Functions 런타임 및 바인딩이 이러한 작업을 대신하게 됩니다.
 
 > [!IMPORTANT]
-> We're going to refer to some resources (database, function, bindings, code) that we create here in our next lab. Please keep these resources around at least until you finish this course.
+> 여기서 만드는 일부 리소스(데이터베이스, 함수, 바인딩, 코드)를 다음 실습에서 참조하게 됩니다. 이 코스를 마칠 때까지는 이 리소스를 보관합니다.
 
-As was the case for the preceding module, we'll do everything in the Azure portal.
+이전 모듈과 마찬가지로 Azure Portal에서 모든 작업을 수행합니다.
 
-## Create an Azure Cosmos DB 
+## <a name="create-an-azure-cosmos-db"></a>Azure Cosmos DB 만들기 
 
-Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+Azure 계정을 사용하여 [https://portal.azure.com](https://portal.azure.com?azure-portal=true)에서 Azure Portal에 로그인합니다.
 
-### Create a database account
+### <a name="create-a-database-account"></a>데이터베이스 계정 만들기
 
-A database account is a container for managing one of more databases. Before we can create a database, we need to create a database account.
+데이터베이스 계정은 많은 데이터베이스 중 하나를 관리하기 위한 컨테이너입니다. 데이터베이스를 만들려면 먼저 데이터베이스 계정을 만들어야 합니다.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Databases** > **Azure Cosmos DB**.
+1. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기** 단추를 선택한 다음, **데이터베이스** > **Azure Cosmos DB**를 선택합니다.
 
-2. In the **New account** page, enter the settings for the new Azure Cosmos DB account.
+2. **새 계정** 페이지에서 새 Azure Cosmos DB 계정에 대한 설정을 입력합니다.
  
-    Setting|Value|Description
+    설정|값|설명
     ---|---|---
-    ID|*Enter a unique name*|Enter a unique name to identify this Azure Cosmos DB account. Because *documents.azure.com* is appended to the ID that you provide to create your URI, use a unique but identifiable ID.<br><br>The ID can contain only lowercase letters, numbers, and the hyphen (-) character, and it must contain 3 to 50 characters.
-    API|SQL|The API determines the type of account to create. Azure Cosmos DB provides five APIs to suit the needs of your application: SQL (document database), Gremlin (graph database), MongoDB (document database), Azure Table, and Cassandra, each which currently require a separate account. <br><br>Select **SQL**. At this time, the Azure Cosmos DB trigger, input bindings, and output bindings only work with SQL API and Graph API accounts. 
-    Subscription|*Your subscription*|Select Azure subscription that you want to use for this Azure Cosmos DB account.
-    Resource Group|Use existing<br><br>*Then enter [!INCLUDE [resource-group-name](./rg-name.md)], the resource group we created in an earlier unit for this module's resources.*| We're selecting **Use existing**, because we want to group all resources created for this module under the same resource group.
-    Location|Auto-filled once **Use existing** is set. | Select the geographic location in which to host your Azure Cosmos DB account. Use the location that's closest to your users to give them the fastest access to the data. In this lab,  the location is pre-determined for us as the location set for the existing resource group.
+    ID|*고유한 이름 입력*|이 Azure Cosmos DB 계정을 식별하는 고유한 이름을 입력합니다. URI를 만들기 위해 제공하는 ID에 *documents.azure.com*이 추가되므로 식별할 수 있는 고유한 ID를 사용합니다.<br><br>ID는 소문자, 숫자 및 하이픈(-) 문자만 포함할 수 있으며, 3-50자를 포함해야 합니다.
+    API|SQL|API가 만들 계정 형식을 결정합니다. Azure Cosmos DB는 응용 프로그램의 요구 사항을 충족하기 위해 SQL(문서 데이터베이스), Gremlin(그래프 데이터베이스), MongoDB(문서 데이터베이스), Azure Table 및 Cassandra라는 다섯 가지 API를 제공합니다. 현재 각각에는 별도의 계정이 필요합니다. <br><br>**SQL**을 선택합니다. 이때 Azure Cosmos DB 트리거, 입력 바인딩 및 출력 바인딩은 SQL API 및 Graph API 계정에서만 작동합니다. 
+    구독|*사용자의 구독*|이 Azure Cosmos DB 계정에 사용할 Azure 구독을 선택합니다.
+    리소스 그룹|기존 항목 사용<br><br>*이 경우 이 모듈의 리소스에 대해 이전 단위에서 만든 리소스 그룹인 [!INCLUDE [resource-group-name](./rg-name.md)]를 입력합니다.*| 이 모듈에 대해 만든 모든 리소스를 같은 리소스 그룹에 묶으려 하므로 **기존 항목 사용**을 선택하겠습니다.
+    위치|**기존 항목 사용**을 설정한 후에 자동으로 채워집니다. | Azure Cosmos DB 계정을 호스트할 지리적 위치를 선택합니다. 데이터에 가장 빨리 액세스할 수 있도록 사용자와 가장 가까운 위치를 사용합니다. 이 실습에서는 위치가 기존 리소스 그룹에 대한 위치 설정으로 미리 결정되었습니다.
     
-Leave all other fields in the **New account** blade at their default values because we're using them in this module.  That includes **Enable geo-redundancy**, **Enable Multi Master**, **Virtual networks**.
+**새 계정** 블레이드의 모든 다른 필드는 이 모듈에서 사용하므로 기본값 상태로 유지합니다.  여기에는 **지리적 중복 사용**, **다중 마스터 사용**, **가상 네트워크**가 해당합니다.
 
-3. Select **Create** to provision and deploy the database account.
+3. **만들기**를 선택하여 데이터베이스 계정을 프로비전하고 배포합니다.
 
-4. Deployment can take some time. So, wait for a **Deployment succeeded** message similar to the following message before proceeding.
+4. 배포에 다소 시간이 걸릴 수 있습니다. 따라서 진행하기 전에 다음 메시지와 유사한 **배포 성공** 메시지를 기다립니다.
 
 <!-- TODO figure out how to center these image -->
 
-![Notification that database account deployment has completed](../media-draft/db-deploy-success.PNG)
+![데이터베이스 계정 배포가 완료되었다는 알림](../media-draft/db-deploy-success.PNG)
 
-5. Congratulations! You've created and deployed your database account!
+5. 축하합니다! 데이터베이스 계정을 만들고 배포했습니다.
 
-6. Select **Go to resource** to navigate to the database account in the portal. We'll add a collection to the database next.
+6. **리소스로 이동**을 선택하여 포털에서 데이터베이스 계정으로 이동합니다. 그런 다음, 컬렉션을 데이터베이스에 추가하겠습니다.
 
-### Add a collection
+### <a name="add-a-collection"></a>컬렉션 추가
 
-In Cosmos DB, a *container* holds arbitrary user-generated entities. In a database the supports SQL API, a document-oriented API, a container is a *collection*. Inside a collection, we store documents. Hopefully all will be clearer once we create a collection and add some documents.
+Cosmos DB에서는 *컨테이너*가 임의의 사용자가 생성한 엔터티를 보유합니다. 문서 지향 API인 SQL API를 지원하는 데이터베이스에서 컨테이너는 *컬렉션*합니다. 컬렉션 안에 문서를 저장합니다. 컬렉션을 만들고 일부 문서를 추가하고 나면 더 확실하게 알 수 있을 것입니다.
 
-Let's use the Data Explorer tool in the Azure portal to create a database and collection.
+이제 Azure Portal에서 데이터 탐색기 도구를 사용하여 데이터베이스 및 컬렉션을 만들어 보겠습니다.
 
-1. Click **Data Explorer** > **New Collection**.
+1. **데이터 탐색기** > **새 컬렉션**을 클릭합니다.
 
-2. In the **Add collection**, enter the settings for the new collection.
+2. **컬렉션 추가**에서 새 컬렉션에 대한 설정을 입력합니다.
 
     >[!TIP]
-    >The **Add Collection** area is displayed on the far right, you may need to scroll right to see it.
+    >**컬렉션 추가** 영역이 맨 오른쪽에 표시되면 확인하기 위해 오른쪽으로 스크롤해야 합니다.
 
-    Setting|Suggested value|Description
+    설정|제안 값|설명
     ---|---|---
-    Database ID|[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]| Database names must contain from 1 through 255 characters, and they cannot contain /, \\, #, ?, or a trailing space.<br><br>You are free to enter whatever you want here, but we suggest [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] as the name for the new database, and that's what we'll refer to in this unit. |
-    Collection ID|[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]|Enter [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] as the name for our new collection. Collection IDs have the same character requirements as database names.
-    Storage capacity| Fixed (10 GB)|Use the default value of **Fixed (10 GB)**. This value is the storage capacity of the database.
-    Throughput|400 RU|Change the throughput to 400 request units per second (RU/s). Storage capacity must be set to **Fixed (10 GB)** in order to set throughput to 400 RU/s. If you want to reduce latency, you can scale up the throughput later.
+    데이터베이스 ID|[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]| 데이터베이스 이름은 1-255자여야 하며, /, \\, #,? 또는 후행 공백은 포함할 수 없습니다.<br><br>여기에 원하는 대로 입력할 수 있으나 새 데이터베이스 이름은 [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]를 추천합니다. 이것을 이 단위에서 참조할 것입니다. |
+    컬렉션 ID|[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]|새 컬렉션의 이름으로 [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]를 입력입니다. 컬렉션 ID에는 데이터베이스 이름과 동일한 문자 요구 사항이 적용됩니다.
+    Storage 용량| 고정(10GB)|기본값인 **고정(10GB)** 을 사용합니다. 이 값은 데이터베이스의 저장소 용량입니다.
+    처리량|400RU|처리량을 400RU/s(초당 요청 단위)로 변경합니다. 처리량을 400RU/s로 설정하려면 저장소 용량을 **고정(10GB)** 으로 설정해야 합니다. 대기 시간을 줄이면 나중에 처리량을 늘릴 수 있습니다.
     
-3. Click **OK**. The Data Explorer displays the new database and collection. So, now we have a database. Inside the database, we've defined a collection. Next we'll add some data, also known as documents.
+3. **확인**을 클릭합니다. 데이터 탐색기는 새 데이터베이스 및 컬렉션을 표시합니다. 이제 데이터베이스가 생겼습니다. 데이터베이스 내부에 컬렉션을 정의 했습니다. 이제 문서라고도 하는 일부 데이터를 추가해 보겠습니다.
 
-### Add test data
+### <a name="add-test-data"></a>테스트 데이터 추가
 
-We've defined a collection in our database called [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)], so what are we intending to store in the collection? Well, the idea is to store a URL and ID in each document, like a list of web page bookmarks. 
+[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]라는 데이터베이스에서 컬렉션을 정의했으므로 컬렉션에 저장하려는 것은 무엇일까요? 웹 페이지 책갈피 목록처럼 각 문서에 URL과 ID를 저장하고자 합니다. 
 
-We'll add data to our new collection using Data Explorer.
+데이터 탐색기를 사용하여 새 컬렉션에 데이터를 추가할 것입니다.
 
-1. In Data Explorer, the new database appears in the Collections pane. Expand the [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] database, expand the [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] collection, click **Documents**, and then click **New Document**.
+1. 데이터 탐색기에서 새 데이터베이스가 컬렉션 창에 나타납니다. [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] 데이터베이스를 확장하고 [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] 컬렉션을 확장하고 **문서**를 클릭한 후 **새 문서**를 클릭합니다.
   
-2. Now add a document to the collection with the following structure. Each document is schema-less JSON file.
+2. 이제 다음과 같은 구조를 사용하여 컬렉션에 문서를 추가 합니다. 각 문서는 스키마 없는 JSON 파일입니다.
 
      ```json
      {
@@ -84,134 +84,135 @@ We'll add data to our new collection using Data Explorer.
      }
      ```
 
-3. Once you've added the json to the **Documents** tab, click **Save**.
+3. **문서** 탭에 JSON을 추가했으면 **저장**을 클릭합니다.
 
-When the document is saved, notice that there are more properties than the ones we added. They all begin with an underline (_rid, _self, _etag, _attachments, _ts). These are properties generated by the system to help manage the document. The following table explains briefly what they are.
+문서를 저장할 때 추가한 것보다 더 많은 속성이 있는 것을 확인합니다. 이들은 모두 밑줄(_rid, _self, _etag, _attachments, _ts)로 시작합니다. 이러한 속성은 시스템이 문서 관리를 지원하기 위해 생성합니다. 다음 표에서 이에 대해 간략히 설명합니다.
 
 
-|Property  |Description  |
+|속성  |설명  |
 |---------|---------|
-|_rid     |     The resource ID (_rid) is a unique identifier that is also hierarchical per the resource stack on the resource model. It is used internally for placement and navigation of the document resource.    |
-|_self     |   The unique addressable URI for the resource.      |
-|_etag     |   Required for optimistic concurrency control.     |
-|_attachments     |  The addressable path for the attachments resource.       |
-|_ts     |    The timestamp of the last update of this resource.    |
+|_rid     |     리소스 ID(_rid)는 고유 식별자로, 역시 리소스 모델에서 리소스 스택에 따라 계층적입니다. 문서 리소스의 배치와 탐색을 위해 내부적으로 사용됩니다.    |
+|_self     |   리소스에 대한 고유의 주소 지정 가능 URI입니다.      |
+|_etag     |   낙관적 동시성 제어에 필요합니다.     |
+|_attachments     |  첨부 파일 리소스에 대한 주소 지정 가능 경로입니다.       |
+|_ts     |    이 리소스의 마지막 업데이트 타임 스탬프입니다.    |
  
 
-4. Let's add a few more documents into our collection. For each of the following, use the **New Document** command again to create an entry for each. Don't forget to click ##Save** to capture your additions.
+4. 이 컬렉션에 몇 가지 문서를 더 추가해 보겠습니다. 다음 각각에 대해 **New Document** 명령을 다시 사용하여 각각에 대한 항목을 만듭니다. 주소 캡처를 위해 ##Save**를 반드시 클릭합니다.
 
-|id  |value  |
+|id  |값  |
 |---------|---------|
-|portal     |  https://portal.azure.com       |
-|learn     |   https://docs.microsoft.com/learn |
-|marketplace     |    https://azuremarketplace.microsoft.com/marketplace/apps  |
-|blog | https://azure.microsoft.com/blog |
+|포털     |  https://portal.azure.com       |
+|학습
+     |   https://docs.microsoft.com/learn |
+|Marketplace     |    https://azuremarketplace.microsoft.com/marketplace/apps  |
+|블로그  | https://azure.microsoft.com/blog |
 
-When you've finished, your collection should look like the following screenshot.
+완료한 후 컬렉션이 다음 스크린샷과 유사해야 합니다.
 
-![Screenshot of the SQL API UI in the portal that shows the list of entries we added to our bookmarks collection.](../media-draft/db-bookmark-coll.PNG)
+![책갈피 컬렉션에 추가된 항목의 목록을 표시하는 포털의 SQL API UI 스크린샷](../media-draft/db-bookmark-coll.PNG)
 
-We now have a few entries in our bookmark collection. Our scenario will work as follows. If a request arrives with, for example, "id=docs", we'll look up that ID in our bookmarks collection and return the URL https://docs.microsoft.com/azure. Let's make an Azure function that looks up values in this collection.
+이제 책갈피 컬렉션에 몇 개 항목이 있습니다. 이 시나리오는 다음과 같이 작동합니다. 예를 들어"id=docs" 등과 함께 요청이 도착하면 책갈피 컬렉션에서 해당 ID를 조회하고 https://docs.microsoft.com/azure URL을 반환합니다. 이 컬렉션의 값을 조회하는 Azure 함수를 만들어 보겠습니다.
 
-## Create our function
+## <a name="create-our-function"></a>함수 만들기
 
-1. Navigate to the function app you created in the preceding unit.
+1. 앞의 단위에서 만든 함수 앱으로 이동합니다.
 
-2. Expand your function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+2. 함수 앱을 펼친 다음, 함수 컬렉션 위를 마우스로 가리키고, **함수** 옆에 있는 추가(**+**) 단추를 선택합니다. 이 작업은 함수 만들기 프로세스를 시작합니다. 다음 애니메이션에서는 이 작업을 보여 줍니다.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![사용자가 함수 메뉴 항목을 마우스로 가리키면 표시되는 더하기 기호의 애니메이션](../media-draft/func-app-plus-hover-small.gif)
 
-3. The page shows us the complete set of supported triggers. Select **HTTP trigger**, which is the first entry in the following screenshot.
+3. 이 페이지에는 지원되는 트리거의 전체 집합을 보여 줍니다. 다음 스크린샷의 첫 번째 항목인 **HTTP 트리거**를 선택합니다.
 
-![Screenshot of part of the trigger template selection UI, with the TTP trigger displayed first, in the top left of the image.](../media-draft/trigger-templates-small.PNG)
+![이미지의 왼쪽 위에 HTTP 트리거가 먼저 표시된 트리거 템플릿 선택 UI 일부의 스크린샷](../media-draft/trigger-templates-small.PNG)
 
-4. Fill out the **New Function** dialog that appears to the right  using the following values.
+4. 다음 값을 사용하여 오른쪽에 나타나는 **새 함수** 대화 상자를 작성합니다.
 
-|Field  |Value  |
+|필드  |값  |
 |---------|---------|
-|Language     | **JavaScript**        |
-|Name     |   [!INCLUDE [func-name-find](./func-name-find.md)]     |
-| Authorization level | **Function** |
+|언어     | **JavaScript**        |
+|이름     |   [!INCLUDE [func-name-find](./func-name-find.md)]     |
+| 권한 부여 수준 | **함수** |
 
-5. Select **Create** to create our function, which opens the index.js file in the code editor and displays a default implementation of the HTTP-triggered function.
+5. **만들기**를 선택하여 코드 편집기에서 index.js 파일을 열고 HTTP 트리거 함수의 기본 구현을 표시하는 함수를 만듭니다.
 
-You can verify what we have done so far by testing our new function as follows:
+다음과 같이 새 함수를 테스트하여 지금까지 수행한 것을 확인할 수 있습니다.
 
-1. In your new function, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy**.
+1. 새 함수에서 오른쪽 맨 위에 있는 **</> 함수 URL 가져오기**를 클릭하고 **기본값(함수 키)** 를 선택한 후 **복사**를 클릭합니다.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&name=<yourname>` to the end of this URL and press the `Enter` key on your keyboard to execute the request. You should see a response similar to the following response returned by the function displayed in your browser.  
+2. 복사한 함수 URL을 브라우저의 주소 표시줄에 붙여넣습니다. 이 URL의 끝에 `&name=<yourname>` 쿼리 문자열 값을 추가하고, 키보드에서 `Enter` 키를 눌러 요청을 실행합니다. 브라우저에 표시된 함수가 반환한 다음 응답과 유사한 응답이 표시됩니다.  
 
-Now that we have our bare-bones function working, let's turn our attention to reading data from our Azure Cosmos DB, or in our scenario, our [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] collection.
+이제 핵심 함수가 작동하므로 Azure Cosmos DB에서, 또는 이 시나리오에서는 [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] 컬렉션으로부터 데이터 읽기를 살펴보겠습니다.
 
-## Add a Cosmos DB input binding
+## <a name="add-a-cosmos-db-input-binding"></a>Cosmos DB 입력 바인딩 추가
 
-We want to read data from the database we created, so enter input bindings. As you'll see, we can configure a binding that can talk to our database in just a few steps.
+만든 데이터베이스에서 데이터를 읽으려 하므로 입력 바인딩을 입력합니다. 이제 살펴볼 것처럼 간단히 몇 단계만으로 데이터베이스와 통신하는 바인딩을 구성할 수 있습니다.
 
-1. Select **Integrate** in the function menu on the left to open the integration tab.
+1. 왼쪽의 함수 메뉴에서 **통합**을 선택하여 [통합] 탭을 엽니다.
 
-The template we used created an HTTP trigger and an HTTP output binding for us. Let's add our new Azure Cosmos DB input binding. 
+HTTP 트리거와 HTTP 출력 바인딩을 만드는 데 사용한 템플릿입니다. 새 Azure Cosmos DB 입력 바인딩을 추가해 보겠습니다. 
 
-2. Select **+ New Input** under the **Inputs** column. A list of all possible input binding types is displayed.
+2. **입력** 열에서 **+ 새 입력**을 선택합니다. 가능한 모든 입력 바인딩 형식 목록이 표시됩니다.
 
-3. Click on **Azure Cosmos DB** from the list and then the **Select** button. This action opens the Azure Cosmos DB input configuration page.
+3. 목록에서 **Azure Cosmos DB**를 클릭한 다음, **선택** 단추를 클릭합니다. 그러면 Azure Cosmos DB 입력 구성 페이지가 열립니다.
 
-Next, we'll set up a connection to our database.
+다음으로, 데이터베이스에 연결을 설정하겠습니다.
 
-4. In the field named **Azure Cosmos DB account connection** on this page, click on *new* to the right of the empty field. This action opens the **Connection** dialog, which already has **Azure Cosmos DB account** and your Azure subscription selected. The only thing left to do is to select a database account id.
+4. 이 페이지에서 이름이 **Azure Cosmos DB 계정 연결**인 필드에서 빈 필드 오른쪽의 *새로 만들기*를 클릭합니다. 그러면 **연결** 대화 상자가 열리는 데 이미 **Azure Cosmos DB 계정**과 Azure 구독이 선택되어 있습니다. 여기서는 데이터베이스 계정 ID를 선택하기만 하면 됩니다.
 
-5. In the section, **Create a database account**, you had to supply an ID value. Now find that value in the  *Database Account* dropdown and then click **Select**.
+5. **데이터베이스 계정 만들기** 섹션에서 ID 값을 제공했어야 했습니다. 이제는 *데이터베이스 계정* 드롭다운의 값을 찾은 다음, **선택**을 클릭합니다.
 
-A new connection to the database is configured and is shown in the **Azure Cosmos DB account connection** field. If you're curious about what is actually behind this abstract name, just click *show value* to reveal the connection string.
+데이터베이스에 대한 새 연결이 구성되고 **Azure Cosmos DB 계정 연결** 필드에 표시됩니다. 실제로 이 추상 이름 뒤에 무엇이 있는지 궁금하면 *값 표시*를 클릭하여 연결 문자열을 확인하면 됩니다.
 
-We want to look up a bookmark with a specific ID, so let's tie the ID we receive to the binding.
+특정 ID로 책갈피를 조회하려 하므로 받은 ID를 바인딩에 연결하겠습니다.
 
-7. In the **Document ID (optional)** field, enter `{id}`. This is known as a *binding expression*. The function is triggered by an HTTP request that uses a query string to specify the ID to look up. Since IDs are unique in our collection, the binding will return either 0 (not found) or 1 (found) documents.
+7. **문서 ID(선택 사항)** 필드에 `{id}`를 입력합니다. 이것을 *바인딩 식*이라고 합니다. 함수는 조회할 ID를 지정하기 위해 쿼리 문자열을 사용하는 HTTP 요청에 의해 트리거됩니다. ID는 컬렉션에서 고유하므로 바인딩은 0(없음) 또는 1(있음) 문서를 반환합니다.
 
-8. Carefully fill out the remaining fields on this page using the values in the following table. At any time, you can click on the information icon to the right of each field name to learn more about the purpose of each field.
+8. 다음 표의 값을 사용하여 이 페이지의 나머지 필드를 조심스럽게 입력합니다. 언제든 각 필드 이름 오른쪽의 정보 아이콘을 클릭하여 각 필드의 용도를 확인할 수 있습니다.
 
 
-|Setting  |Value  |Description  |
+|설정  |값  |설명  |
 |---------|---------|---------|
-|Document parameter name     |  **bookmark**       |  The name used to identify this binding in your code.      |
-|Database name     |  [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]       | The database where data will be read. This is the database name we set earlier in this lesson.        |
-|Collection Name     |  [!INCLUDE [cosmos-db-name](./cosmos-coll-name.md)]        | The collection from which we'll read data. This setting was defined earlier in the lesson. |
-|SQL Query (optional)    |   leave blank       |   We are only retrieving one document at a time based on the ID. So, filtering with the Document ID field is a better than using a SQL Query in this instance. We could craft a SQL Query to return one entry (`SELECT * from b where b.ID = {id}`). That query would indeed return a document, but it would return it in a document collection. Our code would have to manipulate a collection unnecessarily. Use the SQL Query approach when you want to get multiple documents.   |
-|Partition key (optional)     |   leave blank      |  We can accept the default here.       |
+|문서 매개 변수 이름     |  **책갈피**       |  코드에서 이 바인딩을 식별하기 위해 사용하는 이름입니다.      |
+|데이터베이스 이름     |  [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]       | 데이터를 읽을 데이터베이스입니다. 이 단원의 앞부분에서 설정한 데이터베이스 이름입니다.        |
+|컬렉션 이름     |  [!INCLUDE [cosmos-db-name](./cosmos-coll-name.md)]        | 데이터를 읽어오는 컬렉션입니다. 이 설정은 이 단원의 앞부분에서 정의되었습니다. |
+|SQL 쿼리(선택 사항)    |   비워 둠       |   ID를 기준으로 한 번에 한 문서만 검색합니다. 따라서 이 인스턴스에서 SQL 쿼리를 사용하는 것보다 문서 ID 필드를 통해 필터링하는 게 낫습니다. 한 항목(`SELECT * from b where b.ID = {id}`)을 반환하는 SQL 쿼리를 만들 수 있습니다. 이 쿼리는 실제로 문서를 반환하지만 문서 컬렉션 안에서 반환합니다. 코드가 불필요하게 컬렉션을 조작해야 합니다. 여러 문서를 가져오려면 SQL 쿼리 방법을 사용합니다.   |
+|파티션 키(선택 사항)     |   비워 둠      |  여기서 기본 값을 적용할 수 있습니다.       |
 
-9. Click **Save** to save all changes to this binding configuration. Now that we have our binding defined, it's time to use it in our function.
+9. **저장**을 클릭하여 이 바인딩 구성에 대한 모든 변경 내용을 저장합니다. 이제 바인딩을 정의했으므로 함수를 사용할 시점입니다.
 
-## Update function implementation
+## <a name="update-function-implementation"></a>업데이트 함수 구현
 
-1. Click on our function, [!INCLUDE [func-name-find](./func-name-find.md)], to open up *index.js* in the code editor. We've added an input binding to read from our database, so let's update the logic to use this binding.
+1. [!INCLUDE [func-name-find](./func-name-find.md)] 함수를 클릭하여 코드 편집기에서 *index.js*를 엽니다. 데이터베이스에서 읽기 위한 입력 바인딩을 추가했으므로 이 바인딩을 사용하도록 논리를 업데이트하겠습니다.
 
-2. Replace all code in index.js with the code from the following snippet.
+2. index.js의 모든 코드를 다음 코드 조각의 코드로 바꿉니다.
 
 [!code-javascript[](../code/find-bookmark-single.js)]
 
-When an HTTP request causes our function to trigger, the `id` query parameter is passed to our Cosmos DB input binding. If it found a document that matches this ID, then the `bookmark` parameter will be set to it. In that case, we construct a response that contains the URL value found in the bookmark document. If no document was found matching this key, we respond with a payload and status code that tells the user the bad news.
+HTTP 요청에서 이 함수를 트리거하면 `id` 쿼리 매개 변수가 Cosmos DB 입력 바인딩에 전달됩니다. 이 ID와 일치하는 문서를 찾은 경우 `bookmark` 매개 변수가 이 항목으로 설정됩니다. 이 경우 책갈피 문서에 있는 URL 값을 포함하는 응답을 생성합니다. 이 키에 일치하는 문서가 없으면 이 상황을 사용자에게 알리는 페이로드와 상태 코드로 답합니다.
 
-## Try it out
+## <a name="try-it-out"></a>사용해 보기
 
-1. As usual, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy** to copy the function's URL.
+1. 평소와 같이 오른쪽 맨 위에서 **</> 함수 URL 가져오기**를 클릭하고, **기본값(함수 키)** 을 선택한 다음, **복사**를 클릭하여 함수의 URL을 복사합니다.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&id=docs` to the end of this URL and press the `Enter` key on your keyboard to execute the request. All going well, you should see a response that includes a URL to that resource.
+2. 복사한 함수 URL을 브라우저의 주소 표시줄에 붙여넣습니다. 이 URL의 끝에 `&id=docs` 쿼리 문자열 값을 추가하고, 키보드에서 `Enter` 키를 눌러 요청을 실행합니다. 모든 작업이 잘 진행되면 해당 리소스에 대한 URL이 포함된 응답이 표시됩니다.
 
-3. Replace `&id=docs` with `&id=missing` and observe the response.
+3. `&id=docs`를 `&id=missing`으로 바꾸고 답을 관찰합니다.
 
-4. Replace the previous query string with `&id=` and observe the response.
+4. 이전 쿼리 문자열을 `&id=`로 바꾸고 답을 관찰합니다.
 
 >[!TIP]
->You can also test the function using the **Test** tab in the function portal UI. You can add a query parameter or just supply a request body to get the same results as described in te preceding steps.
+>함수 포털 UI의 **테스트** 탭을 사용해서 함수를 테스트할 수도 있습니다. 쿼리 매개 변수를 추가하거나 요청 본만 제공해도 앞의 단계에서 설명한 것과 같은 결과를 가져올 수 있습니다.
 
-In this unit, we created our first input binding  manually to read from an Azure Cosmos DB database. The amount of code we wrote to search our database and read data was minimal, thanks to bindings. We did most of our work configuring the binding declaratively and the platform took care of the rest.  
+이 단위에서는 Azure Cosmos DB 데이터베이스에서 읽어오기 위해 수동으로 첫 번째 입력 바인딩을 만들었습니다. 데이터베이스에서 검색하고 데이터를 읽기 위해 작성한 코드 크기가 바인딩 덕분에 최소로 줄었습니다. 바인딩 구성 작업은 대부분 선언적으로 이루어지며 플랫폼이 나머지를 처리합니다.  
 
-In the next unit, we'll add more data to our bookmark collection through an Azure Cosmos DB output binding.
+다음 단위에서는 Azure Cosmos DB 출력 바인딩을 통해 책갈피 컬렉션에 다른 데이터를 추가합니다.
 
 > [!TIP]
-> This unit is not intended to be a tutorial on Azure Cosmos DB. If you would like to dive deeper, here are a few resources to get you started:
+> 이 단위는 Azure Cosmos DB의 자습서 역할을 하지 않습니다. 본격적으로 활용하려면 다음 몇 가지 리소스를 통해 시작할 수 있습니다.
 >
->* [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+>* [Azure Cosmos DB 소개: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 >
->* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+>* [Azure Cosmos DB의 기술적 개요](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 >
->* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+>* [Azure Cosmos DB 설명서](https://docs.microsoft.com/azure/cosmos-db/)

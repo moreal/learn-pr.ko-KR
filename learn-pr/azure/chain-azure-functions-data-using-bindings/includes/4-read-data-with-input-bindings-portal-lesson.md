@@ -1,42 +1,37 @@
-In order to connect to a data source we have to configure an *input binding*. This binding will make it possible to write minimal code to create a message. You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+데이터 원본을 연결하려면 *입력 바인딩*을 구성해야 합니다. 이 바인딩을 통해 최소한의 코드로 메시지를 만들 수 있습니다. 저장소 연결 열기 같은 작업에 코드를 작성할 필요가 없습니다. Azure Functions 런타임 및 바인딩이 이러한 작업을 대신하게 됩니다.
 
-## Input binding types
+## <a name="input-binding-types"></a>입력 바인딩 형식
 
-There are multiple types of input, however not all types support both input and output. You'll use them anytime you want to ingest data of that type. Here, we'll look at the types that support input bindings and when to use them.
+여러 가지 입력 유형이 있으나 모든 유형이 입력과 출력을 모두 지원하는 것은 아닙니다. 해당 유형의 데이터를 수집하려 할 때마다 사용하게 됩니다. 여기에서는 입력 바인딩을 지원하는 형식과 사용 시기에 대해 살펴봅니다.
 
-- **Blob Storage**
-    The blob storage bindings allow you to read from a blob.
+- **Blob Storage** Blob Storage 바인딩은 Blob에서 읽을 수 있도록 합니다.
 
-- **Cosmos DB**
-    The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function. The document ID or query parameters can be determined based on the trigger that invokes the function.
+- **Cosmos DB** Azure Cosmos DB 입력 바인딩은 SQL API를 사용하여 하나 이상의 Azure Cosmos DB 문서를 검색하고, 함수의 입력 매개 변수에 전달합니다. 문서 ID 또는 쿼리 매개 변수는 함수를 호출하는 트리거를 기반으로 결정할 수 있습니다.
 
-- **Microsoft Graph**
-    Microsoft Graph input bindings allow you to read files from OneDrive, read data from Excel, and get auth tokens so you can interact with any Microsoft Graph API.
-- **Mobile Apps**
-    The Mobile Apps input binding loads a record from a mobile table endpoint and passes it into your function.
+- **Microsoft Graph** Microsoft Graph 입력 바인딩을 사용하면 OneDrive에서 파일을 읽고, Excel에서 데이터를 읽고, Microsoft Graph API와 상호 작용하기 위한 인증 토큰을 가져올 수 있습니다.
+- **Mobile Apps** Mobile Apps 입력 바인딩은 모바일 테이블 엔드포인트에서 레코드를 로드하여 함수에 전달합니다.
 
-- **Table storage**
-    You can read data and work with Azure Table storage.
+- **테이블 저장소** Azure Table Storage에서 데이터를 읽고 작업할 수 있습니다.
 
-## How to create an input binding?
+## <a name="how-to-create-an-input-binding"></a>입력 바인딩을 만드는 방법
 
-In order to define a binding an input, you must define the `direction` as `in`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
+입력 바인딩을 정의하려면 `direction`을 `in`으로 정의해야 합니다.
+각 바인딩 유형에 대한 매개 변수는 다를 수 있습니다. 이것은 [Microsoft설명서](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)에서 자세히 설명합니다.
 
-## What is a binding expression?
+## <a name="what-is-a-binding-expression"></a>바인딩 식이란?
 
-A binding expression is specialized text in function.json, function parameters, or code that is evaluated when the function is invoked to yield a value. For example, you can use a binding expression to get the current time or retrieve a value from app settings.
+바인딩 식은 function.json의 특수화된 텍스트, 함수 매개 변수 또는 코드로, 함수가 값을 내기 위해 호출될 때 평가됩니다. 예를 들어, 바인딩 식을 사용하여 현재 시간을 가져오거나 앱 설정에서 값을 검색할 수 있습니다.
 
-### Types of binding expressions
+### <a name="types-of-binding-expressions"></a>바인딩 식의 형식
 
-- App settings
-- Trigger file name
-- Trigger metadata
-- JSON payloads
-- New GUID
-- Current date and time
-- Binding expressions
+- 앱 설정
+- 트리거 파일 이름
+- 트리거 메타데이터
+- JSON 페이로드
+- 새 GUID
+- 현재 날짜 및 시간
+- 바인딩 식
 
-Most expressions are identified by wrapping them in curly braces. However, app setting binding expressions are identified differently from other binding expressions: they are wrapped in percent signs rather than curly braces. For example if the blob output binding path is `%Environment%/newblob.txt` and the Environment app setting value is Development, a blob will be created in the Development container.
+대부분의 식은 중괄호 안에 넣어 식별됩니다. 그러나 앱 설정 바인딩 식은 다른 바인딩 식과는 다르게 식별됩니다. 중괄호 대신 백분율 기호 안에 넣습니다. 예를 들어 blob 출력 바인딩 경로가 `%Environment%/newblob.txt`이고 Environment 앱 설정 값이 Environment인 경우 blob은 Development 컨테이너에 생성됩니다.
 
-Input bindings allow us to connect our function to a data source. There are several types of data sources we can connect to and the parameters for each vary. We can use binding expressions in the function.json, function parameters or code, to resolve values from various sources.
+입력 바인딩을 사용하여 함수를 데이터 원본에 연결할 수 있습니다. 여러 유형의 데이터 원본을 연결할 수 있고 각각에 대한 매개 변수는 서로 다릅니다. function.json, 함수 매개 변수 또는 코드에서 바인딩 식을 사용하여 다양한 원본에서 값을 확인할 수 있습니다.

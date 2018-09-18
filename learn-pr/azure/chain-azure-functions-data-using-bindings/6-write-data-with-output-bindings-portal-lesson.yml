@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.6-write-data-with-output-bindings-portal-lesson
 metadata:
-  title: Write data with output bindings
-  description: In this hands-on unit, we'll write data from our Azure Function to Cosmos DB with the help of an output binding. 
+  title: 출력 바인딩을 사용하여 데이터 쓰기
+  description: 이 실습 단위에서는 출력 바인딩을 사용하여 Azure Function에서 Cosmos DB에 데이터를 씁니다.
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Write data with output bindings
+  ms.openlocfilehash: 4f3035c244f49ff431456e4f36862aba5a649c5c
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44350804"
+title: 출력 바인딩을 사용하여 데이터 쓰기
 durationInMinutes: 10
-content: |
-  [!include[](includes/6-write-data-with-output-bindings-portal-lesson.md)]
+content: '[!include[](includes/6-write-data-with-output-bindings-portal-lesson.md)]'

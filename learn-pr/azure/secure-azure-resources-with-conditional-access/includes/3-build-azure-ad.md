@@ -32,7 +32,9 @@ Azure AD를 배포하고 어떤 사용자가 Azure Portal에 액세스할 때 Az
 
 1. 사용자 이름이 **Isabella Simonsen**인 사용자를 만듭니다.
 
-   * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+   `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+
+   위의 *디렉터리 만들기* 섹션에서 만든 도메인을 사용하여 @ 뒤에서 도메인을 일치시킵니다.
 
 1. 사용자에 대한 **암호 표시** 확인란을 선택합니다. 나중에 테스트할 때 사용할 수 있도록 암호를 적어 둡니다.
 
