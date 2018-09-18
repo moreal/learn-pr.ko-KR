@@ -1,11 +1,11 @@
-Once deployed, bots can be connected to channels such as Skype, Slack, Microsoft Teams, and Facebook Messenger, where you can interact with them the way you would with a person. In this unit, you will add the bot to your Skype contacts and carry on a conversation with it in Skype.
+배포된 봇은 Skype, Slack, Microsoft Teams 및 Facebook Messenger와 같은 채널에 연결될 수 있습니다. 이러한 채널에서 사람과 상호 작용하듯이 봇과 상호 작용할 수 있습니다. 이 단원에서는 Skype 연락처에 봇을 추가하고 Skype에서 봇과 대화를 나눕니다.
 
-1. If Skype isn't already installed on your computer, please install it now. You can [download Skype](https://www.skype.com/en/download-skype/skype-for-computer/) for Windows, macOS, or Linux.
+1. Skype가 컴퓨터에 아직 설치되어 있지 않으면 지금 설치하세요. Windows, macOS 또는 Linux용 [Skype를 다운로드](https://www.skype.com/en/download-skype/skype-for-computer/)할 수 있습니다.
 
-1. Return to your web app bot in the Azure portal and click **Channels** in the menu on the left. Click the **Skype** icon. Then, click **Cancel** at the bottom of the blade.
+1. Azure Portal의 웹앱 봇으로 돌아간 후 왼쪽의 메뉴에서 **채널**을 클릭합니다. **Skype** 아이콘을 클릭합니다. 그런 후 블레이드 하단의 **취소**를 클릭합니다.
 
-1. Click **Skype**. Then, click **Add to Contacts** to add the bot as a Skype contact and launch Skype.
+1. **Skype**를 클릭합니다. 그런 다음, **연락처에 추가**를 클릭하여 봇을 Skype 연락처로 추가하고 Skype를 시작합니다.
 
-1. Start a conversation with by typing "hi" into the Skype window. Then, converse with the bot by asking it questions and seeing how it responds. Refer to the **Factbot.tsv** file that you used to populate the knowledge base in [Exercise 2](#Exercise2) for examples of questions to ask.
+1. Skype 창에 “hi”를 입력하여 대화를 시작합니다. 그런 다음, 질문하고 응답을 확인하여 봇과 대화합니다. 질문 예제를 보려면 [연습 2](#Exercise2)에서 기술 자료를 채우는 데 사용한 **Factbot.tsv** 파일을 참조하세요.
 
-You now have a fully functional bot created with the Azure Bot Service, infused with intelligence by Microsoft QnA Maker, and available for anyone in the world to interact with. Feel free to plug your bot into other channels and test it in different scenarios. And if you would like to make the bot smarter, consider expanding the knowledge base with additional questions and answers. For example, you could use the [online FAQ](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-3.0) for the Bot Framework to train the bot to answer questions about the framework itself.
+이제 Azure Bot Service를 통해 전 기능 봇이 만들어지고, Microsoft QnA Maker를 통해 인텔리전스가 추가되었으며, 전 세계 모든 사용자가 상호 작용할 수 있습니다. 봇을 다른 채널에 연결하고 다른 시나리오에서 자유롭게 테스트합니다. 또한 봇을 더 스마트하게 만들려는 경우 추가 질문과 응답으로 기술 자료를 확장하는 것이 좋습니다. 예를 들어, Bot Framework의 [온라인 FAQ](https://docs.microsoft.com/azure/bot-service/bot-service-resources-bot-framework-faq?view=azure-bot-service-3.0)를 사용하여 프레임워크 자체에 대한 질문에 응답하도록 봇을 학습시킬 수 있습니다.

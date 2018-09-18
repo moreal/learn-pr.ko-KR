@@ -1,20 +1,20 @@
-Let's face it, we all want to know what our customers think of our brand, our product, our message. How does their opinion change over time? Looking for sentiment in what they write can unlock some clues. Sentiment analysis helps answer the question: *What do our customers really want?* It's used to analyze tweets and other social media content, customer reviews, and emails. 
+솔직히 말해서, 모든 회사는 고객이 자사의 브랜드, 제품, 메시지에 대해 어떻게 생각하는지 알고 싶어 합니다. 시간이 지남에 따라 고객의 의견이 어떻게 바뀔까요? 고객의 글에서 감정을 찾는다면 몇 가지 단서를 얻을 수 있습니다. 감정 분석을 통해 *고객이 진짜로 원하는 것*을 알아낼 수 있습니다. 감정 분석은 트윗 및 기타 소셜 미디어 콘텐츠, 고객 리뷰, 이메일을 분석하는 데 사용됩니다. 
 
- A popular approach to sentiment analysis is to train machine  learning models that detect sentiment. However, that process is complex. It involves having good quality training data that is labeled, creating features from that data, training a classifier and then using the classifier to predict sentiment of new pieces of text. Not every company has the money and expertise to invest in building AI solutions from scratch. Thankfully, Microsoft and other companies can, and do, invest in state-of-the-art research in these areas. As developers, we get to benefit from their findings through the APIs, SDKs, and platforms they ship. Microsoft Cognitive Services is one such offering.
+ 감정 분석에는 감정을 검색하는 기계 학습 모델을 교육하는 방법이 주로 사용됩니다. 그러나 이 프로세스는 복잡합니다. 레이블이 지정된 우수한 품질의 교육 데이터가 필요하고, 이 데이터로 기능을 만들어야 하고, 분류자를 교육해야 하고, 분류자를 사용하여 새로운 텍스트의 감정을 예측해야 합니다. 모든 회사가 AI 솔루션을 처음부터 새로 개발하기 위한 경제력과 전문 지식을 갖추고 있지는 않습니다. 다행스럽게도 Microsoft와 여러 회사에서 이 분야의 첨단 연구에 투자할 여력이 있으며, 현재 투자하고 있습니다. 개발자는 이들이 제공하는 API, SDK 및 플랫폼을 통해 이들의 성과를 활용할 수 있습니다. 그 중 하나가 Microsoft Cognitive Services입니다.
 
-![Sentiment extracted from text and display on a gauge from negative to positive.](../media-draft/sentiment-analysis.png)
+![감정은 텍스트에서 추출되어 부정적부터 긍정적 사이의 게이지에 표시됩니다.](../media-draft/sentiment-analysis.png)
 
 
-## Microsoft Cognitive Services
+## <a name="microsoft-cognitive-services"></a>Microsoft Cognitive Services
 
-Microsoft has been shipping a set of APIs, SDKs, and services under the banner of *Microsoft Cognitive Services* for a while. The goal is to help developers make their apps more intelligent, engaging, discoverable.  
+Microsoft는 한동안 *Microsoft Cognitive Services* 배너 하에서 API, SDK 및 서비스 집합을 제공해 왔습니다. 개발자가 보다 지능적이고 몰입적이고 쉽게 검색할 수 있는 앱을 개발하도록 도와주는 것이 목표입니다.  
 
-Microsoft Cognitive Services offers intelligent algorithms in vision, speech, language, knowledge, and search. To see what's on offer, check out the [Cognitive Services Directory](https://azure.microsoft.com/services/cognitive-services/directory/). You can try each service for free. When you decide to integrate one or more of these services into your applications, you sign up for a paid subscription. The service we'll use throughout this module is the Text Analytics API, so let's hear more about it. 
+Microsoft Cognitive Services는 시각, 음성, 언어, 지식 및 검색에 지능형 알고리즘을 제공합니다. 어떤 서비스가 제공되는지 알아보려면 [Cognitive Services 디렉토리](https://azure.microsoft.com/services/cognitive-services/directory/)를 참조하세요. 각 서비스를 체험해볼 수 있습니다. 이러한 서비스 중 하나 이상을 응용 프로그램에 통합하기로 결정하는 경우 유료 구독에 등록해야 합니다. 이 모듈에서 사용할 서비스인 텍스트 분석 API에 대해 자세히 알아보겠습니다. 
 
-## Text Analytics API
+## <a name="text-analytics-api"></a>텍스트 분석 API
 
-Text Analytics API is a Cognitive Service designed to help you extract information from text.  Through the service  you can identify language, discover sentiment, extract key phrases, and detect well-known entities from text. If you're eager to try out the service, head on over to the [Text Analytics demo](https://azure.microsoft.com/services/cognitive-services/text-analytics/) in the official documentation. 
+텍스트 분석 API는 텍스트에서 정보를 추출할 수 있도록 설계된 Cognitive Service입니다.  이 서비스를 통해 언어를 식별하고, 감정을 검색하고, 핵심 문구를 추출하고, 텍스트에서 잘 알려진 엔터티를 검색할 수 있습니다. 이 서비스를 체험해보려면 공식 설명서의 [Text Analytics 데모](https://azure.microsoft.com/services/cognitive-services/text-analytics/)로 이동하세요. 
 
-In this lesson, we'll get to know the sentiment analysis part of this API. Under the covers, the service uses a machine learning classification algorithm to generate a sentiment score between 0 and 1.  Scores closer to 1 indicate positive sentiment, while scores closer to 0 indicate negative sentiment. A score close to 0.5 indicates no sentiment  or a neutral statement. You don't have to worry about the implementation details of the algorithm. You focus on using the service by making calls to it from your app.  As we'll see shortly, you structure a **POST** request, send it to the `/sentiment` endpoint and receive a JSON response that tells you a *sentiment score*.
+이 강좌에서는 이 API의 감정 분석 파트를 알아보겠습니다. 이 서비스는 보이지 않는 곳에서 기계 학습 분류 알고리즘을 사용하여 0과1 사이의 감정 점수를 생성합니다.  점수가 1에 가까울수록 긍정적인 감정을 나타내는 반면, 0에 가까울수록 부정적인 감정을 나타냅니다. 0.5에 가까운 점수는 감정이 없거나 중립적인 상태를 나타냅니다. 자세한 알고리즘 구현 방법에 대해 걱정할 필요는 없습니다. 여러분은 앱에서 이 알고리즘을 호출하여 서비스를 사용하는 것에만 집중하면 됩니다.  잠시 후 살펴보겠지만, 여기서는 **POST** 요청을 작성하고, `/sentiment` 엔드포인트로 전송하고, *감정 점수*를 알려주는 JSON 응답을 수신할 것입니다.
 
-We'll first experiment with the Text Analytics API using an online API testing console. Once we're comfortable with the API, we'll use it in a scenario to detect sentiment in messages so that we can sort them for further processing.
+먼저 온라인 API 테스트 콘솔을 사용하여 텍스트 분석 API를 시험해 보겠습니다. API에 익숙해지면 감정을 분류하여 추가로 처리할 수 있도록 메시지에서 감정을 검색하는 시나리오에 API를 사용할 것입니다.

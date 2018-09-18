@@ -1,37 +1,37 @@
-In this unit, you will generate thumbnails from a source image with the Computer Vision API service that we created previously.
+이 단원에서는 이전에 만든 Computer Vision API 서비스를 사용하여 원본 이미지에서 미리 보기를 생성합니다.
 
-# Generate a thumbnail from an image with Computer Vision API
+# <a name="generate-a-thumbnail-from-an-image-with-computer-vision-api"></a>Computer Vision API를 사용하여 이미지에서 미리 보기 생성
 
-Execute the `az cognitiveservices account keys list` command to retrieve a key used to authenticate against the API. Store the output of that command within the `key` variable.
+`az cognitiveservices account keys list` 명령을 실행하여 API에 인증 하는 데 사용되는 키를 검색합니다. 해당 명령의 출력을 `key` 변수 내에 저장합니다.
 
-```output
+```azurecli
 key=$(az cognitiveservices account keys list -g ComputerVisionRG --name ComputerVisionService --query key1 -o tsv)
 ```
 
-Execute a `curl` command to do an HTTP request against the Computer Vision API and reuse the previously declared variable `key`.
+`curl` 명령을 실행하여 Computer Vision API에 대해 HTTP 요청을 수행하고 이전에 선언한 `key` 변수를 다시 사용합니다.
 
-Different parameters can be provided to the API to generate the proper thumbnail for your needs. `width` and `height` are required and will tell the API which size you need for a specific image. Finally, the `smartCropping` parameter generates smarter cropping by analyzing the region of interest in your image to keep it within the thumbnail. As an example, with smart cropping enabled, a cropped profile picture would keep someone's face within the picture frame even when the picture isn't in the same ratio as the one that we asked.
+API에 각기 다른 매개 변수를 제공하여 필요에 따라 적합한 미리 보기를 생성할 수 있습니다. `width` 및 `height`는 필수 항목으로서 특정 이미지에 필요한 크기를 API에 알려줍니다. 마지막으로, `smartCropping` 매개 변수는 이미지에서 원하는 영역을 분석하여 더 스마트한 자르기를 생성함으로써 해당 영역을 미리 보기 내에 유지합니다. 예를 들어 스마트 자르기를 사용하도록 설정한 상태에서 프로필 사진을 자르면 사진 비율이 원래 요청했던 것과 다르더라도 사진 프레임 내에 사람의 얼굴이 유지됩니다.
 
-```bash
-curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/media/mountains.jpg\"}" -o clouddrive/thumbnail.jpg
+```azurecli
+curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/mountains.jpg\"}" -o clouddrive/thumbnail.jpg
 ```
 
-# Downloading the thumbnail
+# <a name="downloading-the-thumbnail"></a>미리 보기 다운로드
 
-The generated thumbnail will be found in your Azure Cloud Shell storage account within a resource group named `cloud-shell-storage-<region>`.
+생성된 미리 보기는 `cloud-shell-storage-<region>` 리소스 그룹 내의 Azure Cloud Shell 저장소 계정에 있습니다.
 
-1. Get into the automatically generated storage account.
+1. 자동으로 생성된 저장소 계정으로 이동합니다.
 
-    ![Screenshot of the generated storage account](../media/4-storage-account.png)
+![이미지](../images/storage-account.png)
 
-2. Click on the files section.
+2. 파일 섹션을 클릭합니다.
 
-    ![Screenshot of the storage account with the files section circled](../media/4-storage-account-click-on-files.png)
+![이미지](../images/storage-account-click-on-files.png)
 
-3. You will find the thumbnail at the root of the container.
+3. 컨테이너의 루트에 미리 보기가 있습니다.
 
-    ![Screenshot of the storage account with the thumbnail circled](../media/4-storage-account-thumbnail.png)
+![이미지](../images/storage-account-thumbnail.png)
 
-4. Click on the file, and then download it.
+4. 파일을 클릭하여 다운로드합니다.
 
-From within your download folder, you can open the `100x100`-pixels image with any image viewer.
+다운로드 폴더 내에서 모든 이미지 뷰어를 사용하여 `100x100`픽셀 이미지를 열 수 있습니다.

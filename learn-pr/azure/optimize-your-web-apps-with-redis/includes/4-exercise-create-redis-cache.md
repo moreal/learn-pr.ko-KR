@@ -1,69 +1,51 @@
-Let's create an Azure Redis Cache instance to store and return commonly used values.
+일반적으로 사용되는 값을 저장하고 반환하는 Azure Redis Cache 인스턴스를 만들겠습니다.
 
 <!-- TODO: do we need to activate the sandbox here? -->
 
-## Create a Redis cache in Azure
+## <a name="create-a-redis-cache-in-azure"></a>Azure에서 Redis 캐시 만들기
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-1. Click **Create a resource**, click **Databases**, and click **Redis Cache**.
+1. **리소스 만들기**, **데이터베이스**, **Redis Cache**를 차례로 클릭합니다.
 
-    The following screenshot shows the Redis Cache location within the various database resource options on the Azure portal.
+    다음 스크린샷은 Azure Portal의 다양한 데이터베이스 리소스 옵션 내 Redis Cache 위치를 보여줍니다.
 
-    ![Screenshot showing the Azure portal database options, with the Create a resource, Database, and Redis Cache options highlighted.](../media/4-create-a-cache-1.png)
+    ![리소스 만들기, 데이터베이스, Redis Cache 옵션이 강조 표시된 Azure Portal 데이터베이스 옵션을 보여주는 스크린샷.](../media/4-create-a-cache-1.png)
 
-### Identify the location for the cache
+### <a name="identify-the-location-for-the-cache"></a>캐시의 위치 식별
 
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-### Configure your cache
+### <a name="configure-your-cache"></a>캐시 구성
 
-Apply the following settings on the cache.
+캐시에서 다음 설정을 적용합니다.
 
-1. **DNS Name:** Create a globally unique name such as **ContosoSportsApp1028**.
+1. **DNS 이름:** **ContosoSportsApp1028**처럼 전역적으로 고유한 이름을 만듭니다.
 
-1. **Subscription:** Select the Azure Sandbox subscription.
+1. **구독**: Azure 샌드박스 구독을 선택합니다.
 
-1. **Resource group:** Select <rgn>[Sandbox resource group name]</rgn> for the Resource Group.
+1. **리소스 그룹**: 리소스 그룹의 <rgn>[샌드박스 리소스 그룹 이름]</rgn>을 선택합니다.
 
-1. **Location:** Normally, you would select a location near your customers - in this case, the East Coast. However, the Azure Sandbox only allows specific regions to be selected for resources as noted above. Please select one of those locations.
+1. **위치:** 일반적으로 고객과 가까운 위치를 선택합니다. 이 예에서는 동부 해안입니다. 그러나 위에서 언급했듯이 Azure 샌드박스는 특정 지역만 허용합니다. 다음 위치 중 하나를 선택하세요.
 
-1. **Pricing tier:** Select **Basic C0**. This is the lowest tier you can use. Production apps would likely want to store more data and utilize some of the Premium features such as clustering which would require a higher tier selection.
+1. **가격 책정 계층:** **기본 C0**을 선택합니다. 사용할 수 있는 가장 낮은 계층입니다. 프로덕션 앱은 더 많은 데이터를 저장하기를 원하고 더 높은 계층이 필요한 클러스터링 같은 일부 프리미엄 기능을 활용하려 합니다.
 
-1. Click **Create**.
+1. **만들기**를 클릭합니다.
 
-    The following screenshot shows a representative configuration used to create a new Redis Cache resource. Note that yours will be slightly different due to the Azure Sandbox.
+    다음 스크린샷은 새 Redis Cache 리소스를 만드는 데 사용되는 대표적인 구성을 보여줍니다. Azure 샌드박스 때문에 여러분의 구성과 약간 다를 것입니다.
 
-    ![Screenshot showing the Azure portal blade when creating a new Redis Cache resource, populated with an example configuration DNS name, subscription, new resource group, location, and pricing tier.](../media/4-create-a-cache-2.png)
+    ![구성 DNS 이름, 구독, 새 리소스 그룹, 위치, 가격 책정 계층 예제로 채워진 새 Redis Cache 리소스를 만들 때 Azure Portal 블레이드의 모습을 보여주는 스크린샷.](../media/4-create-a-cache-2.png)
 
 > [!IMPORTANT]
-> You will have to wait until the cache is deployed before continuing. This process might take some time.
+> 계속하기 전에 캐시가 배포될 때까지 기다려야 합니다. 이 프로세스는 시간이 약간 걸릴 수 있습니다.
 
-## Verify your data
+## <a name="retrieve-the-access-keys-and-host-name"></a>액세스 키 및 호스트 이름 검색
 
-You can use the **Console** feature in the Azure portal to issue commands to your Redis cache instance after it has been created.
+1. Azure Portal에서 새 캐시 인스턴스를 찾아서 **설정** > **액세스 키**를 선택합니다. 
 
-1. Locate your Redis cache by selecting **All Resources** in the left-hand sidebar and using the filter box on the left to select Redis Cache instances. Alternatively, you can use the search box at the top and type the name of the cache.
+1. **기본 연결 문자열(StackExchange.Redis)** 을 안전한 장소에 복사합니다. 그 다음 연습에서 필요합니다.
 
-1. Select your Redis cache instance.
+    이 키는 우리가 사용하려는 **StackExchange.Redis** 패키지의 응용 프로그램 설정 내에서 사용할 전체 연결 문자열의 기본 키와 호스트 이름을 포함하고 있습니다.
 
-1. In the **Overview** blade for your Redis Cache, select **Console**. This will open a Redis console, which allows you to enter low-level Redis commands.
-
-1. Type **ping**. Verify that the value returned is **PONG**.
-
-1. Type **set test one**. Verify that the value returned is **OK**.
-
-1. Type **get test**. Verify that the value returned is **"one"**.
-
-1. Switch back to the **Overview** panel either through the breadcrumb bar on the top, or use the scrollbar to slide the view back to the left.
-
-## Retrieve the access keys and host name
-
-1. Select **Settings** > **Access keys**. 
-
-1. Copy the **Primary connection string (StackExchange.Redis)** to a safe place, you will need it for the next exercise.
-
-    This key includes your primary key and host name in a complete connection string for use within your application settings for the **StackExchange.Redis** package we are going to use.
-
-Next, let's learn about some of the commands we can use to interrogate the cache.
+다음으로, 캐시를 조사하는 데 사용할 수 있는 명령을 알아보겠습니다.

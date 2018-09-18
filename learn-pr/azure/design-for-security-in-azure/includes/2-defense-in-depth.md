@@ -1,109 +1,109 @@
-There's no "easy button" for security and no solution that solves all your problems from a security perspective. Let's imagine that Lamna Healthcare has been neglecting security in their environment, but has realized that they need to put some major focus in this area. They're not exactly sure where to start, or if they can just buy a solution to make their environment secure. They know they need an overall holistic approach, but are unsure what really fits into that. Here, we'll identify key concepts of defense in depth, identify key security technologies and approaches to support a defense in depth strategy, and discuss how to apply these concepts when architecting your own Azure services.
+보안 "간편 단추"가 없고 보안의 관점에서 모든 문제를 해결하는 솔루션이 없습니다. Lamna Healthcare가 그 동안 환경 내에서 보안을 게을리했지만, 이 영역에 어느 정도 초점을 두어야 한다는 사실을 깨달았다고 가정해 봅시다. Lamna Healthcare는 어디서 시작해야 하는지, 단순히 솔루션을 구매해서 환경을 안전하게 만들 수 있는지 정확하게 알고 있지는 않습니다. 전체론적인 접근 방식이 필요하다는 것을 알고 있지만, 어떤 것이 적합한지는 잘 모릅니다. 여기서는 심층 방어의 주요 개념을 알아보고, 심층 방어 전략을 지원하는 핵심 보안 기술 및 접근 방법을 알아보고, Azure 서비스를 설계할 때 이러한 개념을 적용하는 방법을 살펴보겠습니다.
 
-## A layered approach to security
+## <a name="a-layered-approach-to-security"></a>보안에 대한 계층화된 접근 방식
 
-*Defense in depth* is a strategy that employs a series of mechanisms to slow the advance of an attack aimed at acquiring unauthorized access to information. Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure. Microsoft applies a layered approach to security, both in our physical datacenters and across Azure services. The objective of defense in depth is to protect and prevent information from being stolen by individuals not authorized to access it. The common principles used to define a security posture are confidentiality, integrity, and availability, known collectively as CIA.
+*심층 방어*는 정보에 무단으로 액세스하려는 공격의 진행 속도를 늦추는 일련의 메커니즘을 사용하는 전략입니다. 각 계층에서 보호를 제공하므로 한 계층이 뚫리더라도 이미 후속 계층이 배치되어 추가 노출이 방지됩니다. Microsoft는 물리적 데이터 센터와 Azure 서비스 전반에 걸쳐 계층화된 접근 방식을 보안에 적용합니다. 심층 방어의 목적은 액세스 권한이 없는 개인으로부터 정보를 보호하고 도난을 방지하는 것입니다. 보안 상태를 방어하는 데 사용되는 일반적인 원칙은 기밀성, 무결성, 가용성이며 세 가지를 묶어서 CIA라고 부릅니다.
 
-- __Confidentiality__ - Principle of least privilege. Restricting access to information only to individuals explicitly granted access. This information includes protection of user passwords, remote access certificates, and email content.
+- __기밀성__ - 최소 권한의 원칙. 명시적으로 액세스 권한이 부여된 개인만 정보에 액세스할 수 있도록 제한합니다. 이 정보는 사용자 암호, 원격 액세스 인증서 및 이메일 내용에 대한 보호를 포함합니다.
 
-- __Integrity__ - The prevention of unauthorized changes to information at rest or in transit. A common approach used in data transmission is for the sender to create a unique fingerprint of the data using a one-way hashing algorithm. The hash is sent to the receiver along with the data. The data's hash is recalculated and compared to the original by the receiver to ensure the data wasn't lost or modified in transit.
+- __무결성__ - 미사용 또는 전송 중인 정보의 무단 변경 방지. 데이터 전송에 사용되는 일반적인 방법은 발신자가 단방향 해시 알고리즘을 사용하여 고유한 데이터 지문을 만드는 것입니다. 해시는 데이터와 함께 수신자에게 전송됩니다. 수신자는 데이터의 해시를 다시 계산하고 원본과 비교하여 데이터가 전송 중에 손실 또는 수정되지 않았는지 확인합니다.
 
-- __Availability__ - Ensure services are available to authorized users. Denial of service attacks are the most prevalent malicious example of this. Natural disasters also drive system design to prevent singe points of failure and deploy multiple instances of an application to geo-dispersed locations.
+- __가용성__ -인증된 사용자가 서비스를 사용할 수 있어야 합니다. 이 부분을 노리는 가장 일반적인 악성 공격이 바로 서비스 거부 공격입니다. 또한 자연 재해를 고려하여 단일 실패 지점을 방지하고 여러 응용 프로그램 인스턴스를 지리적으로 분산된 위치에 배포하도록 시스템을 디자인해야 합니다.
 
-## Security layers
+## <a name="security-layers"></a>보안 레이어
 
-Defense in depth can be visualized as a set of concentric rings, with the data to be secured at the center. Each ring adds an additional layer of security around the data. This approach removes reliance on any single layer of protection and acts to slow down an attack and provide alert telemetry that can be acted upon, either automatically or manually. Let's take a look at each of the layers.
+심층 방어를 일련의 동심원으로 시각화할 수 있으며, 그 중심에 데이터를 배치하여 보호합니다. 각 원은 데이터 주변에 추가 보안 레이어를 추가합니다. 이 방법을 사용하면 단일 보호 레이어에 의존하지 않고 공격 속도를 늦출 수 있으며, 자동으로 또는 수동으로 작업할 수 있는 경고 원격 분석을 제공할 수 있습니다. 각 레이어를 살펴보겠습니다.
 
-![Defense in depth](../media-draft/defense_in_depth_layers_small.PNG)
+![심층 방어](../media-draft/defense_in_depth_layers_small.PNG)
 
-### Data
+### <a name="data"></a>데이터
 
-In almost all cases, attackers are after data:
+대부분의 경우 공격자의 목표는 다음 데이터입니다.
 
-- Data stored in a database
-- Data stored on disk inside virtual machines
-- Data stored on a SaaS application such as Office 365
-- Data stored in cloud storage
+- 데이터베이스에 저장된 데이터
+- 가상 머신 내부의 디스크에 저장된 데이터
+- Office 365 같은 SaaS 응용 프로그램에 저장된 데이터
+- 클라우드 저장소에 저장된 데이터
 
-It's the responsibility of those storing and controlling access to data to ensure that it's properly secured. Often there are regulatory requirements that dictate the controls and processes that must be in place to ensure the confidentiality, integrity, and availability of the data.
+데이터를 저장하고 액세스를 제어하는 사람은 데이터를 적절하게 보호할 책임이 있습니다. 종종 데이터의 기밀성, 무결성 및 가용성을 유지하기 위한 제어 및 프로세스를 적용할 것을 지시하는 규제 요구 사항이 있습니다.
 
-### Applications
+### <a name="applications"></a>응용 프로그램
 
-- Ensure applications are secure and free of vulnerabilities
-- Store sensitive application secrets in a secure storage medium
-- Make security a design requirement for all application development
+- 안전하고 취약점이 없도록 응용 프로그램 보호
+- 중요한 응용 프로그램 비밀을 안전한 저장 매체에 저장
+- 모든 응용 프로그램 개발 시 보안을 요구 사항으로 지정
 
-Integrating security into the application development life cycle will help reduce the number of vulnerabilities introduced in code. Encourage all development teams to ensure their applications are secure by default, and are making security requirements non-negotiable.
+응용 프로그램 개발 수명 주기에 보안을 통합하면 코드의 취약점을 줄일 수 있습니다. 모든 개발 팀에게 기본적으로 응용 프로그램을 안전하게 만들고 보안 요구 사항을 협상하지 말라고 합니다.
 
-### Compute
+### <a name="compute"></a>계산
 
-- Secure access to virtual machines
-- Implement endpoint protection and keep systems patched and current
+- 가싱 머신 액세스 보안
+- 엔드포인트 보호를 구현하고 지속적으로 시스템 패치 및 최신 상태 유지
 
-Malware, unpatched systems, and improperly secured systems open your environment to attacks. The focus in this layer is on making sure your compute resources are secure, and you have the proper controls in place to minimize security issues.
+맬웨어, 패치되지 않은 시스템, 부적절한 보안 시스템으로 인해 환경이 공격에 노출됩니다. 이 계층의 핵심은 계산 리소스를 안전하게 보호하고 적절한 제어를 통해 보안 문제를 최소화하는 것입니다.
 
-### Networking
+### <a name="networking"></a>네트워킹
 
-- Limit communication between resources
-- Deny by default
-- Restrict inbound internet access and limit outbound where appropriate
-- Implement secure connectivity to on-premises networks
+- 리소스 간 보안 제한
+- 기본적으로 거부
+- 인바운드 인터넷 액세스를 금지하고 적절한 경우 아웃바운드를 제한
+- 온-프레미스 네트워크에 대한 보안 연결 구현
 
-At this layer, the focus is on limiting the network connectivity across all your resources to only allow what is required. By limiting this communication, you reduce the risk of lateral movement throughout your network.
+이 레이어의 핵심은 필요한 리소스에만 액세스할 수 있도록 모든 리소스에서 네트워크 연결을 제한하는 것입니다. 이 통신을 제한하여 네트워크 전체에서 횡 이동 위험을 줄입니다.
 
-### Perimeter
+### <a name="perimeter"></a>경계
 
-- Use distributed denial-of-service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for end users
-- Use perimeter firewalls to identify and alert on malicious attacks against your network
+- DDoS(분산 서비스 거부) 보호 기능을 사용하여 최종 사용자에게 서비스 거부가 발생하기 전에 대규모 공격을 필터링
+- 경계 방화벽을 사용하여 네트워크에 대한 악의적인 공격을 파악하고 그에 대해 경고
 
-At the network perimeter, it's about protecting from network-based attacks against your resources. Identifying these attacks, eliminating their impact, and alerting on them is important to keep your network secure.
+네트워크 경계에서, 리소스에 대한 네트워크 기반 공격을 방어합니다. 네트워크 보안을 유지하려면 이러한 공격을 파악하여 영향을 제거하고 공격에 대해 경고하는 것이 중요합니다.
 
-### Policies & access
+### <a name="policies--access"></a>정책 및 액세스
 
-- Control access to infrastructure, change control
-- Use single sign-on and multi-factor authentication
-- Audit events and changes
+- 인프라에 대한 액세스 제어, 변경 제어
+- Single Sign-On 및 다단계 인증 사용
+- 이벤트 및 변경 내용 감사
 
-The policy & access layer is all about ensuring identities are secure, and that access granted is only what is needed, and changes are logged.
+정책 및 액세스 레이어는 ID를 안전하게 보호하고, 필요할 때만 액세스 권한을 부여하고, 변경 내용을 기록합니다.
 
-### Physical security
+### <a name="physical-security"></a>물리적 보안
 
-- Physical building security and controlling access to computing hardware within the data center is the first line of defense.
+- 물리적 빌드 보안 및 데이터 센터 내의 컴퓨팅 하드웨어에 대한 액세스 제어가 첫 번째 방어선입니다.
 
-With physical security, the intent is to provide physical safeguards against access to assets. This ensures that other layers can't be bypassed, and loss or theft is handled appropriately.
+물리적 보안을 사용하는 목적은 자산 액세스에 대한 물리적 보호 수단을 제공하는 것입니다. 이렇게 하면 다른 계층이 무시되지 않고, 손실 또는 도난이 적절하게 처리됩니다.
 
-Each layer can implement one or more of the CIA concerns.
+각 레이어는 CIA 중 하나 이상을 구현할 수 있습니다.
 
-|#|Ring|Example|Principle
+|#|원|예|원칙
 |---|---|---|---|
-|1|Data|Data encryption at rest in Azure blob storage|Integrity|
-|2|Application|SSL/TLS encrypted sessions|Integrity|
-|3|Compute|Regularly apply OS and layered software patches|Availability|
-|4|Network|Network security rules|Confidentiality|
-|5|Perimeter|DDoS protection|Availability|
-|6|Policies & Access|Azure Active Directory user authentication|Integrity|
-|7|Physical Security|Azure data center biometric access controls|Confidentiality|
+|1|데이터|Azure Blob 저장소의 미사용 데이터 암호화|무결성|
+|2|응용 프로그램|SSL/TLS 암호화 세션|무결성|
+|3|계산|정기적으로 OS 및 계층화 소프트웨어 패치 적용|가용성|
+|4|네트워크|네트워크 보안 규칙|기밀성|
+|5|경계|DDoS 보호|가용성|
+|6|정책 및 액세스|Azure Active Directory 사용자 인증|무결성|
+|7|물리적 보안|Azure 데이터 센터 생체 액세스 제어|기밀성|
 
-## Shared responsibilities
+## <a name="shared-responsibilities"></a>책임
 
-As computing environments move from customer-controlled datacenters to cloud datacenters, the responsibility of security also shifts. Security is now a concern shared by both cloud providers and customers.
+계산 환경이 고객 제어 데이터 센터에서 클라우드 데이터 센터로 전환되면서, 보안의 책임 소재도 바뀌고 있습니다. 이제 보안은 클라우드 공급자와 고객 모두의 문제입니다.
 
 ![shared_responsibility.png](../media-draft/shared_responsibilities.png)
 
-## Continuous improvement
+## <a name="continuous-improvement"></a>지속적인 향상
 
-The threat landscape is evolving in real time and at massive scale, therefore a security architecture is never complete. Microsoft and our customers require the ability to respond to these threats intelligently, quickly, and at scale.
+위협 환경이 실시간으로 그리고 엄청난 규모로 진화하고 있으므로 완벽한 보안 아키텍처란 절대 존재할 수 없습니다. Microsoft와 그 고객은 이러한 위협에 지능적이고 신속하게, 그리고 대규모로 대처할 수 있는 기능이 필요합니다.
 
-[Azure Security Center](https://azure.microsoft.com/services/security-center/) provides customers with unified security management and advanced threat protection to understand and respond to security events on-premises and in Azure. In turn, Azure customers have a responsibility to continually reevaluate and evolve their security architecture.
+[Azure Security Center](https://azure.microsoft.com/services/security-center/)는 고객에게 온-프레미스 및 Azure의 보안 이벤트를 이해하고 대응할 수 있는 통합 보안 관리 및 고급 위협 보호 기능을 제공합니다. 그 대신 Azure 고객은 지속적으로 보안 아키텍처를 재평가하고 발전시킬 책임이 있습니다.
 
-## Defense in depth at Lamna Healthcare
+## <a name="defense-in-depth-at-lamna-healthcare"></a>Lamna Healthcare의 심층 방어
 
-Lamna Healthcare has put a strong focus on defense in depth across all IT teams. Since the organization is responsible for a substantial amount of sensitive health care data, they realize that a comprehensive approach is their best path forward. 
+Lamna Healthcare는 모든 IT 팀에서 심층 방어에 심혈을 기울였습니다. Lamna Healthcare는 상당히 많은 중요한 의료 데이터를 담당하고 있으므로 포괄적인 접근 방법으로 나아가는 것이 최상의 경로라고 인식하고 있습니다. 
 
-They've formed a virtual team, with representatives from each IT team along with their security team, that is focused on driving this across the organization. They work on educating engineers and architects on vulnerabilities, how to address them, and provide guidance as projects move through the organization.
+또한 보안 팀과 함께 각 IT 팀의 대표를 모아서 조직 전체에서 이 방법을 추진하는 것에 집중하는 가상 팀을 꾸렸습니다. Lamna Healthcare는 엔지니어와 설계자에게 취약점 및 취약점 해결 방법을 교육하고, 조직 전체에서 프로젝트가 진행되면 그에 맞는 지침을 제공합니다.
 
-They realize that this effort is never done, and have put in place regular policy, process, technical, and architectural reviews to ensure they are constantly looking at ways to improve security.
+Lamna Healthcare는 이러한 작업이 이전에 진행된 적이 없다는 사실을 깨닫고 보안을 개선하는 방안을 지속적으로 살펴볼 수 있도록 주기적으로 정책, 프로세스, 기술 및 아키텍처를 검토하기로 했습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-We've looked at what a defense in depth approach to security looks like, what the layers of this approach look like, and what each layer is focused on. Using this approach to secure your architecture will put you on a path forward to ensure you're addressing security comprehensively across your environment instead of focusing on one single layer or technology.
+보안에 대한 심층 방어 접근 방식이 무엇인지, 이 접근 방식의 레이어는 어떤 모습인지, 그리고 각 레이어가 무엇에 집중하는지에 대해 살펴봤습니다. 아키텍처를 보호하는 데 이 접근 방식을 사용하면, 어느 한 레이어 또는 기술에만 집중하지 않고 전체 환경의 보안 문제를 포괄적으로 해결할 수 있는 대책을 제시합니다.

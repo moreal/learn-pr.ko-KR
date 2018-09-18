@@ -1,81 +1,81 @@
-As computing environments move from customer-controlled datacenters to cloud datacenters, the responsibility of security also shifts. Security is now a concern shared both by cloud providers and customers. For every application and solution, it's important to understand what your responsibility is and what Azure will handle for you. 
+컴퓨팅 환경이 고객 제어 데이터 센터에서 클라우드 데이터 센터로 전환되면서 보안 책임도 바뀌고 있습니다. 이제 보안은 클라우드 공급자와 고객 모두의 문제입니다. 모든 응용 프로그램 및 솔루션에 있어 사용지의 책임과 이와 관련된 Azure의 지원을 이해해야 합니다. 
 
-## Share security responsibility with Azure
+## <a name="share-security-responsibility-with-azure"></a>Azure와 보안 책임 공유
 
-The first shift is from on-premises datacenters to infrastructure as a service (IaaS). With IaaS, you are leveraging the lowest-level service and asking Azure to create virtual machines (VMs) and virtual networks. At this level, it's still your responsibility to patch and secure your operating systems and software, as well as configure your network to be secure. Contoso Shipping is taking advantage of IaaS when they start using Azure VMs instead of their on-premises physical servers. In addition to the operational advantages, they receive the security advantage of having outsourced concern over protecting the physical parts of the network.
+첫 번째 변화는 온-프레미스 데이터 센터에서 IaaS(Infrastructure-as-a-Service)로의 이전입니다. IaaS를 사용하면 가장 낮은 수준의 서비스를 활용하고, Azure에 VM(가상 머신) 및 가상 네트워크를 만들도록 요청합니다. 이 수준에서는 여전히 운영 체제와 소프트웨어를 패치 및 보호하고 네트워크를 안전하게 유지하도록 구성해야 합니다. Contoso 배송 회사는 온-프레미스 물리적 서버 대신 Azure VM을 사용할 때 IaaS를 활용합니다. 운영상의 이점 외에도 네트워크의 물리적 부분을 보호하는 것과 관련하여 문제를 아웃소싱하는 보안상의 이점을 얻을 수 있습니다.
 
-Moving to platform as a service (PaaS) outsources a lot of security concerns. At this level, Azure is taking care of the operating system and of most foundational software like database management systems. Everything is updated with the latest security patches and can be integrated with Azure Active Directory for access controls. PaaS also comes with a lot of operational advantages. Rather than building whole infrastructures and subnets for your environments by hand, you can "point and click" within the Azure portal or run automated scripts to bring complex, secured systems up and down, and scale them as needed. Contoso Shipping uses Azure Event Hubs for ingesting telemetry data from their trucks. They also use a web app with an Azure Cosmos DB back end with their mobile apps. Those services are all examples of PaaS.
+PaaS(Service-as-a-Service)로의 이전은 많은 보안 문제를 아웃소싱합니다. 이 수준에서는 Azure에서 운영 체제 및 데이터베이스 관리 시스템과 같은 대부분의 기본 소프트웨어를 관리합니다. 모든 소프트웨어는 최신 보안 패치로 업데이트되며, 액세스 제어를 위해 Active Directory와 통합할 수 있습니다. PaaS도 운영상의 많은 이점을 제공합니다. 사용자 환경에 맞게 전체 인프라와 서브넷을 직접 구축하는 대신, Azure Portal 내에서 "가리킨 다음 클릭"하거나 자동화된 스크립트를 실행하여 복잡한 보안 시스템을 위아래로 가져오고 필요에 따라 크기를 조정할 수 있습니다. Contoso는 Event Hub를 사용하여 트럭에서 원격 분석 데이터를 수집합니다. 또한 모바일 앱에서 CosmosDb 백 엔드가 있는 Web App을 사용합니다. 이러한 서비스는 모두 PaaS의 예입니다.
 
-With software as a service (SaaS), you outsource almost everything. SaaS is software that runs with an internet infrastructure. The code is controlled by the vendor, but configured to be used by the customer. Like so many companies, Contoso Shipping uses Office 365, which is a great example of SaaS!
+SaaS(Software-as-a-Service)를 사용하면 거의 모든 요소를 아웃소싱할 수 있습니다. SaaS는 인터넷 인프라에서 실행되는 소프트웨어이며, 코드는 공급업체에서 제어하지만 고객이 사용하도록 구성됩니다. 대부분의 회사와 마찬가지로 Contoso는 SaaS의 훌륭한 예인 Office 365를 사용합니다.
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![shared_responsibility.png](../media-COPIED-FROM-DESIGNFORSECURITY/shared_responsibilities.png)
 
-## A layered approach to security
+## <a name="a-layered-approach-to-security"></a>계층화된 보안 접근 방식
 
-*Defense in depth* is a strategy that employs a series of mechanisms to slow the advance of an attack aimed at acquiring unauthorized access to information. Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure. Microsoft applies a layered approach to security, both in our physical datacenters and across Azure services. The objective of defense in depth is to protect and prevent information from being stolen by individuals who are not authorized to access it.
+*심층 방어*는 정보에 무단으로 액세스하려는 공격의 진행 속도를 늦추는 일련의 메커니즘을 사용하는 전략입니다. 각 계층에서 보호를 제공하므로 한 계층이 뚫리더라도 이미 후속 계층이 배치되어 추가 노출이 방지됩니다. Microsoft는 물리적 데이터 센터와 Azure 서비스 전반에 걸쳐 계층화된 접근 방식을 보안에 적용합니다. 심층 방어의 목적은 액세스 권한이 없는 개인으로부터 정보를 보호하고 도난을 방지하는 것입니다.
 
-Defense in depth can be visualized as a set of concentric rings, with the data to be secured at the center. Each ring adds an additional layer of security around the data. This approach removes reliance on any single layer of protection and acts to slow down an attack and provide alert telemetry that can be acted upon, either automatically or manually. Let's take a look at each of the layers.
+심층 방어는 일단의 동심 링으로 시각화할 수 있으며, 그 중심에 데이터를 배치하여 보호합니다. 각 원은 데이터 주변에 추가 보안 레이어를 추가합니다. 이 방법을 사용하면 단일 보호 레이어에 의존하지 않고 공격 속도를 늦출 수 있으며, 자동으로 또는 수동으로 작업할 수 있는 경고 원격 분석을 제공할 수 있습니다. 각 계층을 살펴보겠습니다.
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Defense in depth](../media-COPIED-FROM-DESIGNFORSECURITY/defense_in_depth_layers_small.PNG)
+![심층 방어](../media-COPIED-FROM-DESIGNFORSECURITY/defense_in_depth_layers_small.PNG)
 
-### Data
+### <a name="data"></a>데이터
 
-In almost all cases, attackers are after data:
+대부분의 경우 공격자의 목표는 다음 데이터입니다.
 
-- Data stored in a database
-- Data stored on disk inside virtual machines
-- Data stored on an SaaS application such as Office 365
-- Data stored in cloud storage
+- 데이터베이스에 저장된 데이터
+- 가상 머신 내부의 디스크에 저장된 데이터
+- Office 365 같은 SaaS 응용 프로그램에 저장된 데이터
+- 클라우드 저장소에 저장된 데이터
 
-It's the responsibility of those storing and controlling access to data to ensure that it's properly secured. Often, there are regulatory requirements that dictate the controls and processes that must be in place to ensure the confidentiality, integrity, and availability of the data.
+데이터를 저장하고 액세스를 제어하는 사람은 데이터를 적절하게 보호할 책임이 있습니다. 종종 데이터의 기밀성, 무결성 및 가용성을 유지하기 위한 제어 및 프로세스를 적용할 것을 지시하는 규제 요구 사항이 있습니다.
 
-### Application
+### <a name="applications"></a>응용 프로그램
 
-- Ensure applications are secure and free of vulnerabilities.
-- Store sensitive application secrets in a secure storage medium.
-- Make security a design requirement for all application development.
+- 안전하고 취약점이 없도록 응용 프로그램 보호
+- 중요한 응용 프로그램 비밀을 안전한 저장 매체에 저장
+- 모든 응용 프로그램 개발 시 보안을 요구 사항으로 지정
 
-Integrating security into the application development life cycle will help reduce the number of vulnerabilities introduced in code. Encourage all development teams to ensure their applications are secure by default, and that they're making security requirements non-negotiable.
+응용 프로그램 개발 수명 주기에 보안을 통합하면 코드의 취약점을 줄일 수 있습니다. 모든 개발 팀에게 기본적으로 응용 프로그램을 안전하게 만들고 보안 요구 사항을 협상하지 말라고 합니다.
 
-### Compute
+### <a name="compute"></a>계산
 
-- Secure access to virtual machines.
-- Implement endpoint protection and keep systems patched and current.
+- 가싱 머신 액세스 보안
+- 엔드포인트 보호를 구현하고 지속적으로 시스템 패치 및 최신 상태 유지
 
-Malware, unpatched systems, and improperly secured systems open your environment to attacks. The focus in this layer is on making sure your compute resources are secure, and that you have the proper controls in place to minimize security issues.
+맬웨어, 패치되지 않은 시스템, 부적절한 보안 시스템으로 인해 환경이 공격에 노출됩니다. 이 계층의 핵심은 계산 리소스를 안전하게 보호하고 적절한 제어를 통해 보안 문제를 최소화하는 것입니다.
 
-### Networking
+### <a name="networking"></a>네트워킹
 
-- Limit communication between resources.
-- Deny by default.
-- Restrict inbound internet access and limit outbound, where appropriate.
-- Implement secure connectivity to on-premises networks.
+- 리소스 간 보안 제한
+- 기본적으로 거부
+- 인바운드 인터넷 액세스를 금지하고 적절한 경우 아웃바운드를 제한
+- 온-프레미스 네트워크에 대한 보안 연결 구현
 
-At this layer, the focus is on limiting the network connectivity across all your resources to allow only what is required. By limiting this communication, you reduce the risk of lateral movement throughout your network.
+이 레이어의 핵심은 필요한 리소스에만 액세스할 수 있도록 모든 리소스에서 네트워크 연결을 제한하는 것입니다. 이 통신을 제한하여 네트워크 전체에서 횡 이동 위험을 줄입니다.
 
-### Perimeter
+### <a name="perimeter"></a>경계
 
-- Use distributed denial of service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for end users.
-- Use perimeter firewalls to identify and alert on malicious attacks against your network.
+- DDoS(분산 서비스 거부) 보호 기능을 사용하여 최종 사용자에게 서비스 거부가 발생하기 전에 대규모 공격을 필터링
+- 경계 방화벽을 사용하여 네트워크에 대한 악의적인 공격을 파악하고 그에 대해 경고
 
-At the network perimeter, it's about protecting from network-based attacks against your resources. Identifying these attacks, eliminating their impact, and alerting on them is important to keep your network secure.
+네트워크 경계에서, 리소스에 대한 네트워크 기반 공격을 방어합니다. 네트워크 보안을 유지하려면 이러한 공격을 파악하여 영향을 제거하고 공격에 대해 경고하는 것이 중요합니다.
 
-### Policies & access
+### <a name="policies--access"></a>정책 및 액세스
 
-- Control access to infrastructure and change control.
-- Use single sign-on and multi-factor authentication.
-- Audit events and changes.
+- 인프라에 대한 액세스 제어, 변경 제어
+- Single Sign-On 및 다단계 인증 사용
+- 이벤트 및 변경 내용 감사
 
-The policy and access layer is all about ensuring identities are secure, access granted is only what is needed, and changes are logged.
+정책 및 액세스 레이어는 ID를 안전하게 보호하고, 필요할 때만 액세스 권한을 부여하고, 변경 내용을 기록합니다.
 
-### Physical security
+### <a name="physical-security"></a>물리적 보안
 
-- Physical building security and controlling access to computing hardware within the datacenter is the first line of defense.
+- 물리적 빌드 보안 및 데이터 센터 내의 컴퓨팅 하드웨어에 대한 액세스 제어가 첫 번째 방어선입니다.
 
-With physical security, the intent is to provide physical safeguards against access to assets. This ensures that other layers can't be bypassed, and loss or theft is handled appropriately.
+물리적 보안을 사용하는 목적은 자산 액세스에 대한 물리적 보호 수단을 제공하는 것입니다. 이렇게 하면 다른 계층이 무시되지 않고, 손실 또는 도난이 적절하게 처리됩니다.
 
-We've seen here that Azure helps a lot with your security concerns. But security is still a **shared responsibility**. How much of that responsibility falls on us depends on which model we use with Azure.
+여기서는 Azure가 보안 문제에 많은 도움이 된다는 것을 확인했습니다. 그러나 보안은 여전히 **공유 책임**입니다. 사용자에게 속한 책임의 상당한 부분이 Azure에서 사용하는 모델에 따라 달라집니다.
 
-We use the *defense in depth* rings as a guideline for considering what protections are adequate for our data and environments.
+*심층 방어* 링은 데이터 및 환경에 적합한 보호 수단을 고려하기 위한 지침으로 사용합니다.

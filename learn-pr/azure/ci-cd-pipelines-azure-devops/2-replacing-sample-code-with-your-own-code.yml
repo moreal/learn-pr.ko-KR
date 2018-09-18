@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.ci-cd-pipelines-azure-devops.2-replacing-sample-code-with-your-own-code
-title: Repacing the sample code with your own code
+title: 샘플 코드를 사용자 고유의 코드로 대체
 metadata:
-  title: Replacing the sample code with your own code
-  description: Learn how to replace the sample code in an Azure DevOps project with your own code.
-  author: lnyswonger
-  ms.date: 09/24/2018
-  ms.author: luken
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 샘플 코드를 사용자 고유의 코드로 대체
+  description: Azure DevOps 프로젝트의 샘플 코드를 사용자 고유의 코드로 바꾸는 방법을 알아보겠습니다.
+  ms.openlocfilehash: 1e87e2daf928ca64f2d300b79c0ddc21eced9278
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256091"
 durationInMinutes: 5
-content: |
-  [!include[](includes/2-replacing-sample-code-with-your-own-code.md)]
-  
+content: '[!include[](includes/2-replacing-sample-code-with-your-own-code.md)]'

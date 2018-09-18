@@ -1,4 +1,4 @@
-이제 MSI를 사용하도록 설정하여 앱이 인증에 사용할 ID를 만드는 방법을 알고 있으므로 자격 증명 모음의 비밀에 액세스하는 데 해당 ID를 사용하는 앱을 만듭니다.
+이제 Azure 리소스에 관리 ID를 사용하도록 설정하여 앱이 인증에 사용할 ID를 만드는 방법을 알고 있으므로 자격 증명 모음의 비밀에 액세스하는 데 해당 ID를 사용하는 앱을 만듭니다.
 
 ## <a name="reading-secrets-in-an-aspnet-core-app"></a>ASP.NET Core 앱에서 비밀 읽기
 
@@ -9,7 +9,7 @@ Azure Key Vault API는 키 및 자격 증명 모음의 모든 관리와 사용�
 > [!TIP]
 > 앱을 빌드하는 데 사용하는 프레임워크나 언어와 관계없이, 특별한 이유가 없는 한 비밀 값을 로컬로 캐시하거나 비밀을 앱 시작 시 메모리에 로드합니다. 필요할 때마다 자격 증명 모음에서 직접 비밀을 읽으면 불필요하게 속도가 느려지고 비용이 많이 듭니다.
 
-`AddAzureKeyVault`에는 자격 증명 모음 이름만 입력으로 필요하며 이 이름은 로컬 앱 구성에서 가져옵니다. MSI 인증을 자동으로 처리하기도 합니다. MSI를 사용하도록 설정하고 Azure App Service에 배포된 앱에서 사용될 경우 이 메서드는 MSI 토큰 서비스를 검색하고 이를 사용하여 인증합니다. 대부분의 시나리오에 적합하고 모범 사례를 모두 구현하며 이 단원의 연습에서 사용합니다.
+`AddAzureKeyVault`에는 자격 증명 모음 이름만 입력으로 필요하며 이 이름은 로컬 앱 구성에서 가져옵니다. 또한 관리 ID 인증을 자동으로 처리합니다. Azure 리소스에 대한 관리 ID를 사용하도록 설정된 Azure App Service에 배포된 앱에서 사용될 경우 관리 ID 토큰 서비스를 검색하고 이를 사용하여 인증합니다.&mdash; 대부분의 시나리오에 적합하고 모든 모범 사례를 구현하며, 이 단원의 연습에서 사용할 것입니다.
 
 ## <a name="handling-secrets-in-an-app"></a>앱에서 비밀 처리
 
@@ -71,9 +71,10 @@ namespace KeyVaultDemoApp
                     var vaultUrl = $"https://{builtConfig["VaultName"]}.vault.azure.net/";
 
                     // Load all secrets from the vault into configuration. This will automatically
-                    // authenticate to the vault using MSI. If MSI is not available, it will
-                    // check if Visual Studio and/or the Azure CLI are installed locally and
-                    // see if they are configured with credentials that can access the vault.
+                    // authenticate to the vault using a managed identity. If a managed identity
+                    // is not available, it will check if Visual Studio and/or the Azure CLI are
+                    // installed locally and see if they are configured with credentials that can
+                    // access the vault.
                     config.AddAzureKeyVault(vaultUrl);
                 })
                 .UseStartup<Startup>();

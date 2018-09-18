@@ -1,152 +1,152 @@
-To integrate your on-premises environment with Azure, you need the ability to create an encrypted connection. You can connect over the Internet or over a dedicated link. Here, we'll look at Azure VPN Gateway, which provides an endpoint for incoming connections from on-premises environments.
+온-프레미스 환경과 Azure를 통합하려면 암호화된 연결을 만드는 기능이 필요합니다. 공용 인터넷 또는 전용 링크를 통해 연결할 수 있습니다. 여기에서는 온-프레미스 환경에서 들어오는 연결에 대한 엔드포인트를 제공하는 Azure VPN Gateway를 살펴보겠습니다.
 
-You have set up an Azure virtual network and need to ensure that any data transfers from Azure to your site and between Azure virtual networks are encrypted. You also need to know how to connect virtual networks between regions and subscriptions.
+Azure 가상 네트워크를 설정하고 Azure에서 사이트 및 Azure 가상 네트워크 간에 모든 데이터 전송이 암호화되었는지 확인해야 합니다. 지역과 구독 간에 가상 네트워크를 연결하는 방법도 알아야 합니다.
 
-## What is a VPN gateway?
+## <a name="describe-a-vpn-gateway"></a>VPN 게이트웨이 설명
 
-An Azure VPN gateway provides an endpoint for incoming encrypted connections from on-premises locations to Azure over the Internet. It can also send encrypted traffic between Azure virtual networks over Microsoft's dedicated network that links Azure datacenters in different regions. This configuration allows you to link virtual machines and services in different regions securely.
+Azure VPN 게이트웨이는 인터넷을 통해 온-프레미스 위치에서 Azure로 들어오는 암호화된 연결에 대한 엔드포인트를 제공합니다. 다른 지역의 Azure 데이터 센터를 연결하는 Microsoft의 전용 네트워크를 통해 Azure 가상 네트워크 간에 암호화된 트래픽을 보낼 수도 있습니다. 이 구성을 사용하면 다른 지역의 가상 머신 및 서비스를 안전하게 연결할 수 있습니다.
 
-Each virtual network can have only one VPN gateway. All connections to that VPN gateway share the available network bandwidth.
+각 가상 네트워크에는 하나의 VPN Gateway만이 있을 수 있습니다. 해당 VPN Gateway에 대한 모든 연결은 사용 가능한 네트워크 대역폭을 공유합니다.
 
-Within each virtual network gateway there are two or more virtual machines (VMs). These VMs have been deployed to a special subnet that you specify, called the _gateway subnet_. They contain routing tables for connections to other networks, along with specific gateway services. These VMs and the gateway subnet are similar to a hardened network device. You don't need to configure these VMs directly and should not deploy any additional resources into the gateway subnet.
+각 가상 네트워크 게이트웨이 내에는 두 개 이상의 VM(가상 머신)이 있습니다. 이러한 VM은 _게이트웨이 서브넷_이라는 지정된 특별한 서브넷에 배포되었습니다. 이러한 VM에는 특정 게이트웨이 서비스와 함께 다른 네트워크 연결에 대한 라우팅 테이블이 포함됩니다. 이러한 VM 및 게이트웨이 서브넷은 강화된 네트워크 장치와 비슷합니다. 이러한 VM을 직접 구성할 필요는 없으며 게이트웨이 서브넷에 추가 리소스를 배포하지 않아야 합니다.
 
-Creating a virtual network gateway can take some time to complete, so it's vital that you plan appropriately. When you create a virtual network gateway, the provisioning process generates the gateway VMs and deploys them to the gateway subnet. These VMs will have the settings that you configure on the gateway.
+가상 네트워크 게이트웨이 생성을 완료하는 데 시간이 걸릴 수 있으므로 적절하게 계획해야 합니다. 가상 네트워크 게이트웨이를 만들 때 프로비전 프로세스는 게이트웨이 VM을 생성하고 게이트웨이 서브넷에 배포합니다. 이러한 VM에는 게이트웨이를 구성하는 설정이 있습니다.
 
-A key setting is the **_gateway type_**, which for a VPN gateway will be of type "vpn". Options for VPN gateways include:
+키 설정은 **_게이트웨이 형식_** 이며 VPN Gateway의 경우 "vpn" 형식입니다. VPN 게이트웨이에 대한 옵션은 다음과 같습니다.
 
-- Network-to-network connections over IPsec/IKE VPN tunneling, linking VPN gateways to other VPN gateways.
+- IPsec/IKE VPN 터널링을 통해 VPN 게이트웨이를 다른 VPN 게이트웨이에 연결하는 네트워크 간 연결.
 
-- Cross-premises IPsec/IKE VPN tunneling, for connecting on-premises networks to Azure through dedicated VPN devices to create site-to-site connections.
+- 사이트 간 연결을 만드는 전용 VPN 장치를 통해 온-프레미스 네트워크를 Azure에 연결하기 위한 교차 프레미스 IPsec/IKE VPN 터널링.
 
-- Point-to-site connections over IKEv2 or SSTP, to link client computers to resources in Azure.
+- Azure의 리소스에 클라이언트 컴퓨터를 연결하기 위한 IKEv2 또는 SSTP를 통한 지점 및 사이트 간 연결.
 
-Now, let's look at the factors you need to consider for planning your VPN gateway.
+이제 VPN 게이트웨이를 계획하기 위해 고려해야 할 요인을 살펴보겠습니다.
 
-## Plan a VPN gateway
+## <a name="plan-a-vpn-gateway"></a>VPN 게이트웨이 계획
 
-When you're planning a VPN gateway, there are three architectures to consider:
+VPN 게이트웨이를 계획할 때 고려해야 할 세 가지 아키텍처가 있습니다.
 
-- Point to site over the Internet
-- Site to site over the Internet
-- Site to site over a dedicated network, such as Azure ExpressRoute
+- 인터넷을 통한 지점 및 사이트 간 연결
+- 인터넷을 통한 사이트 간 연결
+- Azure ExpressRoute와 같은 전용 네트워크를 통한 사이트 간 연결
 
-### Planning factors
+### <a name="planning-factors"></a>계획 요소
 
-Factors that you need to cover during your planning process include:
+계획 프로세스 동안 처리해야 하는 요소는 다음과 같습니다.
 
-- Throughput - Mbps or Gbps
-- Backbone - Internet or private?
-- Availability of a public (static) IP address
-- VPN device compatibility
-- Multiple client connections or a site-to-site link?
-- VPN gateway type
+- 처리량 - Mbps 또는 Gbps
+- 백본 - 인터넷 또는 개인?
+- 공용(정적) IP 주소의 가용성
+- VPN 장치 호환성
+- 여러 클라이언트 연결 또는 사이트 간 연결?
+- VPN Gateway 형식
 - Azure VPN Gateway SKU
 
-The following table summarizes some of these planning issues. The remainder are discussed later.
+다음 표에서는 이러한 계획 문제 중 일부를 요약합니다. 나머지는 나중에 설명되어 있습니다.
 
-|                           |  Point to site            | Site to site                          |  ExpressRoute                 |
+|                           |  지점 및 사이트 간 연결            | 사이트 간 연결                          |  ExpressRoute                 |
 | -------------             | -------------             | -------------                         | ---------                     |
-| Azure supported services  | Cloud services and VMs    | Cloud services and VMs                | All supported services        |
-| Typical bandwidth         | Depends on VPN Gateway SKU    | Up to 1 Gbps with aggregation         | From 50 Mbps to 10 Gbps       |
-| Protocols supported       | SSTP and IPsec            | IPsec                                 | Direct connection, VLANs      |
-| Routing                   | RouteBased (dynamic)      | PolicyBased (static) and RouteBased   | BGP                           |
-| Connection resiliency     | Active-passive            | Active-passive or active-active       | Active-active                 |
-| Use case                  | Testing and prototyping   | Dev, test and small-scale production  | Enterprise/mission critical   |
+| Azure 지원 서비스  | Cloud 서비스 및 VM    | Cloud 서비스 및 VM                | 지원되는 모든 서비스        |
+| 일반적인 대역폭         | VPN Gateway SKU에 따름    | 집계를 사용하여 최대 1Gbps         | 50Mbps에서 10Gbps 사이       |
+| 지원되는 프로토콜       | SSTP 및 IPsec            | IPsec                                 | 직접 연결, VLAN      |
+| 라우팅                   | RouteBased(동적)      | PolicyBased(정적) 및 RouteBased   | BGP                           |
+| 연결 복원력     | 활성-수동            | 활성-수동 또는 활성-활성       | 활성-활성                 |
+| 사용 사례                  | 테스트 및 프로토타입   | 개발, 테스트 및 소규모 프로덕션  | 엔터프라이즈/중요 업무용   |
 
-### Gateway SKUs
+### <a name="gateway-skus"></a>게이트웨이 SKU
 
-Azure offers the following SKUs for gateway services:
+Azure는 게이트웨이 서비스에 대해 다음과 같은 SKU를 제공합니다.
 
-| SKU              |  S2S/network-to-network tunnels | P2S connections  |  Aggregate throughput benchmark   | Use for                         |
+| SKU              |  S2S/-네트워크 간 터널 | P2S 연결  |  집계 처리량 벤치마크   | 용도                         |
 | -------------    | -------------             | -------------    | ---------                         | ---------                       |
-| Basic            | Max 10                    | Max 128          | 100 Mbps                          | Dev/test/POC                    |
-| VpnGw1           | Max 30                    | Max 128          | 650 Mbps                          | Production/critical workloads   |
-| VpnGw2           | Max 30                    | Max 128          | 1 Gbps                            | Production/critical workloads   |
-| VpnGw3           | Max 30                    | Max 128          | 1.25 Gbps                          | Production/critical workloads   |
+| 기본            | 최댓값 10                    | 최댓값 128          | 100Mbps                          | 개발/테스트/POC                    |
+| VpnGw1           | 최댓값 30                    | 최댓값 128          | 650Mbps                          | 프로덕션/중요 워크로드   |
+| VpnGw2           | 최댓값 30                    | 최댓값 128          | 1Gbps                            | 프로덕션/중요 워크로드   |
+| VpnGw3           | 최댓값 30                    | 최댓값 128          | 1.25Gbps                          | 프로덕션/중요 워크로드   |
 
 > [!Note]
-> It's important that you choose the right SKU. If you have set up your VPN gateway with the wrong one, you'll have to take it down and rebuild the gateway, which can be time consuming.
+> 올바른 SKU를 선택해야 합니다. 잘못된 SKU를 사용하여 VPN 게이트웨이를 설정한 경우 중지하고 게이트웨이를 다시 빌드해야 하며, 이 경우 시간이 걸릴 수 있습니다.
 
-## Workflow
+## <a name="workflow"></a>워크플로
 
-When designing a cloud connectivity strategy using virtual private networking on Azure, you should apply the following workflow:
+Azure에서 가상 사설 네트워킹을 사용하여 클라우드 연결 전략을 설계할 때 다음과 같은 워크플로를 적용해야 합니다.
 
-1. Design your connectivity topology, listing the address spaces for all connecting networks.
+1. 연결 토폴로지를 설계하면서 연결된 모든 네트워크의 주소 공간을 나열합니다.
 
-1. Create an Azure virtual network.
+1. Azure 가상 네트워크를 만듭니다.
 
-1. Create a VPN gateway for the virtual network.
+1. 가상 네트워크의 VPN Gateway를 만듭니다.
 
-1. Create and configure connections to on-premises networks or other virtual networks, as required.
+1. 필요에 따라 온-프레미스 네트워크 또는 기타 가상 네트워크에 대한 연결을 만들고 구성합니다.
 
-1. If required, create and configure a point-to-site connection for your Azure VPN gateway.
+1. 필요한 경우 Azure VPN 게이트웨이에 대한 지점 및 사이트 간 연결을 만들고 구성합니다.
 
-### Design considerations
+### <a name="design-considerations"></a>설계 고려 사항
 
-When you design your VPN gateways to connect virtual networks, you must consider the following factors:
+가상 네트워크를 연결하기 위해 VPN 게이트웨이를 설계할 때 다음과 같은 요인을 고려해야 합니다.
 
-- Subnets cannot overlap
+- 서브넷은 겹칠 수 없음
 
-    It is vital that a subnet in one location does not contain the same address space as in another location.
+    한 위치의 서브넷은 다른 위치에 동일한 주소 공간을 포함하지 않아야 합니다.
 
-- IP addresses must be unique
+- IP 주소는 고유해야 함
 
-    You cannot have two hosts with the same IP address in different locations, as it will be impossible to route traffic between those two hosts and the network-to-network connection will fail.
+    다른 위치에 동일한 IP 주소를 가진 두 호스트가 있을 수 없습니다. 해당하는 두 호스트 간에 트래픽을 라우팅할 수 없고 네트워크 간 연결에 실패하기 때문입니다.
 
-- VPN gateways need a gateway subnet called **GatewaySubnet**
+- VPN 게이트웨이에는 **GatewaySubnet**이라는 게이트 서브넷이 필요함
 
-    It must have this name for the gateway to work, and it should not contain any other resources.
+    게이트웨이가 작동하려면 이 이름이 있어야 하며 다른 리소스를 포함하지 않아야 합니다.
 
-### Create an Azure virtual network
+### <a name="create-an-azure-virtual-network"></a>Azure 가상 네트워크 만들기
 
-Before you create a VPN gateway, you need to create the Azure virtual network.
+VPN 게이트웨이를 만들기 전에 Azure 가상 네트워크를 만들어야 합니다.
 
-### Create a VPN gateway
+### <a name="create-a-vpn-gateway"></a>VPN 게이트웨이 만들기
 
-The type of VPN gateway you create will depend on your architecture. Options are:
+생성하는 VPN 게이트웨이 형식은 아키텍처에 따라 달라집니다. 옵션은 다음과 같습니다.
 
-- RouteBased
+- 경로 기반
 
-    Route-based VPN devices use any-to-any (wildcard) traffic selectors, and let routing/forwarding tables direct traffic to different IPsec tunnels. Route-based connections are typically built on router platforms where each IPsec tunnel is modeled as a network interface or VTI (virtual tunnel interface).
+    경로 기반 VPN 장치는 임의(와일드 카드) 트래픽 선택기를 사용하며, 라우팅/전달 테이블이 서로 다른 IPsec 터널에 트래픽을 전달하도록 합니다. 경로 기반 연결은 일반적으로 각 IPsec 터널이 네트워크 인터페이스 또는 VTI(가상 터널 인터페이스)로 모델링되는 라우터 플랫폼에 빌드됩니다.
 
-- PolicyBased
+- 정책 기반
 
-    Policy-based VPN devices use the combinations of prefixes from both networks to define how traffic is encrypted/decrypted through IPsec tunnels. A policy-based connection is typically built on firewall devices that perform packet filtering. IPsec tunnel encryption and decryption are added to the packet filtering and processing engine.
+    정책 기반 VPN 장치는 두 네트워크의 접두사 조합을 사용하여 트래픽이 IPsec 터널을 통해 암호화/암호 해독되는 방법을 정의합니다. 정책 기반 연결은 일반적으로 패킷 필터링을 수행하는 방화벽 장치에 빌드됩니다. IPsec 터널 암호화 및 암호 해독이 패킷 필터링 및 처리 엔진에 추가됩니다.
 
-## Set up a VPN gateway
+## <a name="set-up-a-vpn-gateway"></a>VPN 게이트웨이 설정
 
-The steps you need to take will depend on the type of VPN gateway that you are installing. For example, to create a point-to-site VPN gateway by using the Azure portal, you would carry out the following steps:
+수행해야 하는 단계는 설치하는 VPN 게이트웨이의 형식에 따라 다릅니다. 예를 들어 Azure Portal을 사용하여 지점 및 사이트 간 VPN 게이트웨이를 만들려면 다음 단계를 수행합니다.
 
-1. Create a virtual network
+1. 가상 네트워크 만들기
 
-2. Add a gateway subnet
+2. 게이트웨이 서브넷 추가
 
-3. Specify a DNS server (optional)
+3. DNS 서버 지정(선택 사항)
 
-4. Create a virtual network gateway
+4. 가상 네트워크 게이트웨이 만들기
 
-5. Generate certificates
+5. 인증서 생성
 
-6. Add the client address pool
+6. 클라이언트 주소 풀 추가
 
-7. Configure the tunnel type
+7. 터널 형식 구성
 
-8. Configure the authentication type
+8. 인증 유형 구성
 
-9. Upload the root certificate public certificate data
+9. 루트 인증서 공용 인증서 데이터 업로드
 
-10. Install an exported client certificate
+10. 내보낸 클라이언트 인증서 설치
 
-11. Generate and install the VPN client configuration package
+11. VPN 클라이언트 구성 패키지 생성 및 설치
 
-12. Connect to Azure
+12. Azure에 연결
 
-As there are several configuration paths with Azure VPN gateways, each with multiple options, it is not possible to cover every setup in this course. For more information, see the Additional Resources section.
+여러 옵션을 사용한 각 구성 경로 및 Azure VPN 게이트웨이를 통한 여러 구성 경로가 있으므로 이 과정에서 모든 설정을 다룰 수 없습니다. 자세한 내용은 추가 리소스 섹션을 참조하세요.
 
-## Configure the gateway
+## <a name="configure-the-gateway"></a>게이트웨이 구성
 
-Once your gateway is created, you'll need to configure it.  There are several configuration settings you will need to provide, such as the name, location, DNS server, etc. We will go into these in more detail in the exercise.
+게이트웨이를 만들면 이를 구성해야 합니다.  이름, 위치, DNS 서버 등과 같은 몇 가지 구성 설정을 제공해야 합니다. 자세한 내용은 연습에서 알아봅니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-Azure VPN gateways are a component in Azure virtual networks that enable point-to-site, site-to-site, or network-to-network connections. Azure VPN gateways enable individual client computers to connect to resources in Azure, extend on-premises networks into Azure, or facilitate connections between virtual networks in different regions and subscriptions.
+Azure VPN 게이트웨이는 지점 및 사이트 간, 사이트 간 또는 네트워크 간 연결을 가능하게 하는 Azure 가상 네트워크의 구성 요소입니다. Azure VPN 게이트웨이를 사용하면 개별 클라이언트 컴퓨터가 Azure의 리소스에 연결하거나, Azure로 온-프레미스 네트워크를 확장하거나, 다른 지역 및 구독의 가상 네트워크 간 연결을 용이하게 할 수 있습니다.

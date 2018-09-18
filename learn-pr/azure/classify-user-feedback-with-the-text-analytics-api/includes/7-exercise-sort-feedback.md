@@ -1,73 +1,73 @@
-Every function must have one, and only one, trigger binding. It defines how our code is triggered to run. In addition to a trigger, we can define bindings that connect us to data sources. If you remember from our diagram of the solution, we want to send messages to three queues. So, we'll define those connections as output bindings in our function. We could create those bindings through the **Output binding** UI. However, to save time, we'll edit the config file directly.
+모든 함수에는 트리거 바인딩이 하나만 있어야 합니다. 트리거 바인딩은 코드가 트리거되어 실행되는 방법을 정의합니다. 트리거 외에도, 데이터 원본에 연결하는 바인딩을 정의할 수 있습니다. 솔루션의 다이어그램을 떠올려 보세요. 우리는 세 개의 큐에 메시지를 보내려고 합니다. 따라서 이러한 연결을 함수의 출력 바인딩으로 정의할 것입니다. 이러한 바인딩은 **출력 바인딩** UI를 통해 만들 수 있습니다. 그러나 시간을 절약하기 위해 config 파일을 직접 편집하겠습니다.
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. 함수 앱 포털에서 [!INCLUDE [func-name-discover](./func-name-discover.md)] 함수를 선택합니다.
 
-1. Expand the **View files** menu on the right of the screen.
+1. 화면 오른쪽에서 **파일 보기** 메뉴를 확장합니다.
 
-1. Under the **View files** tab, select **function.json** to open the config file in the editor.
+1. **파일 보기** 탭 아래에서 **function.json**을 선택하여 편집기에서 config 파일을 엽니다.
 
-1. Replace the entire content of the config file with the following JSON. 
+1. 구성 파일의 모든 콘텐츠를 다음 JSON으로 바꿉니다. 
 
 [!code-json[](../code/function.json)]
 
-We've added three new bindings to the config.
+config 파일에 세 개의 바인딩을 새로 추가했습니다.
 
-- Each new binding is of type `queue`. These bindings are for the three queues that we'll populate with our feedback messages to once we know the sentiment of the feedback.
-- Each binding has a direction defined as `out`, since we'll post messages to these queues.
-- Each binding uses the same connection to our storage account.
-- Each binding has a unique `queueName` and `name`.
+- 각 바인딩은 `queue` 형식입니다. 이러한 바인딩은 우리가 피드백의 감정을 알게 되면 피드백 메시지로 채울 세 개의 큐에 사용됩니다.
+- 메시지를 이러한 큐에 게시할 예정이므로 각 바인딩에서 방향이 `out`으로 정의되어 있습니다.
+- 각 바인딩은 저장소 계정에 동일한 연결을 사용합니다.
+- 각 바인딩에는 고유한 `queueName` 및 `name`이 있습니다.
 
-Posting a message to a queue is as easy as saying, for example,  `context.bindings.negativeFeedbackQueueItem = "<message>"`.
+메시지를 간단하게 큐에 게시할 수 있습니다(예: `context.bindings.negativeFeedbackQueueItem = "<message>"`).
 
-## Update implementation to sort feedback into queues based on sentiment score
+## <a name="update-implementation-to-sort-feedback-into-queues-based-on-sentiment-score"></a>감정 점수를 기준으로 피드백을 정렬하도록 구현 업데이트
 
-The goal of our feedback sorter is to sort feedback into three buckets, positive, neutral, and negative. So far, we have our input queue, our code to call Text Analytics API, and we've defined our output queues. In this section, we'll add the logic to move messages into those queues based on sentiment.
+피드백 분류기의 목표는 피드백을 긍정적, 중립, 부정적의 세 가지 버킷으로 분류하는 것입니다. 현재까지 입력 큐, 텍스트 분석 API를 호출하는 코드, 출력 큐를 정의했습니다. 이 섹션에서는 감정에 따라 메시지를 이러한 큐로 이동하는 논리를 추가할 것입니다.
 
-1. Navigate to our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], and  open `index.js` in the code editor again.
+1. [!INCLUDE [func-name-discover](./func-name-discover.md)] 함수로 이동하고, 다시 코드 편집기에서 `index.js`를 엽니다.
 
-1. Replace the implementation with the following update.
+1. 구현을 다음 업데이트로 바꿉니다.
 [!code-javascript[](../code/discover-sentiment+sort.js?highlight=25-48)]
 
-We've added the highlighted code to our implementation. The code parses the response from the Text Analytics API cognitive service. Based on the sentiment score, the message is forwarded to one of or three output queues. The code to post the message is just setting the correct binding parameter.
+강조 표시된 코드를 구현에 추가했습니다. 이 코드는 텍스트 분석 API Cognitive Services의 응답을 구문 분석합니다. 감정 점수에 따라 메시지가 세 출력 큐 중 하나로 전달됩니다. 메시지를 게시하는 코드는 단순히 올바른 바인딩 매개 변수를 설정합니다.
 
-## Try it out
+## <a name="try-it-out"></a>사용해보기
 
-To test the updated implementation, we'll head back to the Storage Explorer. 
+업데이트된 구현을 테스트하기 위해 Storage 탐색기로 돌아가겠습니다. 
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+1. 포털의 **리소스 그룹** 섹션에서 리소스 그룹으로 이동합니다.
 
-1. Select the resource group used in this lesson.
+1. 이 강좌에 사용된 리소스 그룹을 선택합니다.
 
-1. In the **Resource group** panel that opens, locate the Storage Account entry and select it.
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+1. 열리는 **리소스 그룹** 패널에서 저장소 계정 항목을 찾아 선택합니다.
+![리소스 그룹 창에서 선택한 저장소 계정의 스크린샷.](../media-draft/select-storage-account.png)
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage.
-![Screenshot of storage explorer showing our storage account, with one queue currently.](../media-draft/storage-explorer-menu-inputq.png)
+1. 저장소 계정 기본 창의 왼쪽 메뉴에서 **Storage 탐색기(미리 보기)** 를 선택합니다.  이 작업은 포털 내부에서 Azure Storage 탐색기를 엽니다. 이 단계에서는 화면이 다음 스크린샷과 비슷합니다.
+![현재 큐가 하나 있는 저장소 계정을 보여주는 저장소 탐색기의 스크린샷.](../media-draft/storage-explorer-menu-inputq.png)
 
-We have one queue listed under the **Queues** collection. This queue is [!INCLUDE [input-q](./q-name-input.md)],  the input queue we defined in the preceding test section of the module.
+**큐** 컬렉션 아래에 큐가 하나 나열되어 있습니다. 이 큐는 이 모듈의 이전 테스트 섹션에서 정의한 입력 큐인 [!INCLUDE [input-q](./q-name-input.md)]입니다.
 
-1. Select [!INCLUDE [input-q](./q-name-input.md)] in the left-hand menu to see the data explorer for this queue. As expected, the queue had no data. Let's add a message to the queue using the **Add Message** command at the top of the window. 
+1. 왼쪽 메뉴에서 [!INCLUDE [input-q](./q-name-input.md)]를 선택하여 이 큐의 데이터 탐색기를 살펴봅니다. 예상대로 큐에 데이터가 없습니다. 창 맨 위에 있는 **메시지 추가** 명령을 사용하여 큐에 메시지를 추가해 보겠습니다. 
 
-1. In the **Add Message** dialog, enter "I'm having fun with this exercise!" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. **메시지 추가** 대화 상자에서, "이 연습이 즐겁다!"를 **메시지 텍스트** 필드에 입력하고 대화 상자의 맨 아래에서 **확인**을 클릭합니다. 
 
-1. The message is displayed in the data window for [!INCLUDE [input-q](./q-name-input.md)]. After a few seconds, click **Refresh** at the top of the data view to refresh the view of the queue. Observe that the message disappears after a while. So, where did it go?
+1. [!INCLUDE [input-q](./q-name-input.md)]의 데이터 창에 메시지가 표시됩니다. 몇 초 후, 데이터 보기 맨 위에서 **새로 고침**을 클릭하여 큐 보기를 새로 고칩니다. 잠시 후 메시지가 사라집니다. 이 메시지는 어디로 갔을까요?
 
-1. Right-click on the **QUEUES** collection in the left-hand menu. Observe that a *new* queue has appeared.
-![Screenshot of Storage Explorer with showing a new queue has been created in the collection. The queue has one message.](../media-draft/sa-new-output-q.png)
+1. 왼쪽 메뉴에서 **큐** 컬렉션을 마우스 오른쪽 단추로 클릭합니다. *새* 큐가 나타납니다.
+![컬렉션에 새 큐가 만들어진 것을 보여주는 Storage 탐색기의 스크린샷. 큐에 하나의 메시지가 있습니다.](../media-draft/sa-new-output-q.png)
 
-The queue [!INCLUDE [positive-q](./q-name-positive.md)] was automatically created when a message was posted to it for the first time. With Azure Functions queue output bindings, you don't have to manually create the output queue before posting to it! Now that we see an incoming message has been sorted by our function into [!INCLUDE [positive-q](./q-name-positive.md)], let's see where the following messages land.
+[!INCLUDE [positive-q](./q-name-positive.md)] 큐는 메시지가 처음으로 게시될 때 자동으로 생성 되었습니다. Azure Functions 큐 출력 바인딩을 사용하면 큐에 게시하기 전에 출력 큐를 수동으로 만들 필요가 없습니다! 들어오는 메시지가 함수에 의해 [!INCLUDE [positive-q](./q-name-positive.md)]로 분류되는 것을 확인했으니, 다음 메시지가 어디로 도착하는지 살펴보겠습니다.
 
-5. Using the same steps as above, add the following messages to [!INCLUDE [input-q](./q-name-input.md)].
+5. 위와 동일한 단계를 사용하여 다음 메시지를 [!INCLUDE [input-q](./q-name-input.md)]에 추가합니다.
 
-- "I like broccoli!"
-- "Microsoft is a company"
+- "나는 브로콜리를 좋아합니다!"
+- "Microsoft는 회사입니다"
 
-6. Click **Refresh** until [!INCLUDE [input-q](./q-name-input.md)] is empty once again. This process might take a few moments and require several refreshes.
+6. [!INCLUDE [input-q](./q-name-input.md)]가 다시 비워질 때까지 **새로 고침**을 클릭합니다. 이 프로세스는 몇 분 정도 걸릴 수 있으며, 새로 고침을 여러 번 수행해야 합니다.
 
-1. Right-click on the **QUEUES** collection and observe two more queues appearing. The queues are named [!INCLUDE [neutral-q](./q-name-neutral.md)] and [!INCLUDE [negative-q](./q-name-negative.md)]. This might take a few seconds, so continue refreshing the **QUEUES** collection until new queues. When complete, your queue list should look like the following.
+1. **큐** 컬렉션을 마우스 오른쪽 단추로 클릭하고 큐 2개가 더 나타나는 것을 확인합니다. 큐 이름은 [!INCLUDE [neutral-q](./q-name-neutral.md)] 및 [!INCLUDE [negative-q](./q-name-negative.md)]입니다. 이 작업은 몇 초 정도 걸릴 수 있으므로 새 큐가 나타날 때까지 **큐** 컬렉션을 계속 새로 고칩니다. 작업이 완료되면 다음과 비슷한 큐 목록이 나타납니다.
 
-![Screenshot of Storage Explorer menu showing four queues in the QUEUES collection.](../media-draft/sa-final-q-list.png)
+![큐 컬렉션에 4개의 큐가 있음을 보여주는 Storage 탐색기의 스크린샷.](../media-draft/sa-final-q-list.png)
 
-Click on each queue in the list to see whether they have messages. If you added the suggested messages, you should see one message in [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)], and [!INCLUDE [negative-q](./q-name-negative.md)].
+목록의 각 큐를 클릭하여 메시지가 있는지 확인합니다. 제안된 메시지를 추가한 경우 [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)] 및 [!INCLUDE [negative-q](./q-name-negative.md)]에 하나의 메시지가 나타납니다.
 
-Congratulations! We now have a working feedback sorter! As messages arrive in the input queue, our function uses the Text Analytics API service to get a sentiment score. Based on that score, the function forwards the messages to the appropriate queue. While it seems like the function processes only one queue item at a time, the Azure Functions runtime will actually read batches of queue items and spin up other instances of our function to process them in parallel. 
+축하합니다. 작동하는 피드백 분류기가 완성되었습니다! 입력 큐에 메시지가 도착하면 함수에서 텍스트 분석 API 서비스를 사용하여 감정 점수를 가져옵니다. 이 점수에 따라 함수가 메시지를 적절한 큐에 전달합니다. 함수가 큐 항목을 한 번에 하나씩 처리하는 것처럼 보이지만, Azure Functions 런타임은 큐 항목의 일괄 처리를 읽고 함수의 다른 인스턴스를 스핀업하여 병렬로 처리합니다. 

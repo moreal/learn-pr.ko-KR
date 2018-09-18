@@ -14,37 +14,37 @@ achievements:
   type: badge
   title: 서버리스 웹앱 빌드 배지
   summary: ‘서버리스 웹앱 빌드’ 모듈의 배지입니다.
-  iconUrl: /learn/azure/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
+  iconUrl: ./achievements/build-a-serverless-web-app.svg
 - uid: learn.cd-pipeline-github-to-azure-web-app.badge
   type: badge
   title: GitHub에서 Azure 웹앱으로의 지속적인 배포 파이프라인 만들기 배지
   summary: GitHub에서 Azure 웹앱으로의 지속적인 배포 파이프라인 만들기 배지 요약
-  iconUrl: http://via.placeholder.com/120x120
+  iconUrl: ./achievements/cd-pipeline-github-to-azure-web-app.svg
 - uid: learn.connect-app-to-azure-storage.badge
   type: badge
   title: Azure Storage에 앱 연결
   summary: Azure Storage에 앱 연결
-  iconUrl: http://via.placeholder.com/120x120
+  iconUrl: ./achievements/connect-app-to-azure-storage.svg
 - uid: learn.create-azure-storage-account.badge
   type: badge
   title: Azure Storage 계정 만들기 배지
   summary: Azure Storage 계정 만들기 배지 요약
-  iconUrl: http://via.placeholder.com/120x120
+  iconUrl: ./achievements/create-azure-storage-account.svg
 - uid: learn.create-serverless-logic-with-functions.badge
   type: badge
   title: Azure Functions를 사용하여 서버리스 논리 만들기
   summary: Azure Functions를 사용하여 서버리스 논리 만들기
-  iconUrl: http://via.placeholder.com/120x120
+  iconUrl: ./achievements/create-serverless-logic-with-functions.svg
 - uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
   title: Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지
   summary: Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지 요약
-  iconUrl: http://via.placeholder.com/120x120
+  iconUrl: ./achievements/host-a-web-application-with-azure-web-apps.svg
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
   title: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시
   summary: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시
-  iconUrl: http://via.placeholder.com/120x120
+  iconUrl: ./achievements/publish-azure-web-app-with-visual-studio.svg
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
   title: Azure에서 컨테이너 관리 트로피
@@ -165,6 +165,11 @@ achievements:
   title: Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신
   summary: Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.caching-and-performance-azure-storage-and-disks.badge
+  type: badge
+  title: Azure Storage 및 디스크의 캐싱과 성능
+  summary: Azure Storage 및 디스크의 캐싱과 성능
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
   title: Azure에서 Windows 가상 머신 만들기
@@ -199,13 +204,18 @@ achievements:
   type: badge
   title: Azure Key Vault를 사용하여 웹앱의 비밀 관리
   summary: Azure Key Vault를 사용하여 웹앱의 비밀 관리
-  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
   title: RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보안 설정
-  summary: RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보안 설정
+  summary: RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보호
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+- uid: learn.secure-access-azure-ad-multi-factor-authentication.badge
+  type: badge
+  title: Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호
+  summary: Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.share-location-over-sms-from-mobile-using-azure-functions-twilio.badge
   type: badge
   title: Azure Functions 및 Twilio를 사용하여 휴대폰에서 SMS를 통해 위치 정보 보내기 배지
   summary: ‘Azure Functions 및 Twilio를 사용하여 휴대폰에서 SMS를 통해 위치 정보 보내기’ 모듈의 배지
@@ -224,11 +234,16 @@ achievements:
   type: badge
   title: Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장
   summary: Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장
-  iconUrl: /learn/modules/store-app-data-with-azure-blob-storage/achievement/store-app-data-with-azure-blob-storage.svg
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
   type: badge
   title: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용
-  summary: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용 모듈
+  summary: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 신뢰할 수 있는 메시지를 사용하도록 설정 모듈
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.secure-your-azure-sql-database.badge
+  type: badge
+  title: Azure SQL Server 데이터베이스 보호
+  summary: Azure SQL Server 데이터베이스 보호
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.intro-to-compute.badge
   type: badge
@@ -238,7 +253,12 @@ achievements:
 - uid: learn.intro-to-data-in-azure.badge
   type: badge
   title: Azure의 데이터 소개 배지
-  summary: ‘Azure의 데이터 소개’ 모듈의 배지입니다.
+  summary: "'Azure의 데이터 소개' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.introduction-to-azure-virtual-machines.badge
+  type: badge
+  title: Azure Virtual Machines 소개
+  summary: Azure Virtual Machines 소개
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.cosmos-db-app-with-vscode.badge
   type: badge
@@ -255,6 +275,31 @@ achievements:
   title: Azure에서 리소스 관리 트로피
   summary: "'Azure에서 리소스 관리' 학습 경로의 트로피입니다."
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.ci-cd-pipelines-azure-devops.badge
+  type: badge
+  title: Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드 배지
+  summary: "'Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.top-5-security-items-to-consider.badge
+  type: badge
+  title: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
+  summary: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.interactive-deep-learning.badge
+  type: badge
+  title: 대화형 딥 러닝을 위한 5단계 배지
+  summary: "'대화형 딥 러닝을 위한 5단계' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.create-computer-vision-service.badge
+  type: badge
+  title: Computer Vision 서비스 만들기
+  summary: "'Computer Vision 서비스 만들기' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.monitor-manage-device-with-iotcentral.badge
+  type: badge
+  title: Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리 배지
+  summary: "'Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.align-requirements-in-azure.badge
   type: badge
   title: 요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택 배지
@@ -265,10 +310,145 @@ achievements:
   title: Azure에서 저장소 접근 방식 선택
   summary: "'Azure에서 저장소 접근 방식 선택' 모듈의 배지입니다."
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.azure-container-registry.badge
+  type: badge
+  title: Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장 배지
+  summary: "'Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.build-azure-bot-services-bot.badge
+  type: badge
+  title: Azure Bot Service를 사용하여 챗봇 빌드 배지
+  summary: "'Azure Bot Service를 사용하여 챗봇 빌드' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.classify-images-with-custom-vision-services.badge
+  type: badge
+  title: Microsoft Custom Vision Service를 사용하여 이미지 분류 배지
+  summary: "'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.create-neural-network-with-dsvm.badge
+  type: badge
+  title: TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드 배지
+  summary: "'TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.design-for-efficiency-and-operations.badge
+  type: badge
+  title: 효율성 및 운영을 위한 디자인 배지
+  summary: "'효율성 및 운영을 위한 디자인' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.design-for-performance-and-scalability.badge
+  type: badge
+  title: 성능 및 확장성을 위한 디자인 배지
+  summary: "'성능 및 확장성을 위한 디자인' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.design-for-security.badge
+  type: badge
+  title: 보안 중심 디자인 배지
+  summary: "'보안 중심 디자인' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.execute-azure-function-with-triggers.badge
+  type: badge
+  title: 트리거를 사용하여 Azure 함수 실행 배지
+  summary: "'트리거를 사용하여 Azure 함수 실행' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.intro-to-containers.badge
+  type: badge
+  title: 컨테이너 소개 배지
+  summary: "'컨테이너 소개' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.predict-costs-and-optimize-spending.badge
+  type: badge
+  title: Azure 비용 예측 및 지출 최적화 배지
+  summary: "'Azure 비용 예측 및 지출 최적화' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.principles-cloud-computing.badge
+  type: badge
+  title: 클라우드 컴퓨팅의 원칙 배지
+  summary: "'클라우드 컴퓨팅의 원칙' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.provision-azure-sql-db.badge
+  type: badge
+  title: Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장 배지
+  summary: "'Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.run-docker-containers-aci.badge
+  type: badge
+  title: ACI(Azure Container Instances)에서 Docker 컨테이너 실행 배지
+  summary: "'ACI(Azure Container Instances)에서 Docker 컨테이너 실행' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.access-data-with-cosmos-db-and-sql-api.badge
+  type: badge
+  title: Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스 배지
+  summary: "'Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스' 모듈의 배지입니다."
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.configure-the-network-for-your-virtual-machines.badge
+  type: badge
+  title: 가상 머신에 사용할 네트워크 구성
+  summary: 가상 머신에 사용할 네트워크 구성
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.introduction-to-security.badge
+  type: badge
+  title: Azure 보안 소개
+  summary: Azure 보안 소개
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.secure-your-azure-virtual-machine-disks.badge
+  type: badge
+  title: Azure 가상 머신 디스크 보호
+  summary: Azure 가상 머신 디스크 보호
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.protect-your-resources-with-azure-security-center.badge
+  type: badge
+  title: Azure Security Center로 리소스 보호
+  summary: Azure Security Center로 리소스 보호
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.make-your-virtual-machines-highly-available.badge
+  type: badge
+  title: 고가용성 가상 머신 만들기
+  summary: 고가용성 가상 머신 만들기
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.implement-message-workflows-with-service-bus.badge
+  type: badge
+  title: Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현
+  summary: Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.intro-to-azure-networking.badge
+  type: badge
+  title: Azure 네트워킹 소개 배지
+  summary: Azure 네트워킹 소개
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.pillars-of-a-great-azure-architecture.badge
+  type: badge
+  title: 우수한 Azure 아키텍처의 핵심 요소 배지
+  summary: 우수한 Azure 아키텍처의 핵심 요소 배지
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+  type: badge
+  title: Azure Functions 및 Twilio를 사용하여 SMS를 통해 위치 전송 배지
+  summary: Azure Functions 및 Twilio를 사용하여 SMS를 통해 위치 전송 배지
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.add-and-size-disks-in-azure-virtual-machines.badge
+  type: badge
+  title: Azure Virtual Machines에서 디스크 추가 및 크기 조정
+  summary: Azure Virtual Machines에서 디스크 추가 및 크기 조정
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.scale-and-size-virtual-machines.badge
+  type: badge
+  title: Azure에서 Virtual Machines 크기 조정
+  summary: Azure에서 Virtual Machines 크기 조정
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.manage-iot-devices.badge
+  type: badge
+  title: 작업용 IoT Suite
+  summary: 작업용 IoT Suite
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.the-mojifier.badge
+  type: badge
+  title: Mojifier
+  summary: Mojifier 배지
+  iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: 693a03cb55f823b85d8daa4246a9cdf16fdab8ce
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.openlocfilehash: 5ad9855bc63fb4471b5d1dd8d4547ae9682043b8
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252132"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256676"

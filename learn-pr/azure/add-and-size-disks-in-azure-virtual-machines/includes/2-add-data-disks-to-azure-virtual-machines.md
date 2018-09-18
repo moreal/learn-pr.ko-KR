@@ -1,46 +1,46 @@
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. These disks are called virtual hard disks (VHDs).
+다른 컴퓨터와 마찬가지로, Azure에서 가상 머신은 운영 체제, 응용 프로그램 및 데이터를 저장하는 장소로 디스크를 사용합니다. 이러한 디스크를 VHD(가상 하드 디스크)라고 합니다.
 
-Suppose you have created a virtual machine (VM) in Azure, which will host the database of case histories that your law firm relies on. A well-designed disk configuration is fundamental to good performance and resilience for SQL Server.
+법률 회사에서 사용하는 판례 기록 데이터베이스를 호스트하는 VM(가상 머신)을 Azure에서 만들었다고 가정해봅시다. SQL Server의 성능과 복원력을 높이려면 잘 설계된 디스크 구성이 필수입니다.
 
-In this unit, you'll learn how to choose the right configuration values for your disks and how to attach those disks to a VM.
+이 모듈에서는 디스크에 적절한 구성 값을 선택하는 방법 및 해당 디스크를 VM에 연결하는 방법을 알아보겠습니다.
 
-## How disks are used by VMs
+## <a name="how-disks-are-used-by-vms"></a>VM에서 디스크를 사용하는 방법
 
-VMs use disks for three different purposes:
+VM은 다음과 같은 세 가지 용도로 디스크를 사용합니다.
 
-- **Operating system storage**. Every VM includes one disk that stores the operating system. This drive is registered as a SATA drive and labeled as the C: drive in Windows and mounted at "/" in Unix-like operating systems. It has a maximum capacity of 2048 gigabytes (GB), and its content is taken from the VM image you used to create the VM.
-- **Temporary storage**. Every VM also includes a temporary VHD that is used for page and swap files. Data on this drive may be lost during a maintenance event or redeployment. The drive is labeled as D: on a Windows VM by default. Do not use this drive to store important data that you do not want to lose.
-- **Data storage**. A data disk is any other disk attached to a VM. You use data disks to store files, databases, and any other data that you need to persist across reboots. Some VM images include data disks by default. You can also add your own data disks up to the maximum number specified by the size of the VM. Each data disk is registered as a SCSI drive and has a max capacity of 4095 GB. You can choose drive letters or mount points for your data drives.
+- **운영 체제 저장소**. 모든 VM은 운영 체제를 저장하는 디스크를 하나 갖고 있습니다. 이 드라이브는 SATA 드라이브로 등록되고 Windows에서 C: 드라이브로 레이블이 지정되며 Unix와 비슷한 운영 체제에서는 "/"에 탑재됩니다. 최대 용량은 2048GB이고, 콘텐츠는 VM을 만들 때 사용한 VM 이미지에서 가져옵니다.
+- **임시 저장소**. 모든 VM은 페이지 및 스왑 파일에 사용되는 임시 VHD도 포함하고 있습니다. 유지 관리 이벤트 또는 다시 배포하는 동안 이 드라이브의 데이터가 손실될 수 있습니다. 드라이브는 기본적으로 Windows VM에서 D:로 레이블이 지정됩니다. 손실되면 안 되는 중요한 데이터를 저장하는 용도로 이 드라이브를 사용하지 마세요.
+- **데이터 저장소**. VM에 연결되는 그 외의 모든 디스크는 데이터 디스크입니다. 데이터 디스크는 파일, 데이터베이스 및 재부팅 간에 유지해야 하는 모든 데이터를 저장하는 데 사용됩니다. 일부 VM 이미지는 기본적으로 데이터 디스크를 포함하고 있습니다. 또한 VM의 크기에 따라 지정된 최대 개수까지 사용자 고유의 데이터 디스크를 추가할 수 있습니다. 각 데이터 디스크는 SCSI 드라이브로 등록되고 최대 용량은 4095GB입니다. 드라이브 문자를 선택하거나 데이터 드라이브의 탑재 지점을 선택할 수 있습니다.
 
-## Storing VHD files
+## <a name="storing-vhd-files"></a>VHD 파일 저장
 
-In Azure, VHDs are stored in an Azure storage account as **page blobs**.
+Azure에서 VHD는 Azure 저장소 계정에 **페이지 Blob**으로 저장됩니다.
 
-This table shows the various kinds of storage accounts and which objects can be used with each.
+이 표에서는 개체에서 사용할 수 있는 다양한 종류의 저장소 계정을 보여줍니다.
 
-|**Type of storage account**|**General-purpose standard**|**General-purpose premium**|**Blob storage, hot and cool access tiers**|
+|**저장소 계정의 유형**|**범용 표준**|**범용 프리미엄**|**Blob Storage, 핫 및 쿨 액세스 계층**|
 |-----|-----|-----|-----|
-|**Services supported**| Azure Blob storage, Azure Files, Azure Queue storage | Blob storage | Blob storage|
-|**Types of blobs supported**|Block blobs, page blobs, and append blobs | Page blobs | Block blobs and append blobs|
+|**지원되는 서비스**| Azure Blob 저장소, Azure Files, Azure Queue 저장소 | Blob 저장소 | Blob 저장소|
+|**지원되는 Blob 유형**|블록 Blob, 페이지 Blob 및 추가 Blob | 페이지 Blob | 블록 Blob 및 추가 Blob|
 
-Because VHDs are stored as page blobs, and only standard storage supports page blobs, you need a standard storage account to store VHDs.
+VHD는 페이지 Blob으로 저장되고 표준 저장소만 페이지 Blob을 지원하므로 VHD를 저장하려면 표준 저장소 계정이 필요합니다.
 
-## Attach data disks to VMs
+## <a name="attach-data-disks-to-vms"></a>VM에 데이터 디스크 연결
 
-You can add data disks to a virtual machine at any time by attaching them to the VM. Attaching a disk associates the VHD file with the VM. 
+언제든지 VM에 디스크를 연결하여 가상 머신에 데이터 디스크를 추가할 수 있습니다. 디스크를 연결하면 VHD 파일이 VM에 연결됩니다. 
 
-The VHD can't be deleted from storage while it's attached.
+연결된 VHD는 저장소에서 삭제할 수 없습니다.
 
-### Attach an existing data disk to an Azure VM
+### <a name="attach-an-existing-data-disk-to-an-azure-vm"></a>Azure VM에 기존 데이터 디스크 연결
 
-You may already have a VHD that stores the data you want to use in your Azure VM. In our law firm scenario, for example,  perhaps you've already converted your physical disks to VHDs locally. In this case, you can use the PowerShell `Add-AzureRmVhd` cmdlet to upload it to the storage account. This cmdlet is optimized for transferring VHD files and may complete the upload faster than other methods. The transfer is completed by using multiple threads for best performance. Once the VHD has been uploaded, attach it to an existing VM as a data disk. This approach an excellent way to deploy data of all types to Azure VMs. The data is automatically present in the VM, and there's no need to partition or format the new disk.
+Azure VM에서 사용하려는 데이터를 저장하는 VHD를 이미 만든 분도 계실 것입니다. 법률 회사 시나리오를 예로 들자면, 이미 물리적 디스크를 로컬로 VHD로 변환한 것입니다. 이 경우 PowerShell `Add-AzureRmVhd` cmdlet을 사용하여 VHD를 저장소 계정에 업로드할 수 있습니다. 이 cmdlet은 VHD 파일을 전송하는 데 최적화되었으며 다른 방법보다 더 빨리 업로드를 완료할 수 있습니다. 최상의 성능을 위해 여러 스레드를 사용하여 전송이 완료됩니다. VHD가 업로드되면 기존 VM에 데이터 디스크로 연결합니다. 이 방법은 모든 종류의 데이터를 Azure VM에 배포하는 훌륭한 방법입니다. 데이터가 VM에 자동으로 표시되므로 새 디스크를 분할하거나 포맷할 필요가 없습니다.
 
-### Attach a new data disk to an Azure VM
+### <a name="attach-a-new-data-disk-to-an-azure-vm"></a>Azure VM에 새 데이터 디스크 연결
 
-You can use the Azure portal to add a new, empty data disk to a VM. 
+Azure Portal을 사용하여 비어 있는 새 데이터 디스크를 VM에 추가할 수 있습니다. 
 
-It will create a **.vhd** file as a page blob in the storage account that you specify, and it attaches that .vhd file as a data disk to the VM. 
+그러면 사용자가 지정하는 저장소 계정에 **.vhd** 파일이 페이지 Blob으로 생성되고, 해당 .vhd 파일은 VM에 데이터 디스크로 연결됩니다. 
 
-Before you can use the new VHD to store data, you have to initialize, partition, and format the new disk. We'll practice these steps in the next exercise.
+새 VHD를 사용하여 데이터를 저장하려면 먼저 새 디스크를 초기화, 분할 및 포맷해야 합니다. 이 단계는 그 다음 연습에서 실습하겠습니다.
 
-In physical on-premises servers, you store data on physical hard disks. You store data in an Azure virtual machine (VM) on virtual hard disks (VHDs). These VHDs are stored as page blobs in Azure storage accounts. For example, when you migrate your law firm's database of case histories to Azure, you must create VHDs where the database files will be saved.
+물리적 온-프레미스 서버에서는 데이터를 실제 하드 디스크에 저장합니다. VHD(가상 하드 디스크)의 Azure VM(가상 머신)에 데이터를 저장합니다. 이러한 VHD는 Azure 저장소 계정에 페이지 Blob으로 저장됩니다. 예를 들어 법률 회사의 판례 기록 데이터베이스를 Azure로 마이그레이션할 때 데이터베이스 파일을 저장할 VHD를 만들어야 합니다.

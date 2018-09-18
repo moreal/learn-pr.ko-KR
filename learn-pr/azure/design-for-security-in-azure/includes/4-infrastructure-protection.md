@@ -1,70 +1,70 @@
-Lamna Healthcare recently experienced a significant outage to a customer-facing web application. An engineer was granted full access to a resource group containing the production web application. This person accidentally deleted the resource group and all child resources, including the database hosting live customer data. 
+최근에 Lamna Healthcare는 고객 연결 웹 응용 프로그램이 중단되는 심각한 문제를 겪었습니다. 프로덕션 웹 응용 프로그램을 포함하고 있는 리소스 그룹에 대한 전체 액세스 권한이 한 엔지니어에게 부여되었습니다. 이 엔지니어가 실수로 라이브 고객 데이터를 호스팅하는 데이터베이스를 포함하여 리소스 그룹과 모든 자식 리소스를 삭제했습니다. 
 
-Fortunately, the application source code and resources were available in source control and regular database backups were running automatically on a schedule. Therefore the service was reinstated relatively easily. Here, we will explore how this outage could have been avoided by utilizing capabilities on Azure to protect the access to infrastructure.
+다행히 응용 프로그램 소스 코드 및 리소스를 소스 제어에서 사용할 수 있었으며 일정에 따라 주기적 데이터베이스 백업이 자동으로 실행되었습니다. 덕분에 서비스를 비교적 쉽게 복원할 수 있었습니다. 여기서는 인프라에 대한 액세스를 보호하는 Azure의 기능을 활용하여 운영 중단을 피할 수 있었던 비결을 설명하겠습니다.
 
-## Criticality of infrastructure
+## <a name="criticality-of-infrastructure"></a>인프라의 중요성
 
-Cloud infrastructure is becoming a critical piece of many businesses. It is critical to ensure people and processes have only the rights they need to get their job done. Assigning incorrect access can result in data loss, data leakage, or cause services to become unavailable. 
+클라우드 인프라는 여러 비즈니스에서 그 중요성이 점차 부각되고 있습니다. 사람과 프로세스에 대해 각자 맡은 작업을 완료하는 데 필요한 권한만 부여하는 것이 중요합니다. 잘못된 액세스 권한을 할당하면 데이터가 손실되거나 데이터가 누출되거나 서비스를 사용할 수 없게 될 수 있습니다. 
 
-System administrators can be responsible for a large number of users, systems, and permission sets. So correctly granting access can quickly become unmanageable and can lead to a 'one size fits all' approach. This approach can reduce the complexity of administration, but makes it far easier to inadvertently grant more permissive access than required.
+시스템 관리자는 수많은 사용자, 시스템 및 권한 집합에 대한 책임이 있습니다. 액세스 권한을 올바르게 부여하는 작업이 곧 관리가 어려워져 “모든 상황에 맞는 방식”을 적용하게 될 수 있습니다. 이 방식은 관리의 복잡성을 줄일 수 있지만, 필요 이상으로 많은 권한을 의도치 않게 부여할 가능성이 훨씬 높습니다.
 
-## Role-based access control
+## <a name="role-based-access-control"></a>역할 기반 액세스 제어
 
-Role-based access control (RBAC) offers a slightly different approach. Roles are defined as collections of access permissions. Security principals are mapped to roles directly or through group membership. Separating security principals, access permissions, and resources provides simplified access management and more fine-grained control.
+RBAC(역할 기반 액세스 제어)는 약간 다른 방법을 제공합니다. 역할은 액세스 권한 컬렉션으로 정의됩니다. 보안 주체는 역할에 직접 매핑되거나 그룹 멤버 자격을 통해 매핑됩니다. 보안 주체, 액세스 권한 및 리소스를 분리하면 액세스 관리가 간소화되고 세밀한 제어가 가능합니다.
 
-On Azure, users, groups, and roles are all stored in Azure Active Directory (Azure AD). The Azure Resource Manager API uses role-based access control to secure all resource access management within Azure.
+Azure에서는 사용자, 그룹, 역할이 모두 Azure AD(Azure Active Directory)에 저장됩니다. Azure Resource Manager API는 역할 기반 액세스 제어를 사용하여 Azure 내의 모든 리소스 액세스 관리를 보호합니다.
 
-![ACL-based access](../media-draft/ACL_Based_Access.png)
+![ACL 기반 액세스](../media-draft/ACL_Based_Access.png)
 
 <!-- ![Role-based access control](../media-draft/Role_Based_Access.png)
  -->
 
-### Roles and management groups
+### <a name="roles-and-management-groups"></a>역할 및 관리 그룹
 
-Roles are sets of permissions, like "Read-only" or "Contributor", that users can be granted to access an Azure service instance. Roles can be granted at the individual service instance level, but they also flow down the Azure Resource Manager hierarchy. Roles assigned at a higher scope, like an entire subscription, are inherited by child scopes, like service instances. 
+역할은 “읽기 전용” 또는 “기여자”처럼 Azure 서비스 인스턴스에 액세스하도록 사용자에게 부여될 수 있는 권한 집합입니다. 역할은 개별 서비스 인스턴스 수준에서 부여할 수 있지만, Azure Resource Manager 계층 구조를 따라 아래로 이동할 수 있습니다. 전체 구독과 같이 상위 범위에서 할당된 역할은 서비스 인스턴스와 같은 하위 범위에 상속됩니다. 
 
-Management groups are an additional hierarchical level recently introduced into the RBAC model. Management groups add the ability to group subscriptions together and apply policy at an even higher level.
+관리 그룹은 최근에 RBAC 모델에 도입된 추가 계층 수준입니다. 관리 그룹은 구독을 그룹화하고 훨씬 높은 수준에서 정책을 적용하는 기능을 추가합니다.
 
-The ability to flow roles through an arbitrarily defined subscription hierarchy also allows administrators to grant temporary access to an entire environment for authenticated users. For example, an auditor may require temporary read-only access to all subscriptions.
+또한 임의로 정의된 구독 계층을 통해 역할을 흘려보내는 기능을 통해 관리자는 인증된 사용자에게 전체 환경에 대한 임시 액세스 권한을 부여할 수 있습니다. 예를 들어 감사자는 모든 구독에 대한 임시 읽기 전용 액세스가 필요할 수 있습니다.
 
-![Management groups](../media-draft/management_groups.png)
+![관리 그룹](../media-draft/management_groups.png)
 
-### Privileged Identity Management
+### <a name="privileged-identity-management"></a>Privileged Identity Management
 
-In addition to managing Azure resource access with RBAC, a comprehensive approach to infrastructure protection should consider including the ongoing auditing of role members as their organization changes and evolves. Azure AD Privileged Identity Management (PIM) is an additional paid-for offering that provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD & Azure resource access reviews.
+RBAC를 사용하여 Azure 리소스 액세스를 관리하는 것 외에도, 인프라 보호에 대한 포괄적인 접근 방식에서는 조직의 변화와 발전에 따라 역할 멤버를 지속적으로 감사하는 방안을 고려해야 합니다. Azure AD PIM(Privileged Identity Management)은 역할 할당, 셀프 서비스 및 Just-In-Time 역할 활성화를 감독하고 Azure AD 및 Azure 리소스 액세스를 검토할 수 있는 추가 유료 제품입니다.
 
-![Privileged identity management](../media-draft/PIM_Dashboard.png)
+![Privileged Identity Management](../media-draft/PIM_Dashboard.PNG)
 
-## Providing identities to services
+## <a name="providing-identities-to-services"></a>서비스에 ID 제공
 
-It's often valuable for services to have identities. Often times, and against best practices, credential information is embedded in configuration files. With no security around these configuration files, anyone with access to the systems or repositories can access these credentials and risk exposure.
+서비스에 ID가 있는 것이 좋을 때가 종종 있습니다. 때때로 모범 사례에 반해, 자격 증명 정보가 구성 파일에 포함됩니다. 이러한 구성 파일과 관련된 보안이 전혀 없기 때문에 시스템 또는 리포지토리에 대한 액세스 권한을 가진 사람이라면 누구든지 자격 증명에 액세스할 수 있게 되어 위험에 노출됩니다.
 
-Azure AD addresses this problem through two methods: service principals and managed service identities.
+Azure AD는 서비스 주체 및 관리 서비스 ID의 두 가지 방법을 통해 이 문제를 해결합니다.
 
-### Service principals
+### <a name="service-principals"></a>서비스 주체
 
-To understand service principals, it's useful to first understand the words **identity** and **principal** as they are used in Identity management world.
+서비스 주체를 이해하려면 먼저 ID 관리에 사용되는 **ID**라는 단어와 **주체**라는 단어를 이해하는 것이 좋습니다.
 
-An **identity** is just a thing that can be authenticated. Obviously this includes users with username and password, but it can also include applications or other servers, which might authenticate with secret keys or certificates. As a bonus definition, an **account** is data associated with an identity.
+**ID**는 인증될 수 있는 것을 의미합니다. 분명히 여기에는 사용자 이름과 암호를 가진 사용자가 포함되지만, 비밀 키 또는 인증서를 사용하여 인증되는 응용 프로그램이나 다른 서비스도 포함될 수 있습니다. 추가 정의로, **계정**은 ID와 연결되는 데이터를 말합니다.
 
-A **principal** is an identity acting with certain roles or claims. Often it is not useful to consider identity and principal separately, but think of using 'sudo' on a bash prompt or on Windows using "run as Administrator". In both of those cases, you are still logged in as the same identity as before, but you've changed the role under which you are executing.
+**주체**는 특정 역할 또는 클레임을 사용하여 작동하는 ID입니다. ID와 주체를 별개로 생각하는 것이 유용하지 않은 경우도 있지만, bash 프롬프트 또는 "관리자 권한으로 실행"을 사용하는 Windows에서는 'sudo'를 사용하는 것이 좋습니다. 두 경우 모두 이전과 같은 ID로 계속 로그인되지만, 실행하는 역할은 바뀌었습니다.
 
-So a **Service Principal** is literally named. It is an identity that is used by a service or application. Like other identities, it can be assigned roles. 
+이러한 이유로 문자 그대로 **서비스 주체**라는 이름이 붙었습니다. 서비스 주체는 서비스 또는 응용 프로그램에서 사용하는 ID를 말합니다. 다른 ID와 마찬가지로 할당된 역할일 수 있습니다. 
 
-For example, Lamna Healthcare can assign its deployment scripts to run authenticated as a service principal. If that is the only identity that has permission to perform destructive actions, Lamna will have gone a long way toward making sure they don't have a repeat of the accidental resource deletion.
+예를 들면 Lamna Healthcare는 서비스 주체로 인증되는 역할을 실행하도록 배포 스크립트를 할당할 수 있습니다. 해당 ID가 파괴적 작업을 수행할 권한이 있는 유일한 ID인 경우 Lamna가 실수로 리소스를 삭제하는 일이 반복되지 않도록 방지하는 데 많은 도움이 될 것입니다.
 
-### Managed Service Identities
+### <a name="managed-service-identities"></a>관리되는 서비스 ID
 
-The creation of service principals can be a tedious process, and there are a lot of touch points that can make maintaining them difficult. Manage Service Identities (MSI) are much easier and will do most of the work for you. 
+서비스 주체를 만드는 것은 지루한 과정일 수 있으며 터치 포인트가 많아 유지 관리가 어려울 수 있습니다. MSI(관리 서비스 ID)는 훨씬 간단하며 대부분의 작업이 자동으로 처리됩니다. 
 
-An MSI can be instantly created for any Azure service that supports it (the list is constantly growing). When you create an MSI for a service, you are creating an account on the Azure Active Directory tenant. Azure infrastructure will automatically take care of authenticating the service and managing the account. You can then use that account like any other AD account including securely letting the authenticated service access other Azure resources.
+MSI는 지원하는 모든 Azure 서비스에 대해 즉시 만들 수 있습니다(계속해서 지원 목록에 추가 중). 서비스에 대한 MSI를 만들면 Azure Active Directory 테넌트에 계정이 만들어집니다. Azure 인프라는 서비스를 인증하고 계정을 관리하는 작업을 자동으로 처리합니다. 그러면 인증된 서비스가 다른 Azure 리소스에 액세스하도록 안전하게 허용하는 것을 포함하여 해당 계정을 다른 AD 계정처럼 사용할 수 있습니다.
 
-Lamna Healthcare takes their identity management a step further and uses MSIs for all supported services that need the ability to perform infrastructure management and deployments.
+Lamna Healthcare는 ID 관리를 한 단계 발전시켰으며 인프라 관리 및 배포를 수행하는 기능이 필요한 모든 지원되는 서비스에 MSI를 사용합니다.
 
-## Infrastructure protection at Lamna Healthcare
+## <a name="infrastructure-protection-at-lamna-healthcare"></a>Lamna Healthcare의 인프라 보호
 
-We've seen how Lamna Healthcare has addressed issues from their incident where infrastructure was inadvertently deleted. They've used role-based access control to better manage the security of their infrastructure, and are using managed service identities to keep their credentials out of code and ease administration of the identities needed for their services.
+인프라가 실수로 삭제된 문제를 Lamna Healthcare가 어떻게 해결했는지 살펴보았습니다. Lamna Healthcare는 역할 기반 액세스 제어를 사용하여 인프라 보안을 보다 효율적으로 관리했으며, 관리되는 서비스 ID를 사용하여 자격 증명에서 코드 작성을 없애고 서비스에 필요한 ID 관리를 간소화했습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-To ensure the availability and integrity of infrastructure, it's important to properly secure your infrastructure. Properly using features such as RBAC and managed service identities will help protect your Azure environment from unauthorized or unintended access, and will enhance the identity security capabilities in your architecture.
+인프라의 가용성 및 무결성을 보장하려면 인프라를 적절하게 보호해야 합니다. RBAC 및 관리되는 서비스 ID 같은 기능을 적절하게 사용하면 무단 액세스 또는 의도하지 않은 액세스로부터 Azure 환경을 보호하는 데 도움이 되며, 아키텍처의 ID 보안 기능이 향상됩니다.

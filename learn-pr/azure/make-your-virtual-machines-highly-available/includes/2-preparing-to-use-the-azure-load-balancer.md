@@ -1,99 +1,99 @@
-Suppose your company wants to see if Azure Load Balancer will support your Enterprise Resource Planning (ERP) application. Your application has a web interface for users and runs on multiple servers. Each server has a local copy of the ERP database, which is synced across all servers.
+회사에서 Azure Load Balancer가 ERP(엔터프라이즈 리소스 계획) 응용 프로그램을 지원하는지 확인하고 싶어 한다고 가정해 봅시다. 응용 프로그램은 사용자를 위한 웹 인터페이스를 제공하며 여러 서버에서 실행됩니다. 각 서버에는 모든 서버에서 동기화되는 ERP 데이터베이스의 로컬 복사본이 있습니다.
 
-Here, you will look at how a load balancer can help provide high availability of services. You will identify the difference between the basic and standard load balancer options and see how to create a load balancer for Azure Virtual Machines.
+여기서는 부하 분산 장치가 서비스 고가용성을 제공하는 원리를 살펴보겠습니다. 기본 부하 분산 장치와 표준 부하 분산 장치 옵션 간의 차이점을 살펴보고, Azure Virtual Machines에 사용할 부하 분산 장치를 만드는 방법을 알아보겠습니다.
 
-## What is load balancing?
+## <a name="what-is-load-balancing"></a>부하 분산이란?
 
-_Load balancing_ describes various techniques for distributing workloads across multiple devices, such as compute, storage, and networking devices. The goal of load balancing is to optimize the use of multiple resources, to make the most efficient use of these resources as an infrastructure is scaled out, and to ensure services are maintained if some components are unavailable.
+_부하 분산_은 계산, 저장소, 네트워킹 등의 워크로드를 여러 장치에 분산하는 다양한 기술을 설명합니다. 부하 분산의 목표는 여러 리소스를 최적화하고, 인프라 규모가 확장될 때 이러한 리소스를 최대한 효율적으로 사용하고, 일부 구성 요소를 사용할 수 없게 되더라도 서비스를 계속 유지하는 것입니다.
 
-Here, we'll look at Azure's load balancing support for virtual machines (VMs).
+여기서는 VM(가상 머신)에 대한 Azure의 부하 분산 지원을 살펴보겠습니다.
 
-### What is high availability?
+### <a name="what-is-high-availability"></a>고가용성이란?
 
-High availability (HA) measures the ability of an application or service to remain accessible despite a failure in any system component. Ideally, there will be not be any noticeable loss of service.
+HA(고가용성)란 시스템 구성 요소에서 오류가 발생하더라도 응용 프로그램 또는 서비스에 계속 액세스할 수 있도록 유지하는 능력을 말합니다. 눈에 띄는 서비스 손실이 없는 것이 가장 이상적입니다.
 
-Load balancing is fundamental to the delivery of HA because it allows multiple VMs to act as a pool of servers. The pool can continue to service requests even if some VMs crash or are taken offline for maintenance.
+여러 VM이 서버 풀로 작동할 수 있게 해주는 부하 분산은 HA 제공을 위한 필수 요소입니다. 일부 VM에서 크래시가 발생하거나 유지 관리를 위해 오프라인으로 전환되더라도 풀은 계속해서 요청을 서비스할 수 있습니다.
 
-## What is Azure Load Balancer?
+## <a name="what-is-the-azure-load-balancer"></a>Azure Load Balancer란?
 
-**Azure Load Balancer** is an Azure service that distributes incoming requests across multiple VMs in a pool. It distributes incoming network traffic across a set of healthy VMs and avoids any VM that is not able to respond.
+**Azure Load Balancer**는 들어오는 요청을 풀의 여러 VM에 분산하는 Azure 서비스입니다. 요청에 응답할 수 없는 VM이 발생하지 않도록, 들어오는 네트워크 트래픽을 정상적인 VM 집합에 분산합니다.
 
- Azure Load Balancer operates at Layer-4 (TCP, UDP) of the OSI 7-layer model. It can be configured to support TCP and UDP application scenarios where the traffic is inbound to Azure VMs, as well as outbound scenarios where other Azure services are passing TCP and UDP traffic out through Azure VMs to external endpoints.
+Azure Load Balancer는 OSI 7-레이어 모델의 레이어-4(TCP, UDP)에서 작동합니다. 트래픽이 Azure VM으로 인바운드되는 TCP 및 UDP 응용 프로그램 시나리오, 그리고 다른 Azure 서비스가 Azure VM을 통해 TCP 및 UDP 트래픽을 외부 엔드포인트로 전달하는 아웃바운드 시나리오를 지원하도록 구성할 수 있습니다.
 
-## Public vs. internal load balancers
+## <a name="public-vs-internal-load-balancers"></a>공용 부하 분산 장치와 내부용 부하 분산 장치의 차이점
 
-An Azure Load Balancer can be either _public_ or _internal_ depending on the source of incoming requests.
+Azure Load Balancer는 들어오는 요청의 소스에 따라 _공용_일 수도 있고 _내부용_일 수도 있습니다.
 
-A **public load balancer** handles client requests from outside of your Azure infrastructure. The public IP address of the load balancer is automatically configured as the load balancer's front end when you create the public IP and the load balancer resource. The following illustration shows a public load balancer.
+**공용 부하 분산 장치**는 Azure 인프라 외부의 클라이언트 요청을 처리합니다. 공용 IP 및 분산 장치 리소스를 만들 때 부하 분산 장치의 공용 IP 주소는 자동으로 부하 분산 장치의 프런트 엔드로 구성됩니다. 다음 일러스트레이션은 공용 부하 분산 장치를 보여줍니다.
 
-![An illustration showing a public load balancer distributing client requests from the internet to three VMs on a virtual network.](../media-draft/2-public-load-balancer.png)
+![인터넷의 클라이언트 요청을 가상 네트워크의 세 VM으로 분산하는 공용 부하 분산 장치를 보여주는 일러스트레이션.](../media-draft/2-public-load-balancer.png)
 
-An **internal load balancer** processes requests from within a virtual network (or through a VPN). It distributes requests to resources within that virtual network. The load balancer, front-end IP addresses, and virtual networks are not directly accessible from the internet. The following illustration shows an architecture containing both a public and internal load balancer. The public load balancer handles external requests while the internal load balancer forwards the requests to the internal VMs and databases for processing.
+**내부 부하 분산 장치**는 가상 네트워크 내에서(또는 VPN을 통해) 요청을 처리합니다. 요청을 해당 vNet 내의 리소스에 분산합니다. 부하 분산 장치, 프런트 엔드 IP 주소 및 가상 네트워크는 인터넷에서 직접 액세스할 수 없습니다. 다음 일러스트레이션은 공용 부하 분산 장치와 내부 부하 분산 장치를 모두 포함하는 아키텍처를 보여줍니다. 공용 부하 분산 장치는 외부 요청을 처리하는 반면, 내부 부하 분산 장치는 요청을 내부 VM 및 데이터베이스로 전달하여 처리합니다.
 
-![An illustration showing a public load balancer forwarding client requests to an internal load balancer. The internal load balancer then distributes requests to a web tier subnet or database tier subnet based on the type of the request. Both the web tier subnet and the database tier subnet have multiple servers to handle requests.](../media-draft/2-internal-load-balancer.png)
+![클라이언트 요청을 내부 부하 분산 장치로 전달하는 공용 부하 분산 장치를 보여주는 일러스트레이션. 그러면 내부 부하 분산 장치는 요청의 유형에 따라 요청을 웹 계층 서브넷 또는 데이터베이스 계층 서브넷으로 분산합니다. 웹 계층 서브넷과 데이터베이스 계층 서브넷 모두 요청을 처리하기 위한 여러 서버를 갖고 있습니다.](../media-draft/2-internal-load-balancer.png)
 
-## How does Azure Load Balancer work?
+## <a name="how-does-the-azure-load-balancer-work"></a>Azure Load Balancer의 작동 원리
 
-Azure Load Balancer uses information configured in **rules** and **health probes** to determine how new inbound traffic that is received on a load balancer's **front end** is distributed to VM instances in a **back-end pool**.
+Azure Load Balancer는 **규칙** 및 **상태 프로브**에 구성된 정보를 사용하여 Load Balancer의 **프런트 엔드**에서 수신하는 새 인바운드 트래픽을 **백 엔드 풀**의 VM 인스턴스에 분산하는 방법을 결정합니다.
 
-### Front end
+### <a name="frontend"></a>프런트 엔드
 
-The load balancer front end is an IP configuration, containing one or more public IP addresses, that enables access to the load balancer and its applications over the Internet.
+부하 분산 장치 프런트 엔드는 하나 이상의 공용 IP 주소를 포함하고 있는 IP 구성으로, 인터넷을 통해 부하 분산 장치 및 해당 응용 프로그램에 액세스할 수 있게 해줍니다.
 
-### Back end address pool
+### <a name="backend-address-pool"></a>백 엔드 주소 풀
 
-Virtual machines connect to a load balancer using their virtual network interface card (vNIC). The back-end address pool contains the IP addresses of the vNICs that are connected to the load balancer. If you place all your VMs in an availability set, you can use this to easily add your VMs to a back-end pool when you're configuring the load balancer.
+가상 머신은 vNIC(가상 네트워크 인터페이스 카드)를 사용하여 부하 분산 장치에 연결합니다. 백 엔드 주소 풀에는 부하 분산 장치에 연결되는 vNIC의 IP 주소가 포함되어 있습니다. 모든 VM을 한 가용성 집합에 배치하면 부하 분산 장치를 구성할 때 VM을 백 엔드 풀에 손쉽게 추가할 수 있습니다.
 
-### Health probe
+### <a name="health-probe"></a>상태 프로브
 
-Load balancers use _health probes_ to determine which virtual machines can service requests. The load balancer will only distribute traffic to VMs that are available and operational. 
+부하 분산 장치는 _상태 프로브_를 사용하여 서비스 요청을 처리할 수 있는 가상 머신을 확인합니다. 부하 분산 장치는 사용 가능하고 정상 작동하는 VM에만 트래픽을 분산합니다. 
 
-A health probe monitors specific ports on each VM. You can define what type of response corresponds to "health"; for example, you might require an `HTTP 200 Available` response from a web application. By default, a VM will be marked as "unavailable" after two consecutive failures at 15-second intervals.
+상태 프로브는 각 VM의 특정 포트를 모니터링합니다. "상태"에 해당하는 응답 유형을 정의할 수 있습니다. 예를 들어 웹 응용 프로그램에 `HTTP 200 Available` 응답을 요구할 수 있습니다. 기본적으로 VM은 15초 간격으로 두 차례 연속으로 실패하면 "사용할 수 없음"으로 표시됩니다.
 
-### Load balancer rules
+### <a name="load-balancer-rules"></a>부하 분산 장치 규칙
 
-Load balancer _rules_ define how traffic is distributed to backend VMs. The goal is to distribute requests fairly across the healthy VMs in the back-end pool.
+부하 분산 장치 _규칙_은 트래픽을 백 엔드 VM에 분산하는 방법을 정의합니다. 백 엔드 풀의 정상 VM에 요청을 균등하게 배포하는 것이 목표입니다.
 
-Azure Load Balancer uses a hash-based algorithm to rewrite the headers of inbound packets. By default, Load Balancer creates a hash from:
+Azure Load Balancer는 해시 기반 알고리즘을 사용하여 인바운드 패킷의 헤더를 다시 작성합니다. 기본적으로 Load Balancer는 다음으로 해시를 만듭니다.
 
-- Source IP addresses
-- Source ports
-- Destination IP addresses
-- Destination ports
-- IP protocol numbers
+- 원본 IP 주소
+- 원본 포트
+- 대상 IP 주소
+- 대상 포트
+- IP 프로토콜 번호
 
-This mechanism ensures that all packets within a packet client flow are sent to the same backend VM instance. A new flow from a client will use a different randomly allocated source port. This mean that the hash will change, and the load balancer may send this flow to a different back-end endpoint.
+이 메커니즘은 패킷 클라이언트 흐름 내의 모든 패킷이 동일한 백 엔드 VM 인스턴스로 전송되도록 보장합니다. 클라이언트의 새 흐름은 임의로 할당된 다른 원본 포트를 사용하므로 해시가 변경되고, 부하 분산 장치가 이 흐름을 다른 백 엔드포인트로 보낼 수 있습니다.
 
-## Basic vs. Standard Load Balancer SKUs
+## <a name="basic-vs-standard-load-balancer-skus"></a>기본 및 표준 부하 분산 장치 SKU의 차이점
 
-There are two versions of Azure Load Balancer: **Basic** and **Standard**. They differ in scale, features, and pricing. For example:
+Azure Load Balancer는 **기본** 및 **표준**의 두 종류가 있습니다. 둘은 규모, 기능 및 가격 측면에서 차이가 있습니다. 예:
 
-- Standard supports HTTPS while Basic does not
-- Pool size can be much larger in Standard
-- Basic is no-cost while Standard is charged based on rules and throughput.
+- 표준은 HTTPS를 지원하지만 기본은 지원하지 않습니다.
+- 표준의 풀 크기가 훨씬 큽니다.
+- 기본은 비용이 발생하지 않지만, 표준은 규칙 및 처리량에 따라 요금이 청구됩니다.
 
-Standard is a superset of Basic, so any scenario suitable for Basic should also work on Standard. The Basic SKU is generally intended for prototyping and testing while Standard is recommended for production.
+표준은 기본의 상위 집합이므로 기본에 적합한 모든 시나리오는 표준에서도 작동합니다. 기본 SKU는 일반적으로 프로토타입 및 테스트용으로 사용되고, 표준은 프로덕션 환경에 권장됩니다.
 
-## Start the deployment of a basic public load balancer
+## <a name="start-the-deployment-of-a-basic-public-load-balancer"></a>기본 공용 Load Balancer 배포 시작
 
-To create a load-balanced VM system, you need to create the load balancer itself, create a virtual network to contain your virtual machines, and then add VMs to the virtual network.
+부하 분산 VM 시스템을 만들려면 부하 분산 장치 자체를 만들고, 가상 머신을 포함할 가상 네트워크를 만들고, 가상 네트워크에 VM을 추가해야 합니다.
 
-To create the load balancer using the Azure portal, you define the following:
+Azure Portal을 사용하여 부하 분산 장치를 만들려면 다음 항목을 정의합니다.
 
-- Load balancer name
-- Type: public or internal
-- SKU: Basic or Standard
-- Public IP address: dynamic or static
-- Resource group and location
+- 부하 분산 장치 이름
+- 유형: 공용 또는 내부용
+- SKU: 기본 또는 표준
+- 공용 IP 주소: 동적 또는 고정
+- 리소스 그룹 및 위치
 
-Your back-end VMs will all be connected to the same virtual network, so you need to configure this resource next:
+백 엔드 VM은 모두 동일한 가상 네트워크(vNET)에 연결되므로, 그 다음으로 다음과 같은 리소스를 구성해야 합니다.
 
-- Virtual network name
-- Address space to use, such as 172.20.0.0/16
-- Resource group
-- Name for the subnet to use
-- Address space for the subnet (must be within the main space), such as 172.20.0.0/24
+- vNET 이름
+- 사용할 주소 공간(예: 172.20.0.0/16)
+- 리소스 그룹
+- 사용할 서브넷의 이름
+- 172.20.0.0/24와 같은 서브넷의 주소 공간(기본 공간 내에 포함되어야 함)
 
-You then need to create and deploy your backend VMs and configure them to use your virtual network. You should also place your VMs into the same availability set. Availability sets define the level of fault tolerance across a group of VMs, but for load balancing, they also help you assign your VMs to back-end pools.
+그 후에는 백 엔드 VM을 만들어서 배포하고, vNET을 사용하도록 구성해야 합니다. 또한 VM을 동일한 가용성 집합에 배치해야 합니다. 가용성 집합은 VM 그룹의 내결함성 수준을 정의하지만, 부하 분산을 위해 VM을 백 엔드 풀에 할당하는 것을 도와줍니다.
 
-You have now seen how to use Azure Load Balancer as part of a high-availability solution. Next, you will use these steps to deploy your own load balancer.
+고가용성 솔루션의 일부로 Azure Load Balancer를 사용하는 방법을 살펴보았습니다. 다음으로, 다음 단계에 따라 부하 분산 장치를 배포하겠습니다.

@@ -1,67 +1,66 @@
-The Azure portal allows you to manage, and scale PostgreSQL database servers. You decide to create an Azure Database for PostgreSQL server to store runner performance data. Based on historic captured data volumes, you know your server storage requirements should be set at 10 GB. To support your processing requirements, you need compute Gen 5 support with 1 vCore. You also know that you typically store backups for 25 days.
+Azure Portal을 사용하면 PostgreSQL 데이터베이스 서버를 관리하고 확장할 수 있습니다. 주자의 운동 능력 데이터를 저장하기 위해 Azure Database for PostgreSQL 서버를 만들기로 결정했습니다. 기록이 캡처되는 데이터 볼륨에 따라 서버 저장소 요구 사항을 10GB로 설정해야 합니다. 처리 요구 사항을 지원하려면 1개 vCore를 갖춘 5세대 계산을 지원해야 합니다. 또한 일반적으로 25일 동안 백업을 저장한다는 것도 알고 있습니다.
 
 > [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> Microsoft Learn에서 수행하는 모든 연습에는 추가 비용이 들지 않지만, 직접 탐색을 시작하면 Azure 구독이 필요합니다. 아직 구독이 없는 경우 몇 분 정도 시간을 내어 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). You'll see Azure resource creation and management menu on your left and the dashboard filling the rest of the screen.
+[Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다. Azure 리소스 만들기 및 관리 메뉴가 왼쪽에 표시되고, 나머지 화면에는 대시보드가 채워집니다.
 
-## Create an Azure Database for PostgreSQL server
+## <a name="create-an-azure-database-for-postgresql-server"></a>Azure Database for PostgreSQL 서버 만들기
 
-Once signed in you'll see the default Dashboard displayed. You have a couple of options available to you to create an Azure Database for PostgreSQL server. From the Dashboard, you can either:
+로그인하면 기본 대시보드가 표시됩니다. Azure Database for PostgreSQL 서버를 만드는 데 사용할 수 있는 몇 가지 옵션이 있습니다. 대시보드에서 다음 중 하나를 수행할 수 있습니다.
 
-- Select the **All services** option and then search for the **Azure Database for PostgreSQL server** option. This screen will display any configured servers already in your account. From here, you select **Add**, which will take you to the new server creation blade.
+- **모든 서비스** 옵션을 선택한 다음, **Azure Database for PostgreSQL 서버** 옵션을 검색합니다. 이 화면에는 이미 계정에 구성되어 있는 모든 서버가 표시됩니다. 여기서 **추가**를 선택하면 새 서버 만들기 블레이드로 이동합니다.
 
-or
+또는
 
-- Select the **Create a resource** option, which will present you with Azure Marketplace resource options. From here, you select the Databases option and choose **Azure Database for PostgreSQL**.
+- **리소스 만들기** 옵션을 선택하면 Azure Marketplace 리소스 옵션이 제공됩니다. 여기서 [데이터베이스] 옵션, **Azure Database for PostgreSQL**을 차례로 선택합니다.
 
-### Configure the server
+### <a name="configure-the-server"></a>서버 구성
 
-You'll now see the PostgreSQL server create blade, similar to the following illustration.
+이제 다음 그림과 비슷한 PostgreSQL 서버 만들기 블레이드가 표시됩니다.
 
-![Screenshot of the Azure portal showing the creation blade for a new PostgreSQL database.](../media-draft/4-create-blade.png)
+![Azure Portal - PostgreSQL 서버 만들기 사용자 인터페이스 블레이드](../media-draft/4-create-blade.png)
 
 > [!NOTE]
-> You'll need to remember or write down some details as you create the PostgreSQL server. For example the username and password to access the server. You'll use this information to connect to your server later.
+> PostgreSQL 서버를 만들 때 몇 가지 세부 정보를 기억하거나 적어 두어야 합니다. 예를 들어 서버에 액세스하는 데 필요한 사용자 이름과 암호가 있습니다. 나중에 이 정보를 사용하여 서버에 연결하게 됩니다.
 
-1. Choose a unique name for the server. Recall, that then name must be all lowercase and can have numbers and hyphens.
+1. 서버에 대한 고유한 이름을 선택합니다. 이름은 모두 소문자여야 하며, 숫자와 하이픈을 포함할 수 있습니다.
 
-1. Select a subscription, check to be sure this field is set to the subscription you want to use.
+1. 구독을 선택하고, 이 필드가 사용하려는 구독으로 설정되어 있는지 확인합니다.
 
-1. You now have the option to create or reuse an existing resource. To create a new resource, select the **Create new** radio button and enter a name for the new resource group. You'll use this group for the rest of this module. Name the resource something descriptive so that it's easy to delete the resource later.
+1. 이제 새 리소스를 만들거나 기존 리소스를 다시 사용할 수 있습니다. 새 리소스를 만들려면 **새로 만들기** 라디오 단추를 선택하고 새 리소스 그룹에 대한 이름을 입력합니다. 이 그룹은 이 모듈의 나머지 부분에서 사용하게 됩니다. 나중에 해당 리소스를 쉽게 삭제할 수 있도록 설명이 포함된 이름을 지정합니다.
 
-1. Select the source of your new server. For this lab, you'll leave the option at _Blank_. Recall, you can change the option to _Back up_ if you want to restore and existing server backup.
+1. 새 서버에 대한 원본을 선택합니다. 이 랩에서는 옵션을 _비어 있음_으로 그대로 두겠습니다. 기존 서버 백업을 복원하려면 옵션을 _백업_으로 변경할 수 있습니다.
 
-1. Choose a login name to use as an administrator login for the new server. Recall, the admin login name can't be azure_superuser, azure_pg_admin, admin, administrator, root, guest, or public. It can't start with pg_. Remember or write down the name for future use.
+1. 새 서버에 대한 관리자 로그인으로 사용할 로그인 이름을 선택합니다. 관리자 로그인 이름은 azure_superuser, azure_pg_admin, admin, administrator, root, guest 또는 public이 될 수 없습니다. pg_로 시작할 수 없습니다. 나중에 사용하기 위해 이 이름을 기억하거나 적어 두세요.
 
-1. Choose a password to use with the above administrator login name. Recall, our password must include characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.). Remember or write down the password for future use.
+1. 위의 관리자 로그인 이름과 함께 사용할 암호를 선택합니다. 암호에는 영어 대문자, 영어 소문자, 숫자(0-9) 및 영숫자가 아닌 문자(!, $, #, % 등)의 세 가지 범주에 속한 문자가 포함되어야 합니다. 나중에 사용하기 위해 이 암호를 기억하거나 적어 두세요.
 
-1. Retype the password to confirm your password.
+1. 암호를 확인하기 위해 암호를 다시 입력합니다.
 
-1. Choose a location for your server. You'll want to choose a location closest to you.
+1. 서버에 대한 위치를 선택합니다. 자신에게 가장 가까운 위치를 선택하는 것이 좋습니다.
 
-1. You'll now select the version of for your server. Select the latest version of PostgreSQL.
+1. 이제 서버에 대한 버전을 선택합니다. 최신 버전의 PostgreSQL을 선택합니다.
 
-1. As the second last step, select the **Pricing tier** option.
+1. 마지막 두 번째 단계로 **가격 책정 계층** 옵션을 선택합니다.
 
-    Recall that you need to configure your server with specific storage and compute options.
+    특정 저장소 및 계산 옵션을 사용하여 서버를 구성해야 한다는 것을 기억하세요.
 
-    - 10 GB of disc storage
-    - Compute Generation 5 support
-    - Retention period of 25 days
+    - 10GB의 디스크 저장소
+    - 계산 5세대 지원
+    - 25일의 보존 기간
 
-    Click **Pricing tier** to access the pricing tier blade and make the following changes.
+    **가격 책정 계층**을 클릭하여 가격 책정 계층 블레이드에 액세스하고, 다음과 같이 변경합니다. ![가격 책정 계층 단추](../media-draft/4-azure-db-pricing-tier-button.png)
 
-    - Choose the **Basic** option tab.
-    - Choose the **Gen 5 Computation Generation** option.
-    - Choose 1 vCore from the **vCore** slider. Notice how the changes in the slider affect the **Price Summary**.
-    - Choose 10 GB from the **Storage** slider. If you're having trouble sliding to exactly 10 GB, you can use your keyboard's left and right cursor keys to get a precise value.
-    - Choose 25 Days from the **Backup Retention Period** slider.
+    - **기본** 옵션 탭을 선택합니다.
+    - **5세대 계산 생성** 옵션을 선택합니다.
+    - **vCore** 슬라이더에서 [vCore 1개]를 선택합니다. 변경된 슬라이더가 **가격 요약**에 미치는 영향을 확인합니다.
+    - **저장소** 슬라이더에서 [10GB]를 선택합니다. 슬라이더를 정확하게 10GB에 맞추는 데 어려움이 있는 경우 키보드의 왼쪽 및 오른쪽 커서 키를 사용하여 정확한 값에 맞출 수 있습니다.
+    - **백업 보존 기간** 슬라이더에서 [25일]을 선택합니다.
 
-        ![Screenshot of the Azure portal showing the database pricing tier for a new PostgreSQL database.](../media-draft/4-azure-db-pricing-tier.png)
+    ![가격 책정 계층](../media-draft/4-azure-db-pricing-tier.png)
+    - 선택 항목에 만족하면 **확인**을 클릭하여 해당 선택 항목을 확정하고 가격 책정 계층 옵션을 닫습니다.
 
-    - Click **OK** once you're satisfied with your selection to commit your selections and close the pricing tier options.
+1. 이제 입력한 값을 검토하고, **만들기**를 클릭하는 것만 남아 있습니다. 만드는 데는 몇 분이 걸릴 수 있습니다. Azure Portal 화면의 위쪽에 있는 [알림] 아이콘(벨)을 선택하여 진행 상황을 모니터링할 수 있습니다.
 
-1. All that is left now, is to review the values you entered and click **Create**. Creation can take several minutes. You can select the Notifications icon (a bell) at the top of the Azure portal screen to monitor progress.
-
-You now have a PostgreSQL server available. In the next unit, you'll see how to create the same server using the Azure CLI.
+이제 PostgreSQL 서버를 사용할 수 있습니다. 다음 단원에서는 Azure CLI를 사용하여 동일한 서버를 만드는 방법을 알아봅니다.

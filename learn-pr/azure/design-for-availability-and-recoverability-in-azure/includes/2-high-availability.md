@@ -1,90 +1,90 @@
-High availability (HA) ensures your architecture can handle failures. Imagine you're responsible for a system that must be always fully operational. Failures can and will happen, so how do you ensure that your system can remain online when something goes wrong? How do you handle maintenance events? 
+HA(고가용성)를 통해 아키텍처에서 오류를 처리할 수 있습니다. 항상 완벽하게 작동해야 하는 시스템을 책임지고 있다고 가정해보겠습니다. 오류는 발생할 수 있고 발생할 수 밖에 없습니다. 문제가 생겼을 때 시스템을 온라인 상태로 유지하려면 어떻게 해야 할까요? 유지 관리 이벤트를 처리하는 방법
 
-Here, you'll learn the need for high availability, evaluate application high availability requirements, and learn how the Azure platform accommodates and provides solutions to meet your availability goals.
+여기서는 고가용성의 필요성을 알아보고 응용 프로그램 고가용성 요구 사항을 평가하며 Azure 플랫폼이 가용성 목표를 충족시키는 솔루션을 어떻게 수용하고 제공하는지 알아봅니다.
 
-## What is high availability?
+## <a name="what-is-high-availability"></a>고가용성이란?
 
-A highly available service is an application that absorbs fluctuations in availability, load, and temporary failures in dependent services and hardware. The application remains online and available (or maintains the appearance of it) while performing acceptably. This availability is often defined by business requirements or application service-level agreements.
+고가용성 서비스는 종속 서비스 및 하드웨어의 가용성, 로드 및 일시적 오류에 따른 변동을 완화하는 응용 프로그램입니다. 응용 프로그램이 정상적으로 수행되면서 온라인 및 사용 가능한 상태로 유지됩니다(또는 그렇게 보이는 상태 유지). 이 가용성은 종종 비즈니스 요구 사항이나 응용 프로그램 서비스 수준 계약으로 정의됩니다.
 
-High availability is ultimately about the ability to handle the loss or severe degradation of a component of a system. This might be due to a virtual machine that's hosting an application going offline because the host failed. It could be due to planned maintenance for a system upgrade. It could even be caused by the failure of a service in the cloud. Identifying the places where your system can fail, and building in the capabilities to handle those failures, will ensure that the services you offer to your customers can stay online.
+고가용성은 궁극적으로 시스템 구성 요소의 손실이나 심각한 성능 저하를 처리하는 기능입니다. 호스트에 장애가 발생하여 응용 프로그램을 호스트하는 가상 머신이 오프라인 상태가 된 것이 원인일 수 있습니다. 시스템 업그레이드를 위해 계획된 유지 관리 때문일 수 있습니다. 클라우드의 서비스 장애가 원인일 수도 있습니다. 시스템 장애가 발생할 수 있는 위치를 파악하고 장애를 처리할 수 있는 기능을 구축하면 고객에게 제공하는 서비스가 온라인 상태를 유지할 수 있습니다.
 
-High availability of a service typically requires high availability of the components that make up the service. Think of a website that offers an online marketplace to purchase items. The service that's offered to your customers is the ability to list, buy, and sell items online. To provide this service, you'll have multiple components: a database, web servers, application servers, and so on. Each of these components could fail, so you have to identify how and where  your failure points are, and determine how to address these failure points in your architecture.
+일반적으로 서비스 고가용성을 위해서는 서비스를 구성하는 구성 요소의 고가용성이 필요합니다. 항목을 구매하는 온라인 마켓플레이스를 제공하는 웹 사이트를 생각해 보겠습니다. 고객에게 제공되는 서비스는 온라인으로 항목을 나열, 구매 및 판매하는 기능입니다. 이런 서비스를 제공하려면 데이터베이스, 웹 서버, 응용 프로그램 서버 등을 비롯한 여러 구성 요소가 있어야 합니다. 이러한 구성 요소 각각에 장애가 발생할 수 있으므로 장애의 원인과 위치를 파악하고 아키텍처에서 이러한 장애 지점을 해결하는 방법을 결정해야 합니다.
 
-## Evaluate high availability for your architecture
+## <a name="evaluate-high-availability-for-your-architecture"></a>아키텍처에 대한 고가용성 평가
 
-There are three steps to evaluating an application for high availability: 
+응용 프로그램의 고가용성을 평가하는 단계는 세 단계로 이루어집니다.
 
-1. Determine the service-level agreement of your application
-1. Evaluate the HA capabilities of the application
-1. Evaluate the HA capabilities of dependent applications
+1. 응용 프로그램의 서비스 수준 계약 확인
+1. 응용 프로그램의 HA 기능 평가
+1. 종속된 응용 프로그램의 HA 기능 평가
 
-Let's explore these steps in detail.
+다음 단계를 자세히 살펴보겠습니다.
 
-### Determine the service-level agreement of your application
+### <a name="determine-the-service-level-agreement-of-your-application"></a>응용 프로그램의 서비스 수준 계약 확인
 
-A service-level agreement (SLA) is an agreement between a service provider and a service consumer in which the service provider commits to a standard of service based on measurable metrics and defined responsibilities. SLAs can be strict, legally bound, contractual agreements, or assumed expectations of availability by customers. Service metrics typically focus on service throughput, capacity, and availability, all of which can be measured in various ways. Regardless of the specific metrics that make up the SLA, failure to meet the SLA can have serious financial ramifications for the service provider. A common component of service agreements is guaranteed financial reimbursement for missed SLAs.
+SLA(서비스 수준 계약)는 서비스 공급자가 측정 가능한 메트릭과 정의된 책임에 따라 서비스 표준을 확약하는 서비스 공급자와 서비스 소비자 간 계약입니다. SLA는 엄격하거나, 법적 구속력이 있거나, 계약상의 동의이거나, 가용성에 대한 고객의 기대치가 될 수 있습니다. 서비스 메트릭은 일반적으로 서비스 처리량, 용량, 가용성에 중점을 두며 이 모든 것이 다양한 방법으로 측정될 수 있습니다. SLA를 구성하는 특정 메트릭에 관계없이 SLA를 충족시키지 못하면 서비스 공급자 측에 심각한 재정적 파급 효과를 초래할 수 있습니다. 서비스 계약의 공통 구성 요소는 누락된 SLA에 대해 재정적 보상을 보장합니다.
 
-![SLA handshake](../media-draft/SLAHandshake.png)
+![SLA 핸드셰이크](../media-draft/SLAHandshake.png)
 
-Identifying SLAs is an important first step when determining the high availability capabilities that your architecture will require. These will help shape the methods you'll use to make your application highly available.
+아키텍처에 필요한 고가용성 기능을 결정할 때 중요한 첫 번째 단계는 SLA 식별입니다. 이렇게 하면 응용 프로그램의 가용성을 높이는 데 사용할 메서드를 형성하는 데 도움이 됩니다.
 
-### Evaluate the HA capabilities of the application
+### <a name="evaluate-the-ha-capabilities-of-the-application"></a>응용 프로그램의 HA 기능 평가
 
-To evaluate the HA capabilities of your application, perform a failure analysis. Focus on single points of failure and critical components that would have a large impact on the application if they were unreachable, misconfigured, or started behaving unexpectedly. For areas that do have redundancy, determine whether the application is capable of detecting error conditions and self-healing.
+응용 프로그램의 HA 기능을 평가하려면 오류 분석을 수행합니다. 연결할 수 없거나 구성이 잘못되었거나 예상과 다르게 작동하면 응용 프로그램에 큰 영향을 미칠 수 있는 단일 장애 지점 및 중요한 구성 요소에 중점을 둡니다. 중복성이 있는 영역의 경우, 응용 프로그램이 오류 조건을 감지할 수 있고 자체 복구가 가능한 지 여부를 판단합니다.
 
-You'll need to carefully evaluate all components of your application, including the pieces designed to provide HA functionality, such as load balancers. Single points of failure will either need to be modified to have HA capabilities integrated, or will need to be replaced with services that can provide HA capabilities.
+부하 분산 장치와 같이 HA 기능을 제공하도록 설계된 부분을 포함하여 응용 프로그램의 모든 구성 요소를 신중하게 평가해야 합니다. 단일 실패 지점은 HA 기능이 통합되도록 수정하거나, HA 기능을 제공할 수 있는 서비스로 교체해야 합니다.
 
-### Evaluate the HA capabilities of dependent applications
+### <a name="evaluate-the-ha-capabilities-of-dependent-applications"></a>종속된 응용 프로그램의 HA 기능 평가
 
-You'll need to understand not only your application's SLA requirements to your consumer, but also the provided SLAs of any resource that your application may depend on. If you are committing an uptime to your customers of 99.9%, but a service your application depends on only has an SLA of 99%, this could put you at risk of not meeting your SLA to your customers. If a dependent service is unable to provide a sufficient SLA, you may need to modify your own SLA, replace the dependency with an alternative, or find ways to meet your SLA while the dependency is unavailable. Depending on the scenario and the nature of the dependency, failing dependencies can be temporarily worked around with solutions like caches and work queues.
+소비자에 대한 응용 프로그램의 SLA 요구 사항뿐 아니라 응용 프로그램이 종속될 수 있는 모든 리소스에 제공된 SLA도 파악해야 합니다. 소비자에게 99.9% 가동 시간을 약속했으나 응용 프로그램이 종속된 서비스의 SLA가 99%에 불과하다면 고객에 대한 SLA를 이행하지 못할 위험이 있습니다. 종속 서비스가 SLA를 충분히 제공할 수 없는 경우 자체 SLA를 수정하거나, 종속성을 대안으로 대체하거나, 종속성을 사용할 수 없는 동안 SLA를 충족시킬 방법을 찾아야 합니다. 시나리오와 종속성의 특성에 따라, 캐시 및 작업 큐와 같은 솔루션을 사용하여 실패한 종속성을 일시적으로 해결할 수 있습니다.
 
-## Azure's highly available platform
+## <a name="azures-highly-available-platform"></a>Azure의 고가용성 플랫폼
 
-The Azure cloud platform has been designed to provide high availability throughout all its services. Like any system, applications may be affected by both hardware and software platform events. The need to design your application architecture to handle failures is critical, and the Azure cloud platform provides you with the tools and capabilities to make your application highly available. There are several core concepts when considering HA for your architecture on Azure:
+Azure 클라우드 플랫폼은 모든 서비스에서 고가용성을 제공하도록 설계되었습니다. 다른 시스템과 마찬가지로 응용 프로그램도 하드웨어와 소프트웨어 플랫폼 이벤트의 영향을 받을 수 있습니다. 오류를 처리하도록 응용 프로그램 아키텍처를 설계하는 것이 중요하며 Azure 클라우드 플랫폼은 응용 프로그램의 가용성을 높이는 도구와 기능을 제공합니다. Azure에서 아키텍처에 HA를 고려할 때 핵심적인 몇 가지 개념은 다음과 같습니다.
 
-* Availability sets
-* Availability zones
-* Load balancing
-* Platform as a service (PaaS) HA capabilities
+* 가용성 집합
+* 가용성 영역
+* 부하 분산
+* PaaS HA 기능
 
-### Availability sets
+### <a name="availability-sets"></a>가용성 집합
 
-Availability sets are a way for you to inform Azure that VMs that belong to the same application workload should be distributed to prevent simultaneous impact from hardware failure and scheduled maintenance. Availability sets are made up of *update domains* and *fault domains*.
+가용성 집합은 하드웨어 장애 및 예약된 유지 관리의 영향을 동시에 받지 않도록 방지하기 위해 동일한 응용 프로그램 워크로드에 속하는 VM을 분산시켜야 한다고 Azure에게 알리는 방법입니다. 가용성 집합은 *업데이트 도메인*과 *장애 도메인*으로 구성됩니다.
 
-![Availability sets](../media-draft/AzAvailSets.png)
+![가용성 집합](../media-draft/AzAvailSets.png)
 
-Update domains ensure that a subset of your application's servers always remain running when the virtual machine hosts in an Azure datacenter require downtime for maintenance. Most updates can be performed with no impact to the VMs running on them, but there are times when this isn't possible. To ensure that updates don't happen to a whole datacenter at once, the Azure datacenter is logically sectioned into update domains (UD). When a maintenance event, such as a performance update and critical security patch that needs to be applied to the host, the update is sequenced through update domains. The use of sequencing updates using update domains ensures that the whole datacenter isn't unavailable during platform updates and patching.
+업데이트 도메인은 Azure 데이터센터에서 호스트되는 가상 머신이 유지 관리를 위해 가동 중지 시간이 필요할 때 응용 프로그램 서버의 하위 집합이 실행 상태를 유지하도록 합니다. 대부분의 업데이트는 실행되는 VM에 영향을 미치지 않고 수행할 수 있지만 이것이 불가능한 경우도 있습니다. 전체 데이터센터에 한꺼번에 업데이트가 발생하지 않도록 Azure 데이터 센터는 UD(업데이트 도메인)로 논리적으로 구분됩니다. 성능 업데이트 및 중요 보안 패치와 같은 유지 관리 이벤트를 호스트에 적용해야 하는 경우 업데이트 도메인을 통해 업데이트 순서가 지정됩니다. 업데이트 도메인을 통해 업데이트 순서를 지정하면 플랫폼 업데이트와 패치 적용 중에 전체 데이터 센터를 사용할 수 없도록 보장합니다.
 
-While update domains represent a logical section of the datacenter, fault domains (FD) represent physical sections of the datacenter and ensure rack diversity of servers in an availability set. Fault domains align to the physical separation of shared hardware in the datacenter. This includes power, cooling, and network hardware that supports the physical servers located in server racks. In the event the hardware that supports a server rack has become unavailable, only that rack of servers would be affected by the outage.
+업데이트 도메인이 데이터센터의 논리적 섹션을 나타내는 것과 달리 FD(장애 도메인)는 데이터센터의 물리적 섹션을 나타내 가용성 집합에서 서버의 랙 다양성을 보장합니다. 장애 도메인은 데이터센터 내 공유 하드웨어의 물리적 분리에 따릅니다. 여기에는 서버 랙에 있는 물리적 서버를 지원하는 전원, 냉각 장치 및 네트워크 하드웨어가 포함됩니다. 서버 랙을 지원하는 하드웨어를 사용할 수 없게 되면 해당 서버 랙만 가동 중단의 영향을 받습니다.
 
-With availability sets, you can ensure your application remains online if a high-impact maintenance event is required or hardware failures occur.
+가용성 집합을 사용하면 영향이 큰 유지 관리 이벤트가 필요하거나 하드웨어 장애가 발생하는 경우 응용 프로그램을 온라인 상태로 유지할 수 있습니다.
 
-### Availability zones
+### <a name="availability-zones"></a>가용성 영역
 
-Availability zones are independent physical datacenter locations within a region that include their own power, cooling, and networking. By taking availability zones into account when deploying resources, you can protect workloads from datacenter outages while retaining presence in a particular region. Services like virtual machines are *zonal services* and allow you to deploy them to specific zones within a region. Other services are *zone-redundant services* and will replicate across the availability zones in the specific Azure region. Both types ensure that within an Azure region there are no single points of failure.
+가용성 영역은 자체 전원, 냉각 및 네트워킹을 포함하는 한 지역 내의 독립적인 물리적 데이터센터 위치입니다. 리소스를 배포할 때 가용성 영역을 고려하면 데이터센터 중단으로부터 워크로드를 보호하고 특정 지역에서 서비스 상태를 유지할 수 있습니다. 가상 머신 같은 서비스는 *영역별 서비스*로, 지역 내 특정 영역에 배포할 수 있습니다. 다른 서비스는 *영역 중복 서비스*로, 특정 Azure 지역의 가용성 영역에서 복제됩니다. 두 유형 모두 Azure 지역 내에서 단일 실패 지점이 없도록 합니다.
 
-![Availability zones](../media-draft/AzAvailZones.png)
+![가용성 영역](../media-draft/AzAvailZones.png)
 
-Supported regions contain a minimum of three availability zones. When creating zonal service resources in those regions, you'll have the ability to select the zone in which the resource should be created. This will allow you to design your application to withstand a zonal outage and continue to operate in an Azure region before having to evacuate your application to another Azure region.
+지원되는 지역에는 최소 3개 가용성 영역이 포함됩니다. 해당 지역에 영역 서비스 리소스를 만들 때 리소스를 만들 영역을 선택할 수 있습니다. 이렇게 하면 응용 프로그램을 다른 Azure 지역으로 이동하기 전에 영역별 정전을 견뎌내고 Azure 지역에서 계속 작동하도록 응용 프로그램을 설계할 수 있습니다.
 
-Availability zones are a newer high availability configuration service for Azure regions and are currently available for certain regions. It's important to check the availability of this service in the region that you're planning to deploy your application if you want to consider this functionality. Availability zones are supported when using virtual machines, as well as several PaaS services. Availability zones replace availability sets in supported regions.
+가용성 영역은 Azure 지역에 대한 새로운 고가용성 구성 서비스이며, 현재 특정 지역에 제공됩니다. 이 기능을 고려하려는 경우 응용 프로그램을 배포하려는 지역에서 이 서비스의 가용성을 확인하는 것이 중요합니다. 가용성 영역은 가상 머신은 물론 여러 PaaS 서비스를 사용할 때도 지원됩니다. 가용성 영역은 지원되는 지역에서 가용성 집합을 대체합니다.
 
-### Load balancing
+### <a name="load-balancing"></a>부하 분산
 
-Load balancers manage how network traffic is distributed across an application. Load balancers are essential in keeping your application resilient to individual component failures and to ensure your application is available to process requests. For applications that don't have service discovery built in, load balancing is required for both availability sets and availability zones.
+부하 분산 장치는 네트워크 트래픽이 응용 프로그램 전반에 분산되는 방식을 관리합니다. 부하 분산 장치는 개별 구성 요소의 오류에 대한 응용 프로그램의 복원력을 유지하고 응용 프로그램을 사용하여 요청을 처리하도록 보장하는 데 필수적입니다. 서비스 검색을 기본으로 제공하지 않는 응용 프로그램의 경우 가용성 집합과 가용성 영역 모두에 부하 분산이 필요합니다.
 
-Azure possesses three load balancing technology services that are distinct in their abilities to route network traffic:
+Azure에는 네트워크 트래픽을 라우팅하는 기능이 뛰어난 3가지 부하 분산 기술 서비스가 있습니다.
 
-* **Azure Traffic Manager** provides global DNS load balancing. You would consider using Traffic Manager to provide load balancing of DNS endpoints within or across Azure regions.
-* **Azure Application Gateway** provides Layer 7 load-balancing capabilities, such as round-robin distribution of incoming traffic, cookie-based session affinity, URL path-based routing, and the ability to host multiple websites behind a single application gateway.
-* **Azure Load Balancer** is a layer 4 load balancer. You can configure public and internal load-balanced endpoints and define rules to map inbound connections to back-end pool destinations by using TCP and HTTP health-probing options to manage service availability.
+* **Azure Traffic Manager**는 글로벌 DNS 부하 분산 기술을 제공합니다. Azure 지역 내 또는 전역에서 DNS 엔드포인트의 부하 분산을 제공하는 데 Traffic Manager를 사용하는 것이 좋습니다.
+* **Azure Application Gateway**는 들어오는 트래픽의 라운드 로빈 배포, 쿠키 기반 세션 선호도, URL 경로 기반 라우팅 및 단일 응용 프로그램 게이트웨이 뒤에 여러 웹 사이트를 호스트하는 기능 등, 계층 7 부하 분산 기능을 제공합니다.
+* **Azure Load Balancer**는 계층 4 부하 분산 장치입니다. 서비스 가용성을 관리하는 TCP 및 HTTP 상태 확인 옵션을 사용하여 공용 및 내부 부하가 분산된 엔드포인트를 구성하고 백 엔드 풀 대상에 인바운드 연결을 매핑하는 규칙을 정의할 수 있습니다.
 
-One or a combination of all three Azure load-balancing technologies can ensure you have the necessary options available to architect a highly available solution to route network traffic through your application.
+Azure 부하 분산 기술 중 하나 또는 세 가지의 조합을 통해 응용 프로그램을 통해 네트워크 트래픽을 라우팅하는 고가용성 솔루션을 설계하는 데 필요한 옵션을 사용할 수 있도록 보장합니다.
 
-![Azure load balancing options](../media-draft/AzLBOptions.png)
+![스크린샷](../media-draft/AzLBOptions.png)
 
-### PaaS HA capabilities
+### <a name="paas-ha-capabilities"></a>PaaS HA 기능
 
-PaaS services come with high availability built in. Services such as Azure SQL Database, Azure App Service, and Azure Service Bus include high availability features and ensure that failures of an individual component of the service will be seamless to your application. Using PaaS services is one of the best ways to ensure that your architecture is highly available.
+PaaS 서비스에는 고가용성이 내장되어 있습니다. Azure SQL Database, Azure App Service 및 Azure Service Bus와 같은 서비스에는 고가용성 기능이 포함되어 있기 때문에 서비스의 개별 구성 요소에 장애가 발생해도 응용 프로그램이 원활하게 작동하도록 합니다. PaaS 서비스를 사용하는 것이 아키텍처의 가용성을 보장하는 최선의 방법 중 하나입니다.
 
-When architecting for high availability, you'll want to understand the SLA that you're committing to your customers. Then evaluate both the HA capabilities that your application has, and the HA capabilities and SLAs of dependent systems. After those have been established, use Azure features, such as availability sets, availability zones, and various load-balancing technologies, to add HA capabilities to your application. Any PaaS services you should choose to use will have HA capabilities built in.
+고가용성을 위한 아키텍처를 설계할 때 고객에게 약속한 SLA를 이해해야 합니다. 그런 다음, 응용 프로그램의 HA 기능과, 종속 시스템의 HA 기능 및 SLA를 모두 평가합니다. 이를 정한 후에는 가용성 집합, 가용성 영역 등의 Azure 기능과, 다양한 부하 분산 기술을 사용하여 응용 프로그램에 HA 기능을 추가합니다. 사용하도록 선택하는 모든 PaaS 서비스에는 HA 기능이 내장되어 있습니다.

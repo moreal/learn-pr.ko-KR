@@ -1,17 +1,17 @@
-Azure Load Balancer can help scale your cloud applications and improve the availability of your services.
+Azure Load Balancer는 클라우드 응용 프로그램을 확장하고 서비스의 가용성을 향상하는 데 도움을 줍니다.
 
-Suppose you work as the server administrator responsible for your on-premises Enterprise Resource Planning (ERP) application. The application is business-critical, and you want to minimize the downtime that results from server failure.
+여러분이 온-프레미스 ERP(엔터프라이즈 리소스 계획) 응용 프로그램을 관리하는 서버 관리자라고 가정해 봅시다. 이 응용 프로그램은 중요 비즈니스용이므로 서버 장애로 인한 가동 중지 시간을 최소화해야 합니다.
 
-Your company is looking to take advantage of some of the scalability options in the cloud and wants to determine if the ERP application can be made highly available by adding more servers and load balancing network traffic. Your job is to determine if a load balancer is appropriate for this type of application, and if so, how to deploy and configure the system.
+회사에서는 클라우드의 확장성 옵션 중 일부를 활용하는 방안을 고려하고 있으며, 서버와 부하 분산 네트워크 트래픽을 추가하여 ERP 응용 프로그램의 가용성을 높일 수 있는지 알고 싶어 합니다. 부하 분산 장치가 이러한 유형의 응용 프로그램에 적합한지, 적합하다면 시스템을 어떻게 배포하고 구성해야 하는지 결정하는 것이 여러분의 일입니다.
 
-Here, you will identify internal and external workloads that are suitable for load balancing. You will learn how to choose between the basic and standard load balancer products. Finally, you will see how to create a load balancer, associate the load balancer with virtual servers, and configure the associated rules and probes.
+여기서는 부하 분산에 적합한 내부 및 외부 워크로드를 식별할 것입니다. 기본 부하 분산 장치와 표준 부하 분산 장치 제품 중에서 어떤 것을 선택해야 하는지 선택 요령을 알아볼 것입니다. 마지막으로, 부하 분산 장치를 만들고, 가상 서버와 연결하고, 관련 규칙 및 프로브를 구성하는 방법을 살펴보겠습니다.
 
-## Learning objectives:
+## <a name="learning-objectives"></a>학습 목표:
 
-In this module, you will:
-- Decide when to use a load balancer
-- Identify the differences between the basic and standard Load Balancer editions
-- Create a new load balancer
-- Create virtual networks associated with a load balancer
-- Configure load balancer rules
-- Configure a load balancer health probe
+이 모듈에서는 다음을 수행합니다.
+- 부하 분산 장치를 사용하는 시기 결정
+- 기본 부하 분산 장치와 표준 부하 분산 장치 버전 간의 차이점 식별
+- 새 부하 분산 장치 만들기
+- 부하 분산 장치와 연결된 가상 네트워크 만들기
+- 부하 분산 장치 규칙 구성
+- 부하 분산 장치 상태 프로브 구성

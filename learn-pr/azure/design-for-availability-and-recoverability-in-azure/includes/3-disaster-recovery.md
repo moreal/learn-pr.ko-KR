@@ -1,115 +1,115 @@
-Designing for high availability helps keep an application or process running despite unfavorable events and adverse conditions. But what do you do when something so significant happens that you've lost data and it's impossible to keep your apps and processes from going down? When disaster strikes, you need to have a plan. You should know what your goals and expectations are for recovering, what are the costs and limitations of your plan, and how to execute on it.
+고가용성을 위한 설계는 적합하지 않은 이벤트 및 불리한 조건에도 불구하고 응용 프로그램 또는 프로세스의 실행을 지속하는 데 도움이 됩니다. 그러나 위중한 어떤 일이 발생하여 데이터를 잃었고 앱과 프로세스의 다운을 막을 수 없다면 어떻게 해야 할까요? 재해가 발생하면 계획을 세워야 합니다. 복구의 목표와 기대 수준, 계획의 비용 및 제한 사항, 그에 대한 실행 방법을 알고 있어야 합니다.
 
-## What is disaster recovery?
+## <a name="what-is-disaster-recovery"></a>재해 복구란?
 
-Disaster recovery is about *recovering from high-impact events* that result in downtime and loss of data. A disaster is a single, major event with an impact much larger and long-lasting than the application can mitigate through the high-availability portion of its design.
+재해 복구는 가동 중지 시간과 데이터 손실을 초래하는 *영향력이 높은 이벤트로부터 회복*하는 것입니다. 재해는 응용 프로그램이 설계의 고가용성 부분을 통해 완화할 수 있는 것보다 영향이 훨씬 크고 오래 지속되는 단일 중대 이벤트입니다.
 
-The word "disaster" often evokes thoughts of *natural* disasters and external events (earthquakes, floods, tropical storms, and so on) but many other kinds of disasters exist as well. A deployment or upgrade that goes horribly wrong can leave an app in an unrecognizable state. Subtle implementation or configuration errors can write bad data or delete data that's assumed to be permanent. Malicious hackers can corrupt or delete data and inflict other kinds of damage that take an app offline or eliminate some of its functionality.
+"재해"라는 단어는 종종 *자연* 재해나 외부 이벤트(지진, 홍수, 태풍 등)를 떠올리게 하지만 그 밖의 여러 다른 재해도 있습니다. 매우 잘못된 배포나 업그레이드는 앱을 인식할 수 없는 상태로 만들 수 있습니다. 사소한 구현 또는 구성 오류는 잘못된 데이터를 작성하거나 영구적인 것으로 간주되는 데이터를 삭제할 수 있습니다. 악의적 해커는 데이터를 손상시키거나 삭제하고 앱을 오프라인으로 만들거나 일부 기능을 제거하는 다른 종류의 손해를 입힐 수 있습니다.
 
-Regardless of its cause, the only remedy for a disaster once it has occurred is a well-defined, tested disaster recovery plan and an application that actively supports disaster recovery efforts through its design.
+원인에 관계없이 재해 발생 후 유일한 해결 방법은 잘 정의되고 테스트된 재해 복구 계획 및 설계를 통해 재해 복구 업무를 적극 지원하는 응용 프로그램입니다.
 
-## How to create a disaster recovery plan
+## <a name="how-to-create-a-disaster-recovery-plan"></a>재해 복구 계획을 만드는 방법
 
-A disaster recovery plan is a single document that details the procedures that are required to recover from data loss and downtime caused by a disaster, and identifies who's in charge of directing those procedures. Operators should be able to use the plan as a manual to restore application connectivity and recover data after a disaster occurs. A detailed, written plan that's dedicated to disaster recovery is critical to ensuring a favorable outcome. The process of creating the plan will help to assemble a complete picture of the application. The resulting written steps will promote good decision-making and follow-through in the panicked, chaotic aftermath of a disaster event.
+재해 복구 계획은 재해에서 발생한 데이터 손실 및 가동 중지 시간으로부터 복구하는 데 필요한 절차를 상세히 설명하고 그러한 절차를 이끄는 담당자를 식별하는 단일 문서입니다. 운영자는 이 계획을 매뉴얼로 활용하여 재해 발생 후 응용 프로그램 연결을 복원하고 데이터를 복구할 수 있어야 합니다. 재해 복구를 전담하는 상세 서면 계획은 좋은 결과를 보장하는 데 중요합니다. 즉, 계획을 만드는 프로세스는 응용 프로그램을 전체적으로 파악하는데 유용하며 그 결과로 작성된 단계는 재해 이벤트의 공포스럽고 혼란스러운 여파 속에서도 좋은 의사 결정과 후속 조치를 촉진하게 됩니다.
 
-Creating a disaster recovery plan requires expert knowledge of the application's workflows, data, infrastructure, and dependencies.
+재해 복구 계획을 만들려면 응용 프로그램의 워크플로, 데이터, 인프라 및 종속성에 대한 정확한 지식이 필요합니다.
 
-### Risk assessment and process inventory
+### <a name="risk-assessment-and-process-inventory"></a>위험 평가 및 프로세스 인벤토리
 
-The first step in creating a disaster recovery plan is performing a risk analysis that examines the impact of different kinds of disasters on the application. The exact nature of a disaster isn't as important to the risk analysis as its potential impact through data loss and application downtime. Explore various kinds of hypothetical disasters and try to be specific when thinking about their effects. For example, a targeted malicious attack may modify code or data that results in a different kind of impact than an earthquake that disrupts network connectivity and datacenter availability.
+재해 복구 계획을 만드는 첫 단계는 응용 프로그램에 미치는 다양한 종류의 재해 영향에 대해 조사하는 위험 분석을 수행하는 것입니다. 재해의 정확한 특성은 데이터 손실 및 응용 프로그램 가동 중지 시간으로 인한 잠재적인 영향만큼 위험 분석에 중요하지 않습니다. 그 결과를 모색할 때는 다양한 유형의 가상 재해를 탐색하여 구체화해야 합니다. 예를 들어 대상이 지정된 악의적 공격은 코드 또는 데이터를 수정하므로 네트워크 연결 및 데이터센터 가용성을 방해하는 지진과는 다른 종류의 영향을 초래합니다.
 
-The risk assessment needs to consider *every* process that can't afford unlimited downtime, and every category of data that can't afford unlimited loss. When a disaster that affects multiple application components occurs, it's critical that the plan owners can use the plan to take a complete inventory of what needs attention and how to prioritize each item.
+위험 평가에서는 끝도 없는 가동 중지 시간을 감당할 수 없는 *모든* 프로세스와, 무한 손실을 용인할 수 없는 모든 데이터 범주를 고려해야 합니다. 여러 응용 프로그램 구성 요소에 영향을 미치는 재해가 발생하면 계획 소유자가 계획을 사용하여 주의가 필요한 요소와 각 항목의 우선 순위 지정 방법에 대한 완벽한 인벤토리를 갖추는 것이 중요합니다.
 
-Some apps may only constitute a single process or classification of data. This is still important to note, as the application will likely be one component of a larger disaster recovery plan that includes multiple applications with the organization.
+일부 앱은 단일 프로세스나 데이터 분류만 구성할 수도 있습니다. 여기서도 역시 주의가 필요합니다. 응용 프로그램은 조직에 여러 응용 프로그램을 포함하는 더 큰 재해 복구 계획의 한 구성 요소일 수 있기 때문입니다.
 
-### Recovery objectives
+### <a name="recovery-objectives"></a>복구 목표
 
-A complete plan needs to specify two critical business requirements for each process implemented by the application:
+전체 계획에서는 응용 프로그램이 구현하는 각 프로세스에 대한 두 가지 중요 비즈니스 요구 사항을 지정해야 합니다.
 
-* **Recovery Point Objective (RPO)**: The maximum duration of acceptable data loss. RPO is measured in units of time, not volume: "30 minutes of data", "four hours of data", and so on. RPO is about limiting and recovering from data *loss*, not data *theft*.
-* **Recovery Time Objective (RTO)**: The maximum duration of acceptable downtime, where "downtime" needs to be defined by your specification.
+* **RPO(복구 지점 목표)**: 용인되는 최대 데이터 손실 기간입니다. RPO는 크기가 아닌 시간 단위, 즉 "30분 분량 데이터", "4시간 분량 데이터" 등으로 측정합니다. RPO는 데이터 *도난*이 아닌 데이터 *손실*의 제한 및 복구에 관한 것입니다.
+* **RTO(복구 시간 목표)**: 용인되는 최대 중단 시간으로, "가동 중지 시간"은 사양에서 정의해야 합니다.
 
-![RTO and RPO](../media-draft/rto-rpo.png)
+![RTO 및 RPO](../media-draft/rto-rpo.png)
 
-Each major process or workload that's implemented by an app should have separate RPO and RTO values. Even if you arrive at the same values for different processes, each one should be generated through a separate analysis that examines disaster scenario risks and potential recovery strategies for each respective process.
+앱에서 구현하는 각각의 주요 프로세스 또는 워크로드는 별도의 RPO와 RTO 값을 가져야 합니다. 서로 다른 프로세스에서 동일한 값에 이른다 하더라도 각각의 값은 각각의 관련 프로세스에 대해 재해 시나리오 위험과 잠재적 복구 전략을 조사하는 별도 분석을 통해 생성되어야 합니다.
 
-The process of specifying an RPO and RTO is effectively the creation of disaster recovery requirements for your application. It requires establishing the priority of each workload and category of data and performing a cost-benefit analysis. The analysis includes concerns, such as implementation and maintenance cost, operational expense, process overhead, performance impact, and the impact of downtime and lost data. You'll need to define exactly what "downtime" means for your application, and in some cases, you may establish separate RPO and RTO values for different levels of functionality. Specifying RPO and RTO should be more than simply choosing arbitrary values. Much of the value of a disaster recovery plan comes from the research and analysis that goes into discovering the potential impact of a disaster and the cost of mitigating the risks.
+RPO 및 RTO를 지정하는 프로세스는 응용 프로그램에 대한 재해 복구 요구 사항을 효과적으로 만들어냅니다. 데이터의 각 워크로드 및 범주의 우선 순위를 정하고, 비용 효과 분석을 수행해야 합니다. 비용 효과 분석에는 구현 및 유지 관리 비용, 운영 비용, 프로세스 부하, 성능 영향, 가동 중지 시간 및 데이터 손실의 영향 등에 대한 우려 사항이 포함됩니다. 응용 프로그램에서 "가동 중지 시간"이 정확히 어떤 의미인지 정의해야 합니다. 어떤 경우에는 다양한 수준의 기능에 대해 별도의 RPO 및 RTO 값을 설정할 수도 있습니다. RPO 및 RTO를 지정하는 것은 단순히 임의의 값을 선택하는 것 이상입니다. 재해 복구 계획에서 대부분의 값은 재해의 잠재적인 영향과 위험 완화의 비용을 탐구하는 연구 및 분석을 통해 제공됩니다.
 
-RPO and RTO are *objectives*. Disasters are unpredictable, and you may not be able to meet your established RPO and RTO for a given event. The business has agreed to take on the costs required to maintain the agreed-upon RPO and RTO values, and in return those targets should generally be achieved in a disaster recovery scenario. All disaster events should include a post-recovery retrospective that examines strengths and weaknesses, but disasters that result in a failure to meet RPO or RTO merit special attention.
+RPO 및 RTO는 *목표*입니다. 재해는 예측할 수 없고 지정된 이벤트에 대해 정해진 RPO 및 RTO에 부합하지 않을 수 있습니다. 비즈니스에서는 협의된 RPO 및 RTO 값을 유지하는 데 필요한 비용을 수용하기로 동의했으므로 재해 복구 시나리오에서 이러한 목표를 달성해야 합니다. 모든 재해 이벤트는 장단점을 조사하는 복구 후 회고를 포함해야 하나 결국 RPO 또는 RTO를 충족시키지 못한 재해는 각별한 주의가 필요합니다.
 
-### Detailing recovery steps
+### <a name="detailing-recovery-steps"></a>상세 복구 단계
 
-The final plan should go into detail about exactly what steps should be taken to restore lost data and application connectivity. Steps often include information about:
+최종 계획에서는 손실 데이터와 응용 프로그램 연결을 복원하기 위해 수행할 정확한 단계를 상세히 설명해야 합니다. 단계에는 보통 다음에 대한 정보가 포함됩니다.
 
-* **Backups**: How often they're created, where they're located, and how to restore data from them.
-* **Data replicas**: The number and locations of replicas, the nature and consistency characteristics of the replicated data, and how to switch over to a different replica.
-* **Deployments**: How deployments are executed, how rollbacks occur, and failure scenarios for deployments.
-* **Infrastructure**: On-premises and cloud resources, network infrastructure, and hardware inventory.
-* **Dependencies**: External services that are used by the application, including SLAs and contact information.
-* **Configuration and notification**: Flags or options that can be set to gracefully degrade the application, and services that are used to notify users of application impact.
+* **백업**: 백업을 만드는 주기, 배치 위치, 데이터를 백업에서 복원하는 방법.
+* **데이터 복제본**: 복제본 수 및 위치, 복제된 데이터의 특징 및 일관성 특성, 다른 복제본으로 전환하는 방법.
+* **배포**: 배포 실행 방법, 롤백 수행 방법, 배포 실패 시나리오.
+* **인프라**: 온-프레미스 및 클라우드 리소스, 네트워크 인프라, 하드웨어 인벤토리.
+* **종속성**: SLA, 연락처 정보를 포함하여 응용 프로그램에서 사용하는 외부 서비스.
+* **구성 및 알림**: 정상적으로 응용 프로그램의 성능을 저하하도록 설정할 수 있는 플래그 및 옵션, 그리고 사용자에게 응용 프로그램 영향을 알리는 데 사용되는 서비스.
 
-The exact steps that are required will depend heavily on implementation details of the app, making it important to keep the plan updated. Routinely testing the plan will help identify gaps and outdated sections.
+필요한 정확한 단계는 앱의 세부적인 구현에 따라 크게 달라져 계획을 항상 최신 상태로 유지하는 것이 중요해집니다. 정기적인 계획 테스트는 차이 및 오래된 부분을 파악하는 데 도움이 됩니다.
 
-## Designing for disaster recovery
+## <a name="designing-for-disaster-recovery"></a>재해 복구를 위한 설계
 
-Disaster recovery is not an automatic feature. It must be designed, built, and tested. An app that needs to support a solid disaster recovery strategy must be built from the ground up with disaster recovery in mind. Azure offers services, features, and guidance to help you create apps that support disaster recovery, but it's up to you to include them in your design.
+재해 복구는 자동 기능이 아닙니다. 설계, 구축 및 테스트가 필요합니다. 견고한 재해 복구 전략을 지원해야 하는 앱은 처음부터 재해 복구를 염두에 두고 구축되어야 합니다. Azure는 재해 복구를 지원하는 앱을 만드는 데 도움이 되는 서비스, 기능 및 지침을 제공하지만 설계에 포함하는 것은 사용자에게 달려 있습니다.
 
-Designing for disaster recovery has two main concerns:
+재해 복구를 위한 설계에서는 다음의 두 가지를 고려해야 합니다.
 
-* **Data recovery**: Using backups and replication to restore lost data.
-* **Process recovery**: Recovering services and deploying code to recover from outages.
+* **데이터 복구**: 백업 및 복제를 사용하여 손실된 데이터를 복원합니다.
+* **프로세스 복구**: 가동 중단에서 복구하려면 서비스를 복구하고 코드를 배포합니다.
 
-### Data recovery and replication
+### <a name="data-recovery-and-replication"></a>데이터 복구 및 복제
 
-Replication duplicates stored data between multiple data store replicas. Unlike *backup*, which creates long-lived, read-only snapshots of data for use in recovery, replication creates real-time or near-real-time copies of live data. The goal of replication is to keep replicas synchronized with as little latency as possible while maintaining application responsiveness. Replication is a key component of designing for high availability and disaster recovery, and is a common feature of production-grade applications.
+복제는 여러 데이터 저장소 복제본 간에 저장된 데이터를 복제합니다. 복구에 사용하기 위해 장기 지속되는 읽기 전용 데이터 스냅숏을 만드는 *백업*과는 달리, 복제는 실시간 또는 거의 실시간에 가까운 라이브 데이터 사본을 만듭니다. 복제의 목표는 응용 프로그램 응답성은 유지하면서도 가능한 한 짧은 대기 시간으로 복제본을 동기 상태로 유지하는 것입니다. 복제는 고가용성 및 재해 복구를 위한 설계의 핵심 구성 요소로, 프로덕션급 응용 프로그램의 일반적인 기능입니다.
 
-Replication is used to mitigate a failed or unreachable data store by executing a *failover*: changing application configuration to route data requests to a working replica. Failover is often automated, triggered by error detection built into a data storage product, or detection that you implement through your monitoring solution. Depending on the implementation and the scenario, failover may need to be manually executed by system operators.
+복제는 *장애 조치(failover)* 를 실행하여 실패 또는 접근 불가 데이터 저장소를 완화하는 데 사용됩니다. 즉, 데이터 요청을 작동하는 복제본으로 라우팅하도록 응용 프로그램 구성을 변경합니다. 장애 조치는 데이터 저장소 제품에 빌드된 오류 탐지나 모니터링 솔루션을 통해 구현되는 탐지를 통해 자동으로 트리거되는 경우가 많습니다. 구현 및 시나리오에 따라 장애 조치는 시스템 운영자가 수동으로 실행해야 할 수 있습니다.
 
-Replication is not something you implement from scratch. Most fully featured database systems and other data storage products and services include some kind of replication as a tightly integrated feature due to its functional and performance requirements. However, it's up to you to include these features in your application design and make appropriate use of them.
+복제는 처음부터 구현하는 사항이 아닙니다. 대부분의 기능을 갖춘 데이터베이스 시스템과 기타 데이터 저장소 제품 및 서비스에는 기능 및 성능 요구 사항 때문에 긴밀하게 통합된 기능으로 어떤 종류의 복제가 포함됩니다. 그러나 이러한 기능을 응용 프로그램 설계에 포함시키고 적절히 사용하는 것은 사용자에게 달려 있습니다.
 
-Different Azure services support various levels and concepts of replication. For example:
+다양한 Azure 서비스에서는 다양한 복제 수준과 개념을 지원합니다. 예를 들면 다음과 같습니다.
 
-* **Azure Storage** replication is effectively automatic. Neither your application nor your operators interact with it directly. Failovers are automatic and transparent, and you simply need to select a replication level that balances cost and risk.
-* **Azure SQL Database** replication is automatic at a small scale, but recovery from a full Azure datacenter or regional outage requires geo-replication. Setting up geo-replication is manual, but it's a first-class feature of the service and well supported by documentation.
-* **Cosmos DB** is a globally distributed database system, and replication is central to its implementation. With Azure Cosmos DB, instead of configuring replication directly, you configure options related to partitioning and data consistency.
+* **Azure Storage** 복제는 효과적으로 자동 실행됩니다. 응용 프로그램이나 운영자가 직접 상호 작용하지 않습니다. 장애 조치는 자동이고 투명하며, 비용과 위험의 적절한 균형을 이루는 복제 수준을 선택하기만 하면 됩니다.
+* **Azure SQL Database** 복제는 소규모에서는 자동이지만 전체 Azure 데이터센터나 지역 가동 중단으로부터의 복구에는 지역 복제가 필요합니다. 지역 복제 설정은 수동이지만 고급 기능의 서비스이며, 설명서에 잘 설명되어 있습니다.
+* **Cosmos DB**는 글로벌 분산형 데이터베이스 시스템으로, 복제가 해당 구현의 핵심입니다. 복제를 직접 구성하는 대신 Cosmos DB를 사용하면 분할 및 데이터 일관성과 관련한 옵션을 구성할 수 있습니다.
 
-Many different replication designs exist that place different priorities on data consistency, performance, and cost. *Active* replication requires updates to take place on multiple replicas simultaneously, guaranteeing consistency at the cost of throughput. In contrast, *passive* replication performs synchronization in the background, removing replication as a constraint on application performance, but increasing RPO. *Active-active* or *multi-master* replication enables multiple replicas to be used simultaneously, enabling load balancing at the cost of complicating data consistency, while *active-passive* replication reserves replicas for live use only during failover.
+많은 다양한 복제 설계에서는 데이터 일관성, 성능 및 비용에 다양한 우선 순위를 둡니다. *활성* 복제에서는 동시에 여러 복제본에 대한 업데이트가 필요하며 처리량의 대가로 일관성을 보장합니다. 반대로 *수동* 복제는 백그라운드에서 동기화를 수행하여 응용 프로그램 성능에 제약인 복제를 제거하지만 RPO는 증가합니다. *활성-활성* 또는 *다중 마스터* 복제를 사용하면 동시에 여러 복제본을 사용할 수 있어 데이터 일관성이 복잡해지는 대신 부하 분산을 사용할 수 있지만, *활성-수동* 복제에서는 장애 조치(failover) 중에만 실시간 사용을 위해 복제본을 유지합니다.
 
-![Azure SQL Database geo-replication](../media-draft/geo-replication.png)
+![Azure SQL Database 지역 복제](../media-draft/geo-replication.png)
 
 > [!IMPORTANT]
-> **Neither replication nor backup are complete disaster recovery solutions on their own**. Data recovery is only one component of disaster recovery, and replication will not fully satisfy many kinds of disaster recovery scenarios. For example, in a data corruption scenario, the nature of the corruption may allow it to spread from the primary data store to the replicas, rendering all the replicas useless and requiring a backup for recovery.
+> **복제나 백업은 그 자체만으로는 완벽한 재해 복구 솔루션이 아닙니다**. 데이터 복구는 재해 복구의 한 구성 요소에 불과하며, 복제는 수많은 재해 복구 시나리오를 완전히 만족시키지 못합니다. 예를 들어 데이터 손상 시나리오에서는 손상의 특성은 기본 데이터 저장소에서 복제본까지 확산되게 하므로 모든 복제본을 쓸모 없게 만들어 복구를 위해 백업본이 필요할 수 있습니다.
 
-### Process recovery
+### <a name="process-recovery"></a>프로세스 복구
 
-After a disaster, business data isn't the only asset that needs recovering. Disaster scenarios will also commonly result in downtime, whether it's due to network connectivity problems, datacenter outages, or damaged VM instances or software deployments. The design of your application needs to enable you to restore it to a working state.
+재해 후 복구가 필요한 자산은 비즈니스 데이터뿐이 아닙니다. 재해 시나리오에서는 일반적으로 네트워크 연결 문제, 데이터센터 중단, 손상된 VM 인스턴스, 소프트웨어 배포 등 다양한 문제에 따른 가동 중지 시간이 발생합니다. 응용 프로그램 설계를 통해 응용 프로그램을 작동 상태로 복원할 수 있어야 합니다.
 
-In most cases, process restoration involves failover to a separate, working deployment. Depending on the scenario, geographic location may be a critical aspect. For example, a large-scale natural disaster that brings an entire Azure region offline will necessitate restoring service in another region. Your application's disaster recovery requirements, especially RTO, should drive your design and help you decide how many replicated environments you should have, where they should be located, and whether they should be maintained in a ready-to-run state or should be ready to accept a deployment in the event of disaster.
+대부분의 경우 복원 프로세스에는 별도 작동 상태의 배포에 대한 장애 조치(failover)가 포함됩니다. 시나리오에 따라 지리적 위치가 중요한 요소가 될 수 있습니다. 예를 들어 전체 Azure 지역을 오프라인으로 만드는 대형 자연재해에서는 다른 지역의 서비스 복원이 반드시 필요합니다. 응용 프로그램의 재해 복구 요구 사항, 특히 RTO는 설계의 기초가 되고, 보유해야 할 복제 환경 수, 배치 위치, 실행 대기 상태로 유지할지 또는 재해 시 배포를 수용할 준비가 됐는지 여부 등을 판단하는 데 도움이 되어야 합니다.
 
-Depending on the design of your application, there are a few different strategies and Azure services and features that you can take advantage of to improve your app's support for process recovery after a disaster.
+응용 프로그램의 설계에 따라 재해 후 앱의 프로세스 복구 지원을 향상시키기 위해 활용할 수 있는 몇 가지 다양한 전략과 Azure 서비스 및 기능이 있습니다.
 
-#### Azure Site Recovery
+#### <a name="azure-site-recovery"></a>Azure Site Recovery
 
-Azure Site Recovery is a service that's dedicated to managing process recovery for workloads running on VMs deployed to Azure, VMs running on physical servers, and workloads running directly on physical servers. Site Recovery replicates workloads to alternate locations and helps you to fail over when an outage occurs and supports testing of a disaster recovery plan.
+Azure Site Recovery는 Azure에 배포된 VM에서 실행되는 워크로드, 물리적 서버에서 실행되는 VM, 물리적 서버에서 직접 실행되는 워크로드의 프로세스 복구 관리를 전담하는 서비스입니다. Site Recovery는 대체 위치에 워크로드를 복제하며 중단 발생 시 장애 조치(failover)에 도움이 되고 재해 복구 계획의 테스트를 지원합니다.
 
 ![Azure Site Recovery](../media-draft/asr.png)
 
-Site Recovery supports replicating whole VMs and physical server images as well as individual *workloads*, where a workload may be an individual application or an entire VM or operating system with its applications. Any application workload can be replicated, but Site Recovery has first-class integrated support for many Microsoft server applications, such as SQL Server and SharePoint, as well as a handful of third-party applications like SAP.
+Site Recovery는 개별 *워크로드*뿐 아니라 전체 VM 및 물리적 서버 이미지의 복제를 지원합니다. 여기서 워크로드는 개별 응용 프로그램, 전체 VM 또는 응용 프로그램을 포함한 운영 체제가 될 수 있습니다. 모든 응용 프로그램 워크로드를 복제할 수 있지만 Site Recovery는 SQL Server 및 SharePoint 등의 여러 Microsoft 서버 응용 프로그램과 SAP 등의 여러 타사 응용 프로그램을 위한 최고 수준의 통합 지원을 제공합니다.
 
-Any app that runs on VMs or physical servers should at least investigate the use of Azure Site Recovery. It's a great way to discover and explore scenarios and possibilities for process recovery.
+VM이나 물리적 서버에서 실행되는 모든 앱은 최소한 Azure Site Recovery의 사용을 조사해야 합니다. 프로세스 복구의 시나리오와 가능성을 검색 및 탐색하는 훌륭한 방법이기 때문입니다.
 
-#### Service-specific features
+#### <a name="service-specific-features"></a>서버 특정 기능
 
-For apps that run on Azure PaaS offerings like App Service, most such services offer features and guidance for supporting disaster recovery. In many cases, disaster recovery is automatic and performed transparently by Azure. For certain scenarios, you can use service-specific features to support fast recovery. For example, Azure SQL Server supports geo-replication for quickly restoring service in another region. Azure App Service has a Backup and Restore feature, and the documentation includes guidance for using Azure Traffic Manager to support routing traffic to a secondary region.
+App Service처럼 Azure PaaS 서비스에서 실행되는 앱의 경우 이러한 서비스의 대부분이 재해 복구 지원을 위한 기능과 지침을 제공합니다. 대부분의 경우 재해 복구는 Azure에서 자동으로 투명하게 수행됩니다. 특정 시나리오의 경우 서버 특정 기능을 통해 빠른 복구를 지원할 수 있습니다. 예를 들어 Azure SQL Server는 다른 지역에서 서비스를 신속하게 복원하기 위해 지역 복제를 지원합니다. Azure App Service에는 백업 및 복원 기능이 있고, 설명서에는 보조 지역으로 트래픽 전달을 지원하기 위한 Azure Traffic Manager 사용에 대한 지침이 포함되어 있습니다.
 
-![Region pairs](../media-draft/AzRegionPairs.png)
+![지역 쌍](../media-draft/AzRegionPairs.png)
 
-## Testing a disaster recovery plan
+## <a name="testing-a-disaster-recovery-plan"></a>재해 복구 계획 테스트
 
-Disaster recovery planning doesn't end once you have a completed plan in hand. Testing the plan is a crucial aspect of disaster recovery, to ensure that the directions and explanations are clear and up-to-date.
+완료된 계획을 마련하는 것으로 재해 복구 계획이 끝난 게 아닙니다. 방향과 설명이 명확하며 최신 상태로 유지되게 하려면 계획 테스트가 재해 복구의 중요한 부분이 되어야 합니다.
 
-Choose intervals to perform different types and scopes of tests, such as testing backups and failover mechanisms every month, and performing a full-scale disaster recovery simulation every six months. Always follow the steps and details exactly as they're documented in the plan, and consider having someone unfamiliar with the plan give perspective on anything that could be made clearer.
+매달 백업 및 장애 조치(failover) 메커니즘 테스트와 6개월마다 본격적인 재해 복구 시뮬레이션 수행 같은 다양한 테스트 유형 및 범위를 수행하기 위한 시간 간격을 선택합니다. 항상 계획에 문서화된 그대로 단계와 세부 정보에 따르고, 계획에 익숙하지 않은 사람이 있다면 모든 것이 더 명확해지도록 정보를 제공하는 것이 좋습니다.
 
-Make sure to include your monitoring system in your testing as well. For example, if your application supports automated failover, introduce failures in a dependency or other critical component to ensure that the application behaves correctly end-to-end, including detection of the failure and triggering of the automated failover.
+테스트에 모니터링 시스템도 반드시 포함합니다. 예를 들어 응용 프로그램이 자동화된 장애 조치(failover)를 지원한다면 이 응용 프로그램이 장애 탐지 및 자동 장애 조치(failover) 트리거를 망라하여 통합적으로 정확하게 작동하는지 확인하기 위해 종속성이나 기타 중요 구성 요소에 장애를 적용합니다.
 
- By carefully identifying your requirements and laying out a plan, you'll be able to determine what types of services you'll need to use to meet your recovery objectives. Azure provides several services and features to help you meet these objectives.
+ 요구 사항을 신중하게 파악하고 계획을 배포하면 복구 목표에 부합하기 위해 사용해야 할 서비스의 유형을 결정할 수 있습니다. Azure는 이러한 목표를 충족하는 데 유용한 여러 서비스와 기능을 제공합니다.

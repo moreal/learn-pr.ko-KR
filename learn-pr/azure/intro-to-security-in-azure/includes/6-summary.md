@@ -1,9 +1,9 @@
-In this module, we discussed the basic concepts for protecting your infrastructure and data when you work in the cloud.
+이 모듈에서는 클라우드에서 작업할 때 인프라와 데이터를 보호하기 위한 기본 개념에 대해 설명했습니다.
 
-**Defense in depth** is the overriding theme - thinking about security as a multi-layer, multi-vector concern. Threats come from places we don't expect, and they can come with strength that will surprise us.
+**심층 방어**가 다른 무엇보다 더 중요한 주제입니다. 다중 계층, 다중 벡터 문제로 보안에 대해 생각합니다. 위협은 예상하지 못한 곳에서 나오며, 놀라울 만큼 강력한 영향력을 발휘할 수도 있습니다.
 
-Azure has out-of-the-box help for a great deal of the security issues we face. One of the first steps we should take is assessing how much help from Azure we can use based on whether we're leveraging IaaS, PaaS, or SaaS.
+Azure는 직면하고 있는 많은 보안 문제에 대해 즉각적인 도움을 줍니다. 여기서 수행해야 하는 첫 번째 단계 중 하나는 IaaS, PaaS 또는 SaaS를 활용하는지에 따라 Azure에서 얼마나 많은 도움을 줄 수 있는지 평가하는 것입니다.
 
-Azure Security Center centralizes much of the help Azure has to offer. It provides a single dashboard, with a view into many of your services, and helps make sure you are following best practices. Continuously updated machine learning algorithms help identify whether the latest threats are aimed at your resources. And it helps your organization mitigate threats.
+Azure Security Center는 Azure에서 제공해야 하는 많은 지원을 중앙 집중화합니다. 다양한 서비스에 대한 보기가 있는 단일 대시보드를 제공하며, 모범 사례를 따르도록 도움을 줍니다. 지속적으로 업데이트되는 기계 학습 알고리즘을 통해 최신 위협이 사용자의 리소스를 목표로 하는지 여부를 식별할 수 있습니다. 또한 조직에서 위협을 완화하는 데도 도움이 됩니다.
 
-Of course, this module is introductory. Security is a deep and complex topic, so whatever your cloud approach, an ongoing security education is necessary. But this module should get you started in the right direction, so you know what you need to learn next.
+물론, 이 모듈은 도입부입니다. 보안은 이해하기 어렵고 복잡한 주제이므로 클라우드 접근 방식이 무엇이든 간에 지속적인 보안 교육이 필요합니다. 그러나 이 모듈을 올바른 방향으로 시작하면 다음에 학습해야 할 내용을 알 수 있습니다.

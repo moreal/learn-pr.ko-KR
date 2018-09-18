@@ -1,83 +1,83 @@
-Network perimeters and their firewalls and physical access controls used to be the primary protection for corporate data. But network perimeters have become increasingly porous with the explosion of bring your own device (BYOD), mobile apps, and cloud applications. 
+네트워크 경계와 해당 방화벽 및 물리적 액세스 제어는 회사 데이터를 보호하는 데 기본적으로 사용되었습니다. 그러나 네트워크 경계는 BYOD(Bring Your Own Device), 모바일 앱 및 클라우드 응용 프로그램이 폭발적으로 증가함에 따라 점차적으로 허점이 드러나게 되었습니다. 
 
-Identity has become the new primary security boundary. Proper authentication and assignment of privileges is critical to maintaining control of your data.
+ID가 새로운 기본 보안 경계가 되었습니다. 적절한 인증 및 권한 할당은 데이터 제어를 유지 관리하는 데 중요합니다.
 
-Contoso Shipping is addressing these concerns right away. Their new hybrid cloud solution needs to account for mobile apps that have access to secret data when an authorized user is signed in. They also have shipping vehicles sending a constant stream of telemetry data that is critical to optimizing their business.
+Contoso는 이러한 문제를 즉시 해결하고 있습니다. 새 하이브리드 클라우드 솔루션은 권한 있는 사용자가 로그인할 때 비밀 데이터에 액세스할 수 있는 모바일 앱을 고려해야 합니다. 또한 운송 차량에서 사업을 최적화하는 데 중요한 원격 분석 데이터를 지속적으로 보내고 있습니다.
 
-## Single sign-on
+## <a name="single-sign-on"></a>Single Sign-On
 
-The more identities a user has to manage, the greater the risk of a credential-related security incident. More identities mean more passwords to remember and change. Password policies can vary between applications and, as complexity requirements increase, it makes it more difficult for users to remember them.
+사용자가 관리할 ID가 많을수록 자격 증명 관련 보안 사건이 발생할 위험이 높습니다. 더 많은 ID는 더 많은 암호를 기억하고 변경해야 한다는 뜻입니다. 암호 정책은 응용 프로그램에 따라 다를 수 있으며, 복잡한 요구 사항이 늘어나면 사용자가 암호를 기억하기가 더 어려워집니다.
 
-On the other side is the management required for all those identities. Additional strain is placed on help desks as they deal with account lockouts and password reset requests. If a user leaves an organization, tracking down all those identities and ensuring they are disabled can be challenging. If an identity is overlooked, this could allow access when it should have been eliminated.
+반대편에는 모든 ID에 요구되는 관리 업무가 있습니다. 계정 잠금 및 암호 재설정 요청을 처리하는 기술 지원팀의 부담이 가중됩니다. 사용자가 조직을 떠날 때 해당 사용자의 모든 ID를 추적하여 비활성화는 것이 어려울 수 있습니다. ID를 간과하면 제거되었어야 하는 ID를 통해 액세스할 수 있는 문제가 발생할 수 있습니다.
 
-With single sign-on (SSO), users need to remember only one ID and one password. Access across applications is granted to a single identity tied to a user, simplifying the security model. As users change roles or leave an organization, access modifications are tied to the single identity, greatly reducing the effort needed to change or disable accounts. Using single sign-on for accounts will make it easier for users to manage their identities and will increase the security capabilities in your environment.
+Single Sign-On을 사용하면 사용자는 ID 하나와 암호 하나만 기억하면 됩니다. 응용 프로그램에 대한 액세스 권한이 사용자와 연결된 ID에 부여되므로 보안 모델이 간소화됩니다. 액세스 수정이 단일 ID에 연결되어 있으므로 사용자 역할이 변경되거나 사용자가 조직을 떠날 때 계정을 변경하거나 비활성화하는 과정이 대폭 축소됩니다. 계정에 Single Sign-On을 사용하면 사용자가 ID를 간편하게 관리할 수 있으며, 환경의 보안 기능이 향상됩니다.
 
-### SSO with Azure Active Directory
+### <a name="sso-with-azure-active-directory"></a>Azure Active Directory를 사용한 SSO
 
-Azure Active Directory (Azure AD) is a cloud-based identity service. It has built-in support for synchronizing with your existing on-premises Active Directory instance, or it can be used stand-alone.
+Azure AD(Active Directory)는 클라우드 기반 ID 서비스입니다. 기본적으로 제공되는 지원이며, 기존 온-프레미스 Active Directory와 동기화할 수도 있고 독립 실행형으로 사용할 수도 있습니다.
 
-This means that all your applications, whether on-premises, in the cloud (including Office 365), or even mobile can share the same credentials. 
+즉, 온-프레미스든, 클라우드든(Office 365 포함), 모바일이든 관계없이, 모든 응용 프로그램이 동일한 자격 증명을 공유할 수 있습니다. 
 
-Administrators and developers can control access to data and applications using centralized rules and policies configured in Azure AD.
+관리자와 개발자는 중앙 집중식 규칙과 Azure AD에서 구성한 정책을 사용하여 데이터 및 응용 프로그램에 대한 액세스를 제어할 수 있습니다.
 
-In addition, Microsoft is uniquely positioned to combine multiple data sources into an intelligent security graph that can provide threat analysis and real-time identity protection to all accounts in Azure Active Directory (even accounts that are synchronized from your on-premises Active Directory instance).
+또한 Microsoft는 Azure Active Directory의 모든 계정(온-프레미스 AD에서 동기화되는 계정 포함)에 대한 위협 분석 및 실시간 ID 보호를 제공할 수 있는 지능형 보안 그래프에 여러 데이터 원본을 결합할 수 있는 독특한 위치에 있습니다.
 
-Contoso Shipping is integrating their existing Active Directory instance with Azure AD. This will make controlling access consistent across the organization. It will also make it a breeze for users to get into their email and Office 365 documents without having to reauthenticate.
+Contoso는 기존 Active Directory와 Azure AD를 통합함으로써 조직 전체에서 액세스를 일관되게 제어합니다. 또한 사용자가 다시 인증할 필요 없이 이메일과 Office 365 문서를 쉽게 이용할 수 있습니다.
 
-## Multi-factor authentication
+## <a name="multi-factor-authentication"></a>Multi-Factor Authentication
 
-Multi-factor authentication (MFA) provides additional security for your identities by requiring two or more elements for full authentication. These elements fall into three categories:
+MFA(다단계 인증)는 전체 인증에 2개 이상의 요소를 요구하여 ID에 대한 추가 보안을 제공합니다. 이러한 요소는 세 가지 범주로 분류됩니다.
 
-- *something you know*
-- *something you possess*
-- *something you are*
+- *사용자가 알고 있는 것*
+- *사용자가 소유하고 있는 것*
+- *사용자의 신원 정보*
 
-**Something you know** would be a password or the answer to a security question. **Something you possess** could be a mobile app that receives a notification or a token-generating device. **Something you are** is typically some sort of biometric property, such as a fingerprint or face scan used on many mobile devices.
+**사용자가 알고 있는 것**은 암호이거나 보안 질문에 대한 대답입니다. **사용자가 소유하고 있는 것**은 알림을 받는 모바일 앱 또는 토큰 생성 장치일 수 있습니다. **사용자의 신원 정보**는 여러 모바일 장치에서 사용되는 지문 또는 얼굴 검사처럼 일반적으로 생체 인식 속성의 일종입니다.
 
-Using MFA increases security of your identity by limiting the impact of credential exposure. An attacker who has a user's password would also need to have possession of their phone or their face in order to fully authenticate. Authentication with only a single factor verified is insufficient, and the attacker would be unable to use those credentials to authenticate. The benefits this brings to security are huge, and it can't be repeated enough to enable MFA wherever possible.
+Multi-factor Authentication을 사용하면 자격 증명 노출의 영향이 제한되므로 ID 보안이 향상됩니다. 사용자의 암호를 알고 있는 공격자가 완벽하게 인증하려면 사용자의 전화기를 소유하고 있거나 사용자의 얼굴이 필요합니다. 단일 요소의 확인을 거친 인증만으로는 부족하며 공격자는 이러한 자격 증명을 사용하여 인증할 수 없습니다. 이렇게 하면 엄청난 보안 이점이 있으며, 가능한 모든 곳에 MFA를 사용할 수 있습니다.
 
-Azure AD has MFA capabilities built in and will integrate with other third-party MFA providers. It's provided free of charge to any user who has the Global Administrators role in Azure AD, because these are highly sensitive accounts. All other accounts can have MFA enabled by purchasing licenses with this capability and assigning a license to the account.
+Azure AD는 MFA 기능이 기본 제공되며, 다른 타사 MFA 공급자와 통합됩니다. 글로벌 관리자는 매우 중요한 계정이므로 Azure AD에서 글로벌 관리자 역할이 할당된 모든 사용자에게 무료로 제공됩니다. 다른 모든 계정은 이 기능이 포함된 라이선스를 구입하고 계정에 라이선스를 할당하여 MFA를 사용할 수 있습니다.
 
-For Contoso Shipping, you decide to enable MFA any time a user is signing in from a non-domain-connected computer. That includes the mobile apps.
+Contoso 배송 회사의 경우 사용자가 도메인에 연결되지 않은 컴퓨터에서 로그인할 때마다 MFA를 사용하도록 결정합니다. 여기에는 모바일 앱이 포함됩니다.
 
-## Providing identities to services
+## <a name="providing-identities-to-services"></a>서비스에 ID 제공
 
-It's often valuable for services to have identities. Often, and against best practices, credential information is embedded in configuration files. With no security around these configuration files, anyone with access to the systems or repositories can access these credentials and risk exposure.
+서비스에 ID가 있는 것이 좋을 때가 종종 있습니다. 때때로 모범 사례에 반해, 자격 증명 정보가 구성 파일에 포함됩니다. 이러한 구성 파일과 관련된 보안이 전혀 없기 때문에 시스템 또는 리포지토리에 대한 액세스 권한을 가진 사람이라면 누구든지 자격 증명에 액세스할 수 있게 되어 위험에 노출됩니다.
 
-Azure AD addresses this problem through two methods: service principals and managed service identities.
+Azure AD는 서비스 주체 및 관리 서비스 ID의 두 가지 방법을 통해 이 문제를 해결합니다.
 
-### Service principals
+### <a name="service-principals"></a>서비스 주체
 
-To understand service principals, it's useful to first understand the words **identity** and **principal**, because they are used in the identity management world.
+서비스 주체를 이해하려면 먼저 ID 관리에 사용되는 **ID**라는 단어와 **주체**라는 단어를 이해하는 것이 좋습니다.
 
-An **identity** is just a thing that can be authenticated. Obviously, this includes users with a user name and password, but it can also include applications or other servers, which might authenticate with secret keys or certificates. As a bonus definition, an **account** is data associated with an identity.
+**ID**는 인증될 수 있는 것을 의미합니다. 분명히 여기에는 사용자 이름과 암호를 가진 사용자가 포함되지만, 비밀 키 또는 인증서를 사용하여 인증되는 응용 프로그램이나 다른 서비스도 포함될 수 있습니다. 추가 정의로, **계정**은 ID와 연결되는 데이터를 말합니다.
 
-A **principal** is an identity acting with certain roles or claims. Often, it is not useful to consider identity and principal separately, but think of using `sudo` on a bash prompt or on Windows using "run as Administrator." In both those cases, you are still logged in as the same identity as before, but you've changed the role under which you are executing. Groups are often also considered principals because they can have rights assigned.
+**주체**는 특정 역할 또는 클레임을 사용하여 작동하는 ID입니다. ID와 주체를 별개로 생각하는 것이 유용하지 않은 경우도 있지만, bash 프롬프트 또는 "관리자 권한으로 실행"을 사용하는 Windows에서는 'sudo'를 사용하는 것이 좋습니다. 두 경우 모두에서 이전과 동일한 ID로 계속 로그인되지만, 실행하는 역할은 변경되었습니다. 그룹은 권한을 할당받을 수 있으므로 주체로 간주되기도 합니다.
 
-So, a **service principal** is literally named. It is an identity that is used by a service or application. Like other identities, it can be assigned roles. 
+이러한 이유로 문자 그대로 **서비스 주체**라는 이름이 붙었습니다. 서비스 주체는 서비스 또는 응용 프로그램에서 사용하는 ID를 말합니다. 다른 ID와 마찬가지로 할당된 역할일 수 있습니다. 
 
-### Managed service identities
+### <a name="managed-service-identities"></a>관리되는 서비스 ID
 
-The creation of service principals can be a tedious process, and there are a lot of touch points that can make maintaining them difficult. Managed service identities are much easier and will do most of the work for you. 
+서비스 주체를 만드는 것은 지루한 과정일 수 있으며 터치 포인트가 많아 유지 관리가 어려울 수 있습니다. MSI(관리 서비스 ID)는 훨씬 간단하며 대부분의 작업이 자동으로 처리됩니다. 
 
-A managed service identity can be instantly created for any Azure service that supports it (the list is constantly growing). When you create a managed service identity for a service, you are creating an account on the Azure Active Directory tenant. The Azure infrastructure will automatically take care of authenticating the service and managing the account. You can then use that account like any other Azure AD account, including securely letting the authenticated service access other Azure resources.
+MSI는 지원하는 모든 Azure 서비스에 대해 즉시 만들 수 있으며, 해당 목록이 지속적으로 증가할 것입니다. 서비스에 대한 MSI를 만들면 계정이 Azure Active Directory 테넌트에 만들어집니다. Azure 인프라는 서비스를 인증하고 계정을 관리하는 작업을 자동으로 처리합니다. 그러면 인증된 서비스에서 다른 Azure 리소스에 안전하게 액세스할 수 있도록 허용하는 것을 포함하여 해당 계정을 다른 AD 계정처럼 사용할 수 있습니다.
 
-## Role-based access control
+## <a name="role-based-access-control"></a>역할 기반 액세스 제어
 
-Roles are sets of permissions, like "Read-only" or "Contributor", that users can be granted to access an Azure service instance. 
+역할은 “읽기 전용” 또는 “기여자”처럼 Azure 서비스 인스턴스에 액세스하도록 사용자에게 부여될 수 있는 권한 집합입니다. 
 
-Identities are mapped to roles directly or through group membership. Separating security principals, access permissions, and resources provides simple access management and fine-grained control. Administrators are able to ensure the minimum necessary permissions are granted.
+ID는 직접 또는 그룹 멤버 자격을 통해 역할에 매핑됩니다. 보안 주체, 액세스 권한 및 리소스를 분리하면 액세스를 쉽게 관리하고 자세히 제어할 수 있습니다. 관리자는 필요한 최소한의 권한이 부여되는지 확인할 수 있습니다.
 
-Roles can be granted at the individual service instance level, but they also flow down the Azure Resource Manager hierarchy. Roles assigned at a higher scope, like an entire subscription, are inherited by child scopes, like service instances. 
-
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Management groups](../media-draft/3-role-assignment-scope.png)
-
-### Privileged Identity Management
-
-In addition to managing Azure resource access with role-based access control (RBAC), a comprehensive approach to infrastructure protection should consider including the ongoing auditing of role members as their organization changes and evolves. Azure AD Privileged Identity Management (PIM) is an additional, paid-for offering that provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
+역할은 개별 서비스 인스턴스 수준에서 부여할 수 있지만, Azure Resource Manager 계층 구조를 따라 아래로 이동할 수 있습니다. 전체 구독과 같이 상위 범위에서 할당된 역할은 서비스 인스턴스와 같은 하위 범위에 상속됩니다. 
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Privileged identity management](../media-COPIED-FROM-DESIGNFORSECURITY/PIM_Dashboard.png)
+![관리 그룹](../media-draft/3-role-assignment-scope.png)
 
-Identity allows us to maintain a security perimeter, even outside our physical control. With single sign-on and appropriate role-based access configuration, we can always be sure who has the ability to see and manipulate our data and infrastructure.
+### <a name="privileged-identity-management"></a>Privileged Identity Management
+
+RBAC를 사용하여 Azure 리소스 액세스를 관리하는 것 외에도, 인프라 보호에 대한 포괄적인 접근 방식에서는 조직의 변화와 발전에 따라 역할 멤버를 지속적으로 감사하는 방안을 고려해야 합니다. Azure AD PIM(Privileged Identity Management)은 역할 할당, 셀프 서비스 및 JIT(Just-In-Time) 역할 활성화를 감독하고 Azure AD 및 Azure 리소스 액세스를 검토할 수 있는 추가 유료 제품입니다.
+
+<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
+![Privileged Identity Management](../media-COPIED-FROM-DESIGNFORSECURITY/PIM_Dashboard.PNG)
+
+ID를 사용하면 실제 제어 범위 밖에서도 보안 경계를 유지할 수 있습니다. SSO 및 적절한 역할 기반 액세스 구성을 사용하면 데이터와 인프라를 보고 조작할 수 있는 사용자를 항상 확인할 수 있습니다.

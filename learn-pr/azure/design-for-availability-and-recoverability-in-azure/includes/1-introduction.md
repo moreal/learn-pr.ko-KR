@@ -1,16 +1,14 @@
-Your business relies on access to the systems and data that make it run. If something happened to cause a loss of availability, even for a short period of time, it could be disastrous for the bottom line. Every minute that your customers or your internal workers don’t have access to what they need results in a loss of revenue. It is our job to make sure that doesn’t happen.
+하나 이상의 인프라 구성 요소가 손실되는 경우 아키텍처가 이를 처리할 수 있나요? 데이터 손실이 발생하거나 데이터 손상을 식별한 경우 데이터를 복구할 수 있나요? 시스템 가용성 및 재해 복구에 대해 고객의 요구 사항이 무엇인지 알고 있나요?
 
-As we learn about architecting our cloud solutions to be highly available and to have the capability to recover from localized and widespread issues, we'll see how one fictional Azure customer puts these principles to work:
-
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+전국의 수천 명의 의사들에게 의료 관련 서비스를 제공한다고 가정해 보겠습니다. IT 부서는 최근에 데이터 센터 공간을 없애고 대부분의 IT 시스템을 Azure로 이동하기 위해 노력해 왔습니다. 사내 개발 응용 프로그램, 오픈 소스 및 맞춤형 응용 프로그램을 보유하고 있습니다. 각각 다양한 아키텍처와 기술 플랫폼을 사용합니다. 클라우드의 성공을 위해 무엇이 필요한지 알고자 합니다.  
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It's highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> 이 모듈에서 설명하는 개념은 모두를 포괄하지는 않지만 클라우드에서 솔루션을 빌드할 때 고려할 몇 가지 중요한 사항을 제시합니다. Microsoft는 Azure에서 응용 프로그램 설계 방법에 대한 광범위한 패턴, 지침 및 예제를 게시합니다. 아키텍처 계획 및 설계를 시작할 때 [Azure 아키텍처 센터](https://docs.microsoft.com/azure/architecture/)의 내용을 살펴보는 것이 좋습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Leverage Azure services to design a highly available application
-- Incorporate Azure disaster recovery capabilities into your architecture
-- Back up and restore on Azure to protect your application from data loss or corruption
+- Azure 서비스를 활용하여 고가용성 응용 프로그램 설계
+- Azure 재해 복구 기능을 아키텍처에 통합
+- 응용 프로그램이 데이터를 손실하거나 손상되지 않도록 Azure에 백업 및 복원

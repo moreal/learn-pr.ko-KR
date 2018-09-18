@@ -1,20 +1,20 @@
-Recall that we are working on a photo-sharing application that will use Azure Storage to manage pictures and other bits of data we store on behalf of our users.
+우리는 지금 Azure Storage를 사용하여 사용자 대신 저장하는 사진과 기타 데이터를 관리하는 사진 공유 응용 프로그램을 만들고 있다는 사실을 잊지 마세요.
 
 ::: zone pivot="csharp"
 
-To simplify our scenario so that we can focus on the Storage APIs, we will create a new .NET Core Console application. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+Storage API에 집중할 수 있도록 시나리오를 간소화하기 위해 새 .NET Core 콘솔 응용 프로그램을 만들겠습니다. 또한 응용 프로그램이 항상 네트워크에 연결된다고 가정하겠습니다. 그러나 네트워크 장애 시 사용자 환경에 영향을 미치거나 응용 프로그램 자체가 중단되는 일이 없도록 항상 앱을 보완해야 합니다.
 
-## Create a .NET Core application
+## <a name="create-a-net-core-application"></a>.NET Core 응용 프로그램 만들기
 
-.NET Core is a cross-platform version of .NET that runs on macOS, Windows, and Linux. You can install the tools locally, or use the Cloud Shell on the right side of the window to execute the below steps. 
+.NET Core는 macOS, Windows, 및 Linux에서 실행되는 .NET의 플랫폼 간 버전입니다. 이 도구를 로컬로 설치할 수도 있고, 창의 오른쪽에 있는 Cloud Shell을 사용하여 아래 단계를 실행할 수도 있습니다. 
 
-1. Sign into the Cloud Shell or open a command line session and create a new .NET Core Console application with the name "PhotoSharingApp". You can add the `-o` or `--output` flag to create the app in a specific folder.
+1. Cloud Shell에 로그인하거나 명령줄 세션을 열고 "PhotoSharingApp"이라는 이름의 새 .NET Core 콘솔 응용 프로그램을 만듭니다. `-o` 또는 `--output` 플래그를 추가하여 특정 폴더에 앱을 만들 수 있습니다.
 
     ```bash
     dotnet new console --name PhotoSharingApp
     ```
 
-1. Run the app to make sure it builds and executes correctly. It should display "Hello, World!" to the console.
+1. 앱을 실행하여 올바르게 빌드 및 실행되는지 확인합니다. 콘솔에 "Hello, World!"가 표시될 것입니다.
 
     ```bash
     cd PhotoSharingApp
@@ -25,36 +25,36 @@ To simplify our scenario so that we can focus on the Storage APIs, we will creat
 
 ::: zone pivot="javascript"
 
-To simplify our scenario so that we can focus on the Storage APIs, we will create a new Node.js application that can run from the console. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+Storage API에 집중할 수 있도록 시나리오를 간소화하기 위해 콘솔에서 실행할 수 있는 새 Node.js 응용 프로그램을 만들겠습니다. 또한 응용 프로그램이 항상 네트워크에 연결된다고 가정하겠습니다. 그러나 네트워크 장애 시 사용자 환경에 영향을 미치거나 응용 프로그램 자체가 중단되는 일이 없도록 항상 앱을 보완해야 합니다.
 
-## Create a Node.js application
+## <a name="create-a-nodejs-application"></a>Node.js 응용 프로그램 만들기
 
-Node.js is a popular framework for running JavaScript apps. It is most commonly used for web apps, but you can use it to run logic from the command line as well. If you have the tools installed locally, you can run the following steps from a command line. Alternatively, you can use the Cloud Shell on the right side of the window to execute the below steps.
+Node.js는 JavaScript 앱을 실행하기 위한 인기 있는 프레임워크입니다. 주로 웹앱에 사용되지만, 명령줄에서 논리를 실행하는 데 사용할 수도 있습니다. 도구를 로컬로 설치한 경우 명령줄에서 다음 단계를 실행할 수 있습니다. 또는 창 오른쪽의 Cloud Shell을 사용하여 아래 단계를 실행할 수도 있습니다.
 
-1. Sign into the Cloud Shell or open a command line session and create a new folder named "PhotoSharingApp".
+1. Cloud Shell에 로그인하거나 명령줄 세션을 열고 "PhotoSharingApp"이라는 이름의 새 폴더를 만듭니다.
 
     ```bash
     mkdir PhotoSharingApp
     ```
 
-1. Change into the new folder and create a **package.json** file with the Node Package Manager (NPM) that will describe our new app.
-    - Name it "PhotoSharingApp".
-    - You can take defaults for all the other prompts.
+1. 새 폴더로 변경하고 NPM(노드 패키지 관리자)을 사용하여 새 앱을 설명할 **package.json** 파일을 만듭니다.
+    - 파일 이름을 "PhotoSharingApp"으로 지정합니다.
+    - 그 외의 프롬프트에서는 기본값을 사용할 수 있습니다.
 
     ```bash
     cd PhotoSharingApp
     npm init
     ```
 
-1. Create a new source file **index.js** which will be where our code will go.
+1. 코드가 이동할 새 소스 파일 **index.js**를 만듭니다.
 
     ```bash
     touch index.js
     ```
 
-1. Open the **index.js** file with an editor. If you are using the Cloud Shell, you can type `code .` to open an editor.
+1. 편집기를 사용하여 **index.js** 파일을 엽니다. Cloud Shell을 사용하는 경우 `code .`를 입력하여 편집기를 엽니다.
 
-1. Put the following program into the **index.js** file.
+1. 다음 프로그램을 **index.js** 파일에 배치합니다.
 
     ```javascript
     #!/usr/bin/env node
@@ -65,9 +65,9 @@ Node.js is a popular framework for running JavaScript apps. It is most commonly 
     
     main();
     ```
-1. Save the file - you can use the "..." menu on the top right corner of the Cloud Shell editor.
+1. 파일을 저장합니다. Cloud Shell 편집기의 오른쪽 상단 모서리에서 "..." 메뉴를 사용할 수 있습니다.
 
-1. Run the app to make sure it executes correctly. It should display "Hello, World!" to the console.
+1. 앱을 실행하여 올바르게 실행되는지 확인합니다. 콘솔에 "Hello, World!"가 표시될 것입니다.
 
     ```bash
     node index.js

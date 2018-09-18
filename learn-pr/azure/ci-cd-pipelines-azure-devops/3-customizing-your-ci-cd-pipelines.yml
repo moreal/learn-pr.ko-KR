@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.ci-cd-pipelines-azure-devops.3-customizing-your-ci-cd-pipelines
-title: Customize your CI/CD pipelines
+title: CI/CD 파이프라인 사용자 지정
 metadata:
-  title: Customize your CI/CD pipelines
-  description: Modify the out of the box CI/CD pipelines from an Azure DevOps project to create a customized CI/CD pipeline experience.
-  author: lnyswonger
-  ms.date: 09/24/2018
-  ms.author: luken
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: CI/CD 파이프라인 사용자 지정
+  description: Azure DevOps 프로젝트에서 기본 CI/CD 파이프라인을 수정하여 사용자 지정 CI/CD 파이프라인 환경을 구축합니다.
+  ms.openlocfilehash: 8585e0fcd84c1d0a7e7c097e9192d33c9ca3eb42
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256230"
 durationInMinutes: 10
-content: |
-  [!include[](includes/3-customizing-your-ci-cd-pipelines.md)]
-  
+content: '[!include[](includes/3-customizing-your-ci-cd-pipelines.md)]'

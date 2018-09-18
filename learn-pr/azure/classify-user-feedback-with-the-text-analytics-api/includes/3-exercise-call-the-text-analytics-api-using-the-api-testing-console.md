@@ -1,105 +1,105 @@
-To see the Text Analytics API in action, let's make some calls using  the built-in API testing console tool located in the online reference documentation. Before we do that, we'll need an access key to make those calls. 
+텍스트 분석 API의 실제 작동 모습을 볼 수 있도록, 온라인 참조 설명서에 있는 기본 제공 API 테스트 콘솔 도구를 사용하여 호출을 만들어 보겠습니다. 그 전에, 호출을 만들려면 액세스 키가 필요합니다. 
 
-## Create an access key
+## <a name="create-an-access-key"></a>액세스 토큰 만들기
 
-Every call to Text Analytics API requires a subscription key. Often called an access key, it is used to validate that you have access to make the call. We'll use the Azure portal to grab a key. 
+텍스트 분석 API를 호출할 때마다 구독 키가 필요합니다. 액세스 키라고도 하는 구독 키는 호출을 만들기 위한 액세스 권한을 갖고 있는지 확인하는 데 사용됩니다. 여기서는 Azure Portal을 사용하여 키를 얻도록 하겠습니다. 
 
-1. Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+1. Azure 계정을 사용하여 [https://portal.azure.com](https://portal.azure.com?azure-portal=true)에서 Azure Portal에 로그인합니다.
 
-1.  Click **+ Create a resource**
+1.  **+ 리소스 만들기**를 클릭합니다.
 
-1.  Under Azure Marketplace, select **AI + Machine Learning** to display a list of available APIs. Click on **See all** in the top right of the page to see the entire list of Cognitive Services APIs. 
+1.  Azure Marketplace 아래에서 **AI + 기계 학습**을 선택하여 사용 가능한 API 목록을 표시합니다. 페이지 오른쪽 상단에서 **모두 보기**를 클릭하여 Cognitive Services API 전체 목록을 표시합니다. 
 
-1. Find **Text Analytics** in the list of Cognitive Services and select it. 
-![Screenshot of AI and Machine Learning pane, showing the Text Analytics API selected in the list.](../media-draft/select-text-analytics.PNG)
+1. Cognitive Services 목록에서 **Text Analytics**를 찾아서 선택합니다. 
+![목록에서 텍스트 분석 API가 선택된 것을 보여주는 AI 및 기계 학습 창 스크린샷](../media-draft/select-text-analytics.PNG)
 
-1. In the create page that opens, enter the following values into each field.
+1. 열리는 [만들기] 페이지에서 각 필드에 다음 값을 입력합니다.
 
 
-|Property  | Value  | Description  |
+|속성  | 값  | 설명  |
 |---------|---------|---------|
-|Name     |    MyTextAnalyticsAPIAccount     |  The name of the Cognitive Services account. We recommend using a descriptive name. Valid characters are `a-z`, `0-9`, and `-`.    |
-|Subscription     |  Your subscription       |   The subscription under which this new Cognitive Services API account with **Text Analytics API** is created.      |
-|Location     |  West US       |  Choose a [region](https://azure.microsoft.com/regions/) near you.       |
-|Pricing tier     | **F0 Free**     |   The cost of your Cognitive Services account depends on the actual usage and the options you choose. We recommend selecting the free tier for our purposes here.      |
-|Resource group     |  Create a new resource group and call it [!INCLUDE [resource-group-note](./rg-name.md)]       |  Name for the new resource group in which to create your Cognitive Services Text Analytics API account.       |
+|이름     |    MyTextAnalyticsAPIAccount     |  Cognitive Services 계정의 이름입니다. 구체적인 이름을 사용하는 것이 좋습니다. 유효한 문자는 `a-z`, `0-9` 및 `-`입니다.    |
+|구독     |  본인의 구독       |   **텍스트 분석 API**를 사용하여 이 구독에 새 Cognitive Services API 계정이 만들어집니다.      |
+|위치     |  미국 서부       |  가까운 [지역](https://azure.microsoft.com/regions/)을 선택합니다.       |
+|가격 책정 계층     | **F0 체험**     |   Cognitive Services 계정의 비용은 실제 사용량 및 선택한 옵션에 따라 다릅니다. 여기에는 체험 계층을 선택하는 것이 좋습니다.      |
+|리소스 그룹     |  새 리소스 그룹을 만들고 이름을 [!INCLUDE [resource-group-note](./rg-name.md)]로 지정합니다.       |  Cognitive Services 텍스트 분석 API 계정을 만들 새 리소스 그룹의 이름입니다.       |
 
 
 [!INCLUDE [resource-group-note](./rg-notice.md)]
 
-Here's a screenshot of what the **Create** page looks like when you've completed it.
+작업을 모두 마치면 **만들기** 페이지가 다음 스크린샷처럼 보입니다.
 
-![Screenshot of user interface for creating a Text Analytics account with all fields filled out with values suggested in preceding table.](../media-draft/create-text-analytics-account.PNG)
+![앞에 나온 표의 권장 값으로 모든 필드가 채워진 Text Analytics 계정을 만드는 사용자 인터페이스의 스크린샷.](../media-draft/create-text-analytics-account.PNG)
 
-6. Select **Create** at the bottom of the page to start the account creation process.  Watch for a notification that the deployment is in progress. You'll then get a notification that the account has been deployed successfully to your resource group.
+6. 페이지 상단에서 **만들기**를 선택하여 계정 만들기 프로세스를 시작합니다.  배포가 진행 중이라는 알림을 기다립니다. 그 후 계정이 리소스 그룹에 성공적으로 배포되었다는 알림이 도착합니다.
 
-![Deployment succeeded notification with a Go to resource button and a Pin to dashboard button.](../media-draft/deploy-resource-group-success.PNG)
+![[리소스로 이동] 단추 및 [대시보드에 고정] 단추가 있는 배포 성공 알림.](../media-draft/deploy-resource-group-success.PNG)
 
-Now that we have our Cognitive Services account, let's find the access key so we can start calling the API. 
+Cognitive Services 계정이 생겼으니, API 호출을 시작할 수 있도록 액세스 키를 찾아봅시다. 
 
-7. Click on the **Go to resource** button on the *Deployment succeeded* notification. This action opens the account Quickstart. 
+7. *배포 성공* 알림에서 **리소스로 이동** 단추를 클릭합니다. 그러면 계정 빠른 시작이 열립니다. 
 
-1. Select the **Keys** menu item from the menu on the left, or in the *Grab your keys* section of the quickstart.  This action opens the **Manage keys** page.
+1. 왼쪽 메뉴에서 또는 빠른 시작의 *키 가져오기* 섹션에서 **키** 메뉴 항목을 선택합니다.  그러면 **키 관리** 페이지가 열립니다.
 
-1. Copy one of the keys using the copy button. 
+1. [복사] 단추를 사용하여 키 중 하나를 복사합니다. 
 
-![Manage keys user interface showing the name of the Cognitive Services account and the Key 1 and Key 2 entries.](../media-draft/manage-keys.PNG)
+![Cognitive Services 계정과 키 1 및 키 2 항목의 이름을 표시하는 키 사용자 인터페이스를 관리합니다.](../media-draft/manage-keys.PNG)
 
 > [!IMPORTANT]
-> Always keep your access keys save and never share them. 
+> 항상 액세스 키를 안전하게 보관하고 절대 공유하지 마세요. 
 
-10. Store this key for the rest of this module. We'll use it shortly to make API calls from the testing console and throughout the rest od the module.
+10. 이 모듈의 나머지 부분을 위해 이 키를 저장해 둡니다. 잠시 후 테스트 콘솔에서 API 호출을 만들 때 그리고 나머지 모듈에서 이 키가 사용됩니다.
 
-Now that we have our key we can head over to the testing console and take the API for a spin.
+키가 생겼으니, 테스트 콘솔로 이동하여 API를 테스트할 수 있습니다.
 
-## Call the API from the testing console
+## <a name="call-the-api-from-the-testing-console"></a>테스트 콘솔에서 API 호출
 
-1. Navigate to the [Text Analytics API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7?azure-portal=true) reference documentation in your favorite browser.
+1. 선호하는 브라우저에서 [텍스트 분석 API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7?azure-portal=true) 참조 설명서로 이동합니다.
 
-The landing page displays a menu on the left and content to the right. The menu lists the POST methods you can call on the Text Analytics API. These endpoints are **Detect Language**, **Entities**, **Key Phrases**, and **Sentiment**.  To call one of these operations, we need to do a few things.
-- Select the method we want to call.
-- Select a testing console that matches the region or location we selected earlier in this lesson. 
-- Add the access key that we saved earlier in the lesson to each call.
+방문 페이지의 왼쪽에는 메뉴가 표시되고 오른쪽에는 콘텐츠가 표시됩니다. 메뉴는 텍스트 분석 API에서 호출할 수 있는 POST 메서드를 나열합니다. 이러한 엔드포인트는 **언어 검색**, **엔터티**, **핵심 문구** 및 **감정**입니다.  이러한 작업 중 하나를 호출하려면 몇 가지를 수행해야 합니다.
+- 호출하려는 메서드를 선택합니다.
+- 이 강좌의 앞부분에서 선택한 영역 또는 위치와 일치하는 테스트 콘솔을 선택합니다. 
+- 이 강좌의 앞부분에서 저장한 액세스 키를 각 호출에 추가합니다.
 
-2. Front the left menu, select **Sentiment**. This selection opens the Sentiment documentation to the right. As the documentation shows, we'll be making a REST call in the following format:
+2. 왼쪽 메뉴에서 **감정**을 선택합니다. 그러면 오른쪽에 감정 설명서가 열립니다. 설명서에서 볼 수 있듯이, 다음 형식으로 REST 호출을 만들겠습니다.
 
 `https://[location].api.cognitive.microsoft.com/text/analytics/v2.0/sentiment` 
 
-We'll pass in our subscription key, or access key, in the **ocp-Apim-Subscription-Key** header.
+**ocp-Apim-Subscription-Key** 헤더에서 구독 키 또는 액세스 키를 전달할 것입니다.
 
-## Make some API calls
+## <a name="make-some-api-calls"></a>API 호출 만들기
 
-1. Select a region from the list on this page that matches the location we picked when creating our Cognitive Services account earlier in this lesson.  For example, if we chose *West US* earlier when creating the account, then select it here as follows.
-![Screenshot of Text Analytics API reference site with Sentiment menu item selected, followed by West US.](../media-draft/select-testing-console-region.png)
+1. 이 페이지의 목록에서는 이 강좌의 앞부분에서 Cognitive Services 계정을 만들 때 선택한 위치와 일치하는 지역을 선택합니다.  예를 들어 계정을 만들 때 *미국 서부*를 선택한 경우 여기서도 다음과 같이 미국 서부를 선택합니다.
+![감정 메뉴 항목을 선택하고, 이어서 미국 서부를 선택한 텍스트 분석 API 참조 사이트의 스크린샷.](../media-draft/select-testing-console-region.png)
 
-1.  The next page that opens is a live, interactive, API console.  Paste the access key you saved earlier into the field on the page labeled **Ocp-Apim-Subscription-Key**. Notice that the key is written automatically into the HTTP request window as a header value.
+1.  열리는 그 다음 페이지는 실시간 대화형 API 콘솔입니다.  앞에서 저장한 액세스 키를 **Ocp-Apim-Subscription-Key** 레이블이 지정된 페이지의 필드에 붙여넣습니다. 이 키는 자동으로 HTTP 요청 창에 헤더 값으로 기록됩니다.
 
-1. Scroll to the bottom of the page and click **Send**. Let's break down what happens by looking at this screen in detail.
+1. 페이지 맨 아래로 스크롤하여 **보내기**를 클릭합니다. 이 화면을 자세히 살펴보면서 어떤 일이 발생하는지 분석해 보겠습니다.
 
-In the Headers section of the user interface, we set the access, or subscription, key in the header of our request.
+사용자 인터페이스의 헤더 섹션에서는 요청 헤더에서 액세스 또는 구독 키를 설정합니다.
 
-![Screenshot of headers section.](../media-draft/2-marker.PNG)
+![헤더 섹션의 스크린샷.](../media-draft/2-marker.PNG)
 
-Next we have the request body section which  holds a **documents** array. Each document in the array as three properties. The properties are *"language"*, *"id"*, *"text"*. The *"id"* is a number in this example, but can be anything you want as long as it's unique in the documents array. In this example we're also passing in documents written in three different languages. Over 15 languages are supported in the Sentiment feature of the Text Analytics API. For more info, check out [Supported languages in the Text Analytics API](https://docs.microsoft.com//azure/cognitive-services/text-analytics/text-analytics-supported-languages). The maximum size of a single document is 5,000 characters and one request can have up to 1,000 documents. 
+다음으로 **문서** 배열을 보관하는 요청 본문 섹션이 있습니다. 배열의 각 문서에는 세 가지 속성이 있습니다. 이러한 속성은 *"language"*, *"id"*, *"text"* 입니다. *"id"* 는 이 예제에서는 숫자이지만, 문서 배열에서 고유하기만 하다면 어떤 것이라도 상관 없습니다. 또한 이 예에서는 세 가지 다른 언어로 작성된 문서를 전달합니다. 텍스트 분석 API의 감정 기능에서 15개가 넘는 언어가 지원됩니다. 자세한 내용은 [Text Analytics API에서 지원되는 언어](https://docs.microsoft.com//azure/cognitive-services/text-analytics/text-analytics-supported-languages)를 참조하세요. 단일 문서의 최대 크기는 5,000자이고, 요청 하나에 최대 1,000개의 문서를 포함할 수 있습니다. 
 
-![Screenshot of Request Body section](../media-draft/3-marker.PNG)
+![요청 본문 섹션의 스크린샷](../media-draft/3-marker.PNG)
 
-The complete request, including the headers and the request URL are displayed in the next section. In this example, you can see that the requests are routed to a URL that begin with `westus`. The URL differs depending on the region you selected.  
+헤더 및 요청 URL을 포함한 전체 요청은 그 다음 섹션에서 표시됩니다. 이 예에서는 `westus`로 시작하는 URL로 요청이 라우팅되는 것을 볼 수 있습니다. URL은 선택한 지역에 따라 다릅니다.  
 
-![Section number four.](../media-draft/4-marker.PNG) 
-![Section number five.](../media-draft/5-marker.PNG) 
+![섹션 4.](../media-draft/4-marker.PNG) 
+![섹션 5.](../media-draft/5-marker.PNG) 
 
-Then we have info about the response. In the example, we see that the request was a success and code `200` was returned. We can also see that the round trip took 38 ms.
+그 다음은 응답에 대한 정보입니다. 이 예에서는 요청이 성공했고 `200` 코드가 반환된 것을 볼 수 있습니다. 또한 왕복 38ms가 소요된 것을 볼 수 있습니다.
 
-![Section number five.](../media-draft/6-marker.PNG)  
+![섹션 5.](../media-draft/6-marker.PNG)  
 
-Finally, we see the response to our request. The response holds the insight the Text Analytics API had about our documents. An array of documents is returned to us, without the original text. We get back an *"id"* and *"score"* for each document. The API returns a numeric score between 0 and 1. Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment. A score of 0.5 indicates the lack of sentiment, a neutral statement. In this example,  we have two pretty positive documents and one negative document. 
-![Section number five.](../media-draft/7-marker.PNG)  
+마지막으로, 요청에 대한 응답을 봅시다. 응답에는 텍스트 분석 API가 문서에 대해 갖고 있는 인사이트가 포함됩니다. 문서의 배열은 원래 텍스트 없이 반환됩니다. 각 문서의 *"id"* 및 *"잠수"* 를 얻습니다. 이 API는 0~1 사이의 숫자 점수를 반환합니다. 1에 가까운 점수는 긍정적인 정서를 나타내고, 0에 가까운 점수는 부정적인 정서를 나타냅니다. 점수 0.5는 감정이 없는 중립적 진술을 나타냅니다. 이 예제에서는 매우 긍정적인 문서와 매우 부정적인 문서가 각각 하나씩 있습니다. 
+![섹션 5.](../media-draft/7-marker.PNG)  
 
-Congratulations! You've made your first call to the Text Analytics API without writing a line of code. Feel free to stay in the console and try out more calls. Here are some suggestions:
+축하합니다. 코드 줄을 작성하지 않고 첫 번째 텍스트 분석 API 호출을 만들었습니다. 콘솔에서 나가지 말고 자유롭게 호출을 연습해 보세요. 다음은 몇 가지 제안 사항입니다.
 
-- Change the documents in section number 2 and see what the API returns. 
-- Try the other methods, **Detect Language**, **Entities** and **Key Phrases**, using the same  subscription key.
-- Try to make a call from a different region with your subscription and observe what happens. 
+- 섹션 2의 문서를 변경하고 API가 반환하는 항목을 살펴보세요. 
+- 동일한 구독 키를 사용하고 **언어 감지**, **엔터티**, **핵심 문구** 등의 다른 방법을 사용해보세요.
+- 구독을 사용하여 다른 지역에서 호출을 만들고 어떻게 되는지 관찰해보세요. 
 
-The API testing console is a great way to explore the capabilities of this API. Now that you've explored for yourself, let's move on to putting this intelligence into a real-world scenario.
+API 테스트 콘솔은 이 API의 기능을 탐색할 수 있는 좋은 방법입니다. 기능을 알아보았으니, 이번에는 이 지식을 실제 시나리오에 적용해 보겠습니다.

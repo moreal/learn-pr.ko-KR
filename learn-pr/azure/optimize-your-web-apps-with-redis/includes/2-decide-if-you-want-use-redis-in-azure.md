@@ -1,69 +1,69 @@
-Behind your sports website is a database, which returns data by executing queries. However, performance slows down when the load is high, particularly during large sporting events. In hosted environments, increased resource usage translates into higher costs. Caching data ensures your website will perform well and run economically.
+스포츠 웹 사이트의 백그라운드에 있는 데이터베이스는 쿼리를 실행하여 데이터를 반환합니다. 그러나 특히 대규모 스포츠 이벤트 중에 부하가 높을 경우 성능이 저하됩니다. 호스트형 환경에서 리소스 사용량 증가는 비용 증가로 이어집니다. 데이터를 캐시하면 웹 사이트가 제대로 작동하고 경제적으로 운영됩니다.
 
-## What is caching?
+## <a name="what-is-caching"></a>캐싱이란?
 
-Caching is the act of storing frequently-accessed data in memory that is very close to the application that consumes the data. Caching is used to increase performance and reduce the load on your servers. We use Redis to create an in-memory cache that can provide excellent latency and potentially improve performance.
+캐싱은 자주 액세스하는 데이터를 해당 데이터를 소비하는 응용 프로그램과 가까운 메모리에 저장하는 동작입니다. 캐싱은 성능을 높이고 서버의 부하를 줄이는 데 사용됩니다. 여기서는 Redis를 사용하여 대기 시간을 단축하고 성능을 향상할 수 있는 메모리 내 캐시를 만듭니다.
 
-## What is a Redis cache?
+## <a name="what-is-a-redis-cache"></a>Redis 캐시란?
 
-Redis (**RE**mote **DI**ctionary **S**erver) cache is an open-source, in-memory key value pair store. It's popular because it's fast and can store and manipulate common data types such as strings, hashes, and sets. It's also considered developer friendly as it supports multiple languages such as Python, C, C++, C#, Java, and JavaScript among others.
+Redis(**RE**mote **DI**ctionary **S**erver) 캐시는 오픈 소스의 메모리 내 키 값 쌍 저장소입니다. 빠르고 문자열, 해시, 집합 등의 공통 데이터 형식을 저장 및 조작할 수 있기 때문에 널리 사용됩니다. 또한 Python, C, C++, C#, Java, JavaScript 등의 여러 언어를 지원하므로 개발자 친화적인 것으로 간주됩니다.
 
-## What is Azure Redis Cache?
+## <a name="what-is-azure-redis-cache"></a>Azure Redis Cache란?
 
-Microsoft Azure Redis Cache is based on the popular open-source Redis cache. It gives you access to a secure, dedicated Redis cache, managed by Microsoft. A cache created using Azure Redis Cache is accessible from any application within Microsoft Azure. Azure Redis Cache is typically used to improve the performance of systems that rely heavily on back-end data stores.
+Microsoft Azure Redis Cache는 많이 사용되는 오픈 소스 Redis Cache를 기반으로 합니다. Microsoft에서 관리하는 안전한 전용 Redis Cache에 액세스할 수 있게 합니다. Azure Redis Cache를 사용하여 만들어진 캐시는 Microsoft Azure 내의 모든 응용 프로그램에서 액세스할 수 있습니다. Azure Redis Cache는 일반적으로 백 엔드 데이터 저장소에 크게 의존하는 시스템의 성능을 개선하기 위해 사용됩니다.
 
-Your cached data is located in-memory on an Azure server running the Redis cache as opposed to being loaded from disk by a database. Your cache is also highly scalable. You can alter the size and pricing tier at any time.
+캐시된 데이터는 데이터베이스에 의해 디스크에서 로드되는 것과는 반대로 Redis Cache를 실행하는 Azure 서버에서 메모리 내에 있습니다. 캐시도 확장성이 높습니다. 언제든지 크기 및 가격 책정 계층을 변경할 수 있습니다.
 
-## What type of data can be stored in the cache?
+## <a name="what-type-of-data-can-be-stored-in-the-cache"></a>캐시에 어떤 유형의 데이터를 저장할 수 있습니까?
 
-Redis supports a variety of data types all oriented around _binary safe_ strings. This means that you can use any binary sequence for a value, from a string like "i-love-rocky-road" to the contents of an image file. An empty string is also a valid value.
+Redis는 _안전한 이진_ 문자열을 지향하는 다양한 유형의 데이터를 모두 지원합니다. 즉, "i-love-rocky-road" 같은 문자열부터 이미지 파일의 콘텐츠까지 모든 이진 시퀀스를 값에 사용할 수 있습니다. 빈 문자열도 유효한 값입니다.
 
-- Binary-safe strings (most common)
-- Lists of strings
-- Unordered sets of strings
-- Hashes
-- Sorted sets of strings
-- Maps of strings
+- 안전한 이진 문자열(가장 일반적)
+- 문자열 목록
+- 순서가 지정되지 않은 문자열 집합
+- 해시
+- 정렬된 문자열 집합
+- 문자열 맵
 
-Each data value is associated to a _key_ which can be used to lookup the value from the cache. Redis works best with smaller values (100k or less), so consider chopping up bigger data into multiple keys. Storing larger values is possible (up to 500 MB), but increases network latency and can cause caching and out-of-memory issues if the cache isn't configured to expire old values.
+각 데이터 값은 캐시에서 값을 조회하는 데 사용할 수 있는 _키_에 연결됩니다. Redis는 작은 값(100k 이하)에서 가장 잘 작동하므로 큰 데이터를 여러 개의 키로 분할하는 방안을 고려해야 합니다. 큰 값을 저장할 수는 있지만(최대 500MB), 네트워크 대기 시간이 증가하고 오래된 값을 만료하도록 캐시를 구성하지 않으면 캐싱 및 메모리 부족 문제가 발생할 수 있습니다.
 
-## What is a Redis key?
-Redis keys are also binary safe strings. Here are some guidelines for choosing keys:
+## <a name="what-is-a-redis-key"></a>Redis 키란?
+Redis 키 역시 안전한 이진 문자열입니다. 다음은 키를 선택하는 방법에 대한 지침입니다.
 
-- Avoid long keys. They take up more memory and require longer lookup times because they have to be compared byte-by-byte. If you want to use a binary blob as the key, generate a unique hash and use that as the key instead. The maximum size of a key is 512 MB, but you should _never_ use a key that size.
-- Use keys which can identify the data. For example, "sport:football;date:2008-02-02" would be a better key than "fb:8-2-2". The former is more readable and the extra size is negligible. Find the balance between size and readability.
-- Use a convention. A good one is "object:id", as in "sport:football". 
+- 긴 키를 사용하지 않습니다. 바이트 단위로 비교해야 하기 때문에 더 많은 메모리를 차지하고 조회 시간이 오래 걸립니다. 이진 BLOB을 키로 사용하려는 경우 고유한 해시를 생성하여 키 대신 사용하세요. 키의 최대 크기는 512MB지만, 이 크기의 키를 _절대_ 사용하면 안 됩니다.
+- 데이터를 식별할 수 있는 키를 사용합니다. 예를 들어 "fb:8-2-2"보다 "sport:football;date:2008-02-02"가 더 좋은 키입니다. 전자가 더 읽기 쉬우며 추가 크기는 무시해도 되는 수준입니다. 크기와 가독성 사이의 적절한 균형점을 찾습니다.
+- 규칙을 사용합니다. "sport:football"처럼 "object:id"가 좋은 키입니다. 
 
-## How is data stored in a Redis cache?
+## <a name="how-is-data-stored-in-a-redis-cache"></a>데이터는 Redis 캐시에 어떻게 저장되나요?
 
-Data in Redis is stored in _**nodes**_ and _**clusters**_.
+Redis의 데이터는 ‘**노드**’ 및 ‘**클러스터**’에 저장됩니다.
 
-**Nodes** are a space in Redis where your data is stored.
+**노드**는 데이터가 저장되는 Redis의 공간입니다.
 
-**Clusters** are sets of three or more nodes your dataset is split across. Clusters are useful because your operations will continue if a node fails or is unable to communicate to the rest of the cluster.
+**클러스터**는 데이터 집합이 분할되는 세 개 이상 노드의 집합입니다. 클러스터의 경우 노드가 작동하지 않거나 클러스터의 나머지 부분과 통신할 수 없는 경우 작업이 계속되므로 유용합니다.
 
-## What are Redis caching architectures?
+## <a name="what-are-redis-caching-architectures"></a>Redis 캐싱 아키텍처란?
 
-Redis caching architecture is how we distribute our data in the cache. Redis distributes data in three major ways:
+Redis 캐싱 아키텍처는 캐시에 데이터를 배포하는 방법입니다. Redis는 세 가지 주요 방법으로 데이터를 배포합니다.
 
-1. **Single node**
-1. **Multiple node**
-1. **Clustered**
+1. **단일 노드**
+1. **다중 노드**
+1. **클러스터형**.
 
-Redis caching architectures are split across Azure by tiers:
+Redis 캐싱 아키텍처는 Azure에서 계층별로 분할됩니다.
 
-### Basic cache
+### <a name="basic-cache"></a>기본 캐시
 
-A basic cache provides you with a _**single node**_ Redis cache. The complete dataset will be stored in a single node. This tier is ideal for development, testing, and non-critical workloads.
+기본 캐시는 ‘**단일 노드**’ Redis Cache를 제공합니다. 전체 데이터 집합이 단일 노드에 저장됩니다. 이 계층은 개발, 테스트 및 중요하지 않은 워크로드에 적합합니다.
 
-### Standard cache
+### <a name="standard-cache"></a>표준 캐시
 
-The standard cache creates _**multiple node**_ architectures. Redis replicates a cache in a two-node primary/secondary configuration. Azure manages the replication between the two nodes. This is a production-ready cache with master/slave replication.
+표준 캐시는 ‘**다중 노드**’ 아키텍처를 만듭니다. Redis는 2개 노드의 기본/보조 구성으로 캐시를 복제합니다. Azure는 두 노드 간의 복제를 관리합니다. 이는 마스터/슬레이브 복제를 사용하는 프로덕션 준비가 완료된 캐시입니다.
 
-### Premium tier
+### <a name="premium-tier"></a>프리미엄 계층
 
-The premium tier includes the features of the standard tier but adds the ability to persist data, take snapshots, and back up data. With this tier, you can create a Redis cluster that shards data across multiple Redis nodes to increase available memory. The premium tier also supports an Azure Virtual Network to give you complete control over your connections, subnets, IP addressing, and network isolation. This tier also includes geo-replication, so you can ensure your data is close to the app that's consuming it.
+프리미엄 계층에는 표준 계층의 기능이 포함되지만 데이터를 지속하고, 스냅숏을 찍고, 데이터를 백업하는 기능이 추가됩니다. 이 계층을 사용하면 여러 Redis 노드 간에 데이터를 분할하여 사용 가능한 메모리를 늘리는 Redis 클러스터를 만들 수 있습니다. 또한 프리미엄 계층은 연결, 서브넷, IP 주소 지정 및 네트워크 격리를 완벽하게 제어할 수 있도록 Azure Virtual Network를 지원합니다. 이 계층에는 지역 복제가 포함되므로 데이터가 해당 계층을 사용하는 앱에 가까이 있는지 확인할 수 있습니다.
 
-## Summary
+## <a name="summary"></a>요약
 
-A database is great for storing large amounts of data, but there is an inherent latency when looking up data. You send a query. The server interprets the query, looks up the data, and returns it. Servers also have capacity limits for handling requests. If too many requests are made, data retrieval will likely slow down. Caching will store frequently requested data in memory that can be returned faster than querying a database, which should lower latency and increase performance. Azure Redis Cache gives you access to a secure, dedicated, and scalable Redis cache, hosted in Azure, and managed by Microsoft.
+데이터베이스는 많은 양의 데이터를 저장하는 데 유용하지만 데이터를 조회할 때 고유 대기 시간이 있습니다. 쿼리를 보냅니다. 서버는 쿼리를 해석하고 데이터를 검색한 후 반환합니다. 서버에는 요청 처리를 위한 용량 제한도 있습니다. 너무 많은 요청이 생성되면 데이터 검색 속도가 느려질 수 있습니다. 캐싱은 데이터베이스를 쿼리하는 것보다 더 빠르게 반환될 수 있는 메모리에 자주 요청되는 데이터를 저장하므로, 대기 시간이 짧아지고 성능이 향상됩니다. Azure Redis Cache를 통해 Azure에서 호스트하고 Microsoft에서 관리하는 안전하고 확장성 있는 전용 Redis Cache에 액세스할 수 있습니다.

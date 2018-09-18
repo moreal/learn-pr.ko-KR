@@ -1,13 +1,13 @@
-Imagine you work for a healthcare provider. How do you instill confidence in your customers that their data is secure? Can your architecture handle a spike in traffic if a media report goes viral? Can your architecture handle the failure of one or more critical components? Are you using resources in the most efficient manner possible?
+의료 서비스에서 일한다고 가정해 보겠습니다. 고객에게 고객의 데이터가 안전하다는 인식을 어떻게 심어줄 수 있을까요? 미디어 보고서가 퍼지면 아키텍처가 트래픽 급증을 처리할 수 있을까요? 아키텍처가 하나 이상의 중요한 구성 요소 실패를 처리할 수 있을까요? 가능한 가장 효율적인 방식으로 리소스를 사용하고 있나요?
 
-A great architecture helps guide you to design, build, and continuously improve a secure, reliable, and efficient application. In this module, we'll introduce you to the pillars and principles that are essential to a great Azure architecture.
+좋은 아키텍처는 안전하고 믿을 수 있으며 효율적인 응용 프로그램을 디자인 및 구축하고 지속적으로 개선하는 데 도움이 됩니다. 이 모듈에서는 좋은 Azure 아키텍처에 필수적인 원칙과 핵심 요소를 소개합니다.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> 이 모듈에서 설명하는 개념은 모두를 포괄하지는 않지만 클라우드에서 솔루션을 빌드할 때 고려할 몇 가지 중요한 사항을 제시합니다. Microsoft는 Azure에서 응용 프로그램 설계에 대한 광범위한 패턴, 지침 및 예제를 게시합니다. 아키텍처 계획 및 설계를 시작할 때 [Azure 아키텍처 센터](https://docs.microsoft.com/azure/architecture/)의 내용을 살펴보는 것이 좋습니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Identify key pillars for architecting a solution in the cloud
-- Apply key principles for creating a solid architectural foundation
+- 클라우드에서 솔루션을 설계하기 위한 핵심 요소 식별
+- 견고한 아키텍처 기초를 만들기 위한 핵심 원칙 적용
