@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 09479b5de53cbca771d9e0b2c69e35e5224d8f05
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 9f29cd60cea73a1d0b1d475f5f7bb38e1c0f55f2
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246908"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45767716"
 title: Azure Key Vault를 사용하여 서버 앱의 비밀 관리
 summary: 응용 프로그램에는 서비스 암호, 연결 문자열 및 작업을 수행하기 위한 기타 비밀 구성 값이 필요합니다. 비밀 값을 저장하고 처리하는 작업은 위험하며, 사용할 때마다 누출의 가능성이 있습니다. Azure Key Vault를 Azure 리소스에 대해 관리되는 ID와 함께 사용하면 Azure 웹앱에서 원본 제어 또는 구성에 비밀을 저장할 필요 없이 쉽고 안전하게 비밀 구성 값에 액세스할 수 있습니다.
 abstract: >
@@ -27,7 +27,7 @@ abstract: >
 
   - 자격 증명 모음에서 비밀을 검색하는 웹 응용 프로그램 구현
 prerequisites: 없음
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 levels:
 - beginner
 roles:

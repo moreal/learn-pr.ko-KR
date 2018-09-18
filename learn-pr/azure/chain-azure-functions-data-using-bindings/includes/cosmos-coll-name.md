@@ -1,1 +1,1 @@
-<span data-ttu-id="7af07-101">**책갈피**</span><span class="sxs-lookup"><span data-stu-id="7af07-101">**Bookmarks**</span></span>
+<span data-ttu-id="32b78-101">**책갈피**</span><span class="sxs-lookup"><span data-stu-id="32b78-101">**Bookmarks**</span></span>

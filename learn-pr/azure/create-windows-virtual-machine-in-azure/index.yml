@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 41b8c2d92b0f75dbf8d29898ba54aeca80707a8f
-  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45538084"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45774875"
 title: Azure에서 Windows 가상 머신 만들기
 summary: Azure VM(Virtual Machines)을 사용하면 물리적 데스크톱 또는 서버 머신처럼 사용할 수 있는 전용 계산 리소스를 몇 분 안에 만들 수 있습니다. 가상 머신이 관리 용도로 연결하는 서버이든, 최종 사용자용 가상 워크스테이션이든 관계없이, RDP(원격 데스크톱 프로토콜)는 로컬 물리적 컴퓨터의 터미널에 앉아 있는 것과 동일한 경험을 제공합니다.
 abstract: >

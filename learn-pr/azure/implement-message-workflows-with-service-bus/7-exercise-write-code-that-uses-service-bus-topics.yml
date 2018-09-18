@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.implement-message-workflows-with-service-bus.7-exercise-write-code-that-uses-service-bus-topics
-title: <span data-ttu-id="e7211-101">연습 - Service Bus 항목을 사용하는 코드 작성</span><span class="sxs-lookup"><span data-stu-id="e7211-101">Exercise - Write code that uses Service Bus topics</span></span>
+title: <span data-ttu-id="7dd10-101">연습 - Service Bus 항목을 사용하는 코드 작성</span><span class="sxs-lookup"><span data-stu-id="7dd10-101">Exercise - Write code that uses Service Bus topics</span></span>
 metadata:
-  title: <span data-ttu-id="e7211-102">연습 - Service Bus 항목을 사용하는 코드 작성</span><span class="sxs-lookup"><span data-stu-id="e7211-102">Exercise - Write code that uses Service Bus topics</span></span>
-  description: <span data-ttu-id="e7211-103">연습 - Service Bus 항목을 사용하는 코드 작성</span><span class="sxs-lookup"><span data-stu-id="e7211-103">Exercise - Write code that uses Service Bus topics</span></span>
+  title: <span data-ttu-id="7dd10-102">연습 - Service Bus 항목을 사용하는 코드 작성</span><span class="sxs-lookup"><span data-stu-id="7dd10-102">Exercise - Write code that uses Service Bus topics</span></span>
+  description: <span data-ttu-id="7dd10-103">연습 - Service Bus 항목을 사용하는 코드 작성</span><span class="sxs-lookup"><span data-stu-id="7dd10-103">Exercise - Write code that uses Service Bus topics</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 44860e57a6c6dce04d64e2177d6ef3e600d9c452
-  ms.sourcegitcommit: 4dc3a7c7146ab87bafce63ebe81eab4a1e7b4d7a
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/14/2018
-  ms.locfileid: "45584122"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45780381"
 interactive: bash-editor
 azureSandbox: true
 durationInMinutes: 10

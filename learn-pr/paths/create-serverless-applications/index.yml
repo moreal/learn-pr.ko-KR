@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d39a1a6c851f2073272ca3c3419b9a1ce291f3bf
-  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45555427"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45758396"
 title: 서버리스 응용 프로그램 만들기
 summary: Azure Functions를 사용하면 다양한 외부 이벤트에서 트리거될 수 있는 이벤트 기반 주문형 계산 시스템을 만들 수 있습니다. 함수를 활용하여 서버 쪽 논리를 실행하고 서버리스 아키텍처를 빌드하는 방법을 알아봅니다.
 prerequisites: 없음

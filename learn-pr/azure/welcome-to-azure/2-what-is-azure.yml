@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.2-what-is-azure
-title: <span data-ttu-id="95456-101">Azure란?</span><span class="sxs-lookup"><span data-stu-id="95456-101">What is Azure?</span></span>
+title: <span data-ttu-id="138ca-101">Azure란?</span><span class="sxs-lookup"><span data-stu-id="138ca-101">What is Azure?</span></span>
 metadata:
-  title: <span data-ttu-id="95456-102">Azure란?</span><span class="sxs-lookup"><span data-stu-id="95456-102">What is Azure?</span></span>
-  description: <span data-ttu-id="95456-103">클라우드 컴퓨팅이 무엇을 의미하는지와 Azure가 어떻게 가상 머신을 실행하는 단순한 장소 이상인지를 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="95456-103">Learn what cloud computing means and how Azure is more than just a place to run your virtual machines.</span></span>
+  title: <span data-ttu-id="138ca-102">Azure란?</span><span class="sxs-lookup"><span data-stu-id="138ca-102">What is Azure?</span></span>
+  description: <span data-ttu-id="138ca-103">클라우드 컴퓨팅이 무엇을 의미하는지와 Azure가 어떻게 가상 머신을 실행하는 단순한 장소 이상인지를 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="138ca-103">Learn what cloud computing means and how Azure is more than just a place to run your virtual machines.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 2197154449d992768035cf7f40626d52d95decdd
-  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
+  ms.openlocfilehash: 3888ca387a68f7d72f81d4696a4eda7fd357ad1e
+  ms.sourcegitcommit: 971ffb73ca599659813c3d5d56ae1cd23f350f7e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44495214"
-durationInMinutes: 3
+  ms.lasthandoff: 09/18/2018
+  ms.locfileid: "45977613"
+durationInMinutes: 2
 content: '[!include[](includes/2-what-is-azure.md)]'
