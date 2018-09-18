@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.6-knowledge-check
+title: '<span data-ttu-id="03b37-101">지식 점검: 가상 머신 크기 조정 및 크기 지정</span><span class="sxs-lookup"><span data-stu-id="03b37-101">Knowledge check: Scale and size virtual machines</span></span>'
+durationInMinutes: 3
+metadata:
+  title: '<span data-ttu-id="03b37-102">지식 점검: 가상 머신 크기 조정 및 크기 지정</span><span class="sxs-lookup"><span data-stu-id="03b37-102">Knowledge check: Scale and size virtual machines</span></span>'
+  description: <span data-ttu-id="03b37-103">Azure의 가상 머신 크기 조정 및 크기 지정에 대한 질문입니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-103">Questions about scaling and sizing virtual machines in Azure.</span></span>
+  ms.openlocfilehash: 8c27602c6efc9f5c1f581ff176b561a378a82309
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255495"
+quiz:
+  title: '<span data-ttu-id="03b37-104">지식 점검: 가상 머신 크기 조정 및 크기 지정</span><span class="sxs-lookup"><span data-stu-id="03b37-104">Knowledge check: Scale and size virtual machines</span></span>'
+  questions:
+  - content: '<span data-ttu-id="03b37-105">True 또는 false: 자동 크기 조정과 함께 Virtual Machine Scale Sets를 사용하면 확장 집합에서 가상 머신의 _크기_를 변경하도록 자동 크기 조정 규칙을 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-105">True or false: when using virtual machine scale sets with autoscale, the autoscale rules can be configured to change the _size_ of the virtual machines in your scale set.</span></span>'
+    choices:
+    - content: <span data-ttu-id="03b37-106">True</span><span class="sxs-lookup"><span data-stu-id="03b37-106">True</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="03b37-107">False</span><span class="sxs-lookup"><span data-stu-id="03b37-107">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="03b37-108">자동 크기 조정은 확장 집합에서 인스턴스 수를 변경하지만, 인스턴스 크기를 변경하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-108">Autoscale changes the number of instances in your scale set, it does not change the size of the instances.</span></span>
+  - content: <span data-ttu-id="03b37-109">일반적으로 가상 머신의 _유형_을 선택할 때 사용하는 가장 중요한 기준은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="03b37-109">What is typically the most important criterion to use when choosing a _type_ for your virtual machine?</span></span>
+    choices:
+    - content: <span data-ttu-id="03b37-110">워크로드로, 가상 머신이 가장 자주 수행하는 작업 종류입니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-110">Your workload; that is, the kind of operations you expect the virtual machine to perform most often.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="03b37-111">가상 머신 _유형_은 VM에 할당된 CPU, GPU, 메모리, 저장소 및 네트워킹 대역폭 조합을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-111">Virtual machine _type_ describes the mix of CPU, GPU, memory, storage, and networking bandwidth allocated to a VM.</span></span> <span data-ttu-id="03b37-112">목표는 워크로드에 가장 적합한 리소스를 찾는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-112">Your goal is to find the best match of resources for your workload.</span></span>
+    - content: <span data-ttu-id="03b37-113">기본 하드웨어의 브랜드.</span><span class="sxs-lookup"><span data-stu-id="03b37-113">The brand of the underlying hardware.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="03b37-114">해당 유형이 지원하는 운영 체제 및 이미지.</span><span class="sxs-lookup"><span data-stu-id="03b37-114">The operating systems and images that the type supports.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="03b37-115">기상 이변 경고를 담당하는 정부 부서에서 일한다고 가정해 보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-115">Suppose you work for a government department responsible for severe-weather alerts.</span></span> <span data-ttu-id="03b37-116">하나의 큰 VM을 사용하거나 부하 분산 장치가 있는 두 개의 작은 VM을 사용하여 필요한 성능을 달성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-116">You can achieve the performance you need using one large VM or two small VMs with a load balancer.</span></span> <span data-ttu-id="03b37-117">더 나은 선택이 될 수 있는 구성은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="03b37-117">Which configuration is likely to be a better choice?</span></span>
+    choices:
+    - content: <span data-ttu-id="03b37-118">하나의 VM</span><span class="sxs-lookup"><span data-stu-id="03b37-118">One VM</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="03b37-119">두 개의 VM 및 부하 분산 장치</span><span class="sxs-lookup"><span data-stu-id="03b37-119">Two VMs and a load balancer</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="03b37-120">중복성을 제공하므로 여러 개의 VM이 적절합니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-120">Multiple VMs is appropriate because it provides redundancy.</span></span> <span data-ttu-id="03b37-121">VM 중 하나가 작동이 중단되면 다른 VM이 서비스 요청을 계속할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="03b37-121">If one of the VMs crashes, the other can continue to service requests.</span></span>

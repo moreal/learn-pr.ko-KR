@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.3-exercise-create-azure-virtual-network
+title: <span data-ttu-id="e098d-101">Azure 가상 네트워크 만들기</span><span class="sxs-lookup"><span data-stu-id="e098d-101">Create an Azure virtual network</span></span>
+metadata:
+  title: <span data-ttu-id="e098d-102">Azure 가상 네트워크 만들기</span><span class="sxs-lookup"><span data-stu-id="e098d-102">Create an Azure virtual network</span></span>
+  description: <span data-ttu-id="e098d-103">Azure 가상 네트워크 만들기</span><span class="sxs-lookup"><span data-stu-id="e098d-103">Create an Azure virtual network</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: add05024d33a676aba98817162282658b7a40794
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245616"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-create-azure-virtual-network.md)]'

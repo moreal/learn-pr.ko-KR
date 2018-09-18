@@ -2,16 +2,16 @@
 uid: principles-cloud-computing
 metadata:
   title: 클라우드 컴퓨팅의 원칙
-  description: 클라우드 컴퓨팅의 핵심 개념 및 클라우드 컴퓨팅이 비즈니스에 도움이 될 수 있는 이유를 알아봅니다.
+  description: 클라우드 컴퓨팅의 핵심 개념 및 클라우드 컴퓨팅이 비즈니스에 도움이 되는 방법을 알아봅니다.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 11d73eff33b33397cbcebd62b0a1187be478d873
-  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.openlocfilehash: abb04d299c0ff1db41152c456541944e006e9c03
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43459373"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847693"
 title: 클라우드 컴퓨팅의 원칙
-summary: 클라우드 컴퓨팅의 핵심 개념 및 클라우드 컴퓨팅이 비즈니스에 도움이 될 수 있는 이유를 알아봅니다.
+summary: 클라우드 컴퓨팅의 핵심 개념 및 클라우드 컴퓨팅이 비즈니스에 도움이 되는 방법을 알아봅니다.
 abstract: >
   이 모듈에서는 다음을 수행합니다.
 
@@ -32,8 +32,8 @@ roles:
 - solution-architect
 products:
 - azure
-- azurePortal
-- resourceManager
+- azure-portal
+- azure-resource-manager
 units:
 - principles-cloud-computing.1-motivation
 - principles-cloud-computing.2-what-is-cloud-computing

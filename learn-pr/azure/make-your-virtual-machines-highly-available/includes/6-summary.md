@@ -1,0 +1,12 @@
+<span data-ttu-id="50aff-101">여기서는 솔루션의 일부로 부하 분산 장치를 사용하여 Azure에 호스트된 가상 머신에 대해 고가용성을 제공하는 방법을 알아보았습니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-101">Here, you learned how to use a load balancer as part of a solution to deliver high availability for virtual machines hosted in Azure.</span></span> <span data-ttu-id="50aff-102">여기에는 부하 분산 장치 자체, 연결된 가상 네트워크, 분산 알고리즘을 제어하는 규칙 및 올바르게 실행 중인 가상 머신을 식별하는 상태 프로브가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-102">This included the load balancer itself, the associated virtual networks, rules to control the balancing algorithm, and health probes that identify which virtual machines are running correctly.</span></span>
+
+## <a name="clean-up"></a><span data-ttu-id="50aff-103">정리</span><span class="sxs-lookup"><span data-stu-id="50aff-103">Clean up</span></span>
+<!---TODO: Update for sandbox?--->
+
+<span data-ttu-id="50aff-104">가상 머신 및 확장 집합을 실행하면 구독에 대한 비용이 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-104">Running virtual machines and scale sets incurs costs against your subscription.</span></span> <span data-ttu-id="50aff-105">불필요한 비용을 피하려면 불필요한 리소스를 제거해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-105">You should remove unneeded resources to avoid unnecessary charges.</span></span> <span data-ttu-id="50aff-106">Azure 구독을 정리하는 가장 쉬운 방법은 리소스 그룹을 제거하는 것입니다. 이렇게 하면 해당 그룹의 모든 리소스도 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-106">The easiest way to clean up your Azure subscription is to remove the resource group; this will also delete all the resources in the group.</span></span> <span data-ttu-id="50aff-107">이 모듈을 마치면 다음 Azure PowerShell cmdlet을 실행하세요.</span><span class="sxs-lookup"><span data-stu-id="50aff-107">When you are finished with this module, please run the following Azure PowerShell cmdlet:</span></span>
+
+```powershell
+Remove-AzureRmResourceGroup -Name woodgrove-RG
+```
+
+<span data-ttu-id="50aff-108">삭제를 확인하라는 메시지가 표시되면 **예**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-108">When you are asked to confirm the delete, answer **Yes**.</span></span> <span data-ttu-id="50aff-109">리소스가 삭제될 때 명령을 완료하는 데 몇 분이 걸릴 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="50aff-109">The command may take several minutes to complete as resources are deleted.</span></span>
