@@ -1,4 +1,4 @@
-이 연습에서는 Blob이 생성되거나 업데이트될 때 Blob의 이름과 크기를 표시하는 Azure 함수를 만들어보겠습니다. 
+이 단원에서는 Blob이 생성되거나 업데이트될 때 Blob의 이름과 크기를 표시하는 Azure 함수를 만들어보겠습니다. 
 
 ## <a name="create-a-blob-trigger"></a>Blob 트리거 만들기
 

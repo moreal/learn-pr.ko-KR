@@ -7,11 +7,10 @@ Azure Multi-Factor 인증은 일반적으로 IT 부서에서 망치처럼 배포
 ## <a name="learning-objectives"></a>학습 목표
 
 이 모듈에서는 다음을 수행합니다.
-- 테스트 사용자 및 사용 그룹 만들기
-- Multi-Factor Authentication을 요구하는 조건부 액세스 정책 사용
 
-## <a name="prerequisites"></a>필수 구성 요소
+- 테스트 사용자 및 사용 그룹을 만듭니다.
+- MFA(Multi-Factor Authentication)를 요구하는 조건부 액세스 정책을 사용하도록 설정합니다.
 
-- 리소스 그룹 및 구독과 같은 기본 Azure 개념에 대한 지식
-- Azure 구독에 대한 액세스
-- 디렉터리를 만들 수 있는 권한
+## <a name="prerequisites"></a>필수 조건
+
+- 리소스 그룹 및 구독과 같은 기본 Azure 개념에 대한 지식.

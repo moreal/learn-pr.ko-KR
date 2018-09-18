@@ -5,12 +5,12 @@ durationInMinutes: 3
 metadata:
   title: '지식 검사: 저장소 계정 만들기'
   description: 저장소 계정 속성 및 생성에 대한 질문입니다.
-  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.openlocfilehash: 9bf936e876598090ffb3972f21928ce8f7b0f33c
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471705"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824090"
 quiz:
   title: '지식 검사: 저장소 계정 만들기'
   questions:
@@ -27,7 +27,7 @@ quiz:
       isCorrect: false
     - content: Azure 구독 내에서 고유해야 합니다.
       isCorrect: false
-    - content: 전세계에 고유함
+    - content: 전세계에 고유해야 합니다.
       isCorrect: true
       correctExplanation: 저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.
   - content: 일반적인 프로젝트에서 저장소 계정을 만드는 경우는?

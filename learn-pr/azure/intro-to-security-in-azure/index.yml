@@ -1,23 +1,32 @@
 ### YamlMime:Module
 uid: learn.introduction-to-security
 metadata:
-  title: Introduction to security in Azure
-  description: Discuss the basic concepts for protecting your infrastructure and data when you work in the cloud. Understand what responsibilities are yours and what Azure takes care of for you.
+  title: Azure의 보안 소개
+  description: 클라우드에서 작업할 때 인프라와 데이터를 보호하기 위한 기본 개념에 대해 설명합니다. 본인에게 어떤 책임이 있고 Azure에서는 무엇을 관리하는지 이해합니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to security in Azure
-summary: Discuss the basic concepts for protecting your infrastructure and data when you work in the cloud. Understand what responsibilities are yours and what Azure takes care of for you.
-abstract: |  
-  In this module, you will:
-  - Learn how security responsibility is shared with Azure
-  - Learn how identity management provides protection, even outside your network
-  - Learn how encryption capabilities built in to Azure can protect your data
-  - Learn how to protect your network and virtual networks
-prerequisites: None
+  ms.openlocfilehash: 048b1505d2e6b282f89682446ebc26c4a8f10b64
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247067"
+title: Azure의 보안 소개
+summary: 클라우드에서 작업할 때 인프라와 데이터를 보호하기 위한 기본 개념에 대해 설명합니다. 본인에게 어떤 책임이 있고 Azure에서는 무엇을 관리하는지 이해합니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - Azure에서 보안 책임을 공유하는 방법 알아보기
+
+  - ID 관리에서 네트워크 외부에도 보호를 제공하는 방법 알아보기
+
+  - Azure에 기본 제공된 암호화 기능으로 데이터를 보호하는 방법 알아보기
+
+  - 네트워크 및 가상 네트워크를 보호하는 방법 알아보기
+prerequisites: 없음
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

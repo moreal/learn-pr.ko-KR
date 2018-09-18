@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Traffic Manager를 사용하여 대기 시간 단축
+title: Azure Traffic Manager를 사용하여 대기 시간 단축
 metadata:
-  title: Traffic Manager를 사용하여 대기 시간 단축
+  title: Azure Traffic Manager를 사용하여 대기 시간 단축
   description: Traffic Manager를 사용하여 지리적 영역의 대기 시간을 단축하고 복원력을 구현하는 방법을 알아보세요.
-  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.openlocfilehash: 491f3b1797b3e1b10335424f6365f5c08ae774bb
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477826"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790168"
 durationInMinutes: 7
 content: >
   [!include[](includes/4-reduce-latency-traffic-manager.md)]

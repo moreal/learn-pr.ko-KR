@@ -8,7 +8,7 @@
 
 ## <a name="configure-your-connection-string"></a>연결 문자열 구성
 
-코드를 작성하기 전에 사용할 저장소 계정에 대한 연결 문자열이 필요합니다.
+앱을 실행하기 전에 사용할 저장소 계정에 대한 연결 문자열이 필요합니다. 앱을 실행하는데 Azure Portal, Azure CLI 또는 Azure PowerShell을 포함하여 모든 Azure 관리 인터페이스를 사용할 수 있습니다. 이 모듈의 끝 부분에서 코드를 실행하도록 웹앱을 설정할 때 Azure CLI를 사용하여 이전에 만든 저장소 계정에 대한 연결 문자열을 가져옵니다.
 
 저장소 계정 연결 문자열에는 계정 키가 포함됩니다. 계정 키는 비밀로 간주하며 안전하게 저장되어야 합니다. 여기서 연결 문자열을 App Service 응용 프로그램 설정에 저장합니다. App Service 응용 프로그램 설정은 응용 프로그램 비밀을 저장할 안전한 장소이지만, 이 디자인은 로컬 개발을 지원하지 않고 단독으로는 강력한 종단 간 솔루션이 아닙니다.
 
@@ -49,15 +49,13 @@ CloudBlobContainer container = blobClient.GetContainerReference(containerName);
 
 먼저 GitHub의 시작 앱을 복제해 보겠습니다. Cloud Shell 터미널에서 다음 명령을 실행하여 소스 코드의 복사본을 가져오고 편집기에서 엽니다.
 
-**최종 리포지토리 URL에 대한 TODO 업데이트**
-
 ```console
-git clone https://github.com/nickwalkmsft/FileUploader.git
-cd FileUploader
+git clone https://github.com/MicrosoftDocs/mslearn-store-data-in-azure.git
+cd mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start
 code .
 ```
 
-`Controllers/FilesController.cs`파일을 엽니다. 여기에서 수행할 작업이 없지만 앱이 수행하는 작업을 빠르게 확인하려고 합니다.
+편집기에서 `Controllers/FilesController.cs` 파일을 엽니다. 여기에서 수행할 작업이 없지만 앱이 수행하는 내용을 빠르게 확인하려고 합니다.
 
 이 컨트롤러는 다음과 같은 세 가지 작업으로 API를 구현합니다.
 
@@ -80,13 +78,13 @@ dotnet restore
 
 ### <a name="configure"></a>구성
 
-앱을 실행하는 데 필요한 구성 값은 저장소 계정 연결 문자열이고 컨테이너의 이름은 앱이 파일을 저장하는 데 사용됩니다. 이 단원에서는 Azure App Service에서 앱을 실행하기만 하므로 App Service 모범 사례를 따르고 App Service 응용 프로그램 설정에 값을 저장합니다. App Service 인스턴스를 만들 때 작업을 수행하므로 지금은 작업을 수행할 필요가 없습니다.
+필요한 구성 값은 저장소 계정 연결 문자열이고 컨테이너의 이름은 앱이 파일을 저장하는데 사용됩니다. 이 모듈에서는 Azure App Service에서 앱을 실행하기만 하므로 App Service 모범 사례를 따르고 App Service 응용 프로그램 설정에 값을 저장합니다. App Service 인스턴스를 만들 때 작업을 수행하므로 지금은 작업을 수행할 필요가 없습니다.
 
 구성을 ‘사용’할 때 시작 앱에는 이미 필요한 구성 연결이 포함되어 있습니다. `BlobStorage`의 `IOptions<AzureStorageConfig>` 생성자 매개 변수에는 두 개의 속성인 저장소 계정 연결 문자열 및 앱이 Blob을 저장하는 컨테이너의 이름이 있습니다. `Startup.cs`의 `ConfigureServices` 메서드에 앱이 시작될 때 구성에서 값을 로드하는 코드가 있습니다.
 
 ### <a name="initialize"></a>초기화
 
-`Models/BlobStorage.cs`를 엽니다. 다음 `using` 문을 파일 위쪽에 추가하여 연습 중에 추가할 코드를 준비합니다.
+편집기에서 `Models/BlobStorage.cs`를 엽니다. 다음 `using` 문을 파일 위쪽에 추가하여 연습 중에 추가할 코드를 준비합니다.
 
 ```csharp
 using System.Linq;

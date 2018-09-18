@@ -1,7 +1,7 @@
 이 모듈에서는 Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터를 저장하는 방법을 알아보았습니다. 웹앱에서 Blob Storage를 사용하는 전략을 만들기 위한 팁과 .NET Core용 Azure Storage SDK를 사용하여 Blob에 쓰고 읽는 방법을 설명했습니다. 여기서 만든 앱은 사용자로부터 업로드된 파일을 수락하고 이를 Blob Storage에 저장하며 다운로드할 수 있습니다.
 
-## <a name="cleanup"></a>정리
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+## <a name="clean-up"></a>정리
+<!---TODO: Update for sandbox?--->
 
 Azure 구독을 정리하려면 Azure Cloud Shell에서 다음을 실행하여 이 모듈에서 만든 모든 리소스가 포함된 리소스 그룹을 삭제합니다.
 
@@ -9,7 +9,7 @@ Azure 구독을 정리하려면 Azure Cloud Shell에서 다음을 실행하여 �
 az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-Cloud Shell 저장소를 정리하려면 `FileUploader` 디렉터리를 삭제합니다.
+Cloud Shell 저장소를 정리하려면 `mslearn-store-data-in-azure` 디렉터리를 삭제합니다.
 
 ## <a name="further-reading"></a>추가 참고 자료
 

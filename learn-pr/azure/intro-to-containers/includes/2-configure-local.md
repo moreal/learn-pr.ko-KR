@@ -1,40 +1,40 @@
-Before you run a container or container-integrated application in Azure, you'll most likely work in a local development environment like your laptop. This unit helps you prepare your system for container development with Docker.
+Azure에서 컨테이너 또는 컨테이너 통합 응용 프로그램을 실행하기 전에는 대부분 노트북 같은 로컬 개발 환경에서 작업합니다. 이 단원에서는 Docker를 사용하여 컨테이너 개발을 위한 시스템 준비 작업을 도와줍니다.
 
-## Docker for Windows and Mac
+## <a name="docker-for-windows-and-mac"></a>Windows 및 Mac용 Docker
 
-Docker, Inc. has published two applications to install and configure local container development environments. Essentially, each application prepares your system with Docker tooling, such as the necessary CLI and automation tools. A virtual machine is also created that hosts the Docker platform. The environment is configured such that Docker commands are passed through to the virtual machine. Each of these applications is similar in functionality and includes the following features:
+Docker, Inc.는 로컬 컨테이너 개발 환경을 설치하고 구성할 수 있는 두 가지 응용 프로그램을 게시했습니다. 기본적으로 각 응용 프로그램은 필수 CLI 및 자동화 도구 같은 Docker 도구를 사용하여 시스템을 준비합니다. Docker 플랫폼을 호스팅하는 가상 머신도 만듭니다. Docker 명령이 가상 머신으로 전달되도록 환경이 구성됩니다. 각 응용 프로그램은 서로 기능이 비슷하며 다음과 같은 특징을 갖고 있습니다.
 
-- **Docker platform:** The core components necessary to create and run containers.
-- **Docker CLI:** The command-line interface for interacting with Docker containers.
-- **Docker Compose:** Automation tooling for defining and running multi-container applications.
+- **Docker 플랫폼:** 컨테이너를 만들고 실행하는 데 필요한 핵심 구성 요소입니다.
+- **Docker CLI:** Docker 컨테이너와 상호 작용하기 위한 명령줄 인터페이스입니다.
+- **Docker Compose:** 다중 컨테이너 응용 프로그램을 정의하고 실행하는 자동화 도구입니다.
 
-Open the appropriate link below in a new tab to install Docker on your operating system. 
+아래 해당 링크를 새 탭에서 열고 Docker를 운영 체제에 설치합니다. 
 
-- [Docker for Windows](https://www.docker.com/docker-windows)
-- [Docker for Mac](https://www.docker.com/docker-mac)
+- [Windows용 Docker](https://www.docker.com/docker-windows)
+- [Mac용 Docker](https://www.docker.com/docker-mac)
 
-## Docker for Windows environments
+## <a name="docker-for-windows-environments"></a>Windows용 Docker 환경
 
-When you use Docker for Windows, two environments are available: Linux and Windows. Using the Linux environment allows you to run Linux containers on your Windows system. You can select an environment by right-clicking on the Docker task bar icon, selecting **Switch to Linux containers**, and following the on-screen prompts.
+Windows용 Docker를 사용하는 경우 Linux 및 Windows 두 가지 환경을 사용할 수 있습니다. Linux 환경을 사용하면 Windows 시스템에서 Linux 컨테이너를 실행할 수 있습니다. Docker 작업 표시줄 아이콘을 마우스 오른쪽 단추로 클릭하고, **Linux 컨테이너로 전환**을 선택하고, 화면의 지시에 따라 환경을 선택할 수 있습니다.
 
-![Docker for Windows, switch to Linux containers](../media-draft/2-docker-linux.png)
+![Windows용 Docker, Linux 컨테이너로 전환](../media-draft/2-docker-linux.png)
 
 > [!NOTE]
-> The steps in this tutorial assume that your system is configured to work with Linux containers.
+> 이 자습서의 단계에서는 시스템이 Linux 컨테이너를 사용하도록 구성되었다고 가정합니다.
 
-## Docker on Linux
+## <a name="docker-on-linux"></a>Linux의 Docker
 
-If you're working on a Linux-based system, the Docker server components and CLI tools can be manually installed. Follow the instructions found on [About Docker CE](https://docs.docker.com/install/#server) for your specific Linux distribution.
+Linux 기반 시스템에서 작업하는 경우 Docker 서버 구성 요소 및 CLI 도구를 수동으로 설치할 수 있습니다. [Docker CE 정보](https://docs.docker.com/install/#server)에서 해당 Linux 배포판에 대한 지침을 따르세요.
 
-## Validate configuration
+## <a name="validate-configuration"></a>구성의 유효성 검사
 
-To validate that Docker has been successfully installed and configured, open a terminal and run the following command:
+Docker가 성공적으로 설치 및 구성되었는지 확인하려면 터미널을 열고 다음 명령을 실행합니다.
 
 ```bash
 docker search nginx
 ```
 
-If you see output similar to the following, your environment is ready for the next unit.
+다음과 비슷한 출력이 표시되면 다음 단원을 진행하기 위한 환경 준비가 완료된 것입니다.
 
 ```output
 NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -65,6 +65,6 @@ ansibleplaybookbundle/nginx-apb                        An APB to deploy NGINX   
 mailu/nginx                                            Mailu nginx frontend                            0                                       [OK]
 ```
 
-## Summary
+## <a name="summary"></a>요약
 
-In this unit, you prepared a local container development environment. In the next unit, you will learn about some basic Docker operations.
+이 섹션에서는 로컬 컨테이너 개발 환경을 준비했습니다. 다음 섹션에서는 몇 가지 기본적인 Docker 작업에 대해 알아보겠습니다.

@@ -1,24 +1,24 @@
 ### YamlMime:Module
 uid: learn.create-cosmos-db-for-scale
 metadata:
-  title: Create an Azure Cosmos DB database built to scale
-  description: Learn how to create an Azure Cosmos DB account, database, and collection built to scale as your application grows.
+  title: 크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기
+  description: 응용 프로그램이 커지면 이에 따라 크기를 조정하도록 빌드된 Azure Cosmos DB 계정, 데이터베이스 및 컬렉션을 만드는 방법을 알아봅니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Create an Azure Cosmos DB database built to scale
-summary: Learn how to create an Azure Cosmos DB account, database, and collection built to scale as your application grows.
-abstract: |
-  In this module, you will:
-  - Create a NoSQL database with Azure Cosmos DB
-  - Set the initial throughput volume for your database using request units
-  - Choose a partition key
-  - Create a database and collection in Azure Cosmos DB
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 3db055321d15ba2ef4265a48a8f1aec4748bba8b
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847727"
+title: 크기를 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기
+summary: 응용 프로그램이 커지면 이에 따라 크기를 조정하도록 빌드된 Azure Cosmos DB 계정, 데이터베이스 및 컬렉션을 만드는 방법을 알아봅니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+    - Azure Cosmos DB로 NoSQL 데이터베이스 만들기
+    - 요청 단위를 사용하여 데이터베이스에 대한 초기 처리량 볼륨 설정
+    - 파티션 키 선택
+    - Azure Cosmos DB에 데이터베이스 및 컬렉션 만들기
+prerequisites: 없음
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

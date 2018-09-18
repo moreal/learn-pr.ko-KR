@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.4-choosing-premium-storage
-title: Determine whether to use premium storage
+title: 프리미엄 저장소 사용 여부 확인
 metadata:
-  title: Determine whether to use premium storage
-  description: Determine whether to use premium storage
+  title: 프리미엄 저장소 사용 여부 확인
+  description: 프리미엄 저장소 사용 여부 확인
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 91e2799b0b08abb372135a13c9c7b17b1f2589a2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240227"
 durationInMinutes: 5
-content: |
-  [!include[](includes/4-choosing-premium-storage.md)]
+content: '[!include[](includes/4-choosing-premium-storage.md)]'

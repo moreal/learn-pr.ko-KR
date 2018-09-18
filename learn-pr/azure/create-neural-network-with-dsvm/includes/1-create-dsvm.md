@@ -2,7 +2,7 @@
 
 Linux용 Data Science Virtual Machine은 데이터 과학을 간편하게 시작하도록 하는 가상 머신 이미지입니다. 빠르게 가동하고 실행하기 위해 이미 여러 도구가 빌드되고, 설치되고, 구성되어 있습니다. [Jupyter](http://jupyter.org/), 일부 샘플 Jupyter 노트 및 [TensorFlow](https://www.tensorflow.org/)와 마찬가지로 NVIDIA GPU 드라이버, [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) 및 [NVIDIA cuDNN](https://developer.nvidia.com/cudnn)(CUDA Deep Neural Network) 라이브러리도 포함되어 있습니다. 미리 설치된 모든 프레임워크는 GPU를 지원하지만 CPU에서도 작동합니다. 이 단원은 Azure에서 Linux용 DSVM(Data Science Virtual Machine) 인스턴스를 만듭니다.
 
-1. 브라우저에서 [Azure Portal](https://portal.azure.com/?azure-portal=true)을 엽니다. 로그인하라는 메시지가 표시되면 Microsoft 계정을 사용하여 로그인합니다.
+1. 브라우저에서 [Azure Portal](https://portal.azure.com/?azure-portal=true)을 엽니다.
 
 1. 포털 왼쪽에 있는 메뉴에서 **리소스 만들기**를 클릭한 다음, 검색 상자에 "data science"(따옴표 제외)를 입력합니다. 결과 목록에서 **Linux용 Data Science Virtual Machine(Ubuntu)** 을 선택합니다.
 
@@ -18,9 +18,7 @@ Linux용 Data Science Virtual Machine은 데이터 과학을 간편하게 시작
 
     ![VM 크기 선택](../media-draft/1-create-data-science-vm-2.png)
 
-1. **설정** 블레이드의 인바운드 포트 목록에서 **SSH(22)** 를 선택하여 클라이언트가 포트 22에서 SSH([Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell)) 프로토콜을 사용하여 VM에 연결할 수 있도록 합니다. 그런 다음, **확인**을 클릭합니다.
-
-    ![VM 만들기](../media-draft/1-create-data-science-vm-3.png)
+1. **설정** 블레이드에서 기본값을 그대로 수용하고, **확인** 단추를 클릭합니다.
 
 1. **만들기** 블레이드에서 잠시 VM에 대해 선택한 옵션을 검토하고 **만들기**를 클릭하여 VM 만들기 프로세스를 시작합니다.
 

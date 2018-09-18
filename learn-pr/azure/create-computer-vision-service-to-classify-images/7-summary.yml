@@ -1,48 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.7-summary
-title: Summary and knowledge check
+title: 요약 및 지식 점검
 metadata:
-  title: Summary and knowledge check
-  description: Summary and knowledge check
+  title: 요약 및 지식 점검
+  description: 요약 및 지식 점검
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 4bfc9a1aa36edd1bc613b0fdaef7f89d2e2c35fc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44238068"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Computer Vision quiz'
+  title: Computer Vision 퀴즈
   questions:
-  - content: "What kind of famous images won't be identified with Computer Vision?"
+  - content: Computer Vision을 사용하여 식별할 수 없는 유명한 이미지 종류는 무엇인가요?
     choices:
-    - content: 'Landmarks '
+    - content: '이정표 '
       isCorrect: false
-    - content: 'Celebrities'
+    - content: 유명인
       isCorrect: false
-    - content: 'Movies'
+    - content: 영화
       isCorrect: true
-  - content: 'Which visual features can we elect to receive when analyzing images?'
+  - content: 이미지 분석 시 수신하도록 선택할 수 있는 시각적 기능은 무엇인가요?
     choices:
-    - content: 'Shapes'
+    - content: 도형
       isCorrect: true
-    - content: 'Image categorization'
+    - content: 이미지 분류
       isCorrect: false
-    - content: 'Tags'
+    - content: 태그
       isCorrect: false
-    - content: 'Textual description'
+    - content: 텍스트 설명
       isCorrect: false
-    - content: 'Faces'
+    - content: 얼굴
       isCorrect: false
-    - content: 'Colors'
+    - content: 색
       isCorrect: false
-    - content: 'Adult and suggestive content'
+    - content: 성인 콘텐츠 및 외설적인 콘텐츠
       isCorrect: false
-  - content: 'What does smart cropping do?'
+  - content: 스마트 자르기에서는 어떤 작업이 수행되나요?
     choices:
-    - content: 'Crops pictures from the top left'
+    - content: 왼쪽 위에서 사진 자르기
       isCorrect: false
-    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
+    - content: 얼굴, 초점이 적용된 개체 등 원하는 영역을 기준으로 사진 자르기
       isCorrect: true

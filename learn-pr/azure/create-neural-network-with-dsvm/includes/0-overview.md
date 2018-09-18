@@ -1,4 +1,4 @@
-Linux용 **Data Science Virtual Machine**은 데이터 과학을 간편하게 시작하도록 하는 가상 머신 이미지입니다. 빠르게 가동하고 실행하기 위해 이미 여러 도구가 빌드, 설치 및 구성되어 있습니다. Jupyter 및 TensorFlow와 마찬가지로 NVIDIA GPU 드라이버, NVIDIA CUDA 및 NVIDIA cuDNN(CUDA Deep Neural Network) 라이브러리도 포함되어 있습니다. 미리 설치된 모든 프레임워크는 GPU를 지원하지만 CPU에서도 작동합니다.
+Linux용 **Data Science Virtual Machine**은 데이터 과학을 사용하는 시작을 간소화하는 가상 머신 이미지입니다. 여러 도구는 이미 신속하게 실행하도록 작성되고, 설치되고, 구성되었습니다. Jupyter 및 TensorFlow와 마찬가지로 NVIDIA GPU 드라이버, NVIDIA CUDA 및 NVIDIA cuDNN(CUDA Deep Neural Network) 라이브러리도 포함되어 있습니다. 미리 설치된 모든 프레임워크는 GPU를 지원하지만 CPU에서도 작동합니다.
 
 ## <a name="learning-objectives"></a>학습 목표
 
@@ -11,8 +11,9 @@ Linux용 **Data Science Virtual Machine**은 데이터 과학을 간편하게 �
 
 ### <a name="prerequisites"></a>필수 구성 요소
 <!---TODO: This is really long, need to make more concise and also add to index.yml--->
+<!---TODO: Update for free sandbox.--->
 
-이 모듈을 완료하기 위해 Azure 구독 및 Xfce 원격 데스크톱 클라이언트가 필요합니다. 자세한 내용은 필수 구성 요소 섹션을 참조하세요. Azure 구독이 아직 없는 경우 시작하기 전에 [무료 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+이 모듈을 완료하기 위해 Azure 구독 및 Xfce 원격 데스크톱 클라이언트가 필요합니다.
 
  1. **Microsoft Azure 계정**: 이 모듈을 진행하려면 유효한 활성 Azure 계정이 필요합니다. 아직 등록하지 않은 경우 [평가판](https://azure.microsoft.com/free/)에 등록할 수 있습니다.
 

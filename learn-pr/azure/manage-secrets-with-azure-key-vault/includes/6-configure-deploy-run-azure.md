@@ -1,4 +1,4 @@
-이제 Azure에서 앱을 실행해 보겠습니다. Azure App Service 앱을 만들고, MSI 및 자격 증명 모음 구성을 사용하여 앱을 설정하고, 코드를 배포해야 합니다.
+이제 Azure에서 앱을 실행해 보겠습니다. Azure App Service 앱을 만들고, 관리 ID 및 자격 증명 모음 구성을 사용하여 앱을 설정하고, 코드를 배포해야 합니다.
 
 ## <a name="create-the-app-service-plan-and-app"></a>App Service 계획 및 앱 만들기
 
@@ -15,15 +15,15 @@ az webapp create --name <your-unique-app-name> --plan keyvault-exercise-plan --r
 
 ## <a name="add-configuration-to-the-app"></a>앱에 구성 추가
 
-Azure에 배포하려면 구성 파일 대신 응용 프로그램 설정에 VaultName 구성을 넣는 App Service 모범 사례를 따릅니다.
+Azure에 배포하려면 구성 파일 대신 응용 프로그램 설정에 VaultName 구성을 배치하는 App Service 모범 사례를 따릅니다.
 
 ```azurecli
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
 ```
 
-## <a name="enable-msi"></a>MSI 사용
+## <a name="enable-managed-identity"></a>관리 ID 사용
 
-앱에서 MSI를 사용하도록 설정하는 것은 간단한 작업입니다.
+앱에서 관리 ID를 사용하도록 설정하는 것은 간단한 작업입니다.
 
 ```azurecli
 az webapp identity assign --name <your-unique-app-name> --resource-group keyvault-exercise-group
@@ -36,7 +36,7 @@ az webapp identity assign --name <your-unique-app-name> --resource-group keyvaul
 이제 앱 ID 권한을 제공하여 프로덕션 환경 자격 증명 모음의 비밀을 가져오고 나열해야 합니다. 이전 단계에서 복사한 **principalId** 값을 아래 명령에서 **object-id**의 값으로 사용합니다.
 
 ```azurecli
-az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-principleid> --secret-permissions get list
+az keyvault set-policy --name <your-unique-vault-name> --object-id <your-managed-identity-principleid> --secret-permissions get list
 ```
 
 ## <a name="deploy-the-app-and-try-it-out"></a>앱을 배포하고 사용해 보기

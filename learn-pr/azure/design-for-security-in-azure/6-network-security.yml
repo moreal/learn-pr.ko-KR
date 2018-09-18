@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.6-network-security
-title: Network security
+title: 네트워크 보안
 metadata:
-  title: Network security
-  description: In this unit we'll discuss how to secure your network infrastructure
+  title: 네트워크 보안
+  description: 이 섹션에서는 네트워크 인프라를 보호하는 방법에 대해 알아보겠습니다.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 90be1e461ce19e0bd7a18e869397db2d0ab3abfa
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240756"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/6-network-security.md)]
 quiz:
-  title: 'Knowledge Check - Network security'
+  title: 지식 검사 - 네트워크 보안
   questions:
-  - content: 'Azure NSGs can be used to secure communication between which of the following?'
+  - content: 다음 중 어떤 항목 간의 통신을 보호하는 데 Azure NSG를 사용할 수 있나요?
     choices:
-    - content: 'Communication between virtual machines and the internet'
+    - content: 가상 머신과 인터넷 간 통신
       isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'Communication between virtual machines within a VNet'
+      incorrectExplanation: NSG를 사용하여 이 통신 흐름을 보호할 수 있지만 이 선택만 올바른 것은 아닙니다.
+    - content: VNet 내의 가상 머신 간 통신
       isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'Communication with systems in an on-premises network'
+      incorrectExplanation: NSG를 사용하여 이 통신 흐름을 보호할 수 있지만 이 선택만 올바른 것은 아닙니다.
+    - content: 온-프레미스 네트워크에 있는 시스템과의 통신
       isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'All of the above'
+      incorrectExplanation: NSG를 사용하여 이 통신 흐름을 보호할 수 있지만 이 선택만 올바른 것은 아닙니다.
+    - content: 위의 모든 항목
       isCorrect: true
-      correctExplanation: 'NSGs can be used to secure all of the above communication flows.'
-  - content: 'Which of the following is not a method of protecting internet facing services from network attacks?'
+      correctExplanation: NSG는 위의 모든 통신 흐름을 보호하는 데 사용할 수 있습니다.
+  - content: 다음 중 인터넷 연결 서비스를 네트워크 공격으로부터 보호하는 방법이 아닌 것은 무엇인가요?
     choices:
-    - content: 'Azure DDoS'
+    - content: Azure DDoS
       isCorrect: false
-      incorrectExplanation: 'Azure DDoS can be used to protect your internet facing services from a DoS attack. '
-    - content: 'Azure Application Gateway WAF'
+      incorrectExplanation: 'Azure DDoS는 DoS 공격에서 인터넷 연결 서비스를 보호하는 데 사용할 수 있습니다. '
+    - content: Azure Application Gateway WAF
       isCorrect: false
-      incorrectExplanation: 'Application Gateway WAF can be used to protect your internet facing services from attacks such as XSS and SQL injection.'
-    - content: 'Azure Disk Encryption'
+      incorrectExplanation: Application Gateway WAF는 XSS 및 SQL 삽입과 같은 공격으로부터 인터넷 연결 서비스를 보호하는 데 사용할 수 있습니다.
+    - content: Azure Disk Encryption
       isCorrect: true
-      correctExplanation: 'Azure Disk Encryption protects your virtual machine VHDs from exposure, but does not provide protection from network based attacks.'
-    - content: 'A network virtual appliance'
+      correctExplanation: Azure Disk Encryption은 가상 머신 VHD가 노출되지 않도록 보호하지만 네트워크 기반 공격으로부터 보호를 제공하지는 않습니다.
+    - content: 네트워크 가상 어플라이언스
       isCorrect: false
-      incorrectExplanation: 'Network virtual appliances can provide customized network protection for your internet facing resources.'
+      incorrectExplanation: 네트워크 가상 어플라이언스는 인터넷 연결 리소스에 대한 사용자 지정 네트워크 보호를 제공할 수 있습니다.

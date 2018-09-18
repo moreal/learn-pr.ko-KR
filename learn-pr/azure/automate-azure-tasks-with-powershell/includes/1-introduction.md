@@ -9,10 +9,10 @@ Azure VM(Virtual Machines)을 사용하여 CRM(고객 관계 관리) 소프트�
 ## <a name="learning-objectives"></a>학습 목표
 이 모듈에서는 다음을 수행합니다.
 
-- Azure PowerShell이 Azure 관리 작업에 적합한 도구인지 결정합니다.
-- Linux, macOS 및 Windows에 Azure PowerShell을 설치합니다.
-- Azure PowerShell을 사용하여 Azure 구독에 연결합니다.
-- Azure PowerShell을 사용하여 Azure 리소스를 만듭니다.
+- Azure PowerShell이 Azure 관리 작업에 적합한 도구인지 결정
+- Linux, macOS 및 Windows에 Azure PowerShell 설치
+- Azure PowerShell을 사용하여 Azure 구독에 연결
+- Azure PowerShell을 사용하여 Azure 리소스 만들기
 
 ## <a name="prerequisites"></a>필수 조건
 

@@ -1,24 +1,24 @@
-You've successfully created a full-featured, serverless application using Azure services.
+Azure 서비스를 사용하여 모든 기능을 갖춘 서버리스 응용 프로그램을 만들었습니다.
 
-## Clean up
+## <a name="clean-up"></a>정리
 <!---TODO: Update for sandbox--->
 
-When you are done working with this application, you can use the following command to delete all resources created during the tutorial:
+이 응용 프로그램의 작업이 완료되면 다음 명령을 사용하여 자습서 중에 만들어진 모든 리소스를 삭제할 수 있습니다.
 
 ```azurecli
 az group delete --name first-serverless-app
 ```
 
-Type `y` when prompted.  
+메시지가 표시되면 `y`를 입력합니다.  
 
-## Next steps
+## <a name="next-steps"></a>다음 단계
 
-In this module, you learned how to:
-  - Configure Azure Blob storage to host a static website and uploaded images.
-  - Upload images to Azure Blob storage using Azure Functions.
-  - Resize images using Azure Functions.
-  - Store image metadata in Azure Cosmos DB. 
-  - Use the Cognitive Services Computer Vision API to auto-generate image captions.
-  - Use Azure Active Directory to secure the web app by authenticating users.
+이 모듈에서는 다음을 수행하는 방법을 알아보았습니다.
+  - 정적 웹 사이트 및 업로드된 이미지를 호스트하도록 Azure Blob Storage를 구성합니다.
+  - Azure Functions를 사용하여 Azure Blob Storage에 이미지를 업로드합니다.
+  - Azure Functions를 사용하여 이미지의 크기를 조정합니다.
+  - Azure Cosmos DB에서 이미지 메타데이터를 저장합니다. 
+  - Cognitive Services Computer Vision API를 사용하여 이미지 캡션을 자동 생성합니다.
+  - 사용자를 인증하여 웹앱을 보호하도록 Azure Active Directory를 사용할 수 있습니다.
 
-To learn how to connect even more services to Functions, continue to the [Functions with Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-twitter-email) tutorial.
+Functions에 추가 서비스를 연결하는 방법을 알아보려면 [Logic Apps를 사용하는 함수](https://docs.microsoft.com/azure/azure-functions/functions-twitter-email) 자습서를 진행합니다.

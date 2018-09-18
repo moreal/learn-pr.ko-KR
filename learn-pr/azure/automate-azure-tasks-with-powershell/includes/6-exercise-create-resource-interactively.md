@@ -3,6 +3,7 @@ Linux 관리 도구 모음을 만드는 회사에서 일한다고 가정해 보�
 이러한 VM을 회사에서 내부 테스트용으로 사용하는 VM과구분하려면 VM을 포함할 전용 리소스 그룹을 만듭니다. 리소스 그룹은 하나만 필요하므로 대화형 모드의 Azure PowerShell을 이 작업에 사용하는 것이 합리적입니다.
 
 ## <a name="steps-to-create-a-resource-group"></a>리소스 그룹을 만드는 단계
+<!---TODO: Update for sandbox.--->
 
 1. PowerShell을 시작합니다.
 
@@ -34,7 +35,7 @@ Linux 관리 도구 모음을 만드는 회사에서 일한다고 가정해 보�
 
 다음 스크린샷은 Azure Portal에서 리소스 그룹 범주의 위치를 보여 줍니다.
 
-![리소스 그룹 범주가 강조 표시된 Azure Portal 즐겨찾기 블레이드의 스크린샷](../media/6-listing-resource-groups.png)
+![리소스 그룹 범주가 강조 표시된 Azure Portal 즐겨찾기 블레이드의 스크린샷입니다.](../media/6-listing-resource-groups.png)
 
 ## <a name="summary"></a>요약
 이 연습에서는 대화형 PowerShell 세션의 일반적인 패턴을 보여 줍니다. 표준 cmdlet을 사용하여 AzureRM 모듈을 가져온 후에 Azure PowerShell cmdlet을 사용하여 특정 작업을 수행했습니다. 이제 구독에 리소스 그룹이 있으며 VM을 만들 준비가 되었습니다.

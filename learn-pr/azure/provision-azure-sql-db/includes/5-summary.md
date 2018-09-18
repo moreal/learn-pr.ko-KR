@@ -8,11 +8,13 @@ Azure SQL 데이터베이스가 작동 중이니 원하는 SQL Server 관리 도
 
 이제 막 사용하기 시작했거나, 미리 구성된 간단한 구매 옵션을 원하는 경우 DTU를 선택합니다. 만들고 비용을 지불하는 계산 및 저장소 리소스를 보다 효과적으로 제어하려는 경우 vCore를 선택합니다.
 
-Azure Cloud Shell을 사용하면 데이터베이스 작업을 쉽게 시작할 수 있습니다. Cloud Shell에서 Azure CLI에 액세스할 수 있고, 여기에서 Azure 리소스에 대한 정보를 얻을 수 있습니다. 또한 Cloud Shell은 새 데이터베이스로 즉시 작업하는 데 도움이 되는 `sqlcmd`와 같은 여러 다양한 공통 유틸리티도 제공합니다.
+Azure Cloud Shell을 사용하면 데이터베이스 작업을 쉽게 시작할 수 있습니다. Cloud Shell에서 Azure CLI에 액세스할 수 있고, 여기에서 Azure 리소스에 대한 정보를 얻을 수 있습니다. 또한 Cloud Shell은 새 데이터베이스로 즉시 작업하는데 도움이 되는 `sqlcmd`와 같은 여러 다양한 공통 유틸리티도 제공합니다.
 
-## <a name="cleanup"></a>정리
+## <a name="clean-up"></a>정리
 
-Azure SQL Database 설치로 자유롭게 실험해보세요. 완료되면 데이터베이스를 삭제하는 가장 쉬운 방법은 부모 리소스 그룹을 삭제하는 것입니다.
+<!---TODO: Update for sandbox?--->
+
+Azure SQL Database 설치를 자유롭게 실험해보세요. 완료되면 데이터베이스를 삭제하는 가장 쉬운 방법은 부모 리소스 그룹을 삭제하는 것입니다.
 
 1. 포털에서 **리소스 그룹**을 클릭합니다.
 
@@ -20,9 +22,7 @@ Azure SQL Database 설치로 자유롭게 실험해보세요. 완료되면 데�
 
 1. **리소스 그룹 삭제**를 클릭합니다.
 
-    ![리소스 그룹 삭제](../media-draft/delete-rg.png)
-
-1. 프롬프트에서 “logistics-db-rg”를 입력하고 **삭제**를 클릭합니다.
+1. 프롬프트에서 "logistics-db-rg"를 입력하고 **삭제**를 클릭합니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

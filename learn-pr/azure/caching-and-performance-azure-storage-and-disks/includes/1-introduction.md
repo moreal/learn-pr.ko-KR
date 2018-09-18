@@ -1,14 +1,14 @@
-You manage your corporate database infrastructure of SQL Server VMs running in Azure. Times are good, and you need to scale up your operation, while still managing costs. Some database operations involve many reads of existing data. The regular invoice and reporting runs are write-heavy operations. You'd like to find a way to optimize your infrastructure to handle all operation types. Before investing in infrastructure improvements, you decide to explore VM disk caching options first.
+Azure에서 실행되는 SQL Server VM의 회사 데이터베이스 인프라를 관리합니다. 경기가 좋아 작업을 강화하지만 계속해서 비용을 관리해야 합니다. 일부 데이터베이스 작업은 기존 데이터를 많이 읽습니다. 정기적인 청구서 및 보고 실행은 쓰기가 많은 작업입니다. 모든 작업 유형을 처리하도록 인프라를 최적화하는 방법을 찾고 싶습니다. 인프라 개선에 투자하기 전에 먼저 VM 디스크 캐싱 옵션을 살펴보기로 했습니다.
 
-Caching is a common approach to speeding up computing resources. Azure supports a range of caching technologies to help optimize data access across the Azure landscape, including specific cache options for the Azure storage and disks used by Azure virtual machines (VMs).
+캐싱은 컴퓨팅 리소스의 속도를 높이기 위한 일반적인 접근 방법입니다. Azure는 Azure VM(Virtual Machines)에서 사용하는 Azure Storage 및 디스크에 대한 특정 캐시 옵션을 비롯하여 Azure 환경에서 데이터 액세스를 최적화하는 데 도움이 되는 광범위한 캐싱 기술을 지원합니다.
 
-We're going to explore all disk caching options in Azure, and manage disk caching with the portal and PowerShell.
+Azure에서 모든 디스크 캐싱 옵션을 살펴보고 포털 및 PowerShell을 사용하여 디스크 캐싱을 관리합니다.
 
-## Learning objectives
+## <a name="learning-objectives"></a>학습 목표
 
-In this module, you will:
+이 모듈에서는 다음을 수행합니다.
 
-- Describe the key considerations around disk performance in Azure (IOPS)
-- Describe the effects of caching on disk performance in Azure
-- Enable and manage cache settings with the Azure portal
-- Enable and manage cache settings with PowerShell
+- Azure의 디스크 성능(IOPS)에 대한 주요 고려 사항 설명
+- Azure의 디스크 성능에 미치는 캐싱의 영향 설명
+- Azure Portal을 사용하여 캐시 설정을 사용 및 관리
+- PowerShell을 사용하여 캐시 설정 사용 및 관리

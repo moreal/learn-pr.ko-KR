@@ -1,8 +1,8 @@
 데이터베이스를 앱에 연결하기 전에 연결할 수 있는지 확인하고, 기본 테이블을 추가하고, 샘플 데이터로 작업을 수행할 수 있습니다.
 
-Microsoft는 Azure SQL Database에 대한 인프라, 소프트웨어 업데이트 및 패치를 유지 관리합니다. 또한 기타 모든 SQL Server 설치와 마찬가지로 Azure SQL Database를 관리할 수 있습니다. 예를 들어, Visual Studio, SQL Server Management Studio 또는 기타 도구를 사용하여 Azure SQL Database를 관리할 수 있습니다.
+Microsoft는 Azure SQL Database에 대한 인프라, 소프트웨어 업데이트 및 패치를 유지 관리합니다. 또한 기타 모든 SQL Server 설치와 마찬가지로 Azure SQL Database를 관리할 수 있습니다. 예를 들어, Visual Studio, SQL Server Management Studio, SQL Server Operations Studio 또는 기타 도구를 사용하여 Azure SQL Database를 관리할 수 있습니다.
 
-데이터베이스에 액세스한 후 앱에 연결하는 방법은 사용자에게 달려있습니다. 그러나 여기서는 데이터베이스로 여러 작업을 수행해보기 위해 포털에서 직접 연결하고, 테이블을 만들고, 몇 가지 기본 CRUD 작업을 실행합니다. 다음 내용을 배웁니다.
+데이터베이스에 액세스하고 앱에 연결하는 방법은 사용자가 결정합니다. 그러나 여기서는 데이터베이스로 여러 작업을 수행해보기 위해 포털에서 직접 연결하고, 테이블을 만들고, 몇 가지 기본 CRUD 작업을 실행합니다. 다음 내용을 배웁니다.
 
 - Cloud Shell의 정의 및 포털에서 액세스하는 방법
 - Azure CLI에서 연결 문자열을 비롯한 데이터베이스에 대한 정보에 액세스하는 방법
@@ -31,8 +31,6 @@ Cloud Shell에는 인기 있는 도구 및 텍스트 편집기가 포함되어 �
 
 1. 맨 위의 포털에서 **Cloud Shell**을 클릭합니다.
 
-    ![Cloud Shell 열기](../media-draft/open-cloud-shell.png)
-
 1. 실행할 `az` 명령에는 리소스 그룹의 이름과 Azure SQL 논리 서버의 이름이 필요합니다. 나중에 다시 입력하지 않으려면 이 `azure configure` 명령을 실행하여 기본값으로 지정합니다.
     `contoso-logistics`를 Azure SQL 논리 서버의 이름으로 바꿉니다.
 
@@ -45,7 +43,7 @@ Cloud Shell에는 인기 있는 도구 및 텍스트 편집기가 포함되어 �
     ```azurecli
     az sql db list
     ```
-    JSON의 대형 블록이 출력으로 표시됩니다. 
+    JSON의 대형 블록이 출력으로 표시됩니다.
 
 1. 데이터베이스 이름만 필요하면 이 명령을 한 번 더 실행합니다. 이번에는 출력을 `jq`로 파이프하여 이름 필드만 출력합니다.
     ```azurecli
@@ -62,9 +60,9 @@ Cloud Shell에는 인기 있는 도구 및 텍스트 편집기가 포함되어 �
       }
     ]
     ```
-    **Logistics**는 데이터베이스입니다. SQL Server와 마찬가지로 **master**에는 로그온 계정 및 시스템 구성 설정과 같은 서버 메타데이터가 포함됩니다.
+    **물류**는 데이터베이스입니다. SQL Server와 마찬가지로 **master**에는 로그인 계정 및 시스템 구성 설정과 같은 서버 메타데이터가 포함됩니다.
 
-1. 이 `az sql db show` 명령을 실행하여 **Logistics** 데이터베이스에 대한 세부 정보를 가져옵니다.
+1. 이 `az sql db show` 명령을 실행하여 **물류** 데이터베이스에 대한 세부 정보를 가져옵니다.
 
     ```azurecli
     az sql db show --name Logistics
@@ -136,14 +134,14 @@ CRUD는 **만들기**, **읽기**, **업데이트** 및 **삭제**를 의미합�
     name
     --------------------------------------------------------------------------------------------------------------------------------
     Drivers
-    
+
     (1 rows affected)
     ```
 
 1. 이 `INSERT` T-SQL 문을 실행하여 테이블에 샘플 행을 추가합니다. 이것은 **만들기** 작업입니다.
 
     ```sql
-    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Orton', 'Erick', 'Springfield');
+    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
     GO
     ```
 
@@ -166,14 +164,14 @@ CRUD는 **만들기**, **읽기**, **업데이트** 및 **삭제**를 의미합�
     DriverID
     -----------
             123
-    
+
     (1 rows affected)
     ```
 
 1. 이 `UPDATE` T-SQL 문을 실행하여 `DriverID`가 123인 기사의 출생 도시를 “Springfield”에서 “Springfield, OR”로 변경합니다. 이것은 **업데이트** 작업입니다.
 
     ```sql
-    UPDATE Drivers SET OriginCity='Springfield, OR' WHERE DriverID=123;
+    UPDATE Drivers SET OriginCity='Springfield, AK' WHERE DriverID=123;
     GO
     ```
 
@@ -189,7 +187,7 @@ CRUD는 **만들기**, **읽기**, **업데이트** 및 **삭제**를 의미합�
     DELETE FROM Drivers WHERE DriverID=123;
     GO
     ```
-    
+
     ```console
     (1 rows affected)
     ```
@@ -206,7 +204,7 @@ CRUD는 **만들기**, **읽기**, **업데이트** 및 **삭제**를 의미합�
     ```console
     -----------
               0
-    
+
     (1 rows affected)
     ```
 

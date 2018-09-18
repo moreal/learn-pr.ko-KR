@@ -12,9 +12,8 @@ Steve는 앱의 여러 인스턴스를 서로 다른 서버에서 실행했다�
 
 ## <a name="learning-objectives"></a>학습 목표
 
-이 모듈에서는 다음을 수행합니다.
-
-- Azure Key Vault에 저장할 수 있는 정보 종류를 이해합니다.
-- Azure Key Vault 저장소를 만듭니다.
-- Azure Key Vault를 사용하여 인증합니다.
-- Azure Key Vault의 비밀에 액세스합니다.
+  이 모듈에서는 다음을 수행합니다.
+    - Azure Key Vault에 저장할 수 있는 정보 형식 탐색
+    - Azure Key Vault를 만들고 이를 사용하여 비밀 구성 값 저장
+    - Azure 리소스에 대한 관리 ID를 사용하여 Azure App Service 웹앱에서 자격 증명 모음에 대한 보안 액세스 사용하도록 설정
+    - 자격 증명 모음에서 비밀을 검색하는 웹 응용 프로그램 구현

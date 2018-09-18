@@ -1,4 +1,4 @@
-빌드 중인 응용 프로그램은 사진 갤러리입니다. API를 호출하는 클라이언트 쪽 JavaScript를 사용하여 이미지를 업로드하고 표시합니다. 이 모듈에서 이미지를 업로드하려면 시간이 제한된 URL을 생성하는 서버를 사용하지 않는 함수를 사용하여 API를 만듭니다. 웹 응용 프로그램은 [Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)를 사용하여 Blob Storage에 이미지를 업로드하기 위해 생성된 URL을 사용합니다.
+빌드 중인 응용 프로그램은 사진 갤러리입니다. API를 호출하는 클라이언트 쪽 JavaScript를 사용하여 이미지를 업로드하고 표시합니다. 이 단원에서는 이미지를 업로드하기 위해 시간이 제한된 URL을 생성하는 서버리스 함수를 사용하여 API를 만듭니다. 웹 응용 프로그램은 [Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)를 사용하여 Blob Storage에 이미지를 업로드하기 위해 이 URL을 사용합니다.
 
 ## <a name="create-a-blob-storage-container-for-images"></a>이미지에 대한 Blob Storage 컨테이너 만들기
 
@@ -18,20 +18,19 @@ Azure Functions는 서버를 사용하지 않는 함수를 실행하기 위한 �
 
 Azure Functions 앱은 하나 이상의 서버리스 함수에 대한 컨테이너입니다.
 
-- **first-serverless-app**이라는 이전에 만든 리소스 그룹에서 고유한 이름의 새 Functions 앱을 만듭니다. Functions 앱에는 저장소 계정이 필요합니다. 이 자습서에서는 기존 저장소 계정을 사용합니다.
+- **first-serverless-app**이라는 이전에 만든 리소스 그룹에서 고유한 이름의 새 Functions 앱을 만듭니다. Functions 앱에는 저장소 계정이 필요합니다. 이 단원에서는 마지막 단원에서 만든 기존 저장소 계정을 사용합니다.
 
     ```azurecli
     az functionapp create -n <function app name> -g first-serverless-app -s <storage account name> -c westcentralus
     ```
 
-## <a name="create-an-http-triggered-serverless-function"></a>HTTP 트리거 서버를 사용하지 않는 함수 만들기
+## <a name="create-an-http-triggered-serverless-function"></a>HTTP 트리거 서버리스 함수 만들기
 
 Blob Storage에 이미지를 안전하게 업로드하기 위해 사진 갤러리 웹앱을 통해 서버리스 함수에 HTTP를 요청하여 시간이 제한된 URL을 생성할 수 있습니다. 이 함수는 HTTP 요청에 의해 트리거되고 Azure Storage SDK를 사용하여 보안 URL을 생성하고 반환합니다.
 
-1. Functions 앱을 만든 후에 **검색** 상자를 사용하여 Azure Portal에서 검색합니다. 앱을 클릭하여 엽니다.
+1. Functions 앱을 만든 후에 **검색** 상자를 사용하여 [Azure Portal](https://portal.azure.com/?azure-portal=true)에서 검색합니다. 앱을 클릭하여 엽니다.
 
     ![Functions 앱 열기](../media/2-search-function-app.png)
-
 
 1. Functions 앱 창의 왼쪽 탐색에서 **함수**를 가리키고 더하기 기호(+)를 클릭하여 새 서버리스 함수를 만듭니다.
 
@@ -39,7 +38,7 @@ Blob Storage에 이미지를 안전하게 업로드하기 위해 사진 갤러�
 
 1. **사용자 지정 함수**를 클릭하여 함수 템플릿 목록을 확인합니다.
 
-1. **HttpTrigger** 템플릿을 찾고 사용할 언어를 클릭합니다(C# 또는 JavaScript).
+1. **HttpTrigger** 템플릿을 찾고 C# 또는 JavaScript를 클릭합니다.
 
 1. 다음 값을 사용하여 Blob 업로드 URL을 생성하는 함수를 만듭니다.
 
@@ -47,37 +46,33 @@ Blob Storage에 이미지를 안전하게 업로드하기 위해 사진 갤러�
     | --- | --- | ---|
     | **언어** | C# 또는 JavaScript | 사용할 언어를 선택합니다. |
     | **함수 이름 지정** | GetUploadUrl | 응용 프로그램이 함수를 검색할 수 있도록 표시된 대로 이 이름을 정확히 입력합니다. |
-    | **권한 부여 수준** | 익명 | 함수가 공개적으로 액세스될 수 있습니다. |
+    | **권한 부여 수준** | 익명 | 함수에 공개적으로 액세스될 수 있습니다. |
 
     ![새 HTTP 트리거 함수에 대한 설정을 입력합니다.](../media/2-new-function-httptrigger.png)
 
 1. **만들기**를 클릭하여 함수를 만듭니다.
 
 ::: zone pivot="csharp"
-1. **C#** 
-
-    함수의 소스 코드가 표시되면 **run.csx** 파일의 모든 콘텐츠를 [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx)의 콘텐츠로 바꿉니다.
+1. (C#) 함수의 소스 코드가 표시되면 **run.csx** 파일의 모든 콘텐츠를 [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx)의 콘텐츠로 바꿉니다.
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. **JavaScript** 
+1. (JavaScript) 이 함수에는 npm의 `azure-storage` 패키지가 필요합니다. 이 패키지는 보안 URL을 빌드하는 데 필요한 SAS(공유 액세스 서명) 토큰을 생성합니다. npm 패키지를 설치하려면 왼쪽 탐색 창에서 Functions 앱을 클릭하고, **플랫폼 기능**을 클릭합니다.
 
-    1. (JavaScript) 이 함수에는 npm의 `azure-storage` 패키지가 필요합니다. 이 패키지는 보안 URL을 빌드하는 데 필요한 SAS(공유 액세스 서명) 토큰을 생성합니다. npm 패키지를 설치하려면 왼쪽 탐색 창에서 Functions 앱을 클릭하고, **플랫폼 기능**을 클릭합니다.
+1. (JavaScript) **콘솔**을 클릭하여 콘솔 창을 표시합니다.
 
-    1. (JavaScript) **콘솔**을 클릭하여 콘솔 창을 표시합니다.
+    ![콘솔 창을 엽니다.](../media/2-open-console.jpg)
 
-        ![콘솔 창을 엽니다.](../media/2-open-console.jpg)
+1. (JavaScript) `cd d:\home\site\wwwroot` 명령을 실행하여 현재 디렉터리가 **d:\home\site\wwwroot**인지 확인합니다.
 
-    1. (JavaScript) `cd d:\home\site\wwwroot` 명령을 실행하여 현재 디렉터리가 **d:\home\site\wwwroot**인지 확인합니다.
+1. (JavaScript) `npm init -y` 명령을 실행하여 빈 **package.json** 파일을 만듭니다.
 
-    1. (JavaScript) `npm init -y` 명령을 실행하여 빈 **package.json** 파일을 만듭니다.
+1. (JavaScript) 패키지를 설치하려면 콘솔에서 `npm install --save azure-storage` 명령을 실행합니다. 패키지를 **package.json**으로 저장합니다. 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
 
-    1. (JavaScript) 패키지를 설치하려면 콘솔에서 `npm install --save azure-storage` 명령을 실행합니다. 패키지를 **package.json**으로 저장합니다. 작업을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
+1. (JavaScript) 왼쪽 탐색에서 함수(**GetUploadUrl**)를 클릭하여 함수를 표시합니다. **index.js** 파일의 모든 콘텐츠를 [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js) 파일의 콘텐츠로 바꿉니다.
 
-    1. (JavaScript) 왼쪽 탐색에서 함수(**GetUploadUrl**)를 클릭하여 함수를 표시합니다. **index.js** 파일의 모든 콘텐츠를 [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js) 파일의 콘텐츠로 바꿉니다.
-    
-        ![업데이트 후 index.js의 콘텐츠](../media/2-paste-js.jpg)
+    ![업데이트 후 index.js의 콘텐츠](../media/2-paste-js.jpg)
 
 ::: zone-end
 
@@ -85,7 +80,7 @@ Blob Storage에 이미지를 안전하게 업로드하기 위해 사진 갤러�
 
 1. **저장**을 클릭합니다. 로그 패널을 확인하여 함수가 성공적으로 컴파일되었는지 확인합니다.
 
-함수는 Blob Storage에 파일을 업로드하는 데 사용되는 SAS(공유 액세스 서명) URL이라는 항목을 생성합니다. SAS URL은 단기간 유효하고 단일 파일만을 업로드하도록 허용합니다. [공유 액세스 서명을 사용하는 방법](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)에 대한 자세한 내용은 Blob Storage 설명서를 참조하세요.
+함수는 Blob Storage에 파일을 업로드하는 데 사용되는 SAS(공유 액세스 서명) URL을 생성합니다. SAS URL은 짧은 시간 유효하고 단일 파일만을 업로드하도록 허용합니다. [공유 액세스 서명을 사용하는 방법](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)에 대한 자세한 내용은 Blob Storage 설명서를 참조하세요.
 
 
 ## <a name="add-an-environment-variable-for-the-storage-connection-string"></a>저장소 연결 문자열에 대한 환경 변수 추가
@@ -148,19 +143,20 @@ SAS URL을 생성할 수 있도록 직접 만든 함수에는 저장소 계정�
 
 1. 이전 모듈의 응용 프로그램 URL에 대한 허용 원본을 추가하고 후행 슬래시(/)를 생략합니다. 예: `https://firstserverlessweb.z4.web.core.windows.net`.
 
-    ![서버를 사용하지 않는 웹앱 URL이 추가되었음을 보여주는 CORS 설정](../media/2-add-cors.png)
+    ![서버리스 웹앱 URL이 추가되었음을 보여주는 CORS 설정](../media/2-add-cors.png)
 
 1. **저장**을 클릭합니다.
 
-1. **C#**:
+::: zone pivot="csharp"
+1. (C#) `GetUploadUrl` 함수로 다시 이동한 다음, **통합** 탭을 선택합니다.
 
-   1. (C#) `GetUploadUrl` 함수로 다시 이동한 다음, **통합** 탭을 선택합니다.
+1. (C#) **선택한 HTTP 메서드** 아래에서 **OPTIONS**를 선택합니다.
 
-   1. (C#) **선택한 HTTP 메서드** 아래에서 **OPTIONS**를 선택합니다.
+    **GET**, **POST** 및 **OPTIONS**를 모두 선택해야 합니다. CORS에서는 C# 함수에 기본적으로 선택되지 않은 **OPTIONS** 메서드를 사용합니다.  
 
-      **GET**, **POST** 및 **OPTIONS**를 모두 선택해야 합니다. CORS에서는 C# 함수에 기본적으로 선택되지 않은 **OPTIONS** 메서드를 사용합니다.  
+1. (C#) **저장**을 클릭합니다.
 
-   1. (C#) **저장**을 클릭합니다.
+::: zone-end
 
 1. 계속 Azure Portal에서 Functions 앱으로 이동합니다. **개요** 탭을 선택합니다. **다시 시작**을 클릭하여 CORS에 대한 변경 내용이 적용되는지 확인합니다.
 
@@ -267,7 +263,6 @@ Azure Portal에서 **images** 컨테이너의 콘텐츠를 확인하여 이미�
     ```azurecli
     az storage blob delete-batch -s images --account-name <storage account name>
     ```
-
 
 ## <a name="summary"></a>요약
 
