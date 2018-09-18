@@ -3,6 +3,7 @@
 이 모듈에서는 Azure에서 호스트되는 MEAN(MongoDB, Express, AngularJS 및 Node.js) 웹 응용 프로그램 스택 호스트를 Linux 가상 머신에서 만듭니다.
 
 ## <a name="learning-objectives"></a>학습 목표
+
 이 모듈에서는 다음을 수행합니다.
 
 - MEAN 웹 스택이 적합한지 결정

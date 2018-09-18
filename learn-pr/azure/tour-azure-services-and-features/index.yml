@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: a5c3a2241db3defb45ea95ac5f249893687e90eb
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 070902844ea24a0a53c9a47990022b5bbda398ac
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44243066"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45766744"
 title: Azure 서비스 및 기능 둘러보기
 summary: Azure 계정을 만들고 사용 가능한 서비스를 둘러보고 포털을 사용자 지정합니다.
 abstract: >
@@ -28,10 +28,12 @@ prerequisites: >
   - 클라우드 컴퓨팅의 기본 용어 및 개념에 대한 지식
 
   - Azure에 등록하는 데 사용할 유효한 신용 카드
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/tour-azure-services-and-features.svg
 levels:
-- intermediate
+- beginner
 roles:
+- administrator
+- solution-architect
 - developer
 products:
 - azure

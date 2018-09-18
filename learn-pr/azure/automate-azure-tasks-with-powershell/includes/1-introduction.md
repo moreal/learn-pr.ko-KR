@@ -17,5 +17,5 @@ Azure VM(Virtual Machines)을 사용하여 CRM(고객 관계 관리) 소프트�
 ## <a name="prerequisites"></a>필수 조건
 
 - PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
-- 리소스 그룹 및 가상 머신과 같은 기본 Azure 개념에 대한 지식
+- 리소스 그룹 및 Virtual Machines와 같은 기본 Azure 개념에 대한 지식
 - Azure Portal을 사용하여 Azure 리소스 관리 경험

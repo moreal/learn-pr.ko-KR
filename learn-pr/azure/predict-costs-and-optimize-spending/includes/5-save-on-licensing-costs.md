@@ -42,7 +42,10 @@ Azure Virtual Machines의 SQL Server에 대한 Azure 하이브리드 혜택은 �
 
 ## <a name="use-devtest-subscription-offers"></a>개발/테스트 구독 제안 사용
 
-[Enterprise 개발/테스트](https://azure.microsoft.com/offers/ms-azr-0148p/) 및 [종량제 개발/테스트](https://azure.microsoft.com/offers/ms-azr-0023p/) 제안은 비프로덕션 환경에서 비용을 절약하기 위해 활용할 수 있는 혜택입니다. 이 혜택은 특히 Windows 워크로드와 관련해서 여러 가지 할인을 제공하여, 라이선스 비용 없이 가상 머신에 대한 Linux 요금만 청구합니다. 이 혜택은 SQL Server 및 Visual Studio 구독(이전의 MSDN)이 적용되는 기타 모든 Microsoft 소프트웨어에도 적용됩니다. 이 혜택에 대한 몇 가지 요구 사항이 있습니다. 비프로덕션 워크로드에만 적용되고, 이러한 환경의 모든 사용자(테스터 제외)에게 Visual Studio 구독이 있어야 한다는 것입니다. 간단히 말해, 비프로덕션 워크로드의 경우 이 혜택을 통해 Windows, SQL Server 및 기타 Microsoft 가상 머신 워크로드에서 비용을 절약할 수 있습니다.
+[Enterprise 개발/테스트](https://azure.microsoft.com/offers/ms-azr-0148p/) 및 [종량제 개발/테스트](https://azure.microsoft.com/offers/ms-azr-0023p/) 제안은 비프로덕션 환경에서 비용을 절약하기 위해 활용할 수 있는 혜택입니다. 이 혜택은 특히 Windows 워크로드와 관련해서 여러 가지 할인을 제공하여, 라이선스 비용 없이 가상 머신에 대한 Linux 요금만 청구합니다. 이 혜택은 SQL Server 및 Visual Studio 구독(이전의 MSDN)이 적용되는 기타 모든 Microsoft 소프트웨어에도 적용됩니다. 
+
+이 혜택에 대한 몇 가지 요구 사항이 있습니다. 비프로덕션 워크로드에만 적용되고, 이러한 환경의 모든 사용자(테스터 제외)에게 Visual Studio 구독이 있어야 한다는 것입니다. 간단히 말해, 비프로덕션 워크로드의 경우 이 혜택을 통해 Windows, SQL Server 및 기타 Microsoft 가상 머신 워크로드에서 비용을 절약할 수 있습니다.
+
 다음은 각 제안에 대한 전체 세부 정보입니다. 기업계약 고객인 경우 Enterprise 개발/테스트 제안을 이용하고, 기업계약이 없는 고객이며 대신 PAYG 계정을 사용하는 경우 종량제 개발/테스트 제안을 이용합니다.
 
 ## <a name="bring-your-own-sql-server-license"></a>사용자 SQL Server 라이선스 필요

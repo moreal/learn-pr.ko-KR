@@ -6,7 +6,7 @@ MEAN 스택의 모든 구성 요소는 안정적이고, 잘 인식되고, 오픈
 
 웹 개발을 위해 MEAN 스택을 선택하는 가장 큰 이유 중 하나는 JavaScript에 익숙한 경우입니다. 모든 개별 구성 요소는 웹 호스팅 런타임 및 데이터베이스 구성의 dev-ops 작업부터 웹 응용 프로그램 코드 및 클라이언트 쪽 스크립팅의 개발자 작업까지, JavaScript를 사용하여 개발됩니다.
 
-또한 MEAN 스택의 구성 요소는 현재 모두 널리 사용됩니다. MongoDB, Express, AngularJS 및 Node.js를 사용한 개발에 대한 최신 설명서와 자습서를 쉽게 찾을 수 있습니다. MEAN 스택의 구성 요소는 Windows, macOS 및 Linux를 비롯한 최신 운영 체제와 호환됩니다. 
+또한 MEAN 스택의 구성 요소는 현재 모두 널리 사용됩니다. MongoDB, Express, AngularJS 및 Node.js를 사용한 개발에 대한 최신 설명서와 자습서를 쉽게 찾을 수 있습니다. MEAN 스택의 구성 요소는 Windows, macOS 및 Linux를 비롯한 최신 운영 체제와 호환됩니다.
 
 ## <a name="why-might-mean-not-be-right-for-me"></a>MEAN이 내게 적합하지 않은 이유는 무엇인가요?
 
