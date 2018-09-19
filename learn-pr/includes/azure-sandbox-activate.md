@@ -1,3 +1,0 @@
-## <a name="activate-azure-sandbox"></a><span data-ttu-id="f1411-101">Azure 샌드박스를 활성화합니다.</span><span class="sxs-lookup"><span data-stu-id="f1411-101">Activate Azure Sandbox</span></span>
-
-<span data-ttu-id="f1411-102">이 모듈의 연습을 완료하려면 Azure 샌드박스 평가판을 설정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="f1411-102">We have setup a free Azure sandbox to complete the exercises in this module.</span></span> <span data-ttu-id="f1411-103">시작하려면 **Azure 샌드박스 활성화**를 클릭합니다(아직 클릭하지 않은 경우).</span><span class="sxs-lookup"><span data-stu-id="f1411-103">To get started, click **Activate Azure sandbox** if you have not done so already.</span></span>
