@@ -1,0 +1,41 @@
+### YamlMime:LearningPath
+uid: learn.administer-infrastructure-resources-in-azure
+metadata:
+  title: Azure에서 컨테이너 관리
+  description: 가상 머신 리소스를 만들고, 관리하고, 보호하고, 크기를 조정하는 방법을 알아봅니다.
+  brand: azure
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f4ef55e77016f0914cfee0b1e4f84325ae7229b0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350462"
+title: Azure에서 인프라 리소스 관리
+summary: 가상 머신 리소스를 만들고, 관리하고, 보호하고, 크기를 조정하는 방법을 알아봅니다.
+prerequisites: 없음
+iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+- azure-virtual-machines
+- azure-storage
+- azure-portal
+- azure-monitor
+- azure-clis
+- azure-resource-manager
+modules:
+- learn.introduction-to-azure-virtual-machines
+- learn.create-linux-vm-in-azure
+- learn.create-a-windows-vm-in-azure
+- learn.manage-vms-with-azure-cli
+- learn.add-and-size-disks-in-azure-virtual-machines
+- learn.caching-and-performance-azure-storage-and-disks
+achievement: learn.administer-infrastructure-resources-in-azure.trophy

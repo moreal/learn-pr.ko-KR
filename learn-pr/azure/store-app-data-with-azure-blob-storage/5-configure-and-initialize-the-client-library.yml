@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.5-configure-and-initialize-the-client-library
+title: 클라이언트 라이브러리 구성 및 초기화
+metadata:
+  title: 클라이언트 라이브러리 구성 및 초기화
+  description: 클라이언트 라이브러리 구성 및 초기화
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bedd297c48ead2c2aadba57e57e3bb8b965344fb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352728"
+durationInMinutes: 10
+interactive: bash-editor
+azureSandbox: true
+content: '[!include[](includes/5-configure-and-initialize-the-client-library.md)]'

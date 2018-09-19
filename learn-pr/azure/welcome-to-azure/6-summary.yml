@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.6-summary
+title: 요약
+metadata:
+  title: 요약
+  description: 지금까지 배운 내용을 복습하고 클라우드 학습을 지속하는 방법을 확인합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b0f04ff135762fc48358375b3b2d69b594bc675a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346691"
+durationInMinutes: 1
+content: '[!include[](includes/6-summary.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+title: Azure에서 Linux 가상 머신 만들기
+metadata:
+  title: Azure에서 Linux 가상 머신 만들기
+  description: Azure에서 Linux 가상 머신 만들기
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fd2819e83035bed0463dd7bceb6d084d48957fad
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350849"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-a-linux-virtual-machine.md)]'

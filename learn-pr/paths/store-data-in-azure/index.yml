@@ -1,0 +1,35 @@
+### YamlMime:LearningPath
+uid: learn.store-data-in-azure
+metadata:
+  title: Azure에 데이터 저장
+  description: Azure는 구조화되지 않은 데이터, 보관 데이터, 관계형 데이터 등의 데이터를 저장하는 다양한 방법을 제공합니다. Azure에서 저장소 관리의 기본 사항, Storage 계정을 만드는 방법 및 클라우드에 저장할 데이터에 적합한 모델을 선택하는 방법을 알아봅니다.
+  brand: azure
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8d3ef747e66e1de370379688baa5a8c5c370abcc
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348201"
+title: Azure에 데이터 저장
+summary: Azure는 구조화되지 않은 데이터, 보관 데이터, 관계형 데이터 등의 데이터를 저장하는 다양한 방법을 제공합니다. Azure에서 저장소 관리의 기본 사항, 저장소 계정을 만드는 방법 및 클라우드에 저장할 데이터에 적합한 모델을 선택하는 방법을 알아봅니다.
+prerequisites: 없음
+iconUrl: /learn/achievements/store-data-in-azure.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-storage
+- azure-portal
+- azure-cloud-shell
+modules:
+- learn.choose-storage-approach-in-azure
+- learn.create-azure-storage-account
+- learn.store-app-data-with-azure-blob-storage
+achievement: learn.store-data-in-azure.trophy

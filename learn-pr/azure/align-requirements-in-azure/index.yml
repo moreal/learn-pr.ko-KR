@@ -1,0 +1,44 @@
+### YamlMime:Module
+uid: learn.align-requirements-in-azure
+metadata:
+  title: 요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택
+  description: Azure는 클라우드 리소스를 배포하는 세 가지 방법인 공용 클라우드, 사설 클라우드 및 하이브리드 클라우드를 지원합니다. 이러한 방법 중에서 선택하면 비용, 유지 관리 요구 사항, 보안 등 Azure로 옮기는 서비스의 여러 요소가 변경됩니다. 이 모듈에서는 세 가지 형식을 모두 살펴보고 서비스에 활용할 형식을 합리적으로 결정할 수 있도록 도움을 줍니다. 또한, Azure에서 지원하는 서비스 모델도 신속하게 살펴보겠습니다. 이 서비스 모델을 참고하여 Azure 배포를 계획할 때 시작할 서비스를 결정할 수 있습니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b0b4a1951f2dbcfa12ffd0c726e9e8930b44259f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346644"
+title: 요구 사항에 맞게 Azure의 클라우드 형식 및 서비스 모델 선택
+summary: Azure는 클라우드 리소스를 배포하는 세 가지 방법인 공용 클라우드, 사설 클라우드 및 하이브리드 클라우드를 지원합니다. 이러한 방법 중에서 선택하면 비용, 유지 관리 요구 사항, 보안 등 Azure로 옮기는 서비스의 여러 요소가 변경됩니다. 이 모듈에서는 세 가지 형식을 모두 살펴보고 서비스에 활용할 형식을 합리적으로 결정할 수 있도록 도움을 줍니다. 또한, Azure에서 지원하는 서비스 모델도 신속하게 살펴보겠습니다. 이 서비스 모델을 참고하여 Azure 배포를 계획할 때 시작할 서비스를 결정할 수 있습니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - 각 클라우드 컴퓨팅 배포 모델(공용, 사설 및 하이브리드)을 비교합니다.
+
+  - 각 클라우드 컴퓨팅 서비스 모델의 장점을 이해합니다.
+
+  - 서비스에 사용해야 하는 배포 및 서비스 모델을 결정합니다.
+prerequisites: 없음
+iconUrl: /learn/achievements/align-requirements-in-azure.svg
+levels:
+- beginner
+roles:
+- solution-architect
+products:
+- azure
+units:
+- learn.align-requirements-in-azure.1-introduction
+- learn.align-requirements-in-azure.2-public-private-hybrid
+- learn.align-requirements-in-azure.3-service-models
+- learn.align-requirements-in-azure.4-iaas
+- learn.align-requirements-in-azure.5-paas
+- learn.align-requirements-in-azure.6-saas
+- learn.align-requirements-in-azure.7-knowledge-check
+- learn.align-requirements-in-azure.8-summary
+achievement: learn.align-requirements-in-azure.badge
