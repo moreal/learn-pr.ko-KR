@@ -1,8 +1,0 @@
-<span data-ttu-id="c3671-101">이 모듈에서는 데이터를 저장 하는 데 Azure 사용의 이점을 살펴봅니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-101">In this module, you explored the benefits of using Azure to store your data.</span></span> <span data-ttu-id="c3671-102">Azure는 다음과 같은 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-102">Azure provides the following features:</span></span>
-
-- <span data-ttu-id="c3671-103">구조적 및 비구조적 데이터를 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-103">Storage of both structured and unstructured data.</span></span>
-- <span data-ttu-id="c3671-104">글로벌 규정 준수 표준을 지 원하는 높은 수준의 보안입니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-104">High security that supports global compliance standards.</span></span>
-- <span data-ttu-id="c3671-105">부하 분산, 고가용성 및 중복성 기능입니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-105">Load balancing, high availability, and redundancy capabilities.</span></span>
-- <span data-ttu-id="c3671-106">많은 양의 데이터를 Azure Blob 저장소와 같은 기능을 사용 하 여 브라우저에 직접 저장할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-106">The ability to store large volumes of data directly to the browser using features such as Azure Blob storage.</span></span>
-
-<span data-ttu-id="c3671-107">궁극적으로 Azure 데이터 저장소의 기능 사용 하면 큰 전역 응용 프로그램 또는 포털을 호스트 하기 위한 이상적인 플랫폼이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c3671-107">Ultimately, the capabilities of Azure data storage make it an ideal platform for hosting any large global application or portal.</span></span>
