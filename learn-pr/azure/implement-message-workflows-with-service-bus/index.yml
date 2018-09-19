@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.implement-message-workflows-with-service-bus
+metadata:
+  title: Azure Service Bus를 통한 메시지 기반 통신 워크플로 구현
+  description: '응용 프로그램의 구성 요소가 여러 컴퓨터와 장치에 걸쳐 배포되고 장거리와 느린 연결로 구분이 될 때는 안정적인 통신을 위한 방법이 필요합니다. 안정성을 높이는 한 가지 방법은 중계 메시징 또는 이벤트 관리 기술을 통해 구성 요소를 느리게 연결하는 것입니다. Azure Service Bus는 이런 중계 도구 중 하나로, 고급 통신 기능을 제공합니다. 이 모듈에서는 Service Bus를 사용하여 높은 수요, 좁은 대역폭 및 하드웨어 오류에 대해 복원력이 있는 방식으로 통신하는 .NET 응용 프로그램 코드 작성 방법을 살펴봅니다. '
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cd272cc82342297622b986694773c293881e748c
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350929"
+title: Azure Service Bus를 통한 메시지 기반 통신 워크플로 구현
+summary: Azure Service Bus 토픽 및 큐를 사용하여 메시지를 보내고 받는 사용자 지정 응용 프로그램에서 C# 코드를 작성합니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - Service Bus 큐, 항목 또는 릴레이를 사용하여 분산 응용 프로그램에서 통신을 할지 여부 선택
+
+  - Azure 구독에서 Azure Service Bus 네임스페이스 구성
+
+  - Service Bus 항목을 만들어 메시지 전송/수신에 사용
+
+  - Service Bus 큐를 만들어 메시지 전송/수신에 사용
+prerequisites: 없음
+iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-service-bus
+units:
+- learn.implement-message-workflows-with-service-bus.1-introduction
+- learn.implement-message-workflows-with-service-bus.2-choose-a-messaging-platform
+- learn.implement-message-workflows-with-service-bus.3-exercise-implement-a-service-bus-topic-and-queue
+- learn.implement-message-workflows-with-service-bus.4-write-code-that-uses-service-bus-queues
+- learn.implement-message-workflows-with-service-bus.5-exercise-write-code-that-uses-service-bus-queues
+- learn.implement-message-workflows-with-service-bus.6-write-code-that-uses-service-bus-topics
+- learn.implement-message-workflows-with-service-bus.7-exercise-write-code-that-uses-service-bus-topics
+- learn.implement-message-workflows-with-service-bus.8-summary
+achievement: learn.implement-message-workflows-with-service-bus.badge

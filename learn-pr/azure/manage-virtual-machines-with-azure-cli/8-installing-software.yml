@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.8-installing-software
+title: <span data-ttu-id="62abe-101">VM에 소프트웨어 설치</span><span class="sxs-lookup"><span data-stu-id="62abe-101">Install software on your VM</span></span>
+metadata:
+  title: <span data-ttu-id="62abe-102">VM에 소프트웨어 설치</span><span class="sxs-lookup"><span data-stu-id="62abe-102">Install software on your VM</span></span>
+  description: <span data-ttu-id="62abe-103">소프트웨어를 설치하여 Linux VM에서 웹 서버 실행</span><span class="sxs-lookup"><span data-stu-id="62abe-103">Install software to run a web server on your Linux VM</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0d6f73833b2df5356e7c3a6463d9e36503331aca
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352418"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 5
+content: '[!include[](includes/8-installing-software.md)]'

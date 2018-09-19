@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.2-setup-cosmosdb
+metadata:
+  title: <span data-ttu-id="aec81-101">Visual Studio Code에서 Azure Cosmos DB 리소스 만들기</span><span class="sxs-lookup"><span data-stu-id="aec81-101">Create Azure Cosmos DB resources in Visual Studio Code</span></span>
+  description: <span data-ttu-id="aec81-102">Visual Studio Code용 Azure Cosmos DB 확장을 사용하여 Azure Cosmos DB 리소스를 만드는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="aec81-102">Learn how to create Azure Cosmos DB resources by using the Azure Cosmos DB extension for Visual Studio Code.</span></span>
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 65c902318eccd97e4be628fcb13495a34b06bd1a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348878"
+title: <span data-ttu-id="aec81-103">Visual Studio Code에서 Azure Cosmos DB 리소스 만들기</span><span class="sxs-lookup"><span data-stu-id="aec81-103">Create Azure Cosmos DB resources in Visual Studio Code</span></span>
+durationInMinutes: 12
+azureSandbox: true
+content: '[!include[](includes/2-setup-cosmosdb.md)]'

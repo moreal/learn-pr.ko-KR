@@ -1,0 +1,48 @@
+### YamlMime:Module
+uid: learn.control-azure-services-with-cli
+metadata:
+  title: CLI를 사용하여 Azure 서비스 제어
+  description: Azure CLI를 로컬로 설치하고 Azure 리소스를 관리하는 데 사용합니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 29748ad87922d9a2eb62c100d1b4c692fb213266
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351334"
+title: CLI를 사용하여 Azure 서비스 제어
+summary: Azure CLI를 로컬로 설치하고 Azure 리소스를 관리하는 데 사용합니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - Linux, macOS 및/또는 Windows에 Azure CLI 설치
+
+  - Azure CLI를 사용하여 Azure 구독에 연결
+
+  - Azure CLI를 사용하여 Azure 리소스 만들기
+prerequisites: >
+  - PowerShell 또는 Bash와 같은 명령줄 인터페이스 경험
+
+  - 리소스 그룹과 같은 기본 Azure 개념에 대한 지식
+
+  - Azure Portal을 사용하여 Azure 리소스 관리 경험
+iconUrl: /learn/achievements/control-azure-services-with-cli.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-clis
+units:
+- learn.control-azure-services-with-cli.1-introduction
+- learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+- learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+- learn.control-azure-services-with-cli.4-work-with-the-cli
+- learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
+- learn.control-azure-services-with-cli.6-summary
+achievement: learn.control-azure-services-with-cli.badge

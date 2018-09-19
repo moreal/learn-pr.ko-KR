@@ -1,0 +1,2 @@
+> [!NOTE]
+> <span data-ttu-id="b0029-101">Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?azure-portal=true)을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="b0029-101">If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?azure-portal=true) before you begin.</span></span>

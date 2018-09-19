@@ -1,0 +1,16 @@
+<span data-ttu-id="b35cc-101">Azure는 클라우드에 호스트된 응용 프로그램을 빌드하는 데 필요한 계산, 저장소, 네트워킹 리소스를 제공하는 클라우드 플랫폼입니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-101">Azure is a cloud platform that provides the compute, storage, and networking resources needed to build cloud-hosted applications.</span></span> <span data-ttu-id="b35cc-102">신규 사용자의 경우 Azure Portal을 주로 사용하여 Azure를 조작하는 경우가 많습니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-102">As a new user, the Azure Portal is likely to be the primary way you will interact with Azure.</span></span> <span data-ttu-id="b35cc-103">Azure Portal을 사용하면 모든 Azure 리소스를 만들고 관리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-103">The Azure Portal lets you create and manage all your Azure resources.</span></span> <span data-ttu-id="b35cc-104">예를 들어 새 데이터베이스를 설정하고, 가상 머신의 계산 성능을 높이고, 월별 비용을 모니터링할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-104">For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs.</span></span> <span data-ttu-id="b35cc-105">모든 사용 가능한 리소스를 조사하고 단계별 마법사를 사용하여 필요한 리소스를 만들 수 있으므로 뛰어난 학습 도구이기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-105">It's also a great learning tool since you can survey all available resources and use guided wizards to create the ones you need.</span></span>
+
+<span data-ttu-id="b35cc-106">여기에서는 Azure 계정을 만들고, 포털에 로그인하고, 포털 인터페이스를 탐색하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-106">Here you will learn how to create an Azure account, sign in to the portal, and navigate the portal interface.</span></span> <span data-ttu-id="b35cc-107">대시보드를 사용자 지정하면 가장 중요한 서비스를 간편하게 찾아서 모니터링할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-107">You will customize the dashboard, so it is convenient to locate and monitor your most essential services.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="b35cc-108">학습 목표</span><span class="sxs-lookup"><span data-stu-id="b35cc-108">Learning objectives</span></span>
+
+<span data-ttu-id="b35cc-109">이 모듈에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="b35cc-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="b35cc-110">Azure 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="b35cc-110">Create an Azure account</span></span>
+- <span data-ttu-id="b35cc-111">Azure Portal 탐색</span><span class="sxs-lookup"><span data-stu-id="b35cc-111">Navigate the Azure portal</span></span>
+- <span data-ttu-id="b35cc-112">대시보드 사용자 지정</span><span class="sxs-lookup"><span data-stu-id="b35cc-112">Customize the dashboard</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="b35cc-113">필수 조건</span><span class="sxs-lookup"><span data-stu-id="b35cc-113">Prerequisites</span></span>
+
+- <span data-ttu-id="b35cc-114">클라우드 컴퓨팅의 기본 용어 및 개념에 대한 지식</span><span class="sxs-lookup"><span data-stu-id="b35cc-114">Knowledge of basic cloud computing terms and concepts</span></span>
+- <span data-ttu-id="b35cc-115">Azure에 등록하는 데 사용할 유효한 신용 카드</span><span class="sxs-lookup"><span data-stu-id="b35cc-115">A valid credit card to register with Azure</span></span>

@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.create-linux-vm-in-azure
+metadata:
+  title: Azure에서 Linux 가상 머신 만들기
+  description: 이 모듈에서는 Azure Portal을 사용하여 Linux 가상 머신을 만드는 방법을 살펴보겠습니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347091"
+title: Azure에서 Linux 가상 머신 만들기
+summary: 이 모듈에서는 Azure Portal을 사용하여 Linux 가상 머신을 만드는 방법을 살펴보겠습니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+    - Azure의 가상 머신에 사용할 수 있는 옵션 이해
+    - Azure Portal을 사용하여 Linux 가상 머신 만들기
+    - SSH를 사용하여 실행 중인 Linux 가상 머신에 연결
+    - Azure Portal을 사용하여 소프트웨어 설치 및 VM에서 네트워크 구성 변경
+prerequisites: 없음
+iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
+levels:
+- beginner
+roles:
+- administrator
+- developer
+products:
+- azure
+- azure-portal
+- azure-virtual-machines
+units:
+- learn.create-linux-vm-in-azure.1-introduction
+- learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
+- learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+- learn.create-linux-vm-in-azure.5-connect-to-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.6-exercise-connect-to-a-linux-vm-using-ssh
+- learn.create-linux-vm-in-azure.7-manage-vm
+- learn.create-linux-vm-in-azure.8-exercise-manage-vm
+- learn.create-linux-vm-in-azure.9-summary
+achievement: learn.create-linux-vm-in-azure.badge

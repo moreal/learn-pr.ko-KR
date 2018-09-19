@@ -1,0 +1,47 @@
+<span data-ttu-id="e82a4-101">클라우드 컴퓨팅과 관련해서 세 가지 주요 범주가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-101">When talking about cloud computing, there are three major categories.</span></span> <span data-ttu-id="e82a4-102">세 가지 범주는 대화, 문서화 및 교육에 사용되므로 잘 알아두어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-102">It's important to understand them because they are used in conversation, documentation, and training.</span></span>
+
+## <a name="explore-the-three-categories-of-cloud-computing"></a><span data-ttu-id="e82a4-103">클라우드 컴퓨팅의 세 가지 범주 살펴보기</span><span class="sxs-lookup"><span data-stu-id="e82a4-103">Explore the three categories of cloud computing</span></span>
+
+#### <a name="iaas-versus-sass-versus-paas"></a><span data-ttu-id="e82a4-104">IaaS와 PaaS 및 Sass</span><span class="sxs-lookup"><span data-stu-id="e82a4-104">IaaS versus Sass versus PaaS</span></span>
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="e82a4-105">![IaaS 아이콘](../media/5-iaas.png)</span><span class="sxs-lookup"><span data-stu-id="e82a4-105">![IaaS icon](../media/5-iaas.png)</span></span>
+  :::column-end:::
+  <span data-ttu-id="e82a4-106">:::column span="3"::: **IaaS(서비스 제공 인프라)**</span><span class="sxs-lookup"><span data-stu-id="e82a4-106">:::column span="3"::: **Infrastructure as a service (IaaS)**</span></span>
+
+<span data-ttu-id="e82a4-107">서비스 제공 인프라는 클라우드 서비스에서 가장 유연한 범주입니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-107">Infrastructure as a Service is the most flexible category of cloud services.</span></span> <span data-ttu-id="e82a4-108">응용 프로그램을 실행하는 하드웨어를 완벽하게 제어할 수 있도록 하는 것이 목표입니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-108">It aims to give you complete control over the hardware that runs your application.</span></span> <span data-ttu-id="e82a4-109">IaaS를 사용하면 하드웨어를 구입하지 않고 대여합니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-109">Instead of buying hardware, with IaaS, you rent it.</span></span>
+  :::column-end:::
+:::row-end:::
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="e82a4-110">![PaaS 아이콘](../media/5-paas.png)</span><span class="sxs-lookup"><span data-stu-id="e82a4-110">![PaaS icon](../media/5-paas.png)</span></span>
+  :::column-end:::
+  <span data-ttu-id="e82a4-111">:::column span="3"::: **PaaS(Platform as a Service)**</span><span class="sxs-lookup"><span data-stu-id="e82a4-111">:::column span="3"::: **Platform as a service (PaaS)**</span></span>
+
+<span data-ttu-id="e82a4-112">PaaS는 소프트웨어 응용 프로그램을 빌드하고, 테스트하고, 배포하는 환경을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-112">PaaS provides an environment for building, testing, and deploying software applications.</span></span> <span data-ttu-id="e82a4-113">PaaS의 목표는 기본 인프라 관리에 신경 쓰지 않고 최대한 빨리 응용 프로그램을 만들 수 있도록 지원하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-113">The goal of PaaS is to help you create an application as quickly as possible without having to worry about managing the underlying infrastructure.</span></span> <span data-ttu-id="e82a4-114">예를 들어 PaaS를 사용하여 웹 응용 프로그램을 배포하는 경우 운영 체제, 웹 서버 또는 시스템 업데이트조차 설치할 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-114">For example, when deploying a web application using PaaS, you don't have to install an operating system, web server, or even system updates.</span></span>
+  :::column-end:::
+:::row-end:::
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="e82a4-115">![SaaS 아이콘](../media/5-saas.png)</span><span class="sxs-lookup"><span data-stu-id="e82a4-115">![SaaS icon](../media/5-saas.png)</span></span>
+  :::column-end:::
+  <span data-ttu-id="e82a4-116">:::column span="3"::: **SaaS(Software as a Service)**</span><span class="sxs-lookup"><span data-stu-id="e82a4-116">:::column span="3"::: **Software as a service (SaaS)**</span></span>
+
+<span data-ttu-id="e82a4-117">SaaS는 최종 고객을 위해 중앙에서 호스트되고 관리되는 소프트웨어입니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-117">SaaS is software that is centrally hosted and managed for the end customer.</span></span> <span data-ttu-id="e82a4-118">이 서비스는 일반적으로 모든 고객이 한 가지 응용 프로그램 버전을 사용하고 월간 또는 연간 구독을 통해 라이선스가 부여되는 아키텍처를 기반으로 합니다</span><span class="sxs-lookup"><span data-stu-id="e82a4-118">It is usually based on an architecture where one version of the application is used for all customers, and licensed through a monthly or annual subscription.</span></span> <span data-ttu-id="e82a4-119">Office 365는 SaaS 소프트웨어의 좋은 예입니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-119">Office 365 is a perfect example of SaaS software.</span></span>
+  :::column-end:::
+:::row-end:::
+
+## <a name="think-about-service-categories-as-layers"></a><span data-ttu-id="e82a4-120">서비스 범주에 레이어 개념 적용</span><span class="sxs-lookup"><span data-stu-id="e82a4-120">Think about service categories as layers</span></span>
+
+<span data-ttu-id="e82a4-121">한 가지 이해해야 할 사항은 이러한 범주가 서로 다른 레이어를 기반으로 하는 레이어라는 점입니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-121">One thing to understand is that these categories are layers on top of each other.</span></span> <span data-ttu-id="e82a4-122">예를 들어 PaaS는 추상화 수준을 제공하여 IaaS 위에 계층을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-122">For example, PaaS adds a layer on top of IaaS by providing a level of abstraction.</span></span> <span data-ttu-id="e82a4-123">추상화를 사용하면 더 빠르게 코딩할 수 있도록 중요하지 않은 세부 정보를 숨기는 혜택이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-123">The abstraction has the benefit of hiding the details that you may not care about so that you can get to coding quicker.</span></span> <span data-ttu-id="e82a4-124">대신, 기본 하드웨어에 대한 제어가 약화되는 단점도 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-124">However, one cost of that is that you have less control over the underlying hardware.</span></span> <span data-ttu-id="e82a4-125">다음 그림은 사용자가 관리하는 리소스와 각 클라우드 서비스 범주에서 서비스 공급자가 관리하는 리소스의 목록을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-125">The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.</span></span>
+
+![각 클라우드 서비스 범주의 추상화 수준을 보여주는 그림입니다.](../media/5-layer-diagram.png)
+
+## <a name="summary"></a><span data-ttu-id="e82a4-127">요약</span><span class="sxs-lookup"><span data-stu-id="e82a4-127">Summary</span></span>
+
+<span data-ttu-id="e82a4-128">IaaS, PaaS 및 SaaS 각각에는 서로 다른 수준의 관리 서비스가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-128">IaaS, PaaS, and SaaS each contain different levels of managed services.</span></span> <span data-ttu-id="e82a4-129">이러한 유형의 인프라는 쉽게 조합하여 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-129">You may easily use a combination of these types of infrastructure.</span></span> <span data-ttu-id="e82a4-130">회사 컴퓨터에서 Office 365를 사용(SaaS)할 수 있고 Azure에서 VM을 호스트(IaaS)하고 Azure SQL Database를 사용하여 데이터를 저장(PaaS)할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-130">You could use Office 365 on your company’s computers (SaaS), and in Azure you could host your VMs (IaaS) and use Azure SQL Database (PaaS) to store your data.</span></span> <span data-ttu-id="e82a4-131">클라우드는 유연하기 때문에 최상의 결과를 제공하는 모든 조합을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e82a4-131">With the cloud’s flexibility, you can use any combination that provides you with the maximum result.</span></span>

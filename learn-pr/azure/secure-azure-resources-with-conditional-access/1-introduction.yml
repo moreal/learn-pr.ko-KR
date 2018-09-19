@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+metadata:
+  title: <span data-ttu-id="580f6-101">소개</span><span class="sxs-lookup"><span data-stu-id="580f6-101">Introduction</span></span>
+  description: <span data-ttu-id="580f6-102">Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한을 보호합니다.</span><span class="sxs-lookup"><span data-stu-id="580f6-102">Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c68864ad23dd8d426e5c5bdc917bb000cb1152b8
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349302"
+title: <span data-ttu-id="580f6-103">소개</span><span class="sxs-lookup"><span data-stu-id="580f6-103">Introduction</span></span>
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

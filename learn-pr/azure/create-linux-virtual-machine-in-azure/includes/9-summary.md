@@ -1,0 +1,6 @@
+<span data-ttu-id="a30c8-101">이 모듈에서는 Azure Portal을 사용하여 Linux VM을 만드는 방법을 배웠습니다.</span><span class="sxs-lookup"><span data-stu-id="a30c8-101">In this module, you learned how to create a Linux VM using the Azure portal.</span></span> <span data-ttu-id="a30c8-102">그런 다음, 해당 VM의 공용 IP 주소에 연결하고 SSH 연결을 통해 관리했습니다.</span><span class="sxs-lookup"><span data-stu-id="a30c8-102">You then connected to the public IP address of the VM and managed it with an SSH connection.</span></span> 
+
+<span data-ttu-id="a30c8-103">SSH를 사용하면 가상 머신의 운영 체제 및 소프트웨어를 조작할 수 있고 포털을 사용하면 가상 하드웨어 및 연결을 구성할 수 있다는 것을 알았습니다.</span><span class="sxs-lookup"><span data-stu-id="a30c8-103">You learned that while SSH allows us to interact with the operating system and software of the virtual machine, the portal will enable us to configure the virtual hardware and connectivity.</span></span> <span data-ttu-id="a30c8-104">명령줄이나 스크립트 가능 환경을 선호하는 경우 PowerShell 또는 Azure CLI를 사용할 수도 있었습니다.</span><span class="sxs-lookup"><span data-stu-id="a30c8-104">We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.</span></span>
+
+<!-- Cleanup sandbox -->
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

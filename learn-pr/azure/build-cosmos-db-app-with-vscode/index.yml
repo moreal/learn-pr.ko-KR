@@ -1,0 +1,51 @@
+### YamlMime:Module
+uid: learn.cosmos-db-app-with-vscode
+metadata:
+  title: Visual Studio Code를 사용하여 Azure Cosmos DB용 .NET Core 앱 빌드
+  description: Visual Studio Code를 사용하여 Azure Cosmos DB에 데이터를 저장하고 쿼리하는 .NET Core 응용 프로그램을 만드는 방법을 알아봅니다.
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ffd45cdc7df99994d5420dc3f2972cd5d87d81a3
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353121"
+title: Visual Studio Code를 사용하여 Azure Cosmos DB용 .NET Core 앱 빌드
+summary: Visual Studio Code를 사용하여 Azure Cosmos DB에 데이터를 저장하고 쿼리하는 데이터베이스 앱을 빌드하는 방법을 알아봅니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - Azure Cosmos DB에 데이터를 저장하고 쿼리하는 응용 프로그램 만들기
+
+  - Visual Studio Code의 통합 터미널을 사용하여 콘솔 응용 프로그램 빠르게 만들기
+
+  - Visual Studio Code용 Azure Cosmos DB 확장을 활용하여 Azure Cosmos DB 기능 추가
+prerequisites: >
+  - [Visual Studio Code](https://code.visualstudio.com/)가 설치되어 있어야 합니다.
+
+  - [.NET Core 2.1](https://www.microsoft.com/net/download)이 설치되어 있어야 합니다.
+
+  - [Azure 계정](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) 확장이 설치되어 있어야 합니다.
+iconUrl: /learn/achievements/build-cosmos-db-app-with-vscode.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-cosmos-db
+- vs
+- vs-code
+units:
+- learn.cosmos-db-app-with-vscode.1-introduction
+- learn.cosmos-db-app-with-vscode.2-setup-cosmosdb
+- learn.cosmos-db-app-with-vscode.3-setup
+- learn.cosmos-db-app-with-vscode.4-crud-operations
+- learn.cosmos-db-app-with-vscode.5-query
+- learn.cosmos-db-app-with-vscode.6-stored-procedure
+- learn.cosmos-db-app-with-vscode.7-summary
+achievement: learn.cosmos-db-app-with-vscode.badge
