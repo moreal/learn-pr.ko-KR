@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
+title: 지식 검사
+metadata:
+  title: 지식 검사
+  description: 지식 검사
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fab76bfb0f9de183a37f1d8aba022b434294ce85
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483864"
+durationInMinutes: 2
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 다음 중 CUDA를 설명하는 것은 무엇인가요?
+    choices:
+    - content: CUDA는 병렬 컴퓨팅 플랫폼 및 API입니다.
+      isCorrect: true
+      correctExplanation: CUDA는 NVIDIA에서 개발한 병렬 컴퓨팅 플랫폼이자 API(응용 프로그래밍 인터페이스) 모델입니다. CUDA 플랫폼은 계산 커널의 실행을 위해 GPU의 가상 명령 집합 및 병렬 계산 요소에 대한 직접 액세스 권한을 제공하는 소프트웨어 계층입니다.
+    - content: CUDA는 매우 강력한 CPU입니다.
+      isCorrect: false
+      incorrectExplanation: CUDA는 소프트웨어 계층이며, GPU를 위해 설계되었습니다.
+    - content: 또한 이미지 분류에 사용되는 심층 학습 모델입니다.
+      isCorrect: false
+      incorrectExplanation: CUDA 기반 GPU는 신경망을 학습하는 경우 계산 성능을 크게 향상시킬 수 있지만 이것은 많은 용도 중 하나에 지나지 않습니다.
+  - content: 다음 중 Docker를 설명하는 것은 무엇인가요?
+    choices:
+    - content: Docker는 신경망 학습을 위한 특수화된 하드웨어 부분입니다.
+      isCorrect: false
+      incorrectExplanation: Docker는 실제로 "컨테이너화"라고도 하는 운영 체제 수준 가상화를 수행하는 소프트웨어입니다.
+    - content: Docker는 분산형 응용 프로그램에 대한 개방형 플랫폼입니다.
+      isCorrect: true
+      correctExplanation: Docker는 개발자 및 시스템 관리자가 노트북, 데이터 센터 VM 또는 클라우드에서 분산형 응용 프로그램을 빌드/제공/실행하기 위한 개방형 플랫폼입니다. Docker는 "컨테이너화"라고도 하는 운영 체제 수준 가상화를 수행하는 컴퓨터 프로그램입니다.
+    - content: Docker는 웹앱의 라이브러리입니다.
+      isCorrect: false
+      incorrectExplanation: Docker는 소프트웨어 플랫폼이지만 웹앱을 만드는 데 유용한 라이브러리는 아닙니다.
+  - content: NVIDIA Docker를 사용하는 주요 이점은 무엇인가요?
+    choices:
+    - content: NVIDIA Docker를 사용하면 Windows에서 Docker 컨테이너를 빌드하고 실행할 수 있습니다.
+      isCorrect: false
+      incorrectExplanation: NVIDIA Docker는 Linux에서만 실행됩니다.
+    - content: NVIDIA Docker를 사용하면 NVIDIA GPU를 활용하는 Docker 컨테이너를 빌드하고 실행할 수 있습니다.
+      isCorrect: true
+      correctExplanation: NVIDIA는 드라이버 독립 CUDA 이미지를 지원하기 위한 오픈 소스 프로젝트로 또한 시작 시 컨테이너에 적절하게 GPU 구성 요소를 탑재하는 방법을 알고 있는 Docker 명령줄 래퍼 중심의 래퍼로 nvidia-docker를 개발합니다.
+    - content: NVIDIA를 사용하면 CPU 가속 응용 프로그램을 컨테이너화할 수 있습니다.
+      isCorrect: false
+      incorrectExplanation: NVIDIA Docker를 사용하면 GPU 가속 앱을 컨테이너화할 수 있습니다.
