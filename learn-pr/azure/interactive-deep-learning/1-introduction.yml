@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.1-introduction
+title: <span data-ttu-id="771df-101">소개</span><span class="sxs-lookup"><span data-stu-id="771df-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="771df-102">소개</span><span class="sxs-lookup"><span data-stu-id="771df-102">Introduction</span></span>
+  description: <span data-ttu-id="771df-103">소개</span><span class="sxs-lookup"><span data-stu-id="771df-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 79dd0dea25b0fc0636449b9b6eef403f2c75aef1
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483838"
+durationInMinutes: 1
+content: '[!include[](includes/1-introduction.md)]'
