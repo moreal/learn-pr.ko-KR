@@ -1,0 +1,2 @@
+> [!NOTE]
+> <span data-ttu-id="106bd-101">이러한 지침을 진행하기 전에 샌드박스를 활성화했는지 확인하세요.</span><span class="sxs-lookup"><span data-stu-id="106bd-101">Make sure you have activated the Sandbox before proceeding with these instructions.</span></span>
