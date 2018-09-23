@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.intro-to-azure-networking
+metadata:
+  title: Azure 네트워킹 소개
+  description: 클라우드에서 앱 또는 서비스를 실행하려면 빠르고 안전한 네트워크가 필요합니다. Azure 네트워킹의 기본 사항과 Azure 네트워킹으로 복원력을 개선하고 대기 시간을 단축하는 방법을 알아보세요.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 31c039ebaec8ca3b61fb9f8b71af794527645530
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349729"
+title: Azure 네트워킹 소개
+summary: 클라우드에서 앱 또는 서비스를 실행하려면 빠르고 안전한 네트워크가 필요합니다. Azure 네트워킹의 기본 사항과 Azure 네트워킹으로 복원력을 개선하고 대기 시간을 단축하는 방법을 알아보세요.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - 가상 네트워킹으로 네트워크와 계산 리소스를 격리하는 방법을 알아보세요.
+
+  - Azure Load Balancer를 통해 서비스가 중단되었을 때 복원력이나 복구 기능을 개선하는 방법을 알아보세요.
+
+  - Traffic Manager에서 사용자 대기 시간이 가장 짧은 엔드포인트를 포함한 여러 엔드포인트에 트래픽을 라우팅하는 방법을 알아보세요.
+prerequisites: 없음
+iconUrl: /learn/achievements/intro-to-azure-networking.svg
+levels:
+- beginner
+roles:
+- developer
+- administrator
+- solution-architect
+products:
+- azure
+units:
+- learn.intro-to-azure-networking.1-introduction
+- learn.intro-to-azure-networking.2-deploy-to-azure
+- learn.intro-to-azure-networking.3-scale-load-balancer
+- learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+- learn.intro-to-azure-networking.5-summary
+achievement: learn.intro-to-azure-networking.badge

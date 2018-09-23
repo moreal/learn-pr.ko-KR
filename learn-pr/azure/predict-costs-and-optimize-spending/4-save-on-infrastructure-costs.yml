@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
+title: 인프라 비용 절감
+metadata:
+  title: 인프라 비용 절감
+  description: 이 단원에서는 인프라 비용을 절감하는 방법에 대해 알아보겠습니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 94f37d9b74bc6b3b3e5bfed8f97300b5fc5eff1e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347024"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-save-on-infrastructure-costs.md)]
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 다음 중 비용 절감 방법이 *아닌* 것은 무엇인가요?
+    choices:
+    - content: 작업을 하지 않는 시간에는 가상 머신 할당을 취소합니다.
+      isCorrect: false
+      incorrectExplanation: 그러면 계정에 청구되는 사용량이 줄고 비용이 절약됩니다.
+    - content: Azure Reserved Virtual Machine Instances를 사용합니다.
+      isCorrect: false
+      incorrectExplanation: VM의 워크로드가 일관적이고 장기 서비스 계약을 체결할 수 있다면 이것이 종량제보다 비용이 적게 듭니다.
+    - content: 수신 메시지에 대해 가상 머신의 부하를 분산합니다.
+      isCorrect: true
+      correctExplanation: 부하 분산은 비용 절감이 아닌 성능 최적화를 위해 사용됩니다.
+    - content: 사용률이 낮은 가상 머신을 적합한 크기로 지정합니다.
+      isCorrect: false
+      incorrectExplanation: VM의 크기를 축소하면 비용이 감소합니다.
+  - content: '참 또는 거짓: PaaS는 일반적으로 IaaS보다 저렴합니다.'
+    choices:
+    - content: 참
+      isCorrect: true
+      correctExplanation: IaaS는 Azure에 전용 리소스 제공을 요구하지만, PaaS는 Azure가 더 자유로운 방식으로 서비스를 제공하도록 해줍니다. 즉, Azure가 하드웨어를 효율적으로 채우고 운영할 수 있으므로 PaaS 서비스를 제공할 경우 IaaS보다 비용이 절약됩니다.
+    - content: 거짓
+      isCorrect: false
+      incorrectExplanation: 일반적으로 PaaS 서비스 계약 시 IaaS 리소스보다 비용이 적게 듭니다.

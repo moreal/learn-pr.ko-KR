@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-security.4-encryption
+title: 암호화
+metadata:
+  title: 암호화
+  description: 이 단원에서는 암호화를 사용하여 데이터를 보호하는 방법을 알아보겠습니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 199a92a1e365547f75cb7d1d556bab67691d6daf
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349601"
+durationInMinutes: 8
+content: '[!include[](includes/4-encryption.md)]'

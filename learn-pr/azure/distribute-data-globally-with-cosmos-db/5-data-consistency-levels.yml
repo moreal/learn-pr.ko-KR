@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+metadata:
+  title: 일관성 수준 선택
+  description: Azure Cosmos DB의 일관성 수준을 사용하여 고가용성을 최대화하고 대기 시간을 최소화하며 응용 프로그램에 대한 올바른 일관성 수준을 결정할 수 있는 방법을 알아봅니다.
+  displayType: one-column
+  ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348865"
+title: 일관성 수준 선택
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-data-consistency-levels.md)]
+quiz:
+  title: 지식 점검
+  questions:
+  - content: 전자상거래 데이터베이스의 사용자 데이터에 가장 적합한 일관성 수준은 무엇인가요? 사용자는 자신의 장바구니에 넣은 모든 항목이 고객의 주문에 포함되도록 합니다.
+    choices:
+    - content: 강력
+      isCorrect: false
+      incorrectExplanation: 여러 지역에서 복제된 데이터베이스에 대해 강력한 일관성을 사용할 수 없습니다.
+    - content: 제한된 부실
+      isCorrect: false
+      incorrectExplanation: 제한된 부실로 인해 사용자 항목 중 일부가 자신의 장바구니에 표시될 수 있습니다.
+    - content: 세션
+      isCorrect: true
+      correctExplanation: 맞습니다. 세션은 쇼핑 장바구니 정보가 포함된 사용자 데이터에 대한 최상의 일관성 설정입니다. 세션 일관성은 사용자가 장바구니를 검토할 때 자신의 장바구니에 넣을 모든 항목이 표시되도록 합니다.
+    - content: 일관적인 접두사
+      isCorrect: false
+      incorrectExplanation: 일관적인 접두사로 인해 사용자 항목 중 일부가 자신의 장바구니에 표시될 수 있습니다.
+    - content: 최종
+      isCorrect: false
+      incorrectExplanation: 최종 일관성으로 인해 쇼핑 장바구니에 사용자가 넣은 모든 항목이 표시되지 않는 상황이 발생할 수 있습니다.
+  - content: 최소한의 작업당 요청 단위를 사용하는 일관성 수준은 무엇인가요?
+    choices:
+    - content: 강력
+      isCorrect: false
+    - content: 제한된 부실
+      isCorrect: false
+    - content: 세션
+      isCorrect: false
+    - content: 일관적인 접두사
+      isCorrect: false
+    - content: 최종
+      isCorrect: true
+      correctExplanation: 최종 일관성이 포함된 읽기 작업의 비용은 최소한의 초당 요청 단위 수를 사용합니다.

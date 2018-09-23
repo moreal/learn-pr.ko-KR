@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.2-public-private-hybrid
+title: 공용, 사설 및 하이브리드 클라우드용 Azure 솔루션
+metadata:
+  title: 공용, 사설 및 하이브리드 클라우드용 Azure 솔루션
+  description: 공용, 사설 및 하이브리드 클라우드용 Azure 솔루션
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bbea3817769d1592c24bbab4b03cf3dfcde3c267
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352981"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-public-private-hybrid.md)]
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 어떤 클라우드 배포 모델이 다음 상황에 가장 적합한가요? SQL Server 데이터베이스는 단기 프로젝트에 필요합니다. IT 부서에는 데이터베이스를 배포하기 위해 리소스 또는 성능 요구 사항을 충족시키는 사용 가능한 하드웨어가 없습니다. 프로젝트가 다음 주에 시작됩니다. 프로젝트가 끝나면 데이터베이스는 더 이상 필요하지 않습니다.
+    choices:
+    - content: 공용 클라우드
+      correctExplanation: 빠른 배포의 필요 및 SQL 데이터베이스의 짧은 수명 주기가 공용 클라우드를 가장 좋은 옵션이 되게 합니다.
+      isCorrect: true
+    - content: 사설 클라우드
+      isCorrect: false
+      incorrectExplanation: 빠른 배포의 필요 및 SQL 데이터베이스의 짧은 수명 주기가 공용 클라우드를 가장 좋은 옵션이 되게 합니다.
+    - content: 하이브리드 클라우드
+      isCorrect: false
+      incorrectExplanation: 빠른 배포의 필요 및 SQL 데이터베이스의 짧은 수명 주기가 공용 클라우드를 가장 좋은 옵션이 되게 합니다.
+  - content: 다음 시나리오에 설명된 클라우드 배포 모델은 무엇인가요? 클라우드에서 여러 가상 머신을 만듭니다. VM은 가상 네트워크를 사용하여 함께 네트워크로 연결됩니다. VM이 클라우드 저장소의 x-ray 이미지 파일에 액세스할 수 있습니다. VM 중 하나는 고객이 레코드에 액세스할 수 있도록 인터넷에 노출되는 웹 사이트를 호스트하는 웹 서버입니다. 이미지 파일과 함께 고객 정보가 표시되도록 솔루션을 온-프레미스 데이터 센터에 연결하는 VPN이 있습니다.
+    choices:
+    - content: 공용 클라우드
+      isCorrect: false
+      incorrectExplanation: 이 시나리오는 공용 클라우드와 사설 클라우드 간의 연결을 통해 두 클라우드를 모두 사용합니다. 따라서 이는 하이브리드 클라우드 배포입니다.
+    - content: 사설 클라우드
+      isCorrect: false
+      incorrectExplanation: 이 시나리오는 공용 클라우드와 사설 클라우드 간의 연결을 통해 두 클라우드를 모두 사용합니다. 따라서 이는 하이브리드 클라우드 배포입니다.
+    - content: 하이브리드 클라우드
+      correctExplanation: 이 시나리오는 공용 클라우드와 사설 클라우드 간의 연결을 통해 두 클라우드를 모두 사용합니다. 따라서 이는 하이브리드 클라우드 배포입니다.
+      isCorrect: true
+  - content: 다음 시나리오에 설명된 클라우드 배포 모델은 무엇인가요? 조직에 두 개의 데이터 센터가 있습니다. 하나의 데이터 센터에는 규제 요구 사항 때문에 데이터 센터 중 하나에만 상주할 수 있는 데이터베이스가 있습니다. 다른 데이터 센터에서 데이터베이스에 액세스하려고 합니다. 클라우드 공급자를 이용해 VPN을 생성하여 두 데이터 센터를 연결합니다.
+    choices:
+    - content: 공용 클라우드
+      isCorrect: false
+      incorrectExplanation: VPN은 공용 클라우드 리소스이지만 두 개의 개인 데이터 센터 간의 개인 연결이므로 VPN은 사설 클라우드 배포입니다.
+    - content: 사설 클라우드
+      correctExplanation: VPN은 공용 클라우드 리소스이지만 두 개의 개인 데이터 센터 간의 개인 연결이므로 VPN은 사설 클라우드 배포입니다.
+      isCorrect: true
+    - content: 하이브리드 클라우드
+      isCorrect: false
+      incorrectExplanation: VPN은 공용 클라우드 리소스이지만 두 개의 개인 데이터 센터 간의 개인 연결이므로 VPN은 사설 클라우드 배포입니다.

@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.4-change-priorities
+metadata:
+  title: 글로벌 읽기 및 쓰기 우선 순위 변경
+  description: 글로벌 지역의 읽기 및 쓰기 우선 순위를 변경하는 방법에 대해 알아봅니다.
+  displayType: one-column
+  ms.openlocfilehash: 945fb5504cabd37641bc8f0a51a919dcf5471b73
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352088"
+title: 글로벌 읽기 및 쓰기 우선 순위 변경
+azureSandbox: true
+durationInMinutes: 5
+content: '[!include[](includes/4-change-priorities.md)]'

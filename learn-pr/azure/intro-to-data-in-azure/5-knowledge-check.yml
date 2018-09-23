@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: 지식 검사
+  description: 지식 검사
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e0cdcd2cc0ea3995d0c3d6eb90d920b61e498ab2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353408"
+title: 지식 검사
+durationInMinutes: 5
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 자금 조달이 제한된 신규 업체에서 근무한다고 가정하겠습니다. 온-프레미스 솔루션보다 Azure 데이터 저장소를 선호할만한 이유가 무언인가요?
+    choices:
+    - content: 특정 브랜드의 하드웨어 공급 업체와 마케팅 파트너 관계를 형성할 수 있도록 특정 브랜드의 하드웨어를 실행할 수 있습니다.
+      isCorrect: false
+      incorrectExplanation: Azure에는 대규모의 선행 자본 지출(CapEx)이 없습니다. 매달 사용하는 서비스에 대해서만 지불(OpEx)합니다.
+    - content: Azure 종량제 청구 모델을 사용하면 비용이 많이 드는 하드웨어 구입을 피할 수 있습니다.
+      isCorrect: true
+      correctExplanation: Azure에는 대규모의 선행 자본 지출(CapEx)이 없습니다. 매달 사용하는 서비스에 대해서만 지불(OpEx)합니다.
+    - content: 데이터 저장소의 위치를 정확하게 제어할 수 있습니다.
+      isCorrect: false
+      incorrectExplanation: Azure에는 대규모의 선행 자본 지출(CapEx)이 없습니다. 매달 사용하는 서비스에 대해서만 지불(OpEx)합니다.
+  - content: 다음 중 온-프레미스 데이터 저장소를 Auzre에 재배치하여 가장 많은 이점을 얻을 수 있는 상황은 무엇인가요?
+    choices:
+    - content: 저장소 수요가 1년 내내 여러 번 증가하고 감소하여 예측할 수 없습니다.
+      isCorrect: true
+      correctExplanation: Azure 데이터 저장소는 유연합니다. 쉽고 빠르게 용량을 추가하거나 제거할 수 있습니다. 성능을 높여서 부하의 급증을 처리하거나 성능을 낮춰서 비용을 줄일 수 있습니다. 모든 경우에 사용한 만큼만 지불합니다.
+    - content: 저장소 수요가 장기적으로 꾸준하게 성장합니다.
+      isCorrect: false
+      incorrectExplanation: Azure 데이터 저장소는 유연합니다. 쉽고 빠르게 용량을 추가하거나 제거할 수 있습니다. 성능을 높여서 부하의 급증을 처리하거나 성능을 낮춰서 비용을 줄일 수 있습니다. 모든 경우에 사용한 만큼만 지불합니다.
+    - content: 저장소 수요가 일관되고 변함이 없습니다.
+      isCorrect: false
+      incorrectExplanation: Azure 데이터 저장소는 유연합니다. 쉽고 빠르게 용량을 추가하거나 제거할 수 있습니다. 성능을 높여서 부하의 급증을 처리하거나 성능을 낮춰서 비용을 줄일 수 있습니다. 모든 경우에 사용한 만큼만 지불합니다.

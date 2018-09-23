@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.4-how-to-choose-a-partition-key
+metadata:
+  title: Azure Cosmos DB에서 파티션 키를 선택하는 방법
+  description: 요구 사항이 증가함에 따라 데이터베이스 크기를 조정할 수 있도록 하는 파티션 키를 사용하여 컬렉션을 만드는 방법을 알아봅니다.
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d4fb07bb85e7e7cb2dda9bdd8fe80880babb65b1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346711"
+title: 파티션 키 선택
+durationInMinutes: 6
+content: >
+  [!include[](includes/4-how-to-choose-a-partition-key.md)]
+quiz:
+  title: 지식 검사
+  questions:
+  - content: '참 또는 거짓: 파티션 키를 만든 후 Azure Cosmos DB 컬렉션에 **추가**할 수 있습니다.'
+    choices:
+    - content: 참
+      isCorrect: false
+      incorrectExplanation: 컬렉션이 생성될 때만 파티션 키를 설정할 수 있습니다.
+    - content: 거짓
+      isCorrect: true
+      correctExplanation: 컬렉션이 생성될 때만 파티션 키를 설정할 수 있습니다.
+  - content: '참 또는 거짓: Azure Cosmos DB 컬렉션을 만든 후에 파티션 키를 **변경**할 수 있습니다.'
+    choices:
+    - content: 참
+      isCorrect: false
+      incorrectExplanation: 컬렉션이 생성된 후에는 파티션 키를 수정할 수 없습니다.
+    - content: 거짓
+      isCorrect: true
+      correctExplanation: 컬렉션이 생성된 후에는 파티션 키를 수정할 수 없습니다.

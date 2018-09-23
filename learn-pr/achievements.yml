@@ -1,0 +1,434 @@
+### YamlMime:Achievements
+achievements:
+- uid: learn.build-a-serverless-web-app.badge
+  type: badge
+  title: 서버리스 웹앱 빌드
+  summary: ‘서버리스 웹앱 빌드’ 모듈의 배지입니다.
+  iconUrl: /learn/achievements/build-a-serverless-web-app.svg
+- uid: learn.connect-app-to-azure-storage.badge
+  type: badge
+  title: Azure Storage에 앱 연결
+  summary: Azure Storage에 앱 연결
+  iconUrl: /learn/achievements/connect-an-app-to-azure-storage.svg
+- uid: learn.create-azure-storage-account.badge
+  type: badge
+  title: Azure Storage 계정 만들기
+  summary: Azure Storage 계정 만들기 배지
+  iconUrl: /learn/achievements/create-azure-storage-account.svg
+- uid: learn.create-serverless-logic-with-functions.badge
+  type: badge
+  title: Azure Functions를 사용하여 서버리스 논리 만들기
+  summary: Azure Functions를 사용하여 서버리스 논리 만들기
+  iconUrl: /learn/achievements/create-serverless-logic-with-azure-functions.svg
+- uid: learn.host-a-web-application-with-azure-web-apps.badge
+  type: badge
+  title: Azure App Service를 사용하여 웹 응용 프로그램 호스트
+  summary: Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지
+  iconUrl: /learn/achievements/host-a-web-app-with-azure-app-service.svg
+- uid: learn.publish-azure-web-app-with-visual-studio.badge
+  type: badge
+  title: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시
+  summary: Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시
+  iconUrl: /learn/achievements/publish-azure-web-app-with-visual-studio.svg
+- uid: learn.administer-containers-in-azure.trophy
+  type: trophy
+  title: Azure에서 컨테이너 관리 트로피
+  summary: ‘Azure에서 컨테이너 관리’ 학습 경로의 트로피
+  iconUrl: /learn/achievements/administer-containers-in-azure.svg
+- uid: learn.create-serverless-applications.trophy
+  type: trophy
+  title: 서버리스 응용 프로그램 만들기 트로피
+  summary: ‘서버리스 응용 프로그램 만들기’ 학습 경로의 트로피
+  iconUrl: /learn/achievements/create-serverless-applications.svg
+- uid: learn.administer-infrastructure-resources-in-azure.trophy
+  type: trophy
+  title: Azure에서 인프라 리소스 관리 트로피
+  summary: ‘Azure에서 인프라 리소스 관리’ 학습 경로의 트로피
+  iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
+- uid: learn.cloud-foundations.trophy
+  type: trophy
+  title: 클라우드 기본 사항 트로피
+  summary: ‘클라우드 기본 사항’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/cloud-foundations.svg
+- uid: learn.connect-your-services-together.trophy
+  type: trophy
+  title: 서비스를 함께 연결 트로피
+  summary: ‘서비스를 함께 연결’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/connect-your-services-together.svg
+- uid: learn.architect-great-solutions-in-azure.trophy
+  type: trophy
+  title: Azure에서 멋진 솔루션 설계 트로피
+  summary: ‘Azure에서 멋진 솔루션 설계’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/architect-great-solutions-in-azure.svg
+- uid: learn.deploy-a-website-with-azure-app-service.trophy
+  type: trophy
+  title: Azure App Service로 웹 사이트 배포 트로피
+  summary: ‘Azure App Service로 웹 사이트 배포’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/deploy-a-website-with-azure-app-service.svg
+- uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
+  type: trophy
+  title: Azure Cosmos DB에서 NoSQL 데이터 작업 트로피
+  summary: ‘Azure Cosmos DB에서 NoSQL 데이터 작업’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
+- uid: learn.work-with-relational-data-in-azure.trophy
+  type: trophy
+  title: Azure에서 관계형 데이터 작업 트로피
+  summary: ‘Azure에서 관계형 데이터 작업’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/work-with-relational-data-in-azure.svg
+- uid: learn.secure-your-cloud-data.trophy
+  type: trophy
+  title: 클라우드 데이터 보호 트로피
+  summary: ‘클라우드 데이터 보안 설정’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/secure-your-cloud-data.svg
+- uid: learn.store-data-in-azure.trophy
+  type: trophy
+  title: Azure에 데이터 저장 트로피
+  summary: ‘Azure에 데이터 저장’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/store-data-in-azure.svg
+- uid: learn.automate-azure-tasks-with-powershell.badge
+  type: badge
+  title: PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화 배지
+  summary: PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화 요약
+  iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
+- uid: learn.create-azure-db-for-postgresql.badge
+  type: badge
+  title: Azure CLI를 통해 PostgreSQL DB 서버 만들기 배지
+  summary: Azure CLI를 통해 PostgreSQL DB 서버 만들기 요약
+  iconUrl: /learn/achievements/create-azure-db-for-postgresql-server.svg
+- uid: learn.create-linux-vm-in-azure.badge
+  type: badge
+  title: Azure에서 Linux 가상 머신 만들기 배지
+  summary: Azure에서 Linux 가상 머신 만들기 요약
+  iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
+- uid: learn.choose-messaging-model.badge
+  type: badge
+  title: 메시징 모델 선택 배지
+  summary: 메시징 모델 선택 배지 요약
+  iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
+- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+  type: badge
+  title: Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행
+  summary: Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행
+  iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
+- uid: learn.prepare-azure-dev-environment.badge
+  type: badge
+  title: Azure 개발 환경 준비 배지
+  summary: Azure 개발 환경 준비 배지 요약
+  iconUrl: /learn/achievements/prepare-your-dev-environment-for-azure-development.svg
+- uid: learn.manage-resources-with-azure-portal.badge
+  type: badge
+  title: Azure Portal을 사용하여 리소스 관리 배지
+  summary: Azure Portal을 사용하여 리소스 관리 배지 요약
+  iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
+- uid: learn.control-azure-services-with-cli.badge
+  type: badge
+  title: CLI를 사용하여 Azure 서비스 제어 배지
+  summary: CLI를 사용하여 Azure 서비스 제어 배지 요약
+  iconUrl: /learn/achievements/control-azure-services-with-cli.svg
+- uid: learn.azure-services-features.badge
+  type: badge
+  title: Azure 서비스 및 기능 둘러보기 배지
+  summary: Azure 서비스 및 기능 둘러보기 요약
+  iconUrl: /learn/achievements/tour-azure-services-and-features.svg
+- uid: learn.migrate-sql-server-relational-data.badge
+  type: badge
+  title: SQL Server 관계형 데이터를 Azure SQL로 마이그레이션
+  summary: SQL Server 관계형 데이터를 Azure SQL로 마이그레이션
+  iconUrl: /learn/achievements/migrate-sql-server-to-azure-sql.svg
+- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
+  type: badge
+  title: Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신
+  summary: Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신
+  iconUrl: /learn/achievements/communicate-between-apps-with-storage-queues.svg
+- uid: learn.caching-and-performance-azure-storage-and-disks.badge
+  type: badge
+  title: Azure Storage 및 디스크의 캐싱과 성능
+  summary: Azure Storage 및 디스크의 캐싱과 성능
+  iconUrl: /learn/achievements/caching-and-performance-azure-storage-and-disks.svg
+- uid: learn.create-a-windows-vm-in-azure.badge
+  type: badge
+  title: Azure에서 Windows 가상 머신 만들기
+  summary: Azure에서 Windows 가상 머신 만들기
+  iconUrl: /learn/achievements/create-windows-virtual-machine-in-azure.svg
+- uid: learn.web-app-with-mean-on-linux-vm.badge
+  type: badge
+  title: Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행
+  summary: Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행
+  iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
+- uid: learn.optimize-web-app-with-redis.badge
+  type: badge
+  title: Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화
+  summary: Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화
+  iconUrl: /learn/achievements/optimize-web-apps-with-redis.svg
+- uid: learn.manage-secrets-with-azure-key-vault.badge
+  type: badge
+  title: Azure Key Vault를 사용하여 웹앱의 비밀 관리
+  summary: Azure Key Vault를 사용하여 웹앱의 비밀 관리
+  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
+- uid: learn.secure-azure-resources-with-rbac.badge
+  type: badge
+  title: RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보안 설정
+  summary: RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보호
+  iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
+- uid: learn.secure-access-azure-ad-multi-factor-authentication.badge
+  type: badge
+  title: Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호
+  summary: Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호
+  iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
+- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+  type: badge
+  title: Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유
+  summary: Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유
+  iconUrl: /learn/achievements/send-location-over-sms-from-mobile-using-azure-functions-twilio.svg
+- uid: learn.manage-vms-with-azure-cli-data.badge
+  type: badge
+  title: Azure CLI를 사용하여 가상 머신 관리
+  summary: Azure CLI를 사용하여 가상 머신 관리
+  iconUrl: /learn/achievements/manage-vms-with-azure-cli.svg
+- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
+  type: trophy
+  title: Azure Virtual Machines를 통해 웹 사이트 배포 트로피
+  summary: ‘Azure Virtual Machines로 웹 사이트 배포’ 학습 경로의 트로피입니다.
+  iconUrl: /learn/achievements/deploy-a-website-with-azure-virtual-machines.svg
+- uid: learn.store-app-data-with-azure-blob-storage.badge
+  type: badge
+  title: Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장
+  summary: Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장
+  iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
+- uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
+  type: badge
+  title: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용
+  summary: Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 신뢰할 수 있는 메시지를 사용하도록 설정 모듈
+  iconUrl: /learn/achievements/enable-reliable-messaging-for-big-data-apps-using-azure-event-hubs.svg
+- uid: learn.secure-your-azure-sql-database.badge
+  type: badge
+  title: Azure SQL Server 데이터베이스 보호
+  summary: Azure SQL Server 데이터베이스 보호
+  iconUrl: /learn/achievements/secure-your-azure-sql-database.svg
+- uid: learn.intro-to-compute.badge
+  type: badge
+  title: 계산 소개 배지
+  summary: ‘계산 소개’ 모듈의 배지입니다.
+  iconUrl: /learn/achievements/intro-to-azure-compute.svg
+- uid: learn.intro-to-data-in-azure.badge
+  type: badge
+  title: Azure의 데이터 소개 배지
+  summary: "'Azure의 데이터 소개' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/intro-to-azure-networking.svg
+- uid: learn.introduction-to-azure-virtual-machines.badge
+  type: badge
+  title: Azure Virtual Machines 소개
+  summary: Azure Virtual Machines 소개
+  iconUrl: /learn/achievements/intro-to-azure-virtual-machines.svg
+- uid: learn.cosmos-db-app-with-vscode.badge
+  type: badge
+  title: Visual Studio Code에서 Azure Cosmos DB 앱 빌드
+  summary: ‘Visual Studio Code에서 Azure Cosmos DB 앱 빌드’ 모듈의 배지입니다.
+  iconUrl: /learn/achievements/build-cosmos-db-app-with-vscode.svg
+- uid: learn.create-cosmos-db-for-scale.badge
+  type: badge
+  title: 크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기
+  summary: "'크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/create-cosmos-db-for-scale.svg
+- uid: learn.manage-resources-in-azure.trophy
+  type: trophy
+  title: Azure에서 리소스 관리 트로피
+  summary: "'Azure에서 리소스 관리' 학습 경로의 트로피입니다."
+  iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
+- uid: learn.ci-cd-pipelines-azure-devops.badge
+  type: badge
+  title: Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드 배지
+  summary: "'Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/build-ci-cd-pipelines-using-azure-devops.svg
+- uid: learn.top-5-security-items-to-consider.badge
+  type: badge
+  title: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
+  summary: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
+  iconUrl: /learn/achievements/top-5-security-items-to-consider.svg
+- uid: learn.interactive-deep-learning.badge
+  type: badge
+  title: Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝
+  summary: Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝.
+  iconUrl: /learn/achievements/interactive-deep-learning.svg
+- uid: learn.create-computer-vision-service.badge
+  type: badge
+  title: Computer Vision 서비스를 사용하여 이미지 처리
+  summary: "'Computer Vision 서비스를 사용하여 이미지 처리' 모듈의 배지."
+  iconUrl: /learn/achievements/create-computer-vision-service-to-classify-images.svg
+- uid: learn.monitor-manage-device-with-iotcentral.badge
+  type: badge
+  title: Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리 배지
+  summary: "'Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/monitor-and-manage-device-with-iot-central.svg
+- uid: learn.align-requirements-in-azure.badge
+  type: badge
+  title: 요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택 배지
+  summary: "'요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/align-requirements-in-azure.svg
+- uid: learn.choose-storage-approach-in-azure.badge
+  type: badge
+  title: Azure에서 저장소 접근 방식 선택
+  summary: "'Azure에서 저장소 접근 방식 선택' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/choose-storage-approach-in-azure.svg
+- uid: learn.azure-container-registry.badge
+  type: badge
+  title: Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장 배지
+  summary: "'Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/build-and-store-container-images.svg
+- uid: learn.build-azure-bot-services-bot.badge
+  type: badge
+  title: Azure Bot Service를 사용하여 챗봇 빌드 배지
+  summary: "'Azure Bot Service를 사용하여 챗봇 빌드' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/build-chat-bot-with-azure-bot-service.svg
+- uid: learn.classify-images-with-custom-vision-services.badge
+  type: badge
+  title: Microsoft Custom Vision Service를 사용하여 이미지 분류 배지
+  summary: "'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/classify-images-with-custom-vision-service.svg
+- uid: learn.create-neural-network-with-dsvm.badge
+  type: badge
+  title: TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드 배지
+  summary: "'TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/create-neural-network-with-dsvm.svg
+- uid: learn.design-for-efficiency-and-operations.badge
+  type: badge
+  title: 효율성 및 운영을 위한 디자인 배지
+  summary: "'효율성 및 운영을 위한 디자인' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
+- uid: learn.design-for-performance-and-scalability.badge
+  type: badge
+  title: 성능 및 확장성을 위한 디자인 배지
+  summary: "'성능 및 확장성을 위한 디자인' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/design-for-performance-and-scalability-in-azure.svg
+- uid: learn.design-for-security.badge
+  type: badge
+  title: 보안 중심 디자인 배지
+  summary: "'보안 중심 디자인' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/design-for-security-in-azure.svg
+- uid: learn.execute-azure-function-with-triggers.badge
+  type: badge
+  title: 트리거를 사용하여 Azure 함수 실행 배지
+  summary: "'트리거를 사용하여 Azure 함수 실행' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/execute-azure-function-with-triggers.svg
+- uid: learn.intro-to-containers.badge
+  type: badge
+  title: 컨테이너 소개 배지
+  summary: "'컨테이너 소개' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/intro-to-containers.svg
+- uid: learn.predict-costs-and-optimize-spending.badge
+  type: badge
+  title: Azure 비용 예측 및 지출 최적화 배지
+  summary: "'Azure 비용 예측 및 지출 최적화' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/predict-costs-optimize-spending-on-azure.svg
+- uid: learn.principles-cloud-computing.badge
+  type: badge
+  title: 클라우드 컴퓨팅의 원칙 배지
+  summary: "'클라우드 컴퓨팅의 원칙' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/principles-cloud-computing.svg
+- uid: learn.provision-azure-sql-db.badge
+  type: badge
+  title: Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장 배지
+  summary: "'Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/provision-azure-sql-db.svg
+- uid: learn.run-docker-containers-aci.badge
+  type: badge
+  title: ACI(Azure Container Instances)에서 Docker 컨테이너 실행 배지
+  summary: "'ACI(Azure Container Instances)에서 Docker 컨테이너 실행' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/run-docker-with-azure-container-instances.svg
+- uid: learn.access-data-with-cosmos-db-and-sql-api.badge
+  type: badge
+  title: Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스 배지
+  summary: "'Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스' 모듈의 배지입니다."
+  iconUrl: /learn/achievements/access-data-with-cosmos-db-and-sql-api.svg
+- uid: learn.configure-the-network-for-your-virtual-machines.badge
+  type: badge
+  title: 가상 머신에 사용할 네트워크 구성
+  summary: 가상 머신에 사용할 네트워크 구성
+  iconUrl: /learn/achievements/configure-network-for-azure-virtual-machines.svg
+- uid: learn.introduction-to-security.badge
+  type: badge
+  title: Azure 보안 소개
+  summary: Azure 보안 소개
+  iconUrl: /learn/achievements/intro-to-security-in-azure.svg
+- uid: learn.secure-your-azure-virtual-machine-disks.badge
+  type: badge
+  title: Azure 가상 머신 디스크 보호
+  summary: Azure 가상 머신 디스크 보호
+  iconUrl: /learn/achievements/secure-your-azure-virtual-machine-disks.svg
+- uid: learn.make-your-virtual-machines-highly-available.badge
+  type: badge
+  title: 고가용성 가상 머신 만들기
+  summary: 고가용성 가상 머신 만들기
+  iconUrl: /learn/achievements/make-your-virtual-machines-highly-available.svg
+- uid: learn.implement-message-workflows-with-service-bus.badge
+  type: badge
+  title: Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현
+  summary: Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현
+  iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
+- uid: learn.intro-to-azure-networking.badge
+  type: badge
+  title: Azure 네트워킹 소개 배지
+  summary: Azure 네트워킹 소개
+  iconUrl: /learn/achievements/intro-to-azure-networking.svg
+- uid: learn.pillars-of-a-great-azure-architecture.badge
+  type: badge
+  title: 우수한 Azure 아키텍처의 핵심 요소 배지
+  summary: 우수한 Azure 아키텍처의 핵심 요소 배지
+  iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
+- uid: learn.add-and-size-disks-in-azure-virtual-machines.badge
+  type: badge
+  title: Azure Virtual Machines에서 디스크 추가 및 크기 지정
+  summary: Azure Virtual Machines에서 디스크 추가 및 크기 조정
+  iconUrl: /learn/achievements/add-and-size-disks-in-azure-virtual-machines.svg
+- uid: learn.scale-and-size-virtual-machines.badge
+  type: badge
+  title: Azure에서 Virtual Machines 크기 조정
+  summary: Azure에서 Virtual Machines 크기 조정
+  iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
+- uid: learn.manage-iot-devices.badge
+  type: badge
+  title: IT 관리자로서 IoT 장치를 관리하는 방법 알아보기
+  summary: "'IT 관리자로서 IoT 장치를 관리하는 방법 알아보기' 모듈의 배지"
+  iconUrl: /learn/achievements/manage-your-iot-devices.svg
+- uid: learn.the-mojifier.badge
+  type: badge
+  title: 사람의 얼굴을 이모지로 바꾸는 Slack 명령 만들기
+  summary: 사람의 얼굴을 이모지로 바꾸는 Slack 명령 만들기
+  iconUrl: /learn/achievements/replace-faces-with-emojis-matching-emotion.svg
+- uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
+  type: badge
+  title: Redis Cache에서 변경 가능한 부분 데이터 작업
+  summary: Redis Cache에서 변경 가능한 부분 데이터 작업
+  iconUrl: /learn/achievements/work-with-mutable-and-partial-data-in-a-redis-cache.svg
+- uid: learn.chain-azure-functions-data-using-input-output-bindings.badge
+  type: badge
+  title: I/O 바인딩을 사용하여 Azure Functions 데이터 체인 연결
+  summary: I/O 바인딩을 사용하여 Azure Functions 데이터 체인 연결
+  iconUrl: /learn/achievements/chain-azure-functions-data-using-bindings.svg
+- uid: learn.design-for-availability-and-recoverability.badge
+  type: badge
+  title: Azure의 가용성 및 복구 기능을 위한 설계
+  summary: Azure의 가용성 및 복구 기능을 위한 설계
+  iconUrl: /learn/achievements/design-for-availability-and-recoverability-in-azure.svg
+- uid: learn.welcome-to-azure.badge
+  type: badge
+  title: Azure 시작
+  summary: Azure 시작
+  iconUrl: /learn/achievements/welcome-to-azure.svg
+- uid: learn.classify-user-feedback-with-the-text-analytics-api.badge
+  type: badge
+  title: Microsoft Custom Vision Service를 사용하여 이미지 분류
+  summary: "'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지"
+  iconUrl: /learn/achievements/classify-user-feedback-with-the-text-analytics-api.svg
+- uid: learn.distribute-data-globally-with-cosmos-db.badge
+  type: badge
+  title: Azure Cosmos DB를 사용하여 전세계에 데이터 배포
+  summary: Azure Cosmos DB를 사용하여 전세계에 데이터 배포
+  iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
+metadata:
+  ms.openlocfilehash: 7f1cf4e965ca83bb470aabaaa5cf5c2a8a7d38a3
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346491"

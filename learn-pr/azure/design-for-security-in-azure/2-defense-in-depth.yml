@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: 심층 방어
+metadata:
+  title: 심층 방어
+  description: 이 단원에서는 심층 방어를 연습하는 방법을 살펴보겠습니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 23e9c8c1afa4a2872c1131864cc228ad386dc57b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348182"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: 지식 점검
+  questions:
+  - content: 'True 또는 false: *심층 방어*는 사용자 정보에 액세스 권한을 얻으려는 공격으로부터 보호하기 위한 전략인가요?'
+    choices:
+    - content: "True"
+      isCorrect: true
+      correctExplanation: '*심층 방어*는 권한이 없는 액세스로부터 보호를 제공하는 계층화된 시스템입니다. 한 계층을 위반하는 경우 추가로 노출되지 않도록 하기 위해 다른 계층이 마련됩니다.'
+    - content: "False"
+      isCorrect: false
+      incorrectExplanation: '*심층 방어*는 권한이 없는 액세스로부터 보호를 제공하는 계층화된 시스템입니다. 한 계층을 위반하는 경우 추가로 노출되지 않도록 하기 위해 다른 계층이 마련됩니다.'
+  - content: 'True 또는 false: 내 아키텍처가 클라우드로 이동하여 완전히 안전해지고 모든 보안 책임을 내 클라우드 공급자에게 넘길 수 있나요?'
+    choices:
+    - content: "True"
+      isCorrect: false
+      incorrectExplanation: 클라우드로 이동하면 클라우드 공급자에 대한 일부 책임이 제거되지만 공유 책임 모델은 여전히 적용됩니다.
+    - content: "False"
+      isCorrect: true
+      correctExplanation: 클라우드로 이동하면 클라우드 공급자에 대한 일부 책임이 제거되지만 공유 책임 모델은 여전히 적용됩니다.

@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
+title: 재해 복구 전략 개발
+metadata:
+  title: 재해 복구 전략 개발
+  description: 재해 복구 전략 개발
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3955af1f310742bdb6912d5da07f5004d40287f1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346941"
+durationInMinutes: 20
+content: >
+  [!include[](includes/3-disaster-recovery.md)]
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 다음 중 복구 계획의 복구 단계에서 제외할 수 있는 것은 어느 것인가요?
+    choices:
+    - content: 백업 복원 방법
+      isCorrect: false
+      incorrectExplanation: 백업 복원에 필요한 단계는 복구 계획의 중요한 부분입니다.
+    - content: 복제된 시스템으로 장애 조치(failover)하는 방법
+      isCorrect: false
+      incorrectExplanation: 복제된 시스템으로 장애 조치(failover)하는 프로세스는 복구 계획의 중요한 부분입니다.
+    - content: 온-프레미스 또는 외부 네트워크에 대한 네트워크 연결을 다시 설정하는 방법
+      isCorrect: false
+      incorrectExplanation: 온-프레미스 또는 외부 네트워크에 대한 네트워크 연결은 인프라의 중요한 부분인 경우가 많습니다. 오류가 발생한 후 다시 설정하는 단계는 복구 계획의 중요한 부분입니다.
+    - content: 복구 계획에서 위의 절차 중 어느 것도 제외되어서는 안 됩니다.
+      isCorrect: true
+      correctExplanation: 이러한 모든 절차는 복구 계획에 필수적입니다.
+  - content: '참 또는 거짓: 데이터 복제 및 데이터 백업은 동일한 것입니다.'
+    choices:
+    - content: 참
+      isCorrect: false
+      incorrectExplanation: 데이터 복제 및 데이터 백업은 데이터의 사본을 만들지만 사본의 생성 빈도와 사용법이 매우 달라서 다른 개념으로 간주됩니다.
+    - content: 거짓
+      isCorrect: true
+      correctExplanation: 복제는 실행 중에 장애 조치에 사용할 라이브 데이터의 실시간 또는 근실시간 사본을 만듭니다. 백업은 복구에 사용할 데이터에 대한 오래 지속되는 읽기 전용 스냅샷을 만듭니다.

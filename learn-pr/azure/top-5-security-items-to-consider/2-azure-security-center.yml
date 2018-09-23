@@ -1,0 +1,31 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.2-azure-security-center
+title: Azure Security Center
+metadata:
+  title: Azure Security Center
+  description: Azure Security Center
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f02436ec9ef936eabde1d6958ef2938ee5ab5973
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346951"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-azure-security-center.md)]
+quiz:
+  title: 지식 검사
+  questions:
+  - content: '참 또는 거짓: Azure Security Center는 Azure 리소스 및 온-프레미스 리소스에 대해 작동합니다.'
+    choices:
+    - content: 참
+      isCorrect: true
+      correctExplanation: Azure Security Center는 Azure와 온-프레미스 모두에서 모든 서비스를 모니터링할 수 있습니다.
+    - content: 거짓
+      isCorrect: false
+      incorrectExplanation: Azure Security Center는 Azure 호스팅 리소스로 제한되지 않습니다.

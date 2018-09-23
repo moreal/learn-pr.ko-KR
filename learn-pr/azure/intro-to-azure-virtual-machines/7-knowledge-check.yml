@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
+title: 지식 검사
+metadata:
+  title: 지식 검사
+  description: 지식 검사
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c3d74041711d08f746273cbeb87da9f272ca4453
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352938"
+durationInMinutes: 1
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 가상 머신에서 네트워크 어플라이언스를 실행하려고 한다고 가정합니다. 어떤 워크로드 옵션을 선택해야 하나요?
+    choices:
+    - content: 범용
+      isCorrect: false
+      incorrectExplanation: 계산 최적화 가상 머신은 높은 CPU-메모리 비율을 제공하도록 설계되었습니다. 중간 규모의 트래픽이 있는 웹 서버, 네트워크 어플라이언스, 일괄 처리 프로세스 및 응용 프로그램 서버에 적합합니다.
+    - content: 계산 최적화
+      isCorrect: true
+      correctExplanation: 계산 최적화 가상 머신은 높은 CPU-메모리 비율을 제공하도록 설계되었습니다. 중간 규모의 트래픽이 있는 웹 서버, 네트워크 어플라이언스, 일괄 처리 프로세스 및 응용 프로그램 서버에 적합합니다.
+    - content: 메모리 최적화
+      isCorrect: false
+      incorrectExplanation: 계산 최적화 가상 머신은 높은 CPU-메모리 비율을 제공하도록 설계되었습니다. 중간 규모의 트래픽이 있는 웹 서버, 네트워크 어플라이언스, 일괄 처리 프로세스 및 응용 프로그램 서버에 적합합니다.
+    - content: 저장소 최적화
+      isCorrect: false
+      incorrectExplanation: 계산 최적화 가상 머신은 높은 CPU-메모리 비율을 제공하도록 설계되었습니다. 중간 규모의 트래픽이 있는 웹 서버, 네트워크 어플라이언스, 일괄 처리 프로세스 및 응용 프로그램 서버에 적합합니다.
+  - content: 'True 또는 false: Resource Manager 템플릿은 JSON 파일인가요?'
+    choices:
+    - content: "True"
+      isCorrect: true
+      correctExplanation: Resource Manager 템플릿은 솔루션에 배포해야 하는 리소스를 정의하는 JSON 파일입니다. 그런 다음, 템플릿을 사용하여 스테이징 및 프로덕션과 같은 여러 버전의 인프라를 쉽게 다시 만들 수 있습니다.
+    - content: "False"
+      isCorrect: false
+      incorrectExplanation: Resource Manager 템플릿은 솔루션에 배포해야 하는 리소스를 정의하는 JSON 파일입니다. 그런 다음, 템플릿을 사용하여 스테이징 및 프로덕션과 같은 여러 버전의 인프라를 쉽게 다시 만들 수 있습니다.
