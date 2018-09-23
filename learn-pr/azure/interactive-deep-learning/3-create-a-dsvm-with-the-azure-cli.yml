@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.3-create-a-dsvm-with-the-azure-cli
+title: <span data-ttu-id="0fcec-101">연습 - Azure CLI를 사용하여 Data Science Virtual Machine 만들기</span><span class="sxs-lookup"><span data-stu-id="0fcec-101">Exercise - Create a Data Science Virtual Machine with the Azure CLI</span></span>
+metadata:
+  title: <span data-ttu-id="0fcec-102">연습 - Azure CLI를 사용하여 Data Science Virtual Machine 만들기</span><span class="sxs-lookup"><span data-stu-id="0fcec-102">Exercise - Create a Data Science Virtual Machine with the Azure CLI</span></span>
+  description: <span data-ttu-id="0fcec-103">연습 - Azure CLI를 사용하여 Data Science Virtual Machine 만들기</span><span class="sxs-lookup"><span data-stu-id="0fcec-103">Exercise - Create a Data Science Virtual Machine with the Azure CLI</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8957652c73b339e910fc1f18555fe14d6a088bad
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483819"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 30
+content: '[!include[](includes/3-create-a-dsvm-with-the-azure-cli.md)]'
