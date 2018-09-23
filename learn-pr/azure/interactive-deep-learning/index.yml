@@ -1,0 +1,50 @@
+### YamlMime:Module
+uid: learn.interactive-deep-learning
+metadata:
+  title: Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝
+  description: Juypter, PyTorch 및 Data Science Virtual Machine에서 딥 러닝 모델 학습을 살펴봅니다.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 13ecd4764f204b3fe1671c01c5fb44a755d3ef4f
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484056"
+title: Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝
+summary: Juypter, PyTorch 및 Data Science Virtual Machine에서 딥 러닝 모델 학습을 살펴봅니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+
+  - 심층 학습 및 Azure DSVM(Data Science Virtual Machine)에 대한 설명
+
+  - Azure CLI를 사용하여 DSVM 만들기
+
+  - Docker를 사용하여 사용자 지정 심층 학습 환경을 설정하는 방법 알아보기
+
+  - DSVM에서 Docker를 통해 Jupyter Notebook에 연결
+
+  - Jupyter를 사용하여 첫 번째 딥 러닝 실험 실행
+prerequisites: 없음
+iconUrl: /learn/achievements/interactive-deep-learning.svg
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-virtual-machines
+units:
+- learn.interactive-deep-learning.1-introduction
+- learn.interactive-deep-learning.2-describe-deep-learning-and-the-dvsm
+- learn.interactive-deep-learning.2q-describe-deep-learning-and-the-dvsm
+- learn.interactive-deep-learning.3-create-a-dsvm-with-the-azure-cli
+- learn.interactive-deep-learning.4-benefits-of-running-deep-learning-experiments-in-docker
+- learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
+- learn.interactive-deep-learning.5-connect-to-jupyter-through-docker-on-the-dsvm
+- learn.interactive-deep-learning.6-run-your-first-deep-learning-experiment-with-jupyter
+- learn.interactive-deep-learning.7-summary-and-knowledge-check
+achievement: learn.interactive-deep-learning.badge

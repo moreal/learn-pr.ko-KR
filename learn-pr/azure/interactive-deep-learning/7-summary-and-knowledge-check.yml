@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.7-summary-and-knowledge-check
+title: 요약
+metadata:
+  title: 요약
+  description: 요약
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a6f770fc032421778d9b8865ddc2324b1b481e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484037"
+durationInMinutes: 1
+content: >
+  [!include[](includes/7-summary-and-knowledge-check.md)]
+quiz:
+  title: 지식 점검
+  questions:
+  - content: 다음 중 딥 러닝을 위해 DSVM을 사용할 때 직면하는 종속성 문제를 가장 잘 설명하는 것은 무엇입니까?
+    choices:
+    - content: DSVM은 샌드박스되므로 새 패키지 설치를 직접 지원하지 않습니다.
+      isCorrect: false
+      incorrectExplanation: DSVM은 가상 머신입니다. 데이터 과학 및 AI 프로젝트를 지원하기 위해 미리 설치된 많은 소프트웨어가 함께 제공되지만 원하는 항목은 무엇이든 무료로 설치할 수 있습니다.
+    - content: DSVM은 CNTK 및 Cognitive Service 종속성만 지원합니다.
+      incorrectExplanation: DSVM은 PyTorch, Chainer 및 Tensorflow와 같은 여러 인기 프레임워크를 기본적으로 지원합니다.
+      isCorrect: false
+    - content: 특정 딥 러닝 프레임워크와 패키지에는 다른 환경, GPU 드라이버 및 이진 패키지가 필요합니다.
+      isCorrect: true
+      correctExplanation: 딥 러닝을 위해 사용하는 모든 프레임워크 간의 종속성 관리는 어려울 수 있습니다. Docker 컨테이너를 실행하여 이러한 종속성을 그룹화하고 격리하면 이 문제를 해결하는 데 도움이 될 수 있습니다.
+  - content: Docker 컨테이너에서 딥 러닝 실험을 했다고 가정해 보겠습니다. DSVM은 GPU도 있는 Linux 가상 머신에서 실행되고 있습니다. GPU에서 코드를 실행하기 위해 필요한 구성 요소를 사용하여 컨테이너를 프로비전하려면 다음 중 어느 명령을 사용해야 합니까?
+    choices:
+    - content: docker run --useGPU
+      isCorrect: false
+      incorrectExplanation: docker run 명령에는 --useGPU 매개 변수가 없습니다.
+    - content: nvidia-docker run
+      isCorrect: true
+      correctExplanation: 이 명령은 GPU를 사용하는 컨테이너를 실행하는 데 사용할 수 있습니다.
+    - content: docker-nvidia run
+      isCorrect: false
+      incorrectExplanation: 이 명령은 존재하지 않습니다.

@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2q-describe-deep-learning-and-the-dvsm
+title: 지식 검사
+metadata:
+  title: 지식 검사
+  description: 지식 검사
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a3b3b0539c2f89a4a1c93f48ba3084555483a216
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483802"
+durationInMinutes: 2
+quiz:
+  title: 지식 검사
+  questions:
+  - content: 다음 중 기존 머신 러닝과 딥 러닝의 차이를 가장 잘 설명하는것은 무엇인가요?
+    choices:
+    - content: 기존 머신 러닝에서는 그래프, 대수 및 확률 등 모든 종류의 모델을 사용합니다. 딥 러닝에서는 선형 모델만 사용합니다.
+      isCorrect: false
+      incorrectExplanation: 딥 러닝은 입력이 선형 관계인지 비선형 관계인지와 상관없이 올바른 수학적 조작법을 찾아 출력으로 바꿉니다.
+    - content: 기존 머신 러닝에서는 기능이 손으로 만들어집니다. 딥 러닝에서는 기능이 학습됩니다.
+      isCorrect: true
+      correctExplanation: DL(딥 러닝)에서는 입력을 벡터로 표시하고 일련의 지능적 선형 대수 연산을 수행하여 지정된 출력으로 변환하는 과정을 통해 기능 추출 프로세스를 학습합니다.
+    - content: 기존 머신 러닝에서의 알고리즘은 심장을 모델로 합니다. 딥 러닝은 뇌를 모델로 합니다.
+      isCorrect: false
+      incorrectExplanation: 딥 러닝은 인공 신경망이라 불리는 뇌의 구조 및 기능에서 영감을 받은 알고리즘과 연관이 있습니다. 그러나 머신 러닝은 심장을 모델로 하지 않습니다.
+  - content: CPU 기반 Azure VM에 DSVM(Data Science Virtual Machine) 이미지를 배포하면 어떻게 되나요?
+    choices:
+    - content: DSVM이 GPU 기반 Azure VM에만 배포되므로 모든 것이 중단됩니다.
+      isCorrect: false
+      incorrectExplanation: DSVM은 GPU 및 CPU 기반 VM 모두와 원활하게 작동합니다.
+    - content: 딥 러닝 프레임워크가 CPU 모드로 대체되므로 모두 정상 작동합니다.
+      isCorrect: true
+      correctExplanation: DSVM은 GPU 및 CPU 기반 VM 모두와 원활하게 작동합니다.
+    - content: CPU에서 실행하려면 사전 설치된 딥 러닝 프레임워크를 업데이트해야 합니다.
+      isCorrect: false
+      incorrectExplanation: DSVM은 GPU 및 CPU 기반 VM 모두와 원활하게 작동합니다.
+  - content: GPU가 딥 러닝에 자주 사용되는 이유는 무엇인가요?
+    choices:
+    - content: 행렬 대수는 딥 러닝에서 많은 병렬 계산이 필요하며 GPU는 해당 유형 계산에 매우 적합합니다.
+      correctExplanation: 선형 대수 구성 요소의 일부분으로 처리되는 일련의 행렬 연산은 대개 계산을 많이 수행하며 종종 매우 상세하게 병렬화되므로, 계산을 효율적으로 수행하려면 GPU(그래픽 처리 장치)와 같은 특수 계산 장치가 있어야 합니다.
+      isCorrect: true
+    - content: GPU를 사용하면 그라데이션 하강 중에 딥 러닝 모델을 수렴할 수 있습니다.
+      isCorrect: false
+      incorrectExplanation: 그라데이션 하강 중 딥 러닝 모델의 수렴은 사용되는 처리 단위와 무관합니다.
+    - content: 손실 함수를 평가하려면 GPU가 필요합니다.
+      isCorrect: false
+      incorrectExplanation: 손실 함수를 평가하려면 GPU가 필요하지 않습니다.
