@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: <span data-ttu-id="74f07-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="74f07-101">Knowledge check</span></span>
+  description: <span data-ttu-id="74f07-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="74f07-102">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e0cdcd2cc0ea3995d0c3d6eb90d920b61e498ab2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353408"
+title: <span data-ttu-id="74f07-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="74f07-103">Knowledge check</span></span>
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="74f07-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="74f07-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="74f07-105">자금 조달이 제한된 신규 업체에서 근무한다고 가정하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-105">Suppose you work at a startup with limited funding.</span></span> <span data-ttu-id="74f07-106">온-프레미스 솔루션보다 Azure 데이터 저장소를 선호할만한 이유가 무언인가요?</span><span class="sxs-lookup"><span data-stu-id="74f07-106">Why might you prefer Azure data storage over an on-premises solution?</span></span>
+    choices:
+    - content: <span data-ttu-id="74f07-107">특정 브랜드의 하드웨어 공급 업체와 마케팅 파트너 관계를 형성할 수 있도록 특정 브랜드의 하드웨어를 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-107">To ensure you run on a specific brand of hardware which will let you to form a marketing partnership with that hardware vendor.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74f07-108">Azure에는 대규모의 선행 자본 지출(CapEx)이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-108">There are no large, up-front capital expenditures (CapEx) with Azure.</span></span> <span data-ttu-id="74f07-109">매달 사용하는 서비스에 대해서만 지불(OpEx)합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-109">You pay monthly for only the services you use (OpEx).</span></span>
+    - content: <span data-ttu-id="74f07-110">Azure 종량제 청구 모델을 사용하면 비용이 많이 드는 하드웨어 구입을 피할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-110">The Azure pay-as-you-go billing model lets you avoid buying expensive hardware.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74f07-111">Azure에는 대규모의 선행 자본 지출(CapEx)이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-111">There are no large, up-front capital expenditures (CapEx) with Azure.</span></span> <span data-ttu-id="74f07-112">매달 사용하는 서비스에 대해서만 지불(OpEx)합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-112">You pay monthly for only the services you use (OpEx).</span></span>
+    - content: <span data-ttu-id="74f07-113">데이터 저장소의 위치를 정확하게 제어할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-113">To get exact control over the location of your data store.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74f07-114">Azure에는 대규모의 선행 자본 지출(CapEx)이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-114">There are no large, up-front capital expenditures (CapEx) with Azure.</span></span> <span data-ttu-id="74f07-115">매달 사용하는 서비스에 대해서만 지불(OpEx)합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-115">You pay monthly for only the services you use (OpEx).</span></span>
+  - content: <span data-ttu-id="74f07-116">다음 중 온-프레미스 데이터 저장소를 Auzre에 재배치하여 가장 많은 이점을 얻을 수 있는 상황은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="74f07-116">Which of the following situations would yield the most benefits from relocating an on-premise data store to Azure?</span></span>
+    choices:
+    - content: <span data-ttu-id="74f07-117">저장소 수요가 1년 내내 여러 번 증가하고 감소하여 예측할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-117">Unpredictable storage demand that increases and decreases multiple times throughout the year.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74f07-118">Azure 데이터 저장소는 유연합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-118">Azure data storage is flexible.</span></span> <span data-ttu-id="74f07-119">쉽고 빠르게 용량을 추가하거나 제거할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-119">You can quickly and easily add or remove capacity.</span></span> <span data-ttu-id="74f07-120">성능을 높여서 부하의 급증을 처리하거나 성능을 낮춰서 비용을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-120">You can increase performance to handle spikes in load or decrease performance to reduce costs.</span></span> <span data-ttu-id="74f07-121">모든 경우에 사용한 만큼만 지불합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-121">In all cases, you pay for only what you use.</span></span>
+    - content: <span data-ttu-id="74f07-122">저장소 수요가 장기적으로 꾸준하게 성장합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-122">Long-term, steady growth in storage demand.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74f07-123">Azure 데이터 저장소는 유연합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-123">Azure data storage is flexible.</span></span> <span data-ttu-id="74f07-124">쉽고 빠르게 용량을 추가하거나 제거할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-124">You can quickly and easily add or remove capacity.</span></span> <span data-ttu-id="74f07-125">성능을 높여서 부하의 급증을 처리하거나 성능을 낮춰서 비용을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-125">You can increase performance to handle spikes in load or decrease performance to reduce costs.</span></span> <span data-ttu-id="74f07-126">모든 경우에 사용한 만큼만 지불합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-126">In all cases, you pay for only what you use.</span></span>
+    - content: <span data-ttu-id="74f07-127">저장소 수요가 일관되고 변함이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-127">Consistent, unchanging storage demand.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74f07-128">Azure 데이터 저장소는 유연합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-128">Azure data storage is flexible.</span></span> <span data-ttu-id="74f07-129">쉽고 빠르게 용량을 추가하거나 제거할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-129">You can quickly and easily add or remove capacity.</span></span> <span data-ttu-id="74f07-130">성능을 높여서 부하의 급증을 처리하거나 성능을 낮춰서 비용을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-130">You can increase performance to handle spikes in load or decrease performance to reduce costs.</span></span> <span data-ttu-id="74f07-131">모든 경우에 사용한 만큼만 지불합니다.</span><span class="sxs-lookup"><span data-stu-id="74f07-131">In all cases, you pay for only what you use.</span></span>

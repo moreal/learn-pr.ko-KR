@@ -1,0 +1,16 @@
+<span data-ttu-id="9452d-101">클라우드 &mdash; _규모_, _탄력성_, _마이크로 서비스_에 대한 유행어를 들어보았습니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-101">You've heard buzzwords about the cloud &mdash; _scale_, _elasticity_, _microservices_.</span></span> <span data-ttu-id="9452d-102">다른 회사가 클라우드에서 성공을 거두는 것을 목격하고 비즈니스의 요구 사항을 충족할 수 있는 방법 또는 내 커리어에 미치는 영향이 궁금했을 것입니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-102">Perhaps you've seen other companies be successful with the cloud and wondered how it can help you meet your business challenges or even grow your career.</span></span> <span data-ttu-id="9452d-103">Fortune 500대 기업 중 90%가 Azure를 사용한다는 사실을 알고 계셨습니까?</span><span class="sxs-lookup"><span data-stu-id="9452d-103">Did you know that 90% of the Fortune 500 run on Azure?</span></span>
+
+![학습 과정의 시작을 나타내는 Azure 로고](../media/1-heading.png)
+
+<span data-ttu-id="9452d-105">클라우드는 여러분의 일상에 도움을 주며, 때로는 여러분이 인식하지 못하는 방식으로 존재합니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-105">The cloud helps power your everyday life, and it's often present in ways you don't even realize.</span></span> <span data-ttu-id="9452d-106">새롭게 연결된 이 환경에서 기술이 기회를 창출한다고 믿습니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-106">In this new connected world, we believe technology creates opportunity.</span></span> <span data-ttu-id="9452d-107">현재의 일변하는 디지털 세계에 적응하기 위해 클라우드 기술을 이해하면 이 신나는 혁신과 함께 커리어를 쌓을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-107">To keep up with today's ever-changing digital world, understanding cloud technology can help align your career to this exciting revolution.</span></span>
+
+<span data-ttu-id="9452d-108">점심 식사하는 데 걸리는 시간보다 적은 시간으로 Azure에서 첫 번째 가상 머신을 만들고, 디지털 전환부터 다음 시작점에 이르는 기본 구성 요소인 기본 웹 사이트를 실행하도록 구성하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-108">In less than the time it takes to eat lunch, you'll create your first virtual machine on Azure and configure it to run a basic web site, a foundational building block of everything from digital transformation to the next big startup.</span></span>
+
+<span data-ttu-id="9452d-109">클라우드 경험을 시작하려면 다음을 수행해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-109">To begin your cloud journey, you'll:</span></span>
+
+* <span data-ttu-id="9452d-110">Microsoft Azure란 무엇이며 클라우드 컴퓨팅과 어떤 관계가 있는지 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-110">Learn what Microsoft Azure is and how it relates to cloud computing.</span></span>
+* <span data-ttu-id="9452d-111">Azure Cloud Shell을 사용하여 Windows 또는 Linux 가상 머신을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-111">Use Azure Cloud Shell to launch a Windows or Linux virtual machine.</span></span>
+* <span data-ttu-id="9452d-112">기본 웹 서버를 실행하도록 가상 머신을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-112">Configure your virtual machine to run a basic web server.</span></span>
+* <span data-ttu-id="9452d-113">서버를 수직 방향으로 확장하여 계산 성능을 강화합니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-113">Scale up your server to give you more compute power.</span></span>
+
+<span data-ttu-id="9452d-114">먼저 Azure의 클라우드 컴퓨팅에 대해 간략하게 알아보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="9452d-114">Let's start with a brief look at cloud computing on Azure.</span></span>

@@ -1,0 +1,16 @@
+<span data-ttu-id="49eaf-101">법률 회사의 시스템 설계자입니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-101">You're the system architect for a law firm.</span></span> <span data-ttu-id="49eaf-102">회사가 주요 시스템을 Azure로 마이그레이션하도록 요청했습니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-102">The firm has asked you to migrate critical systems to Azure.</span></span> <span data-ttu-id="49eaf-103">작업에는 현재 온-프레미스 SQL Server에 호스트되고 데스크톱 응용 프로그램에서 액세스하는 사례 기록 데이터베이스가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-103">Operations include the database of case histories, currently hosted by an on-premises SQL server and accessed from a desktop application.</span></span> <span data-ttu-id="49eaf-104">SQL Server에서는 데이터베이스 유지 관리를 수행하기 위한 일부 사용자 지정 사내 서비스도 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-104">The SQL server also runs some custom in-house services to perform database maintenance.</span></span> <span data-ttu-id="49eaf-105">Azure VM(Virtual Machines)을 기반으로 하는 솔루션을 사용하면 SQL Server를 호스트하고 사용자 지정 서비스를 계속 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-105">You've decided that a solution based on Azure virtual machines (VMs) will allow you to host your SQL server and continue using your custom services.</span></span> <span data-ttu-id="49eaf-106">쉽게 마이그레이션하기 위해 기존 온-프레미스 서버의 콘텐츠를 기반으로 Azure 가상 하드 디스크를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-106">You'll create an Azure virtual hard disk based on the contents of your existing on-premises server to ease migration.</span></span>
+
+<span data-ttu-id="49eaf-107">이 모듈에서는 Azure에서 만드는 VM에 대한 최적의 디스크 구성을 디자인하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-107">In this module, you'll learn how to architect the optimal disk configuration for the VMs you create in Azure.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="49eaf-108">학습 목표</span><span class="sxs-lookup"><span data-stu-id="49eaf-108">Learning objectives</span></span>
+
+<span data-ttu-id="49eaf-109">이 모듈에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="49eaf-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="49eaf-110">VM(가상 머신) 만들기</span><span class="sxs-lookup"><span data-stu-id="49eaf-110">Create a virtual machine (VM)</span></span>
+- <span data-ttu-id="49eaf-111">VHD(가상 하드 드라이브) 구성 및 기존 VM에 연결</span><span class="sxs-lookup"><span data-stu-id="49eaf-111">Configure and attach virtual hard drives (VHDs) to an existing VM</span></span>
+- <span data-ttu-id="49eaf-112">프리미엄 디스크가 필요한지 결정</span><span class="sxs-lookup"><span data-stu-id="49eaf-112">Determine whether you need premium disks</span></span>
+- <span data-ttu-id="49eaf-113">VM용 디스크 크기 조정</span><span class="sxs-lookup"><span data-stu-id="49eaf-113">Resize disks for a VM</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="49eaf-114">필수 구성 요소</span><span class="sxs-lookup"><span data-stu-id="49eaf-114">Prerequisites</span></span>  
+
+<span data-ttu-id="49eaf-115">없음</span><span class="sxs-lookup"><span data-stu-id="49eaf-115">None</span></span>

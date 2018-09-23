@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-summary
+title: <span data-ttu-id="c75e5-101">요약</span><span class="sxs-lookup"><span data-stu-id="c75e5-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="c75e5-102">요약</span><span class="sxs-lookup"><span data-stu-id="c75e5-102">Summary</span></span>
+  description: <span data-ttu-id="c75e5-103">요약</span><span class="sxs-lookup"><span data-stu-id="c75e5-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 38c0ff8600be568ed7a37ff841cecaee2bb70fed
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352518"
+durationInMinutes: 3
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="c75e5-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="c75e5-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="c75e5-105">Redis 트랜잭션의 명령이 실패하면 어떻게 되나요?</span><span class="sxs-lookup"><span data-stu-id="c75e5-105">What happens if a command in a Redis transaction fails?</span></span>
+    choices:
+    - content: <span data-ttu-id="c75e5-106">명령이 잘못된 구문으로 대기하는 경우에 트랜잭션을 실행하려고 하면 자동으로 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-106">If a command is queued with incorrect syntax, the transaction will be automatically discarded if you try to execute it.</span></span> <span data-ttu-id="c75e5-107">실행 중에 명령이 실패하면 트랜잭션이 정상적으로 완료됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-107">If a command fails during execution, the transaction will complete as normal.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c75e5-108">Redis에서 실행 중 실패한 명령은 트랜잭션을 중지하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-108">In Redis, commands that fail during execution do not stop a transaction.</span></span> <span data-ttu-id="c75e5-109">잘못된 구문으로 대기하는 명령을 사용하면 트랜잭션이 실행되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-109">Commands queued with incorrect syntax will prevent the transaction from being executed.</span></span>
+    - content: <span data-ttu-id="c75e5-110">실패한 명령 이전의 명령은 계속 실행되지만, 실패한 명령 이후의 명령은 실행되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-110">Commands prior to the failing command will still be executed, but those after the failing command will not be.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-111">트랜잭션에서 실패한 명령은 이후 명령이 실행되는 것을 방지하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-111">A failing command in a transaction will not prevent later commands from being executed.</span></span>
+    - content: <span data-ttu-id="c75e5-112">전체 트랜잭션이 롤백됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-112">The entire transaction will be rolled back.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-113">Redis는 트랜잭션 롤백을 지원하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-113">Redis does not support transaction rollbacks.</span></span>
+    - content: <span data-ttu-id="c75e5-114">연결이 중단됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-114">The connection will be aborted.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-115">실패한 명령은 Redis 연결을 중단시키지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-115">Failed commands do not cause a Redis connection to be aborted.</span></span>
+  - content: <span data-ttu-id="c75e5-116">다음 중 데이터 만료를 관리하는 Redis 명령은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="c75e5-116">Which of the following is a Redis command for managing data expiration?</span></span>
+    choices:
+    - content: <span data-ttu-id="c75e5-117">DEL</span><span class="sxs-lookup"><span data-stu-id="c75e5-117">DEL</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-118">DEL 키를 삭제하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-118">DEL is used to delete keys.</span></span>
+    - content: <span data-ttu-id="c75e5-119">DISCARD</span><span class="sxs-lookup"><span data-stu-id="c75e5-119">DISCARD</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-120">DISCARD는 트랜잭션을 실행하기 전에 취소하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-120">DISCARD is used to cancel a transaction prior to its execution.</span></span>
+    - content: <span data-ttu-id="c75e5-121">TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="c75e5-121">TIMEOUT</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-122">TIMEOUT은 올바른 Redis 명령이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-122">TIMEOUT is not a valid Redis command.</span></span>
+    - content: <span data-ttu-id="c75e5-123">EXPIRE</span><span class="sxs-lookup"><span data-stu-id="c75e5-123">EXPIRE</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c75e5-124">EXPIRE는 키의 만료 시간 제한(초)을 설정하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-124">EXPIRE is used to set the expiration timeout of a key in seconds.</span></span>
+  - content: <span data-ttu-id="c75e5-125">Redis 캐시는 **volatile-ttl** 제거 정책으로 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-125">Your Redis cache is configured with the **volatile-ttl** evicition policy.</span></span> <span data-ttu-id="c75e5-126">메모리가 부족하여 새 키를 삽입하려고 할 경우 어떤 기존 키가 제거됩니까?</span><span class="sxs-lookup"><span data-stu-id="c75e5-126">If it runs out of memory and you try to insert a new key, which existing key is removed?</span></span>
+    choices:
+    - content: <span data-ttu-id="c75e5-127">가장 최근에 사용한 키입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-127">The least recently used key.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-128">이는 **allkeys-lru** 제거 정책의 동작입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-128">This is the behavior of the **allkeys-lru** eviction policy.</span></span>
+    - content: <span data-ttu-id="c75e5-129">임의 키입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-129">A random key.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-130">이는 **alkeys-random** 정책의 동작입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-130">This is the behavior of the **alkeys-random** policy.</span></span>
+    - content: <span data-ttu-id="c75e5-131">다음에 만료되는 키입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-131">The key that would next expire.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c75e5-132">**volatile-ttl**는 가장 짧은 time-to-live를 갖는 키를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-132">**volatile-ttl** removes the key with the shortest time-to-live.</span></span>
+    - content: <span data-ttu-id="c75e5-133">만료되도록 구성된 키에서 선택한 임의의 키입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-133">A random key, selected from keys that have been configured to expire.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c75e5-134">이는 **volatile-random** 정책의 동작입니다.</span><span class="sxs-lookup"><span data-stu-id="c75e5-134">This is the behavior of the **volatile-random** policy.</span></span>

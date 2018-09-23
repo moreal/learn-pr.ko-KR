@@ -1,0 +1,53 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: platform
+  title: <span data-ttu-id="06292-101">플랫폼</span><span class="sxs-lookup"><span data-stu-id="06292-101">Platform</span></span>
+  prompt: <span data-ttu-id="06292-102">플랫폼 선택</span><span class="sxs-lookup"><span data-stu-id="06292-102">Choose your platform</span></span>
+  pivots:
+  - id: linux
+    title: <span data-ttu-id="06292-103">Linux</span><span class="sxs-lookup"><span data-stu-id="06292-103">Linux</span></span>
+  - id: macos
+    title: <span data-ttu-id="06292-104">Mac</span><span class="sxs-lookup"><span data-stu-id="06292-104">Mac</span></span>
+  - id: windows
+    title: <span data-ttu-id="06292-105">Windows</span><span class="sxs-lookup"><span data-stu-id="06292-105">Windows</span></span>
+- id: platform-windows-mac
+  title: <span data-ttu-id="06292-106">플랫폼</span><span class="sxs-lookup"><span data-stu-id="06292-106">Platform</span></span>
+  prompt: <span data-ttu-id="06292-107">플랫폼 선택</span><span class="sxs-lookup"><span data-stu-id="06292-107">Choose your platform</span></span>
+  pivots:
+  - id: macos
+    title: <span data-ttu-id="06292-108">Mac</span><span class="sxs-lookup"><span data-stu-id="06292-108">Mac</span></span>
+  - id: windows
+    title: <span data-ttu-id="06292-109">Windows</span><span class="sxs-lookup"><span data-stu-id="06292-109">Windows</span></span>
+- id: azure-interface
+  title: <span data-ttu-id="06292-110">셸</span><span class="sxs-lookup"><span data-stu-id="06292-110">Shell</span></span>
+  prompt: <span data-ttu-id="06292-111">셸 선택</span><span class="sxs-lookup"><span data-stu-id="06292-111">Choose your shell</span></span>
+  pivots:
+  - id: bash
+    title: <span data-ttu-id="06292-112">Bash</span><span class="sxs-lookup"><span data-stu-id="06292-112">Bash</span></span>
+  - id: powershell
+    title: <span data-ttu-id="06292-113">PowerShell</span><span class="sxs-lookup"><span data-stu-id="06292-113">PowerShell</span></span>
+  - id: portal
+    title: <span data-ttu-id="06292-114">Azure Portal</span><span class="sxs-lookup"><span data-stu-id="06292-114">Azure Portal</span></span>
+- id: dev-lang-csharp-javascript
+  title: <span data-ttu-id="06292-115">개발 언어</span><span class="sxs-lookup"><span data-stu-id="06292-115">Development language</span></span>
+  prompt: <span data-ttu-id="06292-116">개발 언어 선택</span><span class="sxs-lookup"><span data-stu-id="06292-116">Choose your development language</span></span>
+  pivots:
+  - id: csharp
+    title: <span data-ttu-id="06292-117">C#</span><span class="sxs-lookup"><span data-stu-id="06292-117">C#</span></span>
+  - id: javascript
+    title: <span data-ttu-id="06292-118">JavaScript</span><span class="sxs-lookup"><span data-stu-id="06292-118">JavaScript</span></span>
+- id: platform-cloud
+  title: <span data-ttu-id="06292-119">플랫폼</span><span class="sxs-lookup"><span data-stu-id="06292-119">Platform</span></span>
+  prompt: <span data-ttu-id="06292-120">클라우드에서 실행할 플랫폼 선택</span><span class="sxs-lookup"><span data-stu-id="06292-120">Choose which platform you want to run in the cloud</span></span>
+  pivots:
+  - id: windows-cloud
+    title: <span data-ttu-id="06292-121">Windows</span><span class="sxs-lookup"><span data-stu-id="06292-121">Windows</span></span>
+  - id: linux-cloud
+    title: <span data-ttu-id="06292-122">Linux</span><span class="sxs-lookup"><span data-stu-id="06292-122">Linux</span></span>
+metadata:
+  ms.openlocfilehash: b7417f5c96bb8628028ac0ff399223c0d996c3c8
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351489"

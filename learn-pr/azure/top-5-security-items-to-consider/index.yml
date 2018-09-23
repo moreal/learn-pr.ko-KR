@@ -1,0 +1,45 @@
+### YamlMime:Module
+uid: learn.top-5-security-items-to-consider
+metadata:
+  title: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
+  description: 크고 작은 조직들은 시스템 및 응용 프로그램 안정성이 비즈니스에 얼마나 중요한지 인식하기 시작했습니다. Marketplace에서 요구하는 속도로 반복하는 동안 안정성을 유지하는 것이 얼마나 어려운지도 알게 되었습니다. SRE(사이트 안정성 엔지니어링)는 이 문제에 대한 검증된 접근 방법입니다. 이 모듈에서는 SRE 및 SRE가 중요한 이유를 알아봅니다.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0f3042af254cf84af484510a32c4c5e396223c7d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349318"
+title: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
+summary: Azure에서 웹 응용 프로그램을 안전하게 보호하고, 가장 일반적이고 위험한 웹 응용 프로그램 공격으로부터 앱을 보호합니다.
+abstract: >
+  이 모듈에서는 다음을 수행합니다.
+   - Azure Security Center 사용
+   - 응용 프로그램의 입력 및 출력 확인
+   - Key Vault에 비밀 저장
+   - 최신 버전의 프레임워크 및 해당 보안 기능을 사용하고 있는지 확인
+   - 프로그램 종속성 및 라이브러리를 안전하게 사용할 수 있는지 유효성 검사
+prerequisites: 없음
+iconUrl: /learn/achievements/top-5-security-items-to-consider.svg
+levels:
+- beginner
+- intermediate
+roles:
+- developer
+- administrator
+products:
+- azure
+- azure-key-vault
+units:
+- learn.top-5-security-items-to-consider.1-introduction
+- learn.top-5-security-items-to-consider.2-azure-security-center
+- learn.top-5-security-items-to-consider.3-inputs-and-outputs
+- learn.top-5-security-items-to-consider.4-secrets-in-key-vault
+- learn.top-5-security-items-to-consider.5-framework-updates
+- learn.top-5-security-items-to-consider.6-safe-dependencies
+- learn.top-5-security-items-to-consider.7-conclusion
+achievement: learn.top-5-security-items-to-consider.badge

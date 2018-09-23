@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.7-summary
+title: <span data-ttu-id="e4b3a-101">요약</span><span class="sxs-lookup"><span data-stu-id="e4b3a-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="e4b3a-102">요약</span><span class="sxs-lookup"><span data-stu-id="e4b3a-102">Summary</span></span>
+  description: <span data-ttu-id="e4b3a-103">요약</span><span class="sxs-lookup"><span data-stu-id="e4b3a-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 87634f7fe2239916c3988825ce31307de5a545a0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347489"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="e4b3a-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="e4b3a-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="e4b3a-105">다음 중 Azure Key Vault의 이점이 **아닌** 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="e4b3a-105">Which of the following is **not** a benefit of Azure Key Vault?</span></span>
+    choices:
+    - content: <span data-ttu-id="e4b3a-106">개인 사용자 정보의 보안 저장소입니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-106">Secure storage of private user information.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e4b3a-107">Key Vault는 사용자 비밀이 아니라 응용 프로그램 비밀을 저장하기 위한 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
+    - content: <span data-ttu-id="e4b3a-108">응용 프로그램의 여러 인스턴스 간에 응용 프로그램 비밀 동기화.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-108">Synchronizing application secrets among multiple instances of an application.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-109">응용 프로그램 개발자가 응용 프로그램 비밀을 직접 처리할 필요성 감소.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-109">Reducing the need for application developers to directly handle application secrets.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-110">할당 가능한 권한을 사용하여 응용 프로그램 비밀에 대한 액세스 제어.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-110">Controlling access to application secrets with assignable permissions.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="e4b3a-111">다음 중 Azure Key Vault의 인증 및 권한 부여 프로세스를 가장 잘 설명한 내용은 어느 것인가요?</span><span class="sxs-lookup"><span data-stu-id="e4b3a-111">Which of these statements best describes Azure Key Vault's authentication and authorization process?</span></span>
+    choices:
+    - content: <span data-ttu-id="e4b3a-112">응용 프로그램은 책임 개발자의 사용자 이름 및 암호를 사용하여 자격 증명 모음에서 인증을 받으며 자격 증명 모음의 모든 비밀에 대해 모든 권한을 갖습니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-112">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-113">응용 프로그램과 사용자는 Microsoft 계정을 사용하여 자격 증명 모음에서 인증을 받으며, 특정 비밀에 액세스할 수 있도록 허가됩니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-113">Applications and users authenticate to a vault with a Microsoft account and are authorized to access specific secrets.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-114">응용 프로그램과 사용자는 Azure Active Directory ID를 사용하여 자격 증명 모음에서 인증을 받으며, 자격 증명 모음의 모든 비밀에 대해 작업을 수행하도록 허가됩니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-114">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform actions on all secrets in the vault.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e4b3a-115">Key Vault에 대한 인증은 Azure Active Directory ID를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-115">Authentication to Key Vault uses Azure Active Directory identities.</span></span> <span data-ttu-id="e4b3a-116">액세스 정책은 자격 증명 모음의 비밀마다 적용되는 작업에 대한 권한 부여를 제공하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-116">Access policies are used to provide authorization for actions that apply to every secret in the vault.</span></span>
+    - content: <span data-ttu-id="e4b3a-117">응용 프로그램은 웹앱에 로그인하는 사용자의 사용자 이름과 암호를 사용하여 자격 증명 모음에서 인증을 받으며, 해당 사용자가 소유한 비밀에 대한 액세스 권한을 부여받습니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-117">Applications authenticate to a vault with the username and password of a user that signs in to the web app, and is granted access to secrets owned by that user.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="e4b3a-118">앱에서 비밀을 로드하면Azure Key Vault에서 이러한 비밀을 어떻게 보호할 수 있나요?</span><span class="sxs-lookup"><span data-stu-id="e4b3a-118">How does Azure Key Vault help protect your secrets after they have been loaded by your app?</span></span>
+    choices:
+    - content: <span data-ttu-id="e4b3a-119">Azure Key Vault는 사용할 때마다 자동으로 새 비밀을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-119">Azure Key Vault automatically generates a new secret after every use.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-120">Azure Key Vault 클라이언트 라이브러리는 우발적인 비밀 노출을 방지하기 위해 응용 프로그램이 사용하는 메모리 영역을 보호합니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-120">The Azure Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-121">Azure Key Vault는 비밀을 이중으로 암호화하므로 앱에서는 비밀을 사용할 때마다 로컬에서 암호를 해독해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-121">Azure Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they're used.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e4b3a-122">비밀은 보호하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-122">It doesn't protect your secrets.</span></span> <span data-ttu-id="e4b3a-123">비밀은 응용 프로그램에 로드되고 나면 보호되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-123">Secrets are unprotected once they're loaded by your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e4b3a-124">일단 앱에서 비밀이 로드되면 보호되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-124">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="e4b3a-125">기록하거나 저장하거나 클라이언트 응답에 반환하지 말아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e4b3a-125">Make sure to not log them, store them, or return them in client responses.</span></span>

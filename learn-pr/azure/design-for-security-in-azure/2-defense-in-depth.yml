@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: <span data-ttu-id="0030d-101">심층 방어</span><span class="sxs-lookup"><span data-stu-id="0030d-101">Defense in depth</span></span>
+metadata:
+  title: <span data-ttu-id="0030d-102">심층 방어</span><span class="sxs-lookup"><span data-stu-id="0030d-102">Defense in depth</span></span>
+  description: <span data-ttu-id="0030d-103">이 단원에서는 심층 방어를 연습하는 방법을 살펴보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-103">In this unit we'll discuss how to practice defense in depth</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 23e9c8c1afa4a2872c1131864cc228ad386dc57b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348182"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: <span data-ttu-id="0030d-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="0030d-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="0030d-105">True 또는 false: *심층 방어*는 사용자 정보에 액세스 권한을 얻으려는 공격으로부터 보호하기 위한 전략인가요?</span><span class="sxs-lookup"><span data-stu-id="0030d-105">True or false: *defense in depth* is a strategy aimed to protect you against attacks attempting to gain access to your information?</span></span>'
+    choices:
+    - content: <span data-ttu-id="0030d-106">True</span><span class="sxs-lookup"><span data-stu-id="0030d-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="0030d-107">*심층 방어*는 권한이 없는 액세스로부터 보호를 제공하는 계층화된 시스템입니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-107">*Defense in depth* is a layered system that provides protection from unauthorized access.</span></span> <span data-ttu-id="0030d-108">한 계층을 위반하는 경우 추가로 노출되지 않도록 하기 위해 다른 계층이 마련됩니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-108">If one layer is breached, there is another layer in place to prevent further exposure.</span></span>
+    - content: <span data-ttu-id="0030d-109">False</span><span class="sxs-lookup"><span data-stu-id="0030d-109">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0030d-110">*심층 방어*는 권한이 없는 액세스로부터 보호를 제공하는 계층화된 시스템입니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-110">*Defense in depth* is a layered system that provides protection from unauthorized access.</span></span> <span data-ttu-id="0030d-111">한 계층을 위반하는 경우 추가로 노출되지 않도록 하기 위해 다른 계층이 마련됩니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-111">If one layer is breached, there is another layer in place to prevent further exposure.</span></span>
+  - content: '<span data-ttu-id="0030d-112">True 또는 false: 내 아키텍처가 클라우드로 이동하여 완전히 안전해지고 모든 보안 책임을 내 클라우드 공급자에게 넘길 수 있나요?</span><span class="sxs-lookup"><span data-stu-id="0030d-112">True or false: by moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider?</span></span>'
+    choices:
+    - content: <span data-ttu-id="0030d-113">True</span><span class="sxs-lookup"><span data-stu-id="0030d-113">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0030d-114">클라우드로 이동하면 클라우드 공급자에 대한 일부 책임이 제거되지만 공유 책임 모델은 여전히 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-114">Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.</span></span>
+    - content: <span data-ttu-id="0030d-115">False</span><span class="sxs-lookup"><span data-stu-id="0030d-115">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="0030d-116">클라우드로 이동하면 클라우드 공급자에 대한 일부 책임이 제거되지만 공유 책임 모델은 여전히 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="0030d-116">Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.</span></span>

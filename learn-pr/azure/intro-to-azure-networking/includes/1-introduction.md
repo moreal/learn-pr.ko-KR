@@ -1,0 +1,17 @@
+<span data-ttu-id="e316b-101">간단한 사용자 지정 및 저렴한 월간 구독을 사용하여 비타민 업계를 근본적으로 방해하는 신규 업체에서 일하기 시작했습니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-101">You just started working at startup that's fundamentally disrupting the vitamin industry with simple customization and affordable monthly subscriptions.</span></span> <span data-ttu-id="e316b-102">비즈니스가 전자상거래 사이트에서 급성장한 반면 데이터 센터는 사용자 요구를 충족하기 위해 고군분투하고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-102">While business is booming on the e-commerce site, your data center is starting to struggle to keep up with user demand.</span></span> <span data-ttu-id="e316b-103">동시에 너무 많은 사용자가 로그인하는 경우 서비스가 실패하고 예상보다 많은 예약 및 예약되지 않은 유지 관리 기간에 직면하게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-103">Your service fails when too many users login at the same time, and you're facing more scheduled and unscheduled maintenance windows than you'd like.</span></span>
+
+![데이터 센터에서 오버로드된 서버](../media/1-heading.png)
+
+<span data-ttu-id="e316b-105">사이트가 실리콘밸리에 위치하고 있어서 유럽 및 아시아와 같은 다른 지역에 위치한 사용자에게 특히 네트워크 지연이 심각하게 발생하고 있다는 것을 알았습니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-105">Your site is based in Silicon Valley, so you also find that a network delay is especially bad for users located in other regions, such as Europe and Asia.</span></span> 
+
+<span data-ttu-id="e316b-106">따라서 팀에게 비용을 줄일 수 있는 클라우드로 사이트를 이동하도록 설득했습니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-106">Therefore, you convince your team to move the site to the cloud to help save costs.</span></span> <span data-ttu-id="e316b-107">그러면 Azure가 사이트 운영을 개선하는 데 특히 어떤 도움이 될 수 있을까요?</span><span class="sxs-lookup"><span data-stu-id="e316b-107">But how can Azure, specifically, help your site run better?</span></span>
+
+<span data-ttu-id="e316b-108">결과적으로 Azure에서 네트워크를 관리하는 방법은 온-프레미스 네트워크를 관리하는 방법과 완전히 다릅니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-108">As it turns out, managing networks on Azure isn't entirely different from managing on-premise networks.</span></span> <span data-ttu-id="e316b-109">이유를 알아보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-109">Let's discover why.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="e316b-110">학습 목표</span><span class="sxs-lookup"><span data-stu-id="e316b-110">Learning objectives</span></span>
+
+<span data-ttu-id="e316b-111">이 모듈에서는 다음을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="e316b-111">In this module, you will learn:</span></span>
+
+- <span data-ttu-id="e316b-112">Azure 가상 네트워크가 가상 머신 및 다른 네트워크와 같은 리소스 간에 보안된 네트워크 통신을 제공하는 방법</span><span class="sxs-lookup"><span data-stu-id="e316b-112">How an Azure virtual network provides secure network communication among resources such as virtual machines and other networks</span></span>
+- <span data-ttu-id="e316b-113">고가용성 및 복원력의 의미와 Azure Load Balancer로 단일 지리적 영역 내에서 복원력을 높일 수 있는 방법</span><span class="sxs-lookup"><span data-stu-id="e316b-113">What high availability and resiliency mean and how Azure Load Balancer can increase resiliency within a single geographic region</span></span>
+- <span data-ttu-id="e316b-114">대기 시간의 의미와 Traffic Manager로 네트워크 대기 시간을 줄이고 지리적 위치에 복원력을 제공하는 방법</span><span class="sxs-lookup"><span data-stu-id="e316b-114">What latency is and how Traffic Manager helps reduce network latency and provides resiliency across geographic locations</span></span>

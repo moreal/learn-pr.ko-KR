@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: <span data-ttu-id="85c2a-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="85c2a-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="85c2a-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="85c2a-102">Knowledge check</span></span>
+  description: <span data-ttu-id="85c2a-103">'Azure 계산 소개' 모듈에 대한 지식 점검입니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349745"
+durationInMinutes: 2
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="85c2a-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="85c2a-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="85c2a-105">천문학 팀에는 계산 성능과 메모리를 많이 실행해야 하는 많은 이미지 프로세싱 응용 프로그램이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-105">Your astronomy team has a number of image-processing applications that require lots of compute power and memory to run.</span></span> <span data-ttu-id="85c2a-106">이 응용 프로그램을 Azure로 신속하게 마이그레이션하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-106">You want to quickly migrate these applications to Azure.</span></span> <span data-ttu-id="85c2a-107">다음 중 어떤 옵션을 선택해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="85c2a-107">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="85c2a-108">AKS(Azure Kubernetes Service)</span><span class="sxs-lookup"><span data-stu-id="85c2a-108">Azure Kubernetes Service (AKS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="85c2a-109">App Service는 완전히 관리되고 자동으로 규모를 조정합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-109">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="85c2a-110">그러면 팀이 잘하는 작업인 코드 작성에 집중할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-110">This allows your team to focus on what their good at, writing code.</span></span>
+    - content: <span data-ttu-id="85c2a-111">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="85c2a-111">Service Fabric</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="85c2a-112">App Service는 완전히 관리되고 자동으로 규모를 조정합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-112">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="85c2a-113">그러면 팀이 잘하는 작업인 코드 작성에 집중할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-113">This allows your team to focus on what their good at, writing code.</span></span>
+    - content: <span data-ttu-id="85c2a-114">App Service</span><span class="sxs-lookup"><span data-stu-id="85c2a-114">App Service</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="85c2a-115">App Service는 완전히 관리되고 자동으로 규모를 조정합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-115">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="85c2a-116">그러면 팀이 잘하는 작업인 코드 작성에 집중할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-116">This allows your team to focus on what their good at, writing code.</span></span>
+  - content: <span data-ttu-id="85c2a-117">천문학 팀이 완료하는 데 몇 시간에서 며칠까지 걸리는 천문학적 계산을 처리해야 한다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-117">Suppose your astronomy team has come up against astronomical calculations that are taking hours and even days to complete.</span></span> <span data-ttu-id="85c2a-118">병렬 실행은 많은 도움이 되지 않는 것 같습니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-118">Parallel execution does not seem to help much.</span></span> <span data-ttu-id="85c2a-119">다음 중 어떤 옵션을 선택해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="85c2a-119">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="85c2a-120">Cloud Services</span><span class="sxs-lookup"><span data-stu-id="85c2a-120">Cloud Services</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="85c2a-121">Azure Batch는 수십, 수백 또는 수천 개의 VM으로 확장하는 기능과 함께 클라우드 규모의 작업 예약 및 계산 관리를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-121">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+    - content: <span data-ttu-id="85c2a-122">Azure Batch</span><span class="sxs-lookup"><span data-stu-id="85c2a-122">Azure Batch</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="85c2a-123">Azure Batch는 수십, 수백 또는 수천 개의 VM으로 확장하는 기능과 함께 클라우드 규모의 작업 예약 계산 관리를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-123">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+    - content: <span data-ttu-id="85c2a-124">Container Instances</span><span class="sxs-lookup"><span data-stu-id="85c2a-124">Container Instances</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="85c2a-125">Azure Batch는 수십, 수백 또는 수천 개의 VM으로 확장하는 기능과 함께 클라우드 규모의 작업 예약 및 계산 관리를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="85c2a-125">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>

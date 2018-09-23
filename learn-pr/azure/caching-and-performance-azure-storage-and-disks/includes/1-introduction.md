@@ -1,0 +1,18 @@
+<span data-ttu-id="f7bc7-101">Azure에서 실행되는 SQL Server VM의 회사 데이터베이스 인프라를 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-101">You manage your corporate database infrastructure of SQL Server VMs running in Azure.</span></span> <span data-ttu-id="f7bc7-102">경기가 좋아 작업을 강화하지만 계속해서 비용을 관리해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-102">Times are good, and you need to scale up your operation, while still controlling costs.</span></span> <span data-ttu-id="f7bc7-103">일부 데이터베이스 작업은 기존 데이터를 많이 읽습니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-103">Some database operations involve many reads of existing data.</span></span> <span data-ttu-id="f7bc7-104">정기적인 청구서 및 보고 실행은 쓰기가 많은 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-104">The regular invoice and reporting runs are write-heavy operations.</span></span> <span data-ttu-id="f7bc7-105">모든 작업 유형을 처리하도록 인프라를 최적화하는 방법을 찾고 싶습니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-105">You'd like to find a way to optimize your infrastructure to handle all operation types.</span></span> <span data-ttu-id="f7bc7-106">인프라 개선에 투자하기 전에 먼저 VM 디스크 캐싱 옵션을 살펴보기로 했습니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-106">Before investing in infrastructure improvements, you decide to explore VM disk caching options first.</span></span>
+
+<span data-ttu-id="f7bc7-107">캐싱은 컴퓨팅 리소스의 속도를 높이기 위한 일반적인 접근 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-107">Caching is a common approach to speeding up computing resources.</span></span> <span data-ttu-id="f7bc7-108">Azure는 Azure VM(Virtual Machines)에서 사용하는 Azure Storage 및 디스크에 대한 특정 캐시 옵션을 비롯하여 Azure 환경에서 데이터 액세스를 최적화하는 데 도움이 되는 광범위한 캐싱 기술을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-108">Azure supports a range of caching technologies to help optimize data access across the Azure landscape, including specific cache options for the Azure storage and disks used by Azure Virtual Machines (VMs).</span></span>
+
+<span data-ttu-id="f7bc7-109">Azure에서 사용 가능한 디스크 캐싱 옵션을 살펴보고 포털 및 PowerShell을 사용하여 디스크 캐싱을 관리하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-109">We're going to explore the available disk caching options in Azure and learn how to manage disk caching with the portal and PowerShell.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="f7bc7-110">학습 목표</span><span class="sxs-lookup"><span data-stu-id="f7bc7-110">Learning objectives</span></span>
+
+<span data-ttu-id="f7bc7-111">이 모듈에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="f7bc7-111">In this module, you will:</span></span>
+
+- <span data-ttu-id="f7bc7-112">Azure의 디스크 성능에 대한 주요 고려 사항 설명</span><span class="sxs-lookup"><span data-stu-id="f7bc7-112">Describe the key considerations around disk performance in Azure</span></span>
+- <span data-ttu-id="f7bc7-113">Azure의 디스크 성능에 미치는 캐싱의 영향 설명</span><span class="sxs-lookup"><span data-stu-id="f7bc7-113">Describe the effects of caching on disk performance in Azure</span></span>
+- <span data-ttu-id="f7bc7-114">Azure Portal을 사용하여 캐시 설정을 사용 및 관리</span><span class="sxs-lookup"><span data-stu-id="f7bc7-114">Enable and manage cache settings with the Azure portal</span></span>
+- <span data-ttu-id="f7bc7-115">PowerShell을 사용하여 캐시 설정 사용 및 관리</span><span class="sxs-lookup"><span data-stu-id="f7bc7-115">Enable and manage cache settings with PowerShell</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="f7bc7-116">필수 구성 요소</span><span class="sxs-lookup"><span data-stu-id="f7bc7-116">Prerequisites</span></span>  
+
+<span data-ttu-id="f7bc7-117">없음</span><span class="sxs-lookup"><span data-stu-id="f7bc7-117">None</span></span>

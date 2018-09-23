@@ -1,0 +1,67 @@
+<span data-ttu-id="4b4de-101">앞에서 **Azure Load Balancer**를 통해 고가용성을 달성하고 가동 중지 시간을 최소화하는 방법을 살펴보았습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-101">Previously, you saw how **Azure Load Balancer** helps you achieve high availability and minimize downtime.</span></span>
+
+<span data-ttu-id="4b4de-102">전자상거래 사이트의 가용성은 높지만 대기 시간 문제를 해결하거나 지리적 지역에서 복원력을 만드는 것은 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-102">Although your e-commerce site is more highly available, it doesn't solve the issue of latency or create resiliency across geographic regions.</span></span>
+
+<span data-ttu-id="4b4de-103">유럽이나 아시아 지역의 사용자가 미국에 있는 사이트를 더 빨리 로드하려면 어떻게 해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="4b4de-103">How can you make your site, which is located in the United States, load faster for users located in Europe or Asia?</span></span>
+
+## <a name="what-is-network-latency"></a><span data-ttu-id="4b4de-104">네트워크 대기 시간이란?</span><span class="sxs-lookup"><span data-stu-id="4b4de-104">What is network latency?</span></span>
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="4b4de-105">![대기 시간을 나타내는 초시계](../media/4-latency.png) :::column-end:::: :::column span="3"::: _대기 시간_은 데이터가 네트워크를 통해 이동하는 데 걸리는 시간을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-105">![A stopwatch representing latency](../media/4-latency.png) :::column-end:::: :::column span="3"::: _Latency_ refers to the time it takes for data to travel over the network.</span></span> <span data-ttu-id="4b4de-106">대기 시간은 일반적으로 밀리초 단위로 측정됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-106">Latency is typically measured in milliseconds.</span></span>
+
+<span data-ttu-id="4b4de-107">대기 시간은 대역폭과 비교됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-107">Compare latency to bandwidth.</span></span> <span data-ttu-id="4b4de-108">대역폭은 연결에 적합할 수 있는 데이터의 양을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-108">Bandwidth refers to the amount of data that can fit on the connection.</span></span> <span data-ttu-id="4b4de-109">대기 시간은 해당 데이터가 대상에 도달하는 데 걸리는 시간을 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-109">Latency refers to the time it takes for that data to reach its destination.</span></span>
+  :::column-end:::
+:::row-end:::
+
+<span data-ttu-id="4b4de-110">사용하는 연결 형식 및 응용 프로그램 디자인 방법과 같은 요인은 대기 시간에 영향을 줄 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-110">Factors such as the type of connection you use and how your application is designed can affect latency.</span></span> <span data-ttu-id="4b4de-111">그러나 아마도 가장 큰 요인은 거리입니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-111">But perhaps the biggest factor is distance.</span></span>
+
+<span data-ttu-id="4b4de-112">미국 동부 지역에 있는 Azure의 전자상거래 사이트를 생각해 보세요.</span><span class="sxs-lookup"><span data-stu-id="4b4de-112">Think about your e-commerce site on Azure, which is in the East US region.</span></span> <span data-ttu-id="4b4de-113">일반적으로 데이터를 애틀란타(약 400마일 거리)로 전송하는 데 걸리는 시간은 데이터를 런던(약 4,000마일 거리)으로 전송하는 데 걸리는 시간보다 짧습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-113">It would typically take less time to transfer data to Atlanta (a distance of around 400 miles) than to transfer data to London (a distance of around 4,000 miles).</span></span>
+
+<span data-ttu-id="4b4de-114">전자상거래 사이트에서는 표준 HTML, CSS, JavaScript 및 이미지를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-114">Your e-commerce site delivers standard HTML, CSS, JavaScript, and images.</span></span> <span data-ttu-id="4b4de-115">많은 파일에 대한 네트워크 대기 시간은 늘어날 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-115">The network latency for many files can add up.</span></span> <span data-ttu-id="4b4de-116">지리적으로 멀리 떨어져 있는 사용자가 대기 시간을 줄이려면 어떻게 해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="4b4de-116">How can you reduce latency for users located far away geographically?</span></span>
+
+## <a name="scale-out-to-different-regions"></a><span data-ttu-id="4b4de-117">다른 지역으로 확장</span><span class="sxs-lookup"><span data-stu-id="4b4de-117">Scale out to different regions</span></span>
+
+<span data-ttu-id="4b4de-118">Azure는 전 세계의 여러 지역에 데이터 센터를 제공하고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-118">Recall that Azure provides data centers in regions across the globe.</span></span>
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="4b4de-119">![지역 스케일 아웃을 나타내는 지구본](../media/4-scale-out-regions.png) :::column-end:::: :::column span="3"::: 데이터 센터 구축에 드는 비용을 생각해 보세요.</span><span class="sxs-lookup"><span data-stu-id="4b4de-119">![A globe representing region scale-out](../media/4-scale-out-regions.png) :::column-end:::: :::column span="3"::: Think about the cost of building a data center.</span></span> <span data-ttu-id="4b4de-120">장비 비용만 드는 것이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-120">Equipment costs aren't the only factor.</span></span> <span data-ttu-id="4b4de-121">즉, 각 위치에서 지속적으로 시스템을 실행하려면 전력, 냉방, 인력 비용을 부담해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-121">You need to provide the power, cooling, and personnel to keep your systems running at each location.</span></span> <span data-ttu-id="4b4de-122">전체 데이터 센터를 복제하는 것은 엄청나게 큰 비용이 들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-122">It might be prohibitively expensive to replicate your entire data center.</span></span> <span data-ttu-id="4b4de-123">하지만 Azure를 사용하여 복제하면 큰 비용을 절감할 수 있습니다. Azure에는 필요한 장비와 인력이 기본적으로 제공되기 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-123">But doing so with Azure can cost much less, because Azure already has the equipment and personnel in place.</span></span>
+  :::column-end:::
+:::row-end:::
+
+<span data-ttu-id="4b4de-124">대기 시간을 줄이는 한 가지 방법은 둘 이상의 지역에서 서비스의 정확한 복사본을 제공하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-124">One way to reduce latency is to provide exact copies of your service in more than one region.</span></span> <span data-ttu-id="4b4de-125">다음 일러스트레이션은 글로벌 배포의 예를 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-125">The following illustration shows an example of global deployment.</span></span>
+
+![세 개의 Azure 데이터 센터가 강조 표시된 세계 지도를 보여주는 일러스트레이션.](../media/4-global-deployment.png)
+
+<span data-ttu-id="4b4de-128">다이어그램에서는 Azure 3개 지역(미국 동부, 북유럽 및 동아시아)에서 실행되는 전자상거래 사이트를 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-128">The diagram shows your e-commerce site running in three Azure regions: East US, North Europe, and East Asia.</span></span> <span data-ttu-id="4b4de-129">각각에 대한 DNS 이름을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-129">Notice the DNS name for each.</span></span> <span data-ttu-id="4b4de-130">지리적으로 가장 가까운 서비스에 사용자를 연결하려면 어떻게 해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="4b4de-130">How can you connect users to the service that's closest geographically, but under the contoso.com domain?</span></span>
+
+## <a name="use-traffic-manager-to-route-users-to-the-closest-endpoint"></a><span data-ttu-id="4b4de-131">Traffic Manager를 사용하여 사용자를 가장 가까운 엔드포인트로 라우팅</span><span class="sxs-lookup"><span data-stu-id="4b4de-131">Use Traffic Manager to route users to the closest endpoint</span></span>
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="4b4de-132">![Azure Traffic Manager를 나타내는 표지판](../media/4-sign-post.png) :::column-end:::: :::column span="3"::: 한 가지 방법은 **Azure Traffic Manager**입니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-132">![A sign post representing Azure Traffic Manager](../media/4-sign-post.png) :::column-end:::: :::column span="3"::: One answer is **Azure Traffic Manager**.</span></span> <span data-ttu-id="4b4de-133">Traffic Manager는 사용자에게 가장 가까운 DNS 서버를 사용하여 사용자 트래픽을 전역적으로 분산된 엔드포인트로 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-133">Traffic Manager uses the DNS server that's closest to the user to direct user traffic to a globally distributed endpoint.</span></span>
+  :::column-end:::
+:::row-end:::
+
+<span data-ttu-id="4b4de-134">다음 일러스트레이션은 Traffic Manager의 역할을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-134">The following illustration shows the role of the Traffic Manager.</span></span>
+
+![<span data-ttu-id="4b4de-135">사용자 요청을 가장 가까운 데이터 센터로 라우팅하는 Azure Traffic Manager를 보여주는 일러스트레이션.</span><span class="sxs-lookup"><span data-stu-id="4b4de-135">An illustration showing Azure Traffic Manager routing a user request to the nearest data center.</span></span> ](../media/4-traffic-manager.png)
+
+<span data-ttu-id="4b4de-136">Traffic Manager는 클라이언트와 서버 간에 전달되는 트래픽을 확인하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-136">Traffic Manager doesn't see the traffic that's passed between the client and server.</span></span> <span data-ttu-id="4b4de-137">대신 클라이언트 웹 브라우저를 기본 설정 엔드포인트로 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-137">Rather, it directs the client web browser to a preferred endpoint.</span></span> <span data-ttu-id="4b4de-138">Traffic Manager는 대기 시간이 가장 짧은 엔드포인트 등에 몇 가지 다른 방법으로 트래픽을 라우팅할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-138">Traffic Manager can route traffic in a few different ways, such as to the endpoint with the lowest latency.</span></span>
+
+<span data-ttu-id="4b4de-139">여기에 표시되지 않았지만 이 설정에는 캘리포니아에서 실행되는 온-프레미스 배포가 포함되었을 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-139">Although not shown here, this setup could also include your on-premises deployment running in California.</span></span> <span data-ttu-id="4b4de-140">Traffic Manager를 사용자 고유의 온-프레미스 네트워크에 연결하여 기존 데이터 센터 투자를 유지할 수 있도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-140">You can connect Traffic Manager to your own on-premises networks, enabling you to maintain your existing data center investments.</span></span> <span data-ttu-id="4b4de-141">또는 응용 프로그램을 완전히 클라우드로 이동할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-141">Or you can move your application entirely to the cloud.</span></span> <span data-ttu-id="4b4de-142">선택은 사용자의 몫입니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-142">The choice is yours.</span></span>
+
+## <a name="compare-load-balancer-to-traffic-manager"></a><span data-ttu-id="4b4de-143">Load Balancer와 Traffic Manager 비교</span><span class="sxs-lookup"><span data-stu-id="4b4de-143">Compare Load Balancer to Traffic Manager</span></span>
+
+:::row:::
+  :::column:::
+    <span data-ttu-id="4b4de-144">![돋보기](../media/4-magnifying-glass.png) :::column-end:::: :::column span="3"::: Azure Load Balancer는 동일한 지역 내의 트래픽을 분산시켜 서비스의 가용성과 복원력을 향상합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-144">![A magnifying glass](../media/4-magnifying-glass.png) :::column-end:::: :::column span="3"::: Azure Load Balancer distributes traffic within the same region to make your services more highly available and resilient.</span></span> <span data-ttu-id="4b4de-145">Traffic Manager는 DNS 수준에서 작동하며 클라이언트를 기본 설정 엔드포인트로 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-145">Traffic Manager works at the DNS level, and directs the client to a preferred endpoint.</span></span> <span data-ttu-id="4b4de-146">이 엔드포인트는 사용자에게 가장 가까운 지역일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-146">This endpoint can be to the region that's closest to your user.</span></span>
+
+<span data-ttu-id="4b4de-147">Load Balancer와 Traffic Manager는 모두 서비스의 복원력을 약간 다른 방식으로 향상합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-147">Load Balancer and Traffic Manager both help make your services more resilient, but in slightly different ways.</span></span> <span data-ttu-id="4b4de-148">Load Balancer는 응답하지 않는 VM을 검색하면 트래픽을 풀의 다른 VM으로 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-148">When Load Balancer detects an unresponsive VM, it directs traffic to other VMs in the pool.</span></span> <span data-ttu-id="4b4de-149">Traffic Manager는 엔드포인트의 상태를 모니터링합니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-149">Traffic Manager monitors the health of your endpoints.</span></span> <span data-ttu-id="4b4de-150">반면, Traffic Manager는 응답하지 않는 엔드포인트를 검색하면 트래픽을 응답하는 가장 가까운 다음 엔드포인트로 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-150">In contrast, when Traffic Manager finds an unresponsive endpoint, it directs traffic to the next closest endpoint that is responsive.</span></span>
+  :::column-end:::
+:::row-end:::
+
+## <a name="summary"></a><span data-ttu-id="4b4de-151">요약</span><span class="sxs-lookup"><span data-stu-id="4b4de-151">Summary</span></span>
+
+<span data-ttu-id="4b4de-152">지리적인 거리는 대기 시간에 영향을 주는 가장 큰 요인 중 하나입니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-152">Geographic distance is one of the biggest factors that contributes to latency.</span></span> <span data-ttu-id="4b4de-153">Traffic Manager를 사용하면 여러 지리적 지역에서 서비스의 정확한 복사본을 호스팅할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-153">With Traffic Manager in place, you can host exact copies of your service in multiple geographic regions.</span></span> <span data-ttu-id="4b4de-154">미국, 유럽 및 아시아 지역의 사용자는 모두 이런 방식으로 전자상거래 사이트를 이용하는 좋은 경험을 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b4de-154">That way, users in the United States, Europe, and Asia will all have a good experience using your e-commerce site.</span></span>

@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.caching-and-performance-azure-storage-and-disks.7-summary
+title: <span data-ttu-id="d580b-101">요약</span><span class="sxs-lookup"><span data-stu-id="d580b-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="d580b-102">요약</span><span class="sxs-lookup"><span data-stu-id="d580b-102">Summary</span></span>
+  description: <span data-ttu-id="d580b-103">요약</span><span class="sxs-lookup"><span data-stu-id="d580b-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a607f558758763e280a575a129795ff0900ece5
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349430"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="d580b-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="d580b-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="d580b-105">로그 파일 저장처럼 쓰기 집약적 작업에 적합한 캐싱 옵션은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="d580b-105">Which caching option is a good choice for write-heavy operations such as storing log files?</span></span>
+    choices:
+    - content: <span data-ttu-id="d580b-106">읽기 전용</span><span class="sxs-lookup"><span data-stu-id="d580b-106">Read-only</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d580b-107">읽기 전용 캐싱은 TempDB 데이터를 포함한 데이터 디스크에 적합합니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-107">Read-only caching works well for data disks, including TempDB data.</span></span> <span data-ttu-id="d580b-108">그러나 쓰기 집약적 작업의 성능이 개선되지는 않으며 오히려 성능이 약간 저하될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-108">However, it does not improve performance of write-heavy operations and may even cause a slight decrease in performance.</span></span>
+    - content: <span data-ttu-id="d580b-109">읽기/쓰기</span><span class="sxs-lookup"><span data-stu-id="d580b-109">Read/write</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d580b-110">필요할 때 앱에서 쓰기 캐시된 데이터를 영구 디스크로 올바르게 처리하는 경우에만 적합한 옵션입니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-110">This is a good option if your app properly handles writing cached data to persistent disks when needed.</span></span>
+    - content: <span data-ttu-id="d580b-111">없음</span><span class="sxs-lookup"><span data-stu-id="d580b-111">None</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d580b-112">쓰기 집약적 작업은 일반적으로 캐싱의 이점이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-112">Write-heavy operations generally do not benefit from caching.</span></span> <span data-ttu-id="d580b-113">로그 파일 전용 리스크에 가장 적합한 옵션은 아마도 '없음'일 것입니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-113">'None' is probably the best choice for a disk dedicated to log files.</span></span>
+  - content: <span data-ttu-id="d580b-114">캐싱 유형을 변경하려면 Azure가 VM을 다시 시작해야 하는 디스크 유형은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="d580b-114">For which type of disk does Azure restart the VM in order to change caching type?</span></span>
+    choices:
+    - content: <span data-ttu-id="d580b-115">데이터</span><span class="sxs-lookup"><span data-stu-id="d580b-115">Data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d580b-116">데이터 디스크의 캐시 설정을 변경하면 대상 디스크가 분리되었다가 다시 연결되지만, VM이 다시 시작되지는 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-116">Changing the cache setting of a data disk detaches and reattaches the target disk but does not restart the VM.</span></span>
+    - content: <span data-ttu-id="d580b-117">OS(운영 체제)</span><span class="sxs-lookup"><span data-stu-id="d580b-117">Operating system (OS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d580b-118">OS 디스크의 캐시 설정을 변경하려면 VM을 다시 시작해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-118">Changing the cache setting of the OS disk requires a VM restart.</span></span>
+    - content: <span data-ttu-id="d580b-119">임시</span><span class="sxs-lookup"><span data-stu-id="d580b-119">Temporary</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d580b-120">임시 디스크의 캐싱 옵션을 변경할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-120">You can't change caching options on a temporary disk.</span></span>
+    - content: <span data-ttu-id="d580b-121">ZRS(영역 중복 저장소)</span><span class="sxs-lookup"><span data-stu-id="d580b-121">Zone-redundant storage (ZRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d580b-122">프리미엄 저장소 계정은 ZRS를 지원하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-122">A premium storage account doesn't support ZRS.</span></span>
+  - content: <span data-ttu-id="d580b-123">Azure PowerShell을 사용하여 VM을 관리한다고 가정해 보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-123">Suppose you are using Azure PowerShell to manage a VM.</span></span> <span data-ttu-id="d580b-124">VM을 나타내는 로컬 개체가 있고 해당 로컬 개체에 여러 업데이트를 설치했습니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-124">You have a local object that represents the VM and you've made several updates to that local object.</span></span> <span data-ttu-id="d580b-125">이러한 로컬 변경 내용을 실제 VM에 적용하려면 어떤 PowerShell cmdlet를 사용해야 할까요?</span><span class="sxs-lookup"><span data-stu-id="d580b-125">Which PowerShell cmdlet would you use to apply those local changes to the actual VM?</span></span>
+    choices:
+    - content: <span data-ttu-id="d580b-126">Update-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="d580b-126">Update-AzureRmVM</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d580b-127">이 cmdlet은 Azure 가상 머신의 상태를 가상 머신 개체의 상태로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="d580b-127">This cmdlet updates the state of an Azure virtual machine to the state of a virtual machine object.</span></span>
+    - content: <span data-ttu-id="d580b-128">Set-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="d580b-128">Set-AzureRmVM</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="d580b-129">New-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="d580b-129">New-AzureRmVM</span></span>
+      isCorrect: false

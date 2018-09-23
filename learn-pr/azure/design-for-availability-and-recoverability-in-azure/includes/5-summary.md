@@ -1,0 +1,28 @@
+<span data-ttu-id="4ec0c-101">고가용성, 재해 복구 및 백업을 위한 설계를 통해 응용 프로그램을 사용 및 복구 가능하게 유지하는 방법에 대해 논의했습니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-101">We've discussed how to make your application available and recoverable by architecting for high availability, disaster recovery, and backups.</span></span> <span data-ttu-id="4ec0c-102">몇 가지 핵심 내용을 살펴보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-102">Let's take a look at some of the key takeaways.</span></span>
+
+## <a name="high-availability"></a><span data-ttu-id="4ec0c-103">고가용성</span><span class="sxs-lookup"><span data-stu-id="4ec0c-103">High availability</span></span>
+
+- <span data-ttu-id="4ec0c-104">고가용성은 시스템 구성 요소의 손실이나 심각한 성능 저하를 처리하는 기능입니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-104">High availability is the ability to handle the loss or severe degradation of a component of a system.</span></span>
+- <span data-ttu-id="4ec0c-105">3가지 주요 영역에 중점을 두고 응용 프로그램의 고가용성을 평가합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-105">Evaluate your application for high availability by focusing on three key areas:</span></span>
+  - <span data-ttu-id="4ec0c-106">내가 정의한 SLA.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-106">Your defined SLA.</span></span>
+  - <span data-ttu-id="4ec0c-107">내 응용 프로그램의 HA 기능.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-107">The HA capabilities of your application.</span></span>
+  - <span data-ttu-id="4ec0c-108">종속된 응용 프로그램의 HA 기능.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-108">The HA capabilities of dependent applications.</span></span>
+- <span data-ttu-id="4ec0c-109">Azure에서 가용성 집합과 가용성 영역을 사용하여 VM 워크로드에 대한 HA를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-109">Use availability sets and availability zones on Azure to provide HA for VM workloads.</span></span>
+- <span data-ttu-id="4ec0c-110">Azure Traffic Manager, Azure Application Gateway 및 Azure Load Balancer와 같은 부하 분산 서비스를 사용하여 사용 가능한 시스템에 부하를 분산합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-110">Use load balancing services such as Azure Traffic Manager, Azure Application Gateway, and Azure Load Balancer to distribute load across available systems.</span></span>
+- <span data-ttu-id="4ec0c-111">PaaS 서비스에는 HA가 내장되어 있어서 가능한 경우 아키텍처에서 이러한 서비스를 활용합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-111">PaaS services have HA built in, so leverage these services in your architecture where possible.</span></span>
+
+## <a name="disaster-recovery"></a><span data-ttu-id="4ec0c-112">재해 복구</span><span class="sxs-lookup"><span data-stu-id="4ec0c-112">Disaster recovery</span></span>
+
+- <span data-ttu-id="4ec0c-113">재해 복구는 가동 중지 시간과 데이터 손실을 초래하는 *영향력이 큰 이벤트로부터 회복*하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-113">Disaster recovery is about *recovering from high-impact events* that result in downtime and loss of data.</span></span>
+- <span data-ttu-id="4ec0c-114">재해로부터 복구하는 데 필요한 프로시저, 책임 및 활동을 정의하는 재해 복구 계획을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-114">Create a disaster recovery plan to define the procedures, responsibilities, and activities needed to recover from a disaster.</span></span>
+- <span data-ttu-id="4ec0c-115">응용 프로그램의 DR 요구 사항을 결정하는 데 도움이 되도록 응용 프로그램에 대한 RPO 및 RTO를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-115">Define the RPO and RTO for your application to help determine the DR requirements for your application.</span></span>
+- <span data-ttu-id="4ec0c-116">백업 및 복제를 사용하여 복구할 시스템 및 데이터의 복사본을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-116">Use backup and replication to provide copies of your systems and data to recover to.</span></span>
+- <span data-ttu-id="4ec0c-117">내 응용 프로그램에 대한 DR 프로세스 복구 기능을 위해 Azure Site Recovery를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-117">Use Azure Site Recovery for DR process recovery capabilities for your application.</span></span>
+- <span data-ttu-id="4ec0c-118">재해 복구 계획을 테스트하여 단계의 틈과 타당성을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-118">Test your disaster recovery plan to identify gaps and relevance of steps.</span></span>
+
+## <a name="backup-and-restore"></a><span data-ttu-id="4ec0c-119">백업 및 복원</span><span class="sxs-lookup"><span data-stu-id="4ec0c-119">Backup and restore</span></span>
+
+- <span data-ttu-id="4ec0c-120">백업을 사용하여 DR 전략의 일환으로 데이터를 복원하거나 보다 격리된 데이터 손실 시나리오를 위해 백업을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-120">Use backups to restore your data as part of your DR strategy or for more isolated data loss scenarios.</span></span>
+- <span data-ttu-id="4ec0c-121">온-프레미스 환경의 전체 VM 백업, 파일과 폴더 백업 및 시스템 백업을 위해 Azure Backup을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-121">Use Azure Backup for full VM backup, file and folder backup, and backup of systems in an on-premises environment.</span></span>
+- <span data-ttu-id="4ec0c-122">백업 기능은 Azure SQL Database 및 Azure App Service와 같은 PaaS 서비스에 내장되는 경우가 많습니다.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-122">Backup capabilities are often built into PaaS services, such as Azure SQL Database and Azure App Service.</span></span> <span data-ttu-id="4ec0c-123">가능하면 이러한 백업 기능을 활용하고 그에 대한 기본 구성 및 전반적인 기능을 이해하십시오.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-123">Take advantage of these backup capabilities when possible, understand their default configuration and overall capabilities.</span></span>
+- <span data-ttu-id="4ec0c-124">복원 프로세스 및 절차가 타당하고 충분한지 확인하기 위해 정기적으로 테스트하십시오.</span><span class="sxs-lookup"><span data-stu-id="4ec0c-124">Test your restoration processes and procedures regularly to ensure they are valid and sufficient.</span></span>

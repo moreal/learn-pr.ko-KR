@@ -1,0 +1,59 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.7-summary
+title: <span data-ttu-id="1f261-101">요약</span><span class="sxs-lookup"><span data-stu-id="1f261-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="1f261-102">요약</span><span class="sxs-lookup"><span data-stu-id="1f261-102">Summary</span></span>
+  description: <span data-ttu-id="1f261-103">요약</span><span class="sxs-lookup"><span data-stu-id="1f261-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 46789dc6de38bbd51ee4545f692c015b41c0aa7f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352218"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="1f261-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="1f261-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="1f261-105">VHD(가상 하드 드라이브 파일)는 Azure Storage의 다음 유형의 Blob 중 어느 Blob에 저장되나요?</span><span class="sxs-lookup"><span data-stu-id="1f261-105">Virtual hard drive files (VHDs) are stored in which of the following types of blobs in Azure Storage?</span></span>
+    choices:
+    - content: <span data-ttu-id="1f261-106">블록 Blob</span><span class="sxs-lookup"><span data-stu-id="1f261-106">Block Blobs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-107">VHD는 Azure Storage의 페이지 Blob에서 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-107">VHDs are backed by page blobs in Azure Storage.</span></span> <span data-ttu-id="1f261-108">페이지 Blob은 임의 읽기 및 쓰기 작업용으로 최적화된 512바이트 페이지 컬렉션이므로 적절합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-108">Page blobs are appropriate because they are a collection of 512-byte pages optimized for random read and write.</span></span> <span data-ttu-id="1f261-109">블록 Blob이나 추가 Blob 모두 VHD에서 일반적인 임의 읽기 및 쓰기 작업에 최적화되지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-109">Neither Block blobs nor Append blobs are optimized for the random read and write operations common with VHDs.</span></span>
+    - content: <span data-ttu-id="1f261-110">추가 Blob</span><span class="sxs-lookup"><span data-stu-id="1f261-110">Append Blobs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-111">VHD는 Azure Storage의 페이지 Blob에서 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-111">VHDs are backed by page blobs in Azure Storage.</span></span> <span data-ttu-id="1f261-112">페이지 Blob은 임의 읽기 및 쓰기 작업용으로 최적화된 512바이트 페이지 컬렉션이므로 적절합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-112">Page blobs are appropriate because they are a collection of 512-byte pages optimized for random read and write.</span></span> <span data-ttu-id="1f261-113">블록 Blob이나 추가 Blob 모두 VHD에서 일반적인 임의 읽기 및 쓰기 작업에 최적화되지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-113">Neither Block blobs nor Append blobs are optimized for the random read and write operations common with VHDs.</span></span>
+    - content: <span data-ttu-id="1f261-114">페이지 Blob</span><span class="sxs-lookup"><span data-stu-id="1f261-114">Page Blobs</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="1f261-115">VHD는 Azure Storage의 페이지 Blob에서 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-115">VHDs are backed by page blobs in Azure Storage.</span></span> <span data-ttu-id="1f261-116">페이지 Blob은 임의 읽기 및 쓰기 작업용으로 최적화된 512바이트 페이지 컬렉션이므로 적절합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-116">Page blobs are appropriate because they are a collection of 512-byte pages optimized for random read and write.</span></span> <span data-ttu-id="1f261-117">블록 Blob이나 추가 Blob 모두 VHD에서 일반적인 임의 읽기 및 쓰기 작업에 최적화되지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-117">Neither Block blobs nor Append blobs are optimized for the random read and write operations common with VHDs.</span></span>
+  - content: <span data-ttu-id="1f261-118">다음 데이터 복제 전략 중 어느 것이 프리미엄 저장소 계정에서 지원하는 유일한 옵션입니까?</span><span class="sxs-lookup"><span data-stu-id="1f261-118">Which of the following data-replication strategies is the only option supported by a premium storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="1f261-119">RA-GRS(읽기 액세스 지역 중복 저장소)</span><span class="sxs-lookup"><span data-stu-id="1f261-119">Read-access geo-redundant storage (RA-GRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-120">프리미엄 저장소 계정은 복제 옵션으로 로컬 중복 저장소만 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-120">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="1f261-121">로컬 중복 저장소는 단일 지역 내에 데이터 복사본 3개를 유지합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-121">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="1f261-122">지역 재해 복구를 위해 Azure Backup을 사용하여 VM 디스크를 다른 지역에 백업해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-122">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="1f261-123">또한 백업 자격 증명 모음으로 GRS(지역 중복 저장소) 계정을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-123">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+    - content: <span data-ttu-id="1f261-124">LRS(로컬 중복 저장소)</span><span class="sxs-lookup"><span data-stu-id="1f261-124">Locally redundant storage (LRS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="1f261-125">프리미엄 저장소 계정은 복제 옵션으로 로컬 중복 저장소만 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-125">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="1f261-126">로컬 중복 저장소는 단일 지역 내에 데이터 복사본 3개를 유지합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-126">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="1f261-127">지역 재해 복구를 위해 Azure Backup을 사용하여 VM 디스크를 다른 지역에 백업해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-127">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="1f261-128">또한 백업 자격 증명 모음으로 GRS(지역 중복 저장소) 계정을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-128">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+    - content: <span data-ttu-id="1f261-129">GRS(지역 중복 저장소)</span><span class="sxs-lookup"><span data-stu-id="1f261-129">Geo-redundant storage (GRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-130">프리미엄 저장소 계정은 복제 옵션으로 로컬 중복 저장소만 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-130">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="1f261-131">로컬 중복 저장소는 단일 지역 내에 데이터 복사본 3개를 유지합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-131">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="1f261-132">지역 재해 복구를 위해 Azure Backup을 사용하여 VM 디스크를 다른 지역에 백업해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-132">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="1f261-133">또한 백업 자격 증명 모음으로 GRS(지역 중복 저장소) 계정을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-133">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+    - content: <span data-ttu-id="1f261-134">ZRS(영역 중복 저장소)</span><span class="sxs-lookup"><span data-stu-id="1f261-134">Zone-redundant storage (ZRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-135">프리미엄 저장소 계정은 복제 옵션으로 로컬 중복 저장소만 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-135">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="1f261-136">로컬 중복 저장소는 단일 지역 내에 데이터 복사본 3개를 유지합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-136">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="1f261-137">지역 재해 복구를 위해 Azure Backup을 사용하여 VM 디스크를 다른 지역에 백업해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-137">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="1f261-138">또한 백업 자격 증명 모음으로 GRS(지역 중복 저장소) 계정을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-138">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+  - content: <span data-ttu-id="1f261-139">다음 디스크 형식 중 어느 것이 관리 디스크에 대해서만 사용할 수 있나요?</span><span class="sxs-lookup"><span data-stu-id="1f261-139">Which of the following disk types is only available for managed disks?</span></span>
+    choices:
+    - content: <span data-ttu-id="1f261-140">표준 SSD(반도체 드라이브)</span><span class="sxs-lookup"><span data-stu-id="1f261-140">Standard solid-state drives (SSDs)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="1f261-141">관리 디스크를 선택하면 표준 SSD를 사용하는 옵션이 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-141">Choosing managed disks gives you the option of using standard SSDs.</span></span> <span data-ttu-id="1f261-142">이 디스크 유형은 성능과 비용의 측면에서 표준 HDD와 프리미엄 SSD의 중간에 해당합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-142">This disk type is between standard HDDs and premium SSDs from a performance and cost perspective.</span></span>
+    - content: <span data-ttu-id="1f261-143">표준 HDD(하드 디스크 드라이브)</span><span class="sxs-lookup"><span data-stu-id="1f261-143">Standard hard disk drives (HDDs)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-144">관리 디스크를 선택하면 표준 SSD를 사용하는 옵션이 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-144">Choosing managed disks gives you the option of using standard SSDs.</span></span> <span data-ttu-id="1f261-145">이 디스크 유형은 성능과 비용의 측면에서 표준 HDD와 프리미엄 SSD의 중간에 해당합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-145">This disk type is between standard HDDs and premium SSDs from a performance and cost perspective.</span></span>
+    - content: <span data-ttu-id="1f261-146">프리미엄 SSD(반도체 드라이브)</span><span class="sxs-lookup"><span data-stu-id="1f261-146">Premium solid-state drives (SSDs)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f261-147">관리 디스크를 선택하면 표준 SSD를 사용하는 옵션이 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-147">Choosing managed disks gives you the option of using standard SSDs.</span></span> <span data-ttu-id="1f261-148">이 디스크 유형은 성능과 비용의 측면에서 표준 HDD와 프리미엄 SSD의 중간에 해당합니다.</span><span class="sxs-lookup"><span data-stu-id="1f261-148">This disk type is between standard HDDs and premium SSDs from a performance and cost perspective.</span></span>

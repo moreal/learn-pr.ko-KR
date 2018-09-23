@@ -1,0 +1,20 @@
+<span data-ttu-id="54f8e-101">저장소 계정을 만드는 여러 도구가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-101">There are several tools that create a storage account.</span></span> <span data-ttu-id="54f8e-102">일반적으로 GUI를 사용하는지 아니면 자동화가 필요한지에 따라 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-102">Your choice is typically based on if you want a GUI and whether you need automation.</span></span>
+
+## <a name="available-tools"></a><span data-ttu-id="54f8e-103">사용 가능 도구</span><span class="sxs-lookup"><span data-stu-id="54f8e-103">Available tools</span></span>
+
+<span data-ttu-id="54f8e-104">사용 가능한 도구는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-104">The available tools are:</span></span>
+
+- <span data-ttu-id="54f8e-105">Azure Portal</span><span class="sxs-lookup"><span data-stu-id="54f8e-105">Azure Portal</span></span>
+- <span data-ttu-id="54f8e-106">Azure CLI(명령줄 인터페이스)</span><span class="sxs-lookup"><span data-stu-id="54f8e-106">Azure CLI (Command-line interface)</span></span>
+- <span data-ttu-id="54f8e-107">Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="54f8e-107">Azure PowerShell</span></span>
+- <span data-ttu-id="54f8e-108">관리 클라이언트 라이브러리</span><span class="sxs-lookup"><span data-stu-id="54f8e-108">Management client libraries</span></span>
+
+<span data-ttu-id="54f8e-109">포털은 각 설정에 대한 설명을 포함한 GUI를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-109">The portal provides a GUI with explanations for each setting.</span></span> <span data-ttu-id="54f8e-110">이렇게 하면 포털을 사용하기 쉽고 옵션에 대한 학습에 도움이 됩니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-110">This makes the portal easy to use and helpful for learning about the options.</span></span>
+
+<span data-ttu-id="54f8e-111">위의 목록에서 다른 도구는 모두 자동화를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-111">The other tools in the above list all support automation.</span></span> <span data-ttu-id="54f8e-112">Azure CLI 및 Azure PowerShell을 통해 스크립트를 작성할 수 있는 반면, 관리 라이브러리를 사용하면 생성을 클라이언트 앱에 통합할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-112">The Azure CLI and Azure PowerShell let you write scripts, while the management libraries allow you to incorporate the creation into a client app.</span></span>
+
+## <a name="how-to-choose-a-tool"></a><span data-ttu-id="54f8e-113">도구를 선택하는 방법</span><span class="sxs-lookup"><span data-stu-id="54f8e-113">How to choose a tool</span></span>
+
+<span data-ttu-id="54f8e-114">저장소 계정은 일반적으로 데이터 분석을 기반으로 하므로 상대적으로 안정된 경우가 많습니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-114">Storage accounts are typically based on an analysis of your data, so they tend to be relatively stable.</span></span> <span data-ttu-id="54f8e-115">결과적으로 저장소 계정 생성은 일반적으로 프로젝트를 시작할 때 수행된 일회성 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-115">As a result, storage-account creation is usually a one-time operation done at the start of a project.</span></span> <span data-ttu-id="54f8e-116">일회성 작업의 경우 포털이 가장 일반적인 선택입니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-116">For one-time activities, the portal is the most common choice.</span></span>
+
+<span data-ttu-id="54f8e-117">자동화가 필요한 드문 경우에서 프로그래밍 방식 API 또는 스크립팅 솔루션 중에 하나를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-117">In the rare cases where you need automation, the decision is between a programmatic API or a scripting solution.</span></span> <span data-ttu-id="54f8e-118">스크립트는 IDE, NuGet 패키지 또는 빌드 단계가 필요하지 않기 때문에 일반적으로 생성하기에 빠르고 유지 관리하기 위한 작업이 적습니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-118">Scripts are typically faster to create and less work to maintain because there is no need for an IDE, NuGet packages, or build steps.</span></span> <span data-ttu-id="54f8e-119">기존 클라이언트 응용 프로그램이 있는 경우 관리 라이브러리는 적합한 선택일 수 있습니다. 그렇지 않으면 스크립트가 더 나은 옵션일 가능성이 높습니다.</span><span class="sxs-lookup"><span data-stu-id="54f8e-119">If you have an existing client application, the management libraries might be an attractive choice; otherwise, scripts will likely be a better option.</span></span>

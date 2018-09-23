@@ -1,0 +1,16 @@
+<span data-ttu-id="39314-101">조직의 온라인 영업 학습 포털을 관리한다고 가정해 보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="39314-101">Suppose you manage an online sales learning portal for your organization.</span></span> <span data-ttu-id="39314-102">영업 팀 대다수가 지리적으로 다른 영역에 떨어져 있는 경우가 많기 때문에 온라인 학습 포털이 반드시 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="39314-102">The majority of your sales team are often in different geographical areas, so the online learning portal is an essential requirement.</span></span> <span data-ttu-id="39314-103">조직에서 영업 직원을 위한 기술 및 지식 향상 교육을 지속적으로 강화하고 있기 때문에도 더욱 중요합니다.</span><span class="sxs-lookup"><span data-stu-id="39314-103">It's even more important as your organization continues to increase the skills and knowledge enhancement training for the sales staff.</span></span>
+
+![저장소 솔루션의 필요성을 나타내는 세계 지도에 빈 모음](../media/1-heading.png)
+
+<span data-ttu-id="39314-105">교육 데이터에는 고품질 비디오, 자세한 판매 시뮬레이션 및 학생 데이터와 진도를 유지 관리하기 위한 대규모 리포지토리가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="39314-105">Your training data includes high-quality video, detailed sales simulations, and large repositories for maintaining student data and progress.</span></span> <span data-ttu-id="39314-106">현재는 모든 학습 콘텐츠가 온-프레미스 저장소에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="39314-106">Currently, all the training content is stored in your on-premises storage.</span></span> <span data-ttu-id="39314-107">적극적으로 새로운 교육 과정을 추가하려는 계획이 있으며 로컬 저장소 용량을 지속적으로 추가해야 하는 상황을 방지하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="39314-107">You have an aggressive plan to add new courses and would like to avoid the need to continuously increase the local storage capacity.</span></span>
+<span data-ttu-id="39314-108">보안, 내구성, 확장성이 뛰어나고 전세계 어디서나 쉽게 액세스할 수 있는 저장소 솔루션이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="39314-108">You're looking for a storage solution that is secure, durable, scalable, and easily accessible from across the globe.</span></span>
+
+<span data-ttu-id="39314-109">Azure에서는 이러한 비즈니스 요구 사항을 모두 충족하는 저장소 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="39314-109">Azure provides storage features that will meet all of your business needs.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="39314-110">학습 목표</span><span class="sxs-lookup"><span data-stu-id="39314-110">Learning objectives</span></span>
+
+<span data-ttu-id="39314-111">이 모듈에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="39314-111">In this module, you will:</span></span>
+
+- <span data-ttu-id="39314-112">Azure의 데이터 저장소 옵션 설문 조사</span><span class="sxs-lookup"><span data-stu-id="39314-112">Survey the data storage options in Azure</span></span>
+- <span data-ttu-id="39314-113">Azure 데이터 저장소가 비즈니스 요구 사항을 충족하는 방법 검색</span><span class="sxs-lookup"><span data-stu-id="39314-113">Discover how Azure data storage can meet your business demands</span></span>
+- <span data-ttu-id="39314-114">Azure 데이터 저장소와 온-프레미스 저장소 비교</span><span class="sxs-lookup"><span data-stu-id="39314-114">Compare Azure data storage with on-premises storage</span></span>

@@ -1,0 +1,15 @@
+<span data-ttu-id="e78a2-101">현장 유통업자가 재고를 보충하는 매장 선반의 이미지를 스캔하여 업로드할 수 있는 사업 부문 앱을 빌드하고 유지 관리해야 하는 Contoso Beverage Distribution의 개발 책임자를 예로 들어보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-101">As a lead developer at Contoso Beverage Distribution, you're responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of the store shelves they are restocking.</span></span>
+
+<span data-ttu-id="e78a2-102">사용자가 게시하는 모든 이미지가 회사에서 설정한 콘텐츠 규칙을 준수하는지 유효성을 검사하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-102">You want to validate that any images posted by users respect the content rules set by your company.</span></span> <span data-ttu-id="e78a2-103">회사는 회사 사이트에 부적절한 콘텐츠가 게시되기를 원치 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-103">The company doesn't want inappropriate content posted to company sites.</span></span> 
+
+<span data-ttu-id="e78a2-104">솔루션을 빌드할지 아니면 구입할지를 결정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-104">You need to decide whether to build or buy a solution.</span></span> <span data-ttu-id="e78a2-105">복잡한 이미지 처리 및 분석 엔진을 빌드하는 것은 비용이 많이 듭니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-105">Building a sophisticated image processing and analysis engine is costly.</span></span> <span data-ttu-id="e78a2-106">한 가지 대안은 Microsoft에서 Computer Vision API를 사용하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-106">One alternative is to use the Computer Vision API from Microsoft.</span></span> <span data-ttu-id="e78a2-107">이 모듈에서는 이 API에서 제공하는 기능을 탐색하고 호출하여 일부 이미지를 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-107">In this module, we'll explore the features offered by this API and call it to process some images.</span></span> 
+
+## <a name="learning-objectives"></a><span data-ttu-id="e78a2-108">학습 목표</span><span class="sxs-lookup"><span data-stu-id="e78a2-108">Learning objectives</span></span>
+
+<span data-ttu-id="e78a2-109">이 모듈에서는 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="e78a2-110">Cognitive Services 계정을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-110">Create a Cognitive Services account.</span></span>
+- <span data-ttu-id="e78a2-111">이미지에서 찾은 시각적 콘텐츠에 대한 정보를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-111">Get information about the visual content found in an image.</span></span>
+- <span data-ttu-id="e78a2-112">이미지의 썸네일을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="e78a2-112">Generate a thumbnail of an image.</span></span>
+- <span data-ttu-id="e78a2-113">이미지에서 인쇄된 텍스트 검색 및 추출</span><span class="sxs-lookup"><span data-stu-id="e78a2-113">Detect and extract printed text from an image.</span></span>
+- <span data-ttu-id="e78a2-114">이미지에서 필기된 텍스트 검색 및 추출</span><span class="sxs-lookup"><span data-stu-id="e78a2-114">Detect and extract handwritten text from an image.</span></span>

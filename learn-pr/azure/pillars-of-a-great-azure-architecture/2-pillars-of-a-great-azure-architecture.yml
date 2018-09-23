@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+title: <span data-ttu-id="90a0d-101">효율적인 Azure 아키텍처의 기능</span><span class="sxs-lookup"><span data-stu-id="90a0d-101">Pillars of a great Azure Architecture</span></span>
+metadata:
+  title: <span data-ttu-id="90a0d-102">효율적인 Azure 아키텍처의 기능</span><span class="sxs-lookup"><span data-stu-id="90a0d-102">Pillars of a great Azure Architecture</span></span>
+  description: <span data-ttu-id="90a0d-103">우수한 Azure 아키텍처의 핵심 요소</span><span class="sxs-lookup"><span data-stu-id="90a0d-103">Pillars of a great Azure Architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f902062b46eacfdebcfaca21df66f44fe3d5fcfc
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354118"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-pillars-of-a-great-azure-architecture.md)]
+quiz:
+  title: <span data-ttu-id="90a0d-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="90a0d-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="90a0d-105">보안 핵심 요소를 통해 해결할 수 있는 과제의 예는 다음 중 어느 것입니까?</span><span class="sxs-lookup"><span data-stu-id="90a0d-105">Which of the following would be an example of something you might address in the security pillar?</span></span>
+    choices:
+    - content: <span data-ttu-id="90a0d-106">가상 머신 백업을 위한 정책 정의</span><span class="sxs-lookup"><span data-stu-id="90a0d-106">Defining a policy for virtual machine backup</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90a0d-107">가상 머신용 백업 정책은 중요하기는 하지만 보안 기능에는 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-107">The backup policy for virtual machines is important, but does not fall within the security pillar.</span></span>
+    - content: <span data-ttu-id="90a0d-108">모든 관리 계정에 대해 다단계 인증 사용</span><span class="sxs-lookup"><span data-stu-id="90a0d-108">Enabling multi-factor authentication for all administrative accounts</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="90a0d-109">다단계 인증 사용은 보안 기능을 통해 해결할 수 있는 과제의 좋은 예입니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-109">Enabling multi-factor authentication is a great example of something you might address as part of the security pillar.</span></span>
+    - content: <span data-ttu-id="90a0d-110">클라우드 지출을 평가하여 비용 절감 영역 파악</span><span class="sxs-lookup"><span data-stu-id="90a0d-110">Evaluating your cloud spend to identify areas of cost savings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90a0d-111">비용을 줄일 수 있는 영역을 파악하는 것은 중요하기는 하지만 보안 기능에는 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-111">It is important to identify areas where you can reduce cost, but this does not fall within the security pillar.</span></span>
+    - content: <span data-ttu-id="90a0d-112">자동 크기 조정 서비스로 이전하여 로드의 변화를 동적으로 처리</span><span class="sxs-lookup"><span data-stu-id="90a0d-112">Moving to an autoscaling service to dynamically handle fluctuations in load</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90a0d-113">자동 크기 조정 기능을 통해 로드의 변화를 처리하는 기능은 활용하면 효율적이기는 하지만 보안 기능에는 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-113">Using autoscaling to handle fluctuations in load is a great capability to leverage, but does not fall within the security pillar.</span></span>
+  - content: <span data-ttu-id="90a0d-114">가용성 및 복구 기능을 통해 해결할 수 있는 과제의 예는 다음 중 어느 것입니까?</span><span class="sxs-lookup"><span data-stu-id="90a0d-114">Which of the following would be an example of something you might address in the availability & recoverability pillar?</span></span>
+    choices:
+    - content: <span data-ttu-id="90a0d-115">가상 머신 백업을 위한 정책 정의</span><span class="sxs-lookup"><span data-stu-id="90a0d-115">Defining a policy for virtual machine backup</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="90a0d-116">VM 백업을 위한 정책 정의는 복구 가능성 위주의 활동이므로 이 기능에는 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-116">Defining a policy for VM backup is an activity focused on recoverability, so it does fall within this pillar.</span></span>
+    - content: <span data-ttu-id="90a0d-117">모든 관리 계정에 대해 다단계 인증 사용</span><span class="sxs-lookup"><span data-stu-id="90a0d-117">Enabling multi-factor authentication for all administrative accounts</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90a0d-118">다단계 인증 사용은 보안 기능을 통해 해결할 수 있는 과제의 좋은 예이지만 가용성 및 복구 가능성 기능에는 적용되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-118">Enabling multi-factor authentication is a great example of something you might address as part of the security pillar, but it does not apply to the availability & recoverability pillar.</span></span>
+    - content: <span data-ttu-id="90a0d-119">클라우드 지출을 평가하여 비용 절감 영역 파악</span><span class="sxs-lookup"><span data-stu-id="90a0d-119">Evaluating your cloud spend to identify areas of cost savings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90a0d-120">비용을 줄일 수 있는 영역을 파악하는 것은 중요하기는 하지만 가용성 및 복구 가능성 기능에는 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-120">It is important to identify areas where you can reduce cost, but this does not fall within the availability & recoverability pillar.</span></span>
+    - content: <span data-ttu-id="90a0d-121">자동 크기 조정 서비스로 이전하여 로드의 변화를 동적으로 처리</span><span class="sxs-lookup"><span data-stu-id="90a0d-121">Moving to an autoscaling service to dynamically handle fluctuations in load</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90a0d-122">자동 크기 조정 기능을 통해 로드의 변화를 처리하는 기능은 활용하면 효율적이기는 하지만 가용성 및 복구 가능성 기능에는 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="90a0d-122">Using autoscaling to handle fluctuations in load is a great capability to leverage, but does not fall within the availability & recoverability pillar.</span></span>

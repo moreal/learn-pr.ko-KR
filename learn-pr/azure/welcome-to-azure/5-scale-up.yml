@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.5-scale-up
+title: <span data-ttu-id="be112-101">확장</span><span class="sxs-lookup"><span data-stu-id="be112-101">Scale up</span></span>
+metadata:
+  title: <span data-ttu-id="be112-102">확장</span><span class="sxs-lookup"><span data-stu-id="be112-102">Scale up</span></span>
+  description: <span data-ttu-id="be112-103">가상 머신을 확장하여 더 많은 계산 기능과 메모리를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="be112-103">Scale up your virtual machine to give it more compute power and memory.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+  ms.openlocfilehash: 9f6ec458cb233fe0d035d73d99d46a5de91ce569
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348966"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 4
+content: >
+  [!include[](includes/5-scale-up.md)]
+quiz:
+  title: <span data-ttu-id="be112-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="be112-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="be112-105">Azure는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="be112-105">Azure is:</span></span>
+    choices:
+    - content: <span data-ttu-id="be112-106">Microsoft의 클라우드 컴퓨팅 플랫폼이며 종량제 가격 책정 모델을 사용하여 인터넷을 통해 계산 기능, 저장소 및 서비스를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="be112-106">Microsoft's cloud computing platform, which provides compute power, storage, and services over the Internet using a pay-as-you-go pricing model.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="be112-107">Azure를 사용하면 서비스뿐만 아니라 원시 계산 기능 및 저장소에도 액세스하여 지능형 봇과 혼합 현실과 같은 새로운 소프트웨어 패러다임을 살펴볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="be112-107">With Azure, you get access to raw compute power and storage, as well as services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
+    - content: <span data-ttu-id="be112-108">Redmond, WA에 위치한 단일 데이터 센터입니다.</span><span class="sxs-lookup"><span data-stu-id="be112-108">A single data center located in Redmond, Washington.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="be112-109">Azure는 전세계에 분산된 데이터 센터로 구성됩니다.</span><span class="sxs-lookup"><span data-stu-id="be112-109">Azure is made up of data centers distributed throughout the world.</span></span>
+    - content: <span data-ttu-id="be112-110">"가상 머신을 실행할 다른 위치"일 뿐입니다.</span><span class="sxs-lookup"><span data-stu-id="be112-110">Just "a different place to run your virtual machines".</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="be112-111">Azure가 가상 머신과 같은 원시 계산 능력을 제공하지만 지능형 봇과 혼합 현실과 같은 새로운 소프트웨어 패러다임을 살펴볼 수 있는 여러 서비스도 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="be112-111">While Azure provides raw compute power, such as virtual machines, it also provides many services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
+  - content: <span data-ttu-id="be112-112">배포를 _확장_할 수 있는 것은 언제인가요?</span><span class="sxs-lookup"><span data-stu-id="be112-112">When might you _scale out_ your deployment?</span></span>
+    choices:
+    - content: <span data-ttu-id="be112-113">응용 프로그램 또는 서비스를 더 빠르게 실행하기 위해 더 강력한 CPU 또는 더 많은 메모리가 필요한 경우</span><span class="sxs-lookup"><span data-stu-id="be112-113">When your application or service requires a more powerful CPU or more memory to run faster.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="be112-114">이 경우에 응용 프로그램 또는 서비스를 더 강력한 하드웨어로 전환하여 _강화_할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="be112-114">In this case, you might _scale up_ by moving your application or service to more powerful hardware.</span></span>
+    - content: <span data-ttu-id="be112-115">가상 머신을 추가하여 응용 프로그램을 빠르게 만들 수 있는 경우</span><span class="sxs-lookup"><span data-stu-id="be112-115">When you can add additional virtual machines to speed up your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="be112-116">확장은 가상 머신과 같은 추가 시스템을 추가하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="be112-116">Scaling out means adding additional systems, such as virtual machines.</span></span> <span data-ttu-id="be112-117">예를 들어, 정확히 동일한 방식으로 구성된 여러 가상 머신을 만들고 부하 분산 장치를 사용하여 가상 머신에 작업을 분산할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="be112-117">For example, you might create many virtual machines configured in exactly the same way and use a load balancer to distribute work across them.</span></span>
+    - content: <span data-ttu-id="be112-118">필요하지 않은 과도한 용량을 사용할 경우</span><span class="sxs-lookup"><span data-stu-id="be112-118">When you're using excess capacity that you don't need.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="be112-119">이 경우에 현재 필요가 없는 시스템을 분해하여 _감축_할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="be112-119">In this case, you might _scale in_ by tearing down systems you don't currently need.</span></span>
