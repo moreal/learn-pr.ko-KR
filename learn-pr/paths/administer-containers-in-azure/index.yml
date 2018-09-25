@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4b93f60e67def60b053a0136e4b151cdd2e74bdb
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 068543566bde1d9d8b74ec56d87b2a0505839205
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352638"
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567231"
 title: Azure의 컨테이너 관리
 summary: Azure Container Instances는 Azure에서 컨테이너를 실행하는 가장 빠르고 쉬운 방법입니다. 이 학습 경로에서는 컨테이너를 만들고 관리하는 방법과 ACI를 사용하여 Kubernetes에 대한 탄력적인 크기 조정을 제공하는 방법을 설명합니다.
 prerequisites: 없음
@@ -27,5 +27,7 @@ products:
 - azure-container-instances
 - azure-container-registry
 modules:
+- learn.intro-to-containers
 - learn.azure-container-registry
+- learn.run-docker-containers-aci
 achievement: learn.administer-containers-in-azure.trophy

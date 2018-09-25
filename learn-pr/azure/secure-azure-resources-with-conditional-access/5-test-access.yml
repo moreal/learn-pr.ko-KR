@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
 metadata:
-  title: <span data-ttu-id="9e8e7-101">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="9e8e7-101">Test access to resources</span></span>
-  description: <span data-ttu-id="9e8e7-102">Azure Portal 및 MyApps 포털에 대한 액세스를 테스트하여 예상되는 경우 다단계 인증을 강제 적용하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="9e8e7-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
+  title: <span data-ttu-id="fc47d-101">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="fc47d-101">Test access to resources</span></span>
+  description: <span data-ttu-id="fc47d-102">Azure Portal 및 MyApps 포털에 대한 액세스를 테스트하여 예상되는 경우 다단계 인증을 강제 적용하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="fc47d-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b8bf593949c359e501b5d81e7557121a8a6cf80a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 15efed02c887c888b89cac58e6a2ad50ebf09c86
+  ms.sourcegitcommit: f302dc1ca9a7e4a4e92c25e012d4bf7e55f71b00
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348177"
-title: <span data-ttu-id="9e8e7-103">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="9e8e7-103">Test access to resources</span></span>
-labId: 46071
+  ms.lasthandoff: 09/24/2018
+  ms.locfileid: "47023328"
+title: <span data-ttu-id="fc47d-103">리소스에 대한 액세스 테스트</span><span class="sxs-lookup"><span data-stu-id="fc47d-103">Test access to resources</span></span>
+labId: 46467
+labModal: true
 durationInMinutes: 3
 content: '[!include[](includes/5-test-access.md)]'
