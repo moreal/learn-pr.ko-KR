@@ -2,7 +2,7 @@
 
 ## <a name="view-event-hub-activity"></a>이벤트 허브 작업 보기
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. 검색 창을 사용하여 이벤트 허브를 찾아 엽니다.
 

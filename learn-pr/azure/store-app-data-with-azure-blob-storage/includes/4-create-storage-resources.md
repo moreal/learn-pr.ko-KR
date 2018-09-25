@@ -33,7 +33,7 @@ Azure CLI와 함께 Azure Cloud Shell을 사용하여 저장소 계정을 만듭
 다음 명령을 실행하여 저장소 계정을 만듭니다. 
 
 ```azurecli
-az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[sandbox resource group name]</rgn> --location eastus --kind StorageV2
 ```
 
 > [!NOTE]

@@ -30,7 +30,7 @@ Linux, macOS 또는 Windows에서 실행할 수 있는 .NET Core 응용 프로�
 Azure CLI 또는 PowerShell 도구를 통해 연결 문자열을 검색할 수도 있습니다. Azure CLI 명령을 사용해 보겠습니다. `<name>`을 만든 저장소 계정의 특정 이름으로 바꾸어야 합니다. 미리 알림이 필요한 경우 `az storage account list`를 사용할 수 있습니다.
 
 ```azurecli
-az storage account show-connection-string --name <name> --resource-group <rgn>[Sandbox resource group name]</rgn>
+az storage account show-connection-string --name <name> --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 이 명령은 연결 문자열이 포함된 JSON 블록을 반환합니다. 여기에는 저장소 계정 이름과 계정 키가 포함됩니다.

@@ -21,7 +21,7 @@ RDP 클라이언트로 Azure VM에 연결하려면 다음이 필요합니다.
 
 ### <a name="download-the-rdp-file"></a>RDP 파일 다운로드
 
-1. [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에서 이전에 만든 가상 머신의 **개요** 패널이 열려 있는지 확인합니다. 해당 패널을 열어야 하는 경우 **모든 리소스** 아래에서 VM을 찾을 수 있습니다. 개요 패널에는 VM에 대해 많은 정보가 있습니다.
+1. [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에서 이전에 만든 가상 머신의 **개요** 패널이 열려 있는지 확인합니다. 해당 패널을 열어야 하는 경우 **모든 리소스** 아래에서 VM을 찾을 수 있습니다. 개요 패널에는 VM에 대해 많은 정보가 있습니다.
 
     - VM이 실행 중인지 확인할 수 있습니다.
     - VM을 중지하거나 다시 시작합니다.

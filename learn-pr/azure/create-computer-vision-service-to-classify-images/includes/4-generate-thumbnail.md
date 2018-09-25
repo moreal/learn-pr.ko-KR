@@ -16,7 +16,7 @@ API에 각기 다른 매개 변수를 제공하여 필요에 따라 적합한 �
 
 ## <a name="generate-a-thumbnail"></a>썸네일 생성
 
-이 예에서는 다음 이미지를 사용하지만 다른 이미지의 URL에 대해 동일한 명령을 시도해 볼 수 있습니다. 
+이 예에서는 다음 이미지를 사용하지만 다른 이미지의 URL에 대해 동일한 명령을 시도해 볼 수 있습니다.
 
 ![풀밭에 앉아 있는 귀여운 흰 강아지의 사진.](../media/4-dog.png)
 
@@ -37,7 +37,7 @@ curl "https://<region>.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail
 
 ## <a name="view-the-generated-thumbnail"></a>생성된 썸네일 보기
 
-생성된 썸네일은 Azure Cloud Shell 저장소 계정에서 찾을 수 있습니다. 파일 이름을 **thumbnail.jpg**로 지정했습니다. 
+생성된 썸네일은 Azure Cloud Shell 저장소 계정에서 찾을 수 있습니다. 파일 이름을 **thumbnail.jpg**로 지정했습니다.
 
 Microsoft Learn의 Cloud Shell에는 파일을 다운로드하는 기능이 없지만 다음 지침에 따라 Azure Portal을 통해 썸네일을 다운로드할 수 있습니다.
 
@@ -48,15 +48,15 @@ Microsoft Learn의 Cloud Shell에는 파일을 다운로드하는 기능이 없�
     ls -l
     ```
 
-    
+
 
 1. 다음 명령을 실행하여 `thumbnail.jpg`를 clouddrive 폴더로 이동합니다.
 
     ```azurecli
     mv ~/thumbnail.jpg ~/clouddrive
     ```
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
-1. 포털 대시보드의 **모든 리소스** 패널에서 이름이 `cloudshell`로 시작되는 저장소 계정을 선택합니다. 
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
+1. 포털 대시보드의 **모든 리소스** 패널에서 이름이 `cloudshell`로 시작되는 저장소 계정을 선택합니다.
 1. 저장소 계정 창에서 **Storage 탐색기**를 선택한 다음, **파일 공유**를 선택하고 해당 컬렉션에서 이름이 **cloudshellfiles***로 시작되는 파일 공유를 선택합니다.
 1. *thunbnail.jpg* 파일을 선택한 다음, 맨 위 메뉴에서 **다운로드**를 선택하여 이미지를 봅니다.
 

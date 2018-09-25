@@ -11,13 +11,13 @@ Azure Cloud Shell에서 다음을 실행합니다.
 ```azurecli
 az appservice plan create \
     --name keyvault-exercise-plan \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     --location eastus
 
 az webapp create \
     --name <your-unique-app-name> \
     --plan keyvault-exercise-plan \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 ## <a name="add-configuration-to-the-app"></a>앱에 구성 추가
@@ -27,7 +27,7 @@ Azure에 배포하려면 구성 파일 대신 응용 프로그램 설정에 Vaul
 ```azurecli
 az webapp config appsettings set \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --settings VaultName=<your-unique-vault-name>
 ```
 
@@ -38,7 +38,7 @@ az webapp config appsettings set \
 ```azurecli
 az webapp identity assign \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 결과로 생성되는 JSON 출력에서 **principalId** 값을 복사합니다. PrincipalId는 Azure Active Directory에서 앱의 새 ID 중 고유 ID이며 다음 단계에서 이 ID를 사용하려고 합니다.
@@ -68,7 +68,7 @@ zip -j site.zip pub/*
 az webapp deployment source config-zip \
     --src site.zip \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 사이트가 배포되었음을 나타내는 결과가 표시되면 브라우저에서 `https://<your-unique-app-name>.azurewebsites.net/api/SecretTest`를 엽니다. 비밀 값 **reindeer_flotilla**가 표시됩니다.

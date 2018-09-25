@@ -33,7 +33,7 @@ Cloud Shell에는 인기 있는 도구 및 텍스트 편집기가 포함되어 �
     `<server-name>`를 Azure SQL 논리 서버의 이름으로 바꿉니다. 포털에 현재 열려 있는 블레이드에 따라 이 이름이 FQDN(servername.database.windows.net)으로 표시될 수 있지만 .database.windows.net 접미사가 없는 논리적 이름만 필요합니다.
 
     ```azurecli
-    az configure --defaults group=<rgn>[Sandbox resource group name]</rgn> sql-server=<server-name>
+    az configure --defaults group=<rgn>[sandbox resource group name]</rgn> sql-server=<server-name>
     ```
 
 1. `az sql db list`를 실행하여 Azure SQL 논리 서버의 모든 데이터베이스를 나열합니다.

@@ -41,7 +41,7 @@ SampleVM          168.61.54.62         10.0.0.4
 `vm show` 명령을 사용하여 이름 또는 ID별로 특정 가상 머신에 대한 자세한 정보를 가져올 수 있습니다.
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 이 명령은 연결된 저장소 장치, 네트워크 인터페이스 및 VM이 연결된 리소스의 모든 개체 ID를 포함하여 VM에 대한 모든 종류의 정보가 포함된 상당히 큰 JSON 블록을 반환합니다. 다시 표 형식으로 변경할 수 있지만 이렇게 하면 거의 모든 흥미로운 데이터가 생략됩니다. 대신에 [JMESPath](http://jmespath.org/)라는 JSON의 기본 제공 쿼리 언어로 전환할 수 있습니다.
@@ -115,19 +115,19 @@ JMESQuery에는 여러 가지 다른 흥미로운 쿼리 기능이 있습니다.
 JMES 쿼리를 기본적으로 이해하면 `vm show` 명령과 같은 쿼리에서 반환되는 데이터에 파일러(filer)를 추가할 수 있습니다. 예를 들어 관리 사용자 이름을 검색할 수 있습니다.
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "osProfile.adminUsername"
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "osProfile.adminUsername"
 ```
 
 VM에 할당된 크기를 가져올 수 있습니다.
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query hardwareProfile.vmSize
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query hardwareProfile.vmSize
 ```
 
 또는 네트워크 인터페이스의 모든 ID를 검색하려면 다음 쿼리를 사용하면 됩니다.
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id"
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id"
 ```
 
 이 쿼리 방법은 Azure CLI 명령과 함께 작동하며 명령줄에서 특정 데이터를 끌어오는 데 사용할 수 있습니다. 이 방법은 스크립팅에 유용합니다. 예를 들어 Azure 계정에서 값을 끌어오고 이를 환경 또는 스크립트 변수에 저장할 수 있습니다. 이 방법으로 사용하기로 한 경우 추가할 유용한 플래그는 `--output tsv` 매개 변수(`-o tsv`로 줄일 수 있음)입니다. 이 매개 변수는 탭 구분 기호와 함께 실제 데이터 값만 포함하는 탭으로 구분된 값으로 결과를 반환합니다.
@@ -135,7 +135,7 @@ az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name Samp
 예를 들어
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
 ```
 
 `/subscriptions/20f4b944-fc7a-4d38-b02c-900c8223c3a0/resourceGroups/2568d0d0-efe3-4d04-a08f-df7f009f822a/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic` 텍스트를 반환합니다.

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.5-configure-rules-and-actions
+title: 커피 머신을 모니터링하는 규칙과 작업 구성
+metadata:
+  title: 커피 머신을 모니터링하는 규칙과 작업 구성
+  description: 커피 머신을 모니터링하는 규칙과 작업 구성
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5a6343fe6bbbe47ec15d343ce3e448315a27f606
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570679"
+durationInMinutes: 12
+content: '[!include[](includes/5-configure-rules-and-actions.md)]'

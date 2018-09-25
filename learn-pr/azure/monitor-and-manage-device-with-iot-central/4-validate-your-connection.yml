@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.4-validate-your-connection
+title: 연결 및 데이터 흐름의 유효성 검사
+metadata:
+  title: 연결 및 데이터 흐름의 유효성 검사
+  description: 연결 및 데이터 흐름의 유효성 검사
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a002831faa3c4075726bb4177bfb0f6f81419181
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570727"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 12
+content: '[!include[](includes/4-validate-your-connection.md)]'

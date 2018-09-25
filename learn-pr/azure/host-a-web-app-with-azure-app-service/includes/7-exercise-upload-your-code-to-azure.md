@@ -2,7 +2,7 @@
 
 ## <a name="create-a-staging-deployment-slot"></a>스테이징 배포 슬롯 만들기
 
-1. [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)로 다시 전환합니다.
+1. [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)로 다시 전환합니다.
 
 1. 이전에 만든 Azure Service 리소스(웹앱)를 엽니다. **모든 리소스** 또는 **리소스 그룹**에 포함된 리소스 그룹에서 앱을 검색하여 다시 찾을 수 있습니다.
 

@@ -5,13 +5,13 @@
 `vm stop` 명령으로 실행 중인 VM을 중지할 수 있습니다. 이름과 리소스 그룹 또는 VM의 고유 ID를 전달해야 합니다.
 
 ```azurecli
-az vm stop -n SampleVM -g <rgn>[Sandbox resource group name]</rgn>
+az vm stop -n SampleVM -g <rgn>[sandbox resource group name]</rgn>
 ```
 
 `ssh`를 사용하거나 `vm get-instance-view` 명령을 통해 공용 IP 주소를 ping하여 중지했는지 확인할 수 있습니다. 이 마지막 방법은 `vm show`와 동일한 기본 데이터를 반환하지만 인스턴스 자체에 대한 세부 정보를 포함합니다. Azure Cloud Shell에 다음 명령을 입력하여 VM의 현재 실행 상태를 확인해 보세요.
 
 ```azurecli
-az vm get-instance-view -n SampleVM -g <rgn>[Sandbox resource group name]</rgn> --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv
+az vm get-instance-view -n SampleVM -g <rgn>[sandbox resource group name]</rgn> --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv
 ```
 
 이 명령은 `VM stopped`를 결과로 반환해야 합니다.
@@ -21,7 +21,7 @@ az vm get-instance-view -n SampleVM -g <rgn>[Sandbox resource group name]</rgn> 
 `vm start` 명령을 통해 되돌리기를 수행할 수 있습니다.
 
 ```azurecli
-az vm start -n SampleVM -g <rgn>[Sandbox resource group name]</rgn>
+az vm start -n SampleVM -g <rgn>[sandbox resource group name]</rgn>
 ```
 
 이 명령은 중지된 VM을 시작합니다. `vm get-instance-view` 쿼리를 통해 이제 `VM running`을 반환하는지 확인할 수 있습니다.

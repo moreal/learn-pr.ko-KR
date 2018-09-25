@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.2-an-introduction-to-text-analytics
+metadata:
+  title: 감정 분석 및 텍스트 분석 API
+  description: 이 단원에서는 텍스트 분석의 필드에 대해 알아보고 Azure Cognitive Services를 사용하여 앱의 텍스트에서 감정을 검색하는 방법을 살펴보겠습니다.
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b2ce869117cbf096e96115a1eb611ab897fb13d5
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513012"
+title: 감정 분석 및 텍스트 분석 API
+durationInMinutes: 4
+content: '[!include[](includes/2-an-introduction-to-text-analytics.md)]'

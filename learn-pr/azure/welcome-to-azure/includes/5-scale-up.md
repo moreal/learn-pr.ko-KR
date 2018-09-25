@@ -29,7 +29,7 @@ _강화_ 및 _확장_이란 용어를 들어보았을 수 있습니다.
 
     ```azurecli
     az vm resize \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --name myVM \
       --size Standard_DS3_v2
     ```
@@ -39,7 +39,7 @@ _강화_ 및 _확장_이란 용어를 들어보았을 수 있습니다.
 
     ```azurecli
     az vm show \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --name myVM \
       --query "hardwareProfile" \
       --output tsv
@@ -57,7 +57,7 @@ _강화_ 및 _확장_이란 용어를 들어보았을 수 있습니다.
 
     ```azurecli
     az vm resize \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --name myVM \
       --size Standard_DS3_v2
     ```
@@ -67,7 +67,7 @@ _강화_ 및 _확장_이란 용어를 들어보았을 수 있습니다.
 
     ```azurecli
     az vm show \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --name myVM \
       --query "hardwareProfile" \
       --output tsv

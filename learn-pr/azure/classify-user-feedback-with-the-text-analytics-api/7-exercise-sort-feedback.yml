@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.7-exercise-sort-feedback
+title: '연습: 감정 점수를 기준으로 메시지를 여러 큐에 정렬합니다.'
+metadata:
+  title: '연습: 감정 점수를 기준으로 메시지를 여러 큐에 정렬합니다.'
+  description: 이 랩의 마지막 부분에서는 감정을 기준으로 메시지를 정렬하고 추가 처리를 위해 출력 큐로 전달하는 코드 및 바인딩을 함수에 추가하겠습니다.
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0718de2c1c188f1320848f639bc7347aaea00b51
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513526"
+azureSandbox: true
+durationInMinutes: 8
+content: '[!include[](includes/7-exercise-sort-feedback.md)]'

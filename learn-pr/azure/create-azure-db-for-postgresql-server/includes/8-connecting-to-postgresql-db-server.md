@@ -14,7 +14,7 @@
 
 ### <a name="create-a-firewall-rule"></a>방화벽 규칙을 만들기
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다. 
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. 방화벽 규칙을 만들려는 서버 리소스로 이동합니다.
 
@@ -48,8 +48,8 @@
     ```bash
     psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
     ```
-    
-    `server-name` 및 `admin-user`에 대해 선택한 값을 사용합니다. 
+
+    `server-name` 및 `admin-user`에 대해 선택한 값을 사용합니다.
 
 1. **postgres**는 각 PostgreSQL 서버를 만들 때마다 포함되는 기본 관리 데이터베이스입니다. 서버를 만들 때 제공한 암호를 묻는 메시지가 표시됩니다.
 

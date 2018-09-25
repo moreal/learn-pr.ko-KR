@@ -31,7 +31,7 @@ Linux 가상 머신이 기본 제공 방화벽을 통해 포트 80(`http`)을 �
 1. Cloud Shell에 다음을 입력하여 포트 80을 엽니다.
 
 ```azurecli
-az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 네트워크 규칙을 추가하고 방화벽을 통해 포트를 열기까지는 시간이 오래 걸립니다. `curl`을 다시 시도하세요. 이번에는 데이터가 반환됩니다. 브라우저에서도 페이지를 볼 수 있습니다.

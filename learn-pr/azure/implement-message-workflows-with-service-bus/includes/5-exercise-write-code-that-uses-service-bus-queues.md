@@ -36,7 +36,7 @@ Service Bus 네임스페이스에 액세스하고 큐를 사용하려면 콘솔 
 
     ```azurecli
     az servicebus namespace authorization-rule keys list \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --namespace-name <namespace-name> \
         --name RootManageSharedAccessKey \
         --query primaryConnectionString \
@@ -131,7 +131,7 @@ dotnet run -p privatemessagesender
 
 ```azurecli
 az servicebus queue show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --name salesmessages \
     --query messageCount
@@ -213,7 +213,7 @@ dotnet run -p privatemessagereceiver
 
 ```azurecli
 az servicebus queue show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --name salesmessages \
     --query messageCount
