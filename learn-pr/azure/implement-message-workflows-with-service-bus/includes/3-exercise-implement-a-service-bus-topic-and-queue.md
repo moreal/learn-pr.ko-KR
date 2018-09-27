@@ -17,7 +17,7 @@ Azure Service Bus의 네임스페이스는 고유한 정규화된 도메인 이�
 
 Azure Portal을 사용하여 Service Bus 네임스페이스를 만들려면 다음 단계를 수행하세요.
 
-1. [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. 왼쪽 탐색 영역에서 **모든 서비스**를 클릭합니다.
 
@@ -31,11 +31,11 @@ Azure Portal을 사용하여 Service Bus 네임스페이스를 만들려면 다�
 
 1. **가격 책정 계층** 드롭다운 목록에서 **표준**을 선택합니다.
 
-1. **구독** 드롭다운 목록에서 구독("Concierge 구독")을 선택합니다.
+1. **구독** 드롭다운 목록에서 구독("컨시어지 구독")을 선택합니다.
 
-1. **리소스 그룹**에서 **기존 항목 사용**을 선택하고 “<rgn>[샌드박스 리소스 그룹 이름]</rgn>”을 선택합니다.
+1. **리소스 그룹**에서 **기존 리소스 그룹 사용**을 선택하고 <rgn>[샌드박스 리소스 그룹 이름]</rgn>을 선택합니다.
 
-1. **위치** 드롭다운 목록의 아래 목록에서 가까운 위치를 선택합니다.
+1. **위치** 드롭다운 목록의 아래 목록에서 사용자에게 가까운 위치를 선택합니다.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 

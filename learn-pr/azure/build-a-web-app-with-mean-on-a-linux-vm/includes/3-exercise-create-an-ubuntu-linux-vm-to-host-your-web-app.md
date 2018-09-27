@@ -8,7 +8,7 @@
 
 ### <a name="creating-a-resource-group"></a>리소스 그룹을 만들기
 
-일반적으로 새 리소스 집합을 만들 때 가장 먼저 할일은 모든 리소스를 소유할 _리소스 그룹_을 만드는 것입니다. 이 작업은 Azure 샌드박스에서 불필요한 단계일 수 있지만 사용자 고유의 구독에서 작업할 때 다음 명령을 사용하여 사용자에게서 가까운 위치에 리소스 그룹을 만듭니다.
+일반적으로 새 리소스 집합을 만들 때 가장 먼저 할일은 _리소스 그룹_을 만들어 모든 리소스를 소유하는 것입니다. 이 작업은 Azure 샌드박스에서 불필요한 단계일 수 있지만 사용자 고유의 구독에서 작업할 경우에는 다음 명령을 사용하여 사용자에게 가까운 위치에 리소스 그룹을 만듭니다.
 
 ```azurecli
 az group create --name <resource-group-name> --location <resource-group-location>
@@ -17,11 +17,11 @@ az group create --name <resource-group-name> --location <resource-group-location
 > [!IMPORTANT]
 > Azure 샌드박스를 사용하여 리소스 그룹을 만들 필요가 없습니다. 대신, **<rgn>[샌드박스 리소스 그룹]</rgn>** 이라는 미리 생성된 리소스 그룹을 사용합니다.
 
-1. 오른쪽에 있는 Cloud Shell에서 다음 명령을 입력하여 새 Ubuntu Linux VM을 만듭니다. `<vm-admin-username>` 및 `<vm-admin-password>`를 기본 설정된 관리자 사용자 이름 및 암호로 바꿉니다.
+1. 오른쪽에 있는 Cloud Shell에 다음 명령을 입력하여 새 Ubuntu Linux VM을 만듭니다. `<vm-admin-username>` 및 `<vm-admin-password>`를 기본 설정된 관리자 사용자 이름 및 암호로 바꿉니다.
 
     ```azurecli
     az vm create \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --name MeanDemo \
         --image UbuntuLTS \
         --admin-username <vm-admin-username> \
@@ -42,7 +42,7 @@ az group create --name <resource-group-name> --location <resource-group-location
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "<the public IP address of the newly created machine>",
-        "resourceGroup": "<rgn>[Sandbox resource group name]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group name]</rgn>",
         "zones": ""
     }
     ```
@@ -63,8 +63,8 @@ az group create --name <resource-group-name> --location <resource-group-location
 
 1. 새로 만들 웹 응용 프로그램에 들어오는 HTTP 트래픽을 허용하도록 VM에서 포트 80을 엽니다.
 
-    ``` bash
-    az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name MeanDemo
+    ```azurecli
+    az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name MeanDemo
     ```
 
     이 명령은 생성될 때 "MeanDemo"라는 이름이 지정된 VM에서 HTTP 포트를 엽니다.

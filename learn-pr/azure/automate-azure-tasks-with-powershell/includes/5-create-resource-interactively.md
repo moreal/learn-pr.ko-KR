@@ -264,7 +264,7 @@ New-AzureRmResourceGroup -Name <name> -Location <location>
 ```
 
 > [!NOTE]
-> Azure 샌드박스에서 사용할 예정이며 리소스 그룹을 만듭니다. 위의 명령은 고유한 구독에서 작업하는 경우에 사용됩니다.
+> 리소스 그룹을 만드는 Azure 샌드박스에서 작업할 예정입니다. 위의 명령은 고유한 구독에서 작업하는 경우에 사용됩니다.
 
 ### <a name="verify-the-resources"></a>리소스 확인
 `Get-AzureRmResource`는 Azure 리소스를 나열합니다. 이 cmdlet은 리소스 그룹 생성에 성공했는지 여부를 확인하는 데 유용합니다.

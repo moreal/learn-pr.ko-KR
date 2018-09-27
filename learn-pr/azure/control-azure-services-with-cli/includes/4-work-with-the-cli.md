@@ -49,7 +49,7 @@ az group create --name <name> --location <location>
 ```
 
 > [!IMPORTANT]
-> 무료 Azure 샌드박스를 사용할 때는 리소스 그룹을 만들 필요가 없습니다. 대신 미리 생성된 리소스 그룹을 사용합니다.
+> 무료 Azure 샌드박스를 사용할 때는 리소스 그룹을 만들 필요가 없습니다. 대신, 미리 생성된 리소스 그룹을 사용합니다.
 
 ### <a name="verify"></a>확인
 

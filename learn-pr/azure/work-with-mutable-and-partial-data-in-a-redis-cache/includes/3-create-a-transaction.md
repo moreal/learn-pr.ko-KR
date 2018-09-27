@@ -12,9 +12,9 @@ Azure Redis Cache 인스턴스를 만든 다음, 이 캐시에 두 개의 데이
 > [!div class="mx-tableFixed"]
 > | 매개 변수 | 설명 |
 > |-----------|-------------|
-> | `--name`    | 캐시 이름 - 전역적으로 고유해야 하며 문자, 숫자, 대시로 구성됩니다. |
-> | `--resource-group` | Azure 샌드박스의 일부인 미리 생성된 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 리소스 그룹을 사용합니다. |
-> | `--location` | 캐시를 배치할 위치를 지정합니다. 일반적으로 데이터 소비자와 가까운 위치를 선택합니다. 이 예에서는 Azure 샌드박스에서 사용할 수 있는 위치로 제한됩니다. 가장 가까운 위치를 선택합니다. |
+> | `--name`    | 캐시 이름 - 글로벌로 고유해야 하며 문자, 숫자, 대시로 구성되어야 합니다. |
+> | `--resource-group` | Azure 샌드박스에 포함된 미리 생성된 리소스 그룹 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 을 사용합니다. |
+> | `--location` | 캐시를 배치할 위치를 지정합니다. 일반적으로 데이터 소비자와 가까운 위치를 선택하려 합니다. 이 경우 Azure 샌드박스에서 사용할 수 있는 위치로 제한됩니다. 사용자에게 가장 가까운 위치를 선택합니다. |
 > | `--size` | Azure Redis Cache의 크기입니다. 유효한 값은 [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4]입니다. |
 > | `--sku` | Azure Redis Cache SKU입니다. 유효한 값은 [기본, 표준, 프리미엄]입니다. |
 
@@ -33,7 +33,7 @@ Azure Redis Cache 인스턴스를 만든 다음, 이 캐시에 두 개의 데이
 
     az redis create \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --location eastus \
         --vm-size C0 \
         --sku Basic \
@@ -85,7 +85,7 @@ Azure Portal 또는 명령줄을 사용하여 암호를 검색할 수 있습니�
 ```azurecli
 REDIS_KEY=$(az redis list-keys \
     --name "$REDIS_NAME" \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query primaryKey \
     --output tsv)
 
@@ -164,7 +164,7 @@ echo "$REDIS_KEY"@"$REDIS_NAME".redis.cache.windows.net:6380?ssl=true
     ```azcli
     az redis show \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --query provisioningState
     ```
 
@@ -180,7 +180,7 @@ echo "$REDIS_KEY"@"$REDIS_NAME".redis.cache.windows.net:6380?ssl=true
 
 마지막 마무리로, 추가한 데이터가 Azure Redis Cache에 있는지 확인하겠습니다.
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. 왼쪽 사이드바에서 **모든 리소스**를 선택하여 Azure Redis Cache를 찾은 다음, 왼쪽의 필터 상자를 사용하여 Azure Redis Cache 인스턴스를 선택합니다. 또는 맨 위에 있는 검색 상자를 사용하여 캐시 이름을 입력합니다.
 

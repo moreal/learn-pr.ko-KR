@@ -53,7 +53,7 @@ az vm list-sizes --location eastus --output table
 VM을 만들 때 크기를 지정하지 않았으므로, Azure에서는 `Standard_DS1_v2`의 기본 범용 크기를 선택했습니다. 그러나 `--size` 매개 변수를 사용하여 `vm create` 명령의 일부로 크기를 지정할 수 있습니다. 예를 들어, 다음 명령을 사용하여 16코어 가상 머신을 만들 수 있습니다.
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM2 \
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM2 \
   --image Debian --admin-username aldis --generate-ssh-keys --verbose \
   --size "Standard_DS5_v2"
 ```
@@ -65,18 +65,18 @@ az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name Sa
 워크로드가 변경되거나 생성 시 크기가 잘못 조정된 경우에도 기존 VM의 크기를 조정할 수 있습니다. 크기를 조정하기 전에 먼저 VM이 포함된 클러스터에서 원하는 크기를 사용할 수 있는지 확인해야 합니다. 이 경우 `vm list-vm-resize-options` 명령을 사용할 수 있습니다.
 
 ```azurecli
-az vm list-vm-resize-options --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --output table
+az vm list-vm-resize-options --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --output table
 ```
 
 이 명령은 리소스 그룹에서 사용 가능한 모든 크기 구성의 목록을 반환합니다. 클러스터에서는 사용할 수 없지만 지역에서는 사용할 수 _있는_ 크기인 경우 [VM 할당을 취소](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate)할 수 있습니다. 이 명령은 실행 중인 VM을 중지한 후 리소스의 손실 없이 현재 클러스터에서 제거합니다. 그런 다음, 크기를 조정할 수 있습니다. 그러면 크기 구성을 사용할 수 있는 새 클러스터에서 VM이 다시 만들어집니다.
 
 > [!NOTE]
-> Azure 샌드박스 몇 가지 VM 크기로 제한됩니다. 무료 Microsoft Learning 구독에서는 대부분의 가능성이 허용되지 않습니다.
+> Azure 샌드박스는 몇 가지 VM 크기로 제한됩니다. 무료 Microsoft Learn 구독에서는 대부분이 사용 가능하지 않습니다.
 
 VM의 크기를 조정하려면 `vm resize` 명령을 사용합니다. 예를 들어 수행하려는 작업에 대해 VM의 성능이 부족한 것을 알게 될 수도 있습니다. vCore가 4개 메모리가 14G인 DS3_v2 계층으로 몇 단계를 높일 수 있습니다. 다음 명령을 Cloud Shell에 입력하세요.
 
 ```azurecli
-az vm resize --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
+az vm resize --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
 ```
 
 이 명령으로 VM의 리소스를 줄이는 데 몇 분 정도 소요되며, 완료되면 새 JSON 구성이 반환됩니다.

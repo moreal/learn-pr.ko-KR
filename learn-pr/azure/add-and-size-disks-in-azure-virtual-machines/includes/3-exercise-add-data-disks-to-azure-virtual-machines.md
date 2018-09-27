@@ -11,7 +11,7 @@
 
 Azure CLI를 사용하여 웹 서버를 호스트하는 Linux VM을 만들어 보겠습니다.
 
-1. 먼저 이 세션의 몇 가지 기본값을 설정하겠습니다. 가장 먼저 결정해야 할 것은 VM을 배치할 _위치_입니다. 이상적으로 클라이언트와 가까운 위치가 좋겠습니다. 이 경우 사용 가능한 위치 중 Azure 샌드박스와 가장 가까운 지역을 선택합니다.
+1. 먼저 이 세션의 몇 가지 기본값을 설정하겠습니다. 가장 먼저 결정해야 할 것은 VM을 배치할 _위치_입니다. 이상적으로 클라이언트와 가까운 위치가 좋습니다. 이 경우에 사용 가능한 위치 중 Azure 샌드박스와 가장 가까운 지역을 선택합니다.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
@@ -23,10 +23,10 @@ Azure CLI를 사용하여 웹 서버를 호스트하는 Linux VM을 만들어 �
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
 
-1. Azure 샌드박스: **<rgn>[샌드박스 리소스 그룹]</rgn>** 에 생성된, 사전 구성된 리소스 그룹에 기본 리소스 그룹 값을 설정합니다.
+1. Azure 샌드박스에 생성되고 사전 구성된 리소스 그룹인 **<rgn>[샌드박스 리소스 그룹]</rgn>** 으로 기본 리소스 그룹 값을 설정합니다.
 
     ```azurecli
-    az configure --defaults group="<rgn>[Sandbox Resource Group]</rgn>"
+    az configure --defaults group="<rgn>[sandbox Resource Group]</rgn>"
     ```
 
 1. 다음으로, `vm create` 명령을 사용하여 새로운 Ubuntu Linux VM을 만듭니다.
@@ -51,13 +51,13 @@ Azure CLI를 사용하여 웹 서버를 호스트하는 Linux VM을 만들어 �
     ```json
     {
         "fqdns": "",
-        "id": "/subscriptions/xxx/resourceGroups/<rgn>[Sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
+        "id": "/subscriptions/xxx/resourceGroups/<rgn>[sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
         "location": "eastus",
         "macAddress": "00-0D-3A-18-DE-B4",
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "40.76.193.249",
-        "resourceGroup": "<rgn>[Sandbox resource group]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group]</rgn>",
         "zones": ""
     }
     ```

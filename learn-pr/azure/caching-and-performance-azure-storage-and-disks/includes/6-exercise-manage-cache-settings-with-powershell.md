@@ -13,9 +13,9 @@
 이전 연습에서 만든 VM을 사용하겠습니다. 이 랩의 작업은 다음을 가정합니다.
 
 - **fotoshareVM**이라고 하는 VM이 있습니다.
-- VM은 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 라는 리소스 그룹에 있습니다.
+- VM은 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹에 있습니다.
 
-다른 이름 집합을 사용한 경우 이러한 값을 사용자 고유의 값으로 바꿉니다.
+다른 이름 집합을 사용한 경우 이러한 값을 사용자 값으로 바꿉니다.
 
 마지막 연습에서 VM 디스크의 현재 상태는 다음과 같습니다.
 
@@ -33,7 +33,7 @@
     > 해당 명령을 실행하기 전에 Cloud Shell 세션을 **PowerShell**로 전환하세요.
     
     ```powershell
-    $myRgName = "<rgn>[Sandbox resource group name]</rgn>"
+    $myRgName = "<rgn>[sandbox resource group name]</rgn>"
     $myVMName = "fotoshareVM"
     ```
     
@@ -59,7 +59,7 @@
     ```output
     ResourceGroupName Name        Type                              Location
     ----------------- ----        ----                              --------
-    <rgn>[Sandbox resource group name]</rgn> fotoshareVM Microsoft.Compute/virtualMachines eastus
+    <rgn>[sandbox resource group name]</rgn> fotoshareVM Microsoft.Compute/virtualMachines eastus
     ```
     
 ### <a name="view-os-disk-cache-status"></a>OS 디스크 캐시 상태 보기
@@ -148,7 +148,7 @@
 
     ```output
     ResourceGroupName  : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
-    Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxx-xxxxxxx/resourceGroups/<rgn>[Sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/fotoshareVM
+    Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxx-xxxxxxx/resourceGroups/<rgn>[sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/fotoshareVM
     VmId               : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
     Name               : fotoshareVM
     Type               : Microsoft.Compute/virtualMachines

@@ -20,7 +20,7 @@
 
 Azure Portal에서 함수 앱을 만들어 보겠습니다.
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기** 단추를 선택한 후 **시작 > 서버리스 함수 앱**을 선택하여 함수 앱 *만들기* 블레이드를 엽니다. 또는 **계산 > 함수 앱** 옵션을 사용하여 같은 블레이드를 열 수 있습니다.
 
@@ -51,12 +51,12 @@ Azure Portal에서 함수 앱을 만들어 보겠습니다.
 
 ## <a name="verify-your-azure-function-app"></a>Azure 함수 앱 확인
 
-1. Azure Portal의 왼쪽 메뉴에서 **리소스 그룹**을 선택합니다. 사용 가능한 그룹 목록에 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹이 보일 것입니다.
+1. Azure Portal의 왼쪽 메뉴에서 **리소스 그룹**을 선택합니다. 그러면 사용 가능한 그룹 목록에 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹이 표시됩니다.
 
-  ![리소스 그룹 메뉴 항목 및 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 목록 항목이 강조 표시된 리소스 그룹 블레이드를 보여주는 Azure Portal의 스크린샷입니다.](../media/3-resource-group.png)
+  ![리소스 그룹 메뉴 항목 및 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 목록 항목이 강조 표시된 리소스 그룹 블레이드를 보여주는 Azure Portal의 스크린샷](../media/3-resource-group.png)
 
 1. **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹을 선택합니다. 그러면 다음 목록과 같은 리소스 목록이 표시됩니다.
 
-  ![App Service 계획, Storage 계정, Application Insights 리소스 및 App Service에 대한 항목을 포함하여 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 그룹에 있는 모든 리소스를 보여 주는 Azure Portal의 스크린샷입니다.](../media/3-resource-list.png)
+  ![App Service 계획, Storage 계정, Application Insights 리소스 및 App Service에 대한 항목을 포함하여 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 그룹에 있는 모든 리소스를 보여주는 Azure Portal의 스크린샷](../media/3-resource-list.png)
 
 App Service로 나열된 번개 함수 아이콘이 있는 항목은 새로운 함수 앱입니다. 항목을 클릭하면 할당된 공용 URL이 포함된 새 함수에 대한 세부 정보가 열립니다. 브라우저에서 열 경우에는 함수 앱이 실행 중임을 나타내는 기본 웹 페이지가 표시됩니다.

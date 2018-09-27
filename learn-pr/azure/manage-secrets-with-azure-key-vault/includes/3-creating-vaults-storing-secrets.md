@@ -40,14 +40,14 @@ Cloud Shell에서 다음 명령을 실행하여 자격 증명 모음을 만듭�
 ```azurecli
 az keyvault create \
     --name <your-unique-vault-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --location eastus
 ```
 
 완료되면 새 자격 증명 모음을 설명하는 JSON 출력이 표시됩니다.
 
 > [!TIP]
-> 이 명령에는 **<rgn>[샌드박스 리소스 그룹]</rgn>** 이라는 미리 생성된 리소스 그룹이 사용되었습니다. 사용자 고유의 구독을 사용하는 경우 새 리소스 그룹을 만들거나 이전에 만든 기존 리소스 그룹을 사용할 수 있습니다.
+> 명령에는 **<rgn>[샌드박스 리소스 그룹]</rgn>** 이라는 미리 생성된 리소스 그룹을 사용되었습니다. 사용자 고유의 구독에서 작업하는 경우 새 리소스 그룹을 만들거나 이전에 만든 기존 리소스 그룹을 사용할 수 있습니다.
 
 ### <a name="add-the-secret"></a>비밀 추가
 

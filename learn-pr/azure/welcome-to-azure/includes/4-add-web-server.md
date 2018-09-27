@@ -38,7 +38,7 @@ Azure 저장소 또는 GitHub와 같은 공용 위치에 스크립트를 저장�
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name CustomScriptExtension \
       --publisher Microsoft.Compute \
@@ -46,7 +46,7 @@ Azure 저장소 또는 GitHub와 같은 공용 위치에 스크립트를 저장�
       --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
     ```
 
-    Nginx를 구성하고, 홈페이지의 내용을 설정하고, 서비스를 시작하는 프로세스를 완료하려면 몇 분이 걸립니다.
+    IIS를 구성하고, 홈페이지의 내용을 설정하고, 서비스를 시작하는 프로세스를 완료하려면 몇 분이 걸립니다.
 
     그 사이에 원한다면 별도의 브라우저 탭에서 [PowerShell 스크립트를 검사](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1?azure-portal=true)할 수 있습니다. 이 스크립트는 IIS를 설치하고, VM의 컴퓨터 이름인 "myVM"과 함께 시작 메시지를 표시하도록 홈페이지를 구성합니다.
 
@@ -55,7 +55,7 @@ Azure 저장소 또는 GitHub와 같은 공용 위치에 스크립트를 저장�
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -68,7 +68,7 @@ IIS를 설정했으니, 실행 중인지 확인하겠습니다.
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```
@@ -110,7 +110,7 @@ Azure 저장소 또는 GitHub와 같은 공용 위치에 스크립트를 저장�
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name customScript \
       --publisher Microsoft.Azure.Extensions \
@@ -118,7 +118,7 @@ Azure 저장소 또는 GitHub와 같은 공용 위치에 스크립트를 저장�
       --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
     ```
 
-    IIS를 구성하고, 홈페이지의 내용을 설정하고, 서비스를 시작하는 프로세스를 완료하려면 몇 분이 걸립니다.
+    Nginx를 구성하고, 홈페이지의 내용을 설정하고, 서비스를 시작하는 프로세스를 완료하려면 몇 분이 걸립니다.
 
     그 사이에 원한다면 별도의 브라우저 탭에서 [Bash 스크립트를 검사](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-nginx.sh?azure-portal=true)할 수 있습니다. 이 스크립트는 Nginx를 설치하고, VM의 컴퓨터 이름인 "myVM"과 함께 시작 메시지를 표시하도록 홈페이지를 구성합니다.
 
@@ -127,7 +127,7 @@ Azure 저장소 또는 GitHub와 같은 공용 위치에 스크립트를 저장�
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -140,7 +140,7 @@ Nginx를 설정했으니, 실행 중인지 확인하겠습니다.
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```

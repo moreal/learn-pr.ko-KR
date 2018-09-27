@@ -21,7 +21,7 @@
 
 WordPress 웹 사이트를 실행하는 VM을 만들려고 한다고 가정해 보겠습니다. 사이트를 설정하는 것은 어렵지 않지만 몇 가지 사항을 명심해야 합니다. 운영 체제를 설치 및 구성하고, 웹 사이트를 구성하고, 데이터베이스를 설치하고, 방화벽과 같은 것에 대해 걱정해야 합니다. 다음 몇 가지 모듈에서 VM을 만드는 방법을 다루겠지만, 여기서는 VM을 만들어 이 작업이 얼마나 쉬운지 알아보겠습니다. 모든 옵션을 살펴보지 않는 대신, **VM 만들기** 모듈 중 하나를 확인하여 각 옵션에 대한 전체 자세한 정보를 파악합니다.
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다. 
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. Azure 리소스 만들기 및 관리 메뉴가 왼쪽에 표시되고, 나머지 화면에는 대시보드가 채워집니다.
 

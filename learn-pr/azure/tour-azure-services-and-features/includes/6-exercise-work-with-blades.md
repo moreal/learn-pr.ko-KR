@@ -2,7 +2,7 @@
 
 계정이 있거나 만든 경우 계정 자격 증명을 사용하여 [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-그렇지 않으면 **위의 Azure 샌드박스를 활성화하고** 샌드박스를 활성화한 계정과 동일한 계정을 사용하여 [샌드박스용 Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+그렇지 않으면 **위의 Azure 샌드박스를 활성화하고** 샌드박스를 활성화한 동일한 계정을 사용하여 [샌드박스용 Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 ## <a name="working-with-blades"></a>블레이드 사용
 

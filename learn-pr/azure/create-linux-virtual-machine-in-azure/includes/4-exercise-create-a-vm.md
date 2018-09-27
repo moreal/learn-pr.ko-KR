@@ -4,7 +4,7 @@
 
 Azure Portal, Azure CLI 또는 Azure PowerShell을 사용하여 Linux VM을 만들 수 있습니다. Azure로 시작할 때 가장 쉬운 방법은 Azure Portal을 사용하는 것입니다. Azure Portal에서는 필요한 정보를 단계별로 안내하며 만드는 동안 힌트와 유용한 메시지를 제공하기 때문입니다.
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기**를 클릭합니다.
 
@@ -24,9 +24,9 @@ Azure Portal, Azure CLI 또는 Azure PowerShell을 사용하여 Linux VM을 만�
 
 ### <a name="configure-basic-vm-settings"></a>기본 VM 설정 구성
 
-1. **구독**에는 기본적으로 샌드박스 구독이 선택되어 있습니다.
+1. **구독**의 경우 기본적으로 샌드박스 구독이 선택되어 있어야 합니다.
 
-1. **리소스 그룹**에는 이름이 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 인 리소스 그룹이 기본적으로 선택되어 있습니다.
+1. **리소스 그룹**의 경우 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹이 기본적으로 선택되어 있어야 합니다.
 
 1. **인스턴스 세부 정보** 섹션에서 웹 서버 VM의 이름을 **test-web-eus-vm1**과 같이 입력합니다. 이 이름은 환경(**test**), 역할(**web**), 위치(**미국 동부**), 서비스(**vm**) 및 인스턴스 번호(**1**)를 나타냅니다.
     - 용도를 빠르게 식별할 수 있도록 리소스 이름을 표준화하는 것이 가장 좋습니다. Linux VM 이름은 1-64자여야 하며 숫자, 문자 및 대시로 구성되어야 합니다.

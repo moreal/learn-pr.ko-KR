@@ -2,9 +2,10 @@ Azure AD를 배포하고 어떤 사용자가 Azure Portal에 액세스할 때 Az
 
 ## <a name="launch-lab-and-sign-in-to-the-azure-portal"></a>랩을 시작하고 Azure Portal에 로그인
 
-1. 위의 **VM 모드 시작** 링크를 클릭하여 랩을 시작합니다.
+1. 위의 **랩 시작** 링크를 클릭하여 랩을 시작합니다.
 
-1. Azure Portal에 LabAdmin(<XXXXXXX>@triplecrownlabsoutlook.onmicrosoft.com)로 로그인합니다. 지침 창의 맨 위에 있는 리소스 탭에서 사용자 이름과 암호를 확인할 수 있습니다.
+> [!NOTE]
+> 랩을 실행한 후에 로그인하는 데 필요한 사용자 이름 및 암호는 지침 옆에 있는 **리소스** 탭에 위치합니다.
 
 ## <a name="create-a-directory"></a>디렉터리 만들기
 
@@ -12,14 +13,14 @@ Azure AD를 배포하고 어떤 사용자가 Azure Portal에 액세스할 때 Az
 
 1. [Azure Portal](https://portal.azure.com?azure-portal=true)에 로그인합니다.
 
-1. 왼쪽 탐색 창에서 **리소스 만들기** > **ID** > **Azure Active Directory**를 차례로 클릭합니다.
+2. 왼쪽 탐색 창에서 **리소스 만들기** > **ID** > **Azure Active Directory**를 차례로 클릭합니다.
 
-1. **디렉터리 만들기** 블레이드에서 **조직 이름** 및 **초기 도메인 이름**에 대해 다음 값을 제공합니다.
+3. **디렉터리 만들기** 블레이드에서 **조직 이름** 및 **초기 도메인 이름**에 대해 다음 값을 제공합니다.
 
    1. 조직 이름: `First Up Consultants`입니다.
-   1. 초기 도메인 이름: `firstupconsultants<XXXXXXX>` 여기서 <XXXXXXX>는 지침 창 위쪽의 **리소스** 탭에 있는 사용자 이름 뒤의 번호입니다.
+   2. 초기 도메인 이름: `firstupconsultants<XXXXXXX>` 여기서 <XXXXXXX>는 지침 창 위쪽의 **리소스** 탭에 있는 사용자 이름 뒤의 번호입니다.
 
-1. 디렉터리가 만들어질 때까지 기다립니다. 링크를 클릭하여 새 디렉터리로 전환하거나 창 위쪽에서 **디렉터리 및 구독 필터**를 클릭한 다음, 새로 만든 디렉터리를 선택합니다.
+4. 디렉터리가 만들어질 때까지 기다립니다. 링크를 클릭하여 새 디렉터리로 전환하거나 창 위쪽에서 **디렉터리 및 구독 필터**를 클릭한 다음, 새로 만든 디렉터리를 선택합니다.
 
 ## <a name="get-trial-licenses"></a>평가판 라이선스 가져오기
 

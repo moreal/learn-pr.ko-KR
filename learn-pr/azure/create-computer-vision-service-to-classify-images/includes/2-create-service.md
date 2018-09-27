@@ -106,16 +106,16 @@ az cognitiveservices account create \
 --kind ComputerVision \
 --name ComputerVisionService \
 --sku S1 \
---resource-group <rgn>[Sandbox resource group name]</rgn> \
+--resource-group <rgn>[sandbox resource group name]</rgn> \
 --location [location]
 ```
 
 > [!NOTE]
 > 선택한 위치를 기억해 두세요. 이 위치에서 API에 대한 모든 호출을 수행하게 됩니다.
 
-**ComputerVision** API에 대한 Cognitive Services 계정을 만들었습니다. *S1* sku를 선택하고 내 계정의 이름을 **ComputerVisionService**라고 지정했습니다. 계정은 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹이 소유하며 `--location` 매개 변수에 설정한 위치에서 API를 호출합니다. 
+**ComputerVision** API에 대한 Cognitive Services 계정을 만들었습니다. *S1* sku를 선택하고 해당 계정의 이름을 **ComputerVisionService**로 지정했습니다. 해당 계정은 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹이 소유하며 `--location` 매개 변수에 설정한 위치에서 API를 호출합니다. 
 
-명령을 통해 Cognitive Services 계정이 생성되면, JSON 응답을 받게 되며, 여기에는 **Succeeded**로 설정된 **provisioningState** 속성이 포함됩니다.
+명령을 통해 Cognitive Services 계정이 생성되면, **Succeeded**로 설정된 **provisioningState** 속성이 포함된 JSON 응답을 받게 됩니다.
 
 ## <a name="get-an-access-key"></a>액세스 키 가져오기
 
@@ -126,7 +126,7 @@ az cognitiveservices account create \
     ```azurecli
     az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     ```
     
     위의 명령은 주어진 리소스 그룹이 소유하는 **ComputerVisionService**라는 Cognitive Services 계정과 연결된 키를 반환합니다. 두 가지 키가 반환되며 그 중 하나는 여분의 키입니다. 키는 기억하기 어려우니 첫 번째 키를 API에 대한 모든 호출에 사용할 변수에 저장하겠습니다.
@@ -136,7 +136,7 @@ az cognitiveservices account create \
     ```azurecli
     key=$(az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query key1 -o tsv)
     ```
     

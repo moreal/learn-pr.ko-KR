@@ -51,7 +51,7 @@ SELECT *  FROM  [dbo].[users] WHERE userName = @UserName
 
 시각적으로 또는 문서로 제공하는 모든 출력을 항상 인코딩하고 이스케이프해야 합니다. 그러면 삭제 패스에서 무언가가 누락되었거나 악의적으로 사용 가능한 무언가를 코드에서 실수로 생성한 경우에 데이터를 보호할 수 있습니다. 이렇게 하면 모든 것이 _출력_으로 표시되며, 의도치 않게 실행해야 하는 항목으로 해석되는 일이 없습니다. 이것이 “XSS”(교차 사이트 스크립팅)라고 하는 또 다른 매우 일반적인 공격 기법입니다.
 
-이것은 매우 일반적인 요구 사항이므로 ASP.NET이 알아서 작업을 수행하는 또 다른 영역입니다. 기본적으로 [모든 출력이 이미 인코딩되어 있습니다](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1). 다른 웹 프레임워크를 사용하는 경우 [OWASP XSS 방지 참고 자료](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)를 사용하여 웹 사이트의 출력 인코딩에 대한 옵션을 확인할 수 있습니다.
+이것은 매우 일반적인 요구 사항이므로 ASP.NET이 작업을 수행하는 또 다른 영역입니다. 기본적으로 모든 출력이 이미 인코딩되어 있습니다. 다른 웹 프레임워크를 사용하는 경우 [OWASP XSS 방지 참고 자료](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)를 사용하여 웹 사이트의 출력 인코딩에 대한 옵션을 확인할 수 있습니다.
 
 ## <a name="summary"></a>요약
 

@@ -6,9 +6,9 @@
 
 ### <a name="select-a-subscription"></a>구독 선택하기
 
-한동안 Azure를 사용했다면 사용 가능한 여러 구독을 했을 수 있습니다. Visual Studio 및 또다른 회사 리소스를 구독했을 개발자의 경우가 종종 있습니다.
+한동안 Azure를 사용했다면 사용 가능한 여러 구독을 했을 수 있습니다. 이는 종종 Visual Studio용 구독 및 회사 리소스용 다른 구독을 보유한 개발자의 사례입니다.
 
-Azure 샌드박스가 Cloud Shell에서 컨시어스 구독을 이미 선택했으며, 이 단계를 사용하여 구독 설정을 확인할 수 있습니다. 또는 사용자 고유 구독으로 작업하는 경우, 다음의 단계를 사용하면 Azure CLI를 사용하여 구독을 전환할 수 있습니다.
+Azure 샌드박스가 Cloud Shell에서 컨시어지 구독을 이미 선택했으므로, 이러한 단계를 사용하여 구독 설정을 확인할 수 있습니다. 또는 사용자 고유 구독으로 작업하는 경우 다음의 단계를 사용하여 Azure CLI를 통해 구독을 전환할 수 있습니다.
 
 1. 사용 가능한 구독을 나열하여 시작합니다.
 
@@ -37,13 +37,13 @@ Azure 샌드박스가 Cloud Shell에서 컨시어스 구독을 이미 선택했�
     export NAME="<Azure Cosmos DB account name>"
     ```
 
-1. 기존 샌드박스 리소스 그룹을 사용하도록 리소스 그룹을 설정합니다.
+1. 리소스 그룹을 설정하여 기존 샌드박스 리소스 그룹을 사용합니다.
 
     ```azurecli
-    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
+    export RESOURCE_GROUP="<rgn>[sandbox resource group name]</rgn>"
     ```
 
-1. 가장 가까운 지역을 선택하고 `export LOCATION="EastUS"`와 같은 환경 변수를 설정합니다.
+1. 사용자와 가장 가까운 지역을 선택하고 `export LOCATION="EastUS"`와 같은 환경 변수를 설정합니다.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 

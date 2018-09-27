@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: 지식 검사
+metadata:
+  title: 지식 검사
+  description: 지식 검사
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512421"
+durationInMinutes: 3
+quiz:
+  title: 지식 점검
+  questions:
+  - content: Azure Storage 계정에 액세스하기 위해 제공되는 액세스 키의 수는 몇 개인가요?
+    choices:
+    - content: "1"
+      isCorrect: false
+      incorrectExplanation: 각 저장소 계정에는 두 개의 액세스 키가 있습니다. 따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.
+    - content: "2"
+      isCorrect: true
+      correctExplanation: 각 저장소 계정에는 두 개의 액세스 키가 있습니다. 따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.
+    - content: "3"
+      isCorrect: false
+      incorrectExplanation: 각 저장소 계정에는 두 개의 액세스 키가 있습니다. 따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.
+    - content: "4"
+      isCorrect: false
+      incorrectExplanation: 각 저장소 계정에는 두 개의 액세스 키가 있습니다. 따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.
+  - content: REST API 또는 Azure 클라이언트 라이브러리를 사용하여 저장소 계정에 프로그래밍 방식으로 액세스할 수 있습니다. 클라이언트 라이브러리를 사용하는 주된 이점은 무엇인가요?
+    choices:
+    - content: 비용
+      isCorrect: false
+      incorrectExplanation: 클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다. 클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.
+    - content: 가용성
+      isCorrect: false
+      incorrectExplanation: 클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다. 클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.
+    - content: 지역화
+      isCorrect: false
+      incorrectExplanation: 클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다. 클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.
+    - content: 편리성
+      isCorrect: true
+      correctExplanation: 클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다. 클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.
+  - content: 다음은 저장소 계정의 액세스 키에 대해 적합한 유사점은 무엇인가요?
+    choices:
+    - content: IP 주소
+      isCorrect: false
+      incorrectExplanation: 액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다. 이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.
+    - content: REST 엔드포인트
+      isCorrect: false
+      incorrectExplanation: 액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다. 이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.
+    - content: 사용자 이름 및 암호
+      isCorrect: true
+      correctExplanation: 액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다. 이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.
+    - content: 암호화 알고리즘
+      isCorrect: false
+      incorrectExplanation: 액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다. 이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.

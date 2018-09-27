@@ -5,12 +5,12 @@
  
 ## <a name="create-an-azure-container-registry"></a>Azure Container Registry 만들기
 
-무료 샌드박스를 사용할 것이므로 고유한 리소스 그룹을 만들 필요가 없습니다. `az acr create` 명령을 사용하여 Azure 컨테이너 레지스트리를 만듭니다. 컨테이너 레지스트리 이름은 Azure 내에서 고유해야 하며, 5~50자 사이의 영숫자를 포함해야 합니다. `<acrName>`를 레지스트리의 고유한 이름으로 바꿉니다.
+무료 샌드박스에서 작업할 것이므로 고유한 리소스 그룹을 만들 필요가 없습니다. `az acr create` 명령을 사용하여 Azure Container Registry를 만듭니다. 컨테이너 레지스트리 이름은 Azure 내에서 고유해야 하며, 5~50자 사이의 영숫자를 포함해야 합니다. `<acrName>`를 레지스트리의 고유한 이름으로 바꿉니다.
 
 이 예제에서는 프리미엄 레지스트리 SKU가 배포됩니다. 프리미엄 SKU는 지역 복제에 필요합니다. 다음 명령을 Cloud Shell 편집기에 입력합니다.
 
 ```azurecli
-az acr create --resource-group <rgn>[Sandbox resource group name]</rgn> --name <acrName> --sku Premium
+az acr create --resource-group <rgn>[sandbox resource group name]</rgn> --name <acrName> --sku Premium
 ```
 
 다음은 새 Azure 컨테이너 레지스트리의 출력 예제입니다.

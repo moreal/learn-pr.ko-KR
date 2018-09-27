@@ -7,7 +7,7 @@ Container Registry에서의 인증에는 Azure 서비스 주체를 사용하는 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-소문자(예를 들어, “MyContainer” 대신 “mycontainer” 값 작성)로 된 컨테이너 레지스트리 이름을 사용하여 변수를 만듭니다. 이 변수는 이 단원 전체에서 사용됩니다.
+소문자(예를 들어, “MyContainer” 대신 “mycontainer” 값 설정)로 된 컨테이너 레지스트리 이름으로 변수를 만듭니다. 이 변수는 이 단원 전체에서 사용됩니다.
 
 ```azurecli
 ACR_NAME=<acrName>
@@ -15,7 +15,7 @@ ACR_NAME=<acrName>
 
 ### <a name="service-principal"></a>서비스 주체
 
-프로덕션 응용 프로그램에서 서비스 주체를 만들려고 합니다. **이것은 샌드박스 환경에서는 동작하지 않지만** 사용자 시스템에서는 따라야 할 모범 사례입니다. 실제 연습에서는 아래의 관리자 계정 지침을 사용합니다.
+프로덕션 응용 프로그램의 경우 여기에 서비스 주체를 만들려고 합니다. **이 방법은 샌드박스 환경에서는 작동하지 않지만** 사용자 시스템에서는 따라야 할 모범 사례입니다. 실제 연습에서는 아래의 관리자 계정 지침을 사용합니다.
 
 `az ad sp create-for-rbac` 명령을 사용하여 서비스 주체를 만들 수 있습니다. `--role` 인수는 ‘읽기 권한자’ 역할을 사용하여 서비스 주체를 구성하고, 레지스트리에 대해 끌어오기 전용 액세스 권한을 부여합니다. 밀어넣기 및 끌어오기 액세스 권한을 부여하려면 `--role` 인수를 *contributor*로 변경합니다.
 
@@ -72,7 +72,7 @@ Azure 컨테이너 레지스트리에는 기본 제공 관리자 계정이 제�
 1. `az keyvault create` 명령을 사용하여 Azure Key Vault를 만듭니다.
 
     ```azurecli
-    az keyvault create --resource-group <rgn>[Sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
+    az keyvault create --resource-group <rgn>[sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
     ```
 
 1. `az keyvault secret set` 명령을 사용하여 ACR에 대한 사용자 이름을 자격 증명 모음에 저장합니다. 서비스 주체를 사용하고 있었다면 이 값의 appId를 사용합니다. 지금은 관리자 계정을 사용하고 있으므로 위 쿼리의 사용자 이름을 저장합니다. 아래 명령을 입력합니다. 잊지 말고 `<username>`을 바꾸세요.
@@ -102,9 +102,9 @@ Azure Key Vault를 만들고 다음 두 비밀을 저장했습니다.
 
 ```azurecli
 az container create \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
-    --name acr-build \
-    --image $ACR_NAME.azurecr.io/helloacrbuild:v1 \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
+    --name acr-tasks \
+    --image $ACR_NAME.azurecr.io/helloacrtasks:v1 \
     --registry-login-server $ACR_NAME.azurecr.io \
     --ip-address Public \
     --location eastus \
@@ -115,7 +115,7 @@ az container create \
 Azure 컨테이너 인스턴스의 IP 주소를 가져옵니다.
 
 ```azurecli
-az container show --resource-group  <rgn>[Sandbox resource group name]</rgn> --name acr-build --query ipAddress.ip --output table
+az container show --resource-group  <rgn>[sandbox resource group name]</rgn> --name acr-tasks --query ipAddress.ip --output table
 ```
 
 브라우저를 열고 컨테이너의 IP 주소로 이동합니다. 모든 항목이 올바르게 구성되면 다음 결과가 표시됩니다.

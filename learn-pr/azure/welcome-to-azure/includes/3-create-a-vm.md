@@ -94,9 +94,9 @@ Azure Portal, Azure CLI, Azure PowerShell을 비롯한 모든 Azure 관리 인�
 
 ## <a name="creating-resources-in-azure"></a>Azure에서 리소스 만들기
 
-일반적으로 가장 먼저 할 일은 우리가 만들어야 하는 모든 항목을 보관할 _리소스 그룹_을 만드는 것입니다. 이렇게 하면 모든 VM, 디스크, 네트워크 인터페이스 및 하나의 단위로써 솔루션을 구성하는 기타 요소를 관리할 수 있습니다. Azure CLI를 사용하여 `az group create` 명령으로 리소스 그룹을 만들 수 있습니다. `--name` 명령을 사용하여 구독에서 고유한 이름을 지정하고, `--location` 명령을 사용하여 리소스를 배치할 기본 위치를 Azure에 지시할 수 있습니다.
+일반적으로 가장 먼저 할 일은 우리가 만들어야 하는 모든 항목을 보관할 _리소스 그룹_을 만드는 것입니다. 이렇게 하면 모든 VM, 디스크, 네트워크 인터페이스 및 하나의 단위로써 솔루션을 구성하는 기타 요소를 관리할 수 있습니다. Azure CLI를 사용하여 `az group create` 명령으로 리소스 그룹을 만들 수 있습니다. `--name`을 사용하여 구독에서 고유한 이름을 지정하고, `--location`을 사용하여 기본적으로 리소스를 세계의 어떤 지역에 위치하려는지를 Azure에 알려줍니다.
 
-무료 Azure 샌드박스 환경을 사용하므로 이 단계를 수행할 필요가 없습니다. 그 대신, 미리 만들어 놓은 **<rgn>[리소스 그룹 이름]</rgn>** 리소스 그룹을 사용할 것입니다.
+무료 Azure 샌드박스 환경을 사용하므로 이 단계를 수행할 필요가 없습니다. 대신, 미리 만든 리소스 그룹 **<rgn>[리소스 그룹 이름]</rgn>** 을 사용합니다.
 
 ## <a name="choosing-a-location"></a>위치 선택
 
@@ -114,7 +114,7 @@ Windows VM을 실행해 보겠습니다.
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image Win2016Datacenter \
       --size Standard_DS2_v2 \
       --location eastus \
@@ -129,8 +129,8 @@ Windows VM을 실행해 보겠습니다.
 
 기다리는 동안 방금 실행한 명령을 검토해 보겠습니다.
 
-* VM 이름은 **myVM**입니다. 이 이름은 Azure에서 VM을 식별합니다. 또한 VM의 내부 호스트 이름 또는 머신 이름이 됩니다.
-* 리소스 그룹 또는 VM의 논리적 컨테이너는 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 입니다.
+* VM 이름은 **myVM**입니다. 이 이름은 Azure에서 VM을 식별합니다. 또한 VM의 내부 호스트 이름 또는 컴퓨터 이름이 됩니다.
+* VM의 논리적 컨테이너인 리소스 그룹은 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라고 합니다.
 * **Win2016Datacenter**는 Windows Server 2016 VM 이미지를 지정합니다.
 * **Standard_DS2_v2**는 VM 크기를 나타냅니다. 현재 이 크기는 가상 CPU 2대와 7GB 메모리를 제공합니다.
 * 사용자 이름 및 암호를 사용하여 나중에 VM에 연결할 수 있습니다. 예를 들어 원격 데스크톱 또는 WinRM을 통해 연결하여 시스템을 사용하고 구성할 수 있습니다.
@@ -172,7 +172,7 @@ Linux VM을 실행해 보겠습니다.
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image UbuntuLTS \
       --location eastus \
       --size Standard_DS2_v2 \
@@ -185,8 +185,8 @@ Linux VM을 실행해 보겠습니다.
 
 기다리는 동안 방금 실행한 명령을 검토해 보겠습니다.
 
-* VM 이름은 **myVM**입니다. 이 이름은 Azure에서 VM을 식별합니다. 또한 VM의 내부 호스트 이름 또는 머신 이름이 됩니다.
-* 리소스 그룹 또는 VM의 논리적 컨테이너는 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 입니다.
+* VM 이름은 **myVM**입니다. 이 이름은 Azure에서 VM을 식별합니다. 또한 VM의 내부 호스트 이름 또는 컴퓨터 이름이 됩니다.
+* VM의 논리적 컨테이너인 리소스 그룹은 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라고 합니다.
 * **UbuntuLTS**는 Ubuntu 16.04 LTS VM 이미지를 지정합니다.
 * **Standard_DS2_v2**는 VM 크기를 나타냅니다. 현재 이 크기는 가상 CPU 2대와 7GB 메모리를 제공합니다.
 * `--generate-ssh-keys` 옵션은 VM에 로그인할 수 있도록 SSH 키 쌍을 만듭니다.

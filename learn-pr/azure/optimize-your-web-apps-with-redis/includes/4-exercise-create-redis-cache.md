@@ -5,7 +5,7 @@
 
 ## <a name="create-a-redis-cache-in-azure"></a>Azure에서 Redis Cache 만들기
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. **리소스 만들기**, **데이터베이스**, **Redis Cache**를 차례로 클릭합니다.
 
@@ -19,14 +19,14 @@
 
 1. **DNS 이름:** **ContosoSportsApp[nnn]** 과 같은 전역적으로 고유한 이름을 만듭니다. 여기서 `[nnn]`은 임의의 숫자로 바꿉니다.
 
-1. **구독**: 컨시어지 구독을 선택합니다.
+1. **구독:** 컨시어지 구독을 선택합니다.
 
-1. **리소스 그룹**: 리소스 그룹의 <rgn>[샌드박스 리소스 그룹 이름]</rgn>을 선택합니다.
+1. **리소스 그룹:** 리소스 그룹에 대해 <rgn>[샌드박스 리소스 그룹 이름]</rgn>을 선택합니다.
 
-1. **위치:** 일반적으로 고객과 가까운 위치를 선택합니다. 이 예에서는 동부 해안입니다. 그러나 Azure 샌드박스는 특정 지역만 허용합니다. 다음 위치 중 하나를 선택하세요.
-    
+1. **위치:** 일반적으로 고객과 가까운 위치를 선택합니다. 이 경우 동부 해안입니다.
+
     [!include[](../../../includes/azure-sandbox-regions-note-friendly.md)]
-        
+
 5. **가격 책정 계층:** **기본 C0**을 선택합니다. 사용할 수 있는 가장 낮은 계층입니다. 프로덕션 앱은 더 많은 데이터를 저장하기를 원하고 더 높은 계층이 필요한 클러스터링 같은 일부 프리미엄 기능을 활용하려 합니다.
 
 1. **만들기**를 클릭합니다. Azure에서 자동으로 Redis Cache 인스턴스를 생성 및 배포합니다.
@@ -49,32 +49,32 @@ Redis Cache 인스턴스가 생성된 후 Azure Portal의 **콘솔** 기능을 �
     ```console
     ping
     ```
-    
+
     ```output
     PONG
     ```
-    
+
     ```console
     set test one
     ```
-    
+
     ```output
     OK
     ```
-    
+
     ```console
     get test
     ```
-    
+
     ```output
     "one"
     ```
-    
+
 상단의 이동 경로 탐색 막대를 통해 **개요** 패널로 다시 전환하거나 스크롤 막대를 사용하여 보기를 다시 왼쪽으로 밉니다.
 
 ## <a name="retrieve-the-access-keys-and-host-name"></a>선택키 및 호스트 이름 검색
 
-1. **설정** > **선택키**를 선택합니다. 
+1. **설정** > **선택키**를 선택합니다.
 
 1. **기본 연결 문자열(StackExchange.Redis)** 을 안전한 장소에 복사합니다. 그 다음 연습에서 필요합니다.
 

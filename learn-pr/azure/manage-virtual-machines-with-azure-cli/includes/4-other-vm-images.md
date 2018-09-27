@@ -28,13 +28,13 @@ az vm image list --publisher Microsoft --output table --all
 
 ## <a name="location-specific-images"></a>위치별 이미지
 
-일부 이미지는 특정 위치에서만 사용할 수 있습니다. 가상 머신을 만들려는 영역에서 사용 가능한 것으로 결과의 범위를 지정하려면 명령에 `--location [location]` 플래그를 추가하세요. 예를 들어 `eastus` 영역에서 사용할 수 있는 이미지 목록을 가져오려면 Azure Cloud Shell에 다음을 입력하세요.
+일부 이미지는 특정 위치에서만 사용할 수 있습니다. 가상 머신을 만들려는 영역에서 사용 가능한 것으로 결과의 범위를 지정하려면 명령에 `--location [location]` 플래그를 추가하세요. 예를 들어 `eastus` 지역에서 사용할 수 있는 이미지 목록을 가져오려면 Azure Cloud Shell에 다음을 입력하세요.
 
 ```azurecli
 az vm image list --location eastus --output table
 ```
 
-사용 가능한 다른 Azure 샌드박스 위치에서 일부 이미지를 확인합니다.
+사용 가능한 다른 Azure 샌드박스 위치에서 일부 이미지를 확인하세요.
 
 [!include[](../../../includes/azure-sandbox-regions-note.md)]
 

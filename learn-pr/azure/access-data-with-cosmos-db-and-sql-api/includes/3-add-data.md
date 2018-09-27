@@ -3,17 +3,17 @@ Azure Cosmos DB 데이터베이스에 데이터를 추가하는 작업은 간단
 ## <a name="what-is-the-data-explorer"></a>데이터 탐색기란?
 Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Azure Cosmos DB에 저장된 데이터를 관리하는 데 사용됩니다. 데이터 탐색기에서는 데이터 컬렉션 보기 및 탐색뿐만 아니라 데이터베이스 내 문서 편집, 데이터 쿼리, 저장 프로시저 만들기 및 실행을 위한 UI가 제공됩니다.
 
-## <a name="add-data-using-the-data-explorer"></a>데이터 탐색기를 사용하여 데이터 추가하기
+## <a name="add-data-using-the-data-explorer"></a>데이터 탐색기를 사용하여 데이터 추가
 
-1. 샌드박스를 활성화한 계정과 동일한 계정을 사용하여 [샌드박스용 Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [샌드박스용 Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
     > [!IMPORTANT]
-    > Azure Portal과 샌드박스에 동일한 계정으로 로그인합니다.
-    > 
+    > 동일한 계정을 사용하여 Azure Portal과 샌드박스에 로그인합니다.
+    >
     > 위 링크로 Azure Portal에 로그인하여 컨시어지 구독에 액세스를 제공하는 샌드박스에 연결되었는지 확인합니다.
 
 1. **모든 서비스** > **데이터베이스** > **Azure Cosmos DB**를 클릭합니다. 그런 다음, 계정을 선택하고 **데이터 탐색기**를 클릭한 다음, **전체 화면 열기**를 클릭합니다.
- 
+
    ![Azure Portal의 데이터 탐색기에서 새 문서 만들기](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
 
 2. **전체 화면 열기** 상자에서 **열기**를 클릭합니다.
@@ -24,7 +24,7 @@ Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Az
 
    ![Azure Portal의 데이터 탐색기에서 새 문서 만들기](../media/3-azure-cosmosdb-data-explorer-new-document.png)
 
-4. 이제 다음의 구조를 사용하여 컬렉션에 문서를 추가합니다. 다음의 코드를 복사하여 **문서** 탭에 붙여넣어 현재 콘텐츠를 덮어씁니다.
+4. 이제 다음의 구조를 사용하여 컬렉션에 문서를 추가합니다. 다음의 코드를 복사하여 **문서** 탭에 붙여넣어 현재 콘텐츠에 덮어씁니다.
 
      ```json
     {
@@ -74,4 +74,4 @@ Azure Cosmos DB 데이터 탐색기는 Azure Portal에 포함된 도구이며 Az
 
     데이터 탐색기의 **문서** 탭에 문서 두 개가 표시됩니다.
 
-이 단원에서는 데이터 탐색기를 사용하여 제품 카탈로그의 각 제품을 나타내는 문서 두 개를 데이터베이스에 추가했습니다. 데이터 탐색기는 문서를 만들거나 수정하고 Azure Cosmos DB로 시작하기에 유용합니다.  
+이 단원에서는 데이터 탐색기를 사용하여 제품 카탈로그의 각 제품을 나타내는 문서 두 개를 데이터베이스에 추가했습니다. 데이터 탐색기는 문서를 만들거나 수정하고 Azure Cosmos DB로 시작하기에 유용합니다.

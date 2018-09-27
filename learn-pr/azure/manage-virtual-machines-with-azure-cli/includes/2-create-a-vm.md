@@ -5,7 +5,7 @@ Azure Virtual Machine 만들기라는 가장 확실한 작업을 시작해 보�
 
 ## <a name="logins-subscriptions-and-resource-groups"></a>로그인, 구독 및 리소스 그룹
 
-오른쪽의 Azure Cloud Shell에서 작업하겠습니다. 샌드박스를 활성화하면 Microsoft Learn에 의해 관리되는 무료 구독을 사용하여 Azure에 로그인합니다. 직접 Azure에 로그인하거나 구독을 선택하지 않아도 됩니다. 이 작업은 자동으로 수행됩니다. 또한 일반적으로 새 리소스를 보유한 _리소스 그룹_을 만듭니다. 이 모듈에서 Azure 샌드박스는 모든 명령을 실행하는 데 사용할 수 있는 리소스 그룹을 만듭니다.
+오른쪽의 Azure Cloud Shell에서 작업하겠습니다. 샌드박스를 활성화하면 Microsoft Learn에 의해 관리되는 무료 구독을 사용하여 Azure에 로그인합니다. 직접 Azure에 로그인하거나 구독을 선택하지 않아도 됩니다. 이 작업은 자동으로 수행됩니다. 또한 일반적으로 새 리소스를 보유하려면 _리소스 그룹_을 만듭니다. 이 모듈에서 Azure 샌드박스는 모든 명령을 실행하는 데 사용할 수 있는 리소스 그룹을 만듭니다.
 
 ## <a name="create-a-linux-vm-with-the-azure-cli"></a>Azure CLI를 사용하여 Linux VM 만들기
 
@@ -47,7 +47,7 @@ Azure CLI에는 Azure의 가상 머신에서 작동하는 `vm` 명령이 포함�
 새 Linux 가상 머신을 만들어 보겠습니다. Azure Cloud Shell에서 다음 명령을 실행하여 "미국 서부" 위치에서 Debian Linux 머신을 만듭니다. 가까이에 없으면 위치를 변경합니다.
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
 ```
 
 [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
@@ -68,7 +68,7 @@ Accepted: vm_deploy_vzKnQDyyq48yPUO4VrSDfFIi81vHKZ9g (Microsoft.Resources/deploy
 
 `vm create`에 대한 선택적 매개 변수(예: `--vnet-name` 및 `--public-ip-address-dns-name`)를 사용하여 자동 생성된 이러한 리소스 이름을 재정의할 수 있습니다.
 
-여기서는 `admin-username` 플래그를 통해 관리자 계정 이름을 **"aldis"** 로 지정하겠습니다. 이를 생략하면 `vm create` 명령이 _현재 사용자 이름_을 사용합니다. 계정 이름에 대한 규칙이 OS마다 다르므로 고유한 이름을 지정하는 것이 안전합니다. 
+여기서는 `admin-username` 플래그를 통해 관리자 계정 이름을 **"aldis"** 로 지정합니다. 이를 생략하면 `vm create` 명령이 _현재 사용자 이름_을 사용합니다. 계정 이름에 대한 규칙이 OS마다 다르므로 고유한 이름을 지정하는 것이 안전합니다. 
 
 > [!NOTE]
 > “root” 및 “admin”과 같은 일반적인 이름은 대부분의 이미지에서 허용되지 않습니다.

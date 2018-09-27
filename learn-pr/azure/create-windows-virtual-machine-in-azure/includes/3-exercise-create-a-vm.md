@@ -7,7 +7,7 @@
 
 Windows VM은 Azure Portal, Azure CLI 또는 Azure PowerShell을 사용하여 만들 수 있습니다. 필요한 정보를 단계별로 안내하고 VM을 만드는 동안 힌트와 유용한 메시지를 제공하는 포털이 가장 쉬운 방법입니다.
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기**를 클릭합니다.
 
@@ -27,12 +27,12 @@ Windows VM은 Azure Portal, Azure CLI 또는 Azure PowerShell을 사용하여 �
 
 ### <a name="configure-basic-vm-settings"></a>기본 VM 설정 구성
 
-> [!NOTE]  
+> [!NOTE]
 > 각 자유 텍스트 필드에서 설정과 탭을 변경하면 Azure에서 각 값의 유효성을 자동으로 검사하고 해당 값이 적절한 경우 옆에 녹색 확인 표시를 배치합니다. 오류 표시기를 마우스로 가리키면 검색된 문제에 대한 자세한 정보를 얻을 수 있습니다.
 
 1. VM 시간에 대해 요금을 청구해야 하는 **구독**을 선택합니다.
 
-1. **리소스 그룹**으로 "**<rgn>[샌드박스 리소스 그룹 이름]</rgn>**"을 선택합니다.
+1. **리소스 그룹**의 경우 "**<rgn>[샌드박스 리소스 그룹 이름]</rgn>**"을 선택합니다.
 
 1. **인스턴스 세부 정보** 섹션에서 VM 이름을 **test-vp-vm2**(비디오 프로세서 테스트 VM #2의 경우)와 같이 입력합니다.
     - 용도를 쉽게 식별할 수 있도록 리소스 이름을 표준화하는 것이 가장 좋습니다. Windows VM 이름은 1비트로 제한됩니다. 1~15자 사이여야 하고, 비 ASCII 또는 특수 문자를 포함할 수 없으며, 현재 리소스 그룹에서 고유해야 합니다.

@@ -4,7 +4,7 @@
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
-샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. 왼쪽 탐색 영역의 위에서 **리소스 만들기** 링크를 클릭합니다. Azure에서 만드는 모든 것은 리소스입니다.
 
@@ -24,7 +24,7 @@
 
 ## <a name="use-the-sandbox-resource-group"></a>샌드박스 리소스 그룹을 사용합니다.
 
-Azure 웹앱은 리소스 그룹의 일부여야 합니다. **기존 항목 사용**을 선택하고 <rgn>[샌드박스 리소스 그룹 이름]</rgn>을 선택합니다.
+Azure 웹앱은 리소스 그룹에 포함되어야 합니다. **기존 리소스 그룹 사용**을 선택하고 <rgn>[샌드박스 리소스 그룹 이름]</rgn> 선택합니다.
 
 ## <a name="create-an-app-service-plan"></a>App Service 계획 만들기
 

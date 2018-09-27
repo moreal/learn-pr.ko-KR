@@ -65,7 +65,7 @@ SQL 탄력적 풀은 eDTU와 관련이 있습니다. 이 풀을 사용하면 풀
 
 시간이 지남에 따라 수요에 대처하기 위해 추가 계산 성능이 필요하다는 것을 알게 되면 성능 옵션을 조정하거나 DTU와 vCore 성능 모델을 전환할 수 있습니다.
 
-1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. 샌드박스를 활성화한 동일한 계정을 사용하여 [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
 1. 포털의 왼쪽 위 모서리에서 **리소스 만들기**를 클릭합니다. **데이터베이스**를 선택한 다음, **SQL Database**를 선택합니다.
 

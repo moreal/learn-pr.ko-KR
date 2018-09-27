@@ -23,7 +23,7 @@ Azure Database for PostgreSQL 서버를 만들어 실행기의 적합성 장치�
     
 ```bash
 az postgres server create --name <unique_server_name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \ 
+    --resource-group <rgn>[sandbox resource group name]</rgn> \ 
     --location eastus \
     --sku-name B_Gen5_1 \
     --storage-size 20480 \
@@ -44,10 +44,10 @@ JSON 개체는 다음과 같이 표시됩니다.
   "administratorLogin": "azureuser",
   "earliestRestoreDate": "2018-09-17T00:35:50.170000+00:00",
   "fullyQualifiedDomainName": "secondserver8.postgres.database.azure.com",
-  "id": "/subscriptions/xxxxx/resourceGroups/<rgn>[Sandbox Resource Group]</rgn>/providers/Microsoft.DBforPostgreSQL/servers/secondserver8",
+  "id": "/subscriptions/xxxxx/resourceGroups/<rgn>[sandbox Resource Group]</rgn>/providers/Microsoft.DBforPostgreSQL/servers/secondserver8",
   "location": "eastus",
   "name": "secondserver8",
-  "resourceGroup": "<rgn>[Sandbox Resource Group]</rgn>",
+  "resourceGroup": "<rgn>[sandbox Resource Group]</rgn>",
   "sku": {
     "capacity": 1,
     "family": "Gen5",

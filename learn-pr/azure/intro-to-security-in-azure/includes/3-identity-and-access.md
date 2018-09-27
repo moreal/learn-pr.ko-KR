@@ -82,9 +82,8 @@ Azure AD는 Azure 서비스의 서비스 사용자 및 관리 ID라는 두 가�
 
 ID는 직접 또는 그룹 멤버 자격을 통해 역할에 매핑됩니다. 보안 주체, 액세스 권한 및 리소스를 분리하면 액세스를 쉽게 관리하고 자세히 제어할 수 있습니다. 관리자는 필요한 최소한의 권한이 부여되는지 확인할 수 있습니다.
 
-역할은 개별 서비스 인스턴스 수준에서 부여할 수 있지만, Azure Resource Manager 계층 구조를 따라 아래로 이동할 수 있습니다. 전체 구독과 같이 상위 범위에서 할당된 역할은 서비스 인스턴스와 같은 하위 범위에 상속됩니다. 
+역할은 개별 서비스 인스턴스 수준에서 부여할 수 있지만, Azure Resource Manager 계층 구조를 따라 아래로 이동할 수 있습니다. 전체 구독 같은 더 높은 범위에서 할당된 역할은 서비스 인스턴스 같은 자식 범위에서 상속됩니다. 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![관리 그룹](../media/3-role-assignment-scope.png)
 
 :::row:::
@@ -95,7 +94,6 @@ ID는 직접 또는 그룹 멤버 자격을 통해 역할에 매핑됩니다. �
 
 RBAC(역할 기반 액세스 제어)를 사용한 Azure 리소스 액세스 관리 외에도, 인프라 보호에 대한 포괄적인 접근 방식에서는 조직의 변화와 발전에 따라 역할 멤버를 지속적으로 감사하는 방안을 고려해야 합니다. Azure AD PIM(Privileged Identity Management)은 역할 할당, 셀프 서비스 및 Just-In-Time 역할 활성화를 감독하고 Azure AD 및 Azure 리소스 액세스를 검토할 수 있는 추가 유료 제품입니다.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Privileged Identity Management](../media/PIM_Dashboard.png)
 
   :::column-end:::

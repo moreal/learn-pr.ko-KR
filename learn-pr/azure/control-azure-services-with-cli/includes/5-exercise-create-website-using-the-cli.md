@@ -6,7 +6,7 @@
 
 사용자 고유의 머신 및 Azure 구독에서 작업하는 경우 `az login` 명령을 사용하여 Azure에 처음으로 로그인해야 합니다. 이 로그인은 Cloud Shell 환경에서는 필요하지 않습니다.
 
-다음으로 보통 `az group create` 명령과 관련된 모든 Azure 리소스에 대한 리소스 그룹을 만들지만 이러한 연습의 경우 하나의 리소스 그룹을 생성했습니다. 리소스 그룹에 대해 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 을 사용합니다.
+다음으로, 보통 `az group create` 명령과 관련된 모든 Azure 리소스에 대해 리소스 그룹을 만들지만 이러한 연습에서는 하나의 리소스 그룹을 생성했습니다. 리소스 그룹에 대해 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 을 사용합니다.
 
 1. 테이블에 모든 리소스 그룹을 나열하도록 Azure CLI에 요청할 수 있습니다. 무료 Azure 샌드박스를 사용하는 동안 하나의 리소스 그룹이 있어야 합니다.
 
@@ -16,10 +16,10 @@
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
 
-1. Azure 개발과 마찬가지로 여러 리소스 그룹이 발생할 수 있습니다. 그룹 목록에 여러 항목이 있는 경우 `--query` 옵션을 추가하여 반환 값을 필터링할 수 있습니다. 다음 명령을 사용하세요.
+1. Azure 개발과 마찬가지로 여러 리소스 그룹이 생성될 수 있습니다. 그룹 목록에 여러 항목이 있는 경우 `--query` 옵션을 추가하여 반환 값을 필터링할 수 있습니다. 다음 명령을 사용하세요.
 
     ```azurecli
-    az group list --query "[?name == '<rgn>[Sandbox resource group name]</rgn>']"
+    az group list --query "[?name == '<rgn>[sandbox resource group name]</rgn>']"
     ```
 
     쿼리는 JSON 요청에 대한 표준 쿼리 언어인 **JMESPath**를 사용하여 형식이 지정됩니다. 이 강력한 필터 언어에 대한 자세한 내용은 <http://jmespath.org/>를 참조하세요. 또한 **Azure CLI를 사용하여 VM 관리** 모듈에서 쿼리를 더 자세히 다룹니다.
@@ -38,7 +38,7 @@ Azure App Service를 사용하여 Web Apps를 실행하는 경우 앱에서 사�
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
     ```azurecli
-    az appservice plan create --name popupappplan-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location>
+    az appservice plan create --name popupappplan-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --location <location>
     ```
 
     이 명령을 완료하는 데 몇 분 정도 걸릴 수 있습니다.
@@ -56,7 +56,7 @@ Azure App Service를 사용하여 Web Apps를 실행하는 경우 앱에서 사�
 1. 웹앱을 만들고 위에서 만든 계획의 이름을 제공합니다. **계획과 마찬가지로 앱 이름은 고유해야 하므로** 일부 텍스트로 `<unique>` 표식을 바꾸어 글로벌로 고유한 이름을 지정합니다.
 
     ```azurecli
-    az webapp create --name popupwebapp-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --plan popupappplan-<unique>
+    az webapp create --name popupwebapp-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --plan popupappplan-<unique>
     ```
 
 1. 모든 앱을 표에 나열하여 앱이 성공적으로 생성되었는지 확인합니다.
@@ -78,7 +78,7 @@ Azure App Service를 사용하여 Web Apps를 실행하는 경우 앱에서 사�
 1. 최종 단계는 GitHub 리포지토리에서 웹앱으로 코드를 배포하는 것입니다. 실행 시 “HelloWorld!”를 표시하는 Azure 샘플 Github 리포지토리에서 사용 가능한 간단한 PHP 페이지를 사용하겠습니다. 직접 만든 웹앱 이름을 사용해야 합니다.
 
     ```azurecli
-    az webapp deployment source config --name popupwebapp-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
+    az webapp deployment source config --name popupwebapp-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 
 1. 배포되면 브라우저 또는 CURL을 사용하여 사이트를 다시 방문합니다.

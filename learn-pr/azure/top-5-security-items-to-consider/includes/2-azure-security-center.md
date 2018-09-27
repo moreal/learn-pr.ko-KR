@@ -17,10 +17,10 @@ ASC는 [CIS(Center for Internet Security)](https://www.cisecurity.org/cis-benchm
 
 Azure Security Center에서는 무료 및 표준이라는 두 개의 계층으로 하이브리드 클라우드 워크로드에 대한 통합 보안 관리 및 고급 위협 방지를 제공합니다. 무료 계층은 보안 정책, 평가 및 권장 사항을 제공하는 반면 표준 계층은 위협 인텔리전스를 비롯한 강력한 일련의 기능을 제공합니다.
 
-ASC의 이점을 고려하여 회사의 보안 팀에서는 사무실의 모든 구독에서 ASC를 설정하기로 결정했습니다. 여러분은 오늘 아침에 응용 프로그램에서 ASC를 설정하라는 이메일을 받았습니다. 지금부터 그 방법을 살펴보겠습니다.
+ASC의 이점을 고려하여 회사의 보안 팀에서는 사무실의 모든 구독에서 ASC를 설정하기로 결정했습니다. 오늘 아침에 응용 프로그램에서 ASC를 켜라는 이메일을 받았습니다. 지금부터 그 방법을 살펴보겠습니다.
 
 > [!IMPORTANT]
-> Azure Security Center는 무료 Azure 샌드박스에서 지원되지 않습니다. 고유한 구독에서 이러한 단계를 수행하거나 그저 따라서 ASC를 활성화하는 방법을 이해할 수 있습니다.
+> Azure Security Center는 무료 Azure 샌드박스에서 지원되지 않습니다. 고유한 구독에서 이러한 단계를 수행하거나 단순히 따라하면 ASC를 활성화하는 방법을 이해할 수 있습니다.
 
 1. [Azure Portal](https://portal.azure.com?azure-portal=true)을 열고 왼쪽 메뉴에서 **Azure Security Center**를 선택합니다. Azure Security Center가 표시되지 않으면 아래 표시된 대로 보안 섹션에서 **모든 서비스**를 선택하고 **Security Center**를 찾아볼 수 있습니다.
 

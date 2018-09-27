@@ -7,14 +7,14 @@ VM을 만드는 데 사용되는 명령을 사용해 보겠습니다.
 
 ## <a name="create-a-linux-vm-with-azure-powershell"></a>Azure PowerShell을 사용하여 Linux VM 만들기
 
-현재 Azure 샌드박스를 사용 중이므로 리소스 그룹을 만들 필요가 없습니다. 대신에 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹을 사용합니다. 또한 위치 제한 사항도 알아두어야 합니다.
+Azure 샌드박스를 사용하고 있으므로 리소스 그룹을 만들 필요가 없습니다. 대신, 리소스 그룹 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 을 사용합니다. 또한 위치 제한 사항도 알아두어야 합니다.
 
 PowerShell로 새로운 Azure VM을 만들어 보겠습니다.
 
 1. `New-AzureRmVm` cmdlet을 사용하여 VM을 만듭니다.
-    - **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 이라는 리소스 그룹을 사용합니다.
-    - VM에 이름을 지정합니다. 일반적으로 VM의 용도 위치 및 인스턴스 번호(여러 개인 경우)를 식별하는 의미 있는 이름을 사용하는 것이 좋습니다. "미국 동부의 테스트 VM, 인스턴스 1"을 의미하는 "testvm-eus-01"이라는 이름을 사용하도록 하겠습니다. VM을 배치할 위치에 따라 고유한 이름을 생각해 내세요.
-    - Azure 샌드박스에 제공되는 다음 목록 중에서 자신과 가까운 위치를 선택합니다. 아래 명령 예제를 복사해서 붙여넣을 경우 값을 변경해야 합니다.
+    - 리소스 그룹 **<rgn>[샌드박스 리소스 그룹 이름]</rgn>** 을 사용합니다.
+    - VM에 이름을 지정합니다. 일반적으로 VM의 용도, 위치 및 인스턴스 번호(하나를 초과하는 경우)를 식별하는 의미 있는 이름을 사용하려 합니다. "미국 동부의 테스트 VM, 인스턴스 1"을 의미하는 "testvm-eus-01"이라는 이름을 사용하도록 하겠습니다. VM을 배치하는 위치에 따라 고유한 이름을 제안해보세요.
+    - Azure 샌드박스에서 사용할 수 있는 다음 목록에서 사용자에게 가까운 위치를 선택합니다. 복사 및 붙여넣기를 사용하는 경우 아래 예제의 값을 변경해야 합니다.
 
         [!include[](../../../includes/azure-sandbox-regions-note.md)]
 
@@ -23,7 +23,7 @@ PowerShell로 새로운 Azure VM을 만들어 보겠습니다.
     - `-OpenPorts` 매개 변수를 추가하고 "22"를 포트로 전달합니다. 그러면 머신에 SSH로 연결할 수 있습니다.
  
     ```powershell
-    New-AzureRmVm -ResourceGroupName <rgn>[Sandbox resource group name]</rgn> -Name "testvm-eus-01" -Credential (Get-Credential) -Location "East US" -Image UbuntuLTS -OpenPorts 22
+    New-AzureRmVm -ResourceGroupName <rgn>[sandbox resource group name]</rgn> -Name "testvm-eus-01" -Credential (Get-Credential) -Location "East US" -Image UbuntuLTS -OpenPorts 22
     ```
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
@@ -31,7 +31,7 @@ PowerShell로 새로운 Azure VM을 만들어 보겠습니다.
 1. 작업을 완료하는 데 몇 분 정도 걸립니다. 완료되면 쿼리하고 변수에 VM 개체(`$vm`)를 할당할 수 있습니다.
 
     ```powershell
-    $vm = Get-AzureRmVM -Name "testvm-eus-01" -ResourceGroupName <rgn>[Sandbox resource group name]</rgn>
+    $vm = Get-AzureRmVM -Name "testvm-eus-01" -ResourceGroupName <rgn>[sandbox resource group name]</rgn>
     ```
     
 1. 그런 다음, 이 값을 쿼리하여 VM에 대한 정보를 쏟아냅니다.
@@ -43,8 +43,8 @@ PowerShell로 새로운 Azure VM을 만들어 보겠습니다.
     다음과 유사한 결과가 표시됩니다.
 
     ```output
-    ResourceGroupName : <rgn>[Sandbox resource group name]</rgn>
-    Id                : /subscriptions/xxxxxxxx-xxxx-aaaa-bbbb-cccccccccccc/resourceGroups/<rgn>[Sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
+    ResourceGroupName : <rgn>[sandbox resource group name]</rgn>
+    Id                : /subscriptions/xxxxxxxx-xxxx-aaaa-bbbb-cccccccccccc/resourceGroups/<rgn>[sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
     VmId              : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     Name              : testvm-eus-01
     Type              : Microsoft.Compute/virtualMachines
@@ -75,11 +75,14 @@ PowerShell로 새로운 Azure VM을 만들어 보겠습니다.
     $vm | Get-AzureRmPublicIpAddress
     ```
 
-1. 이 IP 주소를 사용하여 SSH로 VM에 연결할 수 있습니다. 예를 들어, 사용자 이름에 "bob"을 사용하고 IP 주소는 "205.22.16.5"라면 이 명령은 Linux 머신에 연결합니다.
+1. 이 IP 주소를 사용하여 SSH로 VM에 연결할 수 있습니다. 예를 들어, 사용자 이름에 "Bob"을 사용하고 IP 주소가 "205.22.16.5"라면 이 명령은 Linux 머신에 연결됩니다.
 
-```powershell
-ssh bob@205.22.16.5
-```
+    ```powershell
+    ssh bob@205.22.16.5
+    ```
+
+    계속해서 `exit`를 입력하여 로그아웃합니다.
+
 
 ## <a name="delete-a-vm"></a>VM 삭제
 

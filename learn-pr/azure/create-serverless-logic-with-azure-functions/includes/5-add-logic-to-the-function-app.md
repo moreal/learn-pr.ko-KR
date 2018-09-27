@@ -12,9 +12,9 @@
 
 앞에서 설명한 대로 Azure에서는 함수를 빌드하기 시작하는 데 도움이 되는 템플릿을 제공합니다. 이 단원에서는 `HttpTrigger` 템플릿을 사용하여 온도 서비스를 구현합니다.
 
-1. [Azure Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true)에 로그인합니다.
+1. [Azure Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true)에 로그인합니다.
 
-1. 왼쪽 메뉴에서 **모든 리소스**를 선택한 다음, “**<rgn>[샌드박스 리소스 그룹 이름]</rgn>**”을 선택하여 첫 번째 연습에서 리소스 그룹을 선택합니다.
+1. 왼쪽 메뉴에서 **모든 리소스**를 선택한 다음, “**<rgn>[샌드박스 리소스 그룹 이름]</rgn>**”을 선택하여 첫 번째 연습의 리소스 그룹을 선택합니다.
 
 1. 그러면 그룹의 리소스가 표시됩니다. **escalator-functions-xxxxxxx** 항목(번개 아이콘으로도 표시됨)을 선택하여 이전 연습에서 만든 함수 앱의 이름을 클릭합니다.
 
@@ -89,7 +89,7 @@ module.exports = function (context, req) {
 >- <https://en.wikipedia.org/wiki/CURL>
 >- <https://curl.haxx.se/docs/>
 
-함수를 테스트하려면 명령줄에서 cURL을 사용하여 함수 URL로 HTTP 요청을 전송할 수 있습니다. 함수의 엔드포인트 URL을 찾으려면 다음 스크린샷에 나와 있는 대로 함수 코드로 돌아가서 **함수 URL 가져오기** 링크를 선택합니다. 이 링크를 일시적으로 저장합니다.
+함수를 테스트하려면 명령줄에서 cURL을 사용하는 함수 URL에 HTTP 요청을 전송할 수 있습니다. 함수의 엔드포인트 URL을 찾으려면 다음 스크린샷에 나와 있는 대로 함수 코드로 돌아가서 **함수 URL 가져오기** 링크를 선택합니다. 이 링크를 일시적으로 저장합니다.
 
 ![함수 URL 가저오기 단추가 강조 표시된 함수 편집기를 보여주는 Azure Portal 스크린샷입니다.](../media/5-get-function-url.png)
 

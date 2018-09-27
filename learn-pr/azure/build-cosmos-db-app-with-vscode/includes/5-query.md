@@ -53,7 +53,7 @@ LINQ는 개체 스트림에 대한 쿼리로 계산을 표현하는 .NET 프로�
     }
     ```
 
-1. 다음 코드를 복사하여 **BasicOperations** 메서드, `await this.DeleteUserDocument("Users", "WebCustomers", "1");` 줄 앞에 붙여넣습니다.
+1. **BasicOperations** 메서드에 `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);` 줄 앞에 다음 코드를 복사하여 붙여넣습니다.
 
     ```csharp
     this.ExecuteSimpleQuery("Users", "WebCustomers");

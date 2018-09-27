@@ -16,16 +16,14 @@ PaaS(platform as a service)로의 이전은 많은 보안 문제를 아웃소싱
 
 SaaS(software as a service)를 사용하면 거의 모든 요소를 아웃소싱할 수 있습니다. SaaS는 인터넷 인프라와 함께 실행되는 소프트웨어입니다. 코드는 공급 업체가 제어하지만 고객이 사용하도록 구성됩니다. 대부분의 회사와 마찬가지로 Contoso Shipping은 SaaS의 훌륭한 예제인 Office 365를 사용합니다.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![shared_responsibility.png](../media/shared_responsibilities.png)
 
-## <a name="a-layered-approach-to-security"></a>계층화된 보안 접근 방식
+## <a name="a-layered-approach-to-security"></a>보안에 대한 계층화된 접근 방법
 
 ‘심층 방어’는 정보에 무단으로 액세스하기 위한 공격 진행 속도를 늦추는 여러 메커니즘을 사용하는 전략입니다. 각 레이어가 보호를 제공하므로 한 레이어에서 침해 사고가 발생하더라도 후속 레이어가 이미 작동하고 있기 때문에 추가 노출을 방지합니다. Microsoft는 실제 데이터 센터 및 Azure 서비스 전반에 걸쳐 계층화된 접근 방식을 보안에 적용합니다. 심층 방어의 목적은 액세스 권한이 없는 개인으로부터 정보를 보호하고 도난을 방지하는 것입니다.
 
-심층 방어를 일련의 동심원으로 시각화할 수 있으며, 그 중심에 데이터를 배치하여 보호합니다. 각 원은 데이터 주변에 추가 보안 계층을 추가합니다. 이 방법을 사용하면 단일 보호 레이어에 의존하지 않고 공격 속도를 늦출 수 있으며, 자동으로 또는 수동으로 작업할 수 있는 경고 원격 분석을 제공할 수 있습니다. 각 계층을 살펴보겠습니다.
+심층 방어를 일련의 동심원으로 시각화할 수 있으며, 그 중심에 데이터를 배치하여 보호합니다. 각 원은 데이터 주변에 추가 보안 계층을 추가합니다. 이 방법을 사용하면 단일 보호 레이어에 의존하지 않고 공격 속도를 늦출 수 있으며, 자동으로 또는 수동으로 작업할 수 있는 경고 원격 분석을 제공할 수 있습니다. 각 레이어를 살펴보겠습니다.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![심층 방어](../media/defense_in_depth_layers_small.PNG)
 
 :::row:::
