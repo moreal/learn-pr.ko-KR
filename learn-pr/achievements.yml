@@ -1,434 +1,429 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.build-a-serverless-web-app.badge
-  type: badge
-  title: <span data-ttu-id="e200d-101">서버리스 웹앱 빌드</span><span class="sxs-lookup"><span data-stu-id="e200d-101">Build a serverless web app</span></span>
-  summary: <span data-ttu-id="e200d-102">‘서버리스 웹앱 빌드’ 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-102">Badge for the 'Build a serverless web app' module.</span></span>
-  iconUrl: /learn/achievements/build-a-serverless-web-app.svg
 - uid: learn.connect-app-to-azure-storage.badge
   type: badge
-  title: <span data-ttu-id="e200d-103">Azure Storage에 앱 연결</span><span class="sxs-lookup"><span data-stu-id="e200d-103">Connect an app to Azure Storage</span></span>
-  summary: <span data-ttu-id="e200d-104">Azure Storage에 앱 연결</span><span class="sxs-lookup"><span data-stu-id="e200d-104">Connect an app to Azure Storage</span></span>
+  title: <span data-ttu-id="8ecd6-101">Azure Storage에 앱 연결</span><span class="sxs-lookup"><span data-stu-id="8ecd6-101">Connect an app to Azure Storage</span></span>
+  summary: <span data-ttu-id="8ecd6-102">Azure Storage에 앱 연결</span><span class="sxs-lookup"><span data-stu-id="8ecd6-102">Connect an app to Azure Storage</span></span>
   iconUrl: /learn/achievements/connect-an-app-to-azure-storage.svg
 - uid: learn.create-azure-storage-account.badge
   type: badge
-  title: <span data-ttu-id="e200d-105">Azure Storage 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-105">Create an Azure Storage account</span></span>
-  summary: <span data-ttu-id="e200d-106">Azure Storage 계정 만들기 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-106">Create an Azure storage account Badge</span></span>
+  title: <span data-ttu-id="8ecd6-103">Azure Storage 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-103">Create an Azure Storage account</span></span>
+  summary: <span data-ttu-id="8ecd6-104">Azure Storage 계정 만들기 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-104">Create an Azure storage account Badge</span></span>
   iconUrl: /learn/achievements/create-azure-storage-account.svg
 - uid: learn.create-serverless-logic-with-functions.badge
   type: badge
-  title: <span data-ttu-id="e200d-107">Azure Functions를 사용하여 서버리스 논리 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-107">Create serverless logic with Azure Functions</span></span>
-  summary: <span data-ttu-id="e200d-108">Azure Functions를 사용하여 서버리스 논리 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-108">Create serverless logic with Azure Functions</span></span>
+  title: <span data-ttu-id="8ecd6-105">Azure Functions를 사용하여 서버리스 논리 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-105">Create serverless logic with Azure Functions</span></span>
+  summary: <span data-ttu-id="8ecd6-106">Azure Functions를 사용하여 서버리스 논리 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-106">Create serverless logic with Azure Functions</span></span>
   iconUrl: /learn/achievements/create-serverless-logic-with-azure-functions.svg
 - uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
-  title: <span data-ttu-id="e200d-109">Azure App Service를 사용하여 웹 응용 프로그램 호스트</span><span class="sxs-lookup"><span data-stu-id="e200d-109">Host a web application with Azure App service</span></span>
-  summary: <span data-ttu-id="e200d-110">Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-110">Host a web application with Azure Web Apps Badge</span></span>
+  title: <span data-ttu-id="8ecd6-107">Azure App Service를 사용하여 웹 응용 프로그램 호스트</span><span class="sxs-lookup"><span data-stu-id="8ecd6-107">Host a web application with Azure App service</span></span>
+  summary: <span data-ttu-id="8ecd6-108">Azure Web Apps를 사용하여 웹 응용 프로그램 호스트 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-108">Host a web application with Azure Web Apps Badge</span></span>
   iconUrl: /learn/achievements/host-a-web-app-with-azure-app-service.svg
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
-  title: <span data-ttu-id="e200d-111">Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시</span><span class="sxs-lookup"><span data-stu-id="e200d-111">Publish an Azure Web App with Visual Studio for Windows or Mac</span></span>
-  summary: <span data-ttu-id="e200d-112">Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시</span><span class="sxs-lookup"><span data-stu-id="e200d-112">Publish an Azure Web App with Visual Studio for Windows or Mac</span></span>
+  title: <span data-ttu-id="8ecd6-109">Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시</span><span class="sxs-lookup"><span data-stu-id="8ecd6-109">Publish an Azure Web App with Visual Studio for Windows or Mac</span></span>
+  summary: <span data-ttu-id="8ecd6-110">Windows 또는 Mac용 Visual Studio를 사용하여 Azure 웹앱 게시</span><span class="sxs-lookup"><span data-stu-id="8ecd6-110">Publish an Azure Web App with Visual Studio for Windows or Mac</span></span>
   iconUrl: /learn/achievements/publish-azure-web-app-with-visual-studio.svg
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-113">Azure에서 컨테이너 관리 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-113">Administer containers in Azure Trophy</span></span>
-  summary: <span data-ttu-id="e200d-114">‘Azure에서 컨테이너 관리’ 학습 경로의 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-114">Trophy for the 'Administer containers in Azure' learning path</span></span>
+  title: <span data-ttu-id="8ecd6-111">Azure에서 컨테이너 관리 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-111">Administer containers in Azure Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-112">‘Azure에서 컨테이너 관리’ 학습 경로의 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-112">Trophy for the 'Administer containers in Azure' learning path</span></span>
   iconUrl: /learn/achievements/administer-containers-in-azure.svg
 - uid: learn.create-serverless-applications.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-115">서버리스 응용 프로그램 만들기 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-115">Create serverless applications Trophy</span></span>
-  summary: <span data-ttu-id="e200d-116">‘서버리스 응용 프로그램 만들기’ 학습 경로의 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-116">Trophy for the 'Create serverless applications' learning path</span></span>
+  title: <span data-ttu-id="8ecd6-113">서버리스 응용 프로그램 만들기 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-113">Create serverless applications Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-114">‘서버리스 응용 프로그램 만들기’ 학습 경로의 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-114">Trophy for the 'Create serverless applications' learning path</span></span>
   iconUrl: /learn/achievements/create-serverless-applications.svg
 - uid: learn.administer-infrastructure-resources-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-117">Azure에서 인프라 리소스 관리 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-117">Administer infrastructure resources in Azure Trophy</span></span>
-  summary: <span data-ttu-id="e200d-118">‘Azure에서 인프라 리소스 관리’ 학습 경로의 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-118">Trophy for the 'Administer infrastructure resources in Azure' learning path</span></span>
+  title: <span data-ttu-id="8ecd6-115">Azure에서 인프라 리소스 관리 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-115">Administer infrastructure resources in Azure Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-116">‘Azure에서 인프라 리소스 관리’ 학습 경로의 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-116">Trophy for the 'Administer infrastructure resources in Azure' learning path</span></span>
   iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
 - uid: learn.cloud-foundations.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-119">클라우드 기본 사항 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-119">Cloud Foundations Trophy</span></span>
-  summary: <span data-ttu-id="e200d-120">‘클라우드 기본 사항’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-120">Trophy for the 'Cloud Foundations' learning path.</span></span>
-  iconUrl: /learn/achievements/cloud-foundations.svg
+  title: <span data-ttu-id="8ecd6-117">Azure 기본 사항 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-117">Azure fundamentals Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-118">‘Azure 기본 사항’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-118">Trophy for the 'Azure fundamentals' learning path.</span></span>
+  iconUrl: /learn/achievements/azure-fundamentals.svg
 - uid: learn.connect-your-services-together.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-121">서비스를 함께 연결 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-121">Connect your services together Trophy</span></span>
-  summary: <span data-ttu-id="e200d-122">‘서비스를 함께 연결’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-122">Trophy for the 'Connect your services together' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-119">서비스를 함께 연결 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-119">Connect your services together Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-120">‘서비스를 함께 연결’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-120">Trophy for the 'Connect your services together' learning path.</span></span>
   iconUrl: /learn/achievements/connect-your-services-together.svg
 - uid: learn.architect-great-solutions-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-123">Azure에서 멋진 솔루션 설계 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-123">Architect great solutions in Azure Trophy</span></span>
-  summary: <span data-ttu-id="e200d-124">‘Azure에서 멋진 솔루션 설계’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-124">Trophy for the 'Architect great solutions in Azure' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-121">Azure에서 멋진 솔루션 설계 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-121">Architect great solutions in Azure Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-122">‘Azure에서 멋진 솔루션 설계’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-122">Trophy for the 'Architect great solutions in Azure' learning path.</span></span>
   iconUrl: /learn/achievements/architect-great-solutions-in-azure.svg
 - uid: learn.deploy-a-website-with-azure-app-service.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-125">Azure App Service로 웹 사이트 배포 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-125">Deploy a website with Azure App Service Trophy</span></span>
-  summary: <span data-ttu-id="e200d-126">‘Azure App Service로 웹 사이트 배포’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-126">Trophy for the 'Deploy a website with Azure App Service' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-123">Azure App Service로 웹 사이트 배포 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-123">Deploy a website with Azure App Service Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-124">‘Azure App Service로 웹 사이트 배포’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-124">Trophy for the 'Deploy a website with Azure App Service' learning path.</span></span>
   iconUrl: /learn/achievements/deploy-a-website-with-azure-app-service.svg
 - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-127">Azure Cosmos DB에서 NoSQL 데이터 작업 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-127">Work with NoSQL data in Azure Cosmos DB Trophy</span></span>
-  summary: <span data-ttu-id="e200d-128">‘Azure Cosmos DB에서 NoSQL 데이터 작업’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-128">Trophy for 'Work with NoSQL data in Azure Cosmos DB' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-125">Azure Cosmos DB에서 NoSQL 데이터 작업 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-125">Work with NoSQL data in Azure Cosmos DB Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-126">‘Azure Cosmos DB에서 NoSQL 데이터 작업’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-126">Trophy for 'Work with NoSQL data in Azure Cosmos DB' learning path.</span></span>
   iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
 - uid: learn.work-with-relational-data-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-129">Azure에서 관계형 데이터 작업 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-129">Work with relational data in Azure Trophy</span></span>
-  summary: <span data-ttu-id="e200d-130">‘Azure에서 관계형 데이터 작업’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-130">Trophy for the 'Working with relational data in Azure' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-127">Azure에서 관계형 데이터 작업 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-127">Work with relational data in Azure Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-128">‘Azure에서 관계형 데이터 작업’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-128">Trophy for the 'Working with relational data in Azure' learning path.</span></span>
   iconUrl: /learn/achievements/work-with-relational-data-in-azure.svg
 - uid: learn.secure-your-cloud-data.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-131">클라우드 데이터 보호 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-131">Secure your cloud data Trophy</span></span>
-  summary: <span data-ttu-id="e200d-132">‘클라우드 데이터 보안 설정’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-132">Trophy for the 'Secure your cloud data' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-129">클라우드 데이터 보호 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-129">Secure your cloud data Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-130">‘클라우드 데이터 보안 설정’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-130">Trophy for the 'Secure your cloud data' learning path.</span></span>
   iconUrl: /learn/achievements/secure-your-cloud-data.svg
 - uid: learn.store-data-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-133">Azure에 데이터 저장 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-133">Store data in Azure Trophy</span></span>
-  summary: <span data-ttu-id="e200d-134">‘Azure에 데이터 저장’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-134">Trophy for the 'Store data in Azure' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-131">Azure에 데이터 저장 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-131">Store data in Azure Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-132">‘Azure에 데이터 저장’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-132">Trophy for the 'Store data in Azure' learning path.</span></span>
   iconUrl: /learn/achievements/store-data-in-azure.svg
 - uid: learn.automate-azure-tasks-with-powershell.badge
   type: badge
-  title: <span data-ttu-id="e200d-135">PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-135">Automate Azure tasks using scripts with PowerShell Badge</span></span>
-  summary: <span data-ttu-id="e200d-136">PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-136">Automate Azure tasks using scripts with PowerShell Summary</span></span>
+  title: <span data-ttu-id="8ecd6-133">PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-133">Automate Azure tasks using scripts with PowerShell Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-134">PowerShell과 함께 스크립트를 사용하여 Azure 작업 자동화 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-134">Automate Azure tasks using scripts with PowerShell Summary</span></span>
   iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
 - uid: learn.create-azure-db-for-postgresql.badge
   type: badge
-  title: <span data-ttu-id="e200d-137">Azure CLI를 통해 PostgreSQL DB 서버 만들기 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-137">Create a PostgreSQL DB server via the Azure CLI Badge</span></span>
-  summary: <span data-ttu-id="e200d-138">Azure CLI를 통해 PostgreSQL DB 서버 만들기 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-138">Create a PostgreSQL DB server via the Azure CLI Summary</span></span>
+  title: <span data-ttu-id="8ecd6-135">Azure CLI를 통해 PostgreSQL DB 서버 만들기 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-135">Create a PostgreSQL DB server via the Azure CLI Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-136">Azure CLI를 통해 PostgreSQL DB 서버 만들기 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-136">Create a PostgreSQL DB server via the Azure CLI Summary</span></span>
   iconUrl: /learn/achievements/create-azure-db-for-postgresql-server.svg
 - uid: learn.create-linux-vm-in-azure.badge
   type: badge
-  title: <span data-ttu-id="e200d-139">Azure에서 Linux 가상 머신 만들기 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-139">Create a Linux virtual machine in Azure Badge</span></span>
-  summary: <span data-ttu-id="e200d-140">Azure에서 Linux 가상 머신 만들기 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-140">Create a Linux virtual machine in Azure Summary</span></span>
+  title: <span data-ttu-id="8ecd6-137">Azure에서 Linux 가상 머신 만들기 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-137">Create a Linux virtual machine in Azure Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-138">Azure에서 Linux 가상 머신 만들기 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-138">Create a Linux virtual machine in Azure Summary</span></span>
   iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
 - uid: learn.choose-messaging-model.badge
   type: badge
-  title: <span data-ttu-id="e200d-141">메시징 모델 선택 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-141">Choose messaging model Badge</span></span>
-  summary: <span data-ttu-id="e200d-142">메시징 모델 선택 배지 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-142">Choose messaging model Badge Summary</span></span>
+  title: <span data-ttu-id="8ecd6-139">메시징 모델 선택 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-139">Choose messaging model Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-140">메시징 모델 선택 배지 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-140">Choose messaging model Badge Summary</span></span>
   iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
 - uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
   type: badge
-  title: <span data-ttu-id="e200d-143">Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="e200d-143">Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine</span></span>
-  summary: <span data-ttu-id="e200d-144">Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="e200d-144">Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine</span></span>
+  title: <span data-ttu-id="8ecd6-141">Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="8ecd6-141">Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine</span></span>
+  summary: <span data-ttu-id="8ecd6-142">Azure Linux Virtual Machine에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="8ecd6-142">Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine</span></span>
   iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
 - uid: learn.prepare-azure-dev-environment.badge
   type: badge
-  title: <span data-ttu-id="e200d-145">Azure 개발 환경 준비 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-145">Prepare Azure development environment Badge</span></span>
-  summary: <span data-ttu-id="e200d-146">Azure 개발 환경 준비 배지 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-146">Prepare Azure development environment Badge Summary</span></span>
+  title: <span data-ttu-id="8ecd6-143">Azure 개발 환경 준비 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-143">Prepare Azure development environment Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-144">Azure 개발 환경 준비 배지 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-144">Prepare Azure development environment Badge Summary</span></span>
   iconUrl: /learn/achievements/prepare-your-dev-environment-for-azure-development.svg
 - uid: learn.manage-resources-with-azure-portal.badge
   type: badge
-  title: <span data-ttu-id="e200d-147">Azure Portal을 사용하여 리소스 관리 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-147">Manage resources with Azure portal Badge</span></span>
-  summary: <span data-ttu-id="e200d-148">Azure Portal을 사용하여 리소스 관리 배지 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-148">Manage resources with Azure portal Badge Summary</span></span>
+  title: <span data-ttu-id="8ecd6-145">Azure Portal을 사용하여 리소스 관리 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-145">Manage resources with Azure portal Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-146">Azure Portal을 사용하여 리소스 관리 배지 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-146">Manage resources with Azure portal Badge Summary</span></span>
   iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
 - uid: learn.control-azure-services-with-cli.badge
   type: badge
-  title: <span data-ttu-id="e200d-149">CLI를 사용하여 Azure 서비스 제어 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-149">Control Azure services with the CLI Badge</span></span>
-  summary: <span data-ttu-id="e200d-150">CLI를 사용하여 Azure 서비스 제어 배지 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-150">Control Azure services with the CLI Badge Summary</span></span>
+  title: <span data-ttu-id="8ecd6-147">CLI를 사용하여 Azure 서비스 제어 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-147">Control Azure services with the CLI Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-148">CLI를 사용하여 Azure 서비스 제어 배지 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-148">Control Azure services with the CLI Badge Summary</span></span>
   iconUrl: /learn/achievements/control-azure-services-with-cli.svg
 - uid: learn.azure-services-features.badge
   type: badge
-  title: <span data-ttu-id="e200d-151">Azure 서비스 및 기능 둘러보기 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-151">Tour Azure services and features Badge</span></span>
-  summary: <span data-ttu-id="e200d-152">Azure 서비스 및 기능 둘러보기 요약</span><span class="sxs-lookup"><span data-stu-id="e200d-152">Tour Azure services and features Summary</span></span>
+  title: <span data-ttu-id="8ecd6-149">Azure 서비스 및 기능 둘러보기 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-149">Tour Azure services and features Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-150">Azure 서비스 및 기능 둘러보기 요약</span><span class="sxs-lookup"><span data-stu-id="8ecd6-150">Tour Azure services and features Summary</span></span>
   iconUrl: /learn/achievements/tour-azure-services-and-features.svg
 - uid: learn.migrate-sql-server-relational-data.badge
   type: badge
-  title: <span data-ttu-id="e200d-153">SQL Server 관계형 데이터를 Azure SQL로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="e200d-153">Migrate your SQL server relational data to Azure SQL</span></span>
-  summary: <span data-ttu-id="e200d-154">SQL Server 관계형 데이터를 Azure SQL로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="e200d-154">Migrate your SQL server relational data to Azure SQL</span></span>
+  title: <span data-ttu-id="8ecd6-151">SQL Server 관계형 데이터를 Azure SQL로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="8ecd6-151">Migrate your SQL server relational data to Azure SQL</span></span>
+  summary: <span data-ttu-id="8ecd6-152">SQL Server 관계형 데이터를 Azure SQL로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="8ecd6-152">Migrate your SQL server relational data to Azure SQL</span></span>
   iconUrl: /learn/achievements/migrate-sql-server-to-azure-sql.svg
 - uid: learn.communicate-between-applications-with-azure-queue-storage.badge
   type: badge
-  title: <span data-ttu-id="e200d-155">Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신</span><span class="sxs-lookup"><span data-stu-id="e200d-155">Communicate between applications with Azure queue storage</span></span>
-  summary: <span data-ttu-id="e200d-156">Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신</span><span class="sxs-lookup"><span data-stu-id="e200d-156">Communicate between applications with an Azure queue storage</span></span>
+  title: <span data-ttu-id="8ecd6-153">Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신</span><span class="sxs-lookup"><span data-stu-id="8ecd6-153">Communicate between applications with Azure queue storage</span></span>
+  summary: <span data-ttu-id="8ecd6-154">Azure 큐 저장소를 사용하여 응용 프로그램 간에 통신</span><span class="sxs-lookup"><span data-stu-id="8ecd6-154">Communicate between applications with an Azure queue storage</span></span>
   iconUrl: /learn/achievements/communicate-between-apps-with-storage-queues.svg
 - uid: learn.caching-and-performance-azure-storage-and-disks.badge
   type: badge
-  title: <span data-ttu-id="e200d-157">Azure Storage 및 디스크의 캐싱과 성능</span><span class="sxs-lookup"><span data-stu-id="e200d-157">Caching and performance in Azure Storage and disks</span></span>
-  summary: <span data-ttu-id="e200d-158">Azure Storage 및 디스크의 캐싱과 성능</span><span class="sxs-lookup"><span data-stu-id="e200d-158">Caching and performance in Azure Storage and disks</span></span>
+  title: <span data-ttu-id="8ecd6-155">Azure Storage 및 디스크의 캐싱과 성능</span><span class="sxs-lookup"><span data-stu-id="8ecd6-155">Caching and performance in Azure Storage and disks</span></span>
+  summary: <span data-ttu-id="8ecd6-156">Azure Storage 및 디스크의 캐싱과 성능</span><span class="sxs-lookup"><span data-stu-id="8ecd6-156">Caching and performance in Azure Storage and disks</span></span>
   iconUrl: /learn/achievements/caching-and-performance-azure-storage-and-disks.svg
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
-  title: <span data-ttu-id="e200d-159">Azure에서 Windows 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-159">Create a Windows virtual machine in Azure</span></span>
-  summary: <span data-ttu-id="e200d-160">Azure에서 Windows 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-160">Create a Windows virtual machine in Azure</span></span>
+  title: <span data-ttu-id="8ecd6-157">Azure에서 Windows 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-157">Create a Windows virtual machine in Azure</span></span>
+  summary: <span data-ttu-id="8ecd6-158">Azure에서 Windows 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-158">Create a Windows virtual machine in Azure</span></span>
   iconUrl: /learn/achievements/create-windows-virtual-machine-in-azure.svg
 - uid: learn.web-app-with-mean-on-linux-vm.badge
   type: badge
-  title: <span data-ttu-id="e200d-161">Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="e200d-161">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
-  summary: <span data-ttu-id="e200d-162">Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="e200d-162">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
+  title: <span data-ttu-id="8ecd6-159">Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="8ecd6-159">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
+  summary: <span data-ttu-id="8ecd6-160">Azure Linux 가상 머신에서 MEAN 스택을 사용하여 웹 응용 프로그램 빌드 및 실행</span><span class="sxs-lookup"><span data-stu-id="8ecd6-160">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
   iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
 - uid: learn.optimize-web-app-with-redis.badge
   type: badge
-  title: <span data-ttu-id="e200d-163">Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화</span><span class="sxs-lookup"><span data-stu-id="e200d-163">Optimize your web applications by caching read-only data with Redis</span></span>
-  summary: <span data-ttu-id="e200d-164">Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화</span><span class="sxs-lookup"><span data-stu-id="e200d-164">Optimize your web applications by caching read-only data with Redis</span></span>
+  title: <span data-ttu-id="8ecd6-161">Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화</span><span class="sxs-lookup"><span data-stu-id="8ecd6-161">Optimize your web applications by caching read-only data with Redis</span></span>
+  summary: <span data-ttu-id="8ecd6-162">Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화</span><span class="sxs-lookup"><span data-stu-id="8ecd6-162">Optimize your web applications by caching read-only data with Redis</span></span>
   iconUrl: /learn/achievements/optimize-web-apps-with-redis.svg
 - uid: learn.manage-secrets-with-azure-key-vault.badge
   type: badge
-  title: <span data-ttu-id="e200d-165">Azure Key Vault를 사용하여 웹앱의 비밀 관리</span><span class="sxs-lookup"><span data-stu-id="e200d-165">Manage secrets in your web apps with Azure Key Vault</span></span>
-  summary: <span data-ttu-id="e200d-166">Azure Key Vault를 사용하여 웹앱의 비밀 관리</span><span class="sxs-lookup"><span data-stu-id="e200d-166">Manage secrets in your web apps with Azure Key Vault</span></span>
+  title: <span data-ttu-id="8ecd6-163">Azure Key Vault를 사용하여 웹앱의 비밀 관리</span><span class="sxs-lookup"><span data-stu-id="8ecd6-163">Manage secrets in your web apps with Azure Key Vault</span></span>
+  summary: <span data-ttu-id="8ecd6-164">Azure Key Vault를 사용하여 웹앱의 비밀 관리</span><span class="sxs-lookup"><span data-stu-id="8ecd6-164">Manage secrets in your web apps with Azure Key Vault</span></span>
   iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
-  title: <span data-ttu-id="e200d-167">RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보안 설정</span><span class="sxs-lookup"><span data-stu-id="e200d-167">Secure your Azure resources with role-based access control (RBAC)</span></span>
-  summary: <span data-ttu-id="e200d-168">RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-168">Secure your Azure resources with role-based access control (RBAC)</span></span>
+  title: <span data-ttu-id="8ecd6-165">RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보안 설정</span><span class="sxs-lookup"><span data-stu-id="8ecd6-165">Secure your Azure resources with role-based access control (RBAC)</span></span>
+  summary: <span data-ttu-id="8ecd6-166">RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-166">Secure your Azure resources with role-based access control (RBAC)</span></span>
   iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
 - uid: learn.secure-access-azure-ad-multi-factor-authentication.badge
   type: badge
-  title: <span data-ttu-id="e200d-169">Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-169">Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication</span></span>
-  summary: <span data-ttu-id="e200d-170">Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-170">Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication</span></span>
+  title: <span data-ttu-id="8ecd6-167">Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-167">Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication</span></span>
+  summary: <span data-ttu-id="8ecd6-168">Azure AD, 조건부 액세스 및 Azure Multi-Factor Authentication을 사용하여 리소스에 대한 액세스 권한 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-168">Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication</span></span>
   iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
 - uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
   type: badge
-  title: <span data-ttu-id="e200d-171">Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유</span><span class="sxs-lookup"><span data-stu-id="e200d-171">Share your location as a text message using Azure Functions and Twilio</span></span>
-  summary: <span data-ttu-id="e200d-172">Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유</span><span class="sxs-lookup"><span data-stu-id="e200d-172">Share your location as a text message using Azure Functions and Twilio</span></span>
+  title: <span data-ttu-id="8ecd6-169">Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유</span><span class="sxs-lookup"><span data-stu-id="8ecd6-169">Share your location as a text message using Azure Functions and Twilio</span></span>
+  summary: <span data-ttu-id="8ecd6-170">Azure Functions 및 Twilio를 사용하여 위치를 문자 메시지로 공유</span><span class="sxs-lookup"><span data-stu-id="8ecd6-170">Share your location as a text message using Azure Functions and Twilio</span></span>
   iconUrl: /learn/achievements/send-location-over-sms-from-mobile-using-azure-functions-twilio.svg
 - uid: learn.manage-vms-with-azure-cli-data.badge
   type: badge
-  title: <span data-ttu-id="e200d-173">Azure CLI를 사용하여 가상 머신 관리</span><span class="sxs-lookup"><span data-stu-id="e200d-173">Manage virtual machines with the Azure CLI</span></span>
-  summary: <span data-ttu-id="e200d-174">Azure CLI를 사용하여 가상 머신 관리</span><span class="sxs-lookup"><span data-stu-id="e200d-174">Manage virtual machines with the Azure CLI</span></span>
+  title: <span data-ttu-id="8ecd6-171">Azure CLI를 사용하여 가상 머신 관리</span><span class="sxs-lookup"><span data-stu-id="8ecd6-171">Manage virtual machines with the Azure CLI</span></span>
+  summary: <span data-ttu-id="8ecd6-172">Azure CLI를 사용하여 가상 머신 관리</span><span class="sxs-lookup"><span data-stu-id="8ecd6-172">Manage virtual machines with the Azure CLI</span></span>
   iconUrl: /learn/achievements/manage-vms-with-azure-cli.svg
 - uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-175">Azure Virtual Machines를 통해 웹 사이트 배포 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-175">Deploy a website with Azure Virtual Machines Trophy</span></span>
-  summary: <span data-ttu-id="e200d-176">‘Azure Virtual Machines로 웹 사이트 배포’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-176">Trophy for the 'Deploy a website with Azure Virtual Machines' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-173">Azure Virtual Machines를 통해 웹 사이트 배포 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-173">Deploy a website with Azure Virtual Machines Trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-174">‘Azure Virtual Machines로 웹 사이트 배포’ 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-174">Trophy for the 'Deploy a website with Azure Virtual Machines' learning path.</span></span>
   iconUrl: /learn/achievements/deploy-a-website-with-azure-virtual-machines.svg
 - uid: learn.store-app-data-with-azure-blob-storage.badge
   type: badge
-  title: <span data-ttu-id="e200d-177">Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장</span><span class="sxs-lookup"><span data-stu-id="e200d-177">Store web application data with Azure Blob Storage</span></span>
-  summary: <span data-ttu-id="e200d-178">Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장</span><span class="sxs-lookup"><span data-stu-id="e200d-178">Store web application data with Azure Blob Storage</span></span>
+  title: <span data-ttu-id="8ecd6-175">Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장</span><span class="sxs-lookup"><span data-stu-id="8ecd6-175">Store web application data with Azure Blob Storage</span></span>
+  summary: <span data-ttu-id="8ecd6-176">Azure Blob Storage를 사용하여 웹 응용 프로그램 데이터 저장</span><span class="sxs-lookup"><span data-stu-id="8ecd6-176">Store web application data with Azure Blob Storage</span></span>
   iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
 - uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
   type: badge
-  title: <span data-ttu-id="e200d-179">Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용</span><span class="sxs-lookup"><span data-stu-id="e200d-179">Enable reliable messaging for Big Data Applications using Azure Event Hubs</span></span>
-  summary: <span data-ttu-id="e200d-180">Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 신뢰할 수 있는 메시지를 사용하도록 설정 모듈</span><span class="sxs-lookup"><span data-stu-id="e200d-180">Enable reliable messaging for Big Data Applications using Azure Event Hubs module</span></span>
+  title: <span data-ttu-id="8ecd6-177">Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 대해 신뢰할 수 있는 메시징 사용</span><span class="sxs-lookup"><span data-stu-id="8ecd6-177">Enable reliable messaging for Big Data Applications using Azure Event Hubs</span></span>
+  summary: <span data-ttu-id="8ecd6-178">Azure Event Hubs를 사용하여 빅 데이터 응용 프로그램에 신뢰할 수 있는 메시지를 사용하도록 설정 모듈</span><span class="sxs-lookup"><span data-stu-id="8ecd6-178">Enable reliable messaging for Big Data Applications using Azure Event Hubs module</span></span>
   iconUrl: /learn/achievements/enable-reliable-messaging-for-big-data-apps-using-azure-event-hubs.svg
 - uid: learn.secure-your-azure-sql-database.badge
   type: badge
-  title: <span data-ttu-id="e200d-181">Azure SQL Server 데이터베이스 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-181">Secure an Azure SQL Server Database</span></span>
-  summary: <span data-ttu-id="e200d-182">Azure SQL Server 데이터베이스 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-182">Secure an Azure SQL Server Database</span></span>
+  title: <span data-ttu-id="8ecd6-179">Azure SQL Server 데이터베이스 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-179">Secure an Azure SQL Server Database</span></span>
+  summary: <span data-ttu-id="8ecd6-180">Azure SQL Server 데이터베이스 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-180">Secure an Azure SQL Server Database</span></span>
   iconUrl: /learn/achievements/secure-your-azure-sql-database.svg
 - uid: learn.intro-to-compute.badge
   type: badge
-  title: <span data-ttu-id="e200d-183">계산 소개 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-183">Introduction to Compute Badge</span></span>
-  summary: <span data-ttu-id="e200d-184">‘계산 소개’ 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-184">Badge for 'Introduction to Compute' module.</span></span>
+  title: <span data-ttu-id="8ecd6-181">계산 소개 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-181">Introduction to Compute Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-182">‘계산 소개’ 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-182">Badge for 'Introduction to Compute' module.</span></span>
   iconUrl: /learn/achievements/intro-to-azure-compute.svg
 - uid: learn.intro-to-data-in-azure.badge
   type: badge
-  title: <span data-ttu-id="e200d-185">Azure의 데이터 소개 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-185">Introduction to data in Azure Badge</span></span>
-  summary: <span data-ttu-id="e200d-186">'Azure의 데이터 소개' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-186">Badge for 'Introduction to data in Azure' module.</span></span>
+  title: <span data-ttu-id="8ecd6-183">Azure의 데이터 소개 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-183">Introduction to data in Azure Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-184">'Azure의 데이터 소개' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-184">Badge for 'Introduction to data in Azure' module.</span></span>
   iconUrl: /learn/achievements/intro-to-azure-networking.svg
 - uid: learn.introduction-to-azure-virtual-machines.badge
   type: badge
-  title: <span data-ttu-id="e200d-187">Azure Virtual Machines 소개</span><span class="sxs-lookup"><span data-stu-id="e200d-187">Introduction to Azure Virtual Machines</span></span>
-  summary: <span data-ttu-id="e200d-188">Azure Virtual Machines 소개</span><span class="sxs-lookup"><span data-stu-id="e200d-188">Introduction to Azure Virtual Machines</span></span>
+  title: <span data-ttu-id="8ecd6-185">Azure Virtual Machines 소개</span><span class="sxs-lookup"><span data-stu-id="8ecd6-185">Introduction to Azure Virtual Machines</span></span>
+  summary: <span data-ttu-id="8ecd6-186">Azure Virtual Machines 소개</span><span class="sxs-lookup"><span data-stu-id="8ecd6-186">Introduction to Azure Virtual Machines</span></span>
   iconUrl: /learn/achievements/intro-to-azure-virtual-machines.svg
 - uid: learn.cosmos-db-app-with-vscode.badge
   type: badge
-  title: <span data-ttu-id="e200d-189">Visual Studio Code에서 Azure Cosmos DB 앱 빌드</span><span class="sxs-lookup"><span data-stu-id="e200d-189">Build an Azure Cosmos DB app in Visual Studio Code</span></span>
-  summary: <span data-ttu-id="e200d-190">‘Visual Studio Code에서 Azure Cosmos DB 앱 빌드’ 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-190">Badge for 'Build an Azure Cosmos DB app in Visual Studio Code' module.</span></span>
+  title: <span data-ttu-id="8ecd6-187">Visual Studio Code에서 Azure Cosmos DB 앱 빌드</span><span class="sxs-lookup"><span data-stu-id="8ecd6-187">Build an Azure Cosmos DB app in Visual Studio Code</span></span>
+  summary: <span data-ttu-id="8ecd6-188">‘Visual Studio Code에서 Azure Cosmos DB 앱 빌드’ 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-188">Badge for 'Build an Azure Cosmos DB app in Visual Studio Code' module.</span></span>
   iconUrl: /learn/achievements/build-cosmos-db-app-with-vscode.svg
 - uid: learn.create-cosmos-db-for-scale.badge
   type: badge
-  title: <span data-ttu-id="e200d-191">크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-191">Create an Azure Cosmos DB database built to scale</span></span>
-  summary: <span data-ttu-id="e200d-192">'크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-192">Badge for 'Create an Azure Cosmos DB database built to scale' module.</span></span>
+  title: <span data-ttu-id="8ecd6-189">크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-189">Create an Azure Cosmos DB database built to scale</span></span>
+  summary: <span data-ttu-id="8ecd6-190">'크기 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-190">Badge for 'Create an Azure Cosmos DB database built to scale' module.</span></span>
   iconUrl: /learn/achievements/create-cosmos-db-for-scale.svg
 - uid: learn.manage-resources-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="e200d-193">Azure에서 리소스 관리 트로피</span><span class="sxs-lookup"><span data-stu-id="e200d-193">Manage resources in Azure trophy</span></span>
-  summary: <span data-ttu-id="e200d-194">'Azure에서 리소스 관리' 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-194">Trophy for the 'Manage resources in Azure' learning path.</span></span>
+  title: <span data-ttu-id="8ecd6-191">Azure에서 리소스 관리 트로피</span><span class="sxs-lookup"><span data-stu-id="8ecd6-191">Manage resources in Azure trophy</span></span>
+  summary: <span data-ttu-id="8ecd6-192">'Azure에서 리소스 관리' 학습 경로의 트로피입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-192">Trophy for the 'Manage resources in Azure' learning path.</span></span>
   iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
 - uid: learn.ci-cd-pipelines-azure-devops.badge
   type: badge
-  title: <span data-ttu-id="e200d-195">Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-195">Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps badge</span></span>
-  summary: <span data-ttu-id="e200d-196">'Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-196">Badge for 'Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps' module.</span></span>
+  title: <span data-ttu-id="8ecd6-193">Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-193">Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps badge</span></span>
+  summary: <span data-ttu-id="8ecd6-194">'Azure DevOps를 사용하여 지속적인 통합/지속적인 배포 파이프라인 빌드' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-194">Badge for 'Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps' module.</span></span>
   iconUrl: /learn/achievements/build-ci-cd-pipelines-using-azure-devops.svg
 - uid: learn.top-5-security-items-to-consider.badge
   type: badge
-  title: <span data-ttu-id="e200d-197">프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목</span><span class="sxs-lookup"><span data-stu-id="e200d-197">Top 5 Security Items To Consider Before Pushing To Production</span></span>
-  summary: <span data-ttu-id="e200d-198">프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목</span><span class="sxs-lookup"><span data-stu-id="e200d-198">Top 5 Security Items To Consider Before Pushing To Production</span></span>
+  title: <span data-ttu-id="8ecd6-195">프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목</span><span class="sxs-lookup"><span data-stu-id="8ecd6-195">Top 5 Security Items To Consider Before Pushing To Production</span></span>
+  summary: <span data-ttu-id="8ecd6-196">프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목</span><span class="sxs-lookup"><span data-stu-id="8ecd6-196">Top 5 Security Items To Consider Before Pushing To Production</span></span>
   iconUrl: /learn/achievements/top-5-security-items-to-consider.svg
 - uid: learn.interactive-deep-learning.badge
   type: badge
-  title: <span data-ttu-id="e200d-199">Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝</span><span class="sxs-lookup"><span data-stu-id="e200d-199">Interactive deep learning with Jupyter, Docker and PyTorch on the Data Science Virtual Machine</span></span>
-  summary: <span data-ttu-id="e200d-200">Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝.</span><span class="sxs-lookup"><span data-stu-id="e200d-200">Interactive deep learning with Jupyter, Docker and PyTorch on the Data Science Virtual Machine.</span></span>
+  title: <span data-ttu-id="8ecd6-197">Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝</span><span class="sxs-lookup"><span data-stu-id="8ecd6-197">Interactive deep learning with Jupyter, Docker and PyTorch on the Data Science Virtual Machine</span></span>
+  summary: <span data-ttu-id="8ecd6-198">Data Science Virtual Machine에서 Jupyter, Docker 및 PyTorch를 통한 대화형 딥 러닝.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-198">Interactive deep learning with Jupyter, Docker and PyTorch on the Data Science Virtual Machine.</span></span>
   iconUrl: /learn/achievements/interactive-deep-learning.svg
 - uid: learn.create-computer-vision-service.badge
   type: badge
-  title: <span data-ttu-id="e200d-201">Computer Vision 서비스를 사용하여 이미지 처리</span><span class="sxs-lookup"><span data-stu-id="e200d-201">Process images with the computer vision service</span></span>
-  summary: <span data-ttu-id="e200d-202">'Computer Vision 서비스를 사용하여 이미지 처리' 모듈의 배지.</span><span class="sxs-lookup"><span data-stu-id="e200d-202">Badge for 'Process images with the computer vision service' module.</span></span>
+  title: <span data-ttu-id="8ecd6-199">Computer Vision 서비스를 사용하여 이미지 처리</span><span class="sxs-lookup"><span data-stu-id="8ecd6-199">Process images with the computer vision service</span></span>
+  summary: <span data-ttu-id="8ecd6-200">'Computer Vision 서비스를 사용하여 이미지 처리' 모듈의 배지.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-200">Badge for 'Process images with the computer vision service' module.</span></span>
   iconUrl: /learn/achievements/create-computer-vision-service-to-classify-images.svg
 - uid: learn.monitor-manage-device-with-iotcentral.badge
   type: badge
-  title: <span data-ttu-id="e200d-203">Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-203">Monitor and manage your coffee machine with Azure IoT Central Badge</span></span>
-  summary: <span data-ttu-id="e200d-204">'Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-204">Badge for the 'Monitor and manage your coffee machine with Azure IoT Central' module.</span></span>
+  title: <span data-ttu-id="8ecd6-201">Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-201">Monitor and manage your coffee machine with Azure IoT Central Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-202">'Azure IoT Central을 사용하여 커피 머신 모니터링 및 관리' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-202">Badge for the 'Monitor and manage your coffee machine with Azure IoT Central' module.</span></span>
   iconUrl: /learn/achievements/monitor-and-manage-device-with-iot-central.svg
 - uid: learn.align-requirements-in-azure.badge
   type: badge
-  title: <span data-ttu-id="e200d-205">요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-205">Align requirements with cloud types and service models in Azure badge</span></span>
-  summary: <span data-ttu-id="e200d-206">'요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-206">Badge for the 'Align requirements with cloud types and service models in Azure' module.</span></span>
+  title: <span data-ttu-id="8ecd6-203">요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-203">Align requirements with cloud types and service models in Azure badge</span></span>
+  summary: <span data-ttu-id="8ecd6-204">'요구 사항에 맞게 Azure의 클라우드 유형 및 서비스 모델 선택' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-204">Badge for the 'Align requirements with cloud types and service models in Azure' module.</span></span>
   iconUrl: /learn/achievements/align-requirements-in-azure.svg
 - uid: learn.choose-storage-approach-in-azure.badge
   type: badge
-  title: <span data-ttu-id="e200d-207">Azure에서 저장소 접근 방식 선택</span><span class="sxs-lookup"><span data-stu-id="e200d-207">Choose storage approach in Azure badge</span></span>
-  summary: <span data-ttu-id="e200d-208">'Azure에서 저장소 접근 방식 선택' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-208">Badge for the 'Choose storage approach in Azure' module.</span></span>
+  title: <span data-ttu-id="8ecd6-205">Azure에서 저장소 접근 방식 선택</span><span class="sxs-lookup"><span data-stu-id="8ecd6-205">Choose storage approach in Azure badge</span></span>
+  summary: <span data-ttu-id="8ecd6-206">'Azure에서 저장소 접근 방식 선택' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-206">Badge for the 'Choose storage approach in Azure' module.</span></span>
   iconUrl: /learn/achievements/choose-storage-approach-in-azure.svg
 - uid: learn.azure-container-registry.badge
   type: badge
-  title: <span data-ttu-id="e200d-209">Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-209">Build and store container images with Azure Container Registry badge</span></span>
-  summary: <span data-ttu-id="e200d-210">'Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-210">Badge for the 'Build and store container images with Azure Container Registry' module.</span></span>
+  title: <span data-ttu-id="8ecd6-207">Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-207">Build and store container images with Azure Container Registry badge</span></span>
+  summary: <span data-ttu-id="8ecd6-208">'Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-208">Badge for the 'Build and store container images with Azure Container Registry' module.</span></span>
   iconUrl: /learn/achievements/build-and-store-container-images.svg
 - uid: learn.build-azure-bot-services-bot.badge
   type: badge
-  title: <span data-ttu-id="e200d-211">Azure Bot Service를 사용하여 챗봇 빌드 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-211">Build a chat bot with the Azure Bot Service badge</span></span>
-  summary: <span data-ttu-id="e200d-212">'Azure Bot Service를 사용하여 챗봇 빌드' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-212">Badge for the 'Build a chat bot with the Azure Bot Service' module.</span></span>
+  title: <span data-ttu-id="8ecd6-209">Azure Bot Service를 사용하여 챗봇 빌드 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-209">Build a chat bot with the Azure Bot Service badge</span></span>
+  summary: <span data-ttu-id="8ecd6-210">'Azure Bot Service를 사용하여 챗봇 빌드' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-210">Badge for the 'Build a chat bot with the Azure Bot Service' module.</span></span>
   iconUrl: /learn/achievements/build-chat-bot-with-azure-bot-service.svg
 - uid: learn.classify-images-with-custom-vision-services.badge
   type: badge
-  title: <span data-ttu-id="e200d-213">Microsoft Custom Vision Service를 사용하여 이미지 분류 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-213">Classify images with the Microsoft Custom Vision Service badge</span></span>
-  summary: <span data-ttu-id="e200d-214">'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-214">Badge for the 'Classify images with the Microsoft Custom Vision Service' module.</span></span>
+  title: <span data-ttu-id="8ecd6-211">Microsoft Custom Vision Service를 사용하여 이미지 분류 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-211">Classify images with the Microsoft Custom Vision Service badge</span></span>
+  summary: <span data-ttu-id="8ecd6-212">'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-212">Badge for the 'Classify images with the Microsoft Custom Vision Service' module.</span></span>
   iconUrl: /learn/achievements/classify-images-with-custom-vision-service.svg
 - uid: learn.create-neural-network-with-dsvm.badge
   type: badge
-  title: <span data-ttu-id="e200d-215">TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-215">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine badge</span></span>
-  summary: <span data-ttu-id="e200d-216">'TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-216">Badge for the 'Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine' module.</span></span>
+  title: <span data-ttu-id="8ecd6-213">TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-213">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine badge</span></span>
+  summary: <span data-ttu-id="8ecd6-214">'TensorFlow 및 Azure Data Science Virtual Machine에서 신경망 빌드' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-214">Badge for the 'Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine' module.</span></span>
   iconUrl: /learn/achievements/create-neural-network-with-dsvm.svg
 - uid: learn.design-for-efficiency-and-operations.badge
   type: badge
-  title: <span data-ttu-id="e200d-217">효율성 및 운영을 위한 디자인 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-217">Design for efficiency and operations badge</span></span>
-  summary: <span data-ttu-id="e200d-218">'효율성 및 운영을 위한 디자인' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-218">Badge for the 'Design for efficiency and operations' module.</span></span>
+  title: <span data-ttu-id="8ecd6-215">효율성 및 운영을 위한 디자인 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-215">Design for efficiency and operations badge</span></span>
+  summary: <span data-ttu-id="8ecd6-216">'효율성 및 운영을 위한 디자인' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-216">Badge for the 'Design for efficiency and operations' module.</span></span>
   iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
 - uid: learn.design-for-performance-and-scalability.badge
   type: badge
-  title: <span data-ttu-id="e200d-219">성능 및 확장성을 위한 디자인 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-219">Design for performance and scalability badge</span></span>
-  summary: <span data-ttu-id="e200d-220">'성능 및 확장성을 위한 디자인' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-220">Badge for the 'Design for performance and scalability' module.</span></span>
+  title: <span data-ttu-id="8ecd6-217">성능 및 확장성을 위한 디자인 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-217">Design for performance and scalability badge</span></span>
+  summary: <span data-ttu-id="8ecd6-218">'성능 및 확장성을 위한 디자인' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-218">Badge for the 'Design for performance and scalability' module.</span></span>
   iconUrl: /learn/achievements/design-for-performance-and-scalability-in-azure.svg
 - uid: learn.design-for-security.badge
   type: badge
-  title: <span data-ttu-id="e200d-221">보안 중심 디자인 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-221">Design for security badge</span></span>
-  summary: <span data-ttu-id="e200d-222">'보안 중심 디자인' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-222">Badge for the 'Design for security' module.</span></span>
+  title: <span data-ttu-id="8ecd6-219">보안 중심 디자인 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-219">Design for security badge</span></span>
+  summary: <span data-ttu-id="8ecd6-220">'보안 중심 디자인' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-220">Badge for the 'Design for security' module.</span></span>
   iconUrl: /learn/achievements/design-for-security-in-azure.svg
 - uid: learn.execute-azure-function-with-triggers.badge
   type: badge
-  title: <span data-ttu-id="e200d-223">트리거를 사용하여 Azure 함수 실행 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-223">Execute an Azure Function with triggers badge</span></span>
-  summary: <span data-ttu-id="e200d-224">'트리거를 사용하여 Azure 함수 실행' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-224">Badge for the 'Execute an Azure Function with triggers' module.</span></span>
+  title: <span data-ttu-id="8ecd6-221">트리거를 사용하여 Azure 함수 실행 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-221">Execute an Azure Function with triggers badge</span></span>
+  summary: <span data-ttu-id="8ecd6-222">'트리거를 사용하여 Azure 함수 실행' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-222">Badge for the 'Execute an Azure Function with triggers' module.</span></span>
   iconUrl: /learn/achievements/execute-azure-function-with-triggers.svg
 - uid: learn.intro-to-containers.badge
   type: badge
-  title: <span data-ttu-id="e200d-225">컨테이너 소개 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-225">Introduction to Containers badge</span></span>
-  summary: <span data-ttu-id="e200d-226">'컨테이너 소개' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-226">Badge for the 'Introduction to Containers' module.</span></span>
+  title: <span data-ttu-id="8ecd6-223">컨테이너 소개 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-223">Introduction to Containers badge</span></span>
+  summary: <span data-ttu-id="8ecd6-224">'컨테이너 소개' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-224">Badge for the 'Introduction to Containers' module.</span></span>
   iconUrl: /learn/achievements/intro-to-containers.svg
 - uid: learn.predict-costs-and-optimize-spending.badge
   type: badge
-  title: <span data-ttu-id="e200d-227">Azure 비용 예측 및 지출 최적화 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-227">Predict costs and optimize spending for Azure badge</span></span>
-  summary: <span data-ttu-id="e200d-228">'Azure 비용 예측 및 지출 최적화' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-228">Badge for the 'Predict costs and optimize spending for Azure' module.</span></span>
+  title: <span data-ttu-id="8ecd6-225">Azure 비용 예측 및 지출 최적화 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-225">Predict costs and optimize spending for Azure badge</span></span>
+  summary: <span data-ttu-id="8ecd6-226">'Azure 비용 예측 및 지출 최적화' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-226">Badge for the 'Predict costs and optimize spending for Azure' module.</span></span>
   iconUrl: /learn/achievements/predict-costs-optimize-spending-on-azure.svg
 - uid: learn.principles-cloud-computing.badge
   type: badge
-  title: <span data-ttu-id="e200d-229">클라우드 컴퓨팅의 원칙 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-229">Principles of Cloud Computing badge</span></span>
-  summary: <span data-ttu-id="e200d-230">'클라우드 컴퓨팅의 원칙' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-230">Badge for the 'Principles of Cloud Computing' module.</span></span>
+  title: <span data-ttu-id="8ecd6-227">클라우드 컴퓨팅의 원칙 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-227">Principles of Cloud Computing badge</span></span>
+  summary: <span data-ttu-id="8ecd6-228">'클라우드 컴퓨팅의 원칙' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-228">Badge for the 'Principles of Cloud Computing' module.</span></span>
   iconUrl: /learn/achievements/principles-cloud-computing.svg
 - uid: learn.provision-azure-sql-db.badge
   type: badge
-  title: <span data-ttu-id="e200d-231">Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-231">Provision an Azure SQL database to store application data badge</span></span>
-  summary: <span data-ttu-id="e200d-232">'Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-232">Badge for the 'Provision an Azure SQL database to store application data' module.</span></span>
+  title: <span data-ttu-id="8ecd6-229">Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-229">Provision an Azure SQL database to store application data badge</span></span>
+  summary: <span data-ttu-id="8ecd6-230">'Azure SQL Database를 프로비전하여 응용 프로그램 데이터 저장' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-230">Badge for the 'Provision an Azure SQL database to store application data' module.</span></span>
   iconUrl: /learn/achievements/provision-azure-sql-db.svg
 - uid: learn.run-docker-containers-aci.badge
   type: badge
-  title: <span data-ttu-id="e200d-233">ACI(Azure Container Instances)에서 Docker 컨테이너 실행 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-233">Run Docker containers with Azure Container Instances (ACI) badge</span></span>
-  summary: <span data-ttu-id="e200d-234">'ACI(Azure Container Instances)에서 Docker 컨테이너 실행' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-234">Badge for the 'Run Docker containers with Azure Container Instances (ACI)' module.</span></span>
+  title: <span data-ttu-id="8ecd6-231">ACI(Azure Container Instances)에서 Docker 컨테이너 실행 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-231">Run Docker containers with Azure Container Instances (ACI) badge</span></span>
+  summary: <span data-ttu-id="8ecd6-232">'ACI(Azure Container Instances)에서 Docker 컨테이너 실행' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-232">Badge for the 'Run Docker containers with Azure Container Instances (ACI)' module.</span></span>
   iconUrl: /learn/achievements/run-docker-with-azure-container-instances.svg
 - uid: learn.access-data-with-cosmos-db-and-sql-api.badge
   type: badge
-  title: <span data-ttu-id="e200d-235">Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-235">Store and access data with Cosmos DB and the SQL API Badge</span></span>
-  summary: <span data-ttu-id="e200d-236">'Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="e200d-236">Badge for 'Store and access data with Cosmos DB and the SQL API' module.</span></span>
+  title: <span data-ttu-id="8ecd6-233">Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-233">Store and access data with Cosmos DB and the SQL API Badge</span></span>
+  summary: <span data-ttu-id="8ecd6-234">'Cosmos DB 및 SQL API를 사용하여 데이터를 저장하고 액세스' 모듈의 배지입니다.</span><span class="sxs-lookup"><span data-stu-id="8ecd6-234">Badge for 'Store and access data with Cosmos DB and the SQL API' module.</span></span>
   iconUrl: /learn/achievements/access-data-with-cosmos-db-and-sql-api.svg
 - uid: learn.configure-the-network-for-your-virtual-machines.badge
   type: badge
-  title: <span data-ttu-id="e200d-237">가상 머신에 사용할 네트워크 구성</span><span class="sxs-lookup"><span data-stu-id="e200d-237">Configure the network for your virtual machines</span></span>
-  summary: <span data-ttu-id="e200d-238">가상 머신에 사용할 네트워크 구성</span><span class="sxs-lookup"><span data-stu-id="e200d-238">Configure the network for your virtual machines</span></span>
+  title: <span data-ttu-id="8ecd6-235">가상 머신에 사용할 네트워크 구성</span><span class="sxs-lookup"><span data-stu-id="8ecd6-235">Configure the network for your virtual machines</span></span>
+  summary: <span data-ttu-id="8ecd6-236">가상 머신에 사용할 네트워크 구성</span><span class="sxs-lookup"><span data-stu-id="8ecd6-236">Configure the network for your virtual machines</span></span>
   iconUrl: /learn/achievements/configure-network-for-azure-virtual-machines.svg
 - uid: learn.introduction-to-security.badge
   type: badge
-  title: <span data-ttu-id="e200d-239">Azure 보안 소개</span><span class="sxs-lookup"><span data-stu-id="e200d-239">Introduction to Azure security</span></span>
-  summary: <span data-ttu-id="e200d-240">Azure 보안 소개</span><span class="sxs-lookup"><span data-stu-id="e200d-240">Introduction to Azure security</span></span>
+  title: <span data-ttu-id="8ecd6-237">Azure 보안 소개</span><span class="sxs-lookup"><span data-stu-id="8ecd6-237">Introduction to Azure security</span></span>
+  summary: <span data-ttu-id="8ecd6-238">Azure 보안 소개</span><span class="sxs-lookup"><span data-stu-id="8ecd6-238">Introduction to Azure security</span></span>
   iconUrl: /learn/achievements/intro-to-security-in-azure.svg
 - uid: learn.secure-your-azure-virtual-machine-disks.badge
   type: badge
-  title: <span data-ttu-id="e200d-241">Azure 가상 머신 디스크 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-241">Secure your Azure virtual machine disks</span></span>
-  summary: <span data-ttu-id="e200d-242">Azure 가상 머신 디스크 보호</span><span class="sxs-lookup"><span data-stu-id="e200d-242">Secure your Azure virtual machine disks</span></span>
+  title: <span data-ttu-id="8ecd6-239">Azure 가상 머신 디스크 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-239">Secure your Azure virtual machine disks</span></span>
+  summary: <span data-ttu-id="8ecd6-240">Azure 가상 머신 디스크 보호</span><span class="sxs-lookup"><span data-stu-id="8ecd6-240">Secure your Azure virtual machine disks</span></span>
   iconUrl: /learn/achievements/secure-your-azure-virtual-machine-disks.svg
 - uid: learn.make-your-virtual-machines-highly-available.badge
   type: badge
-  title: <span data-ttu-id="e200d-243">고가용성 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-243">Make your virtual machines highly available</span></span>
-  summary: <span data-ttu-id="e200d-244">고가용성 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-244">Make your virtual machines highly available</span></span>
+  title: <span data-ttu-id="8ecd6-241">고가용성 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-241">Make your virtual machines highly available</span></span>
+  summary: <span data-ttu-id="8ecd6-242">고가용성 가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-242">Make your virtual machines highly available</span></span>
   iconUrl: /learn/achievements/make-your-virtual-machines-highly-available.svg
 - uid: learn.implement-message-workflows-with-service-bus.badge
   type: badge
-  title: <span data-ttu-id="e200d-245">Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현</span><span class="sxs-lookup"><span data-stu-id="e200d-245">Implement message-based communication workflows with Azure Service Bus</span></span>
-  summary: <span data-ttu-id="e200d-246">Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현</span><span class="sxs-lookup"><span data-stu-id="e200d-246">Implement message-based communication workflows with Azure Service Bus</span></span>
+  title: <span data-ttu-id="8ecd6-243">Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현</span><span class="sxs-lookup"><span data-stu-id="8ecd6-243">Implement message-based communication workflows with Azure Service Bus</span></span>
+  summary: <span data-ttu-id="8ecd6-244">Azure Service Bus를 사용하여 메시지 기반 통신 워크플로 구현</span><span class="sxs-lookup"><span data-stu-id="8ecd6-244">Implement message-based communication workflows with Azure Service Bus</span></span>
   iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
 - uid: learn.intro-to-azure-networking.badge
   type: badge
-  title: <span data-ttu-id="e200d-247">Azure 네트워킹 소개 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-247">Introduction to Azure networking badge</span></span>
-  summary: <span data-ttu-id="e200d-248">Azure 네트워킹 소개</span><span class="sxs-lookup"><span data-stu-id="e200d-248">Introduction to Azure networking</span></span>
+  title: <span data-ttu-id="8ecd6-245">Azure 네트워킹 소개 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-245">Introduction to Azure networking badge</span></span>
+  summary: <span data-ttu-id="8ecd6-246">Azure 네트워킹 소개</span><span class="sxs-lookup"><span data-stu-id="8ecd6-246">Introduction to Azure networking</span></span>
   iconUrl: /learn/achievements/intro-to-azure-networking.svg
 - uid: learn.pillars-of-a-great-azure-architecture.badge
   type: badge
-  title: <span data-ttu-id="e200d-249">우수한 Azure 아키텍처의 핵심 요소 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-249">Pillars of a great Azure architecture badge</span></span>
-  summary: <span data-ttu-id="e200d-250">우수한 Azure 아키텍처의 핵심 요소 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-250">Pillars of a great Azure architecture badge</span></span>
+  title: <span data-ttu-id="8ecd6-247">우수한 Azure 아키텍처의 핵심 요소 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-247">Pillars of a great Azure architecture badge</span></span>
+  summary: <span data-ttu-id="8ecd6-248">우수한 Azure 아키텍처의 핵심 요소 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-248">Pillars of a great Azure architecture badge</span></span>
   iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
 - uid: learn.add-and-size-disks-in-azure-virtual-machines.badge
   type: badge
-  title: <span data-ttu-id="e200d-251">Azure Virtual Machines에서 디스크 추가 및 크기 지정</span><span class="sxs-lookup"><span data-stu-id="e200d-251">Add and size disks in Azure Virtual Machines</span></span>
-  summary: <span data-ttu-id="e200d-252">Azure Virtual Machines에서 디스크 추가 및 크기 조정</span><span class="sxs-lookup"><span data-stu-id="e200d-252">Add and size disks in Azure Virtual Machines</span></span>
+  title: <span data-ttu-id="8ecd6-249">Azure Virtual Machines에서 디스크 추가 및 크기 지정</span><span class="sxs-lookup"><span data-stu-id="8ecd6-249">Add and size disks in Azure Virtual Machines</span></span>
+  summary: <span data-ttu-id="8ecd6-250">Azure Virtual Machines에서 디스크 추가 및 크기 조정</span><span class="sxs-lookup"><span data-stu-id="8ecd6-250">Add and size disks in Azure Virtual Machines</span></span>
   iconUrl: /learn/achievements/add-and-size-disks-in-azure-virtual-machines.svg
 - uid: learn.scale-and-size-virtual-machines.badge
   type: badge
-  title: <span data-ttu-id="e200d-253">Azure에서 Virtual Machines 크기 조정</span><span class="sxs-lookup"><span data-stu-id="e200d-253">Scale and size Virtual Machines in Azure</span></span>
-  summary: <span data-ttu-id="e200d-254">Azure에서 Virtual Machines 크기 조정</span><span class="sxs-lookup"><span data-stu-id="e200d-254">Scale and size Virtual Machines in Azure</span></span>
+  title: <span data-ttu-id="8ecd6-251">Azure에서 Virtual Machines 크기 조정</span><span class="sxs-lookup"><span data-stu-id="8ecd6-251">Scale and size Virtual Machines in Azure</span></span>
+  summary: <span data-ttu-id="8ecd6-252">Azure에서 Virtual Machines 크기 조정</span><span class="sxs-lookup"><span data-stu-id="8ecd6-252">Scale and size Virtual Machines in Azure</span></span>
   iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
 - uid: learn.manage-iot-devices.badge
   type: badge
-  title: <span data-ttu-id="e200d-255">IT 관리자로서 IoT 장치를 관리하는 방법 알아보기</span><span class="sxs-lookup"><span data-stu-id="e200d-255">Learn how to manage IoT devices as an IT Admin</span></span>
-  summary: <span data-ttu-id="e200d-256">'IT 관리자로서 IoT 장치를 관리하는 방법 알아보기' 모듈의 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-256">Badge for 'Learn how to manage IoT devices as an IT Admin' module</span></span>
+  title: <span data-ttu-id="8ecd6-253">IT 관리자로서 IoT 장치를 관리하는 방법 알아보기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-253">Learn how to manage IoT devices as an IT Admin</span></span>
+  summary: <span data-ttu-id="8ecd6-254">'IT 관리자로서 IoT 장치를 관리하는 방법 알아보기' 모듈의 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-254">Badge for 'Learn how to manage IoT devices as an IT Admin' module</span></span>
   iconUrl: /learn/achievements/manage-your-iot-devices.svg
 - uid: learn.the-mojifier.badge
   type: badge
-  title: <span data-ttu-id="e200d-257">사람의 얼굴을 이모지로 바꾸는 Slack 명령 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-257">Create a Slack Command that replaces peoples faces with emojis</span></span>
-  summary: <span data-ttu-id="e200d-258">사람의 얼굴을 이모지로 바꾸는 Slack 명령 만들기</span><span class="sxs-lookup"><span data-stu-id="e200d-258">Create a Slack Command that replaces peoples faces with emojis</span></span>
+  title: <span data-ttu-id="8ecd6-255">사람의 얼굴을 이모지로 바꾸는 Slack 명령 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-255">Create a Slack Command that replaces peoples faces with emojis</span></span>
+  summary: <span data-ttu-id="8ecd6-256">사람의 얼굴을 이모지로 바꾸는 Slack 명령 만들기</span><span class="sxs-lookup"><span data-stu-id="8ecd6-256">Create a Slack Command that replaces peoples faces with emojis</span></span>
   iconUrl: /learn/achievements/replace-faces-with-emojis-matching-emotion.svg
 - uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
   type: badge
-  title: <span data-ttu-id="e200d-259">Redis Cache에서 변경 가능한 부분 데이터 작업</span><span class="sxs-lookup"><span data-stu-id="e200d-259">Work with mutable and partial data in a Redis cache</span></span>
-  summary: <span data-ttu-id="e200d-260">Redis Cache에서 변경 가능한 부분 데이터 작업</span><span class="sxs-lookup"><span data-stu-id="e200d-260">Work with mutable and partial data in a Redis cache</span></span>
+  title: <span data-ttu-id="8ecd6-257">Redis Cache에서 변경 가능한 부분 데이터 작업</span><span class="sxs-lookup"><span data-stu-id="8ecd6-257">Work with mutable and partial data in a Redis cache</span></span>
+  summary: <span data-ttu-id="8ecd6-258">Redis Cache에서 변경 가능한 부분 데이터 작업</span><span class="sxs-lookup"><span data-stu-id="8ecd6-258">Work with mutable and partial data in a Redis cache</span></span>
   iconUrl: /learn/achievements/work-with-mutable-and-partial-data-in-a-redis-cache.svg
 - uid: learn.chain-azure-functions-data-using-input-output-bindings.badge
   type: badge
-  title: <span data-ttu-id="e200d-261">I/O 바인딩을 사용하여 Azure Functions 데이터 체인 연결</span><span class="sxs-lookup"><span data-stu-id="e200d-261">Chain Azure Functions data using I/O bindings</span></span>
-  summary: <span data-ttu-id="e200d-262">I/O 바인딩을 사용하여 Azure Functions 데이터 체인 연결</span><span class="sxs-lookup"><span data-stu-id="e200d-262">Chain Azure Functions data using I/O bindings</span></span>
+  title: <span data-ttu-id="8ecd6-259">I/O 바인딩을 사용하여 Azure Functions 데이터 체인 연결</span><span class="sxs-lookup"><span data-stu-id="8ecd6-259">Chain Azure Functions data using I/O bindings</span></span>
+  summary: <span data-ttu-id="8ecd6-260">I/O 바인딩을 사용하여 Azure Functions 데이터 체인 연결</span><span class="sxs-lookup"><span data-stu-id="8ecd6-260">Chain Azure Functions data using I/O bindings</span></span>
   iconUrl: /learn/achievements/chain-azure-functions-data-using-bindings.svg
 - uid: learn.design-for-availability-and-recoverability.badge
   type: badge
-  title: <span data-ttu-id="e200d-263">Azure의 가용성 및 복구 기능을 위한 설계</span><span class="sxs-lookup"><span data-stu-id="e200d-263">Design for availability and recoverability in Azure</span></span>
-  summary: <span data-ttu-id="e200d-264">Azure의 가용성 및 복구 기능을 위한 설계</span><span class="sxs-lookup"><span data-stu-id="e200d-264">Design for availability and recoverability in Azure</span></span>
+  title: <span data-ttu-id="8ecd6-261">Azure의 가용성 및 복구 기능을 위한 설계</span><span class="sxs-lookup"><span data-stu-id="8ecd6-261">Design for availability and recoverability in Azure</span></span>
+  summary: <span data-ttu-id="8ecd6-262">Azure의 가용성 및 복구 기능을 위한 설계</span><span class="sxs-lookup"><span data-stu-id="8ecd6-262">Design for availability and recoverability in Azure</span></span>
   iconUrl: /learn/achievements/design-for-availability-and-recoverability-in-azure.svg
 - uid: learn.welcome-to-azure.badge
   type: badge
-  title: <span data-ttu-id="e200d-265">Azure 시작</span><span class="sxs-lookup"><span data-stu-id="e200d-265">Welcome to Azure</span></span>
-  summary: <span data-ttu-id="e200d-266">Azure 시작</span><span class="sxs-lookup"><span data-stu-id="e200d-266">Welcome to Azure</span></span>
+  title: <span data-ttu-id="8ecd6-263">Azure 시작</span><span class="sxs-lookup"><span data-stu-id="8ecd6-263">Welcome to Azure</span></span>
+  summary: <span data-ttu-id="8ecd6-264">Azure 시작</span><span class="sxs-lookup"><span data-stu-id="8ecd6-264">Welcome to Azure</span></span>
   iconUrl: /learn/achievements/welcome-to-azure.svg
 - uid: learn.classify-user-feedback-with-the-text-analytics-api.badge
   type: badge
-  title: <span data-ttu-id="e200d-267">Microsoft Custom Vision Service를 사용하여 이미지 분류</span><span class="sxs-lookup"><span data-stu-id="e200d-267">Classify images using the Microsoft Custom Vision Service</span></span>
-  summary: <span data-ttu-id="e200d-268">'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지</span><span class="sxs-lookup"><span data-stu-id="e200d-268">Badge for 'Classify images using the Microsoft Custom Vision Service' module</span></span>
+  title: <span data-ttu-id="8ecd6-265">Microsoft Custom Vision Service를 사용하여 이미지 분류</span><span class="sxs-lookup"><span data-stu-id="8ecd6-265">Classify images using the Microsoft Custom Vision Service</span></span>
+  summary: <span data-ttu-id="8ecd6-266">'Microsoft Custom Vision Service를 사용하여 이미지 분류' 모듈의 배지</span><span class="sxs-lookup"><span data-stu-id="8ecd6-266">Badge for 'Classify images using the Microsoft Custom Vision Service' module</span></span>
   iconUrl: /learn/achievements/classify-user-feedback-with-the-text-analytics-api.svg
 - uid: learn.distribute-data-globally-with-cosmos-db.badge
   type: badge
-  title: <span data-ttu-id="e200d-269">Azure Cosmos DB를 사용하여 전세계에 데이터 배포</span><span class="sxs-lookup"><span data-stu-id="e200d-269">Distribute your data globally with Azure Cosmos DB</span></span>
-  summary: <span data-ttu-id="e200d-270">Azure Cosmos DB를 사용하여 전세계에 데이터 배포</span><span class="sxs-lookup"><span data-stu-id="e200d-270">Distribute your data globally with Azure Cosmos DB</span></span>
+  title: <span data-ttu-id="8ecd6-267">Azure Cosmos DB를 사용하여 전세계에 데이터 배포</span><span class="sxs-lookup"><span data-stu-id="8ecd6-267">Distribute your data globally with Azure Cosmos DB</span></span>
+  summary: <span data-ttu-id="8ecd6-268">Azure Cosmos DB를 사용하여 전세계에 데이터 배포</span><span class="sxs-lookup"><span data-stu-id="8ecd6-268">Distribute your data globally with Azure Cosmos DB</span></span>
   iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
 metadata:
-  ms.openlocfilehash: 7f1cf4e965ca83bb470aabaaa5cf5c2a8a7d38a3
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 681898238a6a8d4de8e91fba7c248831a01978a8
+  ms.sourcegitcommit: afe81bb2dc99ca5f6e2828779d8fca2a43a0e002
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346491"
+  ms.lasthandoff: 09/24/2018
+  ms.locfileid: "46711791"

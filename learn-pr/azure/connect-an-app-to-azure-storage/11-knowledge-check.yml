@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: <span data-ttu-id="2ec00-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="2ec00-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="2ec00-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="2ec00-102">Knowledge check</span></span>
+  description: <span data-ttu-id="2ec00-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="2ec00-103">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512421"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="2ec00-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="2ec00-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="2ec00-105">Azure Storage 계정에 액세스하기 위해 제공되는 액세스 키의 수는 몇 개인가요?</span><span class="sxs-lookup"><span data-stu-id="2ec00-105">How many access keys are provided for accessing your Azure storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="2ec00-106">1</span><span class="sxs-lookup"><span data-stu-id="2ec00-106">1</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-107">각 저장소 계정에는 두 개의 액세스 키가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-107">Each storage account has two access keys.</span></span> <span data-ttu-id="2ec00-108">따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-108">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="2ec00-109">2</span><span class="sxs-lookup"><span data-stu-id="2ec00-109">2</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2ec00-110">각 저장소 계정에는 두 개의 액세스 키가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-110">Each storage account has two access keys.</span></span> <span data-ttu-id="2ec00-111">따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-111">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="2ec00-112">3</span><span class="sxs-lookup"><span data-stu-id="2ec00-112">3</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-113">각 저장소 계정에는 두 개의 액세스 키가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-113">Each storage account has two access keys.</span></span> <span data-ttu-id="2ec00-114">따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-114">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="2ec00-115">4</span><span class="sxs-lookup"><span data-stu-id="2ec00-115">4</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-116">각 저장소 계정에는 두 개의 액세스 키가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-116">Each storage account has two access keys.</span></span> <span data-ttu-id="2ec00-117">따라서 가동 중지 시간 없이 응용 프로그램에서 사용하는 키를 주기적으로 바꾸는 모범 사례 지침을 따를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-117">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+  - content: <span data-ttu-id="2ec00-118">REST API 또는 Azure 클라이언트 라이브러리를 사용하여 저장소 계정에 프로그래밍 방식으로 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-118">You can use either the REST API or the Azure client library to programmatically access a storage account.</span></span> <span data-ttu-id="2ec00-119">클라이언트 라이브러리를 사용하는 주된 이점은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="2ec00-119">What is the primary advantage of using the client library?</span></span>
+    choices:
+    - content: <span data-ttu-id="2ec00-120">비용</span><span class="sxs-lookup"><span data-stu-id="2ec00-120">Cost</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-121">클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-121">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="2ec00-122">클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-122">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="2ec00-123">가용성</span><span class="sxs-lookup"><span data-stu-id="2ec00-123">Availability</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-124">클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-124">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="2ec00-125">클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-125">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="2ec00-126">지역화</span><span class="sxs-lookup"><span data-stu-id="2ec00-126">Localization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-127">클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-127">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="2ec00-128">클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-128">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="2ec00-129">편리성</span><span class="sxs-lookup"><span data-stu-id="2ec00-129">Convenience</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2ec00-130">클라이언트 라이브러리를 사용하는 코드는 일반적으로 REST API를 사용하는 코드보다 훨씬 간결하고 간단합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-130">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="2ec00-131">클라이언트 라이브러리는 사용자 요청 조합 및 응답 구문 분석을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-131">The client library handles assembling requests and parsing responses for you.</span></span>
+  - content: <span data-ttu-id="2ec00-132">다음은 저장소 계정의 액세스 키에 대해 적합한 유사점은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="2ec00-132">Which of the following is a good analogy for the access keys of a storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="2ec00-133">IP 주소</span><span class="sxs-lookup"><span data-stu-id="2ec00-133">IP Address</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-134">액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-134">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="2ec00-135">이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-135">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="2ec00-136">REST 엔드포인트</span><span class="sxs-lookup"><span data-stu-id="2ec00-136">REST Endpoint</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-137">액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-137">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="2ec00-138">이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-138">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="2ec00-139">사용자 이름 및 암호</span><span class="sxs-lookup"><span data-stu-id="2ec00-139">Username and password</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2ec00-140">액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-140">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="2ec00-141">이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-141">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="2ec00-142">암호화 알고리즘</span><span class="sxs-lookup"><span data-stu-id="2ec00-142">Cryptographic algorithm</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2ec00-143">액세스 키의 소유로 계정을 식별하고 액세스 권한을 부여합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-143">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="2ec00-144">이는 사용자 이름 및 암호와 같은 로그인 자격 증명과 매우 유사합니다.</span><span class="sxs-lookup"><span data-stu-id="2ec00-144">This is very similar to login credentials like a username and password.</span></span>

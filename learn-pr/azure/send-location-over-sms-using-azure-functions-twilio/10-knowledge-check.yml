@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.10-knowledge-check
+title: <span data-ttu-id="90f78-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="90f78-101">Knowledge Check</span></span>
+metadata:
+  title: <span data-ttu-id="90f78-102">요약 및 정리</span><span class="sxs-lookup"><span data-stu-id="90f78-102">Summary and clean-up</span></span>
+  description: <span data-ttu-id="90f78-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="90f78-103">Knowledge Check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fb8021f1b3e30929c1ed44ed71123eb31d660d90
+  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/23/2018
+  ms.locfileid: "46704477"
+durationInMinutes: 2
+content: >
+  [!include[](includes/10-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="90f78-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="90f78-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="90f78-105">함수에서 HTTP 요청으로 호출하는 데 사용되는 Azure Functions 트리거 유형은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="90f78-105">What type of Azure Functions trigger allows your function to be invoked by an HTTP request?</span></span>
+    choices:
+    - content: <span data-ttu-id="90f78-106">HTTP 트리거</span><span class="sxs-lookup"><span data-stu-id="90f78-106">HTTP Trigger</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="90f78-107">HTTP 트리거는 HTTP 요청에서 함수를 호출 하는 데 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-107">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
+    - content: <span data-ttu-id="90f78-108">이벤트 허브 트리거</span><span class="sxs-lookup"><span data-stu-id="90f78-108">Event Hub Trigger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90f78-109">HTTP 트리거는 HTTP 요청에서 함수를 호출 하는 데 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-109">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
+    - content: <span data-ttu-id="90f78-110">큐 트리거</span><span class="sxs-lookup"><span data-stu-id="90f78-110">Queue Trigger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="90f78-111">HTTP 트리거는 HTTP 요청에서 함수를 호출 하는 데 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-111">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
+  - content: <span data-ttu-id="90f78-112">함수를 Twilio에 바인딩하여 SMS 메시지를 보내려면 어떻게 해야 하나요?</span><span class="sxs-lookup"><span data-stu-id="90f78-112">How do you bind your function to Twilio to send SMS messages?</span></span>
+    choices:
+    - content: <span data-ttu-id="90f78-113">함수의 반환 값으로 SMS 메시지 반환</span><span class="sxs-lookup"><span data-stu-id="90f78-113">By returning the SMS messages as the return value of the Function</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="90f78-114">함수 매개 변수</span><span class="sxs-lookup"><span data-stu-id="90f78-114">A function parameter</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="90f78-115">SMS 메시지는 `[TwilioSms]` 특성으로 데코레이트된 매개 변수 형태로 함수에 전달된 컬렉션에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-115">SMS messages are added to a collection passed to the function as a parameter decorated with the `[TwilioSms]` attribute.</span></span> <span data-ttu-id="90f78-116">함수가 반환되면 함수의 런타임이 Twilio에 이러한 메시지를 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-116">The Function's runtime will send these messages to Twilio once the function returns.</span></span>
+    - content: <span data-ttu-id="90f78-117">Twilio API 직접 호출</span><span class="sxs-lookup"><span data-stu-id="90f78-117">Direct call to the Twilio API</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="90f78-118">함수를 로컬로 실행할 때 Twilio 계정 SID 및 인증 토큰은 어디에 정의하나요?</span><span class="sxs-lookup"><span data-stu-id="90f78-118">Where do you define your Twilio Account SID and Auth token when running your function locally?</span></span>
+    choices:
+    - content: <span data-ttu-id="90f78-119">`local.settings.json` 파일에 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-119">In the `local.settings.json` file.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="90f78-120">`local.settings.json` 파일은 로컬에서 실행되는 경우에만 사용되며 Azure에 게시할 때는 사용되지 않는 로컬 설정을 저장하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-120">The `local.settings.json` file is used to store local settings that are only used when running locally, not when published to Azure.</span></span> <span data-ttu-id="90f78-121">비공개 키가 포함되어 있고 리포지토리가 공개 리포지토리일 경우 원본 코드 제어에 이를 체크인하지 않도록 주의하세요.</span><span class="sxs-lookup"><span data-stu-id="90f78-121">Be careful to not check this into source code control if it contains private keys and your repo is public.</span></span>
+    - content: <span data-ttu-id="90f78-122">`[TwilioSms]` 특성에 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="90f78-122">In the `[TwilioSms]` attribute</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="90f78-123">Azure에 게시된 응용 프로그램 설정</span><span class="sxs-lookup"><span data-stu-id="90f78-123">Application settings published to Azure</span></span>
+      isCorrect: false

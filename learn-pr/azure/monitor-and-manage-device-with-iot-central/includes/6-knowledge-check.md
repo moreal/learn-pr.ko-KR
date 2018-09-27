@@ -1,0 +1,7 @@
+<span data-ttu-id="ec709-101">Azure IoT Central을 사용하면 IoT 솔루션을 쉽게 연결, 모니터링 및 관리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ec709-101">Azure IoT Central makes it easy to connect, monitor and manage your IoT solutions.</span></span> <span data-ttu-id="ec709-102">이 모듈에서는 유지 관리 문제 발생 시 원격 커피 머신을 Azure IoT Central에 연결하여 커피 머신을 관리하고 모니터링하는 통합적인 시나리오를 만들었습니다.</span><span class="sxs-lookup"><span data-stu-id="ec709-102">In this module, you created an end-to-end scenario of connecting a remote coffee machine to Azure IoT Central to monitor and manage the machine as maintenance issues arise.</span></span>
+
+## <a name="further-reading"></a><span data-ttu-id="ec709-103">추가 참고 자료</span><span class="sxs-lookup"><span data-stu-id="ec709-103">Further reading</span></span>
+
+- [<span data-ttu-id="ec709-104">Azure IoT Central이란?</span><span class="sxs-lookup"><span data-stu-id="ec709-104">What is Azure IoT Central?</span></span>](https://docs.microsoft.com/azure/iot-central/overview-iot-central)
+- [<span data-ttu-id="ec709-105">Azure IoT Central UI 둘러보기</span><span class="sxs-lookup"><span data-stu-id="ec709-105">Take a tour of the Azure IoT Central UI</span></span>](https://docs.microsoft.com/azure/iot-central/overview-iot-central-tour)
+- [<span data-ttu-id="ec709-106">Microsoft Flow에서 IoT Central 커넥터를 사용하여 워크플로 빌드</span><span class="sxs-lookup"><span data-stu-id="ec709-106">Build workflows with the IoT Central connector in Microsoft Flow</span></span>](https://docs.microsoft.com/azure/iot-central/howto-add-microsoft-flow)

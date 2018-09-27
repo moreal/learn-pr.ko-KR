@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+metadata:
+  title: <span data-ttu-id="3e39e-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="3e39e-101">Knowledge check</span></span>
+  description: <span data-ttu-id="3e39e-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="3e39e-102">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 52f6c98fc185520a51d13dc2b059f4ce17b05c35
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570759"
+title: <span data-ttu-id="3e39e-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="3e39e-103">Check your knowledge</span></span>
+durationInMinutes: 11
+content: >
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="3e39e-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="3e39e-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="3e39e-105">다음 중 장치 템플릿의 정보를 가장 잘 설명한 문장은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="3e39e-105">Which statement best describes the information in a device template?</span></span>
+    choices:
+    - content: <span data-ttu-id="3e39e-106">응용 프로그램에 연결된 장치의 하드웨어 사양입니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-106">The hardware specification of a device connected to your application.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3e39e-107">하드웨어 세부 정보는 장치 템플릿에 의해 캡처되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-107">Hardware details are not captured by a device template.</span></span>
+    - content: <span data-ttu-id="3e39e-108">장치가 응용 프로그램과 교환할 수 있는 데이터와 명령입니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-108">The data and commands a device can exchange with your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3e39e-109">템플릿은 코드와 물리적 장치 간에 교환될 수 있는 모든 잠재적인 정보 및 명령을 캡처하는 사양입니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-109">The template is a specification that captures all the potential information and commands that can be exchanged between your code and the physical device.</span></span>
+    - content: <span data-ttu-id="3e39e-110">장치와 통신하는 데 사용되는 유선상 프로토콜입니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-110">The over-the-wire protocol used to communicate with a device.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3e39e-111">통신 프로토콜은 장치 템플릿의 일부가 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-111">The communication protocol is not part of a device template.</span></span>
+  - content: '<span data-ttu-id="3e39e-112">참 또는 거짓: IoT Central 응용 프로그램을 테스트하려면 물리적 장치가 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-112">True or false: you must have a physical device to test your IoT Central application.</span></span>'
+    choices:
+    - content: <span data-ttu-id="3e39e-113">참</span><span class="sxs-lookup"><span data-stu-id="3e39e-113">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3e39e-114">테스트용으로 시뮬레이션된 장치를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-114">You can use simulated devices for testing.</span></span>
+    - content: <span data-ttu-id="3e39e-115">거짓</span><span class="sxs-lookup"><span data-stu-id="3e39e-115">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3e39e-116">장치 템플릿을 만들면 IoT Central에서 시뮬레이션된 장치를 자동으로 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-116">IoT Central automatically creates a simulated device for you when you create a device template.</span></span> <span data-ttu-id="3e39e-117">또한 사용자 지정 소프트웨어 시뮬레이션을 코딩할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-117">You can also code custom software simulations.</span></span> <span data-ttu-id="3e39e-118">이러한 옵션을 사용하여 응용 프로그램을 철저히 테스트한 후 물리적 장치를 연결할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-118">These options let you thoroughly test your application before connecting a physical device.</span></span>
+  - content: <span data-ttu-id="3e39e-119">IoT Central과 통신하는 물리적 장치가 5개 있다고 가정해 보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-119">Suppose you have five physical devices communicating with IoT Central.</span></span> <span data-ttu-id="3e39e-120">연결 문자열이 몇 개나 될까요?</span><span class="sxs-lookup"><span data-stu-id="3e39e-120">How many connection strings would you have?</span></span>
+    choices:
+    - content: '<span data-ttu-id="3e39e-121">1개: 연결된 모든 장치에서 연결 문자열을 공유합니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-121">One: the connection string is shared by all connected devices.</span></span>'
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3e39e-122">공유 연결 문자열은 IoT Central이 각 장치를 고유하게 식별하도록 허용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-122">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
+    - content: '<span data-ttu-id="3e39e-123">2개: 현재 하나는 활성 상태이고, 하나는 백업으로 사용 중인 경우 기본 항목이 손상됩니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-123">Two: one in active use and one backup in case the primary is compromised.</span></span>'
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3e39e-124">공유 연결 문자열은 IoT Central이 각 장치를 고유하게 식별하도록 허용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-124">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
+    - content: '<span data-ttu-id="3e39e-125">5개: 각 장치 인스턴스마다 고유한 연결 문자열이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-125">Five: every device needs a unique connection string.</span></span>'
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3e39e-126">연결 문자열은 IoT Central에 장치를 식별하므로 각 장치마다 고유한 연결 문자열이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="3e39e-126">The connection string identifies the device to IoT Central, so each device needs its own.</span></span>

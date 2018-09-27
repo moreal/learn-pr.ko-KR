@@ -1,0 +1,14 @@
+<span data-ttu-id="fb675-101">벨트 아래의 일부 기본 컨테이너 기술을 통해 사용자 고유의 아이디어를 탐색할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="fb675-101">With some basic container skills under your belt, you're ready to explore your own ideas.</span></span> <span data-ttu-id="fb675-102">다른 사용자가 빌드한 Docker 컨테이너를 실행하고, 사용자 고유의 Docker 이미지를 빌드하고, 커뮤니티 또는 팀과 작업을 공유할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="fb675-102">You can run Docker containers built by others, build your own Docker images, and share your work with the community or just your team.</span></span>
+
+<span data-ttu-id="fb675-103">컨테이너가 작동하는 방법을 탐색하는 데 사용한 샌드박스 환경 이외의 프로덕션 환경에서 컨테이너를 실행할 수 있는 Azure 서비스를 아직 사용하지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="fb675-103">Other than the sandbox environment you used to explore how containers work, notice you have not yet used any of the Azure services that enable you to run containers in production.</span></span>
+
+<span data-ttu-id="fb675-104">이는 &mdash; 컨테이너에 대해 매우 긍정적인 것으로 클라우드에 배포하기 전에 로컬 환경에서 코드를 개발하고 테스트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="fb675-104">That's a really positive thing about containers &mdash; they enable you to develop and test your code in your local environment before you deploy to the cloud.</span></span> <span data-ttu-id="fb675-105">앱이나 서비스 로컬 환경에서 예상대로 작동하면 Azure에서 컨테이너를 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="fb675-105">Once your app or service does what you expect in your local environment, you can run your containers on Azure.</span></span> <span data-ttu-id="fb675-106">컨테이너는 앱에 대해 격리된 환경을 제공하기 때문에 로컬에서 실행할 때와 마찬가지로 클라우드에서 동일하게 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="fb675-106">Because a container provides an isolated environment for your app, it'll run the same in the cloud as it does when you run it locally.</span></span>
+
+<!-- Cleanup sandbox -->
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
+
+## <a name="additional-resources"></a><span data-ttu-id="fb675-107">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="fb675-107">Additional resources</span></span>
+
+- [<span data-ttu-id="fb675-108">Docker에 대한 자세한 정보</span><span class="sxs-lookup"><span data-stu-id="fb675-108">Learn more about Docker</span></span>](https://www.docker.com/)
+- [<span data-ttu-id="fb675-109">Azure용 Docker에 대한 자세한 정보</span><span class="sxs-lookup"><span data-stu-id="fb675-109">Learn about Docker for Azure</span></span>](https://docs.docker.com/docker-for-azure/)
+- [<span data-ttu-id="fb675-110">Docker 허브에 대한 자세한 정보</span><span class="sxs-lookup"><span data-stu-id="fb675-110">Learn more about Docker Hub</span></span>](https://hub.docker.com/)
