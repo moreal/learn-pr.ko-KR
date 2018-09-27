@@ -1,4 +1,5 @@
-::: zone pivot="csharp" .NET Core 응용 프로그램에 지원을 추가하여 구성 파일에서 연결 문자열을 검색해 보겠습니다. 먼저 필요한 배관을 추가하여 JSON 파일의 구성을 관리합니다.
+::: zone pivot="csharp"
+.NET Core 응용 프로그램에 지원을 추가하여 구성 파일에서 연결 문자열을 검색해 보겠습니다. 먼저 필요한 배관을 추가하여 JSON 파일의 구성을 관리합니다.
 
 ## <a name="create-a-json-configuration-file"></a>JSON 구성 파일 만들기
 
