@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-web-apps.4-using-asp.net-core-on-linux
-title: <span data-ttu-id="0fd57-101">Linux에서 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="0fd57-101">Working with ASP.NET Core on Linux</span></span>
+title: <span data-ttu-id="410ac-101">Linux에서 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="410ac-101">Working with ASP.NET Core on Linux</span></span>
 metadata:
-  title: <span data-ttu-id="0fd57-102">Linux에서 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="0fd57-102">Working with ASP.NET Core on Linux</span></span>
-  description: <span data-ttu-id="0fd57-103">Linux에서 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="0fd57-103">Working with ASP.NET Core on Linux</span></span>
+  title: <span data-ttu-id="410ac-102">Linux에서 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="410ac-102">Working with ASP.NET Core on Linux</span></span>
+  description: <span data-ttu-id="410ac-103">Linux에서 ASP.NET Core 작업</span><span class="sxs-lookup"><span data-stu-id="410ac-103">Working with ASP.NET Core on Linux</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: fdabb8d45d4cd91d8639418ab52a00542b7e52d3
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352098"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47147592"
 durationInMinutes: 10
 content: '[!include[](includes/4-using-asp.net-core-on-linux.md)]'

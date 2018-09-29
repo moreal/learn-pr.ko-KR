@@ -1,56 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.8-summary
-title: <span data-ttu-id="036dc-101">요약</span><span class="sxs-lookup"><span data-stu-id="036dc-101">Summary</span></span>
+title: <span data-ttu-id="e28dc-101">요약</span><span class="sxs-lookup"><span data-stu-id="e28dc-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="036dc-102">요약</span><span class="sxs-lookup"><span data-stu-id="036dc-102">Summary</span></span>
-  description: <span data-ttu-id="036dc-103">요약</span><span class="sxs-lookup"><span data-stu-id="036dc-103">Summary</span></span>
+  title: <span data-ttu-id="e28dc-102">요약</span><span class="sxs-lookup"><span data-stu-id="e28dc-102">Summary</span></span>
+  description: <span data-ttu-id="e28dc-103">요약</span><span class="sxs-lookup"><span data-stu-id="e28dc-103">Summary</span></span>
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: beddca2005b899f622f0368461a3a56016d6d830
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513005"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47147277"
 durationInMinutes: 2
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: <span data-ttu-id="036dc-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="036dc-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="e28dc-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="e28dc-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="036dc-105">텍스트 분석 API를 솔루션에 통합하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-105">You're integrating the Text Analytics API into your solution.</span></span> <span data-ttu-id="036dc-106">포털로 가서 eastus 지역의 구독 키를 등록했습니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-106">You went to the portal and signed up for a subscription key in the eastus region.</span></span> <span data-ttu-id="036dc-107">다음 중 `sentiment` 리소스에 액세스하기 위한 올바른 요청 URL은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="036dc-107">Which of the following is the correct request URL for accessing the  `sentiment` resource?</span></span>
+  - content: <span data-ttu-id="e28dc-105">텍스트 분석 API를 솔루션에 통합하려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-105">You're integrating the Text Analytics API into your solution.</span></span> <span data-ttu-id="e28dc-106">포털로 가서 eastus 지역의 구독 키를 등록했습니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-106">You went to the portal and signed up for a subscription key in the eastus region.</span></span> <span data-ttu-id="e28dc-107">다음 중 `sentiment` 리소스에 액세스하기 위한 올바른 요청 URL은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="e28dc-107">Which of the following is the correct request URL for accessing the  `sentiment` resource?</span></span>
     choices:
-    - content: <span data-ttu-id="036dc-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="036dc-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
+    - content: <span data-ttu-id="e28dc-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="e28dc-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="036dc-109">이 지역에서 요청을 수행하기 위해 액세스 키에 등록하지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-109">You did not sign up for an access key to make requests from this region.</span></span> <span data-ttu-id="036dc-110">엔드포인트에서는 등록할 때 선택한 지역, 서비스 URL 및 요청에 사용되는 리소스를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-110">Remember, the endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
-    - content: <span data-ttu-id="036dc-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span><span class="sxs-lookup"><span data-stu-id="036dc-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span></span>
+      incorrectExplanation: <span data-ttu-id="e28dc-109">이 지역에서 요청을 수행하기 위해 액세스 키에 등록하지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-109">You did not sign up for an access key to make requests from this region.</span></span> <span data-ttu-id="e28dc-110">엔드포인트에서는 등록할 때 선택한 지역, 서비스 URL 및 요청에 사용되는 리소스를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-110">Remember, the endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
+    - content: <span data-ttu-id="e28dc-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span><span class="sxs-lookup"><span data-stu-id="e28dc-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="036dc-112">이 URL은 엔터티 리소스에 요청을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-112">This URL sends a request to the entities resource.</span></span>
-    - content: <span data-ttu-id="036dc-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="036dc-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
+      incorrectExplanation: <span data-ttu-id="e28dc-112">이 URL은 엔터티 리소스에 요청을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-112">This URL sends a request to the entities resource.</span></span>
+    - content: <span data-ttu-id="e28dc-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="e28dc-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="036dc-114">엔드포인트에서는 등록할 때 선택한 지역, 서비스 URL 및 요청에 사용되는 리소스를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-114">The endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
-  - content: <span data-ttu-id="036dc-115">다음 중 큐에 메시지를 보내기 위해 큐 바인딩 정의에서 올바른 `direction` 설정은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="036dc-115">Which of the following is the correct `direction` setting on a queue binding definition in order to send messages to the queue?</span></span>
+      correctExplanation: <span data-ttu-id="e28dc-114">엔드포인트에서는 등록할 때 선택한 지역, 서비스 URL 및 요청에 사용되는 리소스를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-114">The endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
+  - content: <span data-ttu-id="e28dc-115">다음 중 큐에 메시지를 보내기 위해 큐 바인딩 정의에서 올바른 `direction` 설정은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="e28dc-115">Which of the following is the correct `direction` setting on a queue binding definition in order to send messages to the queue?</span></span>
     choices:
-    - content: <span data-ttu-id="036dc-116">out</span><span class="sxs-lookup"><span data-stu-id="036dc-116">out</span></span>
+    - content: <span data-ttu-id="e28dc-116">out</span><span class="sxs-lookup"><span data-stu-id="e28dc-116">out</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="036dc-117">메시지가 함수에서 큐로 출력되면 방향은 바깥쪽입니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-117">When the message is output from the function to the queue, the direction is out.</span></span>
-    - content: <span data-ttu-id="036dc-118">in</span><span class="sxs-lookup"><span data-stu-id="036dc-118">in</span></span>
+      correctExplanation: <span data-ttu-id="e28dc-117">메시지가 함수에서 큐로 출력되면 방향은 바깥쪽입니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-117">When the message is output from the function to the queue, the direction is out.</span></span>
+    - content: <span data-ttu-id="e28dc-118">in</span><span class="sxs-lookup"><span data-stu-id="e28dc-118">in</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="036dc-119">함수가 메시지를 입력으로 받아들이면 방향은 안쪽입니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-119">When the function takes the message as an input, the direction is in.</span></span>
-    - content: <span data-ttu-id="036dc-120">north</span><span class="sxs-lookup"><span data-stu-id="036dc-120">north</span></span>
+      incorrectExplanation: <span data-ttu-id="e28dc-119">함수가 메시지를 입력으로 받아들이면 방향은 안쪽입니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-119">When the function takes the message as an input, the direction is in.</span></span>
+    - content: <span data-ttu-id="e28dc-120">north</span><span class="sxs-lookup"><span data-stu-id="e28dc-120">north</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="036dc-121">"north" 값은 바인딩의 방향 속성에 맞지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-121">The value "north" is invalid for the direction property on a binding.</span></span>
-  - content: <span data-ttu-id="036dc-122">일부 텍스트를 사용하여 텍스트 분석 API에 요청을 게시하고 응답에 0.03의 감정 점수를 제공하는 경우 텍스트의 지배적인 감정은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="036dc-122">If I post a request to the Text Analytics API with some text and the response gives a sentiment score of 0.03, what is the dominant sentiment of the text?</span></span>
+      incorrectExplanation: <span data-ttu-id="e28dc-121">"north" 값은 바인딩의 방향 속성에 맞지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-121">The value "north" is invalid for the direction property on a binding.</span></span>
+  - content: <span data-ttu-id="e28dc-122">일부 텍스트를 사용하여 텍스트 분석 API에 요청을 게시하고 응답에 0.03의 감정 점수를 제공하는 경우 텍스트의 지배적인 감정은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="e28dc-122">If I post a request to the Text Analytics API with some text and the response gives a sentiment score of 0.03, what is the dominant sentiment of the text?</span></span>
     choices:
-    - content: <span data-ttu-id="036dc-123">중립</span><span class="sxs-lookup"><span data-stu-id="036dc-123">neutral</span></span>
+    - content: <span data-ttu-id="e28dc-123">중립</span><span class="sxs-lookup"><span data-stu-id="e28dc-123">neutral</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="036dc-124">API는 각 문서에 대해 0과 1 사이의 감정 점수를 반환합니다. 여기서 1이 가장 긍정적인 것입니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-124">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>
-    - content: <span data-ttu-id="036dc-125">부정</span><span class="sxs-lookup"><span data-stu-id="036dc-125">negative</span></span>
+      incorrectExplanation: <span data-ttu-id="e28dc-124">API는 각 문서에 대해 0과 1 사이의 감정 점수를 반환합니다. 여기서 1이 가장 긍정적인 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-124">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>
+    - content: <span data-ttu-id="e28dc-125">부정</span><span class="sxs-lookup"><span data-stu-id="e28dc-125">negative</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="036dc-126">API는 각 문서에 대해 0과 1 사이의 감정 점수를 반환합니다. 여기서 1이 가장 긍정적인 것입니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-126">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span> <span data-ttu-id="036dc-127">0.03의 점수는 0에 가깝고 따라서 부정적입니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-127">The score of 0.03 is close to 0 and, therefore, negative.</span></span>
-    - content: <span data-ttu-id="036dc-128">긍정</span><span class="sxs-lookup"><span data-stu-id="036dc-128">positive</span></span>
+      correctExplanation: <span data-ttu-id="e28dc-126">API는 각 문서에 대해 0과 1 사이의 감정 점수를 반환합니다. 여기서 1이 가장 긍정적인 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-126">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span> <span data-ttu-id="e28dc-127">0.03의 점수는 0에 가깝고 따라서 부정적입니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-127">The score of 0.03 is close to 0 and, therefore, negative.</span></span>
+    - content: <span data-ttu-id="e28dc-128">긍정</span><span class="sxs-lookup"><span data-stu-id="e28dc-128">positive</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="036dc-129">API는 각 문서에 대해 0과 1 사이의 감정 점수를 반환합니다. 여기서 1이 가장 긍정적인 것입니다.</span><span class="sxs-lookup"><span data-stu-id="036dc-129">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>
+      incorrectExplanation: <span data-ttu-id="e28dc-129">API는 각 문서에 대해 0과 1 사이의 감정 점수를 반환합니다. 여기서 1이 가장 긍정적인 것입니다.</span><span class="sxs-lookup"><span data-stu-id="e28dc-129">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>

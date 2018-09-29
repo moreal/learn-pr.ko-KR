@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.8-summary
-title: <span data-ttu-id="bb620-101">요약</span><span class="sxs-lookup"><span data-stu-id="bb620-101">Summary</span></span>
+title: <span data-ttu-id="5719e-101">요약</span><span class="sxs-lookup"><span data-stu-id="5719e-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="bb620-102">요약</span><span class="sxs-lookup"><span data-stu-id="bb620-102">Summary</span></span>
-  description: <span data-ttu-id="bb620-103">요약</span><span class="sxs-lookup"><span data-stu-id="bb620-103">Summary</span></span>
+  title: <span data-ttu-id="5719e-102">요약</span><span class="sxs-lookup"><span data-stu-id="5719e-102">Summary</span></span>
+  description: <span data-ttu-id="5719e-103">요약</span><span class="sxs-lookup"><span data-stu-id="5719e-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 49eda8027510861e39be1d5297a68850c9f9e6e2
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570567"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47147583"
 durationInMinutes: 5
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: '<span data-ttu-id="bb620-104">지식 점검: Azure를 위한 개발 환경 준비</span><span class="sxs-lookup"><span data-stu-id="bb620-104">Knowledge check: Prepare your development environment for Azure</span></span>'
+  title: '<span data-ttu-id="5719e-104">지식 점검: Azure를 위한 개발 환경 준비</span><span class="sxs-lookup"><span data-stu-id="5719e-104">Knowledge check: Prepare your development environment for Azure</span></span>'
   questions:
-  - content: <span data-ttu-id="bb620-105">Visual Studio Code는 어떤 운영 체제를 지원하나요?</span><span class="sxs-lookup"><span data-stu-id="bb620-105">Visual Studio Code supports which operating system?</span></span>
+  - content: <span data-ttu-id="5719e-105">Visual Studio Code는 어떤 운영 체제를 지원하나요?</span><span class="sxs-lookup"><span data-stu-id="5719e-105">Visual Studio Code supports which operating system?</span></span>
     choices:
-    - content: <span data-ttu-id="bb620-106">Linux</span><span class="sxs-lookup"><span data-stu-id="bb620-106">Linux</span></span>
+    - content: <span data-ttu-id="5719e-106">Linux</span><span class="sxs-lookup"><span data-stu-id="5719e-106">Linux</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bb620-107">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-107">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-    - content: <span data-ttu-id="bb620-108">macOS</span><span class="sxs-lookup"><span data-stu-id="bb620-108">macOS</span></span>
+      incorrectExplanation: <span data-ttu-id="5719e-107">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-107">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+    - content: <span data-ttu-id="5719e-108">macOS</span><span class="sxs-lookup"><span data-stu-id="5719e-108">macOS</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bb620-109">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-109">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-    - content: <span data-ttu-id="bb620-110">Windows</span><span class="sxs-lookup"><span data-stu-id="bb620-110">Windows</span></span>
+      incorrectExplanation: <span data-ttu-id="5719e-109">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-109">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+    - content: <span data-ttu-id="5719e-110">Windows</span><span class="sxs-lookup"><span data-stu-id="5719e-110">Windows</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bb620-111">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-111">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-    - content: <span data-ttu-id="bb620-112">위의 모든 항목</span><span class="sxs-lookup"><span data-stu-id="bb620-112">All of the above</span></span>
+      incorrectExplanation: <span data-ttu-id="5719e-111">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-111">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+    - content: <span data-ttu-id="5719e-112">위의 모든 항목</span><span class="sxs-lookup"><span data-stu-id="5719e-112">All of the above</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="bb620-113">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-113">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-  - content: <span data-ttu-id="bb620-114">Microsoft는 다음 중 어느 편집기/IDE에 대한 Azure 확장을 제공하나요?</span><span class="sxs-lookup"><span data-stu-id="bb620-114">Microsoft supplies an Azure extension for which of the following editor/IDE?</span></span>
+      correctExplanation: <span data-ttu-id="5719e-113">Visual Studio Code는 플랫폼 간 및 Linux, macOS, Windows를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-113">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+  - content: <span data-ttu-id="5719e-114">Microsoft는 다음 중 어느 편집기/IDE에 대한 Azure 확장을 제공하나요?</span><span class="sxs-lookup"><span data-stu-id="5719e-114">Microsoft supplies an Azure extension for which of the following editor/IDE?</span></span>
     choices:
-    - content: <span data-ttu-id="bb620-115">Eclipse</span><span class="sxs-lookup"><span data-stu-id="bb620-115">Eclipse</span></span>
+    - content: <span data-ttu-id="5719e-115">Eclipse</span><span class="sxs-lookup"><span data-stu-id="5719e-115">Eclipse</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bb620-116">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-116">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
-    - content: <span data-ttu-id="bb620-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bb620-117">Visual Studio</span></span>
+      incorrectExplanation: <span data-ttu-id="5719e-116">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-116">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="5719e-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5719e-117">Visual Studio</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bb620-118">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-118">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
-    - content: <span data-ttu-id="bb620-119">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="bb620-119">Visual Studio Code</span></span>
+      incorrectExplanation: <span data-ttu-id="5719e-118">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-118">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="5719e-119">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="5719e-119">Visual Studio Code</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bb620-120">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-120">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
-    - content: <span data-ttu-id="bb620-121">위의 모든 항목</span><span class="sxs-lookup"><span data-stu-id="bb620-121">All of the above</span></span>
+      incorrectExplanation: <span data-ttu-id="5719e-120">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-120">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="5719e-121">위의 모든 항목</span><span class="sxs-lookup"><span data-stu-id="5719e-121">All of the above</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="bb620-122">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="bb620-122">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+      correctExplanation: <span data-ttu-id="5719e-122">Azure 개발에 사용할 도구를 선택하면 Microsoft는 Eclipse, Visual Studio 2017, Mac용 Visual Studio 및 Visual Studio Code를 위한 Azure 통합 기능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="5719e-122">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
