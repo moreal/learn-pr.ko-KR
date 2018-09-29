@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.distribute-data-globally-with-cosmos-db.1-introduction
 metadata:
-  title: <span data-ttu-id="1fa2f-101">소개</span><span class="sxs-lookup"><span data-stu-id="1fa2f-101">Introduction</span></span>
-  description: <span data-ttu-id="1fa2f-102">Azure Cosmos DB를 사용하여 데이터를 글로벌 배포하는 방법을 알아보세요.</span><span class="sxs-lookup"><span data-stu-id="1fa2f-102">Learn how to distribute data globally with Azure Cosmos DB.</span></span>
+  title: <span data-ttu-id="14cb7-101">소개</span><span class="sxs-lookup"><span data-stu-id="14cb7-101">Introduction</span></span>
+  description: <span data-ttu-id="14cb7-102">Azure Cosmos DB를 사용하여 데이터를 글로벌 배포하는 방법을 알아보세요.</span><span class="sxs-lookup"><span data-stu-id="14cb7-102">Learn how to distribute data globally with Azure Cosmos DB.</span></span>
   displayType: one-column
   ms.openlocfilehash: 91b7f0f62eee21ec1363ce40c10bae1d1cb273f8
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348673"
-title: <span data-ttu-id="1fa2f-103">소개</span><span class="sxs-lookup"><span data-stu-id="1fa2f-103">Introduction</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47143966"
+title: <span data-ttu-id="14cb7-103">소개</span><span class="sxs-lookup"><span data-stu-id="14cb7-103">Introduction</span></span>
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

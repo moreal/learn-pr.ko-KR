@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.6-backup-services
-title: <span data-ttu-id="f34c6-101">가상 머신 백업</span><span class="sxs-lookup"><span data-stu-id="f34c6-101">Back up your virtual machines</span></span>
+title: <span data-ttu-id="bd60d-101">가상 머신 백업</span><span class="sxs-lookup"><span data-stu-id="bd60d-101">Back up your virtual machines</span></span>
 metadata:
-  title: <span data-ttu-id="f34c6-102">가상 머신 백업</span><span class="sxs-lookup"><span data-stu-id="f34c6-102">Back up your virtual machines</span></span>
-  description: <span data-ttu-id="f34c6-103">가상 머신 백업</span><span class="sxs-lookup"><span data-stu-id="f34c6-103">Back up your virtual machines</span></span>
+  title: <span data-ttu-id="bd60d-102">가상 머신 백업</span><span class="sxs-lookup"><span data-stu-id="bd60d-102">Back up your virtual machines</span></span>
+  description: <span data-ttu-id="bd60d-103">가상 머신 백업</span><span class="sxs-lookup"><span data-stu-id="bd60d-103">Back up your virtual machines</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b8435c04f0ce74562754b635deb42095814f89f0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346564"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146551"
 durationInMinutes: 7
 content: '[!include[](includes/6-backup-services.md)]'

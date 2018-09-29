@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-portal
-title: <span data-ttu-id="57bc6-101">연습 - Azure Portal을 사용하여 Azure Database for PostgreSQL 서버 만들기</span><span class="sxs-lookup"><span data-stu-id="57bc6-101">Exercise - Create an Azure Database for PostgreSQL server using the Azure portal</span></span>
+title: <span data-ttu-id="fed68-101">연습 - Azure Portal을 사용하여 Azure Database for PostgreSQL 서버 만들기</span><span class="sxs-lookup"><span data-stu-id="fed68-101">Exercise - Create an Azure Database for PostgreSQL server using the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="57bc6-102">연습 - Azure Portal을 사용하여 Azure Database for PostgreSQL 서버 만들기</span><span class="sxs-lookup"><span data-stu-id="57bc6-102">Exercise - Create an Azure Database for PostgreSQL server using the Azure portal</span></span>
-  description: <span data-ttu-id="57bc6-103">이 랩에서는 Azure Portal을 사용하여 Azure Database for PostgreSQL 서버를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="57bc6-103">In this lab, you will use the Azure portal to create an Azure Database for PostgreSQL server.</span></span>
+  title: <span data-ttu-id="fed68-102">연습 - Azure Portal을 사용하여 Azure Database for PostgreSQL 서버 만들기</span><span class="sxs-lookup"><span data-stu-id="fed68-102">Exercise - Create an Azure Database for PostgreSQL server using the Azure portal</span></span>
+  description: <span data-ttu-id="fed68-103">이 랩에서는 Azure Portal을 사용하여 Azure Database for PostgreSQL 서버를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="fed68-103">In this lab, you will use the Azure portal to create an Azure Database for PostgreSQL server.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 4c90f88915bdc44948bb6720111365b3440c6e94
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348902"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144937"
 azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/4-create-postgresql-db-server-via-azure-portal.md)]'

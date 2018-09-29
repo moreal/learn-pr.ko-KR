@@ -1,11 +1,11 @@
-- <span data-ttu-id="ce844-101">미국 서부 2</span><span class="sxs-lookup"><span data-stu-id="ce844-101">West US 2</span></span>
-- <span data-ttu-id="ce844-102">미국 중서부</span><span class="sxs-lookup"><span data-stu-id="ce844-102">West Central US</span></span>
-- <span data-ttu-id="ce844-103">미국 중남부</span><span class="sxs-lookup"><span data-stu-id="ce844-103">South Central US</span></span>
-- <span data-ttu-id="ce844-104">미국 중부</span><span class="sxs-lookup"><span data-stu-id="ce844-104">Central US</span></span>
-- <span data-ttu-id="ce844-105">미국 동부</span><span class="sxs-lookup"><span data-stu-id="ce844-105">East US</span></span>
-- <span data-ttu-id="ce844-106">유럽 서부</span><span class="sxs-lookup"><span data-stu-id="ce844-106">West Europe</span></span>
-- <span data-ttu-id="ce844-107">동남 아시아</span><span class="sxs-lookup"><span data-stu-id="ce844-107">Southeast Asia</span></span>
-- <span data-ttu-id="ce844-108">일본 동부</span><span class="sxs-lookup"><span data-stu-id="ce844-108">Japan East</span></span>
-- <span data-ttu-id="ce844-109">브라질 남부</span><span class="sxs-lookup"><span data-stu-id="ce844-109">Brazil South</span></span>
-- <span data-ttu-id="ce844-110">오스트레일리아 남동부</span><span class="sxs-lookup"><span data-stu-id="ce844-110">Australia Southeast</span></span>
-- <span data-ttu-id="ce844-111">인도 중부</span><span class="sxs-lookup"><span data-stu-id="ce844-111">Central India</span></span>
+- <span data-ttu-id="f12b2-101">미국 서부 2</span><span class="sxs-lookup"><span data-stu-id="f12b2-101">West US 2</span></span>
+- <span data-ttu-id="f12b2-102">미국 중서부</span><span class="sxs-lookup"><span data-stu-id="f12b2-102">West Central US</span></span>
+- <span data-ttu-id="f12b2-103">미국 중남부</span><span class="sxs-lookup"><span data-stu-id="f12b2-103">South Central US</span></span>
+- <span data-ttu-id="f12b2-104">미국 중부</span><span class="sxs-lookup"><span data-stu-id="f12b2-104">Central US</span></span>
+- <span data-ttu-id="f12b2-105">미국 동부</span><span class="sxs-lookup"><span data-stu-id="f12b2-105">East US</span></span>
+- <span data-ttu-id="f12b2-106">유럽 서부</span><span class="sxs-lookup"><span data-stu-id="f12b2-106">West Europe</span></span>
+- <span data-ttu-id="f12b2-107">동남 아시아</span><span class="sxs-lookup"><span data-stu-id="f12b2-107">Southeast Asia</span></span>
+- <span data-ttu-id="f12b2-108">일본 동부</span><span class="sxs-lookup"><span data-stu-id="f12b2-108">Japan East</span></span>
+- <span data-ttu-id="f12b2-109">브라질 남부</span><span class="sxs-lookup"><span data-stu-id="f12b2-109">Brazil South</span></span>
+- <span data-ttu-id="f12b2-110">오스트레일리아 남동부</span><span class="sxs-lookup"><span data-stu-id="f12b2-110">Australia Southeast</span></span>
+- <span data-ttu-id="f12b2-111">인도 중부</span><span class="sxs-lookup"><span data-stu-id="f12b2-111">Central India</span></span>

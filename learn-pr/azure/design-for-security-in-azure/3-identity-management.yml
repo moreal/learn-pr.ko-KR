@@ -1,37 +1,37 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.3-identity-management
-title: <span data-ttu-id="d26e7-101">ID 관리</span><span class="sxs-lookup"><span data-stu-id="d26e7-101">Identity management</span></span>
+title: <span data-ttu-id="9ddf2-101">ID 관리</span><span class="sxs-lookup"><span data-stu-id="9ddf2-101">Identity management</span></span>
 metadata:
-  title: <span data-ttu-id="d26e7-102">ID 관리</span><span class="sxs-lookup"><span data-stu-id="d26e7-102">Identity management</span></span>
-  description: <span data-ttu-id="d26e7-103">이 단원에서는 ID를 보호하는 방법을 살펴보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="d26e7-103">In this unit we'll discuss how to protect your identities</span></span>
+  title: <span data-ttu-id="9ddf2-102">ID 관리</span><span class="sxs-lookup"><span data-stu-id="9ddf2-102">Identity management</span></span>
+  description: <span data-ttu-id="9ddf2-103">이 단원에서는 ID를 보호하는 방법을 살펴보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="9ddf2-103">In this unit we'll discuss how to protect your identities</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 6a814459cd2e9ebd92f3b49c7552143a1d5bb2e6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348150"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47143638"
 durationInMinutes: 10
 content: >
   [!include[](includes/3-identity-management.md)]
 quiz:
-  title: <span data-ttu-id="d26e7-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="d26e7-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="9ddf2-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="9ddf2-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="d26e7-105">Single Sign-On의 이점이 아닌 것은 다음 중 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="d26e7-105">Which of the following is NOT a benefit of single sign-on?</span></span>
+  - content: <span data-ttu-id="9ddf2-105">Single Sign-On의 이점이 아닌 것은 다음 중 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="9ddf2-105">Which of the following is NOT a benefit of single sign-on?</span></span>
     choices:
-    - content: <span data-ttu-id="d26e7-106">사용자에게 사용 권한을 할당하는 복잡성 증가</span><span class="sxs-lookup"><span data-stu-id="d26e7-106">Increased complexity assigning permissions to users</span></span>
+    - content: <span data-ttu-id="9ddf2-106">사용자에게 사용 권한을 할당하는 복잡성 증가</span><span class="sxs-lookup"><span data-stu-id="9ddf2-106">Increased complexity assigning permissions to users</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="d26e7-107">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d26e7-107">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
-    - content: <span data-ttu-id="d26e7-108">사용자가 기억해야 할 ID 및 암호 감소</span><span class="sxs-lookup"><span data-stu-id="d26e7-108">Fewer IDs and passwords for users to remember</span></span>
+      correctExplanation: <span data-ttu-id="9ddf2-107">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9ddf2-107">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+    - content: <span data-ttu-id="9ddf2-108">사용자가 기억해야 할 ID 및 암호 감소</span><span class="sxs-lookup"><span data-stu-id="9ddf2-108">Fewer IDs and passwords for users to remember</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d26e7-109">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d26e7-109">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
-    - content: <span data-ttu-id="d26e7-110">사용자가 역할을 변경하거나 조직을 떠날 때 해야 하는 관리 업무 감소</span><span class="sxs-lookup"><span data-stu-id="d26e7-110">Lower administration effort when users change roles or leave an organization</span></span>
+      incorrectExplanation: <span data-ttu-id="9ddf2-109">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9ddf2-109">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+    - content: <span data-ttu-id="9ddf2-110">사용자가 역할을 변경하거나 조직을 떠날 때 해야 하는 관리 업무 감소</span><span class="sxs-lookup"><span data-stu-id="9ddf2-110">Lower administration effort when users change roles or leave an organization</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d26e7-111">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d26e7-111">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
-    - content: <span data-ttu-id="d26e7-112">응용 프로그램에서 일관적인 암호 정책 적용</span><span class="sxs-lookup"><span data-stu-id="d26e7-112">Ensures a consistent password policy across applications</span></span>
+      incorrectExplanation: <span data-ttu-id="9ddf2-111">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9ddf2-111">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+    - content: <span data-ttu-id="9ddf2-112">응용 프로그램에서 일관적인 암호 정책 적용</span><span class="sxs-lookup"><span data-stu-id="9ddf2-112">Ensures a consistent password policy across applications</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d26e7-113">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d26e7-113">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+      incorrectExplanation: <span data-ttu-id="9ddf2-113">Single Sign-On은 관리할 ID가 적기 때문에 사용자에게 사용 권한을 할당하는 데 필요한 복잡성을 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9ddf2-113">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>

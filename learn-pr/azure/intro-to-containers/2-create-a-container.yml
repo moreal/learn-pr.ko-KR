@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-containers.2-create-a-container
 metadata:
-  title: <span data-ttu-id="2f6b0-101">VM을 사용하여 컨테이너 웹 서버 호스트</span><span class="sxs-lookup"><span data-stu-id="2f6b0-101">Use a VM to host a containerized web server</span></span>
-  description: <span data-ttu-id="2f6b0-102">VM을 만들고 이를 사용하여 Nginx 컨테이너 웹 서버를 호스트합니다.</span><span class="sxs-lookup"><span data-stu-id="2f6b0-102">Create a VM and use it to host an Nginx containerized web server.</span></span>
+  title: <span data-ttu-id="718c1-101">VM을 사용하여 컨테이너 웹 서버 호스트</span><span class="sxs-lookup"><span data-stu-id="718c1-101">Use a VM to host a containerized web server</span></span>
+  description: <span data-ttu-id="718c1-102">VM을 만들고 이를 사용하여 Nginx 컨테이너 웹 서버를 호스트합니다.</span><span class="sxs-lookup"><span data-stu-id="718c1-102">Create a VM and use it to host an Nginx containerized web server.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 44bca90ecad4836b288aef78b824b374e37cab86
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570514"
-title: <span data-ttu-id="2f6b0-103">VM을 사용하여 컨테이너 웹 서버 호스트</span><span class="sxs-lookup"><span data-stu-id="2f6b0-103">Use a VM to host a containerized web server</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144739"
+title: <span data-ttu-id="718c1-103">VM을 사용하여 컨테이너 웹 서버 호스트</span><span class="sxs-lookup"><span data-stu-id="718c1-103">Use a VM to host a containerized web server</span></span>
 interactive: bash
 azureSandbox: true
 durationInMinutes: 8

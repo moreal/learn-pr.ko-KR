@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.3-testing-the-vm
-title: <span data-ttu-id="2dc97-101">새 가상 머신 테스트</span><span class="sxs-lookup"><span data-stu-id="2dc97-101">Test your new virtual machine</span></span>
+title: <span data-ttu-id="462a8-101">새 가상 머신 테스트</span><span class="sxs-lookup"><span data-stu-id="462a8-101">Test your new virtual machine</span></span>
 metadata:
-  title: <span data-ttu-id="2dc97-102">새 가상 머신 테스트</span><span class="sxs-lookup"><span data-stu-id="2dc97-102">Test your new virtual machine</span></span>
-  description: <span data-ttu-id="2dc97-103">SSH를 사용하여 새로 만든 Azure Virtual Machine에 연결</span><span class="sxs-lookup"><span data-stu-id="2dc97-103">Use SSH to connect to the newly created Azure Virtual Machine</span></span>
+  title: <span data-ttu-id="462a8-102">새 가상 머신 테스트</span><span class="sxs-lookup"><span data-stu-id="462a8-102">Test your new virtual machine</span></span>
+  description: <span data-ttu-id="462a8-103">SSH를 사용하여 새로 만든 Azure Virtual Machine에 연결</span><span class="sxs-lookup"><span data-stu-id="462a8-103">Use SSH to connect to the newly created Azure Virtual Machine</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 460fab62b7bcf812434f660dc2159aabba11d1aa
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348137"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146374"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 3

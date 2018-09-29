@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
-title: <span data-ttu-id="a23ac-101">저장소 계정 모델 초기화</span><span class="sxs-lookup"><span data-stu-id="a23ac-101">Initialize the storage account model</span></span>
+title: <span data-ttu-id="c989a-101">저장소 계정 모델 초기화</span><span class="sxs-lookup"><span data-stu-id="c989a-101">Initialize the storage account model</span></span>
 metadata:
-  title: <span data-ttu-id="a23ac-102">저장소 계정 모델 초기화</span><span class="sxs-lookup"><span data-stu-id="a23ac-102">Initialize the storage account model</span></span>
-  description: <span data-ttu-id="a23ac-103">저장소 계정 모델 초기화</span><span class="sxs-lookup"><span data-stu-id="a23ac-103">Initialize the storage account model</span></span>
+  title: <span data-ttu-id="c989a-102">저장소 계정 모델 초기화</span><span class="sxs-lookup"><span data-stu-id="c989a-102">Initialize the storage account model</span></span>
+  description: <span data-ttu-id="c989a-103">저장소 계정 모델 초기화</span><span class="sxs-lookup"><span data-stu-id="c989a-103">Initialize the storage account model</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c8c77ddc9e15023aa6f253a477b6343c47d43f65
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513598"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47143883"
 durationInMinutes: 10
 content: '[!include[](includes/9-initialize-the-storage-account-model.md)]'

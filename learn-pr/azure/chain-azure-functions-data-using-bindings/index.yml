@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 8eb18cc5400b83049baa56b02ecfaf4f72441a0a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349001"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144712"
 title: 입력 및 출력 바인딩을 사용하여 함께 Azure Functions 연결
 summary: Azure Functions를 사용하면 함수 코드를 데이터 및 서비스와 쉽게 통합할 수 있습니다. 바인딩의 기능을 통해 데이터 원본이 읽고 쓰도록 선언하고, 나머지는 Azure Functions가 처리하도록 합니다.
 abstract: >

@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b45ee8db884a8fb2414206464e65610f0753c148
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348462"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47142982"
 title: Azure Cosmos DB를 사용하여 전세계에 데이터 배포
 summary: Azure Cosmos DB를 사용하여 전세계에 데이터를 배포하는 방법을 알아보세요.
 abstract: >

@@ -1,67 +1,67 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.8-summary
-title: <span data-ttu-id="b2b65-101">요약</span><span class="sxs-lookup"><span data-stu-id="b2b65-101">Summary</span></span>
+title: <span data-ttu-id="6ff8d-101">요약</span><span class="sxs-lookup"><span data-stu-id="6ff8d-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="b2b65-102">학습한 내용</span><span class="sxs-lookup"><span data-stu-id="b2b65-102">What we've learned</span></span>
-  description: <span data-ttu-id="b2b65-103">요약</span><span class="sxs-lookup"><span data-stu-id="b2b65-103">Summary</span></span>
+  title: <span data-ttu-id="6ff8d-102">학습한 내용</span><span class="sxs-lookup"><span data-stu-id="6ff8d-102">What we've learned</span></span>
+  description: <span data-ttu-id="6ff8d-103">요약</span><span class="sxs-lookup"><span data-stu-id="6ff8d-103">Summary</span></span>
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7f72a24bc1323b3adc1ab6844563c82fb7a54798
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351425"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47145486"
 durationInMinutes: 5
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: <span data-ttu-id="b2b65-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="b2b65-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="6ff8d-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="6ff8d-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="b2b65-105">다음 중 함수 구성 데이터가 들어 있는 파일의 올바른 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="b2b65-105">Which of the following is the correct name for the file that contains function configuration data?</span></span>
+  - content: <span data-ttu-id="6ff8d-105">다음 중 함수 구성 데이터가 들어 있는 파일의 올바른 이름은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="6ff8d-105">Which of the following is the correct name for the file that contains function configuration data?</span></span>
     choices:
-    - content: <span data-ttu-id="b2b65-106">config.txt</span><span class="sxs-lookup"><span data-stu-id="b2b65-106">config.txt</span></span>
+    - content: <span data-ttu-id="6ff8d-106">config.txt</span><span class="sxs-lookup"><span data-stu-id="6ff8d-106">config.txt</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-107">구성은 JSON으로 작성됩니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-107">The configuration is written in JSON.</span></span>
-    - content: <span data-ttu-id="b2b65-108">config.json</span><span class="sxs-lookup"><span data-stu-id="b2b65-108">config.json</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-107">구성은 JSON으로 작성됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-107">The configuration is written in JSON.</span></span>
+    - content: <span data-ttu-id="6ff8d-108">config.json</span><span class="sxs-lookup"><span data-stu-id="6ff8d-108">config.json</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-109">JSON 파일이지만, 이것은 올바른 이름이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-109">It is a JSON file, but this is not the correct name.</span></span>
-    - content: <span data-ttu-id="b2b65-110">function.json</span><span class="sxs-lookup"><span data-stu-id="b2b65-110">function.json</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-109">JSON 파일이지만, 이것은 올바른 이름이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-109">It is a JSON file, but this is not the correct name.</span></span>
+    - content: <span data-ttu-id="6ff8d-110">function.json</span><span class="sxs-lookup"><span data-stu-id="6ff8d-110">function.json</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b2b65-111">구성의 이름은 `function.json`이며 바인딩 선언 같은 JSON 구성 데이터가 들어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-111">The configuration is named `function.json`, which contains JSON configuration data such as binding declarations.</span></span>
-  - content: <span data-ttu-id="b2b65-112">다음 중 지원되는 입력 바인딩 유형은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="b2b65-112">Which of the following is a supported input binding type?</span></span>
+      correctExplanation: <span data-ttu-id="6ff8d-111">구성의 이름은 `function.json`이며 바인딩 선언 같은 JSON 구성 데이터가 들어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-111">The configuration is named `function.json`, which contains JSON configuration data such as binding declarations.</span></span>
+  - content: <span data-ttu-id="6ff8d-112">다음 중 지원되는 입력 바인딩 유형은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="6ff8d-112">Which of the following is a supported input binding type?</span></span>
     choices:
-    - content: <span data-ttu-id="b2b65-113">Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="b2b65-113">Cosmos DB</span></span>
+    - content: <span data-ttu-id="6ff8d-113">Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="6ff8d-113">Cosmos DB</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b2b65-114">Azure Cosmos DB 입력 바인딩은 SQL API를 사용하여 하나 이상의 Azure Cosmos DB 문서를 검색하고, 함수의 입력 매개 변수에 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-114">The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function.</span></span>
-    - content: <span data-ttu-id="b2b65-115">SendGrid</span><span class="sxs-lookup"><span data-stu-id="b2b65-115">SendGrid</span></span>
+      correctExplanation: <span data-ttu-id="6ff8d-114">Azure Cosmos DB 입력 바인딩은 SQL API를 사용하여 하나 이상의 Azure Cosmos DB 문서를 검색하고, 함수의 입력 매개 변수에 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-114">The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function.</span></span>
+    - content: <span data-ttu-id="6ff8d-115">SendGrid</span><span class="sxs-lookup"><span data-stu-id="6ff8d-115">SendGrid</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-116">SendGrid는 지원되는 입력 바인딩 유형이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-116">SendGrid is not a supported input binding type.</span></span>
-    - content: <span data-ttu-id="b2b65-117">Service Bus</span><span class="sxs-lookup"><span data-stu-id="b2b65-117">Service Bus</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-116">SendGrid는 지원되는 입력 바인딩 유형이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-116">SendGrid is not a supported input binding type.</span></span>
+    - content: <span data-ttu-id="6ff8d-117">Service Bus</span><span class="sxs-lookup"><span data-stu-id="6ff8d-117">Service Bus</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-118">Service Bus는 지원되는 입력 바인딩 유형이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-118">Service Bus is not a supported input binding type.</span></span>
-  - content: <span data-ttu-id="b2b65-119">함수에는 몇 개의 트리거가 있어야 하나요?</span><span class="sxs-lookup"><span data-stu-id="b2b65-119">How many triggers must a function have?</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-118">Service Bus는 지원되는 입력 바인딩 유형이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-118">Service Bus is not a supported input binding type.</span></span>
+  - content: <span data-ttu-id="6ff8d-119">함수에는 몇 개의 트리거가 있어야 하나요?</span><span class="sxs-lookup"><span data-stu-id="6ff8d-119">How many triggers must a function have?</span></span>
     choices:
-    - content: <span data-ttu-id="b2b65-120">0</span><span class="sxs-lookup"><span data-stu-id="b2b65-120">zero</span></span>
+    - content: <span data-ttu-id="6ff8d-120">0</span><span class="sxs-lookup"><span data-stu-id="6ff8d-120">zero</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-121">함수에는 정확히 하나의 트리거만 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-121">A function must have exactly one trigger.</span></span>
-    - content: <span data-ttu-id="b2b65-122">1</span><span class="sxs-lookup"><span data-stu-id="b2b65-122">one</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-121">함수에는 정확히 하나의 트리거만 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-121">A function must have exactly one trigger.</span></span>
+    - content: <span data-ttu-id="6ff8d-122">1</span><span class="sxs-lookup"><span data-stu-id="6ff8d-122">one</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b2b65-123">함수에는 정확히 하나의 트리거만 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-123">A function must have exactly one trigger.</span></span>
-    - content: <span data-ttu-id="b2b65-124">2</span><span class="sxs-lookup"><span data-stu-id="b2b65-124">two</span></span>
+      correctExplanation: <span data-ttu-id="6ff8d-123">함수에는 정확히 하나의 트리거만 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-123">A function must have exactly one trigger.</span></span>
+    - content: <span data-ttu-id="6ff8d-124">2</span><span class="sxs-lookup"><span data-stu-id="6ff8d-124">two</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-125">함수에는 정확히 하나의 트리거만 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-125">A function must have exactly one trigger.</span></span>
-  - content: <span data-ttu-id="b2b65-126">이름이 **myQueueItem**인 함수 매개 변수를 사용하여 Azure Queue Storage에 "hello bindings"를 쓰는 JavaScript 줄은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="b2b65-126">Which of the following lines of JavaScript writes "hello bindings" to an Azure Queue Storage queue using a function parameter called **myQueueItem**?</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-125">함수에는 정확히 하나의 트리거만 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-125">A function must have exactly one trigger.</span></span>
+  - content: <span data-ttu-id="6ff8d-126">이름이 **myQueueItem**인 함수 매개 변수를 사용하여 Azure Queue Storage에 "hello bindings"를 쓰는 JavaScript 줄은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="6ff8d-126">Which of the following lines of JavaScript writes "hello bindings" to an Azure Queue Storage queue using a function parameter called **myQueueItem**?</span></span>
     choices:
-    - content: <span data-ttu-id="b2b65-127">context.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="b2b65-127">context.myQueueItem = "hello bindings";</span></span>
+    - content: <span data-ttu-id="6ff8d-127">context.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="6ff8d-127">context.myQueueItem = "hello bindings";</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-128">올바른 매개 변수 이름이지만 개체의 컨텍스트를 통해 액세스해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-128">This is the correct parameter name but it needs to be access through the context of the object.</span></span>
-    - content: <span data-ttu-id="b2b65-129">context.bindings.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="b2b65-129">context.bindings.myQueueItem = "hello bindings";</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-128">올바른 매개 변수 이름이지만 개체의 컨텍스트를 통해 액세스해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-128">This is the correct parameter name but it needs to be access through the context of the object.</span></span>
+    - content: <span data-ttu-id="6ff8d-129">context.bindings.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="6ff8d-129">context.bindings.myQueueItem = "hello bindings";</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b2b65-130">context.bindings는 모든 입력 및 출력 데이터를 포함하는 명명된 개체를 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-130">context.bindings returns a named object that contains all your input and output data.</span></span>
-    - content: <span data-ttu-id="b2b65-131">myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="b2b65-131">myQueueItem = "hello bindings";</span></span>
+      correctExplanation: <span data-ttu-id="6ff8d-130">context.bindings는 모든 입력 및 출력 데이터를 포함하는 명명된 개체를 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-130">context.bindings returns a named object that contains all your input and output data.</span></span>
+    - content: <span data-ttu-id="6ff8d-131">myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="6ff8d-131">myQueueItem = "hello bindings";</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b2b65-132">올바른 매개 변수 이름이지만 개체의 컨텍스트를 통해 액세스해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b2b65-132">This is the correct parameter name but it needs to be access through the context of the object.</span></span>
+      incorrectExplanation: <span data-ttu-id="6ff8d-132">올바른 매개 변수 이름이지만 개체의 컨텍스트를 통해 액세스해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ff8d-132">This is the correct parameter name but it needs to be access through the context of the object.</span></span>

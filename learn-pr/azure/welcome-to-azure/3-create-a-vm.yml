@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.3-create-a-vm
-title: <span data-ttu-id="7d2c7-101">가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="7d2c7-101">Create a virtual machine</span></span>
+title: <span data-ttu-id="7dd92-101">가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="7dd92-101">Create a virtual machine</span></span>
 metadata:
-  title: <span data-ttu-id="7d2c7-102">가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="7d2c7-102">Create a virtual machine</span></span>
-  description: <span data-ttu-id="7d2c7-103">관심 분야에 관계 없이 첫 번째 가상 머신을 만들어 클라우드를 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="7d2c7-103">No matter your area of interest, get started with the cloud by creating your first virtual machine.</span></span>
+  title: <span data-ttu-id="7dd92-102">가상 머신 만들기</span><span class="sxs-lookup"><span data-stu-id="7dd92-102">Create a virtual machine</span></span>
+  description: <span data-ttu-id="7dd92-103">관심 분야에 관계 없이 첫 번째 가상 머신을 만들어 클라우드를 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="7dd92-103">No matter your area of interest, get started with the cloud by creating your first virtual machine.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
@@ -11,11 +11,11 @@ metadata:
   ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
   ms.openlocfilehash: 9d69aad8a411847d6b534b252019b6a986aa229a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347809"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146854"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 7
@@ -28,4 +28,4 @@ tasks:
     resource:
       type: Microsoft.Compute/virtualMachines
       name: myVM
-  hint: <span data-ttu-id="7d2c7-104">가상 머신 만들기에 표시된 대로 `az vm create` 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="7d2c7-104">Run the `az vm create` command as shown to create your virtual machine.</span></span>
+  hint: <span data-ttu-id="7dd92-104">가상 머신 만들기에 표시된 대로 `az vm create` 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="7dd92-104">Run the `az vm create` command as shown to create your virtual machine.</span></span>

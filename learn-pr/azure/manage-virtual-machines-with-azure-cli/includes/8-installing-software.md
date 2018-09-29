@@ -1,40 +1,40 @@
-<span data-ttu-id="9be6c-101">VM에서 시도하려는 마지막 항목은 웹 서버를 설치하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-101">The last thing we want to try on our VM is to install a web server.</span></span> <span data-ttu-id="9be6c-102">설치할 가장 쉬운 패키지 중 하나는 `nginx`입니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-102">One of the easiest packages to install is `nginx`.</span></span>
+<span data-ttu-id="d00b3-101">VM에서 시도하려는 마지막 항목은 웹 서버를 설치하는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-101">The last thing we want to try on our VM is to install a web server.</span></span> <span data-ttu-id="d00b3-102">설치할 가장 쉬운 패키지 중 하나는 `nginx`입니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-102">One of the easiest packages to install is `nginx`.</span></span>
 
-## <a name="install-nginx-web-server"></a><span data-ttu-id="9be6c-103">NGINX 웹 서버 설치</span><span class="sxs-lookup"><span data-stu-id="9be6c-103">Install NGINX web server</span></span>
+## <a name="install-nginx-web-server"></a><span data-ttu-id="d00b3-103">NGINX 웹 서버 설치</span><span class="sxs-lookup"><span data-stu-id="d00b3-103">Install NGINX web server</span></span>
 
-1. <span data-ttu-id="9be6c-104">Linux 가상 머신의 공용 IP 주소를 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-104">Locate the public IP address of your Linux virtual machine.</span></span> <span data-ttu-id="9be6c-105">`vm list-ip-addresses` 명령을 사용하여 검색할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-105">Remember you can use the `vm list-ip-addresses` command to look it up.</span></span>
+1. <span data-ttu-id="d00b3-104">Linux 가상 머신의 공용 IP 주소를 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-104">Locate the public IP address of your Linux virtual machine.</span></span> <span data-ttu-id="d00b3-105">`vm list-ip-addresses` 명령을 사용하여 검색할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-105">Remember you can use the `vm list-ip-addresses` command to look it up.</span></span>
 
-1. <span data-ttu-id="9be6c-106">그런 다음, 테스트할 때 수행한 것처럼 머신에 대한 `ssh` 연결을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-106">Next, open an `ssh` connection to the machine like you did when we tested it.</span></span> <span data-ttu-id="9be6c-107">관리자 이름(“**aldis**”)을 전달해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-107">Remember you will need to pass in the admin name ("**aldis**").</span></span>
+1. <span data-ttu-id="d00b3-106">그런 다음, 테스트할 때 수행한 것처럼 머신에 대한 `ssh` 연결을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-106">Next, open an `ssh` connection to the machine like you did when we tested it.</span></span> <span data-ttu-id="d00b3-107">관리자 이름(“**aldis**”)을 전달해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-107">Remember you will need to pass in the admin name ("**aldis**").</span></span>
 
-1. <span data-ttu-id="9be6c-108">제공된 셸에서 다음 명령을 실행하여 `nginx` 웹 서버를 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-108">In the presented shell, execute the following command to install the `nginx` web server.</span></span>
+1. <span data-ttu-id="d00b3-108">제공된 셸에서 다음 명령을 실행하여 `nginx` 웹 서버를 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-108">In the presented shell, execute the following command to install the `nginx` web server.</span></span>
 
 ```bash
 sudo apt-get -y update && sudo apt-get -y install nginx
 ```
 
-1. <span data-ttu-id="9be6c-109">Secure Shell을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-109">Exit the Secure Shell.</span></span>
+1. <span data-ttu-id="d00b3-109">Secure Shell을 종료합니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-109">Exit the Secure Shell.</span></span>
 
 ```bash
 exit
 ```
 
-## <a name="retrieve-our-default-page"></a><span data-ttu-id="9be6c-110">기본 페이지 검색</span><span class="sxs-lookup"><span data-stu-id="9be6c-110">Retrieve our default page</span></span>
+## <a name="retrieve-our-default-page"></a><span data-ttu-id="d00b3-110">기본 페이지 검색</span><span class="sxs-lookup"><span data-stu-id="d00b3-110">Retrieve our default page</span></span>
 
-1. <span data-ttu-id="9be6c-111">Azure Cloud Shell에서 `curl`을 사용하여 Linux 웹 서버의 기본 페이지를 읽어보세요.</span><span class="sxs-lookup"><span data-stu-id="9be6c-111">In Azure Cloud Shell, use `curl` to read the default page from your Linux web server.</span></span> <span data-ttu-id="9be6c-112">또는 새 브라우저 탭을 열고 공용 IP 주소로 이동할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-112">Alternatively, you can open a new browser tab and browse to the public IP address.</span></span>
+1. <span data-ttu-id="d00b3-111">Azure Cloud Shell에서 `curl`을 사용하여 Linux 웹 서버의 기본 페이지를 읽어보세요.</span><span class="sxs-lookup"><span data-stu-id="d00b3-111">In Azure Cloud Shell, use `curl` to read the default page from your Linux web server.</span></span> <span data-ttu-id="d00b3-112">또는 새 브라우저 탭을 열고 공용 IP 주소로 이동할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-112">Alternatively, you can open a new browser tab and browse to the public IP address.</span></span>
 
 ```azurecli
 curl 40.83.165.85
 ```
 
-<span data-ttu-id="9be6c-113">Linux 가상 머신이 기본 제공 방화벽을 통해 포트 80(`http`)을 노출하지 않기 때문에 이동에 실패합니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-113">It will fail because the Linux virtual machine doesn't expose port 80 (`http`) through the built-in firewall.</span></span> <span data-ttu-id="9be6c-114">다행히 Azure CLI에는 이를 위한 `vm open-port` 명령이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-114">Luckily, the Azure CLI has a command for that: `vm open-port`.</span></span> 
+<span data-ttu-id="d00b3-113">Linux 가상 머신이 기본 제공 방화벽을 통해 포트 80(`http`)을 노출하지 않기 때문에 이동에 실패합니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-113">It will fail because the Linux virtual machine doesn't expose port 80 (`http`) through the built-in firewall.</span></span> <span data-ttu-id="d00b3-114">다행히 Azure CLI에는 이를 위한 `vm open-port` 명령이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-114">Luckily, the Azure CLI has a command for that: `vm open-port`.</span></span> 
 
-1. <span data-ttu-id="9be6c-115">Cloud Shell에 다음을 입력하여 포트 80을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-115">Type the following into Cloud Shell to open port 80:</span></span>
+1. <span data-ttu-id="d00b3-115">Cloud Shell에 다음을 입력하여 포트 80을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-115">Type the following into Cloud Shell to open port 80:</span></span>
 
 ```azurecli
 az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
-<span data-ttu-id="9be6c-116">네트워크 규칙을 추가하고 방화벽을 통해 포트를 열기까지는 시간이 오래 걸립니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-116">It will take a moment to add the network rule and open the port through the firewall.</span></span> <span data-ttu-id="9be6c-117">`curl`을 다시 시도하세요.</span><span class="sxs-lookup"><span data-stu-id="9be6c-117">Try `curl` again.</span></span> <span data-ttu-id="9be6c-118">이번에는 데이터가 반환됩니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-118">This time it should return data.</span></span> <span data-ttu-id="9be6c-119">브라우저에서도 페이지를 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9be6c-119">You can see the page in a browser as well.</span></span>
+<span data-ttu-id="d00b3-116">네트워크 규칙을 추가하고 방화벽을 통해 포트를 열기까지는 시간이 오래 걸립니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-116">It will take a moment to add the network rule and open the port through the firewall.</span></span> <span data-ttu-id="d00b3-117">`curl`을 다시 시도하세요.</span><span class="sxs-lookup"><span data-stu-id="d00b3-117">Try `curl` again.</span></span> <span data-ttu-id="d00b3-118">이번에는 데이터가 반환됩니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-118">This time it should return data.</span></span> <span data-ttu-id="d00b3-119">브라우저에서도 페이지를 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d00b3-119">You can see the page in a browser as well.</span></span>
 
 ```output
 <!DOCTYPE html>

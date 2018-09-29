@@ -1,62 +1,62 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
-title: <span data-ttu-id="e1f92-101">정리 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="e1f92-101">Clean up and knowledge check</span></span>
+title: <span data-ttu-id="35813-101">정리 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="35813-101">Clean up and knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="e1f92-102">정리 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="e1f92-102">Clean up and knowledge check</span></span>
-  description: <span data-ttu-id="e1f92-103">정리 및 지식 점검</span><span class="sxs-lookup"><span data-stu-id="e1f92-103">Clean up and knowledge check</span></span>
+  title: <span data-ttu-id="35813-102">정리 및 지식 검사</span><span class="sxs-lookup"><span data-stu-id="35813-102">Clean up and knowledge check</span></span>
+  description: <span data-ttu-id="35813-103">정리 및 지식 점검</span><span class="sxs-lookup"><span data-stu-id="35813-103">Clean up and knowledge check</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0eb6be9bb8639ff6bf16b0f313c0202e1d274f63
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350481"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47141198"
 durationInMinutes: 2
 content: >
   [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
 quiz:
-  title: <span data-ttu-id="e1f92-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="e1f92-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="35813-104">지식 점검</span><span class="sxs-lookup"><span data-stu-id="35813-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="e1f92-105">다음 중 응용 프로그램의 저장소 계정 및 Blob 컨테이너를 만드는 데 적합한 전략을 잘 설명한 것은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="e1f92-105">Which of the following describes a good strategy for creating storage accounts and blob containers for your application?</span></span>
+  - content: <span data-ttu-id="35813-105">다음 중 응용 프로그램의 저장소 계정 및 Blob 컨테이너를 만드는 데 적합한 전략을 잘 설명한 것은 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="35813-105">Which of the following describes a good strategy for creating storage accounts and blob containers for your application?</span></span>
     choices:
-    - content: <span data-ttu-id="e1f92-106">응용 프로그램을 배포하기 전에 Azure Storage 계정 및 컨테이너를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-106">Create Azure Storage accounts and containers up front, before deploying your application.</span></span>
+    - content: <span data-ttu-id="35813-106">응용 프로그램을 배포하기 전에 Azure Storage 계정 및 컨테이너를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="35813-106">Create Azure Storage accounts and containers up front, before deploying your application.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-107">Azure Storage 계정 만들기는 관리 작업이며 응용 프로그램을 배포하기 전에 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-107">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="e1f92-108">또한 컨테이너 생성은 응용 프로그램에서 수행할 수 있는 빠르고 간단한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-108">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
-    - content: <span data-ttu-id="e1f92-109">응용 프로그램의 필요에 따라 Azure Storage 계정을 만들지만, 배포 프로세스에서 응용 프로그램에 필요한 모든 컨테이너를 먼저 만들어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-109">Create Azure Storage accounts as your application needs them, but the deployment process should create all the containers your application needs up front.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-107">Azure Storage 계정 만들기는 관리 작업이며 응용 프로그램을 배포하기 전에 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="35813-107">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="35813-108">또한 컨테이너 생성은 응용 프로그램에서 수행할 수 있는 빠르고 간단한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-108">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
+    - content: <span data-ttu-id="35813-109">응용 프로그램의 필요에 따라 Azure Storage 계정을 만들지만, 배포 프로세스에서 응용 프로그램에 필요한 모든 컨테이너를 먼저 만들어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="35813-109">Create Azure Storage accounts as your application needs them, but the deployment process should create all the containers your application needs up front.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-110">Azure Storage 계정 만들기는 관리 작업이며 응용 프로그램을 배포하기 전에 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-110">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="e1f92-111">또한 컨테이너 생성은 응용 프로그램에서 수행할 수 있는 빠르고 간단한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-111">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
-    - content: <span data-ttu-id="e1f92-112">앱을 배포하기 전에 Azure Storage 계정을 먼저 만들고, 응용 프로그램에서 필요한 컨테이너를 만들 수 있도록 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-112">Create Azure Storage accounts up front, before deploying your app, and let your application create the containers as it needs them.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-110">Azure Storage 계정 만들기는 관리 작업이며 응용 프로그램을 배포하기 전에 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="35813-110">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="35813-111">또한 컨테이너 생성은 응용 프로그램에서 수행할 수 있는 빠르고 간단한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-111">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
+    - content: <span data-ttu-id="35813-112">앱을 배포하기 전에 Azure Storage 계정을 먼저 만들고, 응용 프로그램에서 필요한 컨테이너를 만들 수 있도록 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="35813-112">Create Azure Storage accounts up front, before deploying your app, and let your application create the containers as it needs them.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e1f92-113">Azure Storage 계정 만들기는 관리 작업이며 응용 프로그램을 배포하기 전에 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-113">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="e1f92-114">또한 컨테이너 생성은 응용 프로그램에서 수행할 수 있는 빠르고 간단한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-114">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
-  - content: <span data-ttu-id="e1f92-115">응용 프로그램 내에서 Blob Storage 클라이언트 라이브러리를 초기화하는데 일반적으로 어떤 구성 종류가 사용되나요?</span><span class="sxs-lookup"><span data-stu-id="e1f92-115">What kind of configuration is typically used to initialize the Blob Storage client library within an application?</span></span>
+      correctExplanation: <span data-ttu-id="35813-113">Azure Storage 계정 만들기는 관리 작업이며 응용 프로그램을 배포하기 전에 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="35813-113">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="35813-114">또한 컨테이너 생성은 응용 프로그램에서 수행할 수 있는 빠르고 간단한 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-114">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
+  - content: <span data-ttu-id="35813-115">응용 프로그램 내에서 Blob Storage 클라이언트 라이브러리를 초기화하는데 일반적으로 어떤 구성 종류가 사용되나요?</span><span class="sxs-lookup"><span data-stu-id="35813-115">What kind of configuration is typically used to initialize the Blob Storage client library within an application?</span></span>
     choices:
-    - content: <span data-ttu-id="e1f92-116">Azure 사용자 이름 및 암호</span><span class="sxs-lookup"><span data-stu-id="e1f92-116">An Azure username and password.</span></span>
+    - content: <span data-ttu-id="35813-116">Azure 사용자 이름 및 암호</span><span class="sxs-lookup"><span data-stu-id="35813-116">An Azure username and password.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-117">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 그 중에서 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-117">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
-    - content: <span data-ttu-id="e1f92-118">Azure Storage 계정 연결 문자열</span><span class="sxs-lookup"><span data-stu-id="e1f92-118">The Azure Storage account connection string.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-117">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 그 중에서 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-117">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="35813-118">Azure Storage 계정 연결 문자열</span><span class="sxs-lookup"><span data-stu-id="35813-118">The Azure Storage account connection string.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e1f92-119">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 이중 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-119">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
-    - content: <span data-ttu-id="e1f92-120">응용 프로그램을 나타내는 GUID(Globally Unique Identifier)입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-120">A globally-unique identifier (GUID) that represents the application.</span></span>
+      correctExplanation: <span data-ttu-id="35813-119">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 이중 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-119">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="35813-120">응용 프로그램을 나타내는 GUID(Globally Unique Identifier)입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-120">A globally-unique identifier (GUID) that represents the application.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-121">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 그 중에서 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-121">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
-    - content: <span data-ttu-id="e1f92-122">Azure Storage 계정 데이터 센터 및 위치 식별자입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-122">The Azure Storage account datacenter and location identifiers.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-121">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 그 중에서 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-121">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="35813-122">Azure Storage 계정 데이터 센터 및 위치 식별자입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-122">The Azure Storage account datacenter and location identifiers.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-123">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 그 중에서 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-123">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
-  - content: <span data-ttu-id="e1f92-124">Blob 이름으로 `GetBlockBlobReference`를 호출하면 어떻게 되나요?</span><span class="sxs-lookup"><span data-stu-id="e1f92-124">What happens when you call `GetBlockBlobReference` with the name of a blob?</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-123">저장소 계정 연결 문자열에는 응용 프로그램이 Blob Storage에 연결하는데 필요한 모든 정보가 포함되며, 그 중에서 가장 중요한 정보는 계정 이름과 계정 키입니다.</span><span class="sxs-lookup"><span data-stu-id="35813-123">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+  - content: <span data-ttu-id="35813-124">Blob 이름으로 `GetBlockBlobReference`를 호출하면 어떻게 되나요?</span><span class="sxs-lookup"><span data-stu-id="35813-124">What happens when you call `GetBlockBlobReference` with the name of a blob?</span></span>
     choices:
-    - content: <span data-ttu-id="e1f92-125">새 블록 Blob이 저장소에 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-125">A new block blob is created in storage.</span></span>
+    - content: <span data-ttu-id="35813-125">새 블록 Blob이 저장소에 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="35813-125">A new block blob is created in storage.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-126">Blob 참조를 가져와도 Azure Storage에 대한 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-126">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
-    - content: <span data-ttu-id="e1f92-127">`CloudBlockBlob` 개체가 로컬로 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-127">A `CloudBlockBlob` object is created locally.</span></span> <span data-ttu-id="e1f92-128">네트워크 호출을 수행하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-128">No network calls are made.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-126">Blob 참조를 가져와도 Azure Storage에 대한 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="35813-126">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+    - content: <span data-ttu-id="35813-127">`CloudBlockBlob` 개체가 로컬로 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="35813-127">A `CloudBlockBlob` object is created locally.</span></span> <span data-ttu-id="35813-128">네트워크 호출을 수행하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="35813-128">No network calls are made.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e1f92-129">Blob 참조를 가져와도 Azure Storage에 대해 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-129">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
-    - content: <span data-ttu-id="e1f92-130">Blob이 저장소에 없는 경우 예외가 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-130">An exception is thrown if the blob does not exist in storage.</span></span>
+      correctExplanation: <span data-ttu-id="35813-129">Blob 참조를 가져와도 Azure Storage에 대해 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="35813-129">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+    - content: <span data-ttu-id="35813-130">Blob이 저장소에 없는 경우 예외가 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="35813-130">An exception is thrown if the blob does not exist in storage.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-131">Blob 참조를 가져와도 Azure Storage에 대한 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-131">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
-    - content: <span data-ttu-id="e1f92-132">명명된 Blob의 콘텐츠가 다운로드됩니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-132">The contents of the named blob are downloaded.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-131">Blob 참조를 가져와도 Azure Storage에 대한 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="35813-131">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+    - content: <span data-ttu-id="35813-132">명명된 Blob의 콘텐츠가 다운로드됩니다.</span><span class="sxs-lookup"><span data-stu-id="35813-132">The contents of the named blob are downloaded.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e1f92-133">Blob 참조를 가져와도 Azure Storage에 대한 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="e1f92-133">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+      incorrectExplanation: <span data-ttu-id="35813-133">Blob 참조를 가져와도 Azure Storage에 대한 호출이 수행되지 않으며, 저장된 Blob에서 작업할 수 있는 개체가 단순히 로컬로 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="35813-133">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>

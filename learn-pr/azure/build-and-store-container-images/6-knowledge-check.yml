@@ -1,57 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.knowledge-check
-title: <span data-ttu-id="6cd87-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="6cd87-101">Knowledge check</span></span>
+title: <span data-ttu-id="ce76b-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="ce76b-101">Knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="6cd87-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="6cd87-102">Knowledge check</span></span>
-  description: <span data-ttu-id="6cd87-103">Azure Container Registry 지식 검사입니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-103">Azure Container Registry knowledge check.</span></span>
+  title: <span data-ttu-id="ce76b-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="ce76b-102">Knowledge check</span></span>
+  description: <span data-ttu-id="ce76b-103">Azure Container Registry 지식 검사입니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-103">Azure Container Registry knowledge check.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 89fbd644018188c7f24fc6c5fbb5ee129559c6ad
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351697"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47145003"
 durationInMinutes: 5
 quiz:
-  title: <span data-ttu-id="6cd87-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="6cd87-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="ce76b-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="ce76b-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="6cd87-105">다음 중 Azure Container Registry를 사용하여 얻을 수 있는 혜택이 아닌 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="6cd87-105">Which of the following is not a benefit of using Azure Container Registry?</span></span>
+  - content: <span data-ttu-id="ce76b-105">다음 중 Azure Container Registry를 사용하여 얻을 수 있는 혜택이 아닌 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="ce76b-105">Which of the following is not a benefit of using Azure Container Registry?</span></span>
     choices:
-    - content: <span data-ttu-id="6cd87-106">여러 Azure 데이터 센터로 컨테이너 이미지를 복제합니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-106">Replicate container images to many Azure datacenters.</span></span>
-      incorrectExplanation: <span data-ttu-id="6cd87-107">Azure Container Registry 지역 복제 기능을 통해 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-107">The Azure Container Registry geo-replication feature enables this.</span></span>
+    - content: <span data-ttu-id="ce76b-106">여러 Azure 데이터 센터로 컨테이너 이미지를 복제합니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-106">Replicate container images to many Azure datacenters.</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-107">Azure Container Registry 지역 복제 기능을 통해 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-107">The Azure Container Registry geo-replication feature enables this.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="6cd87-108">Docker 컨테이너 관련 기술을 사용하여 Container Registry에서 컨테이너 이미지를 끌어옵니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-108">Pull container images from Container Registry using any Docker container-related technology.</span></span>
+    - content: <span data-ttu-id="ce76b-108">Docker 컨테이너 관련 기술을 사용하여 Container Registry에서 컨테이너 이미지를 끌어옵니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-108">Pull container images from Container Registry using any Docker container-related technology.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="6cd87-109">Container Registry는 모든 Docker 관련 기술과 함께 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-109">Container Registry can be used with all Docker-related technology.</span></span>
-    - content: <span data-ttu-id="6cd87-110">컨테이너 이미지를 끌어오기 작업에 공용으로 사용할 수 있도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-110">Make container images publicly available for pull operations.</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-109">Container Registry는 모든 Docker 관련 기술과 함께 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-109">Container Registry can be used with all Docker-related technology.</span></span>
+    - content: <span data-ttu-id="ce76b-110">컨테이너 이미지를 끌어오기 작업에 공용으로 사용할 수 있도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-110">Make container images publicly available for pull operations.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="6cd87-111">Container Registry는 개인 레지스트리입니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-111">Container Registry is a private registry.</span></span> <span data-ttu-id="6cd87-112">Container Registry에 저장된 이미지는 인증 없이 액세스할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-112">Images stored in Container Registry cannot be accessed without authentication.</span></span>
-    - content: <span data-ttu-id="6cd87-113">로컬로 설치된 Docker 도구를 사용할 필요 없이 컨테이너 이미지를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-113">Build container images without the need for locally installed Docker tools.</span></span>
+      correctExplanation: <span data-ttu-id="ce76b-111">Container Registry는 개인 레지스트리입니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-111">Container Registry is a private registry.</span></span> <span data-ttu-id="ce76b-112">Container Registry에 저장된 이미지는 인증 없이 액세스할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-112">Images stored in Container Registry cannot be accessed without authentication.</span></span>
+    - content: <span data-ttu-id="ce76b-113">로컬로 설치된 Docker 도구를 사용할 필요 없이 컨테이너 이미지를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-113">Build container images without the need for locally installed Docker tools.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="6cd87-114">컨테이너 이미지는 Azure Container Registry 빌드를 사용하여 클라우드에서 빌드할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-114">Container images can be built in the cloud using Azure Container Registry Build.</span></span>
-  - content: <span data-ttu-id="6cd87-115">Azure Container Registry에 권장되는 인증 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="6cd87-115">What is the recommended authentication method for Azure Container Registry?</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-114">컨테이너 이미지는 Azure Container Registry 빌드를 사용하여 클라우드에서 빌드할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-114">Container images can be built in the cloud using Azure Container Registry Build.</span></span>
+  - content: <span data-ttu-id="ce76b-115">Azure Container Registry에 권장되는 인증 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="ce76b-115">What is the recommended authentication method for Azure Container Registry?</span></span>
     choices:
-    - content: <span data-ttu-id="6cd87-116">관리자 계정.</span><span class="sxs-lookup"><span data-stu-id="6cd87-116">Admin account.</span></span>
-      incorrectExplanation: <span data-ttu-id="6cd87-117">Azure Container Registry용 관리자 계정을 만들 수 있지만 이 인증 방법은 권장되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-117">Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.</span></span>
+    - content: <span data-ttu-id="ce76b-116">관리자 계정.</span><span class="sxs-lookup"><span data-stu-id="ce76b-116">Admin account.</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-117">Azure Container Registry용 관리자 계정을 만들 수 있지만 이 인증 방법은 권장되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-117">Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="6cd87-118">사용자 이름 및 암호.</span><span class="sxs-lookup"><span data-stu-id="6cd87-118">User name and password.</span></span>
-      incorrectExplanation: <span data-ttu-id="6cd87-119">Azure Container Registry에서 관리자 계정을 사용하도록 설정하면 사용자 이름과 암호를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-119">An Azure container registry can be admin-account enabled, which provides a user name and password.</span></span> <span data-ttu-id="6cd87-120">하지만 이 인증 방법은 권장되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-120">However, this is not the recommended authentication method.</span></span>
+    - content: <span data-ttu-id="ce76b-118">사용자 이름 및 암호.</span><span class="sxs-lookup"><span data-stu-id="ce76b-118">User name and password.</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-119">Azure Container Registry에서 관리자 계정을 사용하도록 설정하면 사용자 이름과 암호를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-119">An Azure container registry can be admin-account enabled, which provides a user name and password.</span></span> <span data-ttu-id="ce76b-120">하지만 이 인증 방법은 권장되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-120">However, this is not the recommended authentication method.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="6cd87-121">Azure 서비스 주체.</span><span class="sxs-lookup"><span data-stu-id="6cd87-121">Azure service principal.</span></span>
+    - content: <span data-ttu-id="ce76b-121">Azure 서비스 주체.</span><span class="sxs-lookup"><span data-stu-id="ce76b-121">Azure service principal.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="6cd87-122">Azure 서비스 주체는 Azure Container Registry의 컨테이너 이미지에 대한 세부적인 액세스를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-122">Azure service principals provide granular access to container images in Azure Container Registry.</span></span> <span data-ttu-id="6cd87-123">서비스 주체를 사용하면 읽기 전용 및 전체 액세스가 Container Registry에 제공될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-123">Using a service principal, read-only and full access can be provided to the container registry.</span></span>
-    - content: <span data-ttu-id="6cd87-124">인증 없음.</span><span class="sxs-lookup"><span data-stu-id="6cd87-124">No authentication.</span></span>
-      incorrectExplanation: <span data-ttu-id="6cd87-125">Azure Container Registry는 개인 레지스트리이므로 인증 없이 액세스할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-125">Azure Container Registry is a private registry and cannot be accessed without authentication..</span></span>
+      correctExplanation: <span data-ttu-id="ce76b-122">Azure 서비스 주체는 Azure Container Registry의 컨테이너 이미지에 대한 세부적인 액세스를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-122">Azure service principals provide granular access to container images in Azure Container Registry.</span></span> <span data-ttu-id="ce76b-123">서비스 주체를 사용하면 읽기 전용 및 전체 액세스가 Container Registry에 제공될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-123">Using a service principal, read-only and full access can be provided to the container registry.</span></span>
+    - content: <span data-ttu-id="ce76b-124">인증 없음.</span><span class="sxs-lookup"><span data-stu-id="ce76b-124">No authentication.</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-125">Azure Container Registry는 개인 레지스트리이므로 인증 없이 액세스할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-125">Azure Container Registry is a private registry and cannot be accessed without authentication..</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="6cd87-126">지역 복제는 Container Registry 표준 SKU에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-126">Geo-replication is available in the Container Registry Standard SKU.</span></span>
+  - content: <span data-ttu-id="ce76b-126">지역 복제는 Container Registry 표준 SKU에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-126">Geo-replication is available in the Container Registry Standard SKU.</span></span>
     choices:
-    - content: <span data-ttu-id="6cd87-127">True.</span><span class="sxs-lookup"><span data-stu-id="6cd87-127">True.</span></span>
-      incorrectExplanation: <span data-ttu-id="6cd87-128">지역 복제는 프리미엄 SKU에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-128">Geo-replication is only available in the Premium SKU.</span></span>
+    - content: <span data-ttu-id="ce76b-127">True.</span><span class="sxs-lookup"><span data-stu-id="ce76b-127">True.</span></span>
+      incorrectExplanation: <span data-ttu-id="ce76b-128">지역 복제는 프리미엄 SKU에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-128">Geo-replication is only available in the Premium SKU.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="6cd87-129">False.</span><span class="sxs-lookup"><span data-stu-id="6cd87-129">False.</span></span>
+    - content: <span data-ttu-id="ce76b-129">False.</span><span class="sxs-lookup"><span data-stu-id="ce76b-129">False.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="6cd87-130">지역 복제는 프리미엄 SKU에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6cd87-130">Geo-replication is only available in the Premium SKU.</span></span>
+      correctExplanation: <span data-ttu-id="ce76b-130">지역 복제는 프리미엄 SKU에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce76b-130">Geo-replication is only available in the Premium SKU.</span></span>

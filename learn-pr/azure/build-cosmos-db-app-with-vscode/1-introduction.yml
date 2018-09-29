@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.1-introduction
 metadata:
-  title: <span data-ttu-id="5859e-101">소개</span><span class="sxs-lookup"><span data-stu-id="5859e-101">Introduction</span></span>
-  description: <span data-ttu-id="5859e-102">소개</span><span class="sxs-lookup"><span data-stu-id="5859e-102">Introduction</span></span>
+  title: <span data-ttu-id="e0943-101">소개</span><span class="sxs-lookup"><span data-stu-id="e0943-101">Introduction</span></span>
+  description: <span data-ttu-id="e0943-102">소개</span><span class="sxs-lookup"><span data-stu-id="e0943-102">Introduction</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e451197e9308cacd5f8ed1980fa879dee942236e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347758"
-title: <span data-ttu-id="5859e-103">소개</span><span class="sxs-lookup"><span data-stu-id="5859e-103">Introduction</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47142302"
+title: <span data-ttu-id="e0943-103">소개</span><span class="sxs-lookup"><span data-stu-id="e0943-103">Introduction</span></span>
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

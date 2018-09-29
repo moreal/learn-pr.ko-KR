@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.4-crud-operations
 metadata:
-  title: <span data-ttu-id="23929-101">프로그래밍 방식으로 NoSQL 데이터 만들기, 읽기, 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="23929-101">Create, read, update, and delete NoSQL data programmatically</span></span>
-  description: <span data-ttu-id="23929-102">프로그래밍 방식으로 문서 만들기, 읽기, 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="23929-102">Create, read, update, and delete documents programmatically</span></span>
+  title: <span data-ttu-id="9ac42-101">프로그래밍 방식으로 NoSQL 데이터 만들기, 읽기, 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="9ac42-101">Create, read, update, and delete NoSQL data programmatically</span></span>
+  description: <span data-ttu-id="9ac42-102">프로그래밍 방식으로 문서 만들기, 읽기, 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="9ac42-102">Create, read, update, and delete documents programmatically</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: cd95ca3f6199202c6862288d4cafd3e24a52600b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353208"
-title: <span data-ttu-id="23929-103">프로그래밍 방식으로 NoSQL 데이터 만들기, 읽기, 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="23929-103">Create, read, update, and delete NoSQL data programmatically</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146446"
+title: <span data-ttu-id="9ac42-103">프로그래밍 방식으로 NoSQL 데이터 만들기, 읽기, 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="9ac42-103">Create, read, update, and delete NoSQL data programmatically</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/4-crud-operations.md)]'

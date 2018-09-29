@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a8301134448063a316cce153377b039b557f1a81
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567384"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47141102"
 title: Azure Cosmos DB의 NoSQL 데이터 작업
 summary: NoSQL 데이터는 관계형 SQL 데이터베이스의 요구 사항에 매핑되지 않는 정보를 저장하는 효율적인 방법입니다. Azure Portal, Visual Studio Code용 Azure Cosmos DB 확장 및 Azure Cosmos DB .NET Core SDK를 사용하여 원하는 위치에서 NoSQL 데이터로 작업하고, 전세계에 어디서든 사용자에게 고가용성을 제공하는 방법을 알아봅니다.
 prerequisites: >

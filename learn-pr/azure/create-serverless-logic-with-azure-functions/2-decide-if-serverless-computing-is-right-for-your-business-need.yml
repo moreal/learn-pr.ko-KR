@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.2-decide-if-serverless-computing-is-right-for-your-business-need
-title: <span data-ttu-id="62828-101">비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정</span><span class="sxs-lookup"><span data-stu-id="62828-101">Decide if serverless computing is right for your business needs</span></span>
+title: <span data-ttu-id="32268-101">비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정</span><span class="sxs-lookup"><span data-stu-id="32268-101">Decide if serverless computing is right for your business needs</span></span>
 metadata:
-  title: <span data-ttu-id="62828-102">비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정</span><span class="sxs-lookup"><span data-stu-id="62828-102">Decide if serverless computing is right for your business needs</span></span>
-  description: <span data-ttu-id="62828-103">비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정</span><span class="sxs-lookup"><span data-stu-id="62828-103">Decide if serverless computing is right for your business needs</span></span>
+  title: <span data-ttu-id="32268-102">비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정</span><span class="sxs-lookup"><span data-stu-id="32268-102">Decide if serverless computing is right for your business needs</span></span>
+  description: <span data-ttu-id="32268-103">비즈니스 요구 사항에 서버리스 컴퓨팅이 적합한지 결정</span><span class="sxs-lookup"><span data-stu-id="32268-103">Decide if serverless computing is right for your business needs</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 830da6d32ff345b85dee049d3d6b50ca19114546
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351670"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131626"
 durationInMinutes: 5
 content: '[!include[](includes/2-decide-if-serverless-computing-is-right-for-your-business-need.md)]'

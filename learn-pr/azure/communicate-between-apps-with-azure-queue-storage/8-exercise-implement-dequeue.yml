@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
-title: <span data-ttu-id="150ce-101">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="150ce-101">Retrieve a message from the queue</span></span>
+title: <span data-ttu-id="3b93d-101">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="3b93d-101">Retrieve a message from the queue</span></span>
 metadata:
-  title: <span data-ttu-id="150ce-102">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="150ce-102">Retrieve a message from the queue</span></span>
-  description: <span data-ttu-id="150ce-103">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="150ce-103">Retrieve a message from the queue</span></span>
+  title: <span data-ttu-id="3b93d-102">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="3b93d-102">Retrieve a message from the queue</span></span>
+  description: <span data-ttu-id="3b93d-103">큐에서 메시지 검색</span><span class="sxs-lookup"><span data-stu-id="3b93d-103">Retrieve a message from the queue</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 57feb5b74c46a937e7127b20b76de0a35384d015
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347918"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146686"
 interactive: bash-editor
 azureSandbox: true
 durationInMinutes: 10

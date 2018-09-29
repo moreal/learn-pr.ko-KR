@@ -1,42 +1,42 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: <span data-ttu-id="4839e-101">Azure Traffic Manager를 사용하여 대기 시간 단축</span><span class="sxs-lookup"><span data-stu-id="4839e-101">Reduce latency with Azure Traffic Manager</span></span>
+title: <span data-ttu-id="115a0-101">Azure Traffic Manager를 사용하여 대기 시간 단축</span><span class="sxs-lookup"><span data-stu-id="115a0-101">Reduce latency with Azure Traffic Manager</span></span>
 metadata:
-  title: <span data-ttu-id="4839e-102">Azure Traffic Manager를 사용하여 대기 시간 단축</span><span class="sxs-lookup"><span data-stu-id="4839e-102">Reduce latency with Azure Traffic Manager</span></span>
-  description: <span data-ttu-id="4839e-103">Traffic Manager를 통해 지리적 영역의 대기 시간을 단축하고 복원력을 구현하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-103">Learn how Traffic Manager can reduce latency and create resiliency across geographic regions.</span></span>
+  title: <span data-ttu-id="115a0-102">Azure Traffic Manager를 사용하여 대기 시간 단축</span><span class="sxs-lookup"><span data-stu-id="115a0-102">Reduce latency with Azure Traffic Manager</span></span>
+  description: <span data-ttu-id="115a0-103">Traffic Manager를 통해 지리적 영역의 대기 시간을 단축하고 복원력을 구현하는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-103">Learn how Traffic Manager can reduce latency and create resiliency across geographic regions.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 613ac9817c513c55153429983ab65b679eea183e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354038"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146578"
 durationInMinutes: 7
 content: >
   [!include[](includes/4-reduce-latency-traffic-manager.md)]
 quiz:
-  title: <span data-ttu-id="4839e-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="4839e-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="115a0-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="115a0-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="4839e-105">Azure Traffic Manager로 대기 시간을 단축하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="4839e-105">How does Azure Traffic Manager reduce latency?</span></span>
+  - content: <span data-ttu-id="115a0-105">Azure Traffic Manager로 대기 시간을 단축하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="115a0-105">How does Azure Traffic Manager reduce latency?</span></span>
     choices:
-    - content: <span data-ttu-id="4839e-106">엔드포인트 간에 가장 빠른 네트워크만 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-106">It chooses only the fastest networks between endpoints.</span></span>
+    - content: <span data-ttu-id="115a0-106">엔드포인트 간에 가장 빠른 네트워크만 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-106">It chooses only the fastest networks between endpoints.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4839e-107">사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-107">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
-    - content: <span data-ttu-id="4839e-108">사용자의 DNS 서버와 가장 가까운 엔드포인트를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-108">It chooses the endpoint that's closest to the user's DNS server.</span></span>
+      incorrectExplanation: <span data-ttu-id="115a0-107">사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-107">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="115a0-108">사용자의 DNS 서버와 가장 가까운 엔드포인트를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-108">It chooses the endpoint that's closest to the user's DNS server.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="4839e-109">사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-109">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
-    - content: <span data-ttu-id="4839e-110">콘텐츠 전송 네트워크가 작동하는 방식과 유사하게 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-110">It caches content, similar to how content delivery networks work.</span></span>
+      correctExplanation: <span data-ttu-id="115a0-109">사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-109">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="115a0-110">콘텐츠 전송 네트워크가 작동하는 방식과 유사하게 콘텐츠를 캐시합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-110">It caches content, similar to how content delivery networks work.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4839e-111">사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-111">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
-  - content: <span data-ttu-id="4839e-112">영국에 거주하고 있지만 DNS 서버는 이탈리아에 있다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-112">Suppose you live in England, but your DNS server is in Italy.</span></span> <span data-ttu-id="4839e-113">Traffic Manager로 트래픽을 전달하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="4839e-113">How does Traffic Manager direct traffic?</span></span>
+      incorrectExplanation: <span data-ttu-id="115a0-111">사용자와 가장 가까운 서버를 선택하는 것은 대기 시간을 단축하는 좋은 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-111">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+  - content: <span data-ttu-id="115a0-112">영국에 거주하고 있지만 DNS 서버는 이탈리아에 있다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-112">Suppose you live in England, but your DNS server is in Italy.</span></span> <span data-ttu-id="115a0-113">Traffic Manager로 트래픽을 전달하는 방법은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="115a0-113">How does Traffic Manager direct traffic?</span></span>
     choices:
-    - content: <span data-ttu-id="4839e-114">영국과 가장 가까운 서비스를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-114">It chooses the service that's closest to England.</span></span>
+    - content: <span data-ttu-id="115a0-114">영국과 가장 가까운 서비스를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-114">It chooses the service that's closest to England.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4839e-115">Traffic Manager는 사용자와 가장 가까운 _DNS 서버_를 사용하여 트래픽을 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-115">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>
-    - content: <span data-ttu-id="4839e-116">이탈리아와 가장 가까운 서비스를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-116">It chooses the service that's closest to Italy.</span></span>
+      incorrectExplanation: <span data-ttu-id="115a0-115">Traffic Manager는 사용자와 가장 가까운 _DNS 서버_를 사용하여 트래픽을 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-115">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>
+    - content: <span data-ttu-id="115a0-116">이탈리아와 가장 가까운 서비스를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-116">It chooses the service that's closest to Italy.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="4839e-117">Traffic Manager는 사용자와 가장 가까운 _DNS 서버_를 사용하여 트래픽을 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="4839e-117">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>
+      correctExplanation: <span data-ttu-id="115a0-117">Traffic Manager는 사용자와 가장 가까운 _DNS 서버_를 사용하여 트래픽을 전달합니다.</span><span class="sxs-lookup"><span data-stu-id="115a0-117">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>

@@ -1,54 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
-title: <span data-ttu-id="8044c-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="8044c-101">Check your knowledge</span></span>
+title: <span data-ttu-id="88d47-101">지식 검사</span><span class="sxs-lookup"><span data-stu-id="88d47-101">Check your knowledge</span></span>
 metadata:
-  title: <span data-ttu-id="8044c-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="8044c-102">Check your knowledge</span></span>
-  description: <span data-ttu-id="8044c-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="8044c-103">Check your knowledge</span></span>
+  title: <span data-ttu-id="88d47-102">지식 검사</span><span class="sxs-lookup"><span data-stu-id="88d47-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="88d47-103">지식 검사</span><span class="sxs-lookup"><span data-stu-id="88d47-103">Check your knowledge</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: fab76bfb0f9de183a37f1d8aba022b434294ce85
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483864"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47142859"
 durationInMinutes: 2
 quiz:
-  title: <span data-ttu-id="8044c-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="8044c-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="88d47-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="88d47-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="8044c-105">다음 중 CUDA를 설명하는 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="8044c-105">Which of the following describes CUDA?</span></span>
+  - content: <span data-ttu-id="88d47-105">다음 중 CUDA를 설명하는 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="88d47-105">Which of the following describes CUDA?</span></span>
     choices:
-    - content: <span data-ttu-id="8044c-106">CUDA는 병렬 컴퓨팅 플랫폼 및 API입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-106">It's a parallel computing platform and API.</span></span>
+    - content: <span data-ttu-id="88d47-106">CUDA는 병렬 컴퓨팅 플랫폼 및 API입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-106">It's a parallel computing platform and API.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="8044c-107">CUDA는 NVIDIA에서 개발한 병렬 컴퓨팅 플랫폼이자 API(응용 프로그래밍 인터페이스) 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-107">CUDA is a parallel computing platform and application programming interface (API) model created by NVIDIA.</span></span> <span data-ttu-id="8044c-108">CUDA 플랫폼은 계산 커널의 실행을 위해 GPU의 가상 명령 집합 및 병렬 계산 요소에 대한 직접 액세스 권한을 제공하는 소프트웨어 계층입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-108">The CUDA platform is a software layer that gives direct access to the GPU's virtual instruction set and parallel computational elements, for the execution of compute kernels.</span></span>
-    - content: <span data-ttu-id="8044c-109">CUDA는 매우 강력한 CPU입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-109">It's a super powerful CPU.</span></span>
+      correctExplanation: <span data-ttu-id="88d47-107">CUDA는 NVIDIA에서 개발한 병렬 컴퓨팅 플랫폼이자 API(응용 프로그래밍 인터페이스) 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-107">CUDA is a parallel computing platform and application programming interface (API) model created by NVIDIA.</span></span> <span data-ttu-id="88d47-108">CUDA 플랫폼은 계산 커널의 실행을 위해 GPU의 가상 명령 집합 및 병렬 계산 요소에 대한 직접 액세스 권한을 제공하는 소프트웨어 계층입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-108">The CUDA platform is a software layer that gives direct access to the GPU's virtual instruction set and parallel computational elements, for the execution of compute kernels.</span></span>
+    - content: <span data-ttu-id="88d47-109">CUDA는 매우 강력한 CPU입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-109">It's a super powerful CPU.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="8044c-110">CUDA는 소프트웨어 계층이며, GPU를 위해 설계되었습니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-110">CUDA is a software layer and is designed for GPUs.</span></span>
-    - content: <span data-ttu-id="8044c-111">또한 이미지 분류에 사용되는 심층 학습 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-111">It's a deep learning model used for image classification.</span></span>
+      incorrectExplanation: <span data-ttu-id="88d47-110">CUDA는 소프트웨어 계층이며, GPU를 위해 설계되었습니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-110">CUDA is a software layer and is designed for GPUs.</span></span>
+    - content: <span data-ttu-id="88d47-111">또한 이미지 분류에 사용되는 심층 학습 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-111">It's a deep learning model used for image classification.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="8044c-112">CUDA 기반 GPU는 신경망을 학습하는 경우 계산 성능을 크게 향상시킬 수 있지만 이것은 많은 용도 중 하나에 지나지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-112">CUDA-enabled GPUs can greatly improve compute performacne when training neural networks, but that is only one of its uses.</span></span>
-  - content: <span data-ttu-id="8044c-113">다음 중 Docker를 설명하는 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="8044c-113">Which of the following describes Docker?</span></span>
+      incorrectExplanation: <span data-ttu-id="88d47-112">CUDA 기반 GPU는 신경망을 학습하는 경우 계산 성능을 크게 향상시킬 수 있지만 이것은 많은 용도 중 하나에 지나지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-112">CUDA-enabled GPUs can greatly improve compute performacne when training neural networks, but that is only one of its uses.</span></span>
+  - content: <span data-ttu-id="88d47-113">다음 중 Docker를 설명하는 것은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="88d47-113">Which of the following describes Docker?</span></span>
     choices:
-    - content: <span data-ttu-id="8044c-114">Docker는 신경망 학습을 위한 특수화된 하드웨어 부분입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-114">Docker is a specialized piece of hardware for training neural networks.</span></span>
+    - content: <span data-ttu-id="88d47-114">Docker는 신경망 학습을 위한 특수화된 하드웨어 부분입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-114">Docker is a specialized piece of hardware for training neural networks.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="8044c-115">Docker는 실제로 "컨테이너화"라고도 하는 운영 체제 수준 가상화를 수행하는 소프트웨어입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-115">Docker is actually software that performs operating-system-level virtualization, also known as "containerization".</span></span>
-    - content: <span data-ttu-id="8044c-116">Docker는 분산형 응용 프로그램에 대한 개방형 플랫폼입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-116">Docker is an open platform for distributed applications.</span></span>
+      incorrectExplanation: <span data-ttu-id="88d47-115">Docker는 실제로 "컨테이너화"라고도 하는 운영 체제 수준 가상화를 수행하는 소프트웨어입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-115">Docker is actually software that performs operating-system-level virtualization, also known as "containerization".</span></span>
+    - content: <span data-ttu-id="88d47-116">Docker는 분산형 응용 프로그램에 대한 개방형 플랫폼입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-116">Docker is an open platform for distributed applications.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="8044c-117">Docker는 개발자 및 시스템 관리자가 노트북, 데이터 센터 VM 또는 클라우드에서 분산형 응용 프로그램을 빌드/제공/실행하기 위한 개방형 플랫폼입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-117">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span> <span data-ttu-id="8044c-118">Docker는 "컨테이너화"라고도 하는 운영 체제 수준 가상화를 수행하는 컴퓨터 프로그램입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-118">It's a computer program that performs operating-system-level virtualization, also known as "containerization".</span></span>
-    - content: <span data-ttu-id="8044c-119">Docker는 웹앱의 라이브러리입니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-119">Docker is a library for web apps.</span></span>
+      correctExplanation: <span data-ttu-id="88d47-117">Docker는 개발자 및 시스템 관리자가 노트북, 데이터 센터 VM 또는 클라우드에서 분산형 응용 프로그램을 빌드/제공/실행하기 위한 개방형 플랫폼입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-117">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span> <span data-ttu-id="88d47-118">Docker는 "컨테이너화"라고도 하는 운영 체제 수준 가상화를 수행하는 컴퓨터 프로그램입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-118">It's a computer program that performs operating-system-level virtualization, also known as "containerization".</span></span>
+    - content: <span data-ttu-id="88d47-119">Docker는 웹앱의 라이브러리입니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-119">Docker is a library for web apps.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="8044c-120">Docker는 소프트웨어 플랫폼이지만 웹앱을 만드는 데 유용한 라이브러리는 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-120">Docker is a software platform, but it's not a library for helping you to create web apps.</span></span>
-  - content: <span data-ttu-id="8044c-121">NVIDIA Docker를 사용하는 주요 이점은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="8044c-121">What's the main benefit of using NVIDIA Docker?</span></span>
+      incorrectExplanation: <span data-ttu-id="88d47-120">Docker는 소프트웨어 플랫폼이지만 웹앱을 만드는 데 유용한 라이브러리는 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-120">Docker is a software platform, but it's not a library for helping you to create web apps.</span></span>
+  - content: <span data-ttu-id="88d47-121">NVIDIA Docker를 사용하는 주요 이점은 무엇인가요?</span><span class="sxs-lookup"><span data-stu-id="88d47-121">What's the main benefit of using NVIDIA Docker?</span></span>
     choices:
-    - content: <span data-ttu-id="8044c-122">NVIDIA Docker를 사용하면 Windows에서 Docker 컨테이너를 빌드하고 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-122">It allows you to build and run Docker containers on Windows.</span></span>
+    - content: <span data-ttu-id="88d47-122">NVIDIA Docker를 사용하면 Windows에서 Docker 컨테이너를 빌드하고 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-122">It allows you to build and run Docker containers on Windows.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="8044c-123">NVIDIA Docker는 Linux에서만 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-123">NVIDIA Docker only runs on Linux.</span></span>
-    - content: <span data-ttu-id="8044c-124">NVIDIA Docker를 사용하면 NVIDIA GPU를 활용하는 Docker 컨테이너를 빌드하고 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-124">It allows you to build and run Docker containers that leverage NVIDIA GPUs.</span></span>
+      incorrectExplanation: <span data-ttu-id="88d47-123">NVIDIA Docker는 Linux에서만 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-123">NVIDIA Docker only runs on Linux.</span></span>
+    - content: <span data-ttu-id="88d47-124">NVIDIA Docker를 사용하면 NVIDIA GPU를 활용하는 Docker 컨테이너를 빌드하고 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-124">It allows you to build and run Docker containers that leverage NVIDIA GPUs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="8044c-125">NVIDIA는 드라이버 독립 CUDA 이미지를 지원하기 위한 오픈 소스 프로젝트로 또한 시작 시 컨테이너에 적절하게 GPU 구성 요소를 탑재하는 방법을 알고 있는 Docker 명령줄 래퍼 중심의 래퍼로 nvidia-docker를 개발합니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-125">NVIDIA developer nvidia-docker as an open-source project to support driver-agnostice CUDA image and as a wrapper around the Docker command-line wrapper that knows how to mount the right GPU components into the container at launch.</span></span>
-    - content: <span data-ttu-id="8044c-126">NVIDIA를 사용하면 CPU 가속 응용 프로그램을 컨테이너화할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-126">It allows you to containerize CPU-accelerated applications.</span></span>
+      correctExplanation: <span data-ttu-id="88d47-125">NVIDIA는 드라이버 독립 CUDA 이미지를 지원하기 위한 오픈 소스 프로젝트로 또한 시작 시 컨테이너에 적절하게 GPU 구성 요소를 탑재하는 방법을 알고 있는 Docker 명령줄 래퍼 중심의 래퍼로 nvidia-docker를 개발합니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-125">NVIDIA developer nvidia-docker as an open-source project to support driver-agnostice CUDA image and as a wrapper around the Docker command-line wrapper that knows how to mount the right GPU components into the container at launch.</span></span>
+    - content: <span data-ttu-id="88d47-126">NVIDIA를 사용하면 CPU 가속 응용 프로그램을 컨테이너화할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-126">It allows you to containerize CPU-accelerated applications.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="8044c-127">NVIDIA Docker를 사용하면 GPU 가속 앱을 컨테이너화할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8044c-127">NVIDIA Docker allows you to containerize your GPU-accelerated apps.</span></span>
+      incorrectExplanation: <span data-ttu-id="88d47-127">NVIDIA Docker를 사용하면 GPU 가속 앱을 컨테이너화할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="88d47-127">NVIDIA Docker allows you to containerize your GPU-accelerated apps.</span></span>

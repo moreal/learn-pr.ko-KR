@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0f3042af254cf84af484510a32c4c5e396223c7d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349318"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146515"
 title: 프로덕션에 푸시하기 전에 고려할 상위 5개 보안 항목
 summary: Azure에서 웹 응용 프로그램을 안전하게 보호하고, 가장 일반적이고 위험한 웹 응용 프로그램 공격으로부터 앱을 보호합니다.
 abstract: >

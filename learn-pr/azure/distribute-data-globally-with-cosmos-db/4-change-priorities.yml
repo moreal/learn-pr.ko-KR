@@ -1,16 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.distribute-data-globally-with-cosmos-db.4-change-priorities
 metadata:
-  title: <span data-ttu-id="4099e-101">글로벌 읽기 및 쓰기 우선 순위 변경</span><span class="sxs-lookup"><span data-stu-id="4099e-101">Change global read and write priorities</span></span>
-  description: <span data-ttu-id="4099e-102">글로벌 지역의 읽기 및 쓰기 우선 순위를 변경하는 방법에 대해 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="4099e-102">Learn how change the read and write prioritites for your global regions.</span></span>
+  title: <span data-ttu-id="f1dac-101">글로벌 읽기 및 쓰기 우선 순위 변경</span><span class="sxs-lookup"><span data-stu-id="f1dac-101">Change global read and write priorities</span></span>
+  description: <span data-ttu-id="f1dac-102">글로벌 지역의 읽기 및 쓰기 우선 순위를 변경하는 방법에 대해 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="f1dac-102">Learn how change the read and write prioritites for your global regions.</span></span>
   displayType: one-column
   ms.openlocfilehash: 945fb5504cabd37641bc8f0a51a919dcf5471b73
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352088"
-title: <span data-ttu-id="4099e-103">글로벌 읽기 및 쓰기 우선 순위 변경</span><span class="sxs-lookup"><span data-stu-id="4099e-103">Change global read and write priorities</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47143979"
+title: <span data-ttu-id="f1dac-103">글로벌 읽기 및 쓰기 우선 순위 변경</span><span class="sxs-lookup"><span data-stu-id="f1dac-103">Change global read and write priorities</span></span>
 azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/4-change-priorities.md)]'

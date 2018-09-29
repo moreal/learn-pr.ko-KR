@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.4-encryption
-title: <span data-ttu-id="255be-101">암호화</span><span class="sxs-lookup"><span data-stu-id="255be-101">Encryption</span></span>
+title: <span data-ttu-id="6120e-101">암호화</span><span class="sxs-lookup"><span data-stu-id="6120e-101">Encryption</span></span>
 metadata:
-  title: <span data-ttu-id="255be-102">암호화</span><span class="sxs-lookup"><span data-stu-id="255be-102">Encryption</span></span>
-  description: <span data-ttu-id="255be-103">이 단원에서는 암호화를 사용하여 데이터를 보호하는 방법을 알아보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="255be-103">In this unit, we'll discuss how to use encryption to secure your data.</span></span>
+  title: <span data-ttu-id="6120e-102">암호화</span><span class="sxs-lookup"><span data-stu-id="6120e-102">Encryption</span></span>
+  description: <span data-ttu-id="6120e-103">이 단원에서는 암호화를 사용하여 데이터를 보호하는 방법을 알아보겠습니다.</span><span class="sxs-lookup"><span data-stu-id="6120e-103">In this unit, we'll discuss how to use encryption to secure your data.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 199a92a1e365547f75cb7d1d556bab67691d6daf
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349601"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47145759"
 durationInMinutes: 8
 content: '[!include[](includes/4-encryption.md)]'

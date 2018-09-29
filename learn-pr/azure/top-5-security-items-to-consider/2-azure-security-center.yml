@@ -1,31 +1,31 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.2-azure-security-center
-title: <span data-ttu-id="cba04-101">Azure Security Center</span><span class="sxs-lookup"><span data-stu-id="cba04-101">Azure Security Center</span></span>
+title: <span data-ttu-id="154cf-101">Azure Security Center</span><span class="sxs-lookup"><span data-stu-id="154cf-101">Azure Security Center</span></span>
 metadata:
-  title: <span data-ttu-id="cba04-102">Azure Security Center</span><span class="sxs-lookup"><span data-stu-id="cba04-102">Azure Security Center</span></span>
-  description: <span data-ttu-id="cba04-103">Azure Security Center</span><span class="sxs-lookup"><span data-stu-id="cba04-103">Azure Security Center</span></span>
+  title: <span data-ttu-id="154cf-102">Azure Security Center</span><span class="sxs-lookup"><span data-stu-id="154cf-102">Azure Security Center</span></span>
+  description: <span data-ttu-id="154cf-103">Azure Security Center</span><span class="sxs-lookup"><span data-stu-id="154cf-103">Azure Security Center</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: f02436ec9ef936eabde1d6958ef2938ee5ab5973
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346951"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146377"
 durationInMinutes: 15
 content: >
   [!include[](includes/2-azure-security-center.md)]
 quiz:
-  title: <span data-ttu-id="cba04-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="cba04-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="154cf-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="154cf-104">Check your knowledge</span></span>
   questions:
-  - content: '<span data-ttu-id="cba04-105">참 또는 거짓: Azure Security Center는 Azure 리소스 및 온-프레미스 리소스에 대해 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="cba04-105">True or false: Azure Security Center works for Azure resources and on-premise resources.</span></span>'
+  - content: '<span data-ttu-id="154cf-105">참 또는 거짓: Azure Security Center는 Azure 리소스 및 온-프레미스 리소스에 대해 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="154cf-105">True or false: Azure Security Center works for Azure resources and on-premise resources.</span></span>'
     choices:
-    - content: <span data-ttu-id="cba04-106">참</span><span class="sxs-lookup"><span data-stu-id="cba04-106">True</span></span>
+    - content: <span data-ttu-id="154cf-106">참</span><span class="sxs-lookup"><span data-stu-id="154cf-106">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="cba04-107">Azure Security Center는 Azure와 온-프레미스 모두에서 모든 서비스를 모니터링할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cba04-107">Azure Security Center can monitor all your services, both in Azure and on premises.</span></span>
-    - content: <span data-ttu-id="cba04-108">거짓</span><span class="sxs-lookup"><span data-stu-id="cba04-108">False</span></span>
+      correctExplanation: <span data-ttu-id="154cf-107">Azure Security Center는 Azure와 온-프레미스 모두에서 모든 서비스를 모니터링할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="154cf-107">Azure Security Center can monitor all your services, both in Azure and on premises.</span></span>
+    - content: <span data-ttu-id="154cf-108">거짓</span><span class="sxs-lookup"><span data-stu-id="154cf-108">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="cba04-109">Azure Security Center는 Azure 호스팅 리소스로 제한되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cba04-109">Azure Security Center is not limited to Azure-hosted resources.</span></span>
+      incorrectExplanation: <span data-ttu-id="154cf-109">Azure Security Center는 Azure 호스팅 리소스로 제한되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="154cf-109">Azure Security Center is not limited to Azure-hosted resources.</span></span>

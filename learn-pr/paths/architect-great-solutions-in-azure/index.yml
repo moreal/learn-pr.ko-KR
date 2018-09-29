@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 43f4187954ad680aa7ae4880259b55568a22b8b1
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353598"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132619"
 title: Azure에서 멋진 솔루션 설계
 summary: 모든 좋은 아키텍처에 있는 핵심 원칙을 검토하여 Azure에서 안전하고 확장성 있고 성능이 좋은 솔루션을 디자인하고 빌드하는 방법을 알아봅니다.
 prerequisites: 없음

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.5-add-logic-to-the-function-app
-title: <span data-ttu-id="0b8e5-101">함수 앱에 논리 추가</span><span class="sxs-lookup"><span data-stu-id="0b8e5-101">Add logic to the function app</span></span>
+title: <span data-ttu-id="4d9a0-101">함수 앱에 논리 추가</span><span class="sxs-lookup"><span data-stu-id="4d9a0-101">Add logic to the function app</span></span>
 metadata:
-  title: <span data-ttu-id="0b8e5-102">함수 앱에 논리 추가</span><span class="sxs-lookup"><span data-stu-id="0b8e5-102">Add logic to the function app</span></span>
-  description: <span data-ttu-id="0b8e5-103">함수 앱에 비즈니스 논리 + 트리거 추가</span><span class="sxs-lookup"><span data-stu-id="0b8e5-103">Add the business logic + trigger into the Function App</span></span>
+  title: <span data-ttu-id="4d9a0-102">함수 앱에 논리 추가</span><span class="sxs-lookup"><span data-stu-id="4d9a0-102">Add logic to the function app</span></span>
+  description: <span data-ttu-id="4d9a0-103">함수 앱에 비즈니스 논리 + 트리거 추가</span><span class="sxs-lookup"><span data-stu-id="4d9a0-103">Add the business logic + trigger into the Function App</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1777ebae87dde51ef177b16aa9f51ff05b39a34f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347526"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47140654"
 azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-add-logic-to-the-function-app.md)]'

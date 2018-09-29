@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 27e05266630f205e571db332c8942d7cb215d6c6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354151"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47145906"
 title: Azure 소개
 summary: 클라우드에서 첫 번째 가상 머신을 만들고 구성하여 Azure를 시작하세요.
 abstract: "이 모듈에서는 다음을 수행합니다.\n- Microsoft Azure란 무엇이며 클라우드 컴퓨팅과 어떤 관계가 있는지 알아봅니다.\n- 첫 번째 가상 머신을 시작하고, 웹 서버를 추가하고, 추가 기능이 필요한 경우 서버를 확장하는 것이 얼마나 쉬운지 확인하세요.\n- 세계를 바꾸거나 꿈꿔온 작업을 정착시키는 데 필요한 기본 기술의 빌드를 시작합니다. \n"

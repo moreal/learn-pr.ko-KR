@@ -1,39 +1,39 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-cosmos-db-for-scale.4-how-to-choose-a-partition-key
 metadata:
-  title: <span data-ttu-id="83fd6-101">Azure Cosmos DB에서 파티션 키를 선택하는 방법</span><span class="sxs-lookup"><span data-stu-id="83fd6-101">Choosing a partition key in Azure Cosmos DB?</span></span>
-  description: <span data-ttu-id="83fd6-102">요구 사항이 증가함에 따라 데이터베이스 크기를 조정할 수 있도록 하는 파티션 키를 사용하여 컬렉션을 만드는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-102">Learn how to create a collection with a partition key that will enable your database to scale as your needs grow.</span></span>
+  title: <span data-ttu-id="b4d72-101">Azure Cosmos DB에서 파티션 키를 선택하는 방법</span><span class="sxs-lookup"><span data-stu-id="b4d72-101">Choosing a partition key in Azure Cosmos DB?</span></span>
+  description: <span data-ttu-id="b4d72-102">요구 사항이 증가함에 따라 데이터베이스 크기를 조정할 수 있도록 하는 파티션 키를 사용하여 컬렉션을 만드는 방법을 알아봅니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-102">Learn how to create a collection with a partition key that will enable your database to scale as your needs grow.</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d4fb07bb85e7e7cb2dda9bdd8fe80880babb65b1
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346711"
-title: <span data-ttu-id="83fd6-103">파티션 키 선택</span><span class="sxs-lookup"><span data-stu-id="83fd6-103">Choosing a partition key</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132227"
+title: <span data-ttu-id="b4d72-103">파티션 키 선택</span><span class="sxs-lookup"><span data-stu-id="b4d72-103">Choosing a partition key</span></span>
 durationInMinutes: 6
 content: >
   [!include[](includes/4-how-to-choose-a-partition-key.md)]
 quiz:
-  title: <span data-ttu-id="83fd6-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="83fd6-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="b4d72-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="b4d72-104">Check your knowledge</span></span>
   questions:
-  - content: '<span data-ttu-id="83fd6-105">참 또는 거짓: 파티션 키를 만든 후 Azure Cosmos DB 컬렉션에 **추가**할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-105">True or false: You can **add** a partition key to an Azure Cosmos DB collection after it has been created?</span></span>'
+  - content: '<span data-ttu-id="b4d72-105">참 또는 거짓: 파티션 키를 만든 후 Azure Cosmos DB 컬렉션에 **추가**할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-105">True or false: You can **add** a partition key to an Azure Cosmos DB collection after it has been created?</span></span>'
     choices:
-    - content: <span data-ttu-id="83fd6-106">참</span><span class="sxs-lookup"><span data-stu-id="83fd6-106">True</span></span>
+    - content: <span data-ttu-id="b4d72-106">참</span><span class="sxs-lookup"><span data-stu-id="b4d72-106">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="83fd6-107">컬렉션이 생성될 때만 파티션 키를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-107">You can set the partition key only when the collection is created.</span></span>
-    - content: <span data-ttu-id="83fd6-108">거짓</span><span class="sxs-lookup"><span data-stu-id="83fd6-108">False</span></span>
+      incorrectExplanation: <span data-ttu-id="b4d72-107">컬렉션이 생성될 때만 파티션 키를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-107">You can set the partition key only when the collection is created.</span></span>
+    - content: <span data-ttu-id="b4d72-108">거짓</span><span class="sxs-lookup"><span data-stu-id="b4d72-108">False</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="83fd6-109">컬렉션이 생성될 때만 파티션 키를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-109">You can set the partition key only when the collection is created.</span></span>
-  - content: '<span data-ttu-id="83fd6-110">참 또는 거짓: Azure Cosmos DB 컬렉션을 만든 후에 파티션 키를 **변경**할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-110">True or false: You can you **change** the partition key after the Azure Cosmos DB collection has been created?</span></span>'
+      correctExplanation: <span data-ttu-id="b4d72-109">컬렉션이 생성될 때만 파티션 키를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-109">You can set the partition key only when the collection is created.</span></span>
+  - content: '<span data-ttu-id="b4d72-110">참 또는 거짓: Azure Cosmos DB 컬렉션을 만든 후에 파티션 키를 **변경**할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-110">True or false: You can you **change** the partition key after the Azure Cosmos DB collection has been created?</span></span>'
     choices:
-    - content: <span data-ttu-id="83fd6-111">참</span><span class="sxs-lookup"><span data-stu-id="83fd6-111">True</span></span>
+    - content: <span data-ttu-id="b4d72-111">참</span><span class="sxs-lookup"><span data-stu-id="b4d72-111">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="83fd6-112">컬렉션이 생성된 후에는 파티션 키를 수정할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-112">Partition keys cannot be modified after the collection is created.</span></span>
-    - content: <span data-ttu-id="83fd6-113">거짓</span><span class="sxs-lookup"><span data-stu-id="83fd6-113">False</span></span>
+      incorrectExplanation: <span data-ttu-id="b4d72-112">컬렉션이 생성된 후에는 파티션 키를 수정할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-112">Partition keys cannot be modified after the collection is created.</span></span>
+    - content: <span data-ttu-id="b4d72-113">거짓</span><span class="sxs-lookup"><span data-stu-id="b4d72-113">False</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="83fd6-114">컬렉션이 생성된 후에는 파티션 키를 수정할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="83fd6-114">Partition keys cannot be modified after the collection is created.</span></span>
+      correctExplanation: <span data-ttu-id="b4d72-114">컬렉션이 생성된 후에는 파티션 키를 수정할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="b4d72-114">Partition keys cannot be modified after the collection is created.</span></span>

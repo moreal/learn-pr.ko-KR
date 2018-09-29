@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.6-knowledge-check
-title: '<span data-ttu-id="4185a-101">지식 검사: 저장소 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="4185a-101">Knowledge check: Create a storage account</span></span>'
+title: '<span data-ttu-id="d3187-101">지식 검사: 저장소 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="d3187-101">Knowledge check: Create a storage account</span></span>'
 durationInMinutes: 3
 metadata:
-  title: '<span data-ttu-id="4185a-102">지식 검사: 저장소 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="4185a-102">Knowledge check: Create a storage account</span></span>'
-  description: <span data-ttu-id="4185a-103">저장소 계정 속성 및 생성에 대한 질문입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-103">Questions about storage account properties and creation.</span></span>
+  title: '<span data-ttu-id="d3187-102">지식 검사: 저장소 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="d3187-102">Knowledge check: Create a storage account</span></span>'
+  description: <span data-ttu-id="d3187-103">저장소 계정 속성 및 생성에 대한 질문입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-103">Questions about storage account properties and creation.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 16c86b7ec3c7eb7b0d7ea9d243206c6bfe8b36f0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352978"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47142355"
 quiz:
-  title: <span data-ttu-id="4185a-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="4185a-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="d3187-104">지식 검사</span><span class="sxs-lookup"><span data-stu-id="d3187-104">Check your knowledge</span></span>
   questions:
-  - content: '<span data-ttu-id="4185a-105">두 개의 비디오 파일을 Blob으로 저장한다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-105">Suppose you have two video files stored as blobs.</span></span> <span data-ttu-id="4185a-106">그 중 하나의 비디오는 중요 비즈니스용이며 여기에는 지리적으로 분산 데이터 센터에서 여러 복사본을 만드는 복제 정책이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-106">One of the videos is business-critical and requires a replication policy that creates multiple copies across geographically diverse datacenters.</span></span> <span data-ttu-id="4185a-107">다른 비디오는 중요하지 않으며 로컬 복제 정책으로 충분합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-107">The other video is non-critical, and a local replication policy is sufficient.</span></span> <span data-ttu-id="4185a-108">True 또는 false: 이러한 제약 조건을 충족하려면 두 개의 Blob이 별도 저장소 계정에 위치해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-108">True or false: To satisfy these constraints, the two blobs will need to be in separate storage accounts.</span></span>'
+  - content: '<span data-ttu-id="d3187-105">두 개의 비디오 파일을 Blob으로 저장한다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-105">Suppose you have two video files stored as blobs.</span></span> <span data-ttu-id="d3187-106">그 중 하나의 비디오는 중요 비즈니스용이며 여기에는 지리적으로 분산 데이터 센터에서 여러 복사본을 만드는 복제 정책이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-106">One of the videos is business-critical and requires a replication policy that creates multiple copies across geographically diverse datacenters.</span></span> <span data-ttu-id="d3187-107">다른 비디오는 중요하지 않으며 로컬 복제 정책으로 충분합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-107">The other video is non-critical, and a local replication policy is sufficient.</span></span> <span data-ttu-id="d3187-108">True 또는 false: 이러한 제약 조건을 충족하려면 두 개의 Blob이 별도 저장소 계정에 위치해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-108">True or false: To satisfy these constraints, the two blobs will need to be in separate storage accounts.</span></span>'
     choices:
-    - content: <span data-ttu-id="4185a-109">True</span><span class="sxs-lookup"><span data-stu-id="4185a-109">True</span></span>
+    - content: <span data-ttu-id="d3187-109">True</span><span class="sxs-lookup"><span data-stu-id="d3187-109">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="4185a-110">복제 정책은 저장소 계정의 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-110">Replication policy is a characteristic of a storage account.</span></span> <span data-ttu-id="4185a-111">저장소 계정의 모든 멤버에는 동일한 정책을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-111">Every member in the storage account must use the same policy.</span></span> <span data-ttu-id="4185a-112">일부 데이터가 지역 복제 전략을 사용하고 다른 데이터가 로컬 복제 전략을 사용해야 하는 경우 두 개의 저장소 계정이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-112">If you need some data to use the geo-replication strategy and other data to use the local replication strategy, then you will need two storage accounts.</span></span>
-    - content: <span data-ttu-id="4185a-113">False</span><span class="sxs-lookup"><span data-stu-id="4185a-113">False</span></span>
+      correctExplanation: <span data-ttu-id="d3187-110">복제 정책은 저장소 계정의 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-110">Replication policy is a characteristic of a storage account.</span></span> <span data-ttu-id="d3187-111">저장소 계정의 모든 멤버에는 동일한 정책을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-111">Every member in the storage account must use the same policy.</span></span> <span data-ttu-id="d3187-112">일부 데이터가 지역 복제 전략을 사용하고 다른 데이터가 로컬 복제 전략을 사용해야 하는 경우 두 개의 저장소 계정이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-112">If you need some data to use the geo-replication strategy and other data to use the local replication strategy, then you will need two storage accounts.</span></span>
+    - content: <span data-ttu-id="d3187-113">False</span><span class="sxs-lookup"><span data-stu-id="d3187-113">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4185a-114">복제 정책은 저장소 계정의 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-114">Replication policy is a characteristic of a storage account.</span></span> <span data-ttu-id="4185a-115">저장소 계정의 모든 멤버에는 동일한 정책을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-115">Every member in the storage account must use the same policy.</span></span> <span data-ttu-id="4185a-116">일부 데이터가 지역 복제 전략을 사용하고 다른 데이터가 로컬 복제 전략을 사용해야 하는 경우 두 개의 저장소 계정이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-116">If you need some data to use the geo-replication strategy and other data to use the local replication strategy, then you will need two storage accounts.</span></span>
-  - content: <span data-ttu-id="4185a-117">저장소 계정의 이름은 다음과 같아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-117">The name of a storage account must be:</span></span>
+      incorrectExplanation: <span data-ttu-id="d3187-114">복제 정책은 저장소 계정의 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-114">Replication policy is a characteristic of a storage account.</span></span> <span data-ttu-id="d3187-115">저장소 계정의 모든 멤버에는 동일한 정책을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-115">Every member in the storage account must use the same policy.</span></span> <span data-ttu-id="d3187-116">일부 데이터가 지역 복제 전략을 사용하고 다른 데이터가 로컬 복제 전략을 사용해야 하는 경우 두 개의 저장소 계정이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-116">If you need some data to use the geo-replication strategy and other data to use the local replication strategy, then you will need two storage accounts.</span></span>
+  - content: <span data-ttu-id="d3187-117">저장소 계정의 이름은 다음과 같아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-117">The name of a storage account must be:</span></span>
     choices:
-    - content: <span data-ttu-id="4185a-118">포함하는 리소스 그룹 내에서 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-118">Unique within the containing resource group.</span></span>
+    - content: <span data-ttu-id="d3187-118">포함하는 리소스 그룹 내에서 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-118">Unique within the containing resource group.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4185a-119">저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-119">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
-    - content: <span data-ttu-id="4185a-120">Azure 구독 내에서 고유합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-120">Unique within your Azure subscription.</span></span>
+      incorrectExplanation: <span data-ttu-id="d3187-119">저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-119">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
+    - content: <span data-ttu-id="d3187-120">Azure 구독 내에서 고유합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-120">Unique within your Azure subscription.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4185a-121">저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-121">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
-    - content: <span data-ttu-id="4185a-122">전세계에 고유합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-122">Globally unique.</span></span>
+      incorrectExplanation: <span data-ttu-id="d3187-121">저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-121">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
+    - content: <span data-ttu-id="d3187-122">전세계에 고유합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-122">Globally unique.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="4185a-123">저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-123">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
-  - content: <span data-ttu-id="4185a-124">일반적인 프로젝트에서 저장소 계정을 만드는 경우는?</span><span class="sxs-lookup"><span data-stu-id="4185a-124">In a typical project, when would you create your storage account(s)?</span></span>
+      correctExplanation: <span data-ttu-id="d3187-123">저장소 계정 이름은 API 액세스에 대한 URI의 일부로 사용되므로 전세계에 고유해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-123">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
+  - content: <span data-ttu-id="d3187-124">일반적인 프로젝트에서 저장소 계정을 만드는 경우는?</span><span class="sxs-lookup"><span data-stu-id="d3187-124">In a typical project, when would you create your storage account(s)?</span></span>
     choices:
-    - content: <span data-ttu-id="4185a-125">처음에 프로젝트를 설정하는 동안</span><span class="sxs-lookup"><span data-stu-id="4185a-125">At the beginning, during project setup.</span></span>
+    - content: <span data-ttu-id="d3187-125">처음에 프로젝트를 설정하는 동안</span><span class="sxs-lookup"><span data-stu-id="d3187-125">At the beginning, during project setup.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="4185a-126">저장소 계정은 프로젝트의 수명 동안 일반적으로 안정적입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-126">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="4185a-127">프로젝트의 시작 부분에서 만드는 것이 일반적입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-127">It is common to create them at the start of a project.</span></span>
-    - content: <span data-ttu-id="4185a-128">배포 후에 프로젝트를 실행하는 경우</span><span class="sxs-lookup"><span data-stu-id="4185a-128">After deployment, when the project is running.</span></span>
+      correctExplanation: <span data-ttu-id="d3187-126">저장소 계정은 프로젝트의 수명 동안 일반적으로 안정적입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-126">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="d3187-127">프로젝트의 시작 부분에서 만드는 것이 일반적입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-127">It is common to create them at the start of a project.</span></span>
+    - content: <span data-ttu-id="d3187-128">배포 후에 프로젝트를 실행하는 경우</span><span class="sxs-lookup"><span data-stu-id="d3187-128">After deployment, when the project is running.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4185a-129">저장소 계정은 프로젝트의 수명 동안 일반적으로 안정적입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-129">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="4185a-130">프로젝트의 시작 부분에서 만드는 것이 일반적입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-130">It is common to create them at the start of a project.</span></span>
-    - content: <span data-ttu-id="4185a-131">끝으로 리소스를 정리하는 동안</span><span class="sxs-lookup"><span data-stu-id="4185a-131">At the end, during resource cleanup.</span></span>
+      incorrectExplanation: <span data-ttu-id="d3187-129">저장소 계정은 프로젝트의 수명 동안 일반적으로 안정적입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-129">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="d3187-130">프로젝트의 시작 부분에서 만드는 것이 일반적입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-130">It is common to create them at the start of a project.</span></span>
+    - content: <span data-ttu-id="d3187-131">끝으로 리소스를 정리하는 동안</span><span class="sxs-lookup"><span data-stu-id="d3187-131">At the end, during resource cleanup.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="4185a-132">저장소 계정은 프로젝트의 수명 동안 일반적으로 안정적입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-132">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="4185a-133">프로젝트의 시작 부분에서 만드는 것이 일반적입니다.</span><span class="sxs-lookup"><span data-stu-id="4185a-133">It is common to create them at the start of a project.</span></span>
+      incorrectExplanation: <span data-ttu-id="d3187-132">저장소 계정은 프로젝트의 수명 동안 일반적으로 안정적입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-132">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="d3187-133">프로젝트의 시작 부분에서 만드는 것이 일반적입니다.</span><span class="sxs-lookup"><span data-stu-id="d3187-133">It is common to create them at the start of a project.</span></span>
