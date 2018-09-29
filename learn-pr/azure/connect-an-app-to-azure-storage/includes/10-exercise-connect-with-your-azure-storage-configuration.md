@@ -1,4 +1,6 @@
-::: zone pivot="csharp" 구성에서 연결 문자열을 검색하고 해당 연결 문자열을 사용하여 Azure 저장소 계정에 연결하는 코드를 추가해 보겠습니다.
+::: zone pivot="csharp" 
+
+구성에서 연결 문자열을 검색하고 해당 연결 문자열을 사용하여 Azure 저장소 계정에 연결하는 코드를 추가해 보겠습니다.
 
 ## <a name="retrieve-the-connection-string"></a>연결 문자열 검색
 
@@ -139,7 +141,9 @@ namespace PhotoSharingApp
 
 ::: zone-end
 
-::: zone-pivot="javascript" 저장된 연결 문자열을 사용하여 Azure 저장소 계정에 연결하려면 코드를 추가하겠습니다. Azure 클라이언트 라이브러리는 자동으로 **AZURE_STORAGE_CONNECTION_STRING** 환경 변수를 사용하여 연결 문자열을 가져옵니다.
+::: zone-pivot="javascript" 
+
+저장된 연결 문자열을 사용하여 Azure 저장소 계정에 연결하려면 코드를 추가하겠습니다. Azure 클라이언트 라이브러리는 자동으로 **AZURE_STORAGE_CONNECTION_STRING** 환경 변수를 사용하여 연결 문자열을 가져옵니다.
 
 ## <a name="create-a-blob-client"></a>BLOB 클라이언트 만들기
 
