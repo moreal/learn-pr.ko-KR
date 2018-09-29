@@ -320,13 +320,13 @@ Docker 허브에 이미지를 게시하려면 계정이 필요합니다. 여기�
     1. 이 예에서는 Docker 허브에서 최신 이미지를 끌어옵니다.
 
         ```bash
-        docker pull my_docker_account/python-dockerfile
+        docker pull $docker_account/python-dockerfile
         ```
 
     1. 이 예에서는 컨테이너를 실행합니다.
 
         ```bash
-        docker run my_docker_account/python-dockerfile
+        docker run $docker_account/python-dockerfile
         ```
 
 1. 컨테이너를 테스트해 보세요.

@@ -10,9 +10,9 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
 
 1. 이전 단원에서 로컬 Azure Functions 런타임이 계속 실행 중인 경우 해당 런타임을 중지합니다.
 
-1. “Microsoft.Azure.WebJobs.Extensions.Twilio” NuGet v3.0.0-rc1 패키지를 `ImHere.Functions` 프로젝트에 추가합니다. **안정적인 버전에는 Twilio 바인딩과 관련된 버그가 있으므로 3.0.0 버전이 아닌 3.0.0-rc1 버전을 사용하세요**. 이 NuGet 패키지에는 바인딩 관련 클래스가 들어 있습니다.
+2. “Microsoft.Azure.WebJobs.Extensions.Twilio” NuGet 패키지를 `ImHere.Functions` 프로젝트에 추가합니다. 이 NuGet 패키지에는 바인딩 관련 클래스가 들어 있습니다.
 
-1. `messages`라는 `SendLocation` 정적 클래스의 정적 `Run` 메서드에 새 매개 변수를 추가합니다. 이 매개 변수에는 `ICollector<CreateMessageOptions>` 유형이 포함됩니다. `Twilio.Rest.Api.V2010.Account` 네임스페이스에 `using` 지시문을 추가해야 합니다.
+3. `messages`라는 `SendLocation` 정적 클래스의 정적 `Run` 메서드에 새 매개 변수를 추가합니다. 이 매개 변수에는 `ICollector<CreateMessageOptions>` 유형이 포함됩니다. `Twilio.Rest.Api.V2010.Account` 네임스페이스에 `using` 지시문을 추가해야 합니다.
 
     ```cs
     [FunctionName("SendLocation")]
@@ -21,7 +21,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
                                                 ILogger log)
     ```
 
-1. 다음과 같이 새 `messages` 매개 변수를 `TwilioSms` 특성으로 데코레이트합니다. 
+4. 다음과 같이 새 `messages` 매개 변수를 `TwilioSms` 특성으로 데코레이트합니다. 
 
       ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",AuthTokenSetting = "TwilioAuthToken", From = "+1xxxxxxxxx")]ICollector<CreateMessageOptions> messages,
@@ -43,8 +43,7 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
     > [!IMPORTANT]
     > 전화 번호에서 모든 공백을 제거해야 합니다.
 
-
-1. 함수 앱 설정은 `local.settings.json` 파일 내에서 로컬로 구성할 수 있습니다. `TwilioSMS` 특성에 전달된 설정 이름을 사용하여 이 JSON 파일에 Twilio 계정 SID 및 인증 토큰을 추가합니다.
+5. 함수 앱 설정은 `local.settings.json` 파일 내에서 로컬로 구성할 수 있습니다. `TwilioSMS` 특성에 전달된 설정 이름을 사용하여 이 JSON 파일에 Twilio 계정 SID 및 인증 토큰을 추가합니다.
 
     ```json
     {
@@ -63,9 +62,8 @@ Twilio를 통해 SMS 메시지를 보내려면 계정 SID(구독 ID)와 인증 �
     > [!NOTE]
     > 이러한 로컬 설정은 로컬에서 실행하는 경우에만 사용됩니다. 프로덕션 앱에서는 이러한 값이 로컬 개발 또는 테스트 계정 자격 증명입니다. Azure에 Azure 함수가 배포되면 프로덕션 값을 구성할 수 있습니다.
 
-     > [!NOTE]
+    > [!NOTE]
     > 코드를 소스 제어에 체크 인하는 경우 이러한 로컬 응용 프로그램 설정 값도 체크 인되므로 코드가 어떤 형식이든 오픈 소스이거나 공용인 경우 이러한 파일의 실제 값을 체크 인하지 않도록 주의하세요.
-    
 
 ## <a name="create-the-sms-messages"></a>SMS 메시지 만들기
 

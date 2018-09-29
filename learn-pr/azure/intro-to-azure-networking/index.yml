@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 31c039ebaec8ca3b61fb9f8b71af794527645530
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349729"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47147262"
 title: Azure 네트워킹 소개
 summary: 클라우드에서 앱 또는 서비스를 실행하려면 빠르고 안전한 네트워크가 필요합니다. Azure 네트워킹의 기본 사항과 Azure 네트워킹으로 복원력을 개선하고 대기 시간을 단축하는 방법을 알아보세요.
 abstract: >
