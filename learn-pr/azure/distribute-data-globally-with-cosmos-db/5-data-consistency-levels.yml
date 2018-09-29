@@ -5,11 +5,11 @@ metadata:
   description: Azure Cosmos DB의 일관성 수준을 사용하여 고가용성을 최대화하고 대기 시간을 최소화하며 응용 프로그램에 대한 올바른 일관성 수준을 결정할 수 있는 방법을 알아봅니다.
   displayType: one-column
   ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348865"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144038"
 title: 일관성 수준 선택
 durationInMinutes: 10
 content: >

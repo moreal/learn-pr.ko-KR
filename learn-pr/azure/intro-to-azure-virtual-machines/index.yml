@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5f3681f939f6fb62c05d00cfce20a12c2b1d0709
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351726"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47145438"
 title: Azure Virtual Machines 소개
 summary: 가상 머신을 만들기 전에 결정하는 사항, VM을 만들고 관리하는 옵션, VM을 관리하는 데 사용하는 확장 및 서비스에 대해 알아봅니다.
 abstract: >

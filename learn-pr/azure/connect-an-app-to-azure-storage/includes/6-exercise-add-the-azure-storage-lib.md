@@ -1,5 +1,4 @@
-::: zone pivot="csharp"
-Azure Storage 클라이언트 라이브러리를 .NET Core 콘솔 응용 프로그램에 통합해 보겠습니다.
+::: zone pivot="csharp" Azure Storage 클라이언트 라이브러리를 .NET Core 콘솔 응용 프로그램에 통합해 보겠습니다.
 
 .NET용 Azure Storage 클라이언트 라이브러리는 NuGet을 사용하여 배포됩니다. **WindowsAzure.Storage** 패키지를 .NET 또는 .NET Core 응용 프로그램에 추가하겠습니다.
 

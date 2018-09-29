@@ -5,11 +5,11 @@ metadata:
   description: 글로벌 지역의 읽기 및 쓰기 우선 순위를 변경하는 방법에 대해 알아봅니다.
   displayType: one-column
   ms.openlocfilehash: 945fb5504cabd37641bc8f0a51a919dcf5471b73
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352088"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47143979"
 title: 글로벌 읽기 및 쓰기 우선 순위 변경
 azureSandbox: true
 durationInMinutes: 5

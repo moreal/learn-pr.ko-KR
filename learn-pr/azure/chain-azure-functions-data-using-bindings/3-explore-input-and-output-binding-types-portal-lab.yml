@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c473c8fcde34900d408b6cf786ef9372d80c1b01
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352761"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132651"
 title: 연습 - 입력 및 출력 바인딩 형식 탐색
 durationInMinutes: 10
 azureSandbox: true

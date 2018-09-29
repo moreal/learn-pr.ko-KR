@@ -25,7 +25,7 @@
       --o tsv
     ```
 
-1. VM에 SSH로 연결합니다. **ip-address**를 자신의 IP 주소로 바꿉니다.
+1. VM에 SSH 연결합니다. **ip-address**를 자신의 IP 주소로 바꿉니다.
 
     ```bash
     ssh azureuser@ip-address

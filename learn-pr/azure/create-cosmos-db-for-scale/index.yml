@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3e0eb03a0737fd9ba6bd938e4715fa17e33a3386
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354101"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144027"
 title: 크기를 조정하도록 빌드된 Azure Cosmos DB 데이터베이스 만들기
 summary: 응용 프로그램이 커지면 이에 따라 크기를 조정하도록 빌드된 Azure Cosmos DB 계정, 데이터베이스 및 컬렉션을 만드는 방법을 알아봅니다.
 abstract: >

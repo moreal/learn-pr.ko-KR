@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 036ae24a22ed012ecb92bc87cec625aa2d3d8273
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348422"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144859"
 title: Redis로 읽기 전용 데이터를 캐시하여 웹 응용 프로그램 최적화
 summary: Azure에서 Redis 캐싱을 사용하여 데이터베이스의 부하를 줄입니다. 대용량 분산 환경에서 대량의 부하를 지원하는 여러 캐싱 아키텍처를 적용합니다.
 abstract: >

@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3dd52035d9da3ec2c199c9092009935efd4ce4e2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351441"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47146818"
 title: 서비스를 함께 연결
 summary: Azure를 통해 다양한 구성 요소(웹 사이트 프런트 엔드, 백 엔드 서비스 및 주문형 계산 서비스를 수행하는 트리거 함수)로 구성된 응용 프로그램을 만들 수 있습니다. 또한 Azure에는 다양한 구성 요소가 서로 데이터를 전달할 수 있는 다양한 통신 전략이 포함되어 있습니다. 이러한 통신 서비스를 활용하여 테스트 가능한 구성 요소에서 확장성 있는 효율적인 솔루션을 만드는 방법을 알아봅니다.
 prerequisites: 없음

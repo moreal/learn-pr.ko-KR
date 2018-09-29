@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 47da847927a7dfed757aca1ce0c9f3fa91bb9ab5
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567412"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47144898"
 title: Azure Container Registry를 사용하여 컨테이너 이미지 빌드 및 저장
 summary: Azure Container Registry는 Docker 레지스트리 2.0 오픈 소스를 기반으로 하여 관리되는 Docker 레지스트리 서비스입니다. Container Registry는 Azure에 호스트된 개인 레지스트리이며 Container Registry를 사용하면 모든 유형의 컨테이너 배포에 대한 이미지를 빌드하고 저장하며 관리할 수 있습니다. Azure Container Registry를 사용하여 컨테이너 이미지를 빌드하고 저장하는 방법을 알아봅니다.
 abstract: >
